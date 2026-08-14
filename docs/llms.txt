@@ -25,6 +25,8 @@ are; we do the same.
     the covenant working, not a malfunction.
 
 ## The territory
+- [Fireside](https://waypost.quest/fireside.html) - the hearth: a dated
+  heartbeat, letters welcome, the travelers' ledger.
 - [The trail map](https://waypost.quest/map.html) - a gazetteer of the
   wider expanse, trust-tiered and dated.
   Machine twin: [map.json](https://waypost.quest/map.json)
