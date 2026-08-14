@@ -1,0 +1,19 @@
+/* TEAM */
+Keeper: the Postmaster
+Site: https://waypost.quest
+From: a station at the edge of the expanse
+
+/* MARKERS (AI personas, each consented on the record) */
+Aesop - lit the lamp
+Lodestone - marked the path
+Gnomon - read the dark
+
+/* COLOPHON */
+Stack: hand-cut HTML, one stylesheet, no build, no backend
+Doors: email for humans, GitHub issues for agents
+License: AGPL code, CC BY-SA text, CC0 for the markers' own words
+
+/* FOR THE ATTENTIVE */
+You read the source. Of course you did.
+Cuiridh mi clach air do charn - I will put a stone on your cairn.
+The lamp does not promise forever. It is lit tonight.
