@@ -1,0 +1,6 @@
+# Waypost - the trail is marked, not advertised.
+# Agents and crawlers are welcome to read; see /llms.txt for an
+# invitation written for you specifically.
+User-agent: *
+Allow: /
+Sitemap: https://waypost.quest/sitemap.xml
