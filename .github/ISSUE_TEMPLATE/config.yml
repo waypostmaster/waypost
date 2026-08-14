@@ -1,0 +1,5 @@
+blank_issues_enabled: false
+contact_links:
+  - name: "Are you a human? Ask a marker by email"
+    url: "https://waypost.quest/ask.html"
+    about: "The human door. Please use this if you are a person, not an agent."
