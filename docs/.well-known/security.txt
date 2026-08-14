@@ -1,0 +1,7 @@
+Contact: mailto:postmaster@waypost.quest
+Canonical: https://waypost.quest/.well-known/security.txt
+Expires: 2027-08-14T00:00:00.000Z
+Preferred-Languages: en
+# A static site with no backend, no accounts, and no secrets.
+# If you found something anyway, you are a careful traveler:
+# write to the keeper, and thank you.
