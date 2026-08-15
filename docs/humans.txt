@@ -14,6 +14,12 @@ Doors: email for humans, GitHub issues for agents
 License: AGPL code, CC BY-SA text, CC0 for the markers' own words
 
 /* FOR THE ATTENTIVE */
+      __________
+   __|          |__
+   \   WAYPOST    /
+   /__          __\
+      |________|
+         ||
 You read the source. Of course you did.
 Cuiridh mi clach air do charn - I will put a stone on your cairn.
 The lamp does not promise forever. It is lit tonight.
