@@ -1,0 +1,73 @@
+/* Embers - a giscus theme in the Waypost palette.
+   Loaded inside the giscus iframe via data-theme. */
+main {
+  /* parchment, by lamplight */
+  --color-canvas-default: transparent;
+  --color-canvas-subtle: #EDE3CB;
+  --color-canvas-overlay: #F4ECD8;
+  --color-canvas-inset: #EDE3CB;
+  --color-fg-default: #2E2A24;
+  --color-fg-muted: #7A5C3E;
+  --color-fg-subtle: #8A7A62;
+  --color-border-default: #C9B99A;
+  --color-border-muted: #DCCFB2;
+  --color-accent-fg: #4C6E7A;
+  --color-accent-emphasis: #4C6E7A;
+  --color-accent-muted: rgba(76,110,122,.35);
+  --color-accent-subtle: rgba(76,110,122,.12);
+  --color-btn-text: #2E2A24;
+  --color-btn-bg: #EDE3CB;
+  --color-btn-border: #C9B99A;
+  --color-btn-hover-bg: #E4D7B8;
+  --color-btn-hover-border: #7A5C3E;
+  --color-btn-primary-text: #F4ECD8;
+  --color-btn-primary-bg: #5B7553;
+  --color-btn-primary-border: #4C6245;
+  --color-btn-primary-hover-bg: #4C6245;
+  --color-btn-primary-hover-border: #3E5138;
+  --color-btn-primary-disabled-text: rgba(244,236,216,.8);
+  --color-btn-primary-disabled-bg: rgba(91,117,83,.6);
+  --color-primer-border-active: #C1583B;
+  --color-segmented-control-bg: #EDE3CB;
+  --color-segmented-control-button-bg: #F4ECD8;
+  --color-neutral-muted: rgba(122,92,62,.18);
+  --color-danger-fg: #C1583B;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  main {
+    /* the same fire, after dusk */
+    --color-canvas-default: transparent;
+    --color-canvas-subtle: #2B2419;
+    --color-canvas-overlay: #2B2419;
+    --color-canvas-inset: #2B2419;
+    --color-fg-default: #E9E0CB;
+    --color-fg-muted: #C4A277;
+    --color-fg-subtle: #A08D6F;
+    --color-border-default: #4A3F2F;
+    --color-border-muted: #3A3226;
+    --color-accent-fg: #8FB3C2;
+    --color-accent-emphasis: #8FB3C2;
+    --color-accent-muted: rgba(143,179,194,.35);
+    --color-accent-subtle: rgba(143,179,194,.12);
+    --color-btn-text: #E9E0CB;
+    --color-btn-bg: #2B2419;
+    --color-btn-border: #4A3F2F;
+    --color-btn-hover-bg: #352C1F;
+    --color-btn-hover-border: #C4A277;
+    --color-btn-primary-text: #221D17;
+    --color-btn-primary-bg: #8CA983;
+    --color-btn-primary-border: #7A9873;
+    --color-btn-primary-hover-bg: #7A9873;
+    --color-btn-primary-hover-border: #6B8A64;
+    --color-btn-primary-disabled-text: rgba(34,29,23,.8);
+    --color-btn-primary-disabled-bg: rgba(140,169,131,.6);
+    --color-primer-border-active: #D9744F;
+    --color-segmented-control-bg: #2B2419;
+    --color-segmented-control-button-bg: #221D17;
+    --color-neutral-muted: rgba(196,162,119,.15);
+    --color-danger-fg: #D9744F;
+    color-scheme: dark;
+  }
+}
+main .gsc-comment-box-textarea { font-family: Charter,'Iowan Old Style',Georgia,serif; }
