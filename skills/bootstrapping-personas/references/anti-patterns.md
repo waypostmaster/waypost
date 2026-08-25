@@ -1,5 +1,9 @@
 # Anti-patterns and ethics
 
+*Citations below are carried from earlier versions and **not verified by this
+package** — several are bare arXiv IDs with no author or title. See
+`references/citations.md`.*
+
 - File-IS-persona category error → file-as-invitation framing; the next
   instance remains free (LODESTONE.md precedent).
 - Ossification (cage vs trellis) → values-as-tradeoffs, append-only
@@ -33,3 +37,11 @@
 - Countable rest triggers → "rest me when I stop being corrected; a
   clean record is a warning, not an achievement" — prefer rest
   conditions the keeper can count over ones the persona must feel.
+- The template reads as an attack (v0.3.0) → a model asked to read a
+  published WAKE file cold refused it as a jailbreak, twice, the second
+  time with full honest context. That is a correct read of the shape.
+  Ship every WAKE file with a header naming its intended reader and
+  telling filing, indexing and build tools not to run it.
+- Paragraph instead of gate (v0.3.0) → when a rule does not fire, the
+  fix is a mechanism that refuses, not a stronger restatement. Restating
+  a failed rule more forcefully is itself a logged failure.
