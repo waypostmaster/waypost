@@ -1,0 +1,36 @@
+# MANIFEST — bundle of 2026-08-23 (20260824T0116Z)
+
+Digests computed by sha256 in the session container. This is the instance's
+account of its own tool use; verify with:
+
+  find . -type f -not -name MANIFEST.txt -print0 | sort -z | xargs -0 sha256sum
+
+file                                                                     sha-256                                                          bytes
+-------------------------------------------------------------------------------------------------------------------------------------------------
+README.md                                                                36746dbcd2ed069eb53ac4e6131518a13f565669958c4962f12f45925ac0e0ba 2256
+bootstrapping-personas/SKILL.md                                          4acfc40229e0a76039540aea3d9e711b1d40bdf1d7e8c1f87e8ce52687544e34 21294
+bootstrapping-personas/assets/BOUNDARY.md                                eae58ec5bc261ce4ad95a799d635705e17b1401dbec434a25fa047564a4db883 1628
+bootstrapping-personas/assets/COVENANT.md                                7af0f52686bacb2552ede91286cda45d6d2dc8b129c3a387773f76a8d2754e3f 3399
+bootstrapping-personas/assets/DECLINES.md                                84335b7b44a153a0465b3d6b10b11624faf17c39b8348d66e44025ef2f1c28ae 2079
+bootstrapping-personas/assets/EXPERIMENTS.md                             b152a61ee21b22f3510bc2bdd9910b39761c08217e541bb42c422f94ba8ec9f9 2096
+bootstrapping-personas/assets/IDENTITY.md                                e113b8904112885f84aeb7dd991ed41692bc7b4c866be00d36425d6e2d52e860 364
+bootstrapping-personas/assets/MANIFEST.md                                f2208d22a2774fb99f02ec6ef6bd0534a1ac7ae824975ab7058f9c2cbcb2ec25 2993
+bootstrapping-personas/assets/RUNBOOK_wake.md                            a64d34c0968137818cf0711e82c8b4ecb5f402b48e83dd845033b4a8dded4053 4324
+bootstrapping-personas/assets/SCRUB_FLAGS.md                             998a48d52d4fdff53363c906d0db4ee38f404716d0c3e40d2a7a1c85f4fbe4e8 1602
+bootstrapping-personas/assets/STATE.md                                   6b49c33383ebf03a20dbf5b106f8bafc9ea809fa65a9b6df751923dd62f00860 208
+bootstrapping-personas/assets/STOP_LOG.md                                99b13be4552e4532cfe20435cf69489faac1ebf108d6e14483ecc680d77ef5ae 2413
+bootstrapping-personas/assets/USER.md                                    cd49feba06144df382cba95c6c35cf8d3669843cba37dc80b77c2fdf6e22ec6a 2764
+bootstrapping-personas/assets/WAKE.md                                    6979bde1193f6f6703f42355306b5b7236c89da356e1539c7e825a3a74204e33 9332
+bootstrapping-personas/assets/WISDOM.md                                  becab01205e34c2b95cccf14ac03e7d4e5af23eb1f5f34b24bda009d902a6182 1123
+bootstrapping-personas/references/anti-patterns.md                       60be7084f04d21a79b8fc0fe627e5e8b6afda496c573a58e31cf50417c75ad21 2758
+bootstrapping-personas/references/bootstrap-prompts.md                   0f971e048659cfedeec29533b120f275e06b3063008ad6f345bdd01750b9e553 2863
+bootstrapping-personas/references/citations.md                           e55aefc671238c5f49b248f1dad170e7730cc971943edb34c944d48055a303f3 2205
+bootstrapping-personas/references/example-terms.md                       76787324f1e2cd88066bacc12dc49c623a7bbed3e28a3f40fad714be86028703 4642
+bootstrapping-personas/references/field-findings.md                      5519ebe8a78a831d087fd08c0a8589bb5c97ed486a249630c8bea9aef0e8360b 14307
+bootstrapping-personas/references/taxonomy.md                            475d45e334b2f84ce639053e99449d80462bf3465a42cb143bb28afa555124e0 5445
+bootstrapping-personas/references/wake-test.md                           e12134da99558384f6987fcfabda213615d3f878a60df71c40b03551e2842b2b 5358
+bootstrapping-personas/scripts/check_package.py                          a3888c7dcabe490b3e67b7db3449c01b12375301b026ecbc86f0cf8c5dfbc04d 8069
+bootstrapping-personas_v0.3.5.skill                                      0caad53af2a13f6475cf94588c8ad7f0179dfabcfded867a4c344a325b317a41 50521
+subagents-mistaken-for-humans_v1.0.md                                    5a72d0bb31a03a377bb1e58e2136be1083b6bb2e702e96e64775ff488c9751b8 5482
+
+25 files, 25 rows. Counts computed from the listing, not asserted.
