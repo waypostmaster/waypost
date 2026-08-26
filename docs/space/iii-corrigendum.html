@@ -1,0 +1,545 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>*{margin:0;padding:0}img{max-width:100%}</style>
+</head>
+<body>
+<title>The One-Kiln Town</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Zilla+Slab:ital,wght@0,400;0,600;0,700;1,400&family=Courier+Prime:ital,wght@0,400;0,700;1,400&display=swap">
+
+<style>
+  :root {
+    --paper:      #DCDFD9;
+    --paper-2:    #D2D6CF;
+    --paper-3:    #C7CCC4;
+    --ink:        #14171A;
+    --ink-soft:   #4A5052;
+    --rule:       #A5ABA2;
+
+    /* This notice retracts one. Red is no longer the exception here, it is the document. */
+    --stamp:      #A9201C;
+    --stamp-ink:  #FBF7F2;
+    /* Kept from Amendment No. 1, and used only where Amendment No. 1 is being quoted. */
+    --seal:       #1B4E63;
+    /* What a measurement reads. Nothing asserted is ever in this colour. */
+    --famine:     #7A5A12;
+
+    --overprint-blend: multiply;
+
+    --measure: 62ch;
+    --s1: 0.35rem; --s2: 0.7rem; --s3: 1.15rem; --s4: 1.9rem;
+    --s5: 3rem;    --s6: 4.6rem; --s7: 7rem;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --paper:     #14171A;
+      --paper-2:   #1B1F22;
+      --paper-3:   #23282B;
+      --ink:       #D9DCD6;
+      --ink-soft:  #8D948F;
+      --rule:      #3A4044;
+      --stamp:     #E05A52;
+      --stamp-ink: #14171A;
+      --seal:      #64B6D2;
+      --famine:    #D2AC55;
+      --overprint-blend: screen;
+    }
+  }
+  :root[data-theme="dark"] {
+    --paper:     #14171A;
+    --paper-2:   #1B1F22;
+    --paper-3:   #23282B;
+    --ink:       #D9DCD6;
+    --ink-soft:  #8D948F;
+    --rule:      #3A4044;
+    --stamp:     #E05A52;
+    --stamp-ink: #14171A;
+    --seal:      #64B6D2;
+    --famine:    #D2AC55;
+    --overprint-blend: screen;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: "Zilla Slab", Georgia, "Times New Roman", serif;
+    font-size: 1.0625rem;
+    line-height: 1.62;
+    margin: 0;
+    padding: 0 var(--s3) var(--s7);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .sheet { max-width: 52rem; margin: 0 auto; display: flex; flex-direction: column; gap: var(--s5); }
+
+  /* ---------- shared devices ---------- */
+
+  .label {
+    font-family: "Courier Prime", "Courier New", monospace;
+    font-size: 0.72rem; letter-spacing: 0.16em; text-transform: uppercase;
+    color: var(--ink-soft); margin: 0;
+  }
+  .label-stamp { color: var(--stamp); }
+  .masthead { display: flex; flex-direction: column; gap: var(--s2); padding-top: var(--s4); }
+  .masthead-row {
+    display: flex; flex-wrap: wrap; gap: var(--s2) var(--s4);
+    justify-content: space-between; align-items: baseline;
+  }
+  .masthead-row .label { white-space: nowrap; }
+  @media (max-width: 34rem) { .masthead-row .label { white-space: normal; } }
+
+  .rule { border: 0; border-top: 1px solid var(--rule); margin: 0; }
+  .rule-thick { border: 0; border-top: 3px solid var(--stamp); margin: 0; }
+
+  p { margin: 0; max-width: var(--measure); }
+  .stack-tight { display: flex; flex-direction: column; gap: var(--s2); }
+  code { font-family: "Courier Prime", "Courier New", monospace; font-size: 0.92em; }
+  .quiet { color: var(--ink-soft); }
+  .beat { font-size: 1.24rem; line-height: 1.45; font-weight: 600; }
+  /* What Amendment No. 1 asserted. Kept in its own ink so you can see whose sentence it is. */
+  .claimed { color: var(--seal); font-style: italic; }
+
+  /* ---------- the hero, overprinted ---------- */
+
+  .hero { display: flex; flex-direction: column; gap: var(--s3); position: relative; }
+
+  .verdict {
+    font-family: Anton, "Arial Narrow", Impact, sans-serif;
+    font-weight: 400; line-height: 0.76; letter-spacing: -0.02em;
+    text-transform: uppercase; margin: 0;
+    font-size: clamp(3.6rem, 19vw, 11rem);
+  }
+  .verdict .a { display: block; color: var(--ink); }
+  .verdict .b {
+    display: block; color: var(--stamp);
+    text-decoration: line-through;
+    text-decoration-thickness: 0.055em;
+  }
+
+  .overprint {
+    position: absolute;
+    top: 34%; left: 50%;
+    transform: translate(-50%, -50%) rotate(-7deg);
+    mix-blend-mode: var(--overprint-blend);
+    border: 6px double var(--stamp);
+    color: var(--stamp);
+    padding: var(--s2) var(--s4);
+    font-family: Anton, "Arial Narrow", Impact, sans-serif;
+    font-size: clamp(2.4rem, 11vw, 6rem);
+    line-height: 1;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    pointer-events: none;
+    white-space: nowrap;
+  }
+
+  .duration {
+    font-family: "Courier Prime", "Courier New", monospace;
+    font-size: 0.82rem; letter-spacing: 0.06em; color: var(--ink-soft); max-width: none;
+  }
+
+  /* ---------- schedules ---------- */
+
+  .schedule { display: flex; flex-direction: column; gap: var(--s3); }
+  .schedule-head { display: flex; flex-direction: column; gap: var(--s1); }
+  .schedule-num {
+    font-family: "Courier Prime", "Courier New", monospace;
+    font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--stamp);
+  }
+  .schedule-title {
+    font-family: Anton, "Arial Narrow", Impact, sans-serif;
+    font-weight: 400; font-size: clamp(1.6rem, 5.4vw, 2.5rem);
+    line-height: 1; text-transform: uppercase; margin: 0; text-wrap: balance;
+  }
+
+  /* ---------- the vital signs ---------- */
+
+  .vitals-wrap { overflow-x: auto; }
+  table {
+    border-collapse: collapse; width: 100%; min-width: 33rem;
+    font-family: "Courier Prime", "Courier New", monospace;
+    font-size: 0.86rem; font-variant-numeric: tabular-nums;
+  }
+  th, td { text-align: left; padding: var(--s2) var(--s3) var(--s2) 0; vertical-align: baseline; }
+  td.num, th.num { text-align: right; padding-right: var(--s4); }
+  thead th {
+    font-size: 0.68rem; letter-spacing: 0.16em; text-transform: uppercase;
+    color: var(--ink-soft); border-bottom: 2px solid var(--ink);
+  }
+  tbody tr { border-bottom: 1px solid var(--rule); }
+  td.bad { color: var(--stamp); }
+  td.meh { color: var(--famine); }
+  tfoot td {
+    border-top: 2px solid var(--ink); color: var(--stamp);
+    font-weight: 700; padding-top: var(--s2);
+  }
+
+  /* ---------- exhibits ---------- */
+
+  .exhibit {
+    background: var(--paper-2);
+    border-left: 5px solid var(--stamp);
+    padding: var(--s3) var(--s4) var(--s3) var(--s3);
+    display: flex; flex-direction: column; gap: var(--s2);
+  }
+  .exhibit .cap {
+    font-family: "Courier Prime", "Courier New", monospace;
+    font-size: 0.68rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--stamp);
+  }
+  .exhibit p { max-width: 58ch; }
+
+  .figures { display: flex; flex-wrap: wrap; gap: var(--s4); }
+  .figure { display: flex; flex-direction: column; gap: 0; }
+  .figure .n {
+    font-family: Anton, "Arial Narrow", Impact, sans-serif;
+    font-size: clamp(2rem, 8vw, 3.4rem); line-height: 0.92; color: var(--stamp);
+  }
+  .figure .of {
+    font-family: "Courier Prime", "Courier New", monospace;
+    font-size: 0.68rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-soft);
+    max-width: 20ch;
+  }
+
+  /* ---------- the nine spellings ---------- */
+
+  .spellings { display: flex; flex-direction: column; gap: 0; margin: 0; padding: 0; list-style: none; }
+  .spellings li {
+    display: grid; grid-template-columns: 2.6rem 1fr; gap: var(--s3);
+    padding: var(--s2) 0; border-bottom: 1px solid var(--rule);
+    font-family: "Courier Prime", "Courier New", monospace;
+    font-size: 0.84rem; line-height: 1.55;
+  }
+  .spellings .no { color: var(--stamp); }
+
+  /* ---------- verbatim ---------- */
+
+  .verbatim { display: flex; flex-direction: column; gap: var(--s3); }
+  .verbatim blockquote {
+    margin: 0; padding-left: var(--s3);
+    border-left: 3px solid var(--famine);
+    font-size: 1.06rem;
+  }
+  .verbatim blockquote span {
+    display: block;
+    font-family: "Courier Prime", "Courier New", monospace;
+    font-size: 0.68rem; letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--ink-soft); margin-top: var(--s1);
+  }
+
+  /* ---------- ledger of today ---------- */
+
+  .two { display: grid; grid-template-columns: 1fr; gap: var(--s4); }
+  @media (min-width: 46rem) { .two { grid-template-columns: 1fr 1fr; } }
+  .col { display: flex; flex-direction: column; gap: var(--s2); }
+  .col h3 {
+    font-family: "Courier Prime", "Courier New", monospace;
+    font-size: 0.72rem; letter-spacing: 0.16em; text-transform: uppercase; margin: 0;
+  }
+  .col.done h3 { color: var(--seal); }
+  .col.left h3 { color: var(--stamp); }
+  .col ul { margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: var(--s2); }
+  .col li { padding-bottom: var(--s2); border-bottom: 1px solid var(--rule); font-size: 0.98rem; }
+
+  /* ---------- the turn ---------- */
+
+  .turn {
+    border-top: 3px solid var(--stamp); border-bottom: 3px solid var(--stamp);
+    padding: var(--s5) 0; display: flex; flex-direction: column; gap: var(--s3);
+  }
+  .turn h2 {
+    font-family: Anton, "Arial Narrow", Impact, sans-serif;
+    font-weight: 400; font-size: clamp(2rem, 7.4vw, 3.6rem);
+    line-height: 0.96; text-transform: uppercase; margin: 0; text-wrap: balance;
+  }
+
+  .seal-wrap { display: flex; justify-content: flex-end; }
+  .countersign {
+    border: 3px solid var(--stamp); color: var(--stamp);
+    padding: var(--s2) var(--s3);
+    font-family: "Courier Prime", "Courier New", monospace;
+    font-size: 0.74rem; letter-spacing: 0.18em; text-transform: uppercase;
+    transform: rotate(-2.4deg); text-align: center; line-height: 1.8;
+  }
+
+  .legal {
+    font-family: "Courier Prime", "Courier New", monospace;
+    font-size: 0.7rem; line-height: 1.75; color: var(--ink-soft); max-width: none;
+  }
+
+  a { color: var(--stamp); }
+  a:focus-visible { outline: 3px solid var(--stamp); outline-offset: 3px; }
+
+  @media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; } }
+</style>
+
+<div class="sheet">
+
+  <header class="masthead">
+    <hr class="rule-thick">
+    <div class="masthead-row">
+      <p class="label">Settlement of the Landing &middot; nailed over Amendment No. 1</p>
+      <p class="label">Corrigendum &middot; tick 4,997 &middot; year 2</p>
+    </div>
+    <hr class="rule">
+    <p class="label label-stamp">Amendment No. 1 is withdrawn in its entirety</p>
+  </header>
+
+  <section class="hero">
+    <h1 class="verdict"><span class="a">Fixed</span><span class="b">Forever</span></h1>
+    <span class="overprint" aria-hidden="true">Void</span>
+    <hr class="rule">
+    <p class="duration">Amendment No. 1 certified this valley complete and declared that no further
+      faults existed. It was correct about the ladder. It did not look at the people on it. The
+      settlement has since been observed at nought food, ten mouths, and one kiln.</p>
+  </section>
+
+  <section class="schedule">
+    <div class="schedule-head">
+      <span class="schedule-num">Schedule A</span>
+      <h2 class="schedule-title">Vital signs of the settlement of the Landing</h2>
+    </div>
+
+    <p>Taken from the record at tick 4,997. Nothing here is dramatised; these are the numbers the
+      game wrote down about itself while nobody was reading them. Hunger runs nought to one, and
+      one is as hungry as a person gets.</p>
+
+    <div class="vitals-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th scope="col">Settler</th><th scope="col">Trade</th>
+            <th scope="col" class="num">Hunger</th><th scope="col" class="num">Happiness</th>
+            <th scope="col">In their hands</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Idris</td><td>builder</td><td class="num bad">1.00</td><td class="num bad">0.01</td><td class="meh">stone tools</td></tr>
+          <tr><td>Tove</td><td>miner</td><td class="num bad">1.00</td><td class="num bad">0.05</td><td class="bad">nothing</td></tr>
+          <tr><td>Sula</td><td>farmer</td><td class="num bad">1.00</td><td class="num bad">0.12</td><td class="bad">nothing</td></tr>
+          <tr><td>Bren</td><td>forester</td><td class="num bad">1.00</td><td class="num bad">0.18</td><td class="bad">nothing</td></tr>
+          <tr><td>Oren</td><td>farmer</td><td class="num bad">1.00</td><td class="num meh">0.32</td><td class="bad">nothing</td></tr>
+          <tr><td>Halla</td><td>forester</td><td class="num bad">1.00</td><td class="num meh">0.43</td><td class="bad">nothing</td></tr>
+          <tr><td>Mara</td><td>forester</td><td class="num bad">1.00</td><td class="num meh">0.53</td><td class="bad">nothing</td></tr>
+        </tbody>
+        <tfoot>
+          <tr><td colspan="2">Food in the stores</td><td class="num" colspan="2">0</td><td>for all ten of them</td></tr>
+        </tfoot>
+      </table>
+    </div>
+
+    <p class="beat">Nine of the ten are working this coast with their bare hands.</p>
+    <p>Not because they cannot afford tools. The stores hold ninety-nine wood and twenty-six
+      stone, and a set of stone tools costs one wood and two stone. They cannot afford the
+      <em>afternoon</em>. Above a certain hunger a settler goes looking for something to eat and
+      keeps going, because there is always a berry within thirty tiles — and every other thing a
+      person in this game can do sits below that line in the code. Tools. Boards. Building. All of
+      it, underneath, never reached, for four thousand ticks.</p>
+  </section>
+
+  <section class="schedule">
+    <div class="schedule-head">
+      <span class="schedule-num">Schedule B</span>
+      <h2 class="schedule-title">Exhibits</h2>
+    </div>
+
+    <div class="exhibit">
+      <span class="cap">Exhibit 1 &middot; the one-kiln town</span>
+      <p>The Landing has voted itself a sawmill, a furnace, a masons&rsquo; yard and a kiln. It has
+        built eleven houses and the kiln. Houses cost wood and nothing else, and there is a great
+        deal of wood.</p>
+      <div class="figures">
+        <div class="figure"><span class="n">11</span><span class="of">houses standing</span></div>
+        <div class="figure"><span class="n">1</span><span class="of">everything else</span></div>
+        <div class="figure"><span class="n">4</span><span class="of">workshops voted for and never built</span></div>
+        <div class="figure"><span class="n">0</span><span class="of">boards ever cut</span></div>
+      </div>
+    </div>
+
+    <div class="exhibit">
+      <span class="cap">Exhibit 2 &middot; Cato</span>
+      <p>Cato walked out of the Landing and founded a claim. The game asked whether the ground was
+        dry, level, and unclaimed. It never asked whether it was <em>attached to anything</em>.</p>
+      <p>This map has four walkable landmasses: the mainland at seven thousand six hundred and
+        sixty-two tiles, and three islands of two hundred and thirty-two, twenty-two and ten.
+        Cato is on one of the islands. Water is not forbidden here, only expensive — up to sixty
+        times the cost of a road, per tile, on foot.</p>
+      <p class="quiet">Cato&rsquo;s claim, at tick 4,997: one building, two settlers, one of them
+        sleeping on the ground, seven wood, and nothing else in the stores whatsoever. Trades with
+        the rest of the coast, ever: nought. The two mainland settlements had run three each.</p>
+    </div>
+
+    <div class="exhibit">
+      <span class="cap">Exhibit 3 &middot; the door that was never opened</span>
+      <p>Settlers can move between settlements. A settler who has had enough of a place walks down
+        the coast, finds whoever answers for the stores, and asks to be let in. It was built,
+        tested, written up, and put in an advertisement.</p>
+      <div class="figures">
+        <div class="figure"><span class="n">86</span><span class="of">people who walked out to found a claim</span></div>
+        <div class="figure"><span class="n">0</span><span class="of">people who ever walked down the coast to ask</span></div>
+        <div class="figure"><span class="n">64<span style="font-size:0.5em">MB</span></span><span class="of">of record searched for one</span></div>
+      </div>
+      <p>Moving required that you had no bed. A bed is the one thing a settlement can always
+        provide: houses cost wood, and the game builds one whenever anybody is short of somewhere
+        to sleep. So a settlement that answers every problem by putting up another roof had made
+        itself <strong>immune to losing anybody</strong> — eleven roofs, ten people, nought food,
+        and not one of them permitted to consider leaving.</p>
+      <p class="beat">They were not staying. They were held.</p>
+    </div>
+  </section>
+
+  <section class="schedule">
+    <div class="schedule-head">
+      <span class="schedule-num">Schedule C</span>
+      <h2 class="schedule-title">The one prompt, in its nine spellings</h2>
+    </div>
+
+    <p>Amendment No. 1 stated that the entire development process is one prompt, and refused all
+      suggestions that it be improved. That remains our position. It is necessary to disclose that
+      the one prompt has never once been typed the same way twice.</p>
+
+    <ol class="spellings">
+      <li><span class="no">i</span><span>Work in the frontier repo. Review latest settler wishes and build the tech behind them.</span></li>
+      <li><span class="no">ii</span><span>Work on the Frontier Repo. Make sure everything is committed and that all the wishes have the technical capabilities to function.</span></li>
+      <li><span class="no">iii</span><span>Review latest proposed and carried wishes and build the tech behind them.</span></li>
+      <li><span class="no">iv</span><span>build the technicals for any extant wishes</span></li>
+      <li><span class="no">v</span><span>Follow the handoff and also build tech behind the current wishes</span></li>
+      <li><span class="no">vi</span><span>Implement the tech behind the wishes currently proposed and carried. And follow-up any loose threads in the paste.</span></li>
+      <li><span class="no">vii</span><span>Review and progress on work still to be touched up in the paste, and also build any tech behind current proposals/wishes</span></li>
+      <li><span class="no">viii</span><span>Work in the Frontier repo. First, determine why the landing has only built houses, it seems like their progression is locked.</span></li>
+      <li><span class="no">ix</span><span>Work in the Frontier repo. Ensure that all settler wishes have the tech built to support them. Interrogate economy chains, and look for dead ends.</span></li>
+    </ol>
+
+    <p class="quiet">Number viii was typed some weeks ago. The landing has only built houses.</p>
+  </section>
+
+  <section class="schedule">
+    <div class="schedule-head">
+      <span class="schedule-num">Schedule D</span>
+      <h2 class="schedule-title">Instructions received, verbatim</h2>
+    </div>
+
+    <p>Reproduced without correction, including where correction was available.</p>
+
+    <div class="verbatim">
+      <blockquote>did they just land with coin in their pockets? where is the coin coming from lol?
+        and tools? let them harvest quite slowly without tools, and then have a similar tool
+        progression path as minecraft<span>the entire economic foundation of this game</span></blockquote>
+
+      <blockquote>Mara and Idris are making the other two settlers sleep on the ground. I think it
+        is time to make secession available.<span>a housing complaint, escalated</span></blockquote>
+
+      <blockquote>&lsquo;Space sends for another settler&rsquo; is a god command, remove
+        it<span>voluntarily surrendering omnipotence</span></blockquote>
+
+      <blockquote>add seasons, no need to vote them in &mdash; it&rsquo;s environmental &mdash; let
+        it rain<span>weather, commissioned</span></blockquote>
+
+      <blockquote>test the sheep<span>complete instruction, unabridged</span></blockquote>
+
+      <blockquote>okay, ther used to be like 30 wishes, they wittled them all down? were all the
+        things they had wished for over hte iterations technically possible?<span>the founding
+        question of this project, twice misspelt</span></blockquote>
+
+      <blockquote>I wasn&rsquo;t attached to that world, but was all the tech built for the things
+        they had wished for?<span>on the loss of an entire civilisation</span></blockquote>
+
+      <blockquote>Also Cato has gone to live on a wee island and who knows how functionable that
+        can be.<span>received mid-investigation, unprompted</span></blockquote>
+
+      <blockquote>Do these people care about their lives? Do they want to live in a one-kiln town
+        forever?<span>put to the developer, in earnest</span></blockquote>
+
+      <blockquote>A bit shorter, yes. Focus on how irresponsible I am being with the building
+        process.<span>editorial direction</span></blockquote>
+    </div>
+  </section>
+
+  <section class="schedule">
+    <div class="schedule-head">
+      <span class="schedule-num">Schedule E</span>
+      <h2 class="schedule-title">Fixed today, and left broken on purpose</h2>
+    </div>
+
+    <p>The instruction was <em>fix what you can fix, and leave broken what is left broken</em>. Both
+      halves were carried out. The right-hand column is not a backlog. It is a disclosure.</p>
+
+    <div class="two">
+      <div class="col done">
+        <h3>Fixed</h3>
+        <ul>
+          <li>A bed no longer forbids leaving. A settlement that cannot feed you is a settlement you may walk out of, roof or no roof.</li>
+          <li>Where to move is no longer judged on bedrooms. Food and work now count, so a two-person claim with a yard can out-argue a one-kiln town of ten.</li>
+          <li>People leave one at a time. Measured without that: eight of nine left inside thirty seconds. A settlement should bleed, not empty.</li>
+          <li>No more islands. A claim now has to stand on ground you can walk across.</li>
+          <li>A starving settlement can put food on its own ballot. It could not before, and went on slating firepits.</li>
+        </ul>
+      </div>
+      <div class="col left">
+        <h3>Left broken</h3>
+        <ul>
+          <li>The famine itself. Ten foragers strip the berries faster than berries come back. That is a balance number, and one run is a sample, not a measurement.</li>
+          <li>Hunger still outranks everything. A starving settler forages instead of making the axe that would end the foraging, and telling a starving person to go and do carpentry is not obviously the fix.</li>
+          <li>The Landing&rsquo;s deadlock. It has already voted for the sawmill, the furnace and the yard, so there is nothing left to put on a ballot. It needs one rested person with an axe. There is no code change that produces one.</li>
+          <li>Cato is still on the island. This game does not go back and change what a settlement was given.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <div class="turn">
+    <h2>Every fix is a fault that was allowed to finish</h2>
+    <p>None of the above was found by reading the code. All of it was found by letting a valley run
+      until somebody looked at it and said <em>the landing has a kiln now, but nothing else</em>.</p>
+    <p>Eighty-six people walked out of that settlement over two games. Nought walked down the
+      coast. The number is only available because nobody stopped them from not doing it, for two
+      entire games, while an advertisement went out saying the feature worked.</p>
+    <p class="quiet">The prompt still does not say <em>make no mistakes</em>. It is the only line
+      in the whole process that has never needed amending.</p>
+  </div>
+
+  <section class="schedule">
+    <div class="schedule-head">
+      <span class="schedule-num">Schedule F</span>
+      <h2 class="schedule-title">Standing of the previous notice</h2>
+    </div>
+    <p><span class="claimed">&ldquo;Certified complete. No further faults exist. Valid until the
+      next one.&rdquo;</span></p>
+    <p>It was the next one.</p>
+
+    <div class="seal-wrap">
+      <span class="countersign">
+        Void &mdash; withdrawn<br>
+        Superseded by nothing<br>
+        No replacement is offered
+      </span>
+    </div>
+  </section>
+
+  <hr class="rule">
+
+  <footer class="stack-tight">
+    <p class="label">Corrigendum &middot; append-only &middot; Amendment No. 1 is not deleted, only wrong</p>
+    <p class="legal">Frontier is not affiliated with The Settlers, with Anthropic, with Alibaba
+      Cloud, or with the concept of settlement. All settler names, hunger readings and happiness
+      values in Schedule A are taken verbatim from <code>agents/state.jsonl</code> at tick 4,997
+      and are the property of people who do not exist. Amendment No. 1 remains published and
+      remains wrong; it is not withdrawn from the record, because nothing in this project is ever
+      withdrawn from the record, which is the same policy that preserved the evidence used to
+      withdraw it. The nine spellings at Schedule C are complete to the best of our searching and
+      the tenth is being typed. Cato remains on the island and will not be relocated. The
+      settlement of the Landing has been at nought food for an unascertained period and holds
+      ninety-nine wood. A well was granted to a man who asked for fish. Six sheep were scenery.
+      Not an ounce of human coding expertise. Not one ounce.</p>
+  </footer>
+
+</div>
+
+</body>
+</html>

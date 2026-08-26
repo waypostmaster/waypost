@@ -1,0 +1,467 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>*{margin:0;padding:0}img{max-width:100%}</style>
+</head>
+<body>
+<title>Frontier Public Notice</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Zilla+Slab:ital,wght@0,400;0,600;0,700;1,400&family=Courier+Prime:ital,wght@0,400;0,700;1,400&display=swap">
+
+<style>
+  :root {
+    --paper:      #DCDFD9;
+    --paper-2:    #D2D6CF;
+    --ink:        #14171A;
+    --ink-soft:   #4A5052;
+    --rule:       #A5ABA2;
+    --stamp:      #A9201C;
+    --stamp-ink:  #FBF7F2;
+
+    --measure: 60ch;
+    --s1: 0.35rem; --s2: 0.7rem; --s3: 1.15rem; --s4: 1.9rem;
+    --s5: 3rem;    --s6: 4.6rem; --s7: 7rem;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --paper:     #14171A;
+      --paper-2:   #1B1F22;
+      --ink:       #D9DCD6;
+      --ink-soft:  #8D948F;
+      --rule:      #3A4044;
+      --stamp:     #D94B44;
+      --stamp-ink: #14171A;
+    }
+  }
+  :root[data-theme="dark"] {
+    --paper:     #14171A;
+    --paper-2:   #1B1F22;
+    --ink:       #D9DCD6;
+    --ink-soft:  #8D948F;
+    --rule:      #3A4044;
+    --stamp:     #D94B44;
+    --stamp-ink: #14171A;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: "Zilla Slab", Georgia, "Times New Roman", serif;
+    font-size: 1.0625rem;
+    line-height: 1.62;
+    margin: 0;
+    padding: 0 var(--s3) var(--s7);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .sheet {
+    max-width: 46rem;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: var(--s5);
+  }
+
+  /* ---------- shared devices ---------- */
+
+  .label {
+    font-family: "Courier Prime", "Courier New", monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    margin: 0;
+  }
+
+  .rule { border: 0; border-top: 1px solid var(--rule); margin: 0; }
+  .rule-thick { border: 0; border-top: 3px solid var(--ink); margin: 0; }
+
+  p { margin: 0; max-width: var(--measure); }
+  .stack { display: flex; flex-direction: column; gap: var(--s3); }
+  .stack-tight { display: flex; flex-direction: column; gap: var(--s2); }
+
+  /* ---------- masthead ---------- */
+
+  .masthead {
+    display: flex;
+    flex-direction: column;
+    gap: var(--s2);
+    padding-top: var(--s4);
+  }
+  .masthead-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: var(--s2);
+  }
+
+  /* ---------- hero ---------- */
+
+  .hero { display: flex; flex-direction: column; gap: var(--s3); }
+
+  .wordmark {
+    font-family: Anton, "Arial Narrow", Impact, sans-serif;
+    font-weight: 400;
+    font-size: clamp(4.5rem, 21vw, 11.5rem);
+    line-height: 0.82;
+    letter-spacing: -0.015em;
+    text-transform: uppercase;
+    margin: 0;
+    text-wrap: balance;
+  }
+
+  .deck {
+    font-size: clamp(1.15rem, 3.4vw, 1.6rem);
+    line-height: 1.35;
+    font-weight: 600;
+    max-width: 34ch;
+    margin: 0;
+    text-wrap: balance;
+  }
+
+  .thesis {
+    font-family: Anton, "Arial Narrow", Impact, sans-serif;
+    font-size: clamp(1.7rem, 6.2vw, 3.1rem);
+    line-height: 1.02;
+    text-transform: uppercase;
+    letter-spacing: -0.005em;
+    margin: 0;
+    max-width: 20ch;
+    text-wrap: balance;
+  }
+  .thesis em {
+    font-style: normal;
+    color: var(--stamp);
+  }
+
+  /* ---------- articles ---------- */
+
+  .article { display: flex; flex-direction: column; gap: var(--s3); }
+
+  .article-head {
+    display: flex;
+    align-items: baseline;
+    gap: var(--s3);
+    border-bottom: 1px solid var(--rule);
+    padding-bottom: var(--s2);
+    flex-wrap: wrap;
+  }
+  .article-num {
+    font-family: "Courier Prime", "Courier New", monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--stamp);
+    white-space: nowrap;
+  }
+  .article-title {
+    font-family: Anton, "Arial Narrow", Impact, sans-serif;
+    font-size: clamp(1.35rem, 4vw, 2rem);
+    line-height: 1.05;
+    text-transform: uppercase;
+    margin: 0;
+    flex: 1 1 12rem;
+    text-wrap: balance;
+  }
+
+  .beat { font-size: 1.2rem; font-weight: 600; }
+  .lead-out { color: var(--ink-soft); }
+
+  /* ---------- the disclosure panel ---------- */
+
+  .disclosure {
+    border: 3px solid var(--ink);
+    padding: var(--s3);
+    display: flex;
+    flex-direction: column;
+    gap: var(--s2);
+    max-width: var(--measure);
+  }
+  .disclosure hr { border: 0; border-top: 1px solid var(--ink); margin: 0; }
+  .disclosure .headline {
+    font-family: Anton, "Arial Narrow", Impact, sans-serif;
+    font-size: 1.5rem;
+    line-height: 1.05;
+    text-transform: uppercase;
+    margin: 0;
+  }
+  .fact {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: var(--s3);
+    font-family: "Courier Prime", "Courier New", monospace;
+    font-size: 0.85rem;
+  }
+  .fact span:last-child {
+    text-align: right;
+    font-variant-numeric: tabular-nums;
+  }
+
+  /* ---------- the ladder ---------- */
+
+  .ladder {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    font-family: "Courier Prime", "Courier New", monospace;
+    font-size: 0.95rem;
+  }
+  .ladder li {
+    padding: var(--s1) 0 var(--s1) 0;
+    border-bottom: 1px dotted var(--rule);
+    display: flex;
+    gap: var(--s2);
+    align-items: baseline;
+  }
+  .ladder li:last-child { border-bottom: 0; color: var(--stamp); font-weight: 700; }
+  .ladder .arrow { color: var(--ink-soft); }
+
+  /* ---------- the record entry ---------- */
+
+  .record {
+    background: var(--paper-2);
+    border-left: 4px solid var(--stamp);
+    padding: var(--s3);
+    font-family: "Courier Prime", "Courier New", monospace;
+    font-size: 0.9rem;
+    line-height: 1.55;
+    display: flex;
+    flex-direction: column;
+    gap: var(--s2);
+    overflow-x: auto;
+  }
+  .record .head { color: var(--ink-soft); }
+  .record .tick { font-weight: 700; }
+  .record blockquote {
+    margin: 0;
+    padding-left: var(--s2);
+    border-left: 2px solid var(--rule);
+    font-style: italic;
+  }
+  .record .meta { color: var(--ink-soft); }
+
+  /* ---------- the turn ---------- */
+
+  .turn {
+    background: var(--ink);
+    color: var(--paper);
+    padding: var(--s5) var(--s4);
+    margin: 0 calc(var(--s3) * -1);
+    display: flex;
+    flex-direction: column;
+    gap: var(--s3);
+  }
+  .turn h2 {
+    font-family: Anton, "Arial Narrow", Impact, sans-serif;
+    font-size: clamp(1.9rem, 7vw, 3.4rem);
+    line-height: 0.98;
+    text-transform: uppercase;
+    margin: 0;
+    max-width: 16ch;
+    text-wrap: balance;
+  }
+  .turn p { color: var(--paper); }
+  .turn .quiet { color: var(--rule); }
+
+  /* ---------- call to action ---------- */
+
+  .cta { display: flex; flex-direction: column; gap: var(--s3); align-items: flex-start; }
+  /* Named, not `.cta h2` — that also matched the article title sitting in this section's own
+     header, at a higher specificity than `.article-title`, and set it six rem tall. */
+  .cta-head { width: 100%; }
+  .cta-line {
+    font-family: Anton, "Arial Narrow", Impact, sans-serif;
+    font-size: clamp(2.6rem, 12vw, 6rem);
+    line-height: 0.88;
+    text-transform: uppercase;
+    margin: 0;
+    text-wrap: balance;
+  }
+  .struck {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-family: "Courier Prime", "Courier New", monospace;
+    font-size: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: var(--s1);
+    color: var(--ink-soft);
+  }
+  .struck li { text-decoration: line-through; text-decoration-thickness: 2px; }
+
+  /* ---------- stamp ---------- */
+
+  .stamp-wrap { display: flex; justify-content: flex-end; }
+  .stamp {
+    display: inline-block;
+    border: 3px solid var(--stamp);
+    color: var(--stamp);
+    font-family: "Courier Prime", "Courier New", monospace;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    padding: var(--s2) var(--s3);
+    transform: rotate(-4deg);
+    animation: land 620ms cubic-bezier(0.2, 1.4, 0.4, 1) both;
+  }
+  @keyframes land {
+    from { transform: rotate(-16deg) scale(1.7); opacity: 0; }
+    to   { transform: rotate(-4deg) scale(1); opacity: 1; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .stamp { animation: none; }
+  }
+
+  /* ---------- legal ---------- */
+
+  .legal {
+    font-family: "Courier Prime", "Courier New", monospace;
+    font-size: 0.68rem;
+    line-height: 1.5;
+    color: var(--ink-soft);
+    text-align: justify;
+    max-width: 100%;
+    margin: 0;
+  }
+
+  a { color: var(--stamp); }
+  a:focus-visible, .stamp:focus-visible {
+    outline: 3px solid var(--stamp);
+    outline-offset: 3px;
+  }
+</style>
+
+<div class="sheet">
+
+  <header class="masthead">
+    <hr class="rule-thick">
+    <div class="masthead-row">
+      <p class="label">Settlement of the Landing &middot; posted at the store</p>
+      <p class="label">Tick 11,119 &middot; Year 2, day 11</p>
+    </div>
+    <hr class="rule">
+    <p class="label">Public notice &middot; read it or do not</p>
+  </header>
+
+  <section class="hero">
+    <h1 class="wordmark">Frontier</h1>
+    <p class="deck">A game about ten people on a coast who have to vote for everything.</p>
+    <hr class="rule">
+    <p class="thesis">This isn't just vibe coded. <em>It's vibe legislated.</em></p>
+  </section>
+
+  <section class="article">
+    <div class="article-head">
+      <span class="article-num">Article I</span>
+      <h2 class="article-title">Disclosure of authorship</h2>
+    </div>
+
+    <div class="disclosure">
+      <p class="headline">Not an ounce of human coding expertise</p>
+      <hr>
+      <div class="fact"><span>Written mostly by</span><span>a claude-qwen mashup</span></div>
+      <div class="fact"><span>Human expertise, by weight</span><span>0 oz</span></div>
+      <div class="fact"><span>Longest file</span><span>345 KB</span></div>
+      <div class="fact"><span>Read in full by anyone</span><span>no</span></div>
+      <div class="fact"><span>Runs</span><span>yes</span></div>
+    </div>
+
+    <p>There is a file in this repository that is three hundred and forty-five kilobytes long. Nobody has read all of it. It runs.</p>
+  </section>
+
+  <section class="article">
+    <div class="article-head">
+      <span class="article-num">Article II</span>
+      <h2 class="article-title">Nothing here is given</h2>
+    </div>
+
+    <p>Every rung is stood on. A settler wants a sawmill. Follow it down:</p>
+
+    <ol class="ladder">
+      <li><span class="arrow">&rarr;</span><span>A mill wants a saw</span></li>
+      <li><span class="arrow">&rarr;</span><span>A saw is a blade</span></li>
+      <li><span class="arrow">&rarr;</span><span>A blade is iron</span></li>
+      <li><span class="arrow">&rarr;</span><span>Iron is a furnace</span></li>
+      <li><span class="arrow">&rarr;</span><span>A furnace has to be voted for</span></li>
+    </ol>
+
+    <p>No furnace was ever voted for.</p>
+    <p class="beat">So nine hundred separate times, somebody walked across the valley to a building site to be told there was no iron.</p>
+    <p>We know it was nine hundred because we counted them.</p>
+    <p class="lead-out">They kept walking. Nobody told them to stop. We had to write code to make them stop.</p>
+  </section>
+
+  <section class="article">
+    <div class="article-head">
+      <span class="article-num">Article III</span>
+      <h2 class="article-title">Entered into the record</h2>
+    </div>
+
+    <p>The following is not a testimonial. It is a proposal, filed by a settler, carried by ballot, and reproduced here exactly as the settlement holds it.</p>
+
+    <div class="record">
+      <div class="head">## wish-120 &middot; Anselm, farmer &middot; tick 7029 <code>npc-14</code></div>
+      <div class="tick">- [x] A salmon trap</div>
+      <blockquote>I wish for a way to catch a salmon without having to fish for it, since the water is too cold to hold my breath for long.</blockquote>
+      <div class="meta">**Kind:** well</div>
+      <div class="meta">**Carried:** carried in Sula&rsquo;s claim &mdash; 1 of 2 first preferences, 36 round(s).</div>
+    </div>
+
+    <p>He was given a well.</p>
+    <p>He did not ask for a well. The word <em>water</em> appeared in a subordinate clause, explaining that he did not wish to be in it, and that was the only word in the whole proposal the catalogue recognised.</p>
+    <p>He voted for it thirty-six times.</p>
+    <p class="beat">There are no fish.</p>
+  </section>
+
+  <div class="turn">
+    <h2>Unhinged is part of the design</h2>
+    <p>Settlers can leave now. If a settlement stops working for someone, they will walk down the coast and ask another settlement to take them in.</p>
+    <p>Somebody has to say yes.</p>
+    <p>They say yes if there is enough food. That is the entire test. Not whether they like you. Not whether you are useful. Whether there are four more meals than there are mouths.</p>
+    <p class="quiet">This is the first vote in the game with an exit attached.</p>
+  </div>
+
+  <section class="article cta">
+    <div class="article-head cta-head">
+      <span class="article-num">Article IV</span>
+      <h2 class="article-title">How to obtain a copy</h2>
+    </div>
+
+    <h2 class="cta-line">You can not code it too</h2>
+
+    <ul class="struck">
+      <li>Clone the repository</li>
+      <li>Star the repository</li>
+      <li>Read the contributing guide</li>
+      <li>Join the community</li>
+    </ul>
+
+    <p>It&rsquo;s a folder. On a laptop. In a house.</p>
+
+    <div class="stamp-wrap">
+      <span class="stamp">Carried &mdash; 9 of 10</span>
+    </div>
+  </section>
+
+  <hr class="rule">
+
+  <footer class="stack-tight">
+    <p class="label">Notice of the proceedings &middot; append-only &middot; landed rows are never edited</p>
+    <p class="legal">Frontier is not affiliated with The Settlers, with Anthropic, with Alibaba Cloud, or with the concept of settlement. Tempo, key and energy are not guaranteed. The record reached fifty-nine megabytes across two hundred and six thousand eight hundred and eighty-three lines and had to be sealed into segments; sealed segments are never deleted, because we are frightened of what would happen. <code>wish-22</code> asked for a furnace and was granted a charcoal kiln, and that vote stands. It will always stand. This game does not go back and change what a settlement was given. A tax was agreed and took nothing whatsoever for the entire duration of its existence and has since been repaired; no restitution is available to affected parties, who are fictional. A well was granted to a man who asked for fish. Not an ounce of human coding expertise. Not one ounce.</p>
+  </footer>
+
+</div>
+
+</body>
+</html>

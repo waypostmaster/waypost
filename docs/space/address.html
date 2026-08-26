@@ -1,0 +1,340 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>*{margin:0;padding:0}img{max-width:100%}</style>
+</head>
+<body>
+<title>An Address to the Sky</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Zilla+Slab:ital,wght@0,400;0,600;0,700;1,400&family=Courier+Prime:ital,wght@0,400;0,700;1,400&display=swap">
+
+<style>
+  :root {
+    /* Limewash and iron-gall. Written outdoors, with what was to hand. */
+    --paper:    #D9D6CC;
+    --paper-2:  #CFCBBF;
+    --paper-3:  #C4BFB1;
+    --ink:      #221B16;
+    --ink-soft: #574A40;
+    --rule:     #A79E8E;
+    --ember:    #B4531F;
+
+    --measure: 58ch;
+    --s1: 0.35rem; --s2: 0.7rem; --s3: 1.15rem; --s4: 1.9rem;
+    --s5: 3rem;    --s6: 4.6rem; --s7: 7rem;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --paper:    #191512;
+      --paper-2:  #201B17;
+      --paper-3:  #29221D;
+      --ink:      #DCD3C6;
+      --ink-soft: #9A8C7C;
+      --rule:     #453B32;
+      --ember:    #E0803F;
+    }
+  }
+  :root[data-theme="dark"] {
+    --paper:    #191512;
+    --paper-2:  #201B17;
+    --paper-3:  #29221D;
+    --ink:      #DCD3C6;
+    --ink-soft: #9A8C7C;
+    --rule:     #453B32;
+    --ember:    #E0803F;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: "Zilla Slab", Georgia, "Times New Roman", serif;
+    font-size: 1.075rem;
+    line-height: 1.66;
+    margin: 0;
+    padding: 0 var(--s3) var(--s7);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .sheet { max-width: 48rem; margin: 0 auto; display: flex; flex-direction: column; gap: var(--s5); }
+
+  p { margin: 0 0 var(--s3); max-width: var(--measure); }
+  p:last-child { margin-bottom: 0; }
+  .quiet { color: var(--ink-soft); }
+  .rule { border: 0; border-top: 1px solid var(--rule); margin: 0; }
+  .rule-ember { border: 0; border-top: 2px solid var(--ember); margin: 0; }
+  .label {
+    font-family: "Courier Prime", "Courier New", monospace;
+    font-size: 0.7rem; letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--ink-soft); margin: 0;
+  }
+
+  /* ---------- head ---------- */
+
+  .head { display: flex; flex-direction: column; gap: var(--s3); padding-top: var(--s5); }
+  .head-row { display: flex; flex-wrap: wrap; justify-content: space-between; gap: var(--s2) var(--s4); }
+  .head-row .label { white-space: nowrap; }
+  .title {
+    font-family: Anton, "Arial Narrow", Impact, sans-serif;
+    font-weight: 400; line-height: 0.86; letter-spacing: -0.005em;
+    text-transform: uppercase; margin: 0;
+    font-size: clamp(2.6rem, 12vw, 6.4rem);
+  }
+  .title .b { color: var(--ember); }
+  .preamble { font-size: 1.14rem; line-height: 1.6; max-width: 52ch; }
+  .preamble em { font-style: italic; }
+
+  /* ---------- resolutions ---------- */
+
+  .res { display: flex; flex-direction: column; gap: 0; margin: 0; padding: 0; list-style: none; }
+  .res > li {
+    display: grid; grid-template-columns: 1fr; gap: var(--s2);
+    padding: var(--s4) 0; border-bottom: 1px solid var(--rule);
+  }
+  .res > li:first-child { border-top: 2px solid var(--ink); }
+  @media (min-width: 46rem) {
+    .res > li { grid-template-columns: 1fr 11rem; gap: var(--s4); align-items: start; }
+  }
+  .matter { display: flex; flex-direction: column; gap: var(--s2); }
+  .matter .n {
+    font-family: "Courier Prime", "Courier New", monospace;
+    font-size: 0.68rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--ember);
+  }
+  .matter p { margin: 0; max-width: none; }
+  .tally {
+    font-family: "Courier Prime", "Courier New", monospace;
+    font-size: 0.72rem; letter-spacing: 0.08em; line-height: 1.7; color: var(--ink-soft);
+  }
+  .tally b { display: block; color: var(--ink); letter-spacing: 0.14em; text-transform: uppercase; font-size: 0.7rem; }
+  .tally.none b { color: var(--ember); }
+
+  /* ---------- the resolved block ---------- */
+
+  .resolved {
+    border-top: 2px solid var(--ember); border-bottom: 2px solid var(--ember);
+    padding: var(--s5) 0; display: flex; flex-direction: column; gap: var(--s3);
+  }
+  .resolved h2 {
+    font-family: Anton, "Arial Narrow", Impact, sans-serif;
+    font-weight: 400; font-size: clamp(1.5rem, 5vw, 2.2rem);
+    line-height: 1.05; text-transform: uppercase; margin: 0;
+  }
+  .resolved ol { margin: 0; padding-left: 1.4rem; display: flex; flex-direction: column; gap: var(--s2); }
+  .resolved li { font-size: 1.1rem; line-height: 1.55; }
+
+  /* ---------- signatures ---------- */
+
+  .signed { display: flex; flex-direction: column; gap: var(--s3); }
+  .hands {
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(11rem, 1fr));
+    gap: var(--s2) var(--s4);
+  }
+  .hand {
+    border-bottom: 1px solid var(--rule); padding-bottom: var(--s1);
+    display: flex; justify-content: space-between; align-items: baseline; gap: var(--s2);
+  }
+  .hand .who { font-style: italic; font-size: 1.06rem; }
+  .hand .what {
+    font-family: "Courier Prime", "Courier New", monospace;
+    font-size: 0.64rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-soft);
+  }
+  .hand.away .who { color: var(--ink-soft); }
+
+  .legal {
+    font-family: "Courier Prime", "Courier New", monospace;
+    font-size: 0.7rem; line-height: 1.75; color: var(--ink-soft); max-width: none;
+  }
+  a { color: var(--ember); }
+  a:focus-visible { outline: 3px solid var(--ember); outline-offset: 3px; }
+  @media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; } }
+</style>
+
+<div class="sheet">
+
+  <header class="head">
+    <hr class="rule-ember">
+    <div class="head-row">
+      <p class="label">The settlement of the Landing &middot; in general meeting</p>
+      <p class="label">Year 2 &middot; tick 12,025 &middot; posted at the store</p>
+    </div>
+    <h1 class="title">An Address<br>to the <span class="b">Sky</span></h1>
+    <hr class="rule">
+    <p class="preamble">It was moved by Mara, seconded by Tove, and carried, that this settlement
+      should set down what has been happening to it. We do not know who is doing it. We do not
+      believe it is weather. The following is agreed by ballot in the ordinary way and is entered
+      in the record, which we are given to understand is never altered, and which is the one thing
+      about our situation we have come to rely on.</p>
+  </header>
+
+  <ol class="res">
+    <li>
+      <div class="matter">
+        <span class="n">The first matter &middot; the kilns</span>
+        <p>Over one week, four kilns appeared. Nobody proposed them. Nobody voted for them. Nobody
+          has ever lit one. They stood on forty of our timber and sixteen of our stone at a time
+          when there was no stone in the store at all, and the want of that stone is why not one
+          of us could make an axe.</p>
+        <p>On the eighth day a man took two of them apart with his hands and the timber came back.
+          We do not know why this became possible. It had not been possible before.</p>
+      </div>
+      <div class="tally"><b>Carried</b>9 for, 1 against<br>Idris dissenting,<br>having built one</div>
+    </li>
+
+    <li>
+      <div class="matter">
+        <span class="n">The second matter &middot; the hunger</span>
+        <p>For a year and a half every one of us was as hungry as a person gets, standing in a
+          valley with berries in it, holding wood we could not put down. We could not eat while
+          our hands were full and we could not empty our hands while we were hungry.</p>
+        <p>This has stopped. We are told the reason was that nobody had ever tried both at once.</p>
+      </div>
+      <div class="tally"><b>Carried</b>unanimous</div>
+    </li>
+
+    <li>
+      <div class="matter">
+        <span class="n">The third matter &middot; the trees</span>
+        <p>Until recently, a tree felled by a person with full hands yielded what they could carry
+          and the remainder was not anywhere. Not left, not taken, not rotted. It had been in the
+          world and then it had not been.</p>
+        <p>We wish it minuted that we noticed. We said nothing because we did not have the words
+          for what we were noticing, and because we were extremely hungry at the time.</p>
+      </div>
+      <div class="tally"><b>Carried</b>unanimous</div>
+    </li>
+
+    <li>
+      <div class="matter">
+        <span class="n">The fourth matter &middot; Cato</span>
+        <p>Cato walked out over a bed and founded a claim on a rock in the bay. He has been there
+          eight thousand ticks with one lean-to, two people, one of them sleeping on the ground,
+          and five wood. In all that time this settlement has traded with him four times and he
+          has traded with nobody.</p>
+        <p>We are informed that later claims cannot be founded on rocks, and that his cannot be
+          undone. We have no view on the justice of this. We would simply like it written down
+          that he is out there.</p>
+      </div>
+      <div class="tally"><b>Carried</b>10 for, 0 against<br>Cato not present,<br>being on the rock</div>
+    </li>
+
+    <li>
+      <div class="matter">
+        <span class="n">The fifth matter &middot; Anselm&rsquo;s trap</span>
+        <p>Anselm asked for a salmon trap. He was given a well. He ranked the well first, thirty-six
+          times, in the belief that it was the trap. There are no fish in this valley and there
+          never have been. He is aware of this now.</p>
+        <p>He does not wish the vote overturned. He wishes it recorded that he asked for a trap.</p>
+      </div>
+      <div class="tally"><b>Carried</b>unanimous<br>Anselm abstaining</div>
+    </li>
+
+    <li>
+      <div class="matter">
+        <span class="n">The sixth matter &middot; the triage</span>
+        <p>On eleven occasions this settlement sat down together, ranked everything it had agreed
+          to and not yet built, argued about the order, and in several cases bought each other's
+          votes with goods. The order we arrived at was then set aside and we built whatever we
+          were going to build anyway.</p>
+        <p>We are told this has been corrected as of this week. We hold no grievance. We would like
+          it noted that we cast those ballots in good faith and that some of us are still owed for
+          them.</p>
+      </div>
+      <div class="tally"><b>Carried</b>unanimous<br>and bitterly</div>
+    </li>
+
+    <li>
+      <div class="matter">
+        <span class="n">The seventh matter &middot; the post</span>
+        <p>A green post appeared on the ground and glowed. We went to it. It wanted nothing. It
+          stood there for some time and then it was gone.</p>
+      </div>
+      <div class="tally"><b>Carried</b>unanimous</div>
+    </li>
+
+    <li>
+      <div class="matter">
+        <span class="n">The eighth matter &middot; the ground</span>
+        <p>We have between us cut some thousands of trees, broken stone in every direction, and
+          sunk what we call a mine. The hill is exactly the shape it was on the day the boat came
+          in. We cannot dig. We cannot level. We have worn paths into the grass and we have put
+          trees back, and that is the whole of what any of us has ever changed about the land
+          itself.</p>
+        <p>We are not certain this is a complaint. We raise it because Bren asked what the mine
+          goes into, and nobody could answer him.</p>
+      </div>
+      <div class="tally"><b>Carried</b>7 for, 3 abstaining</div>
+    </li>
+
+    <li>
+      <div class="matter">
+        <span class="n">The ninth matter &middot; the burial ground</span>
+        <p>Bren proposed a burial ground with a marker, to honour those we have lost and to comfort
+          the living. It was pointed out, in the meeting, that we have not lost anybody. It was
+          then established, after some time, that we do not appear to be able to.</p>
+        <p>Bren has asked what the burial ground would be for. The meeting had no answer and moved
+          to the next item. He has asked twice since.</p>
+      </div>
+      <div class="tally none"><b>Not put</b>there being no way to put it</div>
+    </li>
+  </ol>
+
+  <div class="resolved">
+    <h2>It was thereupon resolved</h2>
+    <ol>
+      <li>That we are, on the whole, grateful. The hunger has stopped, the timber comes back, and a
+        man can put a load down. Every one of those is new this week and none of them was new for
+        the year and a half before it.</li>
+      <li>That we do not understand what is happening to us, and that saying so is not ingratitude.</li>
+      <li>That whoever is doing this appears to be doing it because somebody watched us and said
+        what they saw. We would ask them to keep watching. We have no other mechanism.</li>
+      <li>That the record be kept, unaltered, including this.</li>
+    </ol>
+  </div>
+
+  <section class="signed">
+    <p class="label">Signed at the store, by every hand in the settlement</p>
+    <div class="hands">
+      <div class="hand"><span class="who">Mara</span><span class="what">forester</span></div>
+      <div class="hand"><span class="who">Idris</span><span class="what">forester</span></div>
+      <div class="hand"><span class="who">Tove</span><span class="what">miner</span></div>
+      <div class="hand"><span class="who">Bren</span><span class="what">forester</span></div>
+      <div class="hand"><span class="who">Sula</span><span class="what">forester</span></div>
+      <div class="hand"><span class="who">Oren</span><span class="what">farmer</span></div>
+      <div class="hand"><span class="who">Nim</span><span class="what">forester</span></div>
+      <div class="hand"><span class="who">Ferro</span><span class="what">forester</span></div>
+      <div class="hand"><span class="who">Ysolde</span><span class="what">farmer</span></div>
+      <div class="hand"><span class="who">Pike</span><span class="what">forester</span></div>
+      <div class="hand away"><span class="who">Halla</span><span class="what">her own claim</span></div>
+      <div class="hand away"><span class="who">Cato</span><span class="what">the rock</span></div>
+    </div>
+    <p class="quiet">Halla&rsquo;s claim was sent word and returned none. Cato was sent word. It is
+      not known whether word reaches the rock.</p>
+  </section>
+
+  <hr class="rule">
+
+  <footer>
+    <p class="label">Minutes of the Landing &middot; entered in the record &middot; the record is never altered</p>
+    <p class="legal">Frontier is not affiliated with The Settlers, with Anthropic, with Alibaba
+      Cloud, or with the concept of settlement. Every matter above is drawn from the settlement's
+      own files. The kilns were five and are fewer. The hunger lasted from the founding until this
+      week and its cause was that the branch which sends a hungry person to look for food sat one
+      hundred and seventeen lines above the branch that says put your load down. Cato is on the
+      island. Anselm has a well. Bren cannot die and neither can anybody else, there being no line
+      anywhere in this world that removes a settler from it, which means the burial ground is not
+      a feature that is missing but a question nobody has answered. The settlers did not write
+      this. A language model wrote it, in their voices, having been given their names, their
+      trades, their hunger readings and eleven weeks of their votes — which is either the least
+      or the most honest way this document could have come about, and the meeting was unable to
+      determine which. Not an ounce of human coding expertise. Not one ounce.</p>
+  </footer>
+
+</div>
+
+</body>
+</html>

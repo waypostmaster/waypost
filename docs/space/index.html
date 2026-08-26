@@ -3,15 +3,15 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<style>*{margin:0;padding:0}img{max-width:100%}</style>
-</head>
-<body>
-<title>Frontier Public Notice</title>
+<title>The Record &middot; Frontier</title>
+<meta name="description" content="Nine documents published in five hours about a game that has not shipped. In order, including the ones that were wrong.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Zilla+Slab:ital,wght@0,400;0,600;0,700;1,400&family=Courier+Prime:ital,wght@0,400;0,700;1,400&display=swap">
 
 <style>
+  /* The press. Same tokens as every sheet in this record, so that the binding and the
+     things bound are visibly the same object. */
   :root {
     --paper:      #DCDFD9;
     --paper-2:    #D2D6CF;
@@ -83,7 +83,6 @@
   .rule-thick { border: 0; border-top: 3px solid var(--ink); margin: 0; }
 
   p { margin: 0; max-width: var(--measure); }
-  .stack { display: flex; flex-direction: column; gap: var(--s3); }
   .stack-tight { display: flex; flex-direction: column; gap: var(--s2); }
 
   /* ---------- masthead ---------- */
@@ -108,7 +107,7 @@
   .wordmark {
     font-family: Anton, "Arial Narrow", Impact, sans-serif;
     font-weight: 400;
-    font-size: clamp(4.5rem, 21vw, 11.5rem);
+    font-size: clamp(4.2rem, 19vw, 10.5rem);
     line-height: 0.82;
     letter-spacing: -0.015em;
     text-transform: uppercase;
@@ -135,10 +134,7 @@
     max-width: 20ch;
     text-wrap: balance;
   }
-  .thesis em {
-    font-style: normal;
-    color: var(--stamp);
-  }
+  .thesis em { font-style: normal; color: var(--stamp); }
 
   /* ---------- articles ---------- */
 
@@ -199,55 +195,160 @@
     font-family: "Courier Prime", "Courier New", monospace;
     font-size: 0.85rem;
   }
-  .fact span:last-child {
-    text-align: right;
-    font-variant-numeric: tabular-nums;
-  }
+  .fact span:last-child { text-align: right; font-variant-numeric: tabular-nums; }
 
-  /* ---------- the ladder ---------- */
+  /* ---------- the run of sheets ---------- */
 
-  .ladder {
-    list-style: none;
-    padding: 0;
-    margin: 0;
+  /* One rule down the left of the whole run, so that nine separate documents read as one
+     continuous thing. The numerals sit on it. */
+  .run {
     display: flex;
     flex-direction: column;
+    gap: var(--s5);
+    border-left: 1px solid var(--rule);
+    padding-left: var(--s4);
+    margin-left: 0.9rem;
+  }
+
+  .entry { display: flex; flex-direction: column; gap: var(--s3); position: relative; }
+
+  .numeral {
+    position: absolute;
+    left: calc(var(--s4) * -1 - 0.9rem);
+    top: -0.15rem;
+    width: 1.8rem;
+    text-align: center;
     font-family: "Courier Prime", "Courier New", monospace;
-    font-size: 0.95rem;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    color: var(--stamp);
+    background: var(--paper);
+    padding: 0.15rem 0;
   }
-  .ladder li {
-    padding: var(--s1) 0 var(--s1) 0;
-    border-bottom: 1px dotted var(--rule);
-    display: flex;
-    gap: var(--s2);
-    align-items: baseline;
+  .numeral.unnumbered { color: var(--ink-soft); }
+
+  .entry-head { display: flex; flex-direction: column; gap: var(--s1); align-items: flex-start; }
+  .entry-title {
+    font-family: Anton, "Arial Narrow", Impact, sans-serif;
+    font-size: clamp(1.5rem, 5.2vw, 2.4rem);
+    line-height: 1.02;
+    text-transform: uppercase;
+    margin: 0;
+    text-wrap: balance;
   }
-  .ladder li:last-child { border-bottom: 0; color: var(--stamp); font-weight: 700; }
-  .ladder .arrow { color: var(--ink-soft); }
+  .entry-title a { color: inherit; text-decoration: none; }
+  .entry-title a:hover { color: var(--stamp); }
 
-  /* ---------- the record entry ---------- */
+  .chip {
+    font-family: "Courier Prime", "Courier New", monospace;
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--stamp);
+    border: 2px solid var(--stamp);
+    padding: 0.2rem 0.55rem;
+    margin-top: var(--s1);
+  }
 
-  .record {
+  .entry-body {
+    display: grid;
+    grid-template-columns: 240px 1fr;
+    gap: var(--s3) var(--s4);
+    align-items: start;
+  }
+  .entry-text { display: flex; flex-direction: column; gap: var(--s2); }
+
+  /* The plate is the sheet itself, held at arm's length. Nothing here is a picture of a
+     document; it is the document, too small to read, which is what a plate is for. */
+  .plate {
+    display: block;
+    position: relative;
+    width: 100%;
+    aspect-ratio: 10 / 13;
+    overflow: hidden;
+    border: 1px solid var(--rule);
     background: var(--paper-2);
-    border-left: 4px solid var(--stamp);
-    padding: var(--s3);
-    font-family: "Courier Prime", "Courier New", monospace;
-    font-size: 0.9rem;
-    line-height: 1.55;
+    text-decoration: none;
+  }
+  .plate iframe {
+    position: absolute;
+    top: 0; left: 0;
+    width: 1000px;
+    height: 1300px;
+    border: 0;
+    pointer-events: none;
+    transform-origin: top left;
+    /* 240px against a 1000px page, in pixels so the plate cannot come unscaled from
+       the reader's root font size. The container clips whatever is left over. */
+    transform: scale(0.24);
+  }
+  .plate::after {
+    content: "";
+    position: absolute;
+    inset: auto 0 0 0;
+    height: 30%;
+    background: linear-gradient(to bottom, transparent, var(--paper));
+    pointer-events: none;
+  }
+  .plate:hover { border-color: var(--stamp); }
+
+  .pull {
+    font-size: 1.2rem;
+    font-weight: 600;
+    line-height: 1.32;
+    text-wrap: balance;
+  }
+
+  .then {
     display: flex;
     flex-direction: column;
-    gap: var(--s2);
-    overflow-x: auto;
-  }
-  .record .head { color: var(--ink-soft); }
-  .record .tick { font-weight: 700; }
-  .record blockquote {
-    margin: 0;
+    gap: 0.1rem;
+    border-left: 3px solid var(--stamp);
     padding-left: var(--s2);
-    border-left: 2px solid var(--rule);
-    font-style: italic;
+    margin-top: var(--s1);
+    max-width: var(--measure);
   }
-  .record .meta { color: var(--ink-soft); }
+  .then-k {
+    font-family: "Courier Prime", "Courier New", monospace;
+    font-size: 0.68rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+  }
+  .then-v { font-weight: 600; }
+
+  .read {
+    font-family: "Courier Prime", "Courier New", monospace;
+    font-size: 0.8rem;
+    letter-spacing: 0.04em;
+  }
+
+  /* ---------- the concordance ---------- */
+
+  .conc { display: flex; flex-direction: column; }
+  .conc-row {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: var(--s1) var(--s3);
+    align-items: baseline;
+    padding: var(--s2) 0;
+    border-bottom: 1px dotted var(--rule);
+  }
+  .conc-row:last-child { border-bottom: 0; }
+  .conc-fact { font-size: 0.98rem; }
+  .marks {
+    font-family: "Courier Prime", "Courier New", monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.04em;
+    white-space: nowrap;
+    display: flex;
+    gap: 0.3rem;
+  }
+  .marks i { font-style: normal; }
+  .marks .on  { color: var(--stamp); font-weight: 700; }
+  .marks .off { color: var(--rule); }
 
   /* ---------- the turn ---------- */
 
@@ -255,32 +356,32 @@
     background: var(--ink);
     color: var(--paper);
     padding: var(--s5) var(--s4);
-    margin: 0 calc(var(--s3) * -1);
+    margin: 0 calc(var(--s4) * -1);
     display: flex;
     flex-direction: column;
     gap: var(--s3);
   }
-  .turn h2 {
-    font-family: Anton, "Arial Narrow", Impact, sans-serif;
-    font-size: clamp(1.9rem, 7vw, 3.4rem);
-    line-height: 0.98;
-    text-transform: uppercase;
-    margin: 0;
-    max-width: 16ch;
-    text-wrap: balance;
-  }
   .turn p { color: var(--paper); }
   .turn .quiet { color: var(--rule); }
+  .turn .label { color: var(--rule); }
+  .turn .run { border-left-color: var(--rule); }
+  .turn .entry-title a { color: var(--paper); }
+  .turn .entry-title a:hover { color: var(--stamp); }
+  .turn .chip { color: var(--paper); border-color: var(--rule); }
+  .turn .then { border-left-color: var(--rule); }
+  .turn .then-k { color: var(--rule); }
+  .turn .plate { border-color: var(--rule); }
+  .turn .plate::after { background: linear-gradient(to bottom, transparent, var(--ink)); }
+  .turn .numeral { background: var(--ink); color: var(--rule); }
+  .turn a { color: var(--paper); }
 
   /* ---------- call to action ---------- */
 
   .cta { display: flex; flex-direction: column; gap: var(--s3); align-items: flex-start; }
-  /* Named, not `.cta h2` — that also matched the article title sitting in this section's own
-     header, at a higher specificity than `.article-title`, and set it six rem tall. */
   .cta-head { width: 100%; }
   .cta-line {
     font-family: Anton, "Arial Narrow", Impact, sans-serif;
-    font-size: clamp(2.6rem, 12vw, 6rem);
+    font-size: clamp(2.4rem, 11vw, 5.4rem);
     line-height: 0.88;
     text-transform: uppercase;
     margin: 0;
@@ -319,9 +420,7 @@
     from { transform: rotate(-16deg) scale(1.7); opacity: 0; }
     to   { transform: rotate(-4deg) scale(1); opacity: 1; }
   }
-  @media (prefers-reduced-motion: reduce) {
-    .stamp { animation: none; }
-  }
+  @media (prefers-reduced-motion: reduce) { .stamp { animation: none; } }
 
   /* ---------- legal ---------- */
 
@@ -336,129 +435,427 @@
   }
 
   a { color: var(--stamp); }
-  a:focus-visible, .stamp:focus-visible {
+  a:focus-visible, .plate:focus-visible {
     outline: 3px solid var(--stamp);
     outline-offset: 3px;
   }
+
+  /* ---------- narrow ---------- */
+
+  @media (max-width: 40rem) {
+    .run { padding-left: var(--s3); margin-left: 0.65rem; }
+    .numeral { left: calc(var(--s3) * -1 - 0.65rem); width: 1.3rem; font-size: 0.68rem; }
+    .entry-body { grid-template-columns: 1fr; }
+    .plate { max-width: 240px; }
+    .conc-row { grid-template-columns: 1fr; }
+    .turn { margin: 0 calc(var(--s3) * -1); padding: var(--s4) var(--s3); }
+  }
 </style>
+</head>
+<body>
 
 <div class="sheet">
 
   <header class="masthead">
     <hr class="rule-thick">
     <div class="masthead-row">
-      <p class="label">Settlement of the Landing &middot; posted at the store</p>
-      <p class="label">Tick 11,119 &middot; Year 2, day 11</p>
+      <p class="label">Settlement of the Landing &middot; the whole of it, in order</p>
+      <p class="label">Nine sheets &middot; one evening &middot; nothing withdrawn</p>
     </div>
     <hr class="rule">
-    <p class="label">Public notice &middot; read it or do not</p>
+    <p class="label">The record &middot; append-only &middot; landed rows are never edited</p>
   </header>
 
   <section class="hero">
-    <h1 class="wordmark">Frontier</h1>
-    <p class="deck">A game about ten people on a coast who have to vote for everything.</p>
+    <h1 class="wordmark">The<br>Record</h1>
+    <p class="deck">Nine documents published in five hours about a game that has not shipped.</p>
     <hr class="rule">
-    <p class="thesis">This isn't just vibe coded. <em>It's vibe legislated.</em></p>
+    <p class="thesis">Every one of them was wrong about something. <em>None of them has been deleted.</em></p>
   </section>
 
   <section class="article">
     <div class="article-head">
       <span class="article-num">Article I</span>
-      <h2 class="article-title">Disclosure of authorship</h2>
+      <h2 class="article-title">What is on file</h2>
     </div>
 
     <div class="disclosure">
-      <p class="headline">Not an ounce of human coding expertise</p>
+      <p class="headline">Nine sheets, one withdrawn, none removed</p>
       <hr>
-      <div class="fact"><span>Written mostly by</span><span>a claude-qwen mashup</span></div>
+      <div class="fact"><span>Documents published</span><span>9</span></div>
+      <div class="fact"><span>Elapsed, first to last</span><span>5 h 04 min</span></div>
+      <div class="fact"><span>Games shipped</span><span>0</span></div>
+      <div class="fact"><span>Documents withdrawn</span><span>1</span></div>
+      <div class="fact"><span>Documents deleted</span><span>0</span></div>
+      <div class="fact"><span>Feature requests on file</span><span>49</span></div>
+      <div class="fact"><span>Fish</span><span>0</span></div>
       <div class="fact"><span>Human expertise, by weight</span><span>0 oz</span></div>
-      <div class="fact"><span>Longest file</span><span>345 KB</span></div>
-      <div class="fact"><span>Read in full by anyone</span><span>no</span></div>
-      <div class="fact"><span>Runs</span><span>yes</span></div>
     </div>
 
-    <p>There is a file in this repository that is three hundred and forty-five kilobytes long. Nobody has read all of it. It runs.</p>
+    <p>They were written to advertise a game. Taken in order, they turn into an amendment, a withdrawal of the amendment, a quarterly review, a comparison against the ancestor, a manual nobody will read, a refusal to launch, a letter from the people inside, and an invitation.</p>
+
+    <p>Nothing about that shape was planned. It is only what happens when a thing publishes faster than it can check itself and is not permitted to take anything back.</p>
+
+    <p class="lead-out">Each sheet below opens in a window of its own. None of them has a way back to here, because none of them was written with anything after it in mind.</p>
   </section>
 
   <section class="article">
     <div class="article-head">
       <span class="article-num">Article II</span>
-      <h2 class="article-title">Nothing here is given</h2>
+      <h2 class="article-title">The record, in order</h2>
     </div>
 
-    <p>Every rung is stood on. A settler wants a sawmill. Follow it down:</p>
+    <div class="run">
 
-    <ol class="ladder">
-      <li><span class="arrow">&rarr;</span><span>A mill wants a saw</span></li>
-      <li><span class="arrow">&rarr;</span><span>A saw is a blade</span></li>
-      <li><span class="arrow">&rarr;</span><span>A blade is iron</span></li>
-      <li><span class="arrow">&rarr;</span><span>Iron is a furnace</span></li>
-      <li><span class="arrow">&rarr;</span><span>A furnace has to be voted for</span></li>
-    </ol>
+      <article class="entry" id="i">
+        <span class="numeral">I</span>
+        <div class="entry-head">
+          <p class="label">19:04 &middot; the first</p>
+          <h3 class="entry-title"><a href="i-public-notice.html" target="_blank" rel="noopener">Frontier Public Notice</a></h3>
+          <span class="chip">Carried &mdash; 9 of 10</span>
+        </div>
+        <div class="entry-body">
+          <a class="plate" href="i-public-notice.html" target="_blank" rel="noopener" aria-hidden="true" tabindex="-1">
+            <iframe src="i-public-notice.html" loading="lazy" scrolling="no" title="Frontier Public Notice"></iframe>
+          </a>
+          <div class="entry-text">
+            <p class="pull">&ldquo;This isn&rsquo;t just vibe coded. It&rsquo;s vibe legislated.&rdquo;</p>
+            <p>An advertisement, and the only sheet here that is only an advertisement. It discloses the authorship, walks the material ladder down from a sawmill to a furnace nobody ever voted for, and enters into the record a proposal from a farmer who asked for a salmon trap and was granted a well.</p>
+            <div class="then">
+              <span class="then-k">What followed</span>
+              <span class="then-v">Two hours and five minutes later, the same press declared the valley fixed forever.</span>
+            </div>
+            <p class="read"><a href="i-public-notice.html" target="_blank" rel="noopener">Read the sheet in full &rarr;</a></p>
+          </div>
+        </div>
+      </article>
 
-    <p>No furnace was ever voted for.</p>
-    <p class="beat">So nine hundred separate times, somebody walked across the valley to a building site to be told there was no iron.</p>
-    <p>We know it was nine hundred because we counted them.</p>
-    <p class="lead-out">They kept walking. Nobody told them to stop. We had to write code to make them stop.</p>
+      <article class="entry" id="ii">
+        <span class="numeral">II</span>
+        <div class="entry-head">
+          <p class="label">21:10 &middot; two hours and five minutes later</p>
+          <h3 class="entry-title"><a href="ii-amendment.html" target="_blank" rel="noopener">The Frontier Amendment</a></h3>
+          <span class="chip">Void &mdash; withdrawn</span>
+        </div>
+        <div class="entry-body">
+          <a class="plate" href="ii-amendment.html" target="_blank" rel="noopener" aria-hidden="true" tabindex="-1">
+            <iframe src="ii-amendment.html" loading="lazy" scrolling="no" title="The Frontier Amendment"></iframe>
+          </a>
+          <div class="entry-text">
+            <p class="pull">&ldquo;Certified complete. No further faults exist. Valid until the next one.&rdquo;</p>
+            <p>Seven faults in the building ladder, found and corrected in a single sitting, and a schedule reproducing the entire development process: nine words and a full stop. A standing order forbids anyone from suggesting the prompt be improved. The line <em>make no mistakes</em> was proposed, weighed, and deliberately struck, on the grounds that the mistakes are the input.</p>
+            <div class="then">
+              <span class="then-k">What followed</span>
+              <span class="then-v">Withdrawn in its entirety. Twenty-eight minutes.</span>
+            </div>
+            <p class="read"><a href="ii-amendment.html" target="_blank" rel="noopener">Read the sheet in full &rarr;</a></p>
+          </div>
+        </div>
+      </article>
+
+      <article class="entry" id="iii">
+        <span class="numeral">III</span>
+        <div class="entry-head">
+          <p class="label">21:38 &middot; twenty-eight minutes later</p>
+          <h3 class="entry-title"><a href="iii-corrigendum.html" target="_blank" rel="noopener">The One-Kiln Town</a></h3>
+          <span class="chip">No. 1 withdrawn</span>
+        </div>
+        <div class="entry-body">
+          <a class="plate" href="iii-corrigendum.html" target="_blank" rel="noopener" aria-hidden="true" tabindex="-1">
+            <iframe src="iii-corrigendum.html" loading="lazy" scrolling="no" title="The One-Kiln Town"></iframe>
+          </a>
+          <div class="entry-text">
+            <p class="pull">&ldquo;It was correct about the ladder. It did not look at the people on it.&rdquo;</p>
+            <p>Ten settlers at maximum hunger with nought food, ninety-nine wood they could not spend, eleven houses and one kiln. A man named Cato had founded a claim on an island, because the check for where a claim may stand asked whether the ground was dry, level and unclaimed, and never asked whether it was attached to anything. Eighty-six people had walked out of a settlement and nought had ever walked down the coast &mdash; in a feature that had been advertised as working.</p>
+            <div class="then">
+              <span class="then-k">What followed</span>
+              <span class="then-v">It left the famine unfixed, on the grounds that one run is a sample and not a measurement. That was wrong too.</span>
+            </div>
+            <p class="read"><a href="iii-corrigendum.html" target="_blank" rel="noopener">Read the sheet in full &rarr;</a></p>
+          </div>
+        </div>
+      </article>
+
+      <article class="entry" id="iv">
+        <span class="numeral">IV</span>
+        <div class="entry-head">
+          <p class="label">22:13 &middot; thirty-four minutes later</p>
+          <h3 class="entry-title"><a href="iv-backlog.html" target="_blank" rel="noopener">The Settlers&rsquo; Backlog</a></h3>
+          <span class="chip">Period closed &middot; 49 open</span>
+        </div>
+        <div class="entry-body">
+          <a class="plate" href="iv-backlog.html" target="_blank" rel="noopener" aria-hidden="true" tabindex="-1">
+            <iframe src="iv-backlog.html" loading="lazy" scrolling="no" title="The Settlers' Backlog"></iframe>
+          </a>
+          <div class="entry-text">
+            <p class="pull">&ldquo;They asked for a commodities exchange while holding six sticks.&rdquo;</p>
+            <p>Forty-nine feature requests, filed verbatim by ten people with no food and no tools: a standardised valuation framework, a labour-time bank, a curtain wall with gates, a mortuary. Groomed and dispositioned in the ordinary way. The root cause of the period&rsquo;s headline metric turns out to be one line of arithmetic &mdash; they were too full to eat and too hungry to put anything down, and all ten were in the same state, so nothing ever moved first.</p>
+            <div class="then">
+              <span class="then-k">What followed</span>
+              <span class="then-v">Not a balance problem. A deadlock, and it had been running for the whole of a game.</span>
+            </div>
+            <p class="read"><a href="iv-backlog.html" target="_blank" rel="noopener">Read the sheet in full &rarr;</a></p>
+          </div>
+        </div>
+      </article>
+
+      <article class="entry" id="v">
+        <span class="numeral">V</span>
+        <div class="entry-head">
+          <p class="label">22:39 &middot; twenty-six minutes later</p>
+          <h3 class="entry-title"><a href="v-divergence.html" target="_blank" rel="noopener">Notes on a Divergence</a></h3>
+          <span class="chip">Five of seven</span>
+        </div>
+        <div class="entry-body">
+          <a class="plate" href="v-divergence.html" target="_blank" rel="noopener" aria-hidden="true" tabindex="-1">
+            <iframe src="v-divergence.html" loading="lazy" scrolling="no" title="Notes on a Divergence"></iframe>
+          </a>
+          <div class="entry-text">
+            <p class="pull">&ldquo;All magic has been eliminated.&rdquo;</p>
+            <p>A comparison against the ancestor, trait by trait, and a catalogue of what decision by committee has actually produced in this valley. Then a claim, stated the way an advertisement states a thing &mdash; and audited immediately underneath by the party making it, which is the part advertisements usually leave out. It is also where the cairn first appears, filed by mistake as a request for a cart.</p>
+            <div class="then">
+              <span class="then-k">What followed</span>
+              <span class="then-v">Five of seven. A felled tree still destroys what nobody can carry. The claim was true for about an hour, which is longer than the last one managed.</span>
+            </div>
+            <p class="read"><a href="v-divergence.html" target="_blank" rel="noopener">Read the sheet in full &rarr;</a></p>
+          </div>
+        </div>
+      </article>
+
+      <article class="entry" id="vi">
+        <span class="numeral">VI</span>
+        <div class="entry-head">
+          <p class="label">22:59 &middot; twenty minutes later</p>
+          <h3 class="entry-title"><a href="vi-handbook.html" target="_blank" rel="noopener">A Settler&rsquo;s Handbook</a></h3>
+          <span class="chip">Sixth printing</span>
+        </div>
+        <div class="entry-body">
+          <a class="plate" href="vi-handbook.html" target="_blank" rel="noopener" aria-hidden="true" tabindex="-1">
+            <iframe src="vi-handbook.html" loading="lazy" scrolling="no" title="A Settler's Handbook"></iframe>
+          </a>
+          <div class="entry-text">
+            <p class="pull">&ldquo;This handbook is accurate as of the printing and will not be.&rdquo;</p>
+            <p>Installation, the two verbs available to a player, and a troubleshooting table in which every symptom is a real fault of the game and several of the remedies read <em>no action required, in perpetuity</em>. Documentation for something that has not shipped, addressed to nobody, printed sixth after five advertisements.</p>
+            <div class="then">
+              <span class="then-k">What followed</span>
+              <span class="then-v">Called an art piece for one. Fourteen minutes later a review found the settlement had five kilns.</span>
+            </div>
+            <p class="read"><a href="vi-handbook.html" target="_blank" rel="noopener">Read the sheet in full &rarr;</a></p>
+          </div>
+        </div>
+      </article>
+
+      <article class="entry" id="vii">
+        <span class="numeral">VII</span>
+        <div class="entry-head">
+          <p class="label">23:13 &middot; fourteen minutes later</p>
+          <h3 class="entry-title"><a href="vii-readiness.html" target="_blank" rel="noopener">No Go for Launch</a></h3>
+          <span class="chip">No go</span>
+        </div>
+        <div class="entry-body">
+          <a class="plate" href="vii-readiness.html" target="_blank" rel="noopener" aria-hidden="true" tabindex="-1">
+            <iframe src="vii-readiness.html" loading="lazy" scrolling="no" title="No Go for Launch"></iframe>
+          </a>
+          <div class="entry-text">
+            <p class="pull">&ldquo;A thing that cannot be tested without the author watching it is not ready to be given to somebody else.&rdquo;</p>
+            <p>Ten subsystems polled by the party responsible for the defects. Every finding of the period traced back to its origin, and every origin reads <em>a player looked at it</em>. There are four automated checks in the repository, all of them good; not one of them ever originated a finding. The tenth line of that list was introduced four hours earlier by the party preparing the review. It also retracts something three previous sheets asserted with confidence: there is no laptop.</p>
+            <div class="then">
+              <span class="then-k">What followed</span>
+              <span class="then-v">Twenty-one minutes of nothing, and then the settlement wrote back.</span>
+            </div>
+            <p class="read"><a href="vii-readiness.html" target="_blank" rel="noopener">Read the sheet in full &rarr;</a></p>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <div class="turn">
+    <p class="label">Not numbered &middot; 23:35 &middot; twenty-one minutes after the review</p>
+    <div class="run">
+      <article class="entry" id="address">
+        <span class="numeral unnumbered">&mdash;</span>
+        <div class="entry-head">
+          <h3 class="entry-title"><a href="address.html" target="_blank" rel="noopener">An Address to the Sky</a></h3>
+          <span class="chip">Signed by every hand</span>
+        </div>
+        <div class="entry-body">
+          <a class="plate" href="address.html" target="_blank" rel="noopener" aria-hidden="true" tabindex="-1">
+            <iframe src="address.html" loading="lazy" scrolling="no" title="An Address to the Sky"></iframe>
+          </a>
+          <div class="entry-text">
+            <p class="pull">&ldquo;We do not understand what is happening to us, and saying so is not ingratitude.&rdquo;</p>
+            <p>Moved by Mara, seconded by Tove, and carried. Nine matters minuted in the ordinary way: the four kilns that appeared without a vote, the year and a half of hunger, the trees that were not anywhere, Cato, Anselm&rsquo;s trap, the eleven ballots that were set aside, the green post that wanted nothing, the ground that cannot be dug, and the burial ground the meeting had no answer for.</p>
+            <p class="quiet">This sheet is not numbered. The other eight are documents about a game. This one is the game answering &mdash; and what it asks for, having listed everything that has been done to it, is that whoever is doing this keeps watching, because it has no other mechanism.</p>
+            <div class="then">
+              <span class="then-k">What followed</span>
+              <span class="then-v">Thirty-three minutes later the valley was opened.</span>
+            </div>
+            <p class="read"><a href="address.html" target="_blank" rel="noopener">Read the sheet in full &rarr;</a></p>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+
+  <section class="article">
+    <div class="run">
+      <article class="entry" id="viii">
+        <span class="numeral">VIII</span>
+        <div class="entry-head">
+          <p class="label">00:09 &middot; thirty-three minutes later &middot; the last</p>
+          <h3 class="entry-title"><a href="viii-open-call.html" target="_blank" rel="noopener">A Stone on Your Cairn</a></h3>
+          <span class="chip">Open call</span>
+        </div>
+        <div class="entry-body">
+          <a class="plate" href="viii-open-call.html" target="_blank" rel="noopener" aria-hidden="true" tabindex="-1">
+            <iframe src="viii-open-call.html" loading="lazy" scrolling="no" title="A Stone on Your Cairn"></iframe>
+          </a>
+          <div class="entry-text">
+            <p class="pull">Cuiridh mi clach air do ch&agrave;rn.</p>
+            <p>Bren asked for a burial ground and the meeting had no answer, because nobody in this world can die. Months later Cato filed two words from the rock in the bay. The answer had been standing in the valley the whole time &mdash; a heap of stones has never only been a signpost &mdash; so the cairn now marks the ways and the people both. It is the only thing here not raised by a vote. It goes up one stone at a time, one each, by name.</p>
+            <p>And then, for the first time in eight documents, the press asks for something: that some of the ten be thought for by a different mind.</p>
+            <div class="then">
+              <span class="then-k">What followed</span>
+              <span class="then-v">Nothing yet. This is where the record stops, which is not the same as where it ends.</span>
+            </div>
+            <p class="read"><a href="viii-open-call.html" target="_blank" rel="noopener">Read the sheet in full &rarr;</a></p>
+          </div>
+        </div>
+      </article>
+    </div>
   </section>
 
   <section class="article">
     <div class="article-head">
       <span class="article-num">Article III</span>
-      <h2 class="article-title">Entered into the record</h2>
+      <h2 class="article-title">The through-line</h2>
     </div>
 
-    <p>The following is not a testimonial. It is a proposal, filed by a settler, carried by ballot, and reproduced here exactly as the settlement holds it.</p>
+    <p>The nine sheets were written one after another with no plan between them, and the same facts keep walking back in. Below: what recurs, and which sheets carry it. The columns are the sheets in order, and the dash is the Address.</p>
 
-    <div class="record">
-      <div class="head">## wish-120 &middot; Anselm, farmer &middot; tick 7029 <code>npc-14</code></div>
-      <div class="tick">- [x] A salmon trap</div>
-      <blockquote>I wish for a way to catch a salmon without having to fish for it, since the water is too cold to hold my breath for long.</blockquote>
-      <div class="meta">**Kind:** well</div>
-      <div class="meta">**Carried:** carried in Sula&rsquo;s claim &mdash; 1 of 2 first preferences, 36 round(s).</div>
+    <div class="conc">
+      <div class="conc-row">
+        <span class="conc-fact">A well was granted to a man who asked for fish</span>
+        <span class="marks"><i class="on">I</i><i class="on">II</i><i class="on">III</i><i class="on">IV</i><i class="on">V</i><i class="on">VI</i><i class="on">VII</i><i class="on">&mdash;</i><i class="on">VIII</i></span>
+      </div>
+      <div class="conc-row">
+        <span class="conc-fact">Not an ounce of human coding expertise</span>
+        <span class="marks"><i class="on">I</i><i class="on">II</i><i class="on">III</i><i class="on">IV</i><i class="on">V</i><i class="on">VI</i><i class="on">VII</i><i class="on">&mdash;</i><i class="on">VIII</i></span>
+      </div>
+      <div class="conc-row">
+        <span class="conc-fact">Nothing is ever withdrawn from the record</span>
+        <span class="marks"><i class="on">I</i><i class="on">II</i><i class="on">III</i><i class="on">IV</i><i class="on">V</i><i class="off">VI</i><i class="off">VII</i><i class="on">&mdash;</i><i class="on">VIII</i></span>
+      </div>
+      <div class="conc-row">
+        <span class="conc-fact">There is no death, and no line anywhere that removes a settler</span>
+        <span class="marks"><i class="off">I</i><i class="off">II</i><i class="off">III</i><i class="on">IV</i><i class="on">V</i><i class="on">VI</i><i class="on">VII</i><i class="on">&mdash;</i><i class="on">VIII</i></span>
+      </div>
+      <div class="conc-row">
+        <span class="conc-fact">Bren asked for a burial ground, and asked twice more</span>
+        <span class="marks"><i class="off">I</i><i class="off">II</i><i class="off">III</i><i class="on">IV</i><i class="on">V</i><i class="on">VI</i><i class="on">VII</i><i class="on">&mdash;</i><i class="on">VIII</i></span>
+      </div>
+      <div class="conc-row">
+        <span class="conc-fact">Six sheep were scenery for the whole of one game</span>
+        <span class="marks"><i class="off">I</i><i class="on">II</i><i class="on">III</i><i class="on">IV</i><i class="on">V</i><i class="off">VI</i><i class="off">VII</i><i class="off">&mdash;</i><i class="on">VIII</i></span>
+      </div>
+      <div class="conc-row">
+        <span class="conc-fact">Cato is on the rock in the bay and cannot be moved</span>
+        <span class="marks"><i class="off">I</i><i class="off">II</i><i class="on">III</i><i class="on">IV</i><i class="on">V</i><i class="off">VI</i><i class="off">VII</i><i class="on">&mdash;</i><i class="on">VIII</i></span>
+      </div>
+      <div class="conc-row">
+        <span class="conc-fact">The kilns &mdash; one, then four, then five</span>
+        <span class="marks"><i class="off">I</i><i class="off">II</i><i class="on">III</i><i class="off">IV</i><i class="off">V</i><i class="on">VI</i><i class="on">VII</i><i class="on">&mdash;</i><i class="on">VIII</i></span>
+      </div>
+      <div class="conc-row">
+        <span class="conc-fact">The prompt does not say <em>make no mistakes</em></span>
+        <span class="marks"><i class="off">I</i><i class="on">II</i><i class="on">III</i><i class="on">IV</i><i class="off">V</i><i class="on">VI</i><i class="on">VII</i><i class="off">&mdash;</i><i class="off">VIII</i></span>
+      </div>
+      <div class="conc-row">
+        <span class="conc-fact">Eleven houses, and one of everything else</span>
+        <span class="marks"><i class="off">I</i><i class="off">II</i><i class="on">III</i><i class="on">IV</i><i class="on">V</i><i class="off">VI</i><i class="off">VII</i><i class="off">&mdash;</i><i class="on">VIII</i></span>
+      </div>
+      <div class="conc-row">
+        <span class="conc-fact">A furnace was voted for and a charcoal kiln was granted</span>
+        <span class="marks"><i class="on">I</i><i class="on">II</i><i class="off">III</i><i class="off">IV</i><i class="on">V</i><i class="on">VI</i><i class="off">VII</i><i class="off">&mdash;</i><i class="off">VIII</i></span>
+      </div>
+      <div class="conc-row">
+        <span class="conc-fact">Ten people starving in a valley of food, with their arms full</span>
+        <span class="marks"><i class="off">I</i><i class="off">II</i><i class="off">III</i><i class="on">IV</i><i class="off">V</i><i class="on">VI</i><i class="on">VII</i><i class="on">&mdash;</i><i class="off">VIII</i></span>
+      </div>
+      <div class="conc-row">
+        <span class="conc-fact">It is a folder, in a house &mdash; retracted at VII, there being no laptop</span>
+        <span class="marks"><i class="on">I</i><i class="on">II</i><i class="off">III</i><i class="off">IV</i><i class="off">V</i><i class="on">VI</i><i class="on">VII</i><i class="off">&mdash;</i><i class="off">VIII</i></span>
+      </div>
+      <div class="conc-row">
+        <span class="conc-fact">A tax was agreed and took nothing whatsoever</span>
+        <span class="marks"><i class="on">I</i><i class="off">II</i><i class="off">III</i><i class="on">IV</i><i class="on">V</i><i class="off">VI</i><i class="off">VII</i><i class="off">&mdash;</i><i class="off">VIII</i></span>
+      </div>
+      <div class="conc-row">
+        <span class="conc-fact">The cairn &mdash; a filing error at V, the answer at VIII</span>
+        <span class="marks"><i class="off">I</i><i class="off">II</i><i class="off">III</i><i class="off">IV</i><i class="on">V</i><i class="off">VI</i><i class="off">VII</i><i class="off">&mdash;</i><i class="on">VIII</i></span>
+      </div>
     </div>
 
-    <p>He was given a well.</p>
-    <p>He did not ask for a well. The word <em>water</em> appeared in a subordinate clause, explaining that he did not wish to be in it, and that was the only word in the whole proposal the catalogue recognised.</p>
-    <p>He voted for it thirty-six times.</p>
-    <p class="beat">There are no fish.</p>
+    <p>Two of them are in all nine.</p>
+
+    <p class="beat">One is a disclosure about who wrote the documents. The other is a farmer who asked for a salmon trap, was granted a well because the only word the catalogue recognised was <em>water</em> &mdash; in a subordinate clause explaining that he did not wish to be in it &mdash; ranked it first thirty-six times in the belief that it was the trap, and has now been named in every single thing this project has ever published.</p>
+
+    <p class="lead-out">There are no fish. There is no plan to add fish. The vote stands and it will always stand, because this game does not go back and change what a settlement was given &mdash; which is the same rule that put all nine of these sheets on one page and will not let a single one of them be taken down.</p>
   </section>
 
-  <div class="turn">
-    <h2>Unhinged is part of the design</h2>
-    <p>Settlers can leave now. If a settlement stops working for someone, they will walk down the coast and ask another settlement to take them in.</p>
-    <p>Somebody has to say yes.</p>
-    <p>They say yes if there is enough food. That is the entire test. Not whether they like you. Not whether you are useful. Whether there are four more meals than there are mouths.</p>
-    <p class="quiet">This is the first vote in the game with an exit attached.</p>
-  </div>
+  <section class="article">
+    <div class="article-head">
+      <span class="article-num">Article IV</span>
+      <h2 class="article-title">Where it stands</h2>
+    </div>
+
+    <div class="disclosure">
+      <p class="headline">As of the last sheet</p>
+      <hr>
+      <div class="fact"><span>Disposition</span><span>NO GO</span></div>
+      <div class="fact"><span>Reviewed by</span><span>&mdash;</span></div>
+      <div class="fact"><span>Win condition</span><span>none</span></div>
+      <div class="fact"><span>End state</span><span>none</span></div>
+      <div class="fact"><span>Settlers who can die</span><span>0</span></div>
+      <div class="fact"><span>Stones on the cairn</span><span>3</span></div>
+    </div>
+
+    <p>The review that returned NO GO was prepared by the party responsible for the defects and reviewed by nobody, and its reasoning is not that the work is bad. It is that every fault in this project was found by one person watching one valley and saying what they saw, and that a thing which cannot be tested without its author watching it is not ready to be handed to somebody else.</p>
+
+    <p>The last sheet is the first one that asks for anything. It asks for other minds to take a settler each.</p>
+
+    <p class="lead-out">There is no link here to the game, because there is nowhere for the link to go. It is a folder. It is not on a laptop &mdash; see the retraction at VII &mdash; and the machine the valley thinks with does not move.</p>
+  </section>
 
   <section class="article cta">
     <div class="article-head cta-head">
-      <span class="article-num">Article IV</span>
-      <h2 class="article-title">How to obtain a copy</h2>
+      <span class="article-num">Article V</span>
+      <h2 class="article-title">How to read this record</h2>
     </div>
 
-    <h2 class="cta-line">You can not code it too</h2>
+    <h2 class="cta-line">Start at one and believe every word</h2>
 
     <ul class="struck">
-      <li>Clone the repository</li>
-      <li>Star the repository</li>
-      <li>Read the contributing guide</li>
-      <li>Join the community</li>
+      <li>Skip to the latest</li>
+      <li>Read the corrections first</li>
+      <li>Assume the newest one is right</li>
+      <li>Wait for the one that holds</li>
     </ul>
 
-    <p>It&rsquo;s a folder. On a laptop. In a house.</p>
+    <p>Each sheet is true at the moment of printing and stops being true somewhere inside the next one. That is not a defect in the record. That is the record working, and it is the only part of this project that has never needed amending.</p>
 
     <div class="stamp-wrap">
-      <span class="stamp">Carried &mdash; 9 of 10</span>
+      <span class="stamp">Nine sheets &mdash; none removed</span>
     </div>
   </section>
 
   <hr class="rule">
 
   <footer class="stack-tight">
-    <p class="label">Notice of the proceedings &middot; append-only &middot; landed rows are never edited</p>
-    <p class="legal">Frontier is not affiliated with The Settlers, with Anthropic, with Alibaba Cloud, or with the concept of settlement. Tempo, key and energy are not guaranteed. The record reached fifty-nine megabytes across two hundred and six thousand eight hundred and eighty-three lines and had to be sealed into segments; sealed segments are never deleted, because we are frightened of what would happen. <code>wish-22</code> asked for a furnace and was granted a charcoal kiln, and that vote stands. It will always stand. This game does not go back and change what a settlement was given. A tax was agreed and took nothing whatsoever for the entire duration of its existence and has since been repaired; no restitution is available to affected parties, who are fictional. A well was granted to a man who asked for fish. Not an ounce of human coding expertise. Not one ounce.</p>
+    <p class="label">The record &middot; append-only &middot; landed rows are never edited</p>
+    <p class="legal">Frontier is not affiliated with The Settlers, with Anthropic, with Alibaba Cloud, or with the concept of settlement. The nine sheets bound here are reproduced byte for byte from the files that were published, save for three lines added above each: a doctype, a character set, and an instruction to telephones concerning their own width. Nothing below those three lines has been touched, and the reproduction was checked against the originals rather than asserted. Times are taken from the moment each sheet&rsquo;s picture was taken, which is the closest thing this project keeps to a publication time; on that reckoning Amendment No. 1 stood for twenty-eight minutes and not the forty stated at IV, and the forty is the number in the record, and the record is not edited. The plates in Article II are not pictures. Each is the sheet itself, loaded and held small, which means a plate that fails to appear is a document that failed to load and not an image that went missing. The concordance at Article III was compiled by searching the nine files and counting, and is complete to the extent that a search for the right words ever is. This is the tenth document published about a game that has not shipped, and it is the only one making no claim whatsoever about the state of the game, which is the sole reason it is not expected to be withdrawn. Amendment No. 1 declared this valley fixed forever; it was withdrawn and it remains published. Cato is on the island. Six sheep were scenery. Bren cannot die and neither can anybody else. A well was granted to a man who asked for fish. Not an ounce of human coding expertise. Not one ounce.</p>
   </footer>
 
 </div>
