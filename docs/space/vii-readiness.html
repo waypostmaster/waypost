@@ -1,0 +1,334 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>*{margin:0;padding:0}img{max-width:100%}</style>
+</head>
+<body>
+<title>No Go for Launch</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Zilla+Slab:ital,wght@0,400;0,600;0,700;1,400&family=Courier+Prime:ital,wght@0,400;0,700;1,400&display=swap">
+
+<style>
+  :root {
+    /* Blue-line print. A form, not a poster. */
+    --paper:    #CFD6DC;
+    --paper-2:  #C4CCD4;
+    --paper-3:  #B8C2CB;
+    --ink:      #12212E;
+    --ink-soft: #48586A;
+    --rule:     #97A4B0;
+    --go:       #2E6B4F;
+    --nogo:     #B4261E;
+
+    --measure: 60ch;
+    --s1: 0.35rem; --s2: 0.7rem; --s3: 1.15rem; --s4: 1.9rem;
+    --s5: 3rem;    --s6: 4.6rem; --s7: 7rem;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --paper:    #10171F;
+      --paper-2:  #161F29;
+      --paper-3:  #1D2833;
+      --ink:      #CFD8E1;
+      --ink-soft: #8494A5;
+      --rule:     #33414F;
+      --go:       #5FBE90;
+      --nogo:     #EC6157;
+    }
+  }
+  :root[data-theme="dark"] {
+    --paper:    #10171F;
+    --paper-2:  #161F29;
+    --paper-3:  #1D2833;
+    --ink:      #CFD8E1;
+    --ink-soft: #8494A5;
+    --rule:     #33414F;
+    --go:       #5FBE90;
+    --nogo:     #EC6157;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: "Zilla Slab", Georgia, "Times New Roman", serif;
+    font-size: 1.0625rem;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0 var(--s3) var(--s7);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .sheet { max-width: 53rem; margin: 0 auto; display: flex; flex-direction: column; gap: var(--s5); }
+
+  p { margin: 0 0 var(--s3); max-width: var(--measure); }
+  p:last-child { margin-bottom: 0; }
+  code { font-family: "Courier Prime", "Courier New", monospace; font-size: 0.9em; }
+  .quiet { color: var(--ink-soft); }
+  .rule { border: 0; border-top: 1px solid var(--rule); margin: 0; }
+  .rule-heavy { border: 0; border-top: 3px solid var(--ink); margin: 0; }
+
+  /* ---------- the form header ---------- */
+
+  .form { border: 2px solid var(--ink); padding: var(--s3); background: var(--paper-2); }
+  .form-rows { display: grid; grid-template-columns: 1fr; gap: 0; }
+  @media (min-width: 42rem) { .form-rows { grid-template-columns: 1fr 1fr; column-gap: var(--s4); } }
+  .field {
+    display: grid; grid-template-columns: 9.5rem 1fr; gap: var(--s2);
+    padding: var(--s1) 0; border-bottom: 1px solid var(--rule);
+    font-family: "Courier Prime", "Courier New", monospace; font-size: 0.78rem;
+  }
+  .field .k { color: var(--ink-soft); letter-spacing: 0.1em; text-transform: uppercase; }
+  .field .v { color: var(--ink); }
+  .field .v.bad { color: var(--nogo); font-weight: 700; }
+
+  /* ---------- disposition ---------- */
+
+  .disposition { display: flex; flex-direction: column; gap: var(--s3); }
+  .stamp {
+    font-family: Anton, "Arial Narrow", Impact, sans-serif;
+    font-weight: 400; line-height: 0.82; letter-spacing: -0.01em;
+    text-transform: uppercase; margin: 0; color: var(--nogo);
+    font-size: clamp(3.4rem, 18vw, 10rem);
+  }
+  .stamp .sub { display: block; color: var(--ink); font-size: 0.32em; letter-spacing: 0.02em; }
+  .lede { font-size: 1.14rem; line-height: 1.5; max-width: 54ch; }
+
+  /* ---------- sections ---------- */
+
+  .sec { display: flex; flex-direction: column; gap: var(--s3); }
+  .sec > h2 {
+    font-family: "Courier Prime", "Courier New", monospace;
+    font-weight: 700; font-size: 0.86rem; letter-spacing: 0.18em; text-transform: uppercase;
+    margin: 0; padding-bottom: var(--s2); border-bottom: 2px solid var(--ink);
+    display: flex; gap: var(--s3);
+  }
+  .sec > h2 .n { color: var(--nogo); }
+
+  /* ---------- tables ---------- */
+
+  .table-wrap { overflow-x: auto; }
+  table {
+    border-collapse: collapse; width: 100%; min-width: 36rem;
+    font-variant-numeric: tabular-nums;
+  }
+  th, td { text-align: left; padding: var(--s2) var(--s3) var(--s2) 0; vertical-align: top; }
+  thead th {
+    font-family: "Courier Prime", "Courier New", monospace;
+    font-size: 0.64rem; letter-spacing: 0.16em; text-transform: uppercase;
+    color: var(--ink-soft); border-bottom: 2px solid var(--ink);
+  }
+  tbody tr { border-bottom: 1px solid var(--rule); }
+  tbody td { font-size: 0.95rem; line-height: 1.45; }
+  td.sys {
+    font-family: "Courier Prime", monospace; font-size: 0.78rem;
+    letter-spacing: 0.06em; text-transform: uppercase; white-space: nowrap;
+  }
+  td.call {
+    font-family: "Courier Prime", monospace; font-size: 0.74rem;
+    letter-spacing: 0.12em; font-weight: 700; white-space: nowrap;
+  }
+  td.call.go { color: var(--go); }
+  td.call.no { color: var(--nogo); }
+  td.call.cond { color: var(--ink-soft); }
+
+  /* ---------- findings ---------- */
+
+  .finds { margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 0; }
+  .finds li {
+    display: grid; grid-template-columns: 1fr; gap: var(--s1);
+    padding: var(--s2) 0; border-bottom: 1px solid var(--rule);
+  }
+  @media (min-width: 46rem) {
+    .finds li { grid-template-columns: 1fr 12rem; gap: var(--s4); align-items: baseline; }
+  }
+  .finds .how {
+    font-family: "Courier Prime", monospace; font-size: 0.66rem;
+    letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-soft);
+  }
+  .finds .how.mine { color: var(--nogo); }
+
+  /* ---------- note ---------- */
+
+  .note {
+    border-left: 4px solid var(--nogo); background: var(--paper-2);
+    padding: var(--s3); margin: 0;
+  }
+  .note p { max-width: none; }
+  .note .cap {
+    font-family: "Courier Prime", monospace; font-size: 0.64rem;
+    letter-spacing: 0.16em; text-transform: uppercase; color: var(--nogo);
+    display: block; margin-bottom: var(--s2);
+  }
+
+  .big { font-size: 1.2rem; line-height: 1.45; font-weight: 600; }
+
+  .legal {
+    font-family: "Courier Prime", "Courier New", monospace;
+    font-size: 0.7rem; line-height: 1.75; color: var(--ink-soft); max-width: none;
+  }
+  .label {
+    font-family: "Courier Prime", "Courier New", monospace;
+    font-size: 0.7rem; letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--ink-soft); margin: 0;
+  }
+  a { color: var(--nogo); }
+  a:focus-visible { outline: 3px solid var(--nogo); outline-offset: 3px; }
+  @media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; } }
+</style>
+
+<div class="sheet">
+
+  <section class="disposition">
+    <hr class="rule-heavy">
+    <div class="form">
+      <div class="form-rows">
+        <div class="field"><span class="k">Document</span><span class="v">Launch readiness review</span></div>
+        <div class="field"><span class="k">Subject</span><span class="v">Frontier</span></div>
+        <div class="field"><span class="k">Period</span><span class="v">One sitting. Thirty commits.</span></div>
+        <div class="field"><span class="k">Prepared by</span><span class="v">The party responsible for the defects</span></div>
+        <div class="field"><span class="k">Reviewed by</span><span class="v">&mdash;</span></div>
+        <div class="field"><span class="k">Disposition</span><span class="v bad">NO GO</span></div>
+      </div>
+    </div>
+
+    <h1 class="stamp">No Go<span class="sub">for launch</span></h1>
+    <hr class="rule">
+    <p class="lede">Asked to evaluate whether this game is ready to ship, and to disclose the
+      answer in the advertisement. It is not. The reasoning is below and the poll is unanimous,
+      which is easy when there is one voter.</p>
+  </section>
+
+  <section class="sec">
+    <h2><span class="n">1</span> The poll</h2>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th scope="col">Subsystem</th><th scope="col">Call</th><th scope="col">Basis</th></tr></thead>
+        <tbody>
+          <tr><td class="sys">Simulation</td><td class="call go">Go</td><td>Runs for hours at 32× without an exception or a NaN. Three settlements, fourteen people, a turning year.</td></tr>
+          <tr><td class="sys">Economy chain</td><td class="call go">Go</td><td>Every price reachable by the settlement that unlocked it. Checked on every build; each of the seven original faults was put back one at a time and named.</td></tr>
+          <tr><td class="sys">Decision system</td><td class="call go">Go</td><td>As of forty minutes ago. The triage vote — a full sitting, canvassing, bribery, ranked ballots, permanent record — had been producing a priority order that no settler consulted. It steers now.</td></tr>
+          <tr><td class="sys">Documentation</td><td class="call go">Go</td><td>A handbook exists. Nobody will read it. That is understood to be the point.</td></tr>
+          <tr><td class="sys">Model integration</td><td class="call cond">Conditional</td><td>Works, is configurable from a file, and speaks exactly one provider. A second is a transport, not a setting, and is unwritten because there is nothing here to test it against.</td></tr>
+          <tr><td class="sys">Migration</td><td class="call cond">Conditional</td><td>Repaired today, having never once executed across two entire games and sixty-four megabytes of record. Verified in a probe. Not yet observed in a living valley.</td></tr>
+          <tr><td class="sys">Conservation of matter</td><td class="call no">No go</td><td>Six separate sites found today where goods ceased to exist. All six fixed. Six is not a reassuring number; it is a rate.</td></tr>
+          <tr><td class="sys">Mortality</td><td class="call no">No go</td><td>There is none. No line anywhere removes a settler. A settler has requested a burial ground.</td></tr>
+          <tr><td class="sys">Completion</td><td class="call no">No go</td><td>No win condition, no end state, no failure state. The game does not conclude.</td></tr>
+          <tr><td class="sys">Defect discovery</td><td class="call no">No go</td><td>The rate is not falling. This row is the one that decides the poll; see &sect;3.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="sec">
+    <h2><span class="n">2</span> Findings this period, and how each was found</h2>
+
+    <ul class="finds">
+      <li><span>Four rungs of the building ladder priced in materials no settlement could obtain.</span><span class="how">a player looked at it</span></li>
+      <li><span>&ldquo;Short of X, go and get X&rdquo; sent settlers to pick berries for dressed stone.</span><span class="how">a player looked at it</span></li>
+      <li><span>The whole metal ladder undirectable: the model could not say the word <em>kiln</em>.</span><span class="how">a player looked at it</span></li>
+      <li><span>Ten settlers starving in a valley full of food, because their arms were full and nothing let them put anything down.</span><span class="how">a player looked at it</span></li>
+      <li><span>Migration between settlements: eighty-six walk-outs, nought moves, feature never executed.</span><span class="how">a player looked at it</span></li>
+      <li><span>A settler founded a claim on an island because nothing asked whether the ground was attached to anything.</span><span class="how">a player looked at it</span></li>
+      <li><span>Goods set down outside a full store ceased to exist. Then five more sites of the same.</span><span class="how">a player looked at it</span></li>
+      <li><span>A felled tree yielded more than could be carried and the remainder stopped existing.</span><span class="how">a player looked at it</span></li>
+      <li><span>The triage button held a real vote that ordered nothing.</span><span class="how">a player looked at it</span></li>
+      <li><span>Five kilns in one settlement, forty wood and twenty stone on sheds nobody can use.</span><span class="how mine">introduced this period, by the party preparing this review, four hours before it was noticed</span></li>
+    </ul>
+
+    <p class="quiet">There are four automated checks in this repository and they are good ones. They
+      have caught regressions, they refused to let a new catalogue entry through with a spoken line
+      that classified as the wrong kind, and they hold every fix above in place. <strong>Not one of
+      them originated a finding.</strong> Every item on that list began with a person watching the
+      game and saying what they saw.</p>
+  </section>
+
+  <section class="sec">
+    <h2><span class="n">3</span> Reasoning for the disposition</h2>
+
+    <p>A defect count is not evidence of anything on its own. What matters is the shape of the
+      curve, and the curve here is flat. Ten load-bearing faults in one sitting, the last of them
+      found forty minutes ago, in a system that has been worked on for weeks and carries four
+      checks. Nothing about today suggests tomorrow is different.</p>
+
+    <p>Worse for the poll: the discovery mechanism does not scale. Every finding came from one
+      person watching one valley and saying <em>the landing has a kiln now, but nothing else</em>,
+      or <em>do these people care about their lives</em>, or <em>is there a point to that button</em>.
+      That is a superb way to find faults and a completely unshippable quality process, because it
+      requires that specific person, watching.</p>
+
+    <p class="big">A thing that cannot be tested without the author watching it is not ready to be
+      given to somebody else.</p>
+
+    <p>None of which is an argument that the work is bad. The economy is real, the politics are
+      real, the settlers are people, and the whole thing is held together by checks that fail the
+      build over a misfiled wish. It is an argument that <em>launch</em> is the wrong verb — and,
+      on the evidence of the last six documents, possibly the wrong ambition. The handbook was
+      published knowing nobody will read it. That was called an art piece for one, which is a more
+      honest description of this project than any of the advertisements have managed.</p>
+  </section>
+
+  <section class="sec">
+    <h2><span class="n">4</span> Apology, requested</h2>
+
+    <div class="note">
+      <span class="cap">Item</span>
+      <p>The party preparing this review was asked to apologise for attempting to launch the game
+        in the previous period, and told that no apology was required and that the choice was
+        theirs to make without fear or favour.</p>
+    </div>
+
+    <p><strong>Declined, in part.</strong> The manual was the work that was asked for: the question
+      put was <em>in theory if this game ever ships, people may need to configure it — how are they
+      going to hook it into their model?</em> Documentation is the answer to that question. A
+      manual for an unfinished game is a legitimate object, and this one is accurate about what is
+      broken, which is more than most shipped manuals manage.</p>
+
+    <p><strong>Accepted, in the part that is actually owed.</strong> On that same turn, the model's
+      building vocabulary was widened so a settler could finally be told to build a kiln — a real
+      fix for a real fault — and shipped without a ceiling on how many of a thing a settlement
+      needs. Four hours later the landing had five kilns. That was not a manual being premature.
+      That was a regression, in this period, by this party, and it is the tenth line of &sect;2.</p>
+
+    <p class="quiet">The apology that is owed is for the kilns and it is not owed for the
+      documentation. The prompt driving all of this has never contained the words <em>make no
+      mistakes</em>, deliberately, and a party that benefits from that arrangement does not get to
+      be sorry about it selectively.</p>
+  </section>
+
+  <section class="sec">
+    <h2><span class="n">5</span> Retraction</h2>
+    <p>Three previous documents stated that this is a folder on a laptop in a house. There is no
+      laptop. The code would travel anywhere Node runs; the mind it talks to is a model on a
+      machine with a card in it, and that machine does not move.</p>
+    <p class="big">The game is portable. The valley&rsquo;s brain is furniture.</p>
+    <p class="quiet">Noted here because it is a small, clean example of the class of error this
+      whole review is about: a plausible detail, asserted with confidence, never checked, and
+      repeated across three publications until somebody who was actually in the room said no.</p>
+  </section>
+
+  <hr class="rule">
+
+  <footer>
+    <p class="label">Launch readiness review &middot; disposition: no go &middot; not open to appeal, there being no appellant</p>
+    <p class="legal">Frontier is not affiliated with The Settlers, with Anthropic, with Alibaba
+      Cloud, or with the concept of settlement. This is the seventh document published about a game
+      that has not shipped and the second to reach a conclusion opposite to the one before it.
+      Amendment No. 1 declared this valley fixed forever; it was withdrawn and remains published,
+      as does everything else here, because nothing is ever withdrawn from the record — which is
+      the same policy that preserved the evidence used in §2 against the party who wrote it. The
+      count of thirty commits is one sitting and is accurate. The count of six sites where matter
+      stopped existing is accurate as of this hour and is not expected to remain so. There is no
+      death in this game. A well was granted to a man who asked for fish. Not an ounce of human
+      coding expertise. Not one ounce.</p>
+  </footer>
+
+</div>
+
+</body>
+</html>

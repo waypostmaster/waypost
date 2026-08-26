@@ -1,0 +1,494 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>*{margin:0;padding:0}img{max-width:100%}</style>
+</head>
+<body>
+<title>The Settlers' Backlog</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Zilla+Slab:ital,wght@0,400;0,600;0,700;1,400&family=Courier+Prime:ital,wght@0,400;0,700;1,400&display=swap">
+
+<style>
+  :root {
+    --paper:    #DCDFD9;
+    --paper-2:  #D2D6CF;
+    --paper-3:  #C7CCC4;
+    --ink:      #14171A;
+    --ink-soft: #4A5052;
+    --rule:     #A5ABA2;
+    --stamp:    #A9201C;
+    --seal:     #1B4E63;
+    --famine:   #7A5A12;
+    /* Grooming the backlog. Literally. */
+    --marker:   rgba(232, 210, 74, 0.55);
+
+    --measure: 62ch;
+    --s1: 0.35rem; --s2: 0.7rem; --s3: 1.15rem; --s4: 1.9rem;
+    --s5: 3rem;    --s6: 4.6rem; --s7: 7rem;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --paper:    #14171A;
+      --paper-2:  #1B1F22;
+      --paper-3:  #23282B;
+      --ink:      #D9DCD6;
+      --ink-soft: #8D948F;
+      --rule:     #3A4044;
+      --stamp:    #E05A52;
+      --seal:     #64B6D2;
+      --famine:   #D2AC55;
+      --marker:   rgba(214, 178, 74, 0.22);
+    }
+  }
+  :root[data-theme="dark"] {
+    --paper:    #14171A;
+    --paper-2:  #1B1F22;
+    --paper-3:  #23282B;
+    --ink:      #D9DCD6;
+    --ink-soft: #8D948F;
+    --rule:     #3A4044;
+    --stamp:    #E05A52;
+    --seal:     #64B6D2;
+    --famine:   #D2AC55;
+    --marker:   rgba(214, 178, 74, 0.22);
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: "Zilla Slab", Georgia, "Times New Roman", serif;
+    font-size: 1.0625rem;
+    line-height: 1.62;
+    margin: 0;
+    padding: 0 var(--s3) var(--s7);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .sheet { max-width: 54rem; margin: 0 auto; display: flex; flex-direction: column; gap: var(--s5); }
+
+  .label {
+    font-family: "Courier Prime", "Courier New", monospace;
+    font-size: 0.72rem; letter-spacing: 0.16em; text-transform: uppercase;
+    color: var(--ink-soft); margin: 0;
+  }
+  .rule { border: 0; border-top: 1px solid var(--rule); margin: 0; }
+  .rule-thick { border: 0; border-top: 3px solid var(--ink); margin: 0; }
+  p { margin: 0; max-width: var(--measure); }
+  .stack-tight { display: flex; flex-direction: column; gap: var(--s2); }
+  code { font-family: "Courier Prime", "Courier New", monospace; font-size: 0.92em; }
+  .quiet { color: var(--ink-soft); }
+  .beat { font-size: 1.24rem; line-height: 1.45; font-weight: 600; }
+
+  .masthead { display: flex; flex-direction: column; gap: var(--s2); padding-top: var(--s4); }
+  .masthead-row {
+    display: flex; flex-wrap: wrap; gap: var(--s2) var(--s4);
+    justify-content: space-between; align-items: baseline;
+  }
+  .masthead-row .label { white-space: nowrap; }
+  @media (max-width: 36rem) { .masthead-row .label { white-space: normal; } }
+
+  /* ---------- hero ---------- */
+
+  .hero { display: flex; flex-direction: column; gap: var(--s3); }
+  .title {
+    font-family: Anton, "Arial Narrow", Impact, sans-serif;
+    font-weight: 400; line-height: 0.8; letter-spacing: -0.018em;
+    text-transform: uppercase; margin: 0;
+    font-size: clamp(3rem, 15vw, 8.5rem);
+  }
+  .title .b { color: var(--stamp); }
+  .deck { font-size: 1.16rem; line-height: 1.5; max-width: 54ch; }
+
+  /* ---------- the metric slab ---------- */
+
+  .metrics {
+    display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--s3) var(--s4);
+    border-top: 3px solid var(--ink); border-bottom: 3px solid var(--ink);
+    padding: var(--s4) 0;
+  }
+  @media (min-width: 44rem) { .metrics { grid-template-columns: repeat(4, 1fr); } }
+  .metric { display: flex; flex-direction: column; gap: 2px; }
+  .metric .n {
+    font-family: Anton, "Arial Narrow", Impact, sans-serif;
+    font-size: clamp(2.2rem, 8vw, 3.6rem); line-height: 0.9;
+    font-variant-numeric: tabular-nums;
+  }
+  .metric.bad .n { color: var(--stamp); }
+  .metric.ok .n { color: var(--seal); }
+  .metric .k {
+    font-family: "Courier Prime", "Courier New", monospace;
+    font-size: 0.66rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-soft);
+  }
+
+  /* ---------- schedules ---------- */
+
+  .schedule { display: flex; flex-direction: column; gap: var(--s3); }
+  .schedule-head { display: flex; flex-direction: column; gap: var(--s1); }
+  .schedule-num {
+    font-family: "Courier Prime", "Courier New", monospace;
+    font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--stamp);
+  }
+  .schedule-title {
+    font-family: Anton, "Arial Narrow", Impact, sans-serif;
+    font-weight: 400; font-size: clamp(1.7rem, 5.6vw, 2.6rem);
+    line-height: 1; text-transform: uppercase; margin: 0; text-wrap: balance;
+  }
+
+  /* ---------- the backlog ---------- */
+
+  .backlog { display: flex; flex-direction: column; gap: 0; margin: 0; padding: 0; list-style: none; }
+  .item {
+    display: grid; grid-template-columns: 1fr; gap: var(--s2);
+    padding: var(--s3) 0; border-bottom: 1px solid var(--rule);
+  }
+  .item:first-child { border-top: 1px solid var(--rule); }
+  @media (min-width: 48rem) {
+    .item { grid-template-columns: 1fr 16rem; gap: var(--s4); align-items: start; }
+  }
+  .ask { font-size: 1.04rem; line-height: 1.5; }
+  .ask q { quotes: "\201C" "\201D"; }
+  .ask q::before { content: open-quote; }
+  .ask q::after { content: close-quote; }
+  /* The highlighter pass. Clone the decoration so a wrapped line stays marked to its own end. */
+  .mark { background: var(--marker); box-decoration-break: clone; -webkit-box-decoration-break: clone;
+          padding: 0 0.12em; }
+  .who {
+    display: block; margin-top: var(--s1);
+    font-family: "Courier Prime", "Courier New", monospace;
+    font-size: 0.68rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-soft);
+  }
+  .verdict { display: flex; flex-direction: column; gap: 3px; }
+  .verdict .tag {
+    font-family: "Courier Prime", "Courier New", monospace;
+    font-size: 0.64rem; letter-spacing: 0.14em; text-transform: uppercase;
+    align-self: flex-start; border: 1px solid currentColor; padding: 1px 6px; border-radius: 2px;
+  }
+  .verdict.shipped .tag { color: var(--seal); }
+  .verdict.wrong .tag { color: var(--stamp); }
+  .verdict.unheard .tag { color: var(--famine); }
+  .verdict p { font-size: 0.94rem; line-height: 1.45; color: var(--ink-soft); max-width: 34ch; }
+
+  /* ---------- the root cause ---------- */
+
+  .cause {
+    background: var(--paper-2); border-left: 5px solid var(--stamp);
+    padding: var(--s4) var(--s4) var(--s4) var(--s3);
+    display: flex; flex-direction: column; gap: var(--s3);
+  }
+  .cause .cap {
+    font-family: "Courier Prime", "Courier New", monospace;
+    font-size: 0.68rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--stamp);
+  }
+  .cause p { max-width: 58ch; }
+  .terminal {
+    background: var(--paper-3); padding: var(--s3);
+    font-family: "Courier Prime", "Courier New", monospace;
+    font-size: 0.8rem; line-height: 1.7; white-space: pre; overflow-x: auto;
+    color: var(--ink); max-width: none;
+  }
+
+  /* ---------- shipped ---------- */
+
+  .shipped { margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: var(--s2); }
+  .shipped li {
+    display: grid; grid-template-columns: 1.4rem 1fr; gap: var(--s2);
+    padding-bottom: var(--s2); border-bottom: 1px solid var(--rule);
+  }
+  .shipped .t { color: var(--seal); font-family: "Courier Prime", monospace; }
+
+  /* ---------- the turn ---------- */
+
+  .turn {
+    border-top: 3px solid var(--stamp); border-bottom: 3px solid var(--stamp);
+    padding: var(--s5) 0; display: flex; flex-direction: column; gap: var(--s3);
+  }
+  .turn h2 {
+    font-family: Anton, "Arial Narrow", Impact, sans-serif;
+    font-weight: 400; font-size: clamp(2rem, 7.6vw, 3.8rem);
+    line-height: 0.94; text-transform: uppercase; margin: 0; text-wrap: balance;
+  }
+
+  .seal-wrap { display: flex; justify-content: flex-end; }
+  .countersign {
+    border: 3px solid var(--stamp); color: var(--stamp);
+    padding: var(--s2) var(--s3);
+    font-family: "Courier Prime", "Courier New", monospace;
+    font-size: 0.74rem; letter-spacing: 0.18em; text-transform: uppercase;
+    transform: rotate(1.8deg); text-align: center; line-height: 1.8;
+  }
+  .legal {
+    font-family: "Courier Prime", "Courier New", monospace;
+    font-size: 0.7rem; line-height: 1.75; color: var(--ink-soft); max-width: none;
+  }
+  a { color: var(--stamp); }
+  a:focus-visible { outline: 3px solid var(--stamp); outline-offset: 3px; }
+  @media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; } }
+</style>
+
+<div class="sheet">
+
+  <header class="masthead">
+    <hr class="rule-thick">
+    <div class="masthead-row">
+      <p class="label">The Landing &middot; a review of the period</p>
+      <p class="label">Year 2 &middot; tick 4,997 &middot; circulated to all staff</p>
+    </div>
+    <hr class="rule">
+    <p class="label">Prepared by nobody &middot; reviewed by nobody &middot; distributed to ten people with no hands free</p>
+  </header>
+
+  <section class="hero">
+    <h1 class="title">The<br>Settlers&rsquo;<br><span class="b">Backlog</span></h1>
+    <hr class="rule">
+    <p class="deck">Forty-nine feature requests, filed by ten people who had no food, no tools and
+      eleven houses. Every one of them is real, reproduced from
+      <code>agents/WISHLIST.md</code> exactly as filed. Several of them are extremely good ideas.</p>
+  </section>
+
+  <div class="metrics">
+    <div class="metric bad"><span class="n">1.00</span><span class="k">hunger, all ten</span></div>
+    <div class="metric bad"><span class="n">0</span><span class="k">food in the stores</span></div>
+    <div class="metric bad"><span class="n">9</span><span class="k">of ten with bare hands</span></div>
+    <div class="metric ok"><span class="n">49</span><span class="k">proposals on file</span></div>
+    <div class="metric"><span class="n">11</span><span class="k">houses standing</span></div>
+    <div class="metric"><span class="n">1</span><span class="k">of everything else</span></div>
+    <div class="metric bad"><span class="n">0</span><span class="k">boards ever cut</span></div>
+    <div class="metric bad"><span class="n">0</span><span class="k">people who can die</span></div>
+  </div>
+
+  <section class="schedule">
+    <div class="schedule-head">
+      <span class="schedule-num">Item 1</span>
+      <h2 class="schedule-title">The backlog, groomed</h2>
+    </div>
+
+    <p>Highlighted where the request exceeded the settlement&rsquo;s current capabilities. We have
+      tried to be fair about this.</p>
+
+    <ul class="backlog">
+      <li class="item">
+        <div class="ask">
+          <q>A <span class="mark">standardized valuation system for goods based on a common
+          metric, such as a fixed price per unit</span> for wood, stone, ore, and food.</q>
+          <span class="who">filed by a forester with no axe</span>
+        </div>
+        <div class="verdict shipped"><span class="tag">Shipped</span>
+          <p>Genuinely built. It is called the market, it took a vote, and coin has to be struck
+            out of ore by somebody holding iron tools. Nobody here has iron tools.</p></div>
+      </li>
+
+      <li class="item">
+        <div class="ask">
+          <q>A <span class="mark">mutual aid system where settlers can exchange work for favors or
+          rest time without personal obligation.</span></q>
+          <span class="who">a labour-time bank, requested on a beach</span>
+        </div>
+        <div class="verdict shipped"><span class="tag">Exists</span>
+          <p>They have had favours and written debts since before this was asked. What is being
+            requested is the abolition of the part where you owe somebody.</p></div>
+      </li>
+
+      <li class="item">
+        <div class="ask">
+          <q>A <span class="mark">mortuary or burial ground with a designated marker to honor
+          those lost</span> and provide comfort for the living.</q>
+          <span class="who">filed in a world with no death code</span>
+        </div>
+        <div class="verdict wrong"><span class="tag">No</span>
+          <p>Nobody has died. Nobody can die. There is no line anywhere in this game that removes
+            a settler from the valley. They are asking for a cemetery on principle.</p></div>
+      </li>
+
+      <li class="item">
+        <div class="ask"><q>A salmon trap</q>
+          <span class="who">Anselm, farmer &middot; three words</span></div>
+        <div class="verdict wrong"><span class="tag">Granted a well</span>
+          <p>The only word the catalogue recognised was <em>water</em>, in a subordinate clause
+            explaining that he did not wish to be in it. He voted for the well thirty-six times.
+            There are no fish.</p></div>
+      </li>
+
+      <li class="item">
+        <div class="ask">
+          <q>a <span class="mark">small, portable furnace for crafting metal tools using minimal
+          fuel.</span></q>
+          <span class="who">lowercase, as filed</span>
+        </div>
+        <div class="verdict wrong"><span class="tag">Deferred</span>
+          <p>There is no furnace of any size or portability. The settlement voted one in and has
+            never been able to afford the four boards for its bellows shed.</p></div>
+      </li>
+
+      <li class="item">
+        <div class="ask">
+          <q>A <span class="mark">sheltered perimeter wall to protect the settlement from wind and
+          weather, with gates to seal off the valley during storms.</span></q>
+          <span class="who">a curtain wall, and gates, for the whole valley</span>
+        </div>
+        <div class="verdict wrong"><span class="tag">Out of scope</span>
+          <p>Filed by someone who could not build a shed. There are no walls in this game and
+            there are no gates, and the valley cannot be sealed, and it rains.</p></div>
+      </li>
+
+      <li class="item">
+        <div class="ask">
+          <q>A <span class="mark">network of paths marked by stacked stones, connecting key
+          locations like the depot,</span> houses, and resource spots.</q>
+          <span class="who">wayfinding infrastructure, for a settlement with no depot</span>
+        </div>
+        <div class="verdict unheard"><span class="tag">Blocked</span>
+          <p>There is no depot. A depot costs six boards. No boards have ever been cut here.</p></div>
+      </li>
+
+      <li class="item">
+        <div class="ask">
+          <q>A <span class="mark">system for marking and tracking active harvesting zones to
+          prevent overlap and confusion.</span></q>
+          <span class="who">resource contention middleware</span>
+        </div>
+        <div class="verdict wrong"><span class="tag">Not reproducible</span>
+          <p>Occurrences of two settlers arriving at the same bush, across sixty-four megabytes of
+            record: nought. There has never been an overlap. There has never been any confusion.</p></div>
+      </li>
+
+      <li class="item">
+        <div class="ask">
+          <q>A way to create and maintain <span class="mark">ice from the lake for food
+          preservation and cooling</span>.</q>
+          <span class="who">Mara, forester</span>
+        </div>
+        <div class="verdict unheard"><span class="tag">Refiled</span>
+          <p>Read by the catalogue as a warehouse, because she said the word <em>storage</em>.
+            Corrected this week. There is, separately, no food to preserve.</p></div>
+      </li>
+
+      <li class="item">
+        <div class="ask">
+          <q>A tool or technique for <span class="mark">repairing and maintaining axes to extend
+          their useful life.</span></q>
+          <span class="who">Anselm again &middot; carried by ballot</span>
+        </div>
+        <div class="verdict unheard"><span class="tag">Granted nothing</span>
+          <p>Every word the catalogue owned about tool maintenance was about the blade. He was
+            talking about the handle. It carried, and did nothing whatsoever, for eleven hundred
+            ticks. Halla asked for the same thing in different words and was heard at once.</p></div>
+      </li>
+    </ul>
+  </section>
+
+  <section class="schedule">
+    <div class="schedule-head">
+      <span class="schedule-num">Item 2</span>
+      <h2 class="schedule-title">Root cause of the period&rsquo;s headline metric</h2>
+    </div>
+
+    <div class="cause">
+      <span class="cap">Finding</span>
+      <p>The settlement was not short of berries. One berry is two food, one food takes hunger
+        from full to nought outright, and hunger climbs slowly enough that a single berry feeds a
+        person for a day and a bit. There are bushes within thirty tiles at all times. Across the
+        entire record, the number of occasions on which a settler walked to a bush and found it
+        already stripped is <strong>nought</strong>.</p>
+      <p>A settler picks up what they forage with the line
+        <code>Math.min(qty, space)</code>, where space is what they can still carry.</p>
+      <div class="terminal">Mara    forester   carrying 17 things   capacity 6
+Idris   builder    carrying  6 things   capacity 6
+Tove    miner      carrying  6 things   capacity 6
+Bren    forester   carrying  6 things   capacity 6
+Sula    farmer     carrying  6 things   capacity 6</div>
+      <p>Every one of them walked to a bush, stripped it, received nothing, and went straight back
+        out — because the branch that says <em>you are hungry, go and find something</em> always
+        finds another bush, and always returns a hundred and seventeen lines above the branch that
+        says <em>a full load goes to the store</em>.</p>
+      <p class="beat">Too full to eat. Too hungry to put anything down. Ten people, all in the
+        same state, so nothing ever moved first.</p>
+      <p class="quiet">This was filed last week as a balance problem — ten foragers outrunning the
+        berries — and left deliberately unfixed on the grounds that one run is a sample and not a
+        measurement. That was wrong. It was not a balance problem. It was a deadlock, and it had
+        been running for the whole of a game.</p>
+    </div>
+  </section>
+
+  <section class="schedule">
+    <div class="schedule-head">
+      <span class="schedule-num">Item 3</span>
+      <h2 class="schedule-title">Delivered this period</h2>
+    </div>
+    <ul class="shipped">
+      <li><span class="t">&check;</span><span>Settlers put a load down before eating. Measured from
+        a standing start of maximum hunger with the stores empty: hunger to 0.12 on the first pass,
+        and food in the stores at 0, 1, 3, 9, 15 over eight days.</span></li>
+      <li><span class="t">&check;</span><span>A bed no longer forbids leaving a settlement that
+        cannot feed you. Prior to this, across two games and eighty-six walk-outs, the number of
+        settlers who ever moved between settlements was nought.</span></li>
+      <li><span class="t">&check;</span><span>Claims must stand on ground you can walk across.
+        Cato is still on the island. Cato will remain on the island.</span></li>
+      <li><span class="t">&check;</span><span>A starving settlement can put food on its own ballot.
+        It previously could not, and went on slating firepits.</span></li>
+      <li><span class="t">&check;</span><span>Three settlers the catalogue could not hear, and two
+        it heard as the wrong thing, corrected.</span></li>
+      <li><span class="t">&check;</span><span>The settlement card, which had grown taller than a
+        screen, is now three tabs. A player had to point this out.</span></li>
+      <li><span class="t">&check;</span><span>The green post has been removed. It did nothing. It
+        had done nothing for some time.</span></li>
+    </ul>
+  </section>
+
+  <div class="turn">
+    <h2>They asked for a commodities exchange while holding six sticks</h2>
+    <p>That is not a joke at their expense. Every request in Item 1 is a reasonable thing for a
+      person to want, and several are things this game genuinely should have. The forester who
+      specified a fixed price per unit was right — the settlement did need one, and it built one.</p>
+    <p>What none of them could see, and what nothing in the game could tell them, was that the
+      entire settlement was standing in a valley full of food, at maximum hunger, unable to pick
+      any of it up, because their arms were full.</p>
+    <p class="quiet">Nobody found that by reading the code. It was found because somebody looked
+      at the game and said <em>do these people care about their lives?</em></p>
+  </div>
+
+  <section class="schedule">
+    <div class="schedule-head">
+      <span class="schedule-num">Item 4</span>
+      <h2 class="schedule-title">Forward-looking statements</h2>
+    </div>
+    <p>The development process remains one prompt, in its tenth spelling, and continues to omit the
+      line <em>make no mistakes</em>. On the evidence of this period that omission is the only part
+      of the methodology producing results.</p>
+
+    <div class="seal-wrap">
+      <span class="countersign">
+        Period closed<br>
+        Backlog: 49 open<br>
+        Headcount: unchanged, permanently
+      </span>
+    </div>
+  </section>
+
+  <hr class="rule">
+
+  <footer class="stack-tight">
+    <p class="label">A review of the period &middot; append-only &middot; no item is ever closed as won&rsquo;t-fix</p>
+    <p class="legal">Frontier is not affiliated with The Settlers, with Anthropic, with Alibaba
+      Cloud, or with the concept of settlement. Every request quoted in Item 1 was written by a
+      local model roleplaying a settler and is reproduced verbatim from
+      <code>agents/WISHLIST.md</code>, including capitalisation, including where there is none.
+      The mortuary request stands: there is no death in this game, no settler has ever been
+      removed from the valley, and the burial ground would be empty in perpetuity. Carrying
+      capacity is six and remains six; the settler recorded at seventeen was not doing anything
+      wrong. The salmon trap was granted a well and that vote stands and will always stand. Six
+      sheep were scenery for the whole of one game. A tax was agreed and took nothing whatsoever
+      for the entire duration of its existence. Amendment No. 1 declared this valley fixed forever
+      and was withdrawn forty minutes later; it remains published, because nothing here is ever
+      withdrawn from the record. Not an ounce of human coding expertise. Not one ounce.</p>
+  </footer>
+
+</div>
+
+</body>
+</html>

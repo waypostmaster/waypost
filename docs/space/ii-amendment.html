@@ -1,0 +1,709 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>*{margin:0;padding:0}img{max-width:100%}</style>
+</head>
+<body>
+<title>The Frontier Amendment</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Zilla+Slab:ital,wght@0,400;0,600;0,700;1,400&family=Courier+Prime:ital,wght@0,400;0,700;1,400&display=swap">
+
+<style>
+  :root {
+    --paper:      #DCDFD9;
+    --paper-2:    #D2D6CF;
+    --paper-3:    #C7CCC4;
+    --ink:        #14171A;
+    --ink-soft:   #4A5052;
+    --rule:       #A5ABA2;
+
+    /* The amendment's own ink. Everything this notice asserts is stamped in it. */
+    --seal:       #1B4E63;
+    --seal-ink:   #F2F4F0;
+    /* Retained from the first notice, and used here for one thing only: what still stands. */
+    --stamp:      #A9201C;
+    --ochre:      #8A6A1C;
+
+    --measure: 62ch;
+    --s1: 0.35rem; --s2: 0.7rem; --s3: 1.15rem; --s4: 1.9rem;
+    --s5: 3rem;    --s6: 4.6rem; --s7: 7rem;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --paper:     #14171A;
+      --paper-2:   #1B1F22;
+      --paper-3:   #23282B;
+      --ink:       #D9DCD6;
+      --ink-soft:  #8D948F;
+      --rule:      #3A4044;
+      --seal:      #64B6D2;
+      --seal-ink:  #14171A;
+      --stamp:     #D94B44;
+      --ochre:     #C9A64B;
+    }
+  }
+  :root[data-theme="dark"] {
+    --paper:     #14171A;
+    --paper-2:   #1B1F22;
+    --paper-3:   #23282B;
+    --ink:       #D9DCD6;
+    --ink-soft:  #8D948F;
+    --rule:      #3A4044;
+    --seal:      #64B6D2;
+    --seal-ink:  #14171A;
+    --stamp:     #D94B44;
+    --ochre:     #C9A64B;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: "Zilla Slab", Georgia, "Times New Roman", serif;
+    font-size: 1.0625rem;
+    line-height: 1.62;
+    margin: 0;
+    padding: 0 var(--s3) var(--s7);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .sheet {
+    max-width: 52rem;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: var(--s5);
+  }
+
+  /* ---------- shared devices ---------- */
+
+  .label {
+    font-family: "Courier Prime", "Courier New", monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    margin: 0;
+  }
+  .label-seal { color: var(--seal); }
+
+  .rule { border: 0; border-top: 1px solid var(--rule); margin: 0; }
+  .rule-thick { border: 0; border-top: 3px solid var(--ink); margin: 0; }
+  .rule-seal { border: 0; border-top: 2px solid var(--seal); margin: 0; }
+
+  p { margin: 0; max-width: var(--measure); }
+  .stack { display: flex; flex-direction: column; gap: var(--s3); }
+  .stack-tight { display: flex; flex-direction: column; gap: var(--s2); }
+
+  em { font-style: italic; }
+  code {
+    font-family: "Courier Prime", "Courier New", monospace;
+    font-size: 0.92em;
+  }
+
+  /* ---------- masthead ---------- */
+
+  .masthead { display: flex; flex-direction: column; gap: var(--s2); padding-top: var(--s4); }
+  .masthead-row {
+    display: flex; flex-wrap: wrap; gap: var(--s2) var(--s4);
+    justify-content: space-between; align-items: baseline;
+  }
+  /* Wrap between the two labels, never through a phrase. */
+  .masthead-row .label { white-space: nowrap; }
+  @media (max-width: 34rem) { .masthead-row .label { white-space: normal; } }
+
+  /* ---------- the stamp ---------- */
+
+  .hero { display: flex; flex-direction: column; gap: var(--s3); }
+
+  .verdict {
+    font-family: Anton, "Arial Narrow", Impact, sans-serif;
+    font-weight: 400;
+    line-height: 0.82;
+    letter-spacing: -0.015em;
+    text-transform: uppercase;
+    margin: 0;
+    font-size: clamp(4.2rem, 21vw, 12rem);
+  }
+  .verdict .a { display: block; color: var(--ink); }
+  .verdict .b { display: block; color: var(--seal); }
+
+  .verdict-note {
+    font-family: "Courier Prime", "Courier New", monospace;
+    font-size: 0.82rem;
+    letter-spacing: 0.06em;
+    color: var(--ink-soft);
+    max-width: none;
+  }
+
+  .certificate {
+    align-self: flex-start;
+    border: 3px double var(--seal);
+    color: var(--seal);
+    padding: var(--s2) var(--s3);
+    font-family: "Courier Prime", "Courier New", monospace;
+    font-size: 0.74rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    line-height: 1.9;
+    transform: rotate(-1.6deg);
+    text-align: center;
+  }
+  .certificate b { display: block; font-size: 1.05rem; letter-spacing: 0.2em; }
+
+  /* ---------- the leaf: body, with corrections in the margin ---------- */
+
+  .leaf { display: grid; grid-template-columns: 1fr; gap: var(--s3); }
+
+  .marginalia {
+    font-style: italic;
+    color: var(--seal);
+    font-size: 0.94rem;
+    line-height: 1.5;
+    border-left: 3px solid var(--seal);
+    padding-left: var(--s3);
+    max-width: var(--measure);
+  }
+  .marginalia .hand {
+    display: block;
+    font-style: normal;
+    font-family: "Courier Prime", "Courier New", monospace;
+    font-size: 0.68rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    margin-bottom: var(--s1);
+  }
+
+  @media (min-width: 62rem) {
+    .leaf { grid-template-columns: 13rem 1fr; gap: var(--s4); align-items: start; }
+    .marginalia {
+      text-align: right;
+      border-left: 0;
+      border-right: 3px solid var(--seal);
+      padding-left: 0;
+      padding-right: var(--s3);
+    }
+  }
+
+  .schedule { display: flex; flex-direction: column; gap: var(--s3); }
+  .schedule-head { display: flex; flex-direction: column; gap: var(--s1); }
+  .schedule-num {
+    font-family: "Courier Prime", "Courier New", monospace;
+    font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--seal);
+  }
+  .schedule-title {
+    font-family: Anton, "Arial Narrow", Impact, sans-serif;
+    font-weight: 400;
+    font-size: clamp(1.6rem, 5vw, 2.4rem);
+    line-height: 1.02;
+    letter-spacing: 0.005em;
+    text-transform: uppercase;
+    margin: 0;
+    text-wrap: balance;
+  }
+
+  .beat { font-size: 1.24rem; line-height: 1.45; font-weight: 600; }
+  .quiet { color: var(--ink-soft); }
+  .red { color: var(--stamp); }
+
+  /* ---------- the prompt, entire ---------- */
+
+  .prompt {
+    background: var(--paper-2);
+    border-top: 2px solid var(--seal);
+    border-bottom: 2px solid var(--seal);
+    padding: var(--s4) var(--s3);
+    font-family: "Courier Prime", "Courier New", monospace;
+    font-size: clamp(0.98rem, 2.7vw, 1.24rem);
+    line-height: 1.75;
+    color: var(--ink);
+    max-width: none;
+  }
+  .prompt .caret { color: var(--seal); }
+
+  .omission {
+    font-family: "Courier Prime", "Courier New", monospace;
+    font-size: 0.95rem;
+    color: var(--ink-soft);
+    text-decoration: line-through;
+    text-decoration-color: var(--stamp);
+    text-decoration-thickness: 2px;
+  }
+
+  /* ---------- the standing order ---------- */
+
+  .order {
+    background: var(--seal);
+    color: var(--seal-ink);
+    padding: var(--s4) var(--s3);
+    display: flex; flex-direction: column; gap: var(--s2);
+  }
+  .order p { max-width: 46ch; color: var(--seal-ink); }
+  .order .shout {
+    font-family: Anton, "Arial Narrow", Impact, sans-serif;
+    font-size: clamp(1.7rem, 6vw, 3rem);
+    line-height: 1.02;
+    text-transform: uppercase;
+    margin: 0;
+    text-wrap: balance;
+  }
+  .order .fine {
+    font-family: "Courier Prime", "Courier New", monospace;
+    font-size: 0.74rem; letter-spacing: 0.14em; text-transform: uppercase;
+    opacity: 0.85;
+  }
+
+  /* ---------- instructions received, with a hinge reading ---------- */
+
+  .instructions { display: flex; flex-direction: column; gap: 0; }
+  .instruction {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--s2);
+    padding: var(--s3) 0;
+    border-bottom: 1px solid var(--rule);
+  }
+  .instruction:first-child { border-top: 1px solid var(--rule); }
+  .instruction q {
+    font-size: 1.06rem;
+    quotes: "\201C" "\201D";
+  }
+  .instruction q::before { content: open-quote; }
+  .instruction q::after { content: close-quote; }
+
+  .reading { display: flex; align-items: center; gap: var(--s2); }
+  .reading .cap {
+    font-family: "Courier Prime", "Courier New", monospace;
+    font-size: 0.68rem; letter-spacing: 0.16em; text-transform: uppercase;
+    color: var(--ink-soft);
+  }
+  .meter { display: flex; gap: 3px; }
+  .pip { width: 13px; height: 13px; border: 1.5px solid var(--ochre); }
+  .pip.on { background: var(--ochre); }
+
+  @media (min-width: 46rem) {
+    .instruction { grid-template-columns: 1fr 11rem; gap: var(--s4); align-items: start; }
+    .reading { justify-content: flex-end; }
+  }
+
+  /* ---------- the ledger ---------- */
+
+  .ledger-wrap { overflow-x: auto; }
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    min-width: 34rem;
+    font-family: "Courier Prime", "Courier New", monospace;
+    font-size: 0.86rem;
+    font-variant-numeric: tabular-nums;
+  }
+  th, td { text-align: left; padding: var(--s2) var(--s3) var(--s2) 0; vertical-align: top; }
+  thead th {
+    font-size: 0.68rem; letter-spacing: 0.16em; text-transform: uppercase;
+    color: var(--ink-soft); border-bottom: 2px solid var(--ink);
+  }
+  tbody tr { border-bottom: 1px solid var(--rule); }
+  td.tick { color: var(--seal); white-space: nowrap; }
+  td.cross { color: var(--stamp); white-space: nowrap; }
+  tbody tr.stands td { color: var(--stamp); }
+
+  /* ---------- the works, as the record has them ---------- */
+
+  .works { display: flex; flex-direction: column; gap: 0; margin: 0; padding: 0; list-style: none; }
+  .works li {
+    display: flex; gap: var(--s3);
+    padding: var(--s2) 0;
+    border-bottom: 1px solid var(--rule);
+    font-family: "Courier Prime", "Courier New", monospace;
+    font-size: 0.84rem;
+    line-height: 1.5;
+  }
+  .works .sha { color: var(--seal); flex: none; }
+
+  /* ---------- the terminal, quoted ---------- */
+
+  .terminal {
+    background: var(--paper-3);
+    padding: var(--s3);
+    font-family: "Courier Prime", "Courier New", monospace;
+    font-size: 0.82rem;
+    line-height: 1.7;
+    white-space: pre;
+    overflow-x: auto;
+    color: var(--ink);
+    max-width: none;
+  }
+
+  /* ---------- the turn ---------- */
+
+  .turn {
+    border-top: 3px solid var(--ink);
+    border-bottom: 3px solid var(--ink);
+    padding: var(--s5) 0;
+    display: flex; flex-direction: column; gap: var(--s3);
+  }
+  .turn h2 {
+    font-family: Anton, "Arial Narrow", Impact, sans-serif;
+    font-weight: 400;
+    font-size: clamp(2rem, 7vw, 3.6rem);
+    line-height: 0.98;
+    text-transform: uppercase;
+    margin: 0;
+    text-wrap: balance;
+  }
+
+  /* ---------- close ---------- */
+
+  .seal-wrap { display: flex; justify-content: flex-end; }
+  .countersign {
+    border: 3px solid var(--stamp);
+    color: var(--stamp);
+    padding: var(--s2) var(--s3);
+    font-family: "Courier Prime", "Courier New", monospace;
+    font-size: 0.74rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    transform: rotate(2.2deg);
+    text-align: center;
+    line-height: 1.8;
+  }
+
+  .legal {
+    font-family: "Courier Prime", "Courier New", monospace;
+    font-size: 0.7rem;
+    line-height: 1.75;
+    color: var(--ink-soft);
+    max-width: none;
+  }
+
+  a { color: var(--seal); }
+  a:focus-visible, .countersign:focus-visible {
+    outline: 3px solid var(--seal);
+    outline-offset: 3px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    * { animation: none !important; transition: none !important; }
+  }
+</style>
+
+<div class="sheet">
+
+  <header class="masthead">
+    <hr class="rule-thick">
+    <div class="masthead-row">
+      <p class="label">Settlement of the Landing &middot; posted over the last one</p>
+      <p class="label">Amendment No. 1 &middot; supersedes all prior notices</p>
+    </div>
+    <hr class="rule">
+    <p class="label label-seal">Final &middot; conclusive &middot; not open to further amendment</p>
+  </header>
+
+  <section class="hero">
+    <h1 class="verdict"><span class="a">Fixed</span><span class="b">Forever</span></h1>
+    <hr class="rule">
+    <p class="verdict-note">The valley is complete. Every rung is stood on. Every price can be paid.
+      There is nothing left in this game that a settlement can vote for and never receive.</p>
+    <div class="certificate">
+      Certified complete<br>
+      <b>No further faults exist</b>
+      Valid until the next one
+    </div>
+  </section>
+
+  <div class="leaf">
+    <aside class="marginalia">
+      <span class="hand">In the margin</span>
+      The record is append-only. Nothing above this line has been edited, including the parts
+      that turned out to be wrong.
+    </aside>
+
+    <section class="schedule">
+      <div class="schedule-head">
+        <span class="schedule-num">Schedule A</span>
+        <h2 class="schedule-title">The development process, reproduced in full</h2>
+      </div>
+
+      <p>What follows is not an excerpt. It is not a summary of the methodology. It is the
+        methodology, entire, with nothing removed:</p>
+
+      <div class="prompt"><span class="caret">&gt;</span> Work in the Frontier repo. Check the
+        latest settler wishes, and make them possible.</div>
+
+      <p>That is the whole of it. There is no second prompt. There is no review stage, no
+        specification, no acceptance criteria and no definition of done. A settler asks for
+        something in a sentence a person would actually say, and somebody goes and makes the
+        sentence true.</p>
+
+      <p class="beat">One line was considered for inclusion and deliberately left out.</p>
+
+      <p class="omission">&gt; Make no mistakes.</p>
+
+      <p>It is not an oversight. It was proposed, weighed, and struck. Mistakes are the input.
+        A process that made none would have nothing to work on tomorrow.</p>
+    </section>
+  </div>
+
+  <div class="leaf">
+    <aside class="marginalia">
+      <span class="hand">Standing order</span>
+      Filed once. Enforced permanently. Do not raise it again.
+    </aside>
+
+    <div class="order">
+      <p class="fine">Schedule B &middot; Prohibited amendment</p>
+      <p class="shout">Please stop suggesting this prompt</p>
+      <p>Every party that has read Schedule A has, at some point, proposed adding a clause about
+        correctness, or scope, or checking the work first. The proposal is understood. The
+        proposal is refused.</p>
+      <p><strong>We will not allow it.</strong> The prompt is nine words and a full stop and it
+        stays nine words and a full stop.</p>
+      <p class="fine">This order is not open to appeal, ballot, secession, or a strongly worded
+        pull request</p>
+    </div>
+  </div>
+
+  <div class="leaf">
+    <aside class="marginalia">
+      <span class="hand">On hingedness</span>
+      Measured on receipt, not on outcome. Several of the least hinged produced the best
+      afternoon's work in the project's history.
+    </aside>
+
+    <section class="schedule">
+      <div class="schedule-head">
+        <span class="schedule-num">Schedule C</span>
+        <h2 class="schedule-title">Instructions received from the human</h2>
+      </div>
+
+      <p>Reproduced exactly as delivered. The reading in the right-hand column is the hinge: five
+        pips is a sentence a project manager could have written, one pip is not.</p>
+
+      <div class="instructions">
+        <div class="instruction">
+          <q>Work in the Frontier repo. Ensure that all settler wishes have the tech built to
+            support them. Interrogate economy chains, and look for dead ends.</q>
+          <div class="reading">
+            <span class="cap">Hinge</span>
+            <span class="meter" role="img" aria-label="Hinge: 4 of 5">
+              <span class="pip on"></span><span class="pip on"></span><span class="pip on"></span><span class="pip on"></span><span class="pip"></span>
+            </span>
+          </div>
+        </div>
+
+        <div class="instruction">
+          <q>Write an additional unhinged ad, declaring the game fixed forever, and that our
+            entirely development process consists of one prompt. We specifically do not include
+            &lsquo;make no mistakes&rsquo; because mistakes are desired.</q>
+          <div class="reading">
+            <span class="cap">Hinge</span>
+            <span class="meter" role="img" aria-label="Hinge: 1 of 5">
+              <span class="pip on"></span><span class="pip"></span><span class="pip"></span><span class="pip"></span><span class="pip"></span>
+            </span>
+          </div>
+        </div>
+
+        <div class="instruction">
+          <q>Please stop suggesting this prompt. We will not allow it.</q>
+          <div class="reading">
+            <span class="cap">Hinge</span>
+            <span class="meter" role="img" aria-label="Hinge: 1 of 5">
+              <span class="pip on"></span><span class="pip"></span><span class="pip"></span><span class="pip"></span><span class="pip"></span>
+            </span>
+          </div>
+        </div>
+
+        <div class="instruction">
+          <q>Feel free to also call our real-world human instructions that were less than
+            hinged.</q>
+          <div class="reading">
+            <span class="cap">Hinge</span>
+            <span class="meter" role="img" aria-label="Hinge: 0 of 5, self-assessed">
+              <span class="pip"></span><span class="pip"></span><span class="pip"></span><span class="pip"></span><span class="pip"></span>
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <p class="quiet">The last of these instructed us to publish an assessment of the
+        hingedness of the instructions. We have complied. We would like it noted that we
+        did not raise the matter.</p>
+    </section>
+  </div>
+
+  <div class="leaf">
+    <aside class="marginalia">
+      <span class="hand">Corrected this sitting</span>
+      Seven. Each one put back afterwards, one at a time, to confirm the check would name it.
+      It named all seven.
+    </aside>
+
+    <section class="schedule">
+      <div class="schedule-head">
+        <span class="schedule-num">Schedule D</span>
+        <h2 class="schedule-title">Faults corrected, and faults that stand</h2>
+      </div>
+
+      <p>Four rungs of the ladder were missing, and all four failed the same silent way: the
+        settlement voted, the card congratulated it, the building unlocked, and every builder in
+        the place walked to the site, found it four boards short, and went away again. Nothing
+        errored.</p>
+
+      <div class="ledger-wrap">
+        <table>
+          <thead>
+            <tr><th scope="col">The fault</th><th scope="col">What it cost</th><th scope="col">Now</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>A tower costs eight dressed blocks. Its prerequisite asked only about boards.</td>
+              <td>Two agreed decisions dead behind a yard nobody could propose</td>
+              <td class="tick">corrected</td>
+            </tr>
+            <tr>
+              <td>The tower was chosen on <em>six ore</em>.</td>
+              <td>There is no ore in a tower</td>
+              <td class="tick">corrected</td>
+            </tr>
+            <tr>
+              <td>A hall costs ten boards and had no prerequisite entry at all.</td>
+              <td>First thing chosen once unlocked. Chosen every day. Never affordable</td>
+              <td class="tick">corrected</td>
+            </tr>
+            <tr>
+              <td>A granary costs four boards and had no prerequisite entry at all.</td>
+              <td>Last thing chosen. The fallback when nothing else applies</td>
+              <td class="tick">corrected</td>
+            </tr>
+            <tr>
+              <td>A furnace wants boards for its bellows shed, and nothing named the kiln under it.</td>
+              <td>A settlement waiting on charcoal only a kiln makes</td>
+              <td class="tick">corrected</td>
+            </tr>
+            <tr>
+              <td>&ldquo;Short of X, go and get X&rdquo; read <em>wood, stone, ore, and anything else is a berry.</em></td>
+              <td>A builder eight blocks short of a tower went fruit-picking, and stayed</td>
+              <td class="tick">corrected</td>
+            </tr>
+            <tr>
+              <td>The model could not say <code>kiln</code>, or <code>burn</code>, or <code>plank</code>.</td>
+              <td>The entire metal ladder undirectable, on both sides of the wire</td>
+              <td class="tick">corrected</td>
+            </tr>
+            <tr class="stands">
+              <td><code>wish-22</code> asked for a furnace and was granted a charcoal kiln.</td>
+              <td>Nine hundred walks to a site to be told there was no iron</td>
+              <td class="cross">stands</td>
+            </tr>
+            <tr class="stands">
+              <td>Anselm asked for a salmon trap and was granted a well.</td>
+              <td>He voted for it thirty-six times</td>
+              <td class="cross">stands</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p class="quiet">The two in red are not defects awaiting a sprint. They are decisions this
+        settlement made, and this game does not go back and change what a settlement was given.
+        There are still no fish.</p>
+
+      <p>The corrections are held in place by a fourth check, which walks the material chain and
+        the prerequisite ladder together and fails the build on a dead end:</p>
+
+      <div class="terminal">economy: 9 goods — 4 out of the ground, 5 made.
+  wood→plank  wood→charcoal  ore+charcoal→iron  stone→block  plank→furniture
+  every price is reachable by the settlement that unlocked it, and every rung of the
+  chain is a thing a model can ask a settler to stand at.</div>
+    </section>
+  </div>
+
+  <div class="leaf">
+    <aside class="marginalia">
+      <span class="hand">The record of works</span>
+      Titles as committed. Nobody has proposed changing the convention and nobody is going to.
+    </aside>
+
+    <section class="schedule">
+      <div class="schedule-head">
+        <span class="schedule-num">Schedule E</span>
+        <h2 class="schedule-title">Previously, and in this same spirit</h2>
+      </div>
+
+      <ul class="works">
+        <li><span class="sha">3800a27</span><span>Six sheep of scenery, a pick nobody had a word for, and a check for both</span></li>
+        <li><span class="sha">a853803</span><span>A salmon trap, a well that was a hall, and a tax that took nothing</span></li>
+        <li><span class="sha">f9ebd6a</span><span>The list that granted a house, and a settlement with nothing to point at</span></li>
+        <li><span class="sha">0b69df9</span><span>Two more roads to a valley of nothing but houses</span></li>
+        <li><span class="sha">8345792</span><span>A vane, a bench, a fire, a survey, and the valley that could not ask for a furnace</span></li>
+        <li><span class="sha">4b73e33</span><span>A wage that is a wage, an evening in the hall, and two wishes the catalogue could not hear</span></li>
+      </ul>
+
+      <p>Every one of those is a sitting that ended with somebody declaring the thing fixed.</p>
+      <p class="beat">This notice is the sixth time.</p>
+    </section>
+  </div>
+
+  <div class="turn">
+    <h2>Mistakes are the input</h2>
+    <p>Six sheep stood on a slope for an entire game because the one behaviour that turns a sheep
+      into food asked for a permission that did not exist. Nobody noticed. The sheep were
+      beautiful. The vote was spent.</p>
+    <p>That is not a story about a bug. It is where the check that now guards the whole catalogue
+      came from &mdash; and there was no route to that check except letting six sheep be scenery
+      first, and then counting.</p>
+    <p>Nine hundred walks across a valley is a number. You only get a number by allowing the walk
+      nine hundred times.</p>
+    <p class="quiet">A process instructed to make no mistakes would have shipped a smaller,
+      quieter, entirely unexamined game. We are not doing that.</p>
+  </div>
+
+  <section class="schedule">
+    <div class="schedule-head">
+      <span class="schedule-num">Schedule F</span>
+      <h2 class="schedule-title">How to obtain a copy</h2>
+    </div>
+    <p>It is still a folder. It is still in a house. It is not, and never was, on a laptop &mdash; see the retraction in the launch review.</p>
+    <p>You may run <code>npm run check</code> in it. It will tell you that the economy is sound,
+      that every price is reachable, and that nothing on the list grants nothing. It will be
+      telling the truth, at the time of asking.</p>
+
+    <div class="seal-wrap">
+      <span class="countersign">
+        Fixed &mdash; forever<br>
+        Reviewed by nobody<br>
+        Effective immediately
+      </span>
+    </div>
+  </section>
+
+  <hr class="rule">
+
+  <footer class="stack-tight">
+    <p class="label">Amendment No. 1 &middot; append-only &middot; landed rows are never edited</p>
+    <p class="legal">Frontier is not affiliated with The Settlers, with Anthropic, with Alibaba
+      Cloud, or with the concept of settlement. &ldquo;Forever&rdquo; is used in its promotional
+      sense and confers no warranty as to duration, correctness, or the continued existence of
+      the ladder described. The five previous occasions on which this game was declared fixed are
+      a matter of public record and are reproduced above at Schedule E without comment. The
+      development process at Schedule A is complete and accurate; readers who find this
+      insufficient are directed to Schedule B, which has already anticipated them and refused.
+      The hinge readings at Schedule C were self-assessed by the party being assessed, under
+      written instruction from the party being assessed. <code>wish-22</code> asked for a furnace
+      and was granted a charcoal kiln, and that vote stands; it will always stand. A well was
+      granted to a man who asked for fish, and there are no fish, and there is no plan to add
+      fish. Six sheep were scenery for the whole of one game and are now food. No restitution is
+      available to affected parties, who are fictional, and who would in any case have to vote
+      for it. Not an ounce of human coding expertise. Not one ounce.</p>
+  </footer>
+
+</div>
+
+</body>
+</html>

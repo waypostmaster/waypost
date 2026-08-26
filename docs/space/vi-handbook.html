@@ -1,0 +1,353 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>*{margin:0;padding:0}img{max-width:100%}</style>
+</head>
+<body>
+<title>A Settler's Handbook</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Zilla+Slab:ital,wght@0,400;0,600;0,700;1,400&family=Courier+Prime:ital,wght@0,400;0,700;1,400&display=swap">
+
+<style>
+  :root {
+    /* Two inks on grey stock, which is how a manual that came in a box was printed. */
+    --paper:    #DBD9E0;
+    --paper-2:  #D1CFD9;
+    --paper-3:  #C6C4D1;
+    --ink:      #1B1B2E;
+    --ink-soft: #4E4E68;
+    --rule:     #A6A4B4;
+    --spot:     #C8412B;
+
+    --measure: 34rem;
+    --s1: 0.35rem; --s2: 0.7rem; --s3: 1.15rem; --s4: 1.9rem;
+    --s5: 3rem;    --s6: 4.6rem; --s7: 7rem;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --paper:    #16161F;
+      --paper-2:  #1D1D28;
+      --paper-3:  #252532;
+      --ink:      #D8D7E2;
+      --ink-soft: #918FA6;
+      --rule:     #3B3B4D;
+      --spot:     #F0705A;
+    }
+  }
+  :root[data-theme="dark"] {
+    --paper:    #16161F;
+    --paper-2:  #1D1D28;
+    --paper-3:  #252532;
+    --ink:      #D8D7E2;
+    --ink-soft: #918FA6;
+    --rule:     #3B3B4D;
+    --spot:     #F0705A;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: "Zilla Slab", Georgia, "Times New Roman", serif;
+    font-size: 1.0625rem;
+    line-height: 1.58;
+    margin: 0;
+    padding: 0 var(--s3) var(--s7);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .sheet { max-width: 52rem; margin: 0 auto; display: flex; flex-direction: column; gap: var(--s5); }
+
+  p { margin: 0 0 var(--s3); max-width: var(--measure); }
+  p:last-child { margin-bottom: 0; }
+  code { font-family: "Courier Prime", "Courier New", monospace; font-size: 0.9em; }
+  .quiet { color: var(--ink-soft); }
+  .label {
+    font-family: "Courier Prime", "Courier New", monospace;
+    font-size: 0.7rem; letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--ink-soft); margin: 0;
+  }
+  .rule { border: 0; border-top: 1px solid var(--rule); margin: 0; }
+  .rule-spot { border: 0; border-top: 3px solid var(--spot); margin: 0; }
+
+  /* ---------- cover ---------- */
+
+  .cover { display: flex; flex-direction: column; gap: var(--s3); padding-top: var(--s5); }
+  .cover-top { display: flex; flex-wrap: wrap; justify-content: space-between; gap: var(--s2) var(--s4); }
+  .cover-top .label { white-space: nowrap; }
+  .wordmark {
+    font-family: Anton, "Arial Narrow", Impact, sans-serif;
+    font-weight: 400; line-height: 0.84; letter-spacing: -0.01em;
+    text-transform: uppercase; margin: 0;
+    font-size: clamp(2.8rem, 13vw, 7rem);
+  }
+  .wordmark .b { color: var(--spot); }
+  .cover-deck { font-size: 1.12rem; max-width: 46ch; }
+  .edition {
+    font-family: "Courier Prime", "Courier New", monospace;
+    font-size: 0.74rem; letter-spacing: 0.1em; color: var(--ink-soft);
+  }
+
+  /* ---------- sections ---------- */
+
+  .sec { display: flex; flex-direction: column; gap: var(--s3); }
+  .sec > h2 {
+    font-family: "Zilla Slab", Georgia, serif;
+    font-weight: 700; font-size: 1.34rem; letter-spacing: 0.01em;
+    margin: 0; padding-bottom: var(--s2); border-bottom: 2px solid var(--ink);
+    display: flex; gap: var(--s3); align-items: baseline;
+  }
+  .sec > h2 .n {
+    font-family: "Courier Prime", "Courier New", monospace;
+    font-size: 0.86rem; color: var(--spot); flex: none;
+  }
+  h3 {
+    font-family: "Courier Prime", "Courier New", monospace;
+    font-size: 0.74rem; letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--ink-soft); margin: 0 0 var(--s2);
+  }
+
+  /* Two columns, because a manual is. */
+  .cols { max-width: none; }
+  @media (min-width: 52rem) {
+    .cols { column-count: 2; column-gap: var(--s5); column-rule: 1px solid var(--rule); }
+    .cols > * { break-inside: avoid; }
+    .cols p { max-width: none; }
+  }
+
+  /* ---------- command blocks ---------- */
+
+  pre {
+    background: var(--paper-3); margin: 0 0 var(--s3);
+    padding: var(--s3); overflow-x: auto;
+    font-family: "Courier Prime", "Courier New", monospace;
+    font-size: 0.82rem; line-height: 1.7; color: var(--ink);
+  }
+  pre .c { color: var(--ink-soft); }
+
+  /* ---------- note boxes ---------- */
+
+  .note {
+    border-left: 4px solid var(--spot);
+    background: var(--paper-2);
+    padding: var(--s3);
+    margin: 0 0 var(--s3);
+  }
+  .note p { margin: 0; max-width: none; }
+  .note .cap {
+    font-family: "Courier Prime", "Courier New", monospace;
+    font-size: 0.66rem; letter-spacing: 0.16em; text-transform: uppercase;
+    color: var(--spot); display: block; margin-bottom: var(--s1);
+  }
+
+  /* ---------- tables ---------- */
+
+  .table-wrap { overflow-x: auto; }
+  table { border-collapse: collapse; width: 100%; min-width: 32rem; }
+  th, td { text-align: left; padding: var(--s2) var(--s3) var(--s2) 0; vertical-align: top; }
+  thead th {
+    font-family: "Courier Prime", "Courier New", monospace;
+    font-size: 0.66rem; letter-spacing: 0.16em; text-transform: uppercase;
+    color: var(--ink-soft); border-bottom: 2px solid var(--ink);
+  }
+  tbody tr { border-bottom: 1px solid var(--rule); }
+  tbody td { font-size: 0.96rem; line-height: 1.45; }
+  td.key { font-family: "Courier Prime", monospace; font-size: 0.8rem; color: var(--spot); white-space: nowrap; }
+  td.sym { font-family: "Courier Prime", monospace; font-size: 0.94rem; }
+
+  /* ---------- limitations ---------- */
+
+  .limits { margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: var(--s2); }
+  .limits li {
+    display: grid; grid-template-columns: 1.4rem 1fr; gap: var(--s2);
+    padding-bottom: var(--s2); border-bottom: 1px solid var(--rule); font-size: 0.98rem;
+  }
+  .limits .m { color: var(--spot); font-family: "Courier Prime", monospace; }
+
+  .legal {
+    font-family: "Courier Prime", "Courier New", monospace;
+    font-size: 0.7rem; line-height: 1.75; color: var(--ink-soft); max-width: none;
+  }
+  a { color: var(--spot); }
+  a:focus-visible { outline: 3px solid var(--spot); outline-offset: 3px; }
+  @media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; } }
+</style>
+
+<div class="sheet">
+
+  <section class="cover">
+    <hr class="rule-spot">
+    <div class="cover-top">
+      <p class="label">Frontier</p>
+      <p class="label">Please read before playing</p>
+    </div>
+    <h1 class="wordmark">A Settler&rsquo;s<br><span class="b">Handbook</span></h1>
+    <hr class="rule">
+    <p class="cover-deck">A game about ten people on a coast who have to vote for everything.
+      This handbook covers installation, connecting a language model, the two things you are able
+      to do, and what to check when the settlement has five kilns.</p>
+    <p class="edition">Sixth printing &middot; supersedes nothing &middot; the previous five were advertisements</p>
+  </section>
+
+  <section class="sec">
+    <h2><span class="n">1</span> Before you begin</h2>
+    <div class="cols">
+      <p>You need a browser and Node. Nothing else is required and nothing is downloaded at
+        runtime — every tree, sprite and shadow in this game is drawn from primitives, and there
+        are no image files anywhere in it.</p>
+      <pre>git clone &lt;the folder&gt;
+npm install
+npm run dev</pre>
+      <p>The game opens on a bare coast with two people, a boat, four planks and a week of food.
+        They can raise a house. That is the only thing the settlement knows how to build.
+        Everything else it will have to decide it wants.</p>
+      <p>There is no save button. The world is written down continuously and comes back as you
+        left it, including the parts you would rather it forgot.</p>
+    </div>
+  </section>
+
+  <section class="sec">
+    <h2><span class="n">2</span> Connecting a language model</h2>
+    <div class="cols">
+      <p><strong>This is optional and the game is complete without it.</strong> With no model the
+        settlers think with the game&rsquo;s own catalogue: they work, vote, trade, argue, walk out
+        and found claims down the coast. A model does exactly one thing the catalogue cannot — it
+        lets a settler want something nobody wrote down.</p>
+      <pre><span class="c"># copy the example and edit it</span>
+cp .env.example .env
+
+<span class="c"># then, in another window</span>
+ollama pull qwen3:30b-a3b</pre>
+      <p>Start the game and read the banner. A line saying <code>brain: &lt;model&gt; warm in
+        0.4s</code> means a model is answering. Anything else names what went wrong and what to do
+        about it, and the settlers carry on with the catalogue in the meantime.</p>
+    </div>
+
+    <h3>2.1 &nbsp;Settings, in <code>.env</code></h3>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th scope="col">Key</th><th scope="col">What it does</th></tr></thead>
+        <tbody>
+          <tr><td class="key">OLLAMA_HOST</td><td>Where the model lives. Defaults to this machine. Anything speaking Ollama&rsquo;s <code>/api/chat</code> will do, here or on another box.</td></tr>
+          <tr><td class="key">FRONTIER_MODEL</td><td>Which model. It has to follow a JSON schema. A small instruct model is plenty.</td></tr>
+          <tr><td class="key">FRONTIER_NUM_CTX</td><td>How much context. The default for most models allocates a cache larger than the card and pushes half the weights onto the CPU. Measured on one machine, capping this took a decision from 123 seconds to 0.24.</td></tr>
+          <tr><td class="key">FRONTIER_WISH_EVERY</td><td>Decisions between <em>&ldquo;and what is this valley missing?&rdquo;</em></td></tr>
+          <tr><td class="key">FRONTIER_BRAIN=off</td><td>No model at all. Also what you want when measuring anything, because a model turns two runs of the same test into two different valleys.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="sec">
+    <h2><span class="n">3</span> What you are able to do</h2>
+    <div class="cols">
+      <p>Two things. You may <strong>watch</strong>, and you may <strong>hand one settler to a
+        model</strong>. That is the entire control surface.</p>
+      <p>You cannot place a building, direct a settler, give anybody food, or decide what gets
+        built. Those are the settlement&rsquo;s and it votes on them. A proposal carries by ranked
+        ballot, counted by single transferable vote, and carrying it means the settlement has
+        <em>resolved</em> to build the thing — which is not the same as the thing existing, and
+        usually the distance between the two is four boards nobody has cut.</p>
+      <div class="note">
+        <span class="cap">Note</span>
+        <p>Earlier builds let you drop a flag on the ground and settlers would go to it. Nearly
+          half of everyone&rsquo;s idle time became <em>going to see what you wanted</em>. It was
+          removed: a valley with a god in it is not a place where anybody else&rsquo;s decisions
+          mean anything. The flag remained on screen for some time afterwards, doing nothing, until
+          a player asked what it was for.</p>
+      </div>
+      <p>Settlers who are unhappy enough will leave — down the coast to another settlement, if
+        somebody there has the food to take them in, or out to found a claim of their own. Neither
+        is something you can ask for.</p>
+    </div>
+  </section>
+
+  <section class="sec">
+    <h2><span class="n">4</span> Troubleshooting</h2>
+
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th scope="col">Symptom</th><th scope="col">Cause and action</th></tr></thead>
+        <tbody>
+          <tr>
+            <td>The settlement has five kilns and nothing else.</td>
+            <td>Expected in builds before this printing. A model was asked what to build next and answered <em>a kiln</em> — a good answer in a valley with no charcoal — and nothing on that path checked whether one was already standing. There is a ceiling now. <strong>No action required; the existing kilns will remain.</strong></td>
+          </tr>
+          <tr>
+            <td>Everybody is starving and there is food within thirty tiles of them.</td>
+            <td>Their arms are full. A settler at carrying capacity strips a bush and receives nothing from it, and the branch that sends a hungry person foraging returned a hundred and seventeen lines above the branch that says <em>put your load down</em>. Fixed. If it recurs, check whether the stores are also full, in which case see below.</td>
+          </tr>
+          <tr>
+            <td>Goods are stacked on the ground outside the store.</td>
+            <td>Correct behaviour. There is nowhere to put them. They are still there and anybody hauling past will bring them in on the day there is room; the weather is working on them until somebody does. <strong>Build somewhere to put things.</strong> This requires a vote.</td>
+          </tr>
+          <tr>
+            <td>A settler is living alone on an island.</td>
+            <td>He walked out and founded a claim, and the check for where a claim may stand asked whether the ground was dry, level and unclaimed. It did not ask whether it was attached to anything. Later claims cannot do this. <strong>The existing settler cannot be moved and will remain there.</strong></td>
+          </tr>
+          <tr>
+            <td>The settlement voted for a furnace and received a charcoal kiln.</td>
+            <td>Working as intended. The proposal was misfiled when it was made and the vote was held on the misfiling. This game does not go back and change what a settlement was given. <strong>The vote stands. It will always stand.</strong></td>
+          </tr>
+          <tr>
+            <td>A settler has requested a burial ground.</td>
+            <td>There is no death in this game. No line anywhere removes a settler from the valley. The request is reasonable and cannot be granted. <strong>No action required, in perpetuity.</strong></td>
+          </tr>
+          <tr>
+            <td>A settler asked for a salmon trap and was granted a well.</td>
+            <td>The only word the catalogue recognised was <em>water</em>, in a clause explaining that he did not wish to be in it. See above regarding votes standing. There are no fish.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="sec">
+    <h2><span class="n">5</span> Known limitations</h2>
+    <ul class="limits">
+      <li><span class="m">&mdash;</span><span>There is no death, no injury that ends anything, and no win condition. The game does not conclude. It is a place that continues.</span></li>
+      <li><span class="m">&mdash;</span><span>A felled tree yields more than a settler can carry, and the remainder is destroyed. The honest fix is to leave what will not fit standing, and it changes every gathering hour in the valley.</span></li>
+      <li><span class="m">&mdash;</span><span>The catalogue cannot read a negation. A settler who asks for somewhere <em>away from</em> a thing may be granted the thing. This has cost two votes so far.</span></li>
+      <li><span class="m">&mdash;</span><span>Model support is Ollama and only Ollama. An OpenAI-compatible endpoint is a second transport in one file, not a setting. Nobody has written it because nobody here has an endpoint to test it against, and an untested provider is worse than an honest one.</span></li>
+      <li><span class="m">&mdash;</span><span>A settlement that has already voted for everything it needs and cannot build any of it has nothing left to put on a ballot. This is not a bug. It is a valley.</span></li>
+    </ul>
+  </section>
+
+  <section class="sec">
+    <h2><span class="n">6</span> Support</h2>
+    <div class="cols">
+      <p>There is none.</p>
+      <p>It is a folder, on a machine that does not move, in a house. The entire development process is one prompt,
+        which has never been typed the same way twice, and which deliberately omits the line
+        <em>make no mistakes</em>, on the grounds that the mistakes are where the work comes from.</p>
+      <p>Everything in section 4 was found by somebody watching the game and saying what they saw.
+        Not one item on that list was found by reading the code. If you find another, that is the
+        process working.</p>
+    </div>
+  </section>
+
+  <hr class="rule">
+
+  <footer>
+    <p class="label">A Settler&rsquo;s Handbook &middot; sixth printing</p>
+    <p class="legal">Frontier is not affiliated with The Settlers, with Anthropic, with Alibaba
+      Cloud, or with the concept of settlement. This handbook is accurate as of the printing and
+      will not be. The five previous documents were advertisements; one of them declared this
+      valley fixed forever and was withdrawn, and it remains published, because nothing here is
+      ever withdrawn from the record. Section 4 is not a list of things that have been fixed — it
+      is a list of things a player noticed, which is a different and shorter list than the things
+      that are wrong. No warranty is offered as to the conduct of the settlers, who vote, argue,
+      run up debts with each other, bribe one another before a sitting, walk out, and are on the
+      whole difficult, having mostly arrived here because somewhere else would not have them. Not
+      an ounce of human coding expertise. Not one ounce.</p>
+  </footer>
+
+</div>
+
+</body>
+</html>

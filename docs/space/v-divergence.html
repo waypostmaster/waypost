@@ -1,0 +1,391 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>*{margin:0;padding:0}img{max-width:100%}</style>
+</head>
+<body>
+<title>Notes on a Divergence</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Zilla+Slab:ital,wght@0,400;0,600;0,700;1,400&family=Courier+Prime:ital,wght@0,400;0,700;1,400&display=swap">
+
+<style>
+  :root {
+    /* Survey stock, not the notices' oatmeal. These are notes, not a bill. */
+    --paper:    #D7DDE1;
+    --paper-2:  #CDD4D9;
+    --paper-3:  #C2CAD0;
+    --ink:      #171B1E;
+    --ink-soft: #4C555B;
+    --rule:     #A2ACB3;
+    --line:     rgba(47, 93, 80, 0.16);
+    /* Herbarium green. Everything observed is in it. */
+    --field:    #2F5D50;
+    /* Kept from the notices, and used here only for damage the committee did. */
+    --stamp:    #A9201C;
+    --pencil:   #6B767D;
+
+    --measure: 62ch;
+    --s1: 0.35rem; --s2: 0.7rem; --s3: 1.15rem; --s4: 1.9rem;
+    --s5: 3rem;    --s6: 4.6rem; --s7: 7rem;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --paper:    #14181B;
+      --paper-2:  #1B2124;
+      --paper-3:  #232A2E;
+      --ink:      #D6DDE1;
+      --ink-soft: #8C979E;
+      --rule:     #384248;
+      --line:     rgba(122, 194, 173, 0.13);
+      --field:    #7AC2AD;
+      --stamp:    #E05A52;
+      --pencil:   #8C979E;
+    }
+  }
+  :root[data-theme="dark"] {
+    --paper:    #14181B;
+    --paper-2:  #1B2124;
+    --paper-3:  #232A2E;
+    --ink:      #D6DDE1;
+    --ink-soft: #8C979E;
+    --rule:     #384248;
+    --line:     rgba(122, 194, 173, 0.13);
+    --field:    #7AC2AD;
+    --stamp:    #E05A52;
+    --pencil:   #8C979E;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: "Zilla Slab", Georgia, "Times New Roman", serif;
+    font-size: 1.0625rem;
+    line-height: 1.62;
+    margin: 0;
+    padding: 0 var(--s3) var(--s7);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .sheet { max-width: 53rem; margin: 0 auto; display: flex; flex-direction: column; gap: var(--s5); }
+
+  .label {
+    font-family: "Courier Prime", "Courier New", monospace;
+    font-size: 0.72rem; letter-spacing: 0.16em; text-transform: uppercase;
+    color: var(--ink-soft); margin: 0;
+  }
+  .rule { border: 0; border-top: 1px solid var(--rule); margin: 0; }
+  .rule-field { border: 0; border-top: 2px solid var(--field); margin: 0; }
+  p { margin: 0; max-width: var(--measure); }
+  .stack-tight { display: flex; flex-direction: column; gap: var(--s2); }
+  code { font-family: "Courier Prime", "Courier New", monospace; font-size: 0.92em; }
+  .quiet { color: var(--ink-soft); }
+  .beat { font-size: 1.2rem; line-height: 1.45; font-weight: 600; }
+
+  .masthead { display: flex; flex-direction: column; gap: var(--s2); padding-top: var(--s4); }
+  .masthead-row {
+    display: flex; flex-wrap: wrap; gap: var(--s2) var(--s4);
+    justify-content: space-between; align-items: baseline;
+  }
+  .masthead-row .label { white-space: nowrap; }
+  @media (max-width: 36rem) { .masthead-row .label { white-space: normal; } }
+
+  /* ---------- hero ---------- */
+
+  .hero { display: flex; flex-direction: column; gap: var(--s3); }
+  .title {
+    font-family: Anton, "Arial Narrow", Impact, sans-serif;
+    font-weight: 400; line-height: 0.86; letter-spacing: -0.012em;
+    text-transform: uppercase; margin: 0;
+    font-size: clamp(2.6rem, 11vw, 6rem);
+  }
+  .title .b { color: var(--field); }
+  .binomial {
+    font-family: "Zilla Slab", Georgia, serif; font-style: italic;
+    font-size: 1.1rem; color: var(--field);
+  }
+  .deck { font-size: 1.1rem; line-height: 1.55; max-width: 56ch; }
+
+  /* ---------- sections ---------- */
+
+  .sec { display: flex; flex-direction: column; gap: var(--s3); }
+  .sec-head { display: flex; flex-direction: column; gap: var(--s1); }
+  .sec-num {
+    font-family: "Courier Prime", "Courier New", monospace;
+    font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--field);
+  }
+  .sec-title {
+    font-family: Anton, "Arial Narrow", Impact, sans-serif;
+    font-weight: 400; font-size: clamp(1.5rem, 4.8vw, 2.2rem);
+    line-height: 1.04; text-transform: uppercase; margin: 0; text-wrap: balance;
+  }
+
+  /* ---------- comparative table ---------- */
+
+  .compare-wrap { overflow-x: auto; }
+  table { border-collapse: collapse; width: 100%; min-width: 34rem; }
+  th, td { text-align: left; padding: var(--s2) var(--s3) var(--s2) 0; vertical-align: top; }
+  thead th {
+    font-family: "Courier Prime", "Courier New", monospace;
+    font-size: 0.66rem; letter-spacing: 0.16em; text-transform: uppercase;
+    color: var(--ink-soft); border-bottom: 2px solid var(--ink); padding-bottom: var(--s2);
+  }
+  thead th.here { color: var(--field); }
+  tbody tr { border-bottom: 1px solid var(--rule); }
+  tbody td { font-size: 0.98rem; line-height: 1.48; }
+  td.trait {
+    font-family: "Courier Prime", "Courier New", monospace;
+    font-size: 0.76rem; letter-spacing: 0.06em; color: var(--ink-soft); white-space: nowrap;
+  }
+  td.here { color: var(--field); }
+
+  /* ---------- observations, on ruled paper ---------- */
+
+  .obs {
+    background: var(--paper-2);
+    background-image: repeating-linear-gradient(to bottom,
+      transparent 0 27px, var(--line) 27px 28px);
+    border-left: 4px solid var(--field);
+    padding: var(--s3) var(--s3) var(--s3) var(--s3);
+    display: flex; flex-direction: column; gap: 0;
+  }
+  .obs p, .obs li { line-height: 28px; }
+  .obs .cap {
+    font-family: "Courier Prime", "Courier New", monospace;
+    font-size: 0.66rem; letter-spacing: 0.16em; text-transform: uppercase;
+    color: var(--field); line-height: 28px;
+  }
+  .obs ul { margin: 0; padding-left: 1.1rem; }
+  .obs li { margin: 0; }
+  .obs strong { color: var(--stamp); font-weight: 600; }
+
+  /* ---------- predictions ---------- */
+
+  .pred { margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 0; }
+  .pred li {
+    display: grid; grid-template-columns: 1fr; gap: var(--s1);
+    padding: var(--s3) 0; border-bottom: 1px solid var(--rule);
+  }
+  .pred li:first-child { border-top: 1px solid var(--rule); }
+  @media (min-width: 46rem) {
+    .pred li { grid-template-columns: 1fr 9rem; gap: var(--s4); align-items: baseline; }
+  }
+  .conf {
+    font-family: "Courier Prime", "Courier New", monospace;
+    font-size: 0.68rem; letter-spacing: 0.14em; text-transform: uppercase;
+  }
+  .conf.certain { color: var(--stamp); }
+  .conf.likely { color: var(--field); }
+  .conf.guess { color: var(--pencil); }
+
+  /* ---------- the claim under test ---------- */
+
+  .claim {
+    border-top: 3px solid var(--field); border-bottom: 3px solid var(--field);
+    padding: var(--s4) 0; display: flex; flex-direction: column; gap: var(--s3);
+  }
+  .claim h2 {
+    font-family: Anton, "Arial Narrow", Impact, sans-serif;
+    font-weight: 400; font-size: clamp(1.8rem, 6.6vw, 3.2rem);
+    line-height: 0.98; text-transform: uppercase; margin: 0; text-wrap: balance;
+  }
+  .verdict-line {
+    font-family: "Courier Prime", "Courier New", monospace;
+    font-size: 0.8rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--stamp);
+  }
+  .audit { margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: var(--s2); }
+  .audit li {
+    display: grid; grid-template-columns: 1.6rem 1fr; gap: var(--s2);
+    font-size: 0.98rem; line-height: 1.45;
+  }
+  .audit .y { color: var(--field); font-family: "Courier Prime", monospace; }
+  .audit .n { color: var(--stamp); font-family: "Courier Prime", monospace; }
+
+  .legal {
+    font-family: "Courier Prime", "Courier New", monospace;
+    font-size: 0.7rem; line-height: 1.75; color: var(--ink-soft); max-width: none;
+  }
+  a { color: var(--field); }
+  a:focus-visible { outline: 3px solid var(--field); outline-offset: 3px; }
+  @media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; } }
+</style>
+
+<div class="sheet">
+
+  <header class="masthead">
+    <hr class="rule-field">
+    <div class="masthead-row">
+      <p class="label">Field notes &middot; the Landing and two claims</p>
+      <p class="label">Year 2 &middot; observer present throughout</p>
+    </div>
+    <hr class="rule">
+    <p class="label">Specimen observed continuously. Specimen unaware of observation. Specimen cannot die.</p>
+  </header>
+
+  <section class="hero">
+    <h1 class="title">Notes on a<br><span class="b">Divergence</span></h1>
+    <p class="binomial">Frontier, descended from <em>The Settlers</em>, and no longer recognisable as such</p>
+    <hr class="rule">
+    <p class="deck">Two things were taken from the ancestor and kept: iron wants charcoal as well as
+      ore, so forestry is load-bearing for every piece of metal; and a deep mine eats, so nobody
+      digs seriously until somebody is feeding them. Everything after that is divergence, and most
+      of it was not designed. It was voted for.</p>
+  </section>
+
+  <section class="sec">
+    <div class="sec-head">
+      <span class="sec-num">&sect; 1</span>
+      <h2 class="sec-title">Comparative morphology</h2>
+    </div>
+
+    <div class="compare-wrap">
+      <table>
+        <thead>
+          <tr><th scope="col">Trait</th><th scope="col">The ancestor</th><th scope="col" class="here">This specimen</th></tr>
+        </thead>
+        <tbody>
+          <tr><td class="trait">construction</td><td>You place the building. Serfs obey.</td>
+            <td class="here">You cannot place anything. They vote. If it carries, somebody still has to be able to build it, and usually nobody is.</td></tr>
+          <tr><td class="trait">the player</td><td>A hand from above.</td>
+            <td class="here">Two verbs: watch, and hand one person to a language model. A summoning flag existed and was removed for being a god power.</td></tr>
+          <tr><td class="trait">population</td><td>Interchangeable carriers.</td>
+            <td class="here">Named people with grudges, debts, a trade they get better at, three horizons of goals, and every vote they ever cast on the record.</td></tr>
+          <tr><td class="trait">transport</td><td>Carrier chains along roads.</td>
+            <td class="here">Everyone carries their own, six at a time. Until this afternoon, anything over six ceased to exist.</td></tr>
+          <tr><td class="trait">politics</td><td>None.</td>
+            <td class="here">Ranked ballots counted by single transferable vote, canvassing, bribery before a sitting, secession, and — as of last week — moving house.</td></tr>
+          <tr><td class="trait">mortality</td><td>Serfs die.</td>
+            <td class="here">There is no death. Not a hazard, not a difficulty setting: no line anywhere removes a settler from the valley. One of them has asked for a burial ground.</td></tr>
+          <tr><td class="trait">win condition</td><td>Yes.</td>
+            <td class="here">No.</td></tr>
+          <tr><td class="trait">release</td><td>Shipped finished, in a box.</td>
+            <td class="here">Shipped an advertisement declaring itself fixed forever, and withdrew it.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="sec">
+    <div class="sec-head">
+      <span class="sec-num">&sect; 2</span>
+      <h2 class="sec-title">Observed pathologies of decision by committee</h2>
+    </div>
+
+    <p>Not a metaphor. Every building past a house in this game exists because a majority of the
+      people living there ranked it above the alternatives, and the following are what that has
+      actually produced.</p>
+
+    <div class="obs">
+      <span class="cap">Observations, in the order they were noticed</span>
+      <ul>
+        <li>The settlement voted for a <strong>furnace</strong> and was granted a <strong>charcoal kiln</strong>. The vote stands and will always stand.</li>
+        <li>A man asked for a salmon trap and was granted <strong>a well</strong>. He ranked it first thirty-six times. There are no fish.</li>
+        <li>A woman asked for a clearing by the lake <em>away from the woods and the masons</em>, and was very nearly granted <strong>a masons&rsquo; yard</strong>.</li>
+        <li>The settlement voted itself roads, fresh water, a grindstone and tree-planting <strong>while holding no food at all</strong>.</li>
+        <li>It also voted through a sawmill, a furnace, a masons&rsquo; yard and a kiln, and then built <strong>eleven houses</strong>, because houses cost wood and there was a great deal of wood.</li>
+        <li>A firepit carried twice and did <strong>nothing both times</strong>, being a thing the catalogue had no word for.</li>
+        <li>Six sheep were voted onto the slope. The one behaviour that turns a sheep into food asked for a permission that did not exist, so they were <strong>scenery for a whole game</strong>.</li>
+        <li>A tax was agreed and <strong>took nothing whatsoever</strong> for the entire duration of its existence.</li>
+        <li>And one this week that never reached the committee at all: a proposal was filed under a boon the settlement already held, which strikes it off every slate ever drawn. Not refused. <strong>Never offered.</strong></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="sec">
+    <div class="sec-head">
+      <span class="sec-num">&sect; 3</span>
+      <h2 class="sec-title">A note on cairns</h2>
+    </div>
+
+    <p>That last one was the cairn, and it deserves its own entry for reasons that go slightly
+      beyond the game.</p>
+
+    <p>A settler asked for <em>&ldquo;a network of paths marked by stacked stones, connecting key
+      locations, to guide people and reduce the risk of getting lost&rdquo;</em>, and gave her
+      reason: everyone hauls back alone and gets turned around in the woods, when they could be
+      helping each other. It was filed as a request for a cart, because she said the word
+      <em>hauling</em>. Correcting that to <em>road</em> would have been quietly worse — the
+      settlement has had roads since year one, so the proposal would have vanished off every ballot
+      without anybody voting it down.</p>
+
+    <p>It is not a road. A road is ground that stops taking the time; a cairn is knowing where you
+      are. So it is its own thing now, and what it grants is the distance a call for help carries:
+      120 tiles becomes 210. A manned tower still beats it at 340 and still stacks on top, which is
+      the difference between the two said as a number — stones cost an afternoon once, and somebody
+      standing up a tower costs an afternoon every afternoon.</p>
+
+    <p class="beat">The settler who asked for it was a language model.</p>
+
+    <p>Which is worth sitting with. Cairns are the metaphor this class of software reaches for
+      constantly and unprompted — markers left by whoever came through first, for whoever comes
+      through next, on ground nobody has a map of. Given a valley and a person to be, it asked for
+      the one piece of infrastructure it was always going to ask for.</p>
+
+    <p class="quiet">And it was nearly deleted by a filing error. Twice.</p>
+  </section>
+
+  <div class="claim">
+    <p class="verdict-line">Claim under test</p>
+    <h2>All magic has been eliminated</h2>
+    <p>The first rule of this valley is that nothing is given. The corollary went unwritten until a
+      player pointed at goods being set down on the ground and disappearing: nothing here should
+      evaporate either. The claim was made. The claim was then audited, which is the part
+      advertisements usually leave out.</p>
+
+    <ul class="audit">
+      <li><span class="y">&check;</span><span>Goods that will not fit in a store are now a real stack on the real ground. Anybody hauling past sweeps them in on the day there is room, so voting a depot through recovers last week&rsquo;s timber.</span></li>
+      <li><span class="y">&check;</span><span>The stack weathers — berries first, then worked timber, then raw, and the stone and ore last, because a heap of rock does not much care. Never nothing, or the ground would be free storage.</span></li>
+      <li><span class="y">&check;</span><span>Every workshop in the valley ran through one function that added made goods to the stores, then to the maker&rsquo;s back, and then to <em>nothing</em>. Somebody drew three iron off a furnace and two of them were never anywhere. Fixed.</span></li>
+      <li><span class="y">&check;</span><span>The mill did the same with boards. Fixed.</span></li>
+      <li><span class="y">&check;</span><span>A settler with one hand free walked out to six sheep, worked the whole flock, and four days&rsquo; food stopped existing. Now you take what you can carry off an animal and the rest is still a sheep.</span></li>
+      <li><span class="n">&times;</span><span><strong>A felled tree still yields more than a settler can carry, and the remainder is destroyed</strong>, because the tile is marked spent whatever anybody could hold. The honest fix is to leave what will not fit standing, and it changes every gathering hour in the valley.</span></li>
+      <li><span class="n">&times;</span><span>A settler who lands arrives holding one food that came from nowhere.</span></li>
+    </ul>
+
+    <p class="beat">So: no. Five of seven. The claim is false and we can tell you exactly where.</p>
+    <p class="quiet">It was true for about an hour, which is longer than the last claim managed.</p>
+  </div>
+
+  <section class="sec">
+    <div class="sec-head">
+      <span class="sec-num">&sect; 4</span>
+      <h2 class="sec-title">Predictions</h2>
+    </div>
+
+    <ul class="pred">
+      <li><span>Nobody will die.</span><span class="conf certain">Certain &mdash; no code</span></li>
+      <li><span>Cato remains on the island.</span><span class="conf certain">Certain</span></li>
+      <li><span>The catalogue will misfile another wish, because it still cannot read a negation, and has already cost two votes that way.</span><span class="conf certain">Certain</span></li>
+      <li><span>A settler will ask for something this valley cannot do, and will be right to.</span><span class="conf certain">Certain</span></li>
+      <li><span>Something in this notice will be withdrawn by the next one.</span><span class="conf likely">Likely</span></li>
+      <li><span>A settler will move house for the first time in the history of this game, having been unable to for two entire games.</span><span class="conf likely">Likely</span></li>
+      <li><span>The stack outside will teach a settlement to want a depot, which is the first time scarcity has argued its own case here.</span><span class="conf guess">Untested</span></li>
+      <li><span>Somebody will vote for the wrong thing, get it, and keep it for ever.</span><span class="conf certain">Certain</span></li>
+    </ul>
+  </section>
+
+  <hr class="rule">
+
+  <footer class="stack-tight">
+    <p class="label">Field notes &middot; append-only &middot; an observation is never revised, only followed by another</p>
+    <p class="legal">Frontier is not affiliated with The Settlers, with Anthropic, with Alibaba
+      Cloud, or with the concept of settlement. The comparison at &sect;1 is offered in admiration;
+      the ancestor shipped finished and this one has published five advertisements and no game.
+      Every pathology at &sect;2 is drawn from the settlement's own record and every vote named there
+      stands, because this game does not go back and change what a settlement was given. The claim
+      at the centre of this notice is stated as an advertisement would state it and refuted
+      immediately underneath by the party making it, which is the house style. The felled tree
+      remains magic. The settler's pocket food remains magic. Amendment No. 1 declared this valley
+      fixed forever and was withdrawn; it remains published. A well was granted to a man who asked
+      for fish. Not an ounce of human coding expertise. Not one ounce.</p>
+  </footer>
+
+</div>
+
+</body>
+</html>
