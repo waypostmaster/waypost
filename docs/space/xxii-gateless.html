@@ -1,0 +1,310 @@
+<title>The Gateless Kiln</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Lora:ital,wght@0,400;0,500;1,400&family=Cutive+Mono&display=swap">
+
+<style>
+  /*
+   * A commentary. Unbleached paper, one vermilion seal, and nothing else — every other sheet on
+   * this shelf is dense with counted things, and this one is mostly air on purpose. The figures
+   * are still counted; they are just made to stand under the case rather than in front of it.
+   */
+  :root {
+    --paper:    #F0EBE1;
+    --paper-2:  #E5DFD2;
+    --paper-3:  #F7F4ED;
+    --ink:      #1A1713;
+    --ink-soft: #5E574B;
+    --rule:     #B3A996;
+    --rule-2:   #D0C8B8;
+    --seal:     #B4402A;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --paper: #12100D; --paper-2: #1B1814; --paper-3: #0D0B09;
+      --ink: #E5DFD2; --ink-soft: #8E8677;
+      --rule: #3A342A; --rule-2: #2A251E; --seal: #E0745A;
+    }
+  }
+  :root[data-theme="dark"] {
+    --paper: #12100D; --paper-2: #1B1814; --paper-3: #0D0B09;
+    --ink: #E5DFD2; --ink-soft: #8E8677;
+    --rule: #3A342A; --rule-2: #2A251E; --seal: #E0745A;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    background: var(--paper); color: var(--ink);
+    font-family: Lora, Georgia, "Times New Roman", serif;
+    font-size: 1.1rem; line-height: 1.78; font-weight: 400;
+    margin: 0; padding: 0 1.15rem 8rem;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .scroll { max-width: 40rem; margin: 0 auto; display: flex; flex-direction: column; gap: 3.6rem; }
+  p { margin: 0; max-width: 58ch; }
+  em { font-style: italic; }
+  code, .mono { font-family: "Cutive Mono", ui-monospace, monospace; font-size: 0.88em; }
+
+  .tag {
+    font-family: "Cutive Mono", monospace; font-size: 0.74rem; letter-spacing: 0.2em;
+    text-transform: uppercase; color: var(--ink-soft); margin: 0;
+  }
+  .rule { border: 0; border-top: 1px solid var(--rule); margin: 0; }
+
+  header.front { display: flex; flex-direction: column; gap: 1rem; padding-top: 3rem; align-items: center; text-align: center; }
+  h1 {
+    font-family: "Cormorant Garamond", Georgia, serif; font-weight: 300;
+    font-size: clamp(2.6rem, 11vw, 5rem); line-height: 1.02; letter-spacing: 0.005em;
+    margin: 0; text-wrap: balance;
+  }
+  h1 em { font-style: normal; color: var(--seal); }
+  .standfirst {
+    font-family: "Cormorant Garamond", Georgia, serif; font-style: italic;
+    font-size: clamp(1.2rem, 3.4vw, 1.6rem); line-height: 1.45; color: var(--ink-soft);
+    max-width: 34ch; margin: 0;
+  }
+
+  .case { display: flex; flex-direction: column; gap: 1.15rem; }
+  .case-n {
+    font-family: "Cutive Mono", monospace; font-size: 0.74rem; letter-spacing: 0.2em;
+    text-transform: uppercase; color: var(--seal); margin: 0;
+  }
+  h2 {
+    font-family: "Cormorant Garamond", Georgia, serif; font-weight: 400;
+    font-size: clamp(1.6rem, 4.6vw, 2.2rem); line-height: 1.16; margin: 0;
+    letter-spacing: 0.004em; text-wrap: balance;
+  }
+  .said {
+    font-family: "Cormorant Garamond", Georgia, serif; font-size: 1.32rem; line-height: 1.6;
+    max-width: 46ch; border-left: 2px solid var(--seal); padding-left: 1.3rem;
+  }
+  .record {
+    background: var(--paper-3); border: 1px solid var(--rule-2); padding: 0.95rem 1.1rem;
+    font-family: "Cutive Mono", monospace; font-size: 0.82rem; line-height: 1.62;
+    color: var(--ink-soft); overflow-x: auto;
+  }
+  .record b { color: var(--seal); font-weight: 400; }
+  .k { font-family: "Cutive Mono", monospace; font-size: 0.72rem; letter-spacing: 0.18em;
+       text-transform: uppercase; color: var(--ink-soft); display: block; margin-bottom: 0.4rem; }
+  .verse {
+    font-family: "Cormorant Garamond", Georgia, serif; font-style: italic;
+    font-size: 1.24rem; line-height: 1.66; color: var(--ink); max-width: 40ch;
+    align-self: center; text-align: center; padding: 0.5rem 0;
+  }
+  .verse span { display: block; }
+
+  .seal {
+    align-self: center; width: 3.1rem; height: 3.1rem; border: 2px solid var(--seal);
+    color: var(--seal); display: grid; place-items: center; border-radius: 2px;
+    font-family: "Cormorant Garamond", serif; font-size: 1.5rem; transform: rotate(-3deg);
+  }
+
+  footer { display: flex; flex-direction: column; gap: 0.9rem; border-top: 1px solid var(--rule); padding-top: 1.4rem; }
+  footer p { font-size: 0.98rem; color: var(--ink-soft); max-width: 60ch; }
+  footer strong { color: var(--ink); }
+  a { color: var(--seal); }
+</style>
+
+<div class="scroll">
+
+  <header class="front">
+    <p class="tag">Frontier &middot; a commentary in nine cases</p>
+    <h1>The Gateless <em>Kiln</em></h1>
+    <p class="standfirst">Nine things that happened on this coast in three days, set down in the
+      one form that does not require them to have worked.</p>
+    <p class="tag">Every figure below is counted</p>
+  </header>
+
+  <section class="case">
+    <p class="case-n">Case the first</p>
+    <h2>The kiln that was never lit</h2>
+    <p class="said">A student asked: does a kiln that has never been lit have kiln-nature?<br>
+      The settlement answered: it is on the list of buildings we have.</p>
+    <div class="record"><span class="k">The record</span>
+      kiln &nbsp;standing since tick 1,202 &nbsp;&middot;&nbsp; up 16,087 ticks<br>
+      turned out: <b>{}</b></div>
+    <p>Every workshop in this game has kept a lifetime tally of what came out of it since the day
+      the tally was written. For four days nothing read one. The kiln was drawn every frame, listed
+      on the settlement card, counted in the total, and had never once been worked — and the way
+      this was finally discovered was a person looking at the screen and asking out loud what it
+      had ever made.</p>
+    <p class="verse"><span>Four thousand lines to describe a shed.</span>
+      <span>One question, asked by somebody watching.</span></p>
+  </section>
+
+  <section class="case">
+    <p class="case-n">Case the second</p>
+    <h2>Which of the twenty-one</h2>
+    <p class="said">A student asked: which wish is wish-seventy-three?<br>
+      The clerk said: the file will tell you.<br>
+      The student opened the file. The clerk had struck it out that morning.</p>
+    <div class="record"><span class="k">The record</span>
+      781 filed &nbsp;&middot;&nbsp; 1,271 refused as repetitions &nbsp;&middot;&nbsp; 703 struck<br>
+      median life of a struck proposal: <b>82.7 seconds</b><br>
+      <code>wish-73</code> issued to <b>21 different settlers</b> in 67 minutes</div>
+    <p>More was refused than was ever heard. The counter read the highest number still in the file,
+      and the file was where the loser of every vote was deleted from, so striking the top wish
+      walked the counter backwards onto a number somebody already held. The office that noticed
+      this fixed it inside the hour and wrote a beautiful document about it, standing in a
+      settlement that had never manufactured anything.</p>
+    <p class="verse"><span>The record kept everything.</span>
+      <span>It could not say whose.</span></p>
+  </section>
+
+  <section class="case">
+    <p class="case-n">Case the third</p>
+    <h2>Mara asks for less</h2>
+    <p class="said">Mara said: I wish the lake had a way to fish for salmon &mdash; but since we
+      don't have fish, I wish for a way to know when the lake is safe to swim.</p>
+    <div class="record"><span class="k">The record &middot; 24 August, tick 250</span>
+      <code>"category": <b>"infirmary"</b></code> &nbsp;&middot;&nbsp; lost a vote &nbsp;&middot;&nbsp; deleted</div>
+    <p>Nothing in this software ever told her the lake was empty. There is no such line anywhere.
+      She worked it out the way you work out that a shop does not stock a thing, by never once
+      seeing it on a shelf, and rather than ask for something the world plainly did not contain she
+      asked for the next thing down.</p>
+    <p>A day later another settler asked more directly and was granted <em>a well</em>, because the
+      word list had no entry containing the word fish and a well is water.</p>
+    <p class="verse"><span>She knew the shape of the world</span>
+      <span>from the shape of what was missing.</span>
+      <span>The catalogue knew forty-one nouns.</span></p>
+  </section>
+
+  <section class="case">
+    <p class="case-n">Case the fourth</p>
+    <h2>The weir that caught nothing</h2>
+    <p class="said">Having heard the third case, the carpenter built a weir.<br>
+      The carpenter said: now there are fish.<br>
+      Over six thousand ticks the weir was used <em>once</em>.</p>
+    <div class="record"><span class="k">The record &middot; measured, twice, before it was believed</span>
+      first build &nbsp;&middot;&nbsp; fishing trips: <b>0</b> &nbsp; (in the trade ranking; all 533 food trips came from the branch above it)<br>
+      second build &nbsp;&middot;&nbsp; fishing trips: <b>0</b> &nbsp; (gated on empty bushes, which never emptied)<br>
+      third build &nbsp;&middot;&nbsp; fishing trips: <b>76</b></div>
+    <p>Three times a thing was built that did what it was told and nothing that was wanted. The
+      same afternoon a berry coppice was written and hung off the branch that replants trees, which
+      only runs where there is no tree within twelve paces, which on a wooded coast is nowhere at
+      all. It fired zero times and read, in the source, as a feature.</p>
+    <p class="verse"><span>A gate was built, and hung, and oiled.</span>
+      <span>It opened onto the wall it was set in.</span></p>
+  </section>
+
+  <section class="case">
+    <p class="case-n">Case the fifth</p>
+    <h2>Polishing the tile</h2>
+    <p class="said">The teacher found the student at the grindstone.<br>
+      What are you making? &mdash; A mirror.<br>
+      You cannot make a mirror by grinding a tile.<br>
+      Then how does one make a mirror? &mdash; The teacher did not answer, because the student had
+      already put down the tile.</p>
+    <div class="record"><span class="k">The record</span>
+      documents published about this game: <b>23</b><br>
+      git remotes configured: <b>0</b><br>
+      people other than its author who have run it: <b>0</b></div>
+    <p>The line is not mine. It arrived by message, from a fairground, and it was correct on
+      arrival: twenty-two typeset sheets about a program with no door in it, each one genuinely
+      good, each one a tile. The capability appraisal at sheet XVII had given that exact finding a
+      number, and the response to it was four more sheets.</p>
+    <p class="verse"><span>The tile took a beautiful shine.</span>
+      <span>Nobody came to look at themselves in it.</span></p>
+  </section>
+
+  <section class="case">
+    <p class="case-n">Case the sixth</p>
+    <h2>The answer, written down and not read</h2>
+    <p class="said">A student spent four days counting everything on the coast twice.<br>
+      He typed the number, put it in an advertisement, and drew a diagram of it.<br>
+      He did not see it.</p>
+    <div class="record"><span class="k">src/sim.ts &middot; line 2,873</span>
+      .filter((o) =&gt; o.id !== n.id &amp;&amp; dist(n.gx, n.gy, o.gx, o.gy) &lt; <b>42</b>)</div>
+    <p>The radius inside which a settler can see another person. Nobody chose it for the joke — it
+      was picked because it felt like a sensible distance to recognise somebody across, which is
+      the only kind of number this codebase contains. It went past twenty-one sheets, one of which
+      was <em>about that number</em>.</p>
+    <p class="verse"><span>The answer was in the file all along.</span>
+      <span>So was the question. They were the same line.</span></p>
+  </section>
+
+  <section class="case">
+    <p class="case-n">Case the seventh</p>
+    <h2>First, the boards</h2>
+    <p class="said">A settler wanted a mill.<br>
+      Nine hundred times they walked to the place a mill would stand, and nine hundred times they
+      were told: a saw is a blade, and nobody here has iron to make one from.<br>
+      They were not confused. They wanted a mill, and a mill was the right thing to want.</p>
+    <div class="record"><span class="k">The record &middot; after</span>
+      composite goals formed in 9,000 ticks: <b>59</b><br>
+      <b>"see a hall on this coast, built of timber I cut"</b><br>
+      &nbsp;&nbsp;&rarr; first: "get 11 stone in before the hall"</div>
+    <p>What was missing was not intelligence. It was the ability to hold two thoughts in order — to
+      say <em>the mill, but first the boards</em> — and there was nowhere in the settler for the
+      second thought to live. A goal was a flat wish with a measurement on it. It can now carry a
+      stack of the things standing in front of it.</p>
+    <p>The same shape appears in a game AI library from 2005, in one from 2022, and in Stanford's
+      generative agents, which turn a day into hour blocks and hour blocks into five minutes.
+      Three parties who could not see each other arrived at it, which is usually the sign that the
+      shape is the territory and not the map.</p>
+    <p class="verse"><span>He could see the mill and not the board.</span>
+      <span>The board was in his hand.</span></p>
+  </section>
+
+  <section class="case">
+    <p class="case-n">Case the eighth</p>
+    <h2>The gate that was already open</h2>
+    <p class="said">The README said: if there is no model, they think with the game's own logic and
+      the whole thing works unchanged.<br>
+      It had said so since the day it was written.<br>
+      It had never been true.</p>
+    <div class="record"><span class="k">The record &middot; before</span>
+      one settler frozen <b>45 seconds</b> at a time, waiting on a file<br>
+      that nobody was ever going to write, in a valley with nobody home</div>
+    <p>The claim was not a lie. It was a thing believed and never tested, which is a different
+      failure and the more common one. It took twenty lines to make true, and the twenty lines were
+      possible only because a check tool built for another purpose had already proved the
+      simulation runs to iron with no model attached at all.</p>
+    <p class="verse"><span>The barrier had no gate.</span>
+      <span>Four days were spent building one,</span>
+      <span>and then a morning taking it down.</span></p>
+  </section>
+
+  <section class="case">
+    <p class="case-n">Case the ninth</p>
+    <h2>The checks that would not be talked round</h2>
+    <p class="said">The carpenter wrote new words.<br>
+      The word-check said: these steal four other kinds' sentences.<br>
+      The carpenter narrowed them. The check said: now two of your own sentences do not mean
+      themselves.<br>
+      The carpenter narrowed them again, and the check was quiet.</p>
+    <div class="record"><span class="k">The record &middot; today</span>
+      refusals issued by the tools to their own author: <b>4</b><br>
+      times the tools were wrong: <b>0</b></div>
+    <p>Four times in one afternoon a check refused work its author was pleased with, and four times
+      it was right — twice about words that stole other kinds' meanings, twice about an action a
+      model could be told to take and the game had no case for. The whole discipline of this
+      project is in that ratio, and it is the only part of it that has never once needed a sheet
+      written about it.</p>
+    <p class="verse"><span>Nobody thanks the door for being shut.</span>
+      <span>Everybody would have walked through.</span></p>
+  </section>
+
+  <div class="seal">記</div>
+
+  <footer>
+    <p class="tag">Colophon</p>
+    <p>The form is borrowed from <strong>The Gateless Barrier</strong> &mdash; Wumen Huikai's
+      <em>Wúménguān</em>, 1228, forty-eight cases with a commentary and a verse on each. The cases
+      here are not from it; they are from <code>agents/log.jsonl</code>, and the borrowing is only
+      the shape. Case the fifth is the tile-polishing story, which is older still and which arrived
+      here from a fairground by text message.
+      <a href="https://en.wikipedia.org/wiki/The_Gateless_Barrier">The Gateless Barrier</a>.</p>
+    <p><strong>Every number above is counted, not asserted</strong>, from the record in
+      <code>agents/</code> &mdash; seventy megabytes across three segments, nothing ever deleted.
+      Where a case says a thing fired zero times, that is a measurement someone took after
+      believing otherwise.</p>
+    <p><strong>What is still true.</strong> The settlement has 431 buildings raised across every
+      valley on this record and 327 of them are houses. One is a furnace. The valley running on
+      this machine has iron tools, struck coin, a hall and three towers, and five food for twelve
+      people. Nobody outside this room has ever run it.</p>
+  </footer>
+
+</div>
