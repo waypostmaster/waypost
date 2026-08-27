@@ -1,0 +1,264 @@
+<title>Three Towers, One Watch</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,600;0,6..96,700;1,6..96,400&family=Inconsolata:wght@400;600&display=swap">
+
+<style>
+  /*
+   * A hammer, and a lamp at noon. High-contrast Bodoni on a hard ground, one gold for the thing
+   * that was believed and one ash-grey for the thing that was actually there. Nothing decorative:
+   * the subject is a settlement that built the same monument three times.
+   */
+  :root {
+    --ground:  #EFEDE8;
+    --ground-2:#E3E0D8;
+    --ground-3:#F7F6F3;
+    --ink:     #171614;
+    --ink-soft:#5D5A52;
+    --rule:    #AFABA1;
+    --rule-2:  #CFCBC1;
+    --gold:    #97701A;
+    --ash:     #8A3324;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --ground: #100F0D; --ground-2: #191815; --ground-3: #0B0A09;
+      --ink: #EAE7DF; --ink-soft: #928E84; --rule: #35332D; --rule-2: #25231F;
+      --gold: #D6A63F; --ash: #E0705A;
+    }
+  }
+  :root[data-theme="dark"] {
+    --ground: #100F0D; --ground-2: #191815; --ground-3: #0B0A09;
+    --ink: #EAE7DF; --ink-soft: #928E84; --rule: #35332D; --rule-2: #25231F;
+    --gold: #D6A63F; --ash: #E0705A;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    background: var(--ground); color: var(--ink);
+    font-family: "Bodoni Moda", Didot, Georgia, serif;
+    font-size: 1.14rem; line-height: 1.66; font-weight: 400;
+    margin: 0; padding: 0 1.2rem 7rem;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .sheet { max-width: 42rem; margin: 0 auto; display: flex; flex-direction: column; gap: 3rem; }
+  p { margin: 0; max-width: 60ch; }
+  code, .mono { font-family: Inconsolata, ui-monospace, monospace; font-size: 0.88em; }
+  code { color: var(--gold); }
+
+  .tag {
+    font-family: Inconsolata, monospace; font-size: 0.72rem; letter-spacing: 0.2em;
+    text-transform: uppercase; color: var(--ink-soft); margin: 0;
+  }
+  hr.thin { border: 0; border-top: 1px solid var(--rule); margin: 0; }
+  hr.thick { border: 0; border-top: 4px solid var(--ink); margin: 0; }
+
+  header.front { display: flex; flex-direction: column; gap: 0.7rem; padding-top: 2.4rem; }
+  h1 {
+    font-family: "Bodoni Moda", Didot, serif; font-weight: 700;
+    font-size: clamp(2.4rem, 10vw, 5rem); line-height: 0.98; letter-spacing: -0.012em;
+    margin: 0.6rem 0 0; text-wrap: balance;
+  }
+  h1 em { font-style: italic; color: var(--ash); }
+  .standfirst {
+    font-size: clamp(1.15rem, 3vw, 1.5rem); line-height: 1.42; font-style: italic;
+    color: var(--ink-soft); max-width: 42ch; margin: 0;
+  }
+
+  section { display: flex; flex-direction: column; gap: 1.1rem; }
+  h2 {
+    font-family: "Bodoni Moda", Didot, serif; font-weight: 600;
+    font-size: clamp(1.5rem, 4.4vw, 2.1rem); line-height: 1.12; margin: 0;
+    border-bottom: 1px solid var(--ink); padding-bottom: 0.35rem; text-wrap: balance;
+  }
+  .n {
+    font-family: Inconsolata, monospace; font-size: 0.72rem; letter-spacing: 0.2em;
+    text-transform: uppercase; color: var(--ash); margin: 0;
+  }
+  .lede { font-size: 1.3rem; }
+  .quiet { color: var(--ink-soft); }
+
+  .aphorism {
+    font-family: "Bodoni Moda", Didot, serif; font-size: clamp(1.35rem, 4.2vw, 1.95rem);
+    line-height: 1.34; font-style: italic; max-width: 34ch; align-self: center;
+    text-align: center; padding: 0.6rem 0; color: var(--ink);
+  }
+  .aphorism span { color: var(--ash); font-style: normal; }
+
+  .extract {
+    background: var(--ground-3); border-left: 3px solid var(--gold); padding: 0.95rem 1.15rem;
+    font-family: Inconsolata, monospace; font-size: 0.86rem; line-height: 1.7;
+    color: var(--ink-soft); overflow-x: auto;
+  }
+  .extract b { color: var(--ash); font-weight: 600; }
+  .extract span.k { display: block; font-size: 0.7rem; letter-spacing: 0.16em;
+                    text-transform: uppercase; margin-bottom: 0.4rem; }
+
+  .tbl-wrap { overflow-x: auto; border-top: 4px solid var(--ink); border-bottom: 4px solid var(--ink); }
+  table { width: 100%; border-collapse: collapse; font-size: 0.94rem;
+          font-variant-numeric: tabular-nums; min-width: 27rem; }
+  th { font-family: Inconsolata, monospace; font-size: 0.68rem; letter-spacing: 0.13em;
+       text-transform: uppercase; color: var(--ink-soft); font-weight: 400; text-align: left;
+       padding: 0.5rem 0.9rem 0.5rem 0; border-bottom: 1px solid var(--ink); white-space: nowrap; }
+  td { padding: 0.46rem 0.9rem 0.46rem 0; border-bottom: 1px solid var(--rule-2); vertical-align: baseline; }
+  tr:last-child td { border-bottom: 0; }
+  .num { font-family: Inconsolata, monospace; white-space: nowrap; }
+  .loss { font-family: Inconsolata, monospace; color: var(--ash); font-weight: 600; white-space: nowrap; }
+  .lbl { font-weight: 600; }
+
+  footer { display: flex; flex-direction: column; gap: 0.8rem; border-top: 4px solid var(--ink); padding-top: 1.2rem; }
+  footer p { font-size: 0.98rem; color: var(--ink-soft); max-width: 62ch; }
+  footer strong { color: var(--ink); }
+</style>
+
+<div class="sheet">
+
+  <header class="front">
+    <hr class="thick">
+    <div style="display:flex;flex-wrap:wrap;justify-content:space-between;gap:0.4rem 1.5rem;">
+      <p class="tag">Frontier &middot; sheet XXIV</p>
+      <p class="tag">Tick 9,886 &middot; the landing</p>
+    </div>
+    <hr class="thin">
+    <h1>Three towers,<br><em>one watch</em></h1>
+    <p class="standfirst">A settlement built the same monument three times, could only ever climb
+      one of them, and paid for the other two with more than half of every block it had ever
+      made.</p>
+  </header>
+
+  <section>
+    <p class="n">I</p>
+    <h2>What was standing</h2>
+    <p class="lede">Ferro finished a tower at tick 5,453. He finished another at 5,691. Nim
+      finished a third at 5,890.</p>
+    <div class="extract"><span class="k">agents/log.jsonl</span>
+      "t":5453 &middot; <b>Ferro finished a tower</b><br>
+      "t":5691 &middot; <b>Ferro finished a tower</b><br>
+      "t":5890 &middot; <b>Nim finished a tower</b></div>
+    <p>Four hundred and thirty-seven ticks, three towers, and a settlement that at the time of
+      writing holds <strong>two food</strong>. A tower is the most expensive thing this valley can
+      raise. Eight wood, eighteen stone, six boards and <strong>eight dressed blocks</strong> —
+      and the masons' yard has produced twenty-nine blocks in its entire life.</p>
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th scope="col">Into the two that cannot be climbed</th><th scope="col">Cost</th><th scope="col">Of the settlement's whole production</th></tr></thead>
+        <tbody>
+          <tr><td class="lbl">dressed blocks</td><td class="loss">16</td><td>of 29 ever made &mdash; <strong>55%</strong></td></tr>
+          <tr><td class="lbl">stone</td><td class="loss">36</td><td>the stores hold 6 today</td></tr>
+          <tr><td class="lbl">boards</td><td class="loss">12</td><td>the stores hold 3 today</td></tr>
+          <tr><td class="lbl">wood</td><td class="num">16</td><td>the one thing there is plenty of</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section>
+    <p class="n">II</p>
+    <h2>Why only one could be climbed</h2>
+    <p>Every workshop in this game was found the same way, and the way was
+      <code>placesOf(town).find(...)</code>. <code>find</code> returns the first. So the settlement
+      was permitted three towers, two mills and two granaries by a table called
+      <code>MOST_OF</code> — and could reach the <em>first</em> of each and no other. Nothing
+      anywhere could send anybody to the second mill. <code>watcherOf</code> asked whether somebody
+      was standing near tower number one, and a settler on tower number two was invisible, so a
+      third was despatched to relieve a watch already being kept.</p>
+    <p>The comment above that table says, in the file, in the author's own hand:</p>
+    <div class="extract"><span class="k">src/sim.ts &middot; above MOST_OF</span>
+      A ceiling rather than a plan: <b>the second sawmill and the third tower are real things a
+      settlement might want.</b></div>
+    <p>They were not things it could have. The sentence is a value, written down, believed, never
+      once tested against the code underneath it &mdash; and for four days it silently authorised
+      a settlement to spend everything it made on a second copy of a thing it could not use.</p>
+  </section>
+
+  <section>
+    <p class="n">III</p>
+    <h2>The hammer</h2>
+    <p class="aphorism">One does not refute a tower.<br><span>One asks what it was for.</span></p>
+    <p>The temptation here is to call this a bug and patch the number: <code>tower: 3</code> becomes
+      <code>tower: 1</code>, the settlement stops building monuments it cannot climb, and the
+      sheet writes itself. That is the cheap version and it is the one this office would have
+      shipped a week ago.</p>
+    <p>But a second granary is <em>not</em> waste. It is sixty more places of storage and a second
+      bench, and the settlement has two, and they are both earning. A second mill is a second pair
+      of hands at a saw. The ceiling was not wrong about those. It was wrong about the tower, and
+      it was wrong about all three in the same way &mdash; not because the number was too high but
+      because <strong>nothing had ever asked what a second one would be for.</strong></p>
+    <p>So the lookups can see past the first now. A settler goes to whichever bench has a place
+      free, a watcher on any tower counts as a watcher, and the second granary and the second mill
+      have become the things the comment always claimed they were. And the tower is capped at one,
+      because when the question is finally put to it &mdash; what would the second be for? &mdash;
+      the honest answer is <em>nothing</em>: the watch scans every soul in the settlement from
+      whichever tower somebody happens to be standing on. One covers the coast. The next one
+      covers it again.</p>
+    <p>Two of those three were revalued upward. One was destroyed. That is the difference between
+      taking a hammer to a thing and taking a hammer to the <em>reason</em> for a thing, and it is
+      most of what this week has been about.</p>
+  </section>
+
+  <section>
+    <p class="n">IV</p>
+    <h2>The bell did ring</h2>
+    <p>The first tower is not a folly. It has been climbed, and the bell has gone
+      <strong>twenty-four times</strong>: a settler up on the watch sees somebody a long way out,
+      hungry, carrying nothing, and calls it in.</p>
+    <div class="extract"><span class="k">src/sim.ts &middot; watchFrom()</span>
+      remember(sim, inTrouble, <b>'was seen from the tower and somebody came'</b>)</div>
+    <p>Which is why the sheet is not called <em>the tower problem</em>. The tower works. What went
+      wrong is what always goes wrong here: a good thing was built, and then it was built again,
+      because the settlement had a rule permitting three and no way of noticing that the second one
+      did nothing. A monument does not report that it is redundant. It stands there being a tower,
+      exactly as much a tower as the first, and every block in it is a block that is not a hall.</p>
+  </section>
+
+  <section>
+    <p class="n">V</p>
+    <h2>They can be heard now, all of them</h2>
+    <p>The other half of the day, and it is the more cheerful half. Four hundred and seven distinct
+      things have been asked for on this coast, in the settlers' own words, and as of this
+      afternoon <strong>every single one classifies as something the game can grant.</strong>
+      Yesterday nine matched nothing at all. Four days ago the number was thirty-eight, and a man
+      who asked for a salmon trap was handed a well.</p>
+    <div class="tbl-wrap">
+      <table>
+        <tbody>
+          <tr><td class="lbl">Distinct things asked for</td><td class="num">407</td></tr>
+          <tr><td class="lbl">Heard as nothing at all</td><td class="loss">0</td></tr>
+          <tr><td class="lbl">Open proposals filed under the wrong kind</td><td class="loss">0</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>Three of those were corrected this afternoon and one of them was the trap this codebase had
+      already written down and walked into anyway. A settler asked for <em>a communal hour log for
+      tracking work hours and contributions</em>, because <em>sometimes it feels like the people
+      who help the most get overlooked</em>. It was filed as a <strong>road</strong>. The file says
+      why, in a comment written days ago: <em>`track` is the road's word. Carrying it would have
+      paved the valley.</em></p>
+    <p>A rain catchment with stone channels and a basin was filed as a hearth. A quiet cove
+      sheltered by the hills, calm enough for a sail, was filed as a market &mdash; because the
+      settler had said they would <em>trade a whole stack of wood for a little bit of peace on the
+      water</em>, and the word list heard the trade and not the peace.</p>
+  </section>
+
+  <footer>
+    <p class="tag">Note</p>
+    <p><strong>Everything above is counted.</strong> The three finishing times, the sixteen blocks
+      of twenty-nine, the twenty-four ringings of the bell and the 407 wordings are from
+      <code>agents/log.jsonl</code> and the settlement's own lifetime tallies. The two towers were
+      not demolished &mdash; nothing in this game can take a building down, which is a separate
+      problem and an honest one. They are standing. They will go on standing. What changed is that
+      a fourth will not be built.</p>
+    <p><strong>Nietzsche for the frame and not for the argument.</strong> The revaluation of values,
+      the idol sounded with a hammer, the monument that outlives its reason. He is not quoted here.
+      The valley provided its own aphorism and it is better than a borrowed one: a comment,
+      written in good faith, asserting that a settlement might want a thing it had no way of
+      wanting.</p>
+    <p class="quiet">Frontier &middot; twenty settlers, iron in their hands, a hall, three towers,
+      two food. The wishes are all heard now. What they are asking for is a place to sit that is
+      not for working, a way to give somebody a meal without walking to the depot, and somebody to
+      take a quarrel to.</p>
+  </footer>
+
+</div>
