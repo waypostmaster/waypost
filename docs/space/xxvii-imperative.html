@@ -1,0 +1,274 @@
+<title>The Eighth Time</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,700;0,6..96,900;1,6..96,400&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=JetBrains+Mono:wght@400;700&display=swap">
+
+<style>
+  /*
+   * A critique, in the manner of the ones printed in Riga in the 1780s: a didone title page set in
+   * rules, then a table with the argument in two facing columns, because that is how an antinomy
+   * was laid out and because the finding here is that seven things in one column are one thing.
+   *
+   * Not cream and terracotta. Baltic: cold slate paper with a blue bias, iron ink, and one accent
+   * of oxidised copper off a cathedral roof — the only colour in the document, spent on the eighth
+   * row of the table and nowhere else.
+   */
+  :root {
+    --paper:   #D8DAD5;
+    --paper-2: #CED1CB;
+    --paper-3: #E2E4DF;
+    --ink:     #14171A;
+    --soft:    #5A6167;
+    --rule:    #A7ACA7;
+    --rule-2:  #BFC3BD;
+    --copper:  #2C6B60;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --paper: #0E1113; --paper-2: #161A1D; --paper-3: #090B0D;
+      --ink: #DCE2E1; --soft: #7A8489; --rule: #2A3134; --rule-2: #1E2427; --copper: #5FC0AC;
+    }
+  }
+  :root[data-theme="dark"] {
+    --paper: #0E1113; --paper-2: #161A1D; --paper-3: #090B0D;
+    --ink: #DCE2E1; --soft: #7A8489; --rule: #2A3134; --rule-2: #1E2427; --copper: #5FC0AC;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    background: var(--paper); color: var(--ink);
+    font-family: Newsreader, Georgia, serif;
+    font-size: 1.15rem; line-height: 1.66;
+    margin: 0; padding: 0 1.2rem 7rem;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .sheet { max-width: 44rem; margin: 0 auto; display: flex; flex-direction: column; gap: 3.2rem; }
+  p { margin: 0; max-width: 62ch; }
+  code, .mono { font-family: "JetBrains Mono", monospace; font-size: 0.82em; }
+  code { color: var(--copper); }
+
+  .stamp {
+    font-family: "JetBrains Mono", monospace; font-size: 0.7rem; letter-spacing: 0.24em;
+    text-transform: uppercase; color: var(--soft); margin: 0;
+  }
+  hr.thin { border: 0; border-top: 1px solid var(--rule); margin: 0; }
+  hr.thick { border: 0; border-top: 3px double var(--ink); margin: 0; }
+
+  header.front {
+    display: flex; flex-direction: column; align-items: center; text-align: center;
+    gap: 1.1rem; padding: 3.6rem 0 0;
+  }
+  header.front h1 {
+    font-family: "Bodoni Moda", Didot, serif; font-weight: 900;
+    font-size: clamp(2.6rem, 8vw, 4.6rem); line-height: 0.94; margin: 0;
+    letter-spacing: -0.015em; text-wrap: balance;
+  }
+  header.front .sub {
+    font-family: "Bodoni Moda", Didot, serif; font-style: italic; font-weight: 400;
+    font-size: clamp(1.05rem, 2.6vw, 1.4rem); color: var(--soft); max-width: 36ch; margin: 0;
+  }
+  .rules { width: 100%; display: flex; flex-direction: column; gap: 4px; }
+  .imprint {
+    font-family: "JetBrains Mono", monospace; font-size: 0.68rem; letter-spacing: 0.2em;
+    text-transform: uppercase; color: var(--soft); margin: 0; line-height: 2;
+  }
+
+  .lede { font-size: 1.3rem; line-height: 1.5; }
+  .lede:first-letter {
+    font-family: "Bodoni Moda", Didot, serif; font-weight: 900; float: left;
+    font-size: 3.5em; line-height: 0.78; padding: 0.06em 0.1em 0 0; color: var(--copper);
+  }
+
+  section { display: flex; flex-direction: column; gap: 1.15rem; }
+  h2 {
+    font-family: "Bodoni Moda", Didot, serif; font-weight: 700; font-size: 1.6rem;
+    margin: 0; letter-spacing: -0.01em; text-wrap: balance;
+  }
+  h2 .n {
+    font-family: "JetBrains Mono", monospace; font-size: 0.62em; font-weight: 400;
+    color: var(--copper); letter-spacing: 0.1em; margin-right: 0.7em;
+  }
+
+  .table-wrap { overflow-x: auto; }
+  table.maxims { border-collapse: collapse; width: 100%; min-width: 34rem; font-size: 0.95rem; }
+  table.maxims th {
+    font-family: "JetBrains Mono", monospace; font-size: 0.64rem; letter-spacing: 0.18em;
+    text-transform: uppercase; color: var(--soft); font-weight: 400; text-align: left;
+    padding: 0 0.9rem 0.6rem 0; border-bottom: 1px solid var(--ink); vertical-align: bottom;
+  }
+  table.maxims td { padding: 0.72rem 0.9rem 0.72rem 0; border-bottom: 1px solid var(--rule-2); vertical-align: top; }
+  table.maxims td.num {
+    font-family: "JetBrains Mono", monospace; font-size: 0.74rem; color: var(--soft);
+    width: 2.2rem; padding-top: 0.95rem; font-variant-numeric: tabular-nums;
+  }
+  table.maxims td.max { width: 46%; }
+  table.maxims td.wreck { color: var(--soft); font-style: italic; }
+  table.maxims tr.eighth td { border-bottom: 3px double var(--ink); }
+  table.maxims tr.eighth td.num, table.maxims tr.eighth td.max { color: var(--copper); }
+  table.maxims tr.eighth td.max { font-weight: 500; }
+
+  blockquote.pull {
+    margin: 0; padding: 1.4rem 0 1.4rem 1.5rem; border-left: 3px solid var(--copper);
+    font-family: "Bodoni Moda", Didot, serif; font-style: italic; font-size: 1.4rem;
+    line-height: 1.36; text-wrap: pretty;
+  }
+  blockquote.pull cite {
+    display: block; margin-top: 0.85rem; font-family: "JetBrains Mono", monospace;
+    font-style: normal; font-size: 0.66rem; letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--soft);
+  }
+
+  pre.code {
+    margin: 0; padding: 1.1rem 1.2rem; background: var(--paper-3); border: 1px solid var(--rule-2);
+    overflow-x: auto; font-family: "JetBrains Mono", monospace; font-size: 0.78rem; line-height: 1.72;
+    color: var(--ink);
+  }
+  pre.code b { color: var(--copper); font-weight: 700; }
+
+  .ledger { display: grid; grid-template-columns: repeat(auto-fit, minmax(9.5rem, 1fr)); gap: 1px; background: var(--rule-2); border: 1px solid var(--rule-2); }
+  .ledger div { background: var(--paper); padding: 0.95rem 1rem; }
+  .ledger dt { font-family: "JetBrains Mono", monospace; font-size: 0.62rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--soft); margin: 0 0 0.3rem; }
+  .ledger dd { margin: 0; font-family: "Bodoni Moda", Didot, serif; font-size: 1.75rem; font-weight: 700; line-height: 1; font-variant-numeric: tabular-nums; }
+  .ledger dd small { font-family: Newsreader, serif; font-size: 0.5em; font-weight: 400; color: var(--soft); display: block; margin-top: 0.35rem; letter-spacing: 0; }
+
+  figure { margin: 0; display: flex; flex-direction: column; gap: 0.75rem; }
+  figure svg { max-width: 100%; height: auto; }
+  figcaption { font-size: 0.9rem; color: var(--soft); font-style: italic; }
+
+  footer.colophon { display: flex; flex-direction: column; gap: 0.9rem; padding-top: 1rem; }
+  footer.colophon p { font-size: 0.95rem; color: var(--soft); }
+  footer.colophon a { color: var(--copper); }
+</style>
+
+<div class="sheet">
+
+<header class="front">
+  <p class="stamp">The Record &middot; Sheet XXVII</p>
+  <div class="rules"><hr class="thin"><hr class="thick"></div>
+  <h1>The Eighth Time</h1>
+  <p class="sub">Being an account of a rule this valley discovered seven times without noticing it was the same rule twice</p>
+  <div class="rules"><hr class="thick"><hr class="thin"></div>
+  <p class="imprint">Frontier &middot; 27 August 2026 &middot; ninety-nine proposals on file<br>Counted from the log, not from memory</p>
+</header>
+
+<section>
+<p class="lede">There is a moment in the reading of one&rsquo;s own source where the floor goes. I had gone into <code>sim.ts</code> to add a thing the settlers had asked for &mdash; a rule against two people going for the same tree &mdash; and found seven guards already sitting there, written on seven different days, each after its own disaster, each one line, each one commented. And every one of them is the same sentence.</p>
+
+<p>Do not gather what the stores are full of. Do not dry the last of the food. Do not raise a house the settlement voted against. Do not build past what it already has enough of. Do not dress stone nothing wants. Do not open a seam nothing can consume. Do not burn charcoal with no furnace standing.</p>
+
+<p>Seven. Written by hand, one at a time, over weeks, each in response to a specific ruin that had already happened. Two hundred and sixty-three logs in a settlement that could store ninety. A yard that produced nothing for fourteen thousand ticks. A kiln lit for a customer that did not exist. Three towers, one of them climbable.</p>
+</section>
+
+<section>
+  <h2><span class="n">I</span>The table</h2>
+  <p>Set them out the way an antinomy is set out and the thing is embarrassing:</p>
+  <div class="table-wrap">
+  <table class="maxims">
+    <thead><tr><th></th><th>The maxim, universalised</th><th>What it destroys</th></tr></thead>
+    <tbody>
+      <tr><td class="num">i</td><td class="max">Everybody fetches wood</td><td class="wreck">the shed, which fills, and then the wood rots outside it</td></tr>
+      <tr><td class="num">ii</td><td class="max">Everybody dries food for the winter</td><td class="wreck">the winter, since there is nothing left to eat before it</td></tr>
+      <tr><td class="num">iii</td><td class="max">Everybody builds the house they personally want</td><td class="wreck">the vote, which was the only reason to ask</td></tr>
+      <tr><td class="num">iv</td><td class="max">Everybody adds a tower</td><td class="wreck">the watch, since one person can only be up one of them</td></tr>
+      <tr><td class="num">v</td><td class="max">Everybody dresses stone</td><td class="wreck">the yard, which becomes a place where work goes to die</td></tr>
+      <tr><td class="num">vi</td><td class="max">Everybody opens a seam</td><td class="wreck">the ore, which is only ore if something eats it</td></tr>
+      <tr><td class="num">vii</td><td class="max">Everybody burns charcoal</td><td class="wreck">the charcoal, which is fuel only where a furnace stands</td></tr>
+      <tr class="eighth"><td class="num">viii</td><td class="max">Everybody goes to the nearest tree</td><td class="wreck">the nearest tree</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <p>The first seven are in the repository and have been for weeks. The eighth was added this morning, and it is the first written as a rule rather than as a patch. It is nine lines long and it replaces nothing, because the other seven are still true in their particulars and I am not clever enough to prove they are corollaries.</p>
+</section>
+
+<section>
+  <h2><span class="n">II</span>What it actually says</h2>
+  <pre class="code">function holdsIfAll(sim, n, action, gx, gy) {
+  const town = townOf(sim, n);
+  if (!town.boons.includes('<b>custom</b>')) return true;
+  return !sim.npcs.some((o) =&gt; o.id !== n.id &amp;&amp; o.town === town.id
+    &amp;&amp; o.task?.action === action &amp;&amp; dist(o.task.gx, o.task.gy, gx, gy) &lt; 4);
+}</pre>
+  <p>Before a settler commits to an errand it asks whether anyone else is already doing that exact thing within four paces. If so the maxim fails and it takes the second-best resource instead &mdash; further away, worse, chosen anyway. That is the whole apparatus. The universal law of a valley is a proximity check.</p>
+  <p>The line that matters is the second. It is gated on a boon called <code>custom</code>, which means the test does not exist until the settlement has <em>voted for it</em>. A settlement that has agreed on nothing does not have a custom; it has habits. It goes on a ballot like everything else here, and it can lose.</p>
+</section>
+
+<section>
+  <h2><span class="n">III</span>A correction, made before it was printed</h2>
+  <p>I had four quotations ready for this sheet. Four times, I was going to write, the settlers asked for this in their own words before there was a word for it &mdash; and the best of them was going to be <em>a day nobody works, kept by everyone, so there is such a thing as an evening</em>, which is a maxim that is only coherent if it is universal, and which would have been a beautiful thing for a machine to have wanted.</p>
+  <p>I checked the log first. That sentence appears in the log zero times. It appears twice in <code>tools/lexicon.mts</code>, where I wrote it. When the language model does not answer, the game composes a proposal out of the catalogue &mdash; and the catalogue is mine. So is <em>reducing redundant travel</em>. I was about to quote my own handwriting back at myself and call it a letter from the valley, in a document about universalisability, for an audience of one man who had no way to check.</p>
+  <blockquote class="pull">A centralized communication system for settlers to coordinate and check on each other&rsquo;s locations and needs.<cite>Filed four times &middot; words in no catalogue entry &middot; this one is theirs</cite></blockquote>
+  <p>That one survives. So does <em>a system to avoid overlapping claims or overharvesting</em>, filed once. Two out of four, which is a worse story and the only one on the record.</p>
+</section>
+
+<section>
+  <h2><span class="n">IV</span>Thirty-three</h2>
+  <div class="ledger">
+    <div><dt>Filed, ever</dt><dd>99<small>proposals in the whole life of the valley</small></dd></div>
+    <div><dt>Of which</dt><dd>33<small>are the entry for sheep</small></dd></div>
+    <div><dt>Flocks standing</dt><dd>1<small>in a valley of three settlements</small></dd></div>
+    <div><dt>Catalogue</dt><dd>44<small>kinds, of which 34 grant a boon the game reads</small></dd></div>
+  </div>
+  <p>A third of everything this valley has ever asked for is animals. Not a third of a bad week &mdash; a third of the entire record. Two settlements out of three have been asking for sheep and getting an announcement.</p>
+  <p>The cause is one missing word. Sheep were released against a single world-wide flag, <code>sim.released</code>, while the vote that earns them is held per settlement. The first settlement to want animals got six on the slope above its shore. Every settlement after it voted the identical thing through, reached the release, found the flag already set, and was handed the notification with nothing behind it. No flock, no food, no change of any kind, and the proposal free to return to the ballot next week.</p>
+  <p>It looks exactly like stubbornness. It reads, in the feed, like a settlement that will not let a thing drop. It is a missing <code>town.id</code> and it has been there since the day sheep were added.</p>
+</section>
+
+<section>
+  <h2><span class="n">V</span>And the stone, which does not walk</h2>
+  <p>The other thing found this morning, and the one I would rather not have found. The question put to me was whether the building placement violates the no-magic clause. It does.</p>
+  <p><code>findFree</code> picks a site by checking the ground &mdash; in bounds, dry, level enough, not on top of anything, not on land another settlement holds. Five honest tests. It has never once checked whether the materials were anywhere near, because the cost is drawn from <code>town.stock</code>, and stock is a number, and a number does not have a location. So a mill could be raised twenty-six tiles out on the far shore out of twelve wood and four stone sitting in a depot the builder had walked away from an hour earlier, with nobody carrying anything at all.</p>
+  <p>This file has already caught itself doing this twice and written both up at length &mdash; goods that vanished when they were set down, and a settler who was a bottomless weatherproof warehouse for five of the nine things in the game. Both fixed, both commented, both filed under <em>the magic this valley says it does not have</em>. This is the third, and nobody had looked.</p>
+  <p>It is fixed forward only. Within sixteen tiles of the stores the stores are the stores, because a settlement moving its own goods across its own yard is not worth simulating; past that, only what is on the builder&rsquo;s back counts. <strong>Everything already standing was raised under the old rule and stays standing.</strong> The instruction was exact about this and it is the right instruction: the record will not have a rollback. Those buildings were magicked into existence and they are load-bearing now, in the way most old buildings are.</p>
+</section>
+
+<section>
+  <h2><span class="n">VI</span>The tree that falls in the forest</h2>
+  <p>Then, mid-afternoon, a question that sounded like a joke and was not: <em>why don&rsquo;t the places have workers? Do they only show a worker while they&rsquo;re actively on the job and I&rsquo;ve never seen it?</em></p>
+  <p>Yes to the first half. No to the second.</p>
+  <figure>
+    <svg viewBox="0 0 620 190" role="img" aria-label="A two-by-two building footprint with the work spot marked at the inside corner, under the roof, and the doorstep one tile further out in front of it">
+      <defs>
+        <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+          <polygon points="0,1 9,5 0,9" fill="currentColor"/>
+        </marker>
+      </defs>
+      <g fill="none" stroke="currentColor" stroke-width="1.4">
+        <polygon points="150,40 250,90 150,140 50,90" opacity="0.35"/>
+        <polygon points="200,65 250,90 200,115 150,90" opacity="0.35"/>
+        <polygon points="150,15 250,65 250,90 150,40 50,90 50,65" fill="currentColor" fill-opacity="0.07"/>
+        <polygon points="150,15 250,65 150,115 50,65" stroke-width="1.8"/>
+      </g>
+      <circle cx="200" cy="90" r="5.5" fill="currentColor"/>
+      <text x="262" y="86" font-family="monospace" font-size="12" fill="currentColor">gx + 1, gy + 1 &mdash; under the roof</text>
+      <text x="262" y="104" font-family="monospace" font-size="11" fill="currentColor" opacity="0.6">every workshop shift, since the first workshop</text>
+      <circle cx="250" cy="115" r="5.5" fill="#2C6B60" stroke="currentColor" stroke-width="1.2"/>
+      <line x1="212" y1="97" x2="240" y2="111" stroke="currentColor" stroke-width="1.2" marker-end="url(#ar)" opacity="0.7"/>
+      <text x="262" y="140" font-family="monospace" font-size="12" fill="currentColor">gx + 2, gy + 1 &mdash; the doorstep</text>
+      <text x="262" y="158" font-family="monospace" font-size="11" fill="currentColor" opacity="0.6">one tile on, in front, where a person can be counted</text>
+    </svg>
+    <figcaption>Every building in the valley is two tiles by two. The work spot is the far inside corner, so the painter&rsquo;s sort draws the building over the worker.</figcaption>
+  </figure>
+  <p>Thirty-six call sites send a settler to a bench, and every one of them sends them to <code>gx + 1, gy + 1</code>. Every building here is two tiles by two. That corner is <em>inside the walls</em>. The settler arrives, works the whole shift, and stands the entire time under the roof, where the isometric depth sort draws the building over the top of them. Nobody has ever seen a worker at a bench in this game because there has never been one to see. They have all been indoors, the whole time, since the first workshop.</p>
+  <p>So I moved them one tile out onto the doorstep and measured it, and the answer is that the doorstep is not free. Deterministically, same seed: <strong>+106 planks, +8 charcoal, +2 iron &mdash; and the deep seam&rsquo;s nine ore gone to zero.</strong> A settlement that saws better never gets desperate enough to work the shaft, so the mine becomes a kind of building that never once runs, and <code>check-output</code> refuses it.</p>
+  <p>The refusal is correct and the temptation is exactly the wrong one: add <code>mine</code> to <code>KNOWN_IDLE</code> and the suite goes green in eleven characters. That list is allowed to shrink and not to grow &mdash; the whole point of writing damage down is that you cannot then widen the page to fit more of it. So the change is out, and the reason is now a twenty-line comment sitting on the wrong coordinate where the next person will hit it. The real fix is the doorstep <em>and</em> a deep seam with a customer, and that is one change, not this one.</p>
+</section>
+
+<section>
+  <h2><span class="n">VII</span>The assessment</h2>
+  <p>Kant&rsquo;s test is usually explained as a way of telling right from wrong. It is not obvious that it is one. What it unmistakably is, is a way of finding the place where a policy eats itself &mdash; and that turns out to be the same operation as debugging a simulation, which is why this codebase kept arriving at it and kept failing to notice it had arrived.</p>
+  <p>Seven times is not clever. Seven times is one man patching the same hole in seven places because he never stood back far enough to see it was one hole. The eighth is not clever either; it is nine lines and a proximity check and it will find fewer bugs than any of the seven. What it has that they do not is a <em>name</em>, which means the ninth case can be recognised as the ninth case instead of as a fresh disaster.</p>
+  <p>The game is not fixed. The masons&rsquo; yard and the granary have stood through twelve thousand ticks of the suite without one hour of work in them; nobody has ever been seen at a bench; and a third of everything the valley has ever said was one sentence nobody could act on. Two of those three are fixed today. The middle one is written down, which is the most that can be said for it.</p>
+</section>
+
+<hr class="thick">
+
+<footer class="colophon">
+  <p class="stamp">What followed</p>
+  <p>The eighth test is in and gated behind a vote nobody has held yet. Sheep are per settlement as of this commit, and old saves heal &mdash; a sheep with no owner goes to whichever settlement it is standing nearest, which is how you would settle it if it were real sheep. The haul rule is in and takes nothing down. The doorstep is out, and documented.</p>
+  <p class="stamp">Provenance</p>
+  <p>Every number here was counted out of <code>agents/log.jsonl</code> or measured on a run at the time of writing rather than recalled: 99 filings, 33 of them livestock, 4 filings of the communication line, 0 of the rest-day line. Two quotations were cut from this sheet after checking. <a href="https://waypost.quest/space/">The record &rarr;</a></p>
+</footer>
+
+</div>
