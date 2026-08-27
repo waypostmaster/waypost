@@ -1,0 +1,353 @@
+<title>Twenty-Four Bars and Nothing to Eat</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Roboto+Mono:wght@400;500&display=swap">
+
+<style>
+  /*
+   * An excavation report. Chalk and trench soil, one ochre for the finds and one burnt red kept
+   * for the single thing this site got wrong. The section drawing is the argument: the layers are
+   * real and dated, and the top one is the thinnest and the richest.
+   */
+  :root {
+    --chalk:    #EDE8DC;
+    --chalk-2:  #E1DACA;
+    --chalk-3:  #F6F3EC;
+    --ink:      #1E1A14;
+    --ink-soft: #63594A;
+    --rule:     #ABA18E;
+    --rule-2:   #C9C1AF;
+    --find:     #A8600F;
+    --alarm:    #8E2B1E;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --chalk: #141210; --chalk-2: #1D1A16; --chalk-3: #0D0B09;
+      --ink: #E7E0D2; --ink-soft: #9A9080;
+      --rule: #3A342B; --rule-2: #2A251E;
+      --find: #D79A3C; --alarm: #E0765F;
+    }
+  }
+  :root[data-theme="dark"] {
+    --chalk: #141210; --chalk-2: #1D1A16; --chalk-3: #0D0B09;
+    --ink: #E7E0D2; --ink-soft: #9A9080;
+    --rule: #3A342B; --rule-2: #2A251E;
+    --find: #D79A3C; --alarm: #E0765F;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    background: var(--chalk); color: var(--ink);
+    font-family: "EB Garamond", Georgia, "Times New Roman", serif;
+    font-size: 1.18rem; line-height: 1.6; font-weight: 400;
+    margin: 0; padding: 0 1.15rem 7rem;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .site { max-width: 48rem; margin: 0 auto; display: flex; flex-direction: column; gap: 2.8rem; }
+  p { margin: 0; max-width: 63ch; }
+  strong { font-weight: 600; }
+  code, .mono { font-family: "Roboto Mono", ui-monospace, monospace; font-size: 0.78em; }
+  code { color: var(--find); }
+
+  .tag {
+    font-family: "Roboto Mono", monospace; font-size: 0.69rem; letter-spacing: 0.15em;
+    text-transform: uppercase; color: var(--ink-soft); margin: 0;
+  }
+  .rule { border: 0; border-top: 1px solid var(--rule); margin: 0; }
+  .rule-heavy { border: 0; border-top: 3px solid var(--ink); margin: 0; }
+
+  header.front { display: flex; flex-direction: column; gap: 0.5rem; padding-top: 2rem; }
+  .front-row { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 0.4rem 1.5rem; }
+
+  h1 {
+    font-family: "Bebas Neue", "Arial Narrow", Impact, sans-serif; font-weight: 400;
+    font-size: clamp(2.7rem, 12vw, 6rem); line-height: 0.88; letter-spacing: 0.005em;
+    margin: 1rem 0 0; text-wrap: balance;
+  }
+  h1 em { font-style: normal; color: var(--alarm); }
+  .standfirst {
+    font-size: clamp(1.12rem, 2.9vw, 1.45rem); line-height: 1.4;
+    max-width: 46ch; margin: 0; text-wrap: balance;
+  }
+  .byline { font-family: "Roboto Mono", monospace; font-size: 0.74rem; color: var(--ink-soft); max-width: 58ch; }
+
+  section { display: flex; flex-direction: column; gap: 1.05rem; }
+  h2 {
+    font-family: "Bebas Neue", "Arial Narrow", sans-serif; font-weight: 400;
+    font-size: clamp(1.5rem, 4.4vw, 2.15rem); line-height: 1.04; margin: 0;
+    border-bottom: 2px solid var(--ink); padding-bottom: 0.3rem; letter-spacing: 0.012em;
+  }
+  .ctx {
+    font-family: "Roboto Mono", monospace; font-size: 0.69rem; letter-spacing: 0.15em;
+    text-transform: uppercase; color: var(--find); margin: 0;
+  }
+  .lede { font-size: 1.3rem; }
+  .quiet { color: var(--ink-soft); }
+
+  .tbl-wrap { overflow-x: auto; border-top: 2px solid var(--ink); border-bottom: 2px solid var(--ink); }
+  table { width: 100%; border-collapse: collapse; font-size: 0.95rem; font-variant-numeric: tabular-nums; min-width: 30rem; }
+  caption {
+    caption-side: top; text-align: left; padding: 0.7rem 0;
+    font-family: "Roboto Mono", monospace; font-size: 0.69rem; letter-spacing: 0.15em;
+    text-transform: uppercase; color: var(--ink-soft);
+  }
+  th {
+    font-family: "Roboto Mono", monospace; font-size: 0.64rem; letter-spacing: 0.11em;
+    text-transform: uppercase; color: var(--ink-soft); font-weight: 400; text-align: left;
+    padding: 0.45rem 0.9rem 0.45rem 0; border-bottom: 1px solid var(--ink); white-space: nowrap;
+  }
+  td { padding: 0.42rem 0.9rem 0.42rem 0; border-bottom: 1px solid var(--rule-2); vertical-align: baseline; }
+  tr:last-child td { border-bottom: 0; }
+  .n { font-family: "Roboto Mono", monospace; white-space: nowrap; }
+  .n-find { font-family: "Roboto Mono", monospace; color: var(--find); font-weight: 500; white-space: nowrap; }
+  .n-alarm { font-family: "Roboto Mono", monospace; color: var(--alarm); font-weight: 500; white-space: nowrap; }
+  .lbl { font-weight: 600; }
+
+  figure { margin: 0; display: flex; flex-direction: column; gap: 0.8rem; }
+  .figbox { overflow-x: auto; background: var(--chalk-3); border: 1px solid var(--rule-2); padding: 1rem 0.5rem; }
+  figure svg { display: block; max-width: 100%; height: auto; min-width: 31rem; }
+  figcaption { font-size: 0.98rem; color: var(--ink-soft); max-width: 62ch; }
+
+  .aside {
+    background: var(--chalk-2); border-left: 4px solid var(--find); padding: 1.1rem 1.25rem;
+    display: flex; flex-direction: column; gap: 0.6rem;
+  }
+  .aside p { max-width: 58ch; }
+
+  .stamp {
+    align-self: flex-start; border: 2px solid var(--alarm); color: var(--alarm);
+    padding: 0.55rem 1.1rem; transform: rotate(-1.4deg);
+    font-family: "Bebas Neue", Arial, sans-serif; letter-spacing: 0.09em;
+    font-size: clamp(1.25rem, 4vw, 1.9rem); line-height: 1.05;
+  }
+  .stamp small {
+    display: block; font-family: "Roboto Mono", monospace; font-size: 0.55rem;
+    letter-spacing: 0.14em; margin-top: 0.25rem;
+  }
+
+  footer { display: flex; flex-direction: column; gap: 0.7rem; border-top: 3px solid var(--ink); padding-top: 1.05rem; }
+  footer p { font-size: 1rem; color: var(--ink-soft); max-width: 66ch; }
+  footer strong { color: var(--ink); }
+</style>
+
+<div class="site">
+
+  <header class="front">
+    <hr class="rule-heavy">
+    <div class="front-row">
+      <p class="tag">Frontier &middot; site report</p>
+      <p class="tag">The landing &middot; trench I &middot; ticks 0&ndash;6,260</p>
+    </div>
+    <hr class="rule">
+    <h1>Twenty-four bars<br>and <em>nothing to eat</em></h1>
+    <p class="standfirst">In six thousand two hundred ticks this settlement went from two people
+      with an axe to iron tools, struck coin, a mill, a furnace, three towers and a hall. It has
+      five food and twelve mouths.</p>
+    <p class="byline">You asked whether they had reached a new epoch, and doubted we had programmed
+      one. Both halves of that are correct and they are the report.</p>
+  </header>
+
+  <section>
+    <p class="ctx">Context 1 &middot; the news</p>
+    <h2>They reached it</h2>
+    <p class="lede">Every marker anybody has ever used to divide one age from another, this
+      settlement crossed in a morning.</p>
+    <div class="tbl-wrap">
+      <table>
+        <caption>Stratigraphy &middot; first appearance, by tick</caption>
+        <thead><tr><th scope="col">Tick</th><th scope="col">Find</th><th scope="col">What it means</th></tr></thead>
+        <tbody>
+          <tr><td class="n">203</td><td class="lbl">first house</td><td>somebody sleeps indoors; somebody else can come</td></tr>
+          <tr><td class="n">1,898</td><td class="lbl">kiln</td><td>charcoal &mdash; the bottom rung of metal</td></tr>
+          <tr><td class="n">2,212</td><td class="lbl">smelter</td><td>a furnace on this coast, for the first time in four days</td></tr>
+          <tr><td class="n">2,270</td><td class="lbl">masons</td><td>rough stone becomes squared block</td></tr>
+          <tr><td class="n">2,304</td><td class="lbl">mine</td><td>the seam worked properly rather than scratched</td></tr>
+          <tr><td class="n-find">2,869</td><td class="lbl">first iron drawn</td><td><strong>the age changes here</strong></td></tr>
+          <tr><td class="n">3,742</td><td class="lbl">sawmill</td><td>which needs an iron blade, which is why it is late</td></tr>
+          <tr><td class="n">3,932</td><td class="lbl">joiner</td><td>beds; a house sleeps two</td></tr>
+          <tr><td class="n">4,317</td><td class="lbl">infirmary</td><td>a bad fall stops being the end of somebody</td></tr>
+          <tr><td class="n">5,453</td><td class="lbl">tower</td><td>the belfry, at last &mdash; asked for twenty-nine times</td></tr>
+          <tr><td class="n-find">6,217</td><td class="lbl">hall</td><td><strong>the population ceiling lifts, 10 to 20</strong></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>For context on how far that is: <strong>the valley that ran before this one lasted 21,600
+      ticks and produced nothing at all.</strong> Not one board, not one bar, not one bed. It died
+      at fifteen people with a kiln that had stood sixteen thousand ticks without being lit.</p>
+    <div class="tbl-wrap">
+      <table>
+        <caption>Assemblage &middot; lifetime output of every bench, this trench</caption>
+        <tbody>
+          <tr><td class="lbl">sawmill</td><td class="n-find">226 plank</td><td class="lbl">smelter</td><td class="n-find">24 iron</td></tr>
+          <tr><td class="lbl">mine</td><td class="n-find">51 ore</td><td class="lbl">kiln</td><td class="n-find">57 charcoal</td></tr>
+          <tr><td class="lbl">masons</td><td class="n-find">29 block</td><td class="lbl">joiner</td><td class="n-find">11 furniture</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>Ten of the thirteen people on this coast are holding <strong>iron tools</strong>. Two
+      hundred and two coins have been struck. Mean happiness is <strong>0.97</strong>. They have
+      voted themselves carts, roads, wages, teaching, care, shelter, upkeep, fresh water, keeping,
+      comfort, coinage, and — after twenty-nine separate requests — <strong>sightlines</strong>.</p>
+  </section>
+
+  <section>
+    <p class="ctx">Context 2 &middot; the section drawing</p>
+    <h2>The layers</h2>
+    <figure>
+      <div class="figbox">
+        <svg viewBox="0 0 880 340" role="img" aria-label="A trench section in four layers. The stone phase runs from tick 0 to 1,898 and is the deepest. The charcoal phase runs to 2,869. The iron phase runs from 2,869 to 6,260 and is the thinnest and richest, containing the mill, the joiner, the infirmary, the tower and the hall. A red band across the whole section marks the food supply, which never rises above one day for the settlement at any depth." fill="none">
+          <g color="var(--rule)" stroke="currentColor" stroke-width="1.5">
+            <rect x="60" y="34" width="760" height="212"></rect>
+          </g>
+
+          <g fill="var(--find)" fill-opacity="0.10">
+            <rect x="61" y="35" width="245" height="210"></rect>
+          </g>
+          <g fill="var(--find)" fill-opacity="0.19">
+            <rect x="306" y="35" width="120" height="210"></rect>
+          </g>
+          <g fill="var(--find)" fill-opacity="0.34">
+            <rect x="426" y="35" width="393" height="210"></rect>
+          </g>
+          <g color="var(--rule)" stroke="currentColor" stroke-width="1.2" stroke-dasharray="4 3">
+            <line x1="306" y1="35" x2="306" y2="245"></line>
+            <line x1="426" y1="35" x2="426" y2="245"></line>
+          </g>
+
+          <g font-family="'Bebas Neue', sans-serif" font-size="19" fill="currentColor" color="var(--ink)" text-anchor="middle">
+            <text x="183" y="62">STONE</text>
+            <text x="366" y="62">CHARCOAL</text>
+            <text x="622" y="62">IRON</text>
+          </g>
+          <g font-family="'Roboto Mono', monospace" font-size="10.5" fill="currentColor" color="var(--ink-soft)" text-anchor="middle">
+            <text x="183" y="78">tick 0 – 1,898</text>
+            <text x="366" y="78">1,898 – 2,869</text>
+            <text x="622" y="78">2,869 – 6,260</text>
+          </g>
+
+          <g font-family="'Roboto Mono', monospace" font-size="11" fill="currentColor" color="var(--ink)">
+            <text x="80" y="108">house · 203</text>
+            <text x="80" y="128">claims split off</text>
+            <text x="80" y="148">stone tools throughout</text>
+            <text x="318" y="108">kiln · 1,898</text>
+            <text x="318" y="128">smelter · 2,212</text>
+            <text x="318" y="148">masons · 2,270</text>
+            <text x="318" y="168">mine · 2,304</text>
+            <text x="440" y="108">first bar drawn · 2,869</text>
+            <text x="440" y="128">sawmill · 3,742</text>
+            <text x="440" y="148">joiner · 3,932</text>
+            <text x="440" y="168">infirmary · 4,317</text>
+            <text x="440" y="188">tower · 5,453</text>
+            <text x="440" y="208">hall · 6,217 — the ceiling lifts</text>
+          </g>
+
+          <g fill="var(--alarm)" fill-opacity="0.16">
+            <rect x="61" y="246" width="758" height="34"></rect>
+          </g>
+          <g color="var(--alarm)" stroke="currentColor" stroke-width="1.5">
+            <line x1="60" y1="246" x2="820" y2="246"></line>
+            <line x1="60" y1="280" x2="820" y2="280"></line>
+          </g>
+          <text x="440" y="268" font-family="'Roboto Mono', monospace" font-size="12" font-weight="500" fill="var(--alarm)" text-anchor="middle">FOOD · never above one day's supply, at any depth</text>
+
+          <g font-family="'Roboto Mono', monospace" font-size="10.5" fill="currentColor" color="var(--ink-soft)" text-anchor="middle">
+            <text x="440" y="306">deeper is older · the richest layer is the thinnest and the last</text>
+          </g>
+        </svg>
+      </div>
+      <figcaption>Three phases in six thousand ticks, and one band running the whole depth of the
+        trench unchanged. The settlement crossed every threshold an archaeologist would name and
+        never once had a week's food in the store.</figcaption>
+    </figure>
+  </section>
+
+  <section>
+    <p class="ctx">Context 3 &middot; the fault</p>
+    <h2>They forgot lunch</h2>
+    <p class="lede">Two hundred and fourteen boards. Twenty-four bars of iron. Twenty-nine dressed
+      blocks. Three towers. Two hundred and two coins. <strong>Two food.</strong></p>
+    <p>That was the reading at tick 6,157, with ten people in the settlement and a mean happiness
+      of 0.97 — because every one of them was individually fine, having just eaten what they
+      picked. Nobody was starving. The settlement was.</p>
+    <p>And nothing anywhere said so. Everything the game presses on a settler is about the person:
+      <em>you are tired</em>, <em>you are starving</em>, <em>your pack is full</em>. A settler
+      cannot see the stores from where they are standing, so the one fact that mattered about this
+      valley was in no state file, no card and no feed line. The granary cannot raise the alarm
+      either, and this is the part worth writing down twice: <strong>it only fires on a surplus,
+      so it is unreachable in exactly the settlement that needs it.</strong> Three granaries
+      standing. Nothing in any of them, ever.</p>
+    <div class="stamp">Site under-provisioned<small>Recorded at every depth</small></div>
+  </section>
+
+  <section>
+    <p class="ctx">Context 4 &middot; the finds nobody could file</p>
+    <h2>There are fish now</h2>
+    <p>The oldest unanswered request on this record has been made four separate ways by four
+      different people over four days:</p>
+    <div class="aside">
+      <p class="mono">A salmon trap</p>
+      <p class="mono">A method to catch fish in the lake</p>
+      <p class="mono">Clear water in the lake, visible bottom for fishing, swimming, and water clarity</p>
+      <p class="mono">A system for filtering lake water to prevent spoilage during warm days</p>
+    </div>
+    <p>Every one matched nothing. The word list had no entry for a fish, so a settler who asked for
+      a salmon trap was granted <strong>a well</strong> — which the published record has been
+      carrying as a joke in its own colophon, under the line <em>there are no fish</em>, for two
+      days.</p>
+    <p>There are now. A weir is a boon a settlement can vote itself, and a farmer who cannot find a
+      bush — or whose settlement is under a day's food — walks to the water instead. Berries are
+      the only food in this game and they do not come back fast enough for a settlement that has
+      grown. A lake does not run out.</p>
+    <p><strong>And it is unproven, which is the honest half.</strong> Over six thousand ticks of a
+      valley with the weir granted, it fired <em>once</em> — because the fallback that finds a
+      berry bush found one every single time, and that valley was never actually hungry. The case
+      it was built for is this one. Whether it helps is a thing the next run will say and this
+      sheet will not.</p>
+    <p>Thirty other requests came in from the cold at the same time. Thirty-eight distinct wordings
+      on the whole record matched no kind at all; <strong>eight do now</strong>. None of them
+      needed new content. A footpath to the high meadows was always a road. A tunnel system was
+      always a shaft. A pulley was a cart, a tool rack was upkeep, a sundial was the forecast, and
+      a lantern, a chimney and a way of carrying embers between fires were all the firepit. They
+      needed a word list written by somebody who was listening.</p>
+  </section>
+
+  <section>
+    <p class="ctx">Context 5 &middot; the thing that has no word</p>
+    <h2>An age with no name</h2>
+    <p>You guessed the rest of this before it was written: there is no epoch in this software. No
+      age, no era, no phase. The word appears twice in the whole codebase and both times in a
+      comment, as something a later version might have.</p>
+    <p>So when this settlement drew its first bar of iron at tick 2,869 — the single event that
+      divides one age from another in every account of any people anywhere — <strong>nothing
+      happened.</strong> No card, no line in the feed, no entry in the record beyond
+      <code>Pike drew 2 iron off the furnace</code>, which is the same line it writes for the
+      twenty-fourth bar.</p>
+    <p>The game has a card for a first house, and one for a hall, and one for a bench nobody has
+      worked in two days, and as of this morning one for a settlement that has industrialised and
+      cannot eat. It has none for the thing that just happened to it.</p>
+    <div class="aside">
+      <p class="tag">What the record says about the most important moment in its own history</p>
+      <p class="mono">{"t":2869,"kind":"help","text":"Pike drew 2 iron off the furnace."}</p>
+    </div>
+    <p>Which is, in fairness, exactly how it went for everybody else. Nobody in an actual Bronze
+      Age was told.</p>
+  </section>
+
+  <footer>
+    <p class="tag">Site archive</p>
+    <p><strong>The trench is still open.</strong> Twelve people, thirteen buildings standing, a
+      hall raised two hundred ticks before this was written, and a ceiling that has just gone from
+      ten to twenty for the first time in this project's history. Nobody has arrived through it
+      yet.</p>
+    <p><strong>Provisioning remains the open context.</strong> Three granaries, nothing kept, and
+      a food supply that has never once in six thousand two hundred ticks held a week. The weir is
+      voted for or it is not; the settlement decides that, and it has not been asked yet.</p>
+    <p class="quiet">Frontier &middot; the landing, trench I. Every date above is from
+      <code>agents/log.jsonl</code> and every quantity from the settlement's own lifetime tallies,
+      counted rather than estimated. Nothing in the record has been deleted, including the valley
+      before this one, which had twenty-one thousand six hundred ticks and nothing to show anybody.</p>
+  </footer>
+
+</div>

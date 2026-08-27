@@ -1,0 +1,359 @@
+<title>The Belfry Problem</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Mono:ital,wght@0,400;0,500;1,400&display=swap">
+
+<style>
+  /*
+   * A Bosch panel: pale sickly green ground, umber gilding, and one hot red kept for the numbers
+   * that indict. The film this borrows from has its two men stand in front of one of these and
+   * disagree about whether the town is worth looking at, which is the whole of the argument here.
+   */
+  :root {
+    --panel:    #E3E4DA;
+    --panel-2:  #D6D8CB;
+    --panel-3:  #EFF0E9;
+    --ink:      #1B1A16;
+    --ink-soft: #5B5A4E;
+    --rule:     #A6A697;
+    --rule-2:   #C4C5B6;
+    --gild:     #7C4A12;
+    --red:      #A8321F;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --panel: #12130F; --panel-2: #1B1C16; --panel-3: #0C0D0A;
+      --ink: #E1E1D5; --ink-soft: #8E8E7E;
+      --rule: #35362C; --rule-2: #26271F;
+      --gild: #C99A46; --red: #E0705A;
+    }
+  }
+  :root[data-theme="dark"] {
+    --panel: #12130F; --panel-2: #1B1C16; --panel-3: #0C0D0A;
+    --ink: #E1E1D5; --ink-soft: #8E8E7E;
+    --rule: #35362C; --rule-2: #26271F;
+    --gild: #C99A46; --red: #E0705A;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    background: var(--panel); color: var(--ink);
+    font-family: "Crimson Pro", Georgia, "Times New Roman", serif;
+    font-size: 1.14rem; line-height: 1.62; font-weight: 400;
+    margin: 0; padding: 0 1.15rem 7rem;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .panel { max-width: 47rem; margin: 0 auto; display: flex; flex-direction: column; gap: 2.9rem; }
+  p { margin: 0; max-width: 64ch; }
+  strong { font-weight: 600; }
+  code, .mono { font-family: "DM Mono", ui-monospace, monospace; font-size: 0.82em; }
+  code { color: var(--gild); }
+
+  .tag {
+    font-family: "DM Mono", monospace; font-size: 0.7rem; letter-spacing: 0.16em;
+    text-transform: uppercase; color: var(--ink-soft); margin: 0;
+  }
+  .rule { border: 0; border-top: 1px solid var(--rule); margin: 0; }
+  .rule-heavy { border: 0; border-top: 2px solid var(--ink); margin: 0; }
+
+  header.plate { display: flex; flex-direction: column; gap: 0.5rem; padding-top: 2rem; }
+  .plate-row { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 0.4rem 1.5rem; }
+
+  h1 {
+    font-family: Fraunces, Georgia, serif; font-weight: 700;
+    font-size: clamp(2.3rem, 9vw, 4.6rem); line-height: 0.98; letter-spacing: -0.02em;
+    margin: 1rem 0 0; text-wrap: balance;
+  }
+  h1 em { font-style: normal; color: var(--gild); }
+  .standfirst {
+    font-size: clamp(1.12rem, 2.9vw, 1.42rem); line-height: 1.42; font-style: italic;
+    max-width: 48ch; margin: 0; text-wrap: balance; color: var(--ink-soft);
+  }
+  .byline { font-family: "DM Mono", monospace; font-size: 0.76rem; color: var(--ink-soft); max-width: 58ch; }
+
+  section { display: flex; flex-direction: column; gap: 1.1rem; }
+  h2 {
+    font-family: Fraunces, Georgia, serif; font-weight: 600;
+    font-size: clamp(1.3rem, 3.6vw, 1.9rem); line-height: 1.12; margin: 0;
+    border-bottom: 2px solid var(--ink); padding-bottom: 0.42rem; letter-spacing: -0.012em;
+  }
+  .num {
+    font-family: "DM Mono", monospace; font-size: 0.7rem; letter-spacing: 0.16em;
+    text-transform: uppercase; color: var(--gild); margin: 0;
+  }
+  .drop::first-letter {
+    font-family: Fraunces, Georgia, serif; float: left; font-size: 3.9rem; line-height: 0.8;
+    padding: 0.28rem 0.55rem 0 0; color: var(--gild); font-weight: 700;
+  }
+  .lede { font-size: 1.24rem; }
+  .quiet { color: var(--ink-soft); }
+
+  .tbl-wrap { overflow-x: auto; border-top: 2px solid var(--ink); border-bottom: 2px solid var(--ink); }
+  table { width: 100%; border-collapse: collapse; font-size: 0.94rem; font-variant-numeric: tabular-nums; min-width: 30rem; }
+  caption {
+    caption-side: top; text-align: left; padding: 0.7rem 0;
+    font-family: "DM Mono", monospace; font-size: 0.7rem; letter-spacing: 0.16em;
+    text-transform: uppercase; color: var(--ink-soft);
+  }
+  th {
+    font-family: "DM Mono", monospace; font-size: 0.65rem; letter-spacing: 0.12em;
+    text-transform: uppercase; color: var(--ink-soft); font-weight: 400; text-align: left;
+    padding: 0.45rem 0.9rem 0.45rem 0; border-bottom: 1px solid var(--ink); white-space: nowrap;
+  }
+  td { padding: 0.42rem 0.9rem 0.42rem 0; border-bottom: 1px solid var(--rule-2); vertical-align: baseline; }
+  tr:last-child td { border-bottom: 0; }
+  .n { font-family: "DM Mono", monospace; white-space: nowrap; }
+  .n-big { font-family: "DM Mono", monospace; color: var(--red); font-weight: 500; white-space: nowrap; }
+  .bar { display: inline-block; height: 9px; background: var(--gild); vertical-align: middle; }
+  .bar-red { background: var(--red); }
+  .lbl { font-weight: 600; }
+
+  figure { margin: 0; display: flex; flex-direction: column; gap: 0.8rem; }
+  .figbox { overflow-x: auto; background: var(--panel-3); border: 1px solid var(--rule-2); padding: 1rem 0.5rem; }
+  figure svg { display: block; max-width: 100%; height: auto; min-width: 31rem; }
+  figcaption { font-size: 0.98rem; color: var(--ink-soft); max-width: 62ch; font-style: italic; }
+
+  .aside {
+    background: var(--panel-2); border-left: 4px solid var(--gild); padding: 1.15rem 1.25rem;
+    display: flex; flex-direction: column; gap: 0.65rem;
+  }
+  .aside p { max-width: 58ch; }
+
+  .verse {
+    font-family: Fraunces, Georgia, serif; font-size: clamp(1.3rem, 4.2vw, 1.95rem);
+    line-height: 1.22; font-weight: 600; letter-spacing: -0.018em; margin: 0; max-width: 26ch;
+  }
+  .verse span { color: var(--red); }
+
+  footer { display: flex; flex-direction: column; gap: 0.7rem; border-top: 2px solid var(--ink); padding-top: 1.05rem; }
+  footer p { font-size: 0.98rem; color: var(--ink-soft); max-width: 66ch; }
+  footer strong { color: var(--ink); }
+</style>
+
+<div class="panel">
+
+  <header class="plate">
+    <hr class="rule-heavy">
+    <div class="plate-row">
+      <p class="tag">Frontier &middot; notice XX</p>
+      <p class="tag">431 buildings raised &middot; 327 of them houses</p>
+    </div>
+    <hr class="rule">
+    <h1>The <em>Belfry</em> Problem</h1>
+    <p class="standfirst">Two men are sent to the same beautiful town. One climbs the tower and
+      sees why it is beautiful. The other stays at street level and is bored out of his mind.
+      Both of them are correct, and only one of them is deciding anything.</p>
+    <p class="byline">On why a settler who can see forty paces builds a worse settlement than a
+      rule that can see the whole coast &middot; measured over four days and 431 buildings</p>
+  </header>
+
+  <section>
+    <p class="num">I</p>
+    <h2>It is a fairytale town, and nobody in it thinks so</h2>
+    <p class="drop lede">The film this borrows its shape from is about exactly one disagreement.
+      Two men are put in a medieval Flemish town to wait. Ken walks it, climbs the belfry, stands
+      in front of the Bosch panel, and finds the place extraordinary. Ray sees a canal, some
+      bricks, and an eternity of nothing to do. Neither is lying. They are standing in the same
+      streets with different amounts of the town available to them.</p>
+    <p>Frontier has the same disagreement in it, and it has been having it in writing for four
+      days. On one side there is an author who can see the whole coast: a nine-good economy with a
+      metal ladder, forty catalogue kinds a settlement can vote itself, a single-transferable-vote
+      ballot with every transfer recorded. On the other there are fifteen people who can see a
+      woodpile.</p>
+    <p>The previous notice ran the two of them against each other as a controlled trial and got
+      the attribution wrong twice in one morning. This one asks the question that was actually
+      underneath it: <strong>what, precisely, does a settler get to look at?</strong></p>
+  </section>
+
+  <section>
+    <p class="num">II</p>
+    <h2>Fifteen objects</h2>
+    <p>When the game hands a settler over, it writes down everything that settler can see. It is a
+      short document. The nearest tree, the nearest rock, the nearest seam and the nearest berry
+      bush, each within thirty paces &mdash; four things. Up to six people within forty-two paces.
+      The five nearest buildings.</p>
+    <figure>
+      <div class="figbox">
+        <svg viewBox="0 0 880 400" role="img" aria-label="Two squares representing the same 160 by 160 coast. On the left, what a settler is shown: a small circle of forty-two paces containing at most fifteen objects. On the right, what the settlement's own rule reads: the entire map, every building, the whole store and the complete cost and recipe tables." fill="none">
+          <g font-family="'DM Mono', monospace" font-size="12" fill="currentColor" color="var(--ink-soft)" text-anchor="middle">
+            <text x="220" y="34" font-size="13" font-weight="500">WHAT THE SETTLER IS SHOWN</text>
+            <text x="660" y="34" font-size="13" font-weight="500">WHAT THE RULE READS</text>
+          </g>
+
+          <g color="var(--rule)" stroke="currentColor" stroke-width="1.5">
+            <rect x="90" y="52" width="260" height="260"></rect>
+          </g>
+          <g color="var(--gild)" stroke="currentColor" stroke-width="2">
+            <circle cx="215" cy="185" r="68"></circle>
+          </g>
+          <g color="var(--gild)" stroke="currentColor" stroke-width="1" stroke-dasharray="3 3">
+            <circle cx="215" cy="185" r="49"></circle>
+          </g>
+          <g fill="var(--gild)">
+            <circle cx="215" cy="185" r="4.5"></circle>
+            <circle cx="188" cy="160" r="3"></circle><circle cx="243" cy="171" r="3"></circle>
+            <circle cx="200" cy="216" r="3"></circle><circle cx="236" cy="207" r="3"></circle>
+            <circle cx="170" cy="196" r="3"></circle><circle cx="255" cy="145" r="3"></circle>
+            <circle cx="230" cy="235" r="3"></circle><circle cx="176" cy="220" r="3"></circle>
+            <circle cx="262" cy="196" r="3"></circle><circle cx="205" cy="140" r="3"></circle>
+            <circle cx="248" cy="222" r="3"></circle><circle cx="185" cy="245" r="3"></circle>
+            <circle cx="160" cy="168" r="3"></circle><circle cx="240" cy="128" r="3"></circle>
+          </g>
+          <g font-family="'DM Mono', monospace" font-size="11" fill="currentColor" color="var(--ink-soft)">
+            <text x="220" y="336" text-anchor="middle">4 resources · up to 6 people · 5 buildings</text>
+            <text x="220" y="354" text-anchor="middle" font-size="13" font-weight="500" fill="var(--gild)">15 objects, at the very most</text>
+            <text x="220" y="374" text-anchor="middle">42 paces of a coast 160 across</text>
+          </g>
+
+          <g color="var(--rule)" stroke="currentColor" stroke-width="1.5">
+            <rect x="530" y="52" width="260" height="260" fill="var(--gild)" fill-opacity="0.16"></rect>
+          </g>
+          <g color="var(--gild)" stroke="currentColor" stroke-width="0.6" stroke-opacity="0.5">
+            <path d="M530 84 H790 M530 116 H790 M530 148 H790 M530 180 H790 M530 212 H790 M530 244 H790 M530 276 H790"></path>
+            <path d="M562 52 V312 M594 52 V312 M626 52 V312 M658 52 V312 M690 52 V312 M722 52 V312 M754 52 V312"></path>
+          </g>
+          <g font-family="'DM Mono', monospace" font-size="11" fill="currentColor" color="var(--ink-soft)">
+            <text x="660" y="336" text-anchor="middle">every building · the whole store · every cost</text>
+            <text x="660" y="354" text-anchor="middle" font-size="13" font-weight="500" fill="var(--gild)">25,600 tiles and the entire ladder</text>
+            <text x="660" y="374" text-anchor="middle">the recipe graph, end to end</text>
+          </g>
+        </svg>
+      </div>
+      <figcaption>Both are choosing what one person does next. The dashed inner ring is thirty
+        paces, which is as far as a settler is told there is a tree.</figcaption>
+    </figure>
+    <p>The settlement's own logic &mdash; the four hundred lines the settlers fall back on when
+      nobody is thinking for them &mdash; reads the whole store, every building on the coast, the
+      complete build-cost table and the entire recipe graph, on every decision, for free. It is
+      not cleverer. It is standing on the tower.</p>
+  </section>
+
+  <section>
+    <p class="num">III</p>
+    <h2>Three hundred and twenty-seven houses</h2>
+    <p>Here is what four days of this produced. Every building finished by anybody, in any valley,
+      across the whole record:</p>
+    <div class="tbl-wrap">
+      <table>
+        <caption>Buildings finished &middot; whole record &middot; 23&ndash;27 August</caption>
+        <thead><tr><th scope="col">Building</th><th scope="col">Raised</th><th scope="col">&nbsp;</th></tr></thead>
+        <tbody>
+          <tr><td class="lbl">house</td><td class="n-big">327</td><td><span class="bar bar-red" style="width: 300px;"></span></td></tr>
+          <tr><td class="lbl">granary</td><td class="n">37</td><td><span class="bar" style="width: 34px;"></span></td></tr>
+          <tr><td class="lbl">mine</td><td class="n">19</td><td><span class="bar" style="width: 17px;"></span></td></tr>
+          <tr><td class="lbl">kiln</td><td class="n">14</td><td><span class="bar" style="width: 13px;"></span></td></tr>
+          <tr><td class="lbl">sawmill</td><td class="n">13</td><td><span class="bar" style="width: 12px;"></span></td></tr>
+          <tr><td class="lbl">depot</td><td class="n">8</td><td><span class="bar" style="width: 7px;"></span></td></tr>
+          <tr><td class="lbl">tower</td><td class="n">4</td><td><span class="bar" style="width: 4px;"></span></td></tr>
+          <tr><td class="lbl">masons</td><td class="n">3</td><td><span class="bar" style="width: 3px;"></span></td></tr>
+          <tr><td class="lbl">joiner</td><td class="n">3</td><td><span class="bar" style="width: 3px;"></span></td></tr>
+          <tr><td class="lbl">hall</td><td class="n">2</td><td><span class="bar" style="width: 2px;"></span></td></tr>
+          <tr><td class="lbl">smelter</td><td class="n">1</td><td><span class="bar" style="width: 1px;"></span></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="lede"><strong>Three hundred and twenty-seven houses and one furnace.</strong>
+      Seventy-six per cent of everything ever built on this coast is the same building.</p>
+    <p>And it is not a preference, or a failure of ambition, or a language model being dim. It is
+      the only building on that list whose reason is <em>inside forty-two paces</em>. A settler
+      standing in the settlement can see a person with nowhere to sleep. They cannot see that four
+      boards would start a metal ladder that ends in a saw, a pick, a struck coin and a hall that
+      lets a sixteenth person land, because none of that is anywhere in the fifteen objects they
+      were handed. The house is the one decision this valley has ever been equipped to make.</p>
+    <div class="aside">
+      <p class="tag">The same thing, said by a settler</p>
+      <p>&ldquo;I have carried ore about all week and not one of us can do anything with it.&rdquo;
+        &mdash; filed as a smelter, and the smelter was built once, in four days, out of four
+        hundred and thirty-one buildings.</p>
+    </div>
+  </section>
+
+  <section>
+    <p class="num">IV</p>
+    <h2>The tower they kept asking for</h2>
+    <p>Now the part that would be too neat to write if it were not on the record.</p>
+    <p>This game already contains the cure for its own short sight. There is a boon called
+      <code>sightlines</code>, granted by a wish the catalogue files under <code>lookout</code>,
+      and what it does is widen how far a settler will look before they decide where to work
+      &mdash; from thirty-four paces to forty-eight. It is a belfry. Climb it and you can see
+      further.</p>
+    <p>The settlers asked for it <strong>twenty-nine times</strong>, in eighteen different
+      wordings, and the plainest of them is this:</p>
+    <p class="verse">Somewhere high with a bench, to see the valley whole and <span>know what is
+      out past it.</span></p>
+    <p>Four towers, in four hundred and thirty-one buildings. Under one per cent. The reason is
+      the ladder again: a tower wants eight dressed blocks, blocks want a masons' yard, and three
+      masons' yards have ever been built on this coast &mdash; of which, in the valley this notice
+      was written in, exactly none had ever dressed a single stone.</p>
+    <p><strong>The thing that would have let them see the problem was on the far side of the
+      problem.</strong> A settler cannot see why to build the tower without the tower. In the
+      film, Ray will not climb the belfry because he cannot see what would be worth the climb, and
+      the joke is that the answer is at the top of the stairs.</p>
+  </section>
+
+  <section>
+    <p class="num">V</p>
+    <h2>Harry's principle</h2>
+    <p>The film's third man holds one rule absolutely and follows it, in the end, straight off the
+      bottom of the tower, on a misreading of a fact that a moment's looking would have corrected.
+      He is not stupid either. He is consistent.</p>
+    <p>This project has been Harry all week. The rule is: <em>a settlement may only have what it
+      has voted for</em>, which is a good rule and the whole point of the game. Applied without
+      looking, it produced a valley that had voted a kiln into existence and could not burn
+      anything in it, because burning wants a furnace and the furnace wanted four boards and the
+      boards wanted a mill and the mill wanted iron that only the furnace could make. Every step
+      of that was correct. The result was a shed with a name on it.</p>
+    <p>Consistency is what a rule is for, and it is also the exact failure mode of a rule that
+      cannot see the thing it is being consistent about. That is the same sentence as the one
+      about the settler and the woodpile, which is why this notice has one argument in it and not
+      two.</p>
+  </section>
+
+  <section>
+    <p class="num">VI</p>
+    <h2>What was handed down</h2>
+    <p>The trial's own closing paragraph said the fix would be to give the model a wider view
+      rather than take the model away. That was written at 08:20 and done by 08:40, which is the
+      one thing this shelf can say for itself.</p>
+    <p>What a settler is shown now includes the settlement, in words rather than in nouns. Not
+      <code>["kiln","masons","joiner"]</code> &mdash; which is what it read for the whole of this
+      project's life, and which is how a model came to be told a valley had a kiln when it had a
+      shed &mdash; but:</p>
+    <div class="aside">
+      <p class="tag">agents/inbox/npc-07.json</p>
+      <p class="mono">standing: ["kiln — has made 5 charcoal", "smelter — has made 2 iron",
+        "masons — has made NOTHING in 612s standing"]</p>
+      <p class="mono">can_make_now: ["plank — by hand (hew), no sawmill standing",
+        "charcoal — at the kiln"]</p>
+      <p class="mono">short_of: {"smelter": "8 more stone, 1 more plank"}</p>
+    </div>
+    <p>Three fields. Each of them was computable from the object it sits in, on every one of the
+      6,848 decisions this valley has ever paid a graphics card for, and none of them was in it.
+      Within four hundred ticks of the change the settlement had lit a kiln and drawn two bars of
+      iron &mdash; the first metal anybody has ever made here.</p>
+    <p class="quiet">Which does not prove the change did it. Four deadlocks were cleared the same
+      morning and this valley is one valley. It is written down so that the next person to run the
+      experiment has something to disagree with.</p>
+  </section>
+
+  <footer>
+    <p class="tag">Coda</p>
+    <p><strong>The film ends without telling you whether the town was purgatory.</strong> Ray
+      spends the whole of it waiting for something to happen in a place that is already full of
+      the thing he came for, and the joke only works because the audience can see the town and he
+      cannot. That is a comedy when it is two hitmen and a belfry. It is a design fault when it is
+      fifteen people and a state file.</p>
+    <p><strong>And the correction cuts the other way too.</strong> Nothing here says the settler's
+      view should be the rule's view. A settler who can see the whole coast is not a settler, it
+      is the author wearing a hat, and a game about people deciding badly with what they have in
+      front of them is the game that was meant. The fault was never that the view was narrow. It
+      was that the narrow view left out the one fact standing in the settlement's own square:
+      that the kiln had never once been lit.</p>
+    <p class="quiet">Frontier &middot; 431 buildings, 327 of them houses, four towers, one furnace.
+      The settlers asked twenty-nine times for somewhere high to see the valley whole, and the
+      valley could not see why to build it.</p>
+  </footer>
+
+</div>

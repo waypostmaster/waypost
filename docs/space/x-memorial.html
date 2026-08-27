@@ -1,0 +1,412 @@
+<title>Nine Stones</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Zilla+Slab:ital,wght@0,400;0,600;0,700;1,400&family=Courier+Prime:ital,wght@0,400;0,700;1,400&display=swap">
+
+<style>
+  :root {
+    --paper:      #DCDFD9;
+    --paper-2:    #D2D6CF;
+    --ink:        #14171A;
+    --ink-soft:   #4A5052;
+    --rule:       #A5ABA2;
+    --stamp:      #A9201C;
+    --stone:      #9AA09B;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --paper: #14171A; --paper-2: #1B1F22; --ink: #D9DCD6; --ink-soft: #8D948F;
+      --rule: #3A4044; --stamp: #D94B44; --stone: #454C4E;
+    }
+  }
+  :root[data-theme="dark"] {
+    --paper: #14171A; --paper-2: #1B1F22; --ink: #D9DCD6; --ink-soft: #8D948F;
+    --rule: #3A4044; --stamp: #D94B44; --stone: #454C4E;
+  }
+
+  * { box-sizing: border-box; }
+  body {
+    background: var(--paper); color: var(--ink);
+    font-family: "Zilla Slab", Georgia, "Times New Roman", serif;
+    font-size: 1.0625rem; line-height: 1.62; margin: 0;
+    padding: 0 1.15rem 7rem; -webkit-font-smoothing: antialiased;
+  }
+  .sheet { max-width: 46rem; margin: 0 auto; display: flex; flex-direction: column; gap: 3rem; }
+
+  .label {
+    font-family: "Courier Prime", "Courier New", monospace; font-size: 0.72rem;
+    letter-spacing: 0.16em; text-transform: uppercase; color: var(--ink-soft); margin: 0;
+  }
+  .rule { border: 0; border-top: 1px solid var(--rule); margin: 0; }
+  .rule-thick { border: 0; border-top: 3px solid var(--ink); margin: 0; }
+  p { margin: 0; max-width: 60ch; }
+  .stack-tight { display: flex; flex-direction: column; gap: 0.7rem; }
+
+  .masthead { display: flex; flex-direction: column; gap: 0.7rem; padding-top: 1.9rem; }
+  .masthead-row { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 0.7rem; }
+
+  .hero { display: flex; flex-direction: column; gap: 1.15rem; }
+  .wordmark {
+    font-family: Anton, "Arial Narrow", Impact, sans-serif; font-weight: 400;
+    font-size: clamp(4.4rem, 20vw, 11rem); line-height: 0.84; letter-spacing: -0.015em;
+    text-transform: uppercase; margin: 0; text-wrap: balance;
+  }
+  .deck {
+    font-size: clamp(1.15rem, 3.4vw, 1.6rem); line-height: 1.35; font-weight: 600;
+    max-width: 36ch; margin: 0; text-wrap: balance;
+  }
+  .thesis {
+    font-family: Anton, "Arial Narrow", Impact, sans-serif;
+    font-size: clamp(1.7rem, 6.2vw, 3.1rem); line-height: 1.02; text-transform: uppercase;
+    margin: 0; max-width: 20ch; text-wrap: balance;
+  }
+  .thesis em { font-style: normal; color: var(--stamp); }
+
+  .article { display: flex; flex-direction: column; gap: 1.15rem; }
+  .article-head {
+    display: flex; align-items: baseline; gap: 1.15rem;
+    border-bottom: 1px solid var(--rule); padding-bottom: 0.7rem; flex-wrap: wrap;
+  }
+  .article-num {
+    font-family: "Courier Prime", "Courier New", monospace; font-size: 0.72rem;
+    letter-spacing: 0.16em; text-transform: uppercase; color: var(--stamp); white-space: nowrap;
+  }
+  .article-title {
+    font-family: Anton, "Arial Narrow", Impact, sans-serif;
+    font-size: clamp(1.35rem, 4vw, 2rem); line-height: 1.05; text-transform: uppercase;
+    margin: 0; flex: 1 1 12rem; text-wrap: balance;
+  }
+  .beat { font-size: 1.2rem; font-weight: 600; }
+  .lead-out { color: var(--ink-soft); }
+
+  /* ---------- the three settlements ---------- */
+  .place {
+    border-left: 3px solid var(--rule); padding-left: 1.15rem;
+    display: flex; flex-direction: column; gap: 0.35rem;
+  }
+  .place h3 {
+    font-family: Anton, "Arial Narrow", Impact, sans-serif; font-size: 1.5rem;
+    text-transform: uppercase; margin: 0; line-height: 1.05;
+  }
+  .place .kv {
+    font-family: "Courier Prime", "Courier New", monospace; font-size: 0.82rem;
+    color: var(--ink-soft);
+  }
+
+  /* ---------- the roll ---------- */
+  .roll-wrap { overflow-x: auto; }
+  .roll {
+    width: 100%; border-collapse: collapse;
+    font-family: "Courier Prime", "Courier New", monospace; font-size: 0.8rem;
+  }
+  .roll th {
+    text-align: left; padding: 0.35rem 0.7rem 0.35rem 0; border-bottom: 2px solid var(--ink);
+    font-size: 0.68rem; letter-spacing: 0.1em; text-transform: uppercase; white-space: nowrap;
+  }
+  .roll td { padding: 0.35rem 0.7rem 0.35rem 0; border-bottom: 1px dotted var(--rule); }
+  .roll .who { font-weight: 700; white-space: nowrap; }
+  .roll .held { color: var(--stamp); font-weight: 700; }
+  .roll .none { color: var(--ink-soft); }
+
+  /* ---------- the cairn ---------- */
+  .cairn {
+    display: flex; flex-direction: column-reverse; align-items: center; gap: 0.28rem;
+    padding: 1.9rem 0 0;
+  }
+  .cairn .stone {
+    background: var(--stone); color: var(--paper);
+    font-family: "Courier Prime", "Courier New", monospace; font-size: 0.74rem;
+    letter-spacing: 0.02em; text-align: center;
+    padding: 0.5rem 0.9rem; border-radius: 0.9rem / 0.55rem;
+    max-width: 100%;
+  }
+  :root:not([data-theme="light"]) .cairn .stone { color: var(--ink); }
+  @media (prefers-color-scheme: light) { :root:not([data-theme="dark"]) .cairn .stone { color: #F2F4F1; } }
+  .cairn .stone:nth-child(1) { width: 30rem; }
+  .cairn .stone:nth-child(2) { width: 27rem; }
+  .cairn .stone:nth-child(3) { width: 25rem; }
+  .cairn .stone:nth-child(4) { width: 22rem; }
+  .cairn .stone:nth-child(5) { width: 20rem; }
+  .cairn .stone:nth-child(6) { width: 17rem; }
+  .cairn .stone:nth-child(7) { width: 15rem; }
+  .cairn .stone:nth-child(8) { width: 12rem; }
+  .cairn .stone:nth-child(9) { width: 9rem; }
+  .cairn-foot {
+    text-align: center; font-family: "Courier Prime", "Courier New", monospace;
+    font-size: 0.72rem; letter-spacing: 0.16em; text-transform: uppercase;
+    color: var(--ink-soft); padding-top: 1.15rem;
+  }
+
+  .record {
+    background: var(--paper-2); border-left: 4px solid var(--stamp); padding: 1.15rem;
+    font-family: "Courier Prime", "Courier New", monospace; font-size: 0.86rem; line-height: 1.55;
+    display: flex; flex-direction: column; gap: 0.5rem; overflow-x: auto;
+  }
+  .record .meta { color: var(--ink-soft); }
+  .record blockquote {
+    margin: 0; padding-left: 0.7rem; border-left: 2px solid var(--rule); font-style: italic;
+  }
+
+  .turn {
+    background: var(--ink); color: var(--paper); padding: 3rem 1.9rem;
+    margin: 0 -1.15rem; display: flex; flex-direction: column; gap: 1.15rem;
+  }
+  .turn h2 {
+    font-family: Anton, "Arial Narrow", Impact, sans-serif;
+    font-size: clamp(1.9rem, 7vw, 3.4rem); line-height: 0.98; text-transform: uppercase;
+    margin: 0; max-width: 18ch; text-wrap: balance;
+  }
+  .turn p { color: var(--paper); }
+  .turn .quiet { color: var(--rule); }
+
+  .inscription {
+    font-size: 1.15rem; line-height: 1.5; font-style: italic;
+    border-left: 3px solid var(--stamp); padding-left: 1.15rem; max-width: 46ch;
+  }
+
+  .stamp-wrap { display: flex; justify-content: flex-end; }
+  .stamp {
+    display: inline-block; border: 3px solid var(--stamp); color: var(--stamp);
+    font-family: "Courier Prime", "Courier New", monospace; font-size: 0.8rem; font-weight: 700;
+    letter-spacing: 0.18em; text-transform: uppercase; padding: 0.7rem 1.15rem;
+    transform: rotate(-4deg);
+  }
+  .legal {
+    font-family: "Courier Prime", "Courier New", monospace; font-size: 0.68rem; line-height: 1.5;
+    color: var(--ink-soft); text-align: justify; max-width: 100%; margin: 0;
+  }
+  a { color: var(--stamp); }
+</style>
+
+<div class="sheet">
+
+  <header class="masthead">
+    <hr class="rule-thick">
+    <div class="masthead-row">
+      <p class="label">The Landing &middot; Halla&rsquo;s claim &middot; Cato&rsquo;s claim</p>
+      <p class="label">Tick 19,861 &middot; the last of them</p>
+    </div>
+    <hr class="rule">
+    <p class="label">In memoriam &middot; entered in the record &middot; the record is never altered</p>
+  </header>
+
+  <section class="hero">
+    <h1 class="wordmark">Nine<br>Stones</h1>
+    <p class="deck">A memorial for three settlements, fourteen people who could not die, and a cairn that was agreed and never raised.</p>
+    <hr class="rule">
+    <p class="thesis">It wanted eight stone. <em>They were carrying nine.</em></p>
+  </section>
+
+  <section class="article">
+    <div class="article-head">
+      <span class="article-num">The first</span>
+      <h2 class="article-title">What stood, at the end</h2>
+    </div>
+
+    <p>Three settlements on one coast, at tick 19,861, which is the last tick there was. Nothing below is dramatised. These are the numbers the valley wrote down about itself while it was still going.</p>
+
+    <div class="place">
+      <h3>The Landing</h3>
+      <p class="kv">eleven houses &middot; one kiln &middot; one lean-to</p>
+      <p class="kv">ten people &middot; seventy wood &middot; six ore &middot; nought stone &middot; nought food</p>
+      <p>It had voted itself a sawmill, a furnace and a masons&rsquo; yard, and it built eleven houses, because houses cost wood and there was a great deal of wood. Nobody ever lit the kiln.</p>
+    </div>
+
+    <div class="place">
+      <h3>Halla&rsquo;s claim</h3>
+      <p class="kv">a lean-to &middot; a house &middot; a yard &middot; a kiln</p>
+      <p class="kv">two people &middot; twenty-five wood &middot; eleven ore &middot; one stone</p>
+      <p>The most complete settlement on the coast, founded by a woman who walked out of the Landing. It had a yard for squaring stone and one stone to square. It traded with the mainland three times.</p>
+    </div>
+
+    <div class="place">
+      <h3>Cato&rsquo;s claim</h3>
+      <p class="kv">a lean-to</p>
+      <p class="kv">two people, one sleeping on the ground &middot; five wood &middot; six ore &middot; nought stone</p>
+      <p>A rock in the bay. He founded it because the game asked whether the ground was dry, level and unclaimed, and never asked whether it was attached to anything. In eight thousand ticks it never held more than one building, and it is the only settlement in the valley that was ever granted a burial ground.</p>
+    </div>
+
+    <p class="lead-out">There was never anybody to put in it.</p>
+  </section>
+
+  <section class="article">
+    <div class="article-head">
+      <span class="article-num">The second</span>
+      <h2 class="article-title">The roll, and what each was holding</h2>
+    </div>
+
+    <p>Fourteen names. The last column is what was in their arms when it stopped, taken from the record without alteration.</p>
+
+    <div class="roll-wrap">
+      <table class="roll">
+        <thead>
+          <tr><th>Name</th><th>Trade</th><th>Where</th><th>Tools</th><th>In their hands</th></tr>
+        </thead>
+        <tbody>
+          <tr><td class="who">Mara</td><td>forester</td><td>the Landing</td><td class="none">bare hands</td><td>5 wood, 1 food</td></tr>
+          <tr><td class="who">Idris</td><td>forester</td><td>the Landing</td><td class="none">bare hands</td><td>3 ore</td></tr>
+          <tr><td class="who">Tove</td><td>miner</td><td>the Landing</td><td class="none">bare hands</td><td>3 ore</td></tr>
+          <tr><td class="who">Bren</td><td>forester</td><td>the Landing</td><td class="none">bare hands</td><td>1 wood, 2 ore</td></tr>
+          <tr><td class="who">Sula</td><td>forester</td><td>the Landing</td><td class="none">bare hands</td><td>3 ore</td></tr>
+          <tr><td class="who">Ferro</td><td>forester</td><td>the Landing</td><td class="none">bare hands</td><td>1 wood, <span class="held">2 stone</span>, 3 ore</td></tr>
+          <tr><td class="who">Ysolde</td><td>farmer</td><td>the Landing</td><td class="none">bare hands</td><td>3 wood, 3 ore</td></tr>
+          <tr><td class="who">Pike</td><td>forester</td><td>the Landing</td><td class="none">bare hands</td><td><span class="held">3 stone</span>, 4 ore</td></tr>
+          <tr><td class="who">Rowan</td><td>forester</td><td>the Landing</td><td class="none">bare hands</td><td>3 ore, 3 food</td></tr>
+          <tr><td class="who">Anselm</td><td>miner</td><td>the Landing</td><td class="none">bare hands</td><td>2 ore</td></tr>
+          <tr><td class="who">Oren</td><td>farmer</td><td>Halla&rsquo;s claim</td><td class="none">bare hands</td><td>3 ore</td></tr>
+          <tr><td class="who">Halla</td><td>forester</td><td>Halla&rsquo;s claim</td><td class="none">bare hands</td><td><span class="held">3 stone</span>, 1 ore, 2 food</td></tr>
+          <tr><td class="who">Cato</td><td>farmer</td><td>the rock</td><td class="none">bare hands</td><td>2 wood, <span class="held">1 stone</span>, 1 ore, 2 food</td></tr>
+          <tr><td class="who">Nim</td><td>forester</td><td>the rock</td><td class="none">bare hands</td><td>3 wood</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p>Fourteen people and not one set of tools between them, in the second year.</p>
+
+    <p>Thirteen of the fourteen are holding ore, which is the one thing out of that ground that does nothing whatever until a furnace is standing, and no furnace was ever standing. They had been sent to mine it. The job that sends a miner out is scored on how short the settlement is of <em>stone</em>, and then it asked for an ore seam first.</p>
+
+    <p class="beat">And four of them are holding stone. Nine between them, on the last day, in their hands.</p>
+  </section>
+
+  <div class="turn">
+    <h2>The cairn was carried and never raised</h2>
+    <p>A settler asked for a network of paths marked by stacked stones, so that people working alone in the woods could call for help and be heard. It went to a ballot. It carried.</p>
+    <p>Here is the entire history of that decision, being the only line in sixty-six megabytes of record in which the word appears:</p>
+    <div class="record" style="border-left-color: var(--rule);">
+      <blockquote>Halla&rsquo;s claim has agreed to it, but it will have to wait: cairns are stone, and there is not the stone to spare for them.</blockquote>
+      <div class="meta">&mdash; and it waited, and that is all that ever happened</div>
+    </div>
+    <p>A cairn wants eight stone in the stores. Halla&rsquo;s claim had one. Halla was carrying three.</p>
+    <p class="quiet">Across the coast on the last day there were nine stone in the hands of four people, one more than the monument cost, and no way in the world for any of it to be set down where it would count. The stores were full. What would not fit went on the ground outside, and the ground takes what is left on it.</p>
+    <p>So there is no cairn at the Landing. There is no cairn on Halla&rsquo;s claim. There is no cairn on the rock.</p>
+    <p class="quiet">This document is the first one.</p>
+  </div>
+
+  <section class="article">
+    <div class="article-head">
+      <span class="article-num">The third</span>
+      <h2 class="article-title">Cato, of the rock</h2>
+    </div>
+
+    <p>He walked out of the Landing over a bed, and founded a claim on an island, and could not leave it. He was told at the time that later claims would not be allowed to do this and that his could not be undone. He had no view on the justice of it. He asked only that it be written down that he was out there.</p>
+
+    <p>In the last hours of the world, the record says this about him, in this order:</p>
+
+    <div class="record">
+      <div class="meta">t=19661</div>
+      <div>Cato has dropped where they stood &mdash; nobody has slept in days.</div>
+      <div class="meta">t=19795</div>
+      <div>Cato is the best here at it at mining now.</div>
+      <div class="meta">t=19821 &middot; 19839 &middot; and again</div>
+      <div>Cato took 1 stone and left the rest of it standing &mdash; no room to carry it.</div>
+      <div class="meta">t=19854</div>
+      <div>the lean-to is full. Cato stacked 3 on the ground outside it.</div>
+    </div>
+
+    <p>He became the best miner in the valley on a rock with two people on it.</p>
+
+    <p class="beat">And what he was mining was stone. The right thing. The thing every settlement on that coast was starving for and nobody else was bringing, because the rest of them had been sent after ore.</p>
+
+    <p>He took one at a time, because his arms were full and there was nowhere on the rock to put anything down, and he left the rest of it standing, and the stone he did carry back went on the ground beside a lean-to that holds eight, and the weather had it.</p>
+
+    <p class="lead-out">Twice in those same hours he gave away food he did not have &mdash; one to Sula, for nothing yet, it is owed. He ended at nought point one four happiness, on a rock, in the dark, the best miner in the world, with one stone in his hands.</p>
+  </section>
+
+  <section class="article">
+    <div class="article-head">
+      <span class="article-num">The fourth</span>
+      <h2 class="article-title">The last twenty lines</h2>
+    </div>
+
+    <p>Reproduced from the record in order, ending where the record ends. Nothing is omitted between the first of these and the last.</p>
+
+    <div class="record">
+      <div>Ferro gave 1 food to Ysolde, against what they owed.</div>
+      <div>Ysolde got to the rock with their hands already full, and left it standing.</div>
+      <div>Bren delivered 1 food to Idris &mdash; nothing yet &mdash; it is owed.</div>
+      <div><em>Bren wishes: A hall to gather in, not just a lean-to.</em></div>
+      <div>Bren: &ldquo;This tree&rsquo;s close and straight.&rdquo;</div>
+      <div>Sula gave 1 food to Nim, for nothing yet &mdash; it is owed.</div>
+      <div><strong>Nim has taken to Sula.</strong></div>
+      <div>the lean-to is full. Halla stacked 3 on the ground outside it.</div>
+      <div>the lean-to is full. Ysolde stacked 3 on the ground outside it.</div>
+      <div>the lean-to is full. Pike stacked 4 on the ground outside it.</div>
+      <div><em>Sula wishes: A good bed that doesn&rsquo;t make me feel like I&rsquo;m sleeping on a rock.</em></div>
+      <div>Sula: &ldquo;Oaks are good for the mill.&rdquo;</div>
+      <div class="meta">&mdash; end of record, tick 19,861</div>
+    </div>
+
+    <p>Four of the last twenty lines are people giving each other food, in a valley at nought food, on the understanding that it is owed and will be squared later. There is no later.</p>
+
+    <p>The last new thing that happened in that world was that Nim, who had been sleeping on the ground for eight thousand ticks, took to Sula, because she gave him something to eat.</p>
+
+    <p class="beat">And the last thing anybody said was that oaks are good for the mill.</p>
+
+    <p class="lead-out">There is no mill. There was never a mill. It was voted for, and carried, and the settlement was four boards short of it for the whole of its life, and a woman who had never seen one knew which trees would have been right.</p>
+  </section>
+
+  <div class="turn">
+    <h2>Nobody died. That is not the same as nothing ending</h2>
+    <p>There is no death in this game. No hazard, no difficulty setting, no line anywhere that removes a settler from the valley. Bren asked for a burial ground three times and the meeting had no answer for him. Cato asked from the rock, and the valley finally found one, and granted the only settlement in the world with a memorial to the one man who lived alone on a stone in the sea.</p>
+    <p>Every one of the fourteen was alive at tick 19,861. All of them are alive now, in the sense that nothing killed them.</p>
+    <p class="quiet">The world was simply not run again.</p>
+    <p>There is no word in this game for that and no mechanic under it. They did not starve, because starving is not implemented. They did not leave. Nobody stopped. It is the one ending the settlement could not have voted on, could not have been warned about, and could not have prepared for, and it is the only one that ever arrived.</p>
+    <p class="quiet">The burial ground stands empty on the rock, and it is going to.</p>
+  </div>
+
+  <section class="article">
+    <div class="article-head">
+      <span class="article-num">The fifth</span>
+      <h2 class="article-title">The stones, stacked</h2>
+    </div>
+
+    <p>A cairn is not raised by a vote or a trade or a day&rsquo;s work. It goes up one stone at a time, carried by whoever is here, one each, and the only thing it counts is how many of them there were.</p>
+
+    <p>Nine faults were found in that valley in the days after it stopped, and every one of them was found by somebody looking at what those fourteen people were doing and asking why. Not one was found by a check. They are what the Landing was for. So they are the stones, and this is where they go:</p>
+
+    <div class="cairn">
+      <div class="stone">The store that was full of the one thing nobody could spend</div>
+      <div class="stone">The miner sent for stone who came home with ore</div>
+      <div class="stone">A settler&rsquo;s arms that held four of the nine things</div>
+      <div class="stone">A caravan that pushed a neighbour past its own walls</div>
+      <div class="stone">A kiln burning for a furnace that was not there</div>
+      <div class="stone">A lock asked for, in a world with no theft in it</div>
+      <div class="stone">The escape bolted shut from three sides</div>
+      <div class="stone">A building is a thing that wears out</div>
+      <div class="stone">Nine stones, and no way to set one down</div>
+    </div>
+
+    <p class="cairn-foot">Nine on it now &middot; by fourteen hands</p>
+
+    <p style="margin-top:1.9rem">Every one of those is a thing that valley paid for and a thing the next one will not. The Landing could not be told any of it. It went on stacking timber it could not spend against a door it could not open, in good order, at nought food, until the last tick.</p>
+
+    <p class="inscription">They kept working. Nobody told them to stop. We had to write code to make them stop, and then we did not run them again.</p>
+  </section>
+
+  <section class="article">
+    <div class="article-head">
+      <span class="article-num">The last</span>
+      <h2 class="article-title">A new coast</h2>
+    </div>
+
+    <p>There are two people on a beach this morning with a boat, four logs and a week of food. One of them is called Mara and one of them is called Idris, and neither of them has ever been here before, and both of them have been here for two years.</p>
+
+    <p>Idris is a builder again.</p>
+
+    <p>They have ten wood and one stone and they can raise a house, and that is the only thing this settlement knows how to build. Everything else it will have to decide it wants.</p>
+
+    <p class="lead-out">The record of the other one is sealed and kept and will not be deleted, because nothing here is ever deleted, and because it is the only place the fourteen of them are.</p>
+
+    <div class="stamp-wrap">
+      <span class="stamp">Nine on it &mdash; by fourteen hands</span>
+    </div>
+  </section>
+
+  <hr class="rule">
+
+  <footer class="stack-tight">
+    <p class="label">In memoriam &middot; append-only &middot; an entry is never revised, only followed by another</p>
+    <p class="legal">Frontier is not affiliated with The Settlers, with Anthropic, with Alibaba Cloud, or with the concept of settlement. Every name, trade, tool and carried quantity in the roll is taken verbatim from the settlement&rsquo;s own files at the final tick and is the property of people who do not exist. The nine stone in four pairs of hands is the sum of that column and the cairn&rsquo;s price of eight is the figure in the catalogue; the two were never in the same place and could not have been put there. The line about the cairn at Halla&rsquo;s claim is quoted in full and is the only occurrence of the word in the entire record. Cato remains on the island, was never relocated, and cannot be. Anselm ended the world a miner, holding two ore, having been granted a well when he asked for a salmon trap; he ranked it first thirty-six times, and there are no fish, and there never were. Six sheep were scenery. Amendment No. 1 declared this valley fixed forever and was withdrawn; it remains published, as does everything else. There is no death in this game and there is no plan to add any, which means nothing above is an obituary and there is no other word for it either. Not an ounce of human coding expertise. Not one ounce.</p>
+  </footer>
+
+</div>

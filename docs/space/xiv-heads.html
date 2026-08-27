@@ -1,0 +1,790 @@
+<title>Ninety-Two Heads</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,500;0,600;1,300;1,500&family=Spectral:ital,wght@0,300;0,400;0,600;1,300;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap">
+
+<style>
+  /* The play running: offstage blue-black, a worklight on bone paper, and one coin. */
+  :root {
+    --ground:   #E9E6DD;
+    --page:     #DFDBD0;
+    --ink:      #17181A;
+    --ink-soft: #5A5E62;
+    --rule:     #C3BDAE;
+    --brass:    #8A6716;
+    --flare:    #9E3826;
+    --good:     #3F6650;
+    --shadow:   rgba(23, 24, 26, 0.09);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --ground:   #0B1014;
+      --page:     #121A20;
+      --ink:      #E6E1D4;
+      --ink-soft: #8C9299;
+      --rule:     #26313A;
+      --brass:    #C9A227;
+      --flare:    #C4553F;
+      --good:     #7FA88C;
+      --shadow:   rgba(0, 0, 0, 0.4);
+    }
+  }
+  :root[data-theme="dark"] {
+    --ground:   #0B1014;
+    --page:     #121A20;
+    --ink:      #E6E1D4;
+    --ink-soft: #8C9299;
+    --rule:     #26313A;
+    --brass:    #C9A227;
+    --flare:    #C4553F;
+    --good:     #7FA88C;
+    --shadow:   rgba(0, 0, 0, 0.4);
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    background: var(--ground);
+    color: var(--ink);
+    font-family: Spectral, Georgia, "Times New Roman", serif;
+    font-size: 1.0625rem;
+    font-weight: 300;
+    line-height: 1.68;
+    margin: 0;
+    padding: 0 1.15rem 8rem;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .book { max-width: 47rem; margin: 0 auto; display: flex; flex-direction: column; gap: 4.5rem; }
+  p { margin: 0; }
+
+  .cue {
+    font-family: "IBM Plex Mono", ui-monospace, "Courier New", monospace;
+    font-size: 0.7rem; font-weight: 500; letter-spacing: 0.19em;
+    text-transform: uppercase; color: var(--ink-soft); margin: 0;
+  }
+  .cue-brass { color: var(--brass); }
+
+  /* ── the coin ─────────────────────────────────────────────────────────── */
+  .curtain { display: flex; flex-direction: column; gap: 1.6rem; padding-top: 3.4rem; }
+  .frontispiece {
+    display: flex; justify-content: space-between; align-items: baseline;
+    gap: 1rem; flex-wrap: wrap; border-bottom: 1px solid var(--rule); padding-bottom: 0.9rem;
+  }
+  .title {
+    font-family: "Cormorant Garamond", Garamond, Georgia, serif;
+    font-weight: 300; font-size: clamp(3.1rem, 12vw, 6.6rem); line-height: 0.92;
+    letter-spacing: -0.012em; margin: 0; text-wrap: balance;
+  }
+  .title em { font-style: italic; color: var(--brass); }
+  .under-title {
+    font-family: "Cormorant Garamond", Garamond, Georgia, serif;
+    font-style: italic; font-weight: 300; font-size: clamp(1.25rem, 3.6vw, 1.75rem);
+    line-height: 1.35; color: var(--ink-soft); max-width: 34ch; margin: 0; text-wrap: balance;
+  }
+
+  .tosses {
+    display: flex; flex-wrap: wrap; gap: 0.34rem; margin: 0.6rem 0 0;
+    padding: 0; list-style: none;
+  }
+  .toss {
+    width: 1.05rem; height: 1.05rem; border-radius: 50%;
+    border: 1px solid var(--brass); color: var(--brass);
+    font-family: "IBM Plex Mono", ui-monospace, monospace; font-size: 0.55rem;
+    display: flex; align-items: center; justify-content: center;
+    opacity: 0; animation: land 0.5s ease-out forwards;
+  }
+  .toss-last { background: var(--brass); color: var(--ground); border-color: var(--brass); }
+  @keyframes land { from { opacity: 0; transform: translateY(-0.3rem); } to { opacity: 1; transform: none; } }
+  @media (prefers-reduced-motion: reduce) {
+    .toss { animation: none; opacity: 1; }
+  }
+
+  .verdict-line {
+    font-family: "Cormorant Garamond", Garamond, Georgia, serif;
+    font-weight: 500; font-size: clamp(1.55rem, 5vw, 2.5rem); line-height: 1.14;
+    margin: 0; max-width: 26ch; text-wrap: balance;
+  }
+  .verdict-line em { font-style: italic; color: var(--flare); }
+
+  /* ── the script ───────────────────────────────────────────────────────── */
+  .scene { display: flex; flex-direction: column; gap: 1.5rem; }
+  .scene-head { display: flex; flex-direction: column; gap: 0.4rem; }
+  .scene-name {
+    font-family: "Cormorant Garamond", Garamond, Georgia, serif;
+    font-weight: 500; font-size: clamp(1.5rem, 4.4vw, 2.15rem); line-height: 1.1;
+    margin: 0; text-wrap: balance;
+  }
+
+  .speech { display: grid; grid-template-columns: 7.5rem 1fr; gap: 0 1.4rem; align-items: baseline; }
+  .who {
+    font-family: "IBM Plex Mono", ui-monospace, "Courier New", monospace;
+    font-size: 0.68rem; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase;
+    color: var(--brass); padding-top: 0.42rem; margin: 0;
+  }
+  .said { margin: 0; max-width: 58ch; }
+  .said em { font-style: italic; }
+  .said strong { font-weight: 600; }
+  @media (max-width: 34rem) {
+    .speech { grid-template-columns: 1fr; gap: 0.15rem; }
+    .who { padding-top: 0; }
+  }
+
+  .direction {
+    font-style: italic; color: var(--ink-soft); max-width: 54ch;
+    border-left: 2px solid var(--brass); padding-left: 1.1rem; margin: 0 0 0 0.4rem;
+  }
+
+  /* ── the evidence ─────────────────────────────────────────────────────── */
+  .slab {
+    background: var(--page); border: 1px solid var(--rule);
+    padding: 2.1rem 1.6rem; display: flex; flex-direction: column; gap: 1.5rem;
+    box-shadow: 0 1px 0 var(--shadow);
+  }
+  @media (min-width: 40rem) { .slab { padding: 2.4rem 2.2rem; } }
+  .slab-head { display: flex; flex-direction: column; gap: 0.45rem; border-bottom: 1px solid var(--rule); padding-bottom: 1rem; }
+  .slab-name {
+    font-family: "Cormorant Garamond", Garamond, Georgia, serif;
+    font-weight: 500; font-size: clamp(1.35rem, 3.8vw, 1.85rem); line-height: 1.12; margin: 0;
+  }
+
+  .figures { display: grid; grid-template-columns: repeat(auto-fit, minmax(7.5rem, 1fr)); gap: 1.5rem 1.2rem; }
+  .figure { display: flex; flex-direction: column; gap: 0.2rem; }
+  .figure-n {
+    font-family: "IBM Plex Mono", ui-monospace, monospace; font-variant-numeric: tabular-nums;
+    font-size: 1.55rem; font-weight: 400; line-height: 1; color: var(--ink);
+  }
+  .figure-of {
+    font-family: "IBM Plex Mono", ui-monospace, monospace; font-size: 0.65rem;
+    letter-spacing: 0.13em; text-transform: uppercase; color: var(--ink-soft); line-height: 1.45;
+  }
+
+  .findings { display: flex; flex-direction: column; gap: 1.25rem; margin: 0; padding: 0; list-style: none; }
+  .finding { display: grid; grid-template-columns: 1.6rem 1fr; gap: 0 0.9rem; }
+  .mark {
+    font-family: "IBM Plex Mono", ui-monospace, monospace; font-size: 0.95rem;
+    line-height: 1.75; font-weight: 500;
+  }
+  .mark-good { color: var(--good); }
+  .mark-bad { color: var(--flare); }
+  .mark-flat { color: var(--ink-soft); }
+  .finding-body { display: flex; flex-direction: column; gap: 0.32rem; }
+  .finding-head { font-weight: 600; line-height: 1.45; margin: 0; }
+  .finding-note { color: var(--ink-soft); max-width: 58ch; margin: 0; font-size: 0.97rem; }
+  .finding-note code {
+    font-family: "IBM Plex Mono", ui-monospace, monospace; font-size: 0.87em;
+    color: var(--brass);
+  }
+
+  .ledger { width: 100%; overflow-x: auto; }
+  table { border-collapse: collapse; width: 100%; min-width: 26rem; }
+  caption {
+    text-align: left; font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-size: 0.65rem; letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--ink-soft); padding-bottom: 0.7rem;
+  }
+  th, td {
+    text-align: right; padding: 0.5rem 0.5rem 0.5rem 0;
+    border-bottom: 1px solid var(--rule); font-variant-numeric: tabular-nums;
+    font-family: "IBM Plex Mono", ui-monospace, monospace; font-size: 0.86rem;
+  }
+  th:first-child, td:first-child { text-align: left; font-family: Spectral, Georgia, serif; font-size: 0.97rem; }
+  thead th {
+    font-size: 0.63rem; letter-spacing: 0.13em; text-transform: uppercase;
+    color: var(--ink-soft); font-weight: 500; border-bottom-color: var(--ink);
+  }
+  td.hot { color: var(--flare); }
+  td.cool { color: var(--good); }
+
+  .pull {
+    font-family: "Cormorant Garamond", Garamond, Georgia, serif;
+    font-style: italic; font-weight: 300; font-size: clamp(1.4rem, 4vw, 2rem);
+    line-height: 1.26; margin: 0; max-width: 30ch; color: var(--ink);
+    border-left: 2px solid var(--flare); padding-left: 1.3rem;
+  }
+
+  .colophon {
+    display: flex; flex-direction: column; gap: 0.65rem;
+    border-top: 1px solid var(--rule); padding-top: 1.4rem;
+  }
+  .colophon p { color: var(--ink-soft); font-size: 0.93rem; max-width: 58ch; }
+
+  a { color: var(--brass); text-underline-offset: 0.2em; }
+  a:focus-visible { outline: 2px solid var(--brass); outline-offset: 3px; }
+</style>
+
+<div class="book">
+
+  <!-- ─────────────────────────────  THE COIN  ───────────────────────────── -->
+  <header class="curtain">
+    <div class="frontispiece">
+      <p class="cue">A launch evaluation · Frontier · in two voices</p>
+      <p class="cue cue-brass">Act one, scene one</p>
+    </div>
+
+    <h1 class="title">Ninety-Two<br><em>Heads</em></h1>
+
+    <p class="under-title">Two settlers stand on a shore with a boat, four planks and a week of food,
+      tossing a coin. It keeps coming down the same way. Only one of them thinks this is worth
+      mentioning.</p>
+
+    <ul class="tosses" id="tosses" aria-label="Ninety-two consecutive results, all the same"></ul>
+
+    <p class="cue">The run, as the valley recorded it</p>
+
+    <p class="verdict-line">Nine hundred times a settler walked to a site to be told there was no
+      iron for a saw, and <em>nothing anywhere said so</em>.</p>
+
+    <p class="direction">That is the whole of this evaluation in one sentence, and everything below
+      is an attempt to be fair about a game whose signature failure mode is a success message.</p>
+  </header>
+
+  <!-- ─────────────────────────────  SLAB I  ─────────────────────────────── -->
+  <section class="slab">
+    <div class="slab-head">
+      <p class="cue cue-brass">Exhibit i</p>
+      <h2 class="slab-name">What is actually on the coast</h2>
+    </div>
+
+    <div class="figures">
+      <div class="figure"><span class="figure-n">12,613</span><span class="figure-of">lines in src</span></div>
+      <div class="figure"><span class="figure-n">40</span><span class="figure-of">things a settler may wish for</span></div>
+      <div class="figure"><span class="figure-n">12</span><span class="figure-of">buildings, all voted for</span></div>
+      <div class="figure"><span class="figure-n">9</span><span class="figure-of">goods, five of them made</span></div>
+      <div class="figure"><span class="figure-n">29</span><span class="figure-of">verbs a mind may say</span></div>
+      <div class="figure"><span class="figure-n">5</span><span class="figure-of">checks that fail the build</span></div>
+      <div class="figure"><span class="figure-n">1</span><span class="figure-of">world, no seed, deterministic</span></div>
+      <div class="figure"><span class="figure-n">0</span><span class="figure-of">ways to win or lose</span></div>
+    </div>
+
+    <p class="finding-note">An isometric settlement where the people are agents. Each has a trade,
+      traits rolled from a seed, needs, tools, a bed or the floor, three goals across three horizons,
+      a private history and an opinion of everybody else. They gather, haul, build, trade, help each
+      other, fall out, file written requests for features the game does not have, hold a ranked vote
+      on them, and occasionally walk off to found a settlement of their own. With
+      <a href="https://ollama.com">Ollama</a> running they think with a local model. Without one they
+      think with the game's own catalogue and nothing about the game changes.</p>
+  </section>
+
+  <!-- ─────────────────────────────  SCENE  ──────────────────────────────── -->
+  <section class="scene">
+    <div class="scene-head">
+      <p class="cue cue-brass">Scene two — a stand of trees, already cut</p>
+      <h2 class="scene-name">In which the strengths are established, against their will</h2>
+    </div>
+
+    <div class="speech">
+      <p class="who">Tove</p>
+      <p class="said">There is no rung that is not stood on.</p>
+    </div>
+    <div class="speech">
+      <p class="who">Rowan</p>
+      <p class="said">Say it again but as though you know what it means.</p>
+    </div>
+    <div class="speech">
+      <p class="who">Tove</p>
+      <p class="said">A saw is a metal blade. A blade is iron. Iron is a furnace. A furnace is four
+        boards. Boards come off a saw.</p>
+    </div>
+    <div class="speech">
+      <p class="who">Rowan</p>
+      <p class="said">Then we are finished before we started.</p>
+    </div>
+    <div class="speech">
+      <p class="who">Tove</p>
+      <p class="said">No. You can hew a board out of three logs with an axe, badly, wasting most of the
+        tree. <strong>That one line is what the whole game above a house rests on.</strong> Eight of
+        the twelve buildings. Three of the nine goods.</p>
+    </div>
+    <p class="direction">She is right, and the check prints it in bold every time it runs, and for
+      three sittings nobody could <em>say</em> the word. It was in neither the model's vocabulary nor
+      the parser. An instruction to hew produced a settler walking in a circle and a feed line
+      reporting success.</p>
+    <div class="speech">
+      <p class="who">Rowan</p>
+      <p class="said">So it was true and unreachable.</p>
+    </div>
+    <div class="speech">
+      <p class="who">Tove</p>
+      <p class="said">Most things here were, for a while. That is the interesting part.</p>
+    </div>
+  </section>
+
+  <!-- ─────────────────────────────  SLAB II  ────────────────────────────── -->
+  <section class="slab">
+    <div class="slab-head">
+      <p class="cue cue-brass">Exhibit ii</p>
+      <h2 class="slab-name">What is genuinely good, stated without hedging</h2>
+    </div>
+
+    <ul class="findings">
+      <li class="finding">
+        <span class="mark mark-good">✓</span>
+        <div class="finding-body">
+          <p class="finding-head">The wishlist is a real artifact and not a gimmick.</p>
+          <p class="finding-note">Settlers write feature requests, in their own voice, while living
+            in the thing. Two hundred and forty-eight filed across every run; fifty-one on the record
+            now; thirty-seven granted. The file is markdown, hand-editable, and the only copy — there
+            is deliberately no sidecar JSON, because a machine source of truth beside a human one is
+            two things that drift. Granting a wish flips exactly one character and writes every other
+            byte back unchanged.</p>
+        </div>
+      </li>
+      <li class="finding">
+        <span class="mark mark-good">✓</span>
+        <div class="finding-body">
+          <p class="finding-head">The ladder does not cheat, anywhere, once.</p>
+          <p class="finding-note">Coin does not exist until a settlement votes that it will and
+            somebody strikes it out of ore with iron tools. Stone tools are two stones and a stick.
+            A house is four walls, a corner and a pile of straw, and the second bed exists when a
+            joiner has made it out of boards and somebody has carried it up the hill. Nothing is
+            given.</p>
+        </div>
+      </li>
+      <li class="finding">
+        <span class="mark mark-good">✓</span>
+        <div class="finding-body">
+          <p class="finding-head">It runs with no model at all, and that is a design, not a fallback.</p>
+          <p class="finding-note">The catalogue of forty wish kinds is a full offline brain: it
+            supplies what settlers ask for, and doubles as the classifier that tells two wishes
+            apart. A settlement with no GPU in the building is still a settlement whose people want
+            things.</p>
+        </div>
+      </li>
+      <li class="finding">
+        <span class="mark mark-good">✓</span>
+        <div class="finding-body">
+          <p class="finding-head">The checks are the actual invention.</p>
+          <p class="finding-note">Five of them, each written <em>after</em> a fault and encoding the
+            class rather than the instance. <code>check-capabilities</code> exists solely to catch a
+            vote that grants nothing — six sheep stood on a slope as scenery because the branch that
+            turns a sheep into food asked for a boon that entry does not grant. Nothing errored. The
+            card congratulated the settlement. The vote was spent.</p>
+        </div>
+      </li>
+      <li class="finding">
+        <span class="mark mark-good">✓</span>
+        <div class="finding-body">
+          <p class="finding-head">The documentation is the most honest thing in the repository.</p>
+          <p class="finding-note">Two thousand lines of README that is a post-mortem log with numbers
+            attached, including a section headed <em>On declaring it fixed</em> retracting the
+            previous section headed <em>The game is fixed</em>, which was wrong within four hours by
+            its own measurement, twice. Very little software says that about itself in public.</p>
+        </div>
+      </li>
+    </ul>
+  </section>
+
+  <!-- ─────────────────────────────  SCENE  ──────────────────────────────── -->
+  <section class="scene">
+    <div class="scene-head">
+      <p class="cue cue-brass">Scene three — the same shore, later, no wiser</p>
+      <h2 class="scene-name">In which they carry the letter that condemns them</h2>
+    </div>
+
+    <div class="speech">
+      <p class="who">Rowan</p>
+      <p class="said">I asked for a kiln.</p>
+    </div>
+    <div class="speech">
+      <p class="who">Tove</p>
+      <p class="said">And?</p>
+    </div>
+    <div class="speech">
+      <p class="who">Rowan</p>
+      <p class="said">Nobody voted for it. Nought votes. <em>Half this wood would be worth more burned
+        down than it is as wood</em>, I said, which is true, and there is no metal in this valley
+        without it.</p>
+    </div>
+    <div class="speech">
+      <p class="who">Tove</p>
+      <p class="said">Sula asked for the furnace instead. Forty-six votes. It carried outright.</p>
+    </div>
+    <div class="speech">
+      <p class="who">Rowan</p>
+      <p class="said">Then they have a furnace.</p>
+    </div>
+    <div class="speech">
+      <p class="who">Tove</p>
+      <p class="said">They have a kiln.</p>
+    </div>
+    <p class="direction">A pause, of the kind that is not dramatic so much as procedural.</p>
+    <div class="speech">
+      <p class="who">Rowan</p>
+      <p class="said">…they voted for a furnace and were given a kiln.</p>
+    </div>
+    <div class="speech">
+      <p class="who">Tove</p>
+      <p class="said">The words were filed under the wrong heading on the day they were written.
+        <code>wish-22</code>. It reads, word for word, as the furnace's own plain statement of itself.
+        It is on the record as a kiln. It carried. The settlement was granted a charcoal kiln for a
+        vote about a furnace, and with no furnace there is no iron, with no iron no saw, with no saw
+        no boards, and with no boards a valley that has agreed to a cart, a store, a shelter, a
+        joiner and a shaft and can build none of them.</p>
+    </div>
+    <div class="speech">
+      <p class="who">Rowan</p>
+      <p class="said">Can it be put right?</p>
+    </div>
+    <div class="speech">
+      <p class="who">Tove</p>
+      <p class="said">No. The game does not retcon a decision. The check reports it every time it
+        runs, without failing, for ever.</p>
+    </div>
+    <div class="speech">
+      <p class="who">Rowan</p>
+      <p class="said">That is either a principle or a bug.</p>
+    </div>
+    <div class="speech">
+      <p class="who">Tove</p>
+      <p class="said">It is a principle. That is what is frightening about it.</p>
+    </div>
+  </section>
+
+  <!-- ─────────────────────────────  SLAB III  ───────────────────────────── -->
+  <section class="slab">
+    <div class="slab-head">
+      <p class="cue cue-brass">Exhibit iii</p>
+      <h2 class="slab-name">What is broken, thin, or quietly not there</h2>
+    </div>
+
+    <ul class="findings">
+      <li class="finding">
+        <span class="mark mark-bad">✕</span>
+        <div class="finding-body">
+          <p class="finding-head">Everything interesting happens on the instruction path, and nothing measures the instruction path.</p>
+          <p class="finding-note">Four faults were closed in this sitting. Three of them lived there,
+            undisturbed, for the whole life of the project — including a flat work cost that made
+            bare hands three and a half times faster than bare hands are, and iron tools seventy per
+            cent slower than iron tools are. Nobody had ever compared the two routes to a tree. There
+            is still no harness that would.</p>
+        </div>
+      </li>
+      <li class="finding">
+        <span class="mark mark-bad">✕</span>
+        <div class="finding-body">
+          <p class="finding-head"><code>createSim()</code> takes no seed. There is one world.</p>
+          <p class="finding-note">It is byte-deterministic, which is a genuine achievement and also
+            means a balance change cannot be measured — one trajectory is a demonstration, not a
+            sample. Sweeping this sitting's tool-wear constant across its whole range gave six, seven,
+            eight and six kinds of building standing, in no order. The honest response was to decline
+            to claim an improvement, and that is the response the game forces on every number it
+            produces.</p>
+        </div>
+      </li>
+      <li class="finding">
+        <span class="mark mark-bad">✕</span>
+        <div class="finding-body">
+          <p class="finding-head">Sixty-eight wishes across every run that the catalogue could not hear at all.</p>
+          <p class="finding-note">The settlers ask, the classifier scores a bag of stemmed words, and
+            nothing reaches the floor. Those wishes are recorded honestly as unheard and grant
+            nothing. Bren's firepit sat through two sittings and seven of ten first preferences
+            granting nothing whatever, with a green check over it the entire time.</p>
+        </div>
+      </li>
+      <li class="finding">
+        <span class="mark mark-bad">✕</span>
+        <div class="finding-body">
+          <p class="finding-head">The classifier is still a word list with a stemmer on it.</p>
+          <p class="finding-note">Negation is handled now — <code>away from the masons</code> stopped
+            granting a masons' yard, and 261 of 1,556 generated pairs stopped misfiring. But
+            <em>a lakeside reading nook with a bench and shade</em>, filed by a settler during this
+            sitting's own run, still comes back as a lookout: somewhere high you go in order to work
+            the country better, when what was asked for was an hour that is not for anything.</p>
+        </div>
+      </li>
+      <li class="finding">
+        <span class="mark mark-bad">✕</span>
+        <div class="finding-body">
+          <p class="finding-head">Four thousand three hundred and seventy-seven units rotted on the ground.</p>
+          <p class="finding-note">One 24,000-tick probe, one settlement. Goods that will not fit in
+            the stores go on a heap outside and the weather takes them. The number has been counted
+            honestly since the day the heap was written. Nothing in the game is urgent about it.</p>
+        </div>
+      </li>
+      <li class="finding">
+        <span class="mark mark-flat">~</span>
+        <div class="finding-body">
+          <p class="finding-head">It requires a 24GB card to be the game it is actually about.</p>
+          <p class="finding-note">The model that drives the settlers is 21.7GB on a 24.5GB card,
+            which leaves under a gigabyte for the context and spills over PCIe. At 8,192 tokens a
+            trivial request did not finish inside five minutes; at 4,096 it took 19.2 seconds. Without
+            a model, Frontier is a well-made simulation reading from a very good canned list — which
+            is a different and smaller thing than the one on the tin.</p>
+        </div>
+      </li>
+      <li class="finding">
+        <span class="mark mark-flat">~</span>
+        <div class="finding-body">
+          <p class="finding-head">There is no session. There is no shape. There is no end.</p>
+          <p class="finding-note">No win condition, no fail condition, no scenario, no tutorial, and a
+            two-thousand-line README as the on-ramp. You start it and you watch. For the audience this
+            is actually for, that is arguably correct; as a claim about a <em>game</em> it is doing a
+            lot of unearned work.</p>
+        </div>
+      </li>
+    </ul>
+  </section>
+
+  <!-- ─────────────────────────────  SCENE  ──────────────────────────────── -->
+  <section class="scene">
+    <div class="scene-head">
+      <p class="cue cue-brass">Scene four — enter the borrowed mind</p>
+      <h2 class="scene-name">In which the thing that speaks through them is late</h2>
+    </div>
+
+    <p class="direction">A model is running on the next port. It is healthy. It has been healthy for
+      forty-five minutes. Nobody can be told anything.</p>
+
+    <div class="speech">
+      <p class="who">Rowan</p>
+      <p class="said">What are we waiting for?</p>
+    </div>
+    <div class="speech">
+      <p class="who">Tove</p>
+      <p class="said">An answer to a question we stopped asking two hundred and seventy-seven seconds
+        ago.</p>
+    </div>
+    <div class="speech">
+      <p class="who">Rowan</p>
+      <p class="said">Then it will not be for us.</p>
+    </div>
+    <div class="speech">
+      <p class="who">Tove</p>
+      <p class="said">It will not. But nothing cancelled it, so it is still coming, and it is standing
+        in front of the next one, which will also be late, which is how the line got to eight.</p>
+    </div>
+    <p class="direction">The game built its own queue out of its own abandoned requests and then
+      recorded the delay against the model. There were eight simultaneous connections open, every
+      one of them work already given up on, each dying at a five-minute ceiling only to be replaced.</p>
+    <div class="speech">
+      <p class="who">Rowan</p>
+      <p class="said">And the first thing it said, when it could finally say anything?</p>
+    </div>
+    <div class="speech">
+      <p class="who">Tove</p>
+      <p class="said"><em>Stone first, then sawmill.</em></p>
+    </div>
+    <div class="speech">
+      <p class="who">Rowan</p>
+      <p class="said">…that is quite good.</p>
+    </div>
+    <div class="speech">
+      <p class="who">Tove</p>
+      <p class="said">It is the best thing anyone has ever said here. It took a 30-billion-parameter
+        model, a rewritten context window and three separate faults to get four words out of a hill.</p>
+    </div>
+  </section>
+
+  <!-- ─────────────────────────────  SLAB IV  ────────────────────────────── -->
+  <section class="slab">
+    <div class="slab-head">
+      <p class="cue cue-brass">Exhibit iv</p>
+      <h2 class="slab-name">The ledger, as the record has it</h2>
+    </div>
+
+    <div class="ledger">
+      <table>
+        <caption>Every number below is printed by the repository's own checks or measured off a probe run</caption>
+        <thead>
+          <tr><th scope="col">What was counted</th><th scope="col">Before</th><th scope="col">Now</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Wishes filed, all runs</td><td>248</td><td>248</td></tr>
+          <tr><td>On the record</td><td>51</td><td>51</td></tr>
+          <tr><td>Granted</td><td>37</td><td>37</td></tr>
+          <tr><td>Outstanding, every one actionable</td><td>14</td><td>14</td></tr>
+          <tr><td>Refused as duplicates</td><td>569</td><td>569</td></tr>
+          <tr><td>The catalogue could not hear</td><td class="hot">68</td><td class="hot">68</td></tr>
+          <tr><td>Carried, granting the wrong thing</td><td class="hot">3</td><td class="hot">3</td></tr>
+          <tr><td>Verbs a mind may say</td><td>29</td><td>29</td></tr>
+          <tr><td>Verbs it was told about</td><td class="hot">11</td><td class="cool">29</td></tr>
+          <tr><td>Buildings named in the menu by hand</td><td class="hot">5</td><td class="cool">0</td></tr>
+          <tr><td>Negation pairs misheard, of 1,556</td><td class="hot">261</td><td class="cool">0</td></tr>
+          <tr><td>Felling a tree, bare hands, told</td><td class="hot">2.60</td><td class="cool">9.29</td></tr>
+          <tr><td>Felling a tree, iron tools, told</td><td class="hot">2.60</td><td class="cool">1.53</td></tr>
+          <tr><td>A blunt axe, as a share of a sharp one</td><td class="hot">1.00</td><td class="cool">0.55</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p class="finding-note">The two columns are not a before-and-after of quality. They are a
+      before-and-after of <em>whether the game was telling the truth about itself</em>, which is the
+      only axis this project has ever moved along, and it has moved along it in one direction for
+      its entire life without ever arriving.</p>
+  </section>
+
+  <!-- ─────────────────────────────  SCENE  ──────────────────────────────── -->
+  <section class="scene">
+    <div class="scene-head">
+      <p class="cue cue-brass">Scene five — a boat</p>
+      <h2 class="scene-name">In which they attempt to establish who this is for</h2>
+    </div>
+
+    <div class="speech">
+      <p class="who">Rowan</p>
+      <p class="said">Who is watching?</p>
+    </div>
+    <div class="speech">
+      <p class="who">Tove</p>
+      <p class="said">Is that a question?</p>
+    </div>
+    <div class="speech">
+      <p class="who">Rowan</p>
+      <p class="said">Is it not?</p>
+    </div>
+    <div class="speech">
+      <p class="who">Tove</p>
+      <p class="said">Do you want it to be?</p>
+    </div>
+    <div class="speech">
+      <p class="who">Rowan</p>
+      <p class="said">Would it help?</p>
+    </div>
+    <div class="speech">
+      <p class="who">Tove</p>
+      <p class="said">Somebody who wants a city builder will last nine minutes. There is no build
+        menu. There is a ballot.</p>
+    </div>
+    <div class="speech">
+      <p class="who">Rowan</p>
+      <p class="said">And somebody who wants agents?</p>
+    </div>
+    <div class="speech">
+      <p class="who">Tove</p>
+      <p class="said">Will find the only worked example anywhere of a simulation that fails a build
+        because a decision it granted turned out to grant nothing. That is not a game feature. That
+        is a discipline, and it has a shape, and the shape is transferable.</p>
+    </div>
+    <div class="speech">
+      <p class="who">Rowan</p>
+      <p class="said">So it is a game for the people who write the things that would play it.</p>
+    </div>
+    <div class="speech">
+      <p class="who">Tove</p>
+      <p class="said">Yes.</p>
+    </div>
+    <div class="speech">
+      <p class="who">Rowan</p>
+      <p class="said">That is a very small shore.</p>
+    </div>
+    <div class="speech">
+      <p class="who">Tove</p>
+      <p class="said">It is the shore we came ashore on.</p>
+    </div>
+  </section>
+
+  <!-- ─────────────────────────────  SLAB V  ─────────────────────────────── -->
+  <section class="slab">
+    <div class="slab-head">
+      <p class="cue cue-brass">Exhibit v — the verdict</p>
+      <h2 class="slab-name">Ship it. Do not ship it as a game.</h2>
+    </div>
+
+    <ul class="findings">
+      <li class="finding">
+        <span class="mark mark-good">→</span>
+        <div class="finding-body">
+          <p class="finding-head">Open the repository. Now.</p>
+          <p class="finding-note">As a worked example of agent-driven simulation with an honest
+            economy and a check culture, it has no obvious peer and it is finished enough to read.
+            The README's willingness to publish its own retractions with numbers attached is worth
+            more to a reader than any feature in it.</p>
+        </div>
+      </li>
+      <li class="finding">
+        <span class="mark mark-bad">→</span>
+        <div class="finding-body">
+          <p class="finding-head">Do not put it on a storefront.</p>
+          <p class="finding-note">No session shape, no failure state, no tutorial, a 24GB
+            prerequisite for the headline feature, and a two-thousand-line manual. Every one of those
+            is defensible in a research instrument and none of them is defensible at £14.99.</p>
+        </div>
+      </li>
+      <li class="finding">
+        <span class="mark mark-flat">→</span>
+        <div class="finding-body">
+          <p class="finding-head">The next sitting's work is a seed argument and a paired harness.</p>
+          <p class="finding-note">One world means no measurement, and no measurement means every
+            balance decision in this game is an argument from taste wearing a number. A seed on
+            <code>createSim</code>, and an <em>own</em> versus <em>told</em> arm that runs both routes
+            through the same valley, would close the class that produced three of this sitting's four
+            faults. Everything else on the list is smaller than that.</p>
+        </div>
+      </li>
+      <li class="finding">
+        <span class="mark mark-flat">→</span>
+        <div class="finding-body">
+          <p class="finding-head">And somebody should tell the three settlements.</p>
+          <p class="finding-note">Three carried proposals granted something other than what was
+            asked for. The votes stand, correctly. But there is no mechanism anywhere by which the
+            people who held them ever find out, and a game this concerned with honesty has one silence
+            left in it that it chose.</p>
+        </div>
+      </li>
+    </ul>
+
+    <p class="pull">It is not a game that is finished. It is a game that has never once claimed to
+      be, except for the one time it did, and then took it back in writing.</p>
+  </section>
+
+  <!-- ─────────────────────────────  CURTAIN  ────────────────────────────── -->
+  <section class="scene">
+    <div class="scene-head">
+      <p class="cue cue-brass">Scene six — and then there are none</p>
+      <h2 class="scene-name">Curtain</h2>
+    </div>
+
+    <div class="speech">
+      <p class="who">Rowan</p>
+      <p class="said">We had a chance, didn't we? Early on. There must have been a moment where we
+        could have said — no.</p>
+    </div>
+    <div class="speech">
+      <p class="who">Tove</p>
+      <p class="said">There was. Forty times. It is called the ballot and we won most of them.</p>
+    </div>
+    <div class="speech">
+      <p class="who">Rowan</p>
+      <p class="said">Then why is there still nothing here but houses?</p>
+    </div>
+    <div class="speech">
+      <p class="who">Tove</p>
+      <p class="said">Because a vote is permission, and permission is worth exactly as much as the
+        pile of materials behind it. <em>All right, then. I don't care. I've had enough. To tell you
+        the truth, I'm relie—</em></p>
+    </div>
+    <p class="direction">She is not interrupted. Nothing interrupts her. The valley goes on exactly as
+      it did, which is the only symptom, and always was.</p>
+  </section>
+
+  <footer class="colophon">
+    <p class="cue">Colophon</p>
+    <p>Every figure in this evaluation is printed by <code>npm run check</code>, read out of
+      <code>agents/WISHLIST.md</code>, or measured off a headless probe of the one world the game
+      has. Tove and Rowan are settlers on the record: Tove asked for a clearing away from the woods
+      and the masons and was nearly granted a masons' yard; Rowan asked for a kiln and got nought
+      votes. Their lines here are not.</p>
+    <p>With apologies to Tom Stoppard, whose two attendants also carried a letter about themselves
+      that they did not read.</p>
+  </footer>
+</div>
+
+<script>
+  // Ninety-two of them, all the same, the last one struck. The play's number, not the valley's —
+  // the valley's is nine hundred and would not fit on the page.
+  (function () {
+    var list = document.getElementById('tosses');
+    if (!list) return;
+    var still = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var frag = document.createDocumentFragment();
+    for (var i = 0; i < 92; i++) {
+      var li = document.createElement('li');
+      li.className = 'toss' + (i === 91 ? ' toss-last' : '');
+      li.textContent = 'H';
+      if (!still) li.style.animationDelay = (i * 0.018).toFixed(3) + 's';
+      frag.appendChild(li);
+    }
+    list.appendChild(frag);
+  }());
+</script>

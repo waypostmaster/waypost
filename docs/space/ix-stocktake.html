@@ -1,0 +1,505 @@
+<title>Nothing In, Nothing Out</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Zilla+Slab:ital,wght@0,400;0,600;0,700;1,400&family=Courier+Prime:ital,wght@0,400;0,700;1,400&display=swap">
+
+<style>
+  :root {
+    --paper:      #DCDFD9;
+    --paper-2:    #D2D6CF;
+    --ink:        #14171A;
+    --ink-soft:   #4A5052;
+    --rule:       #A5ABA2;
+    --stamp:      #A9201C;
+    --stamp-ink:  #FBF7F2;
+
+    --measure: 60ch;
+    --s1: 0.35rem; --s2: 0.7rem; --s3: 1.15rem; --s4: 1.9rem;
+    --s5: 3rem;    --s6: 4.6rem; --s7: 7rem;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --paper:     #14171A;
+      --paper-2:   #1B1F22;
+      --ink:       #D9DCD6;
+      --ink-soft:  #8D948F;
+      --rule:      #3A4044;
+      --stamp:     #D94B44;
+      --stamp-ink: #14171A;
+    }
+  }
+  :root[data-theme="dark"] {
+    --paper:     #14171A;
+    --paper-2:   #1B1F22;
+    --ink:       #D9DCD6;
+    --ink-soft:  #8D948F;
+    --rule:      #3A4044;
+    --stamp:     #D94B44;
+    --stamp-ink: #14171A;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: "Zilla Slab", Georgia, "Times New Roman", serif;
+    font-size: 1.0625rem;
+    line-height: 1.62;
+    margin: 0;
+    padding: 0 var(--s3) var(--s7);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .sheet { max-width: 46rem; margin: 0 auto; display: flex; flex-direction: column; gap: var(--s5); }
+
+  .label {
+    font-family: "Courier Prime", "Courier New", monospace;
+    font-size: 0.72rem; letter-spacing: 0.16em; text-transform: uppercase;
+    color: var(--ink-soft); margin: 0;
+  }
+  .rule { border: 0; border-top: 1px solid var(--rule); margin: 0; }
+  .rule-thick { border: 0; border-top: 3px solid var(--ink); margin: 0; }
+  p { margin: 0; max-width: var(--measure); }
+  .stack-tight { display: flex; flex-direction: column; gap: var(--s2); }
+
+  .masthead { display: flex; flex-direction: column; gap: var(--s2); padding-top: var(--s4); }
+  .masthead-row { display: flex; flex-wrap: wrap; justify-content: space-between; gap: var(--s2); }
+
+  .hero { display: flex; flex-direction: column; gap: var(--s3); }
+  .wordmark {
+    font-family: Anton, "Arial Narrow", Impact, sans-serif; font-weight: 400;
+    font-size: clamp(3.4rem, 15vw, 8.2rem); line-height: 0.84; letter-spacing: -0.015em;
+    text-transform: uppercase; margin: 0; text-wrap: balance;
+  }
+  .deck {
+    font-size: clamp(1.15rem, 3.4vw, 1.6rem); line-height: 1.35; font-weight: 600;
+    max-width: 38ch; margin: 0; text-wrap: balance;
+  }
+  .thesis {
+    font-family: Anton, "Arial Narrow", Impact, sans-serif;
+    font-size: clamp(1.7rem, 6.2vw, 3.1rem); line-height: 1.02; text-transform: uppercase;
+    letter-spacing: -0.005em; margin: 0; max-width: 22ch; text-wrap: balance;
+  }
+  .thesis em { font-style: normal; color: var(--stamp); }
+
+  .article { display: flex; flex-direction: column; gap: var(--s3); }
+  .article-head {
+    display: flex; align-items: baseline; gap: var(--s3);
+    border-bottom: 1px solid var(--rule); padding-bottom: var(--s2); flex-wrap: wrap;
+  }
+  .article-num {
+    font-family: "Courier Prime", "Courier New", monospace; font-size: 0.72rem;
+    letter-spacing: 0.16em; text-transform: uppercase; color: var(--stamp); white-space: nowrap;
+  }
+  .article-title {
+    font-family: Anton, "Arial Narrow", Impact, sans-serif;
+    font-size: clamp(1.35rem, 4vw, 2rem); line-height: 1.05; text-transform: uppercase;
+    margin: 0; flex: 1 1 12rem; text-wrap: balance;
+  }
+  .beat { font-size: 1.2rem; font-weight: 600; }
+  .lead-out { color: var(--ink-soft); }
+
+  /* ---------- the ledger ---------- */
+  .ledger-wrap { overflow-x: auto; }
+  .ledger {
+    width: 100%; border-collapse: collapse;
+    font-family: "Courier Prime", "Courier New", monospace; font-size: 0.85rem;
+    font-variant-numeric: tabular-nums;
+  }
+  .ledger caption {
+    text-align: left; padding-bottom: var(--s2);
+    font-family: "Courier Prime", "Courier New", monospace; font-size: 0.72rem;
+    letter-spacing: 0.16em; text-transform: uppercase; color: var(--ink-soft);
+  }
+  .ledger th {
+    text-align: right; font-weight: 700; padding: var(--s1) var(--s2);
+    border-bottom: 2px solid var(--ink); white-space: nowrap;
+    font-size: 0.7rem; letter-spacing: 0.08em; text-transform: uppercase;
+  }
+  .ledger th:first-child, .ledger td:first-child { text-align: left; }
+  .ledger td { text-align: right; padding: var(--s1) var(--s2); border-bottom: 1px dotted var(--rule); }
+  .ledger tbody tr:last-child td { border-bottom: 2px solid var(--ink); }
+  .ledger tfoot td { padding-top: var(--s2); font-weight: 700; border-bottom: 0; }
+  .nil { color: var(--ink-soft); }
+  .red { color: var(--stamp); font-weight: 700; }
+
+  .disclosure {
+    border: 3px solid var(--ink); padding: var(--s3);
+    display: flex; flex-direction: column; gap: var(--s2); max-width: var(--measure);
+  }
+  .disclosure hr { border: 0; border-top: 1px solid var(--ink); margin: 0; }
+  .disclosure .headline {
+    font-family: Anton, "Arial Narrow", Impact, sans-serif; font-size: 1.5rem;
+    line-height: 1.05; text-transform: uppercase; margin: 0;
+  }
+  .fact {
+    display: flex; justify-content: space-between; align-items: baseline; gap: var(--s3);
+    font-family: "Courier Prime", "Courier New", monospace; font-size: 0.85rem;
+  }
+  .fact span:last-child { text-align: right; font-variant-numeric: tabular-nums; }
+
+  .record {
+    background: var(--paper-2); border-left: 4px solid var(--stamp); padding: var(--s3);
+    font-family: "Courier Prime", "Courier New", monospace; font-size: 0.9rem; line-height: 1.55;
+    display: flex; flex-direction: column; gap: var(--s2); overflow-x: auto;
+  }
+  .record .head { color: var(--ink-soft); }
+  .record .tick { font-weight: 700; }
+  .record blockquote {
+    margin: 0; padding-left: var(--s2); border-left: 2px solid var(--rule); font-style: italic;
+  }
+  .record .meta { color: var(--ink-soft); }
+
+  .ladder {
+    list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column;
+    font-family: "Courier Prime", "Courier New", monospace; font-size: 0.95rem;
+  }
+  .ladder li {
+    padding: var(--s1) 0; border-bottom: 1px dotted var(--rule);
+    display: flex; gap: var(--s2); align-items: baseline;
+  }
+  .ladder li:last-child { border-bottom: 0; color: var(--stamp); font-weight: 700; }
+  .ladder .arrow { color: var(--ink-soft); }
+
+  .turn {
+    background: var(--ink); color: var(--paper); padding: var(--s5) var(--s4);
+    margin: 0 calc(var(--s3) * -1); display: flex; flex-direction: column; gap: var(--s3);
+  }
+  .turn h2 {
+    font-family: Anton, "Arial Narrow", Impact, sans-serif;
+    font-size: clamp(1.9rem, 7vw, 3.4rem); line-height: 0.98; text-transform: uppercase;
+    margin: 0; max-width: 18ch; text-wrap: balance;
+  }
+  .turn p { color: var(--paper); }
+  .turn .quiet { color: var(--rule); }
+
+  .two { display: grid; grid-template-columns: 1fr 1fr; gap: var(--s3) var(--s4); }
+  .two h3 {
+    font-family: "Courier Prime", "Courier New", monospace; font-size: 0.72rem;
+    letter-spacing: 0.16em; text-transform: uppercase; margin: 0 0 var(--s2); color: var(--ink-soft);
+  }
+  .two ul { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: var(--s2); }
+  .two li { font-size: 0.98rem; padding-left: 1.1rem; position: relative; }
+  .two li::before { content: "—"; position: absolute; left: 0; color: var(--ink-soft); }
+  .two .broken li::before { content: "×"; color: var(--stamp); }
+  @media (max-width: 34rem) { .two { grid-template-columns: 1fr; } }
+
+  .cta { display: flex; flex-direction: column; gap: var(--s3); align-items: flex-start; }
+  .cta-head { width: 100%; }
+  .cta-line {
+    font-family: Anton, "Arial Narrow", Impact, sans-serif;
+    font-size: clamp(2.2rem, 10vw, 5rem); line-height: 0.88; text-transform: uppercase;
+    margin: 0; text-wrap: balance;
+  }
+  .struck {
+    list-style: none; padding: 0; margin: 0;
+    font-family: "Courier Prime", "Courier New", monospace; font-size: 1rem;
+    display: flex; flex-direction: column; gap: var(--s1); color: var(--ink-soft);
+  }
+  .struck li { text-decoration: line-through; text-decoration-thickness: 2px; }
+
+  .stamp-wrap { display: flex; justify-content: flex-end; }
+  .stamp {
+    display: inline-block; border: 3px solid var(--stamp); color: var(--stamp);
+    font-family: "Courier Prime", "Courier New", monospace; font-size: 0.8rem; font-weight: 700;
+    letter-spacing: 0.18em; text-transform: uppercase; padding: var(--s2) var(--s3);
+    transform: rotate(-4deg); animation: land 620ms cubic-bezier(0.2, 1.4, 0.4, 1) both;
+  }
+  @keyframes land {
+    from { transform: rotate(-16deg) scale(1.7); opacity: 0; }
+    to   { transform: rotate(-4deg) scale(1); opacity: 1; }
+  }
+  @media (prefers-reduced-motion: reduce) { .stamp { animation: none; } }
+
+  .legal {
+    font-family: "Courier Prime", "Courier New", monospace; font-size: 0.68rem; line-height: 1.5;
+    color: var(--ink-soft); text-align: justify; max-width: 100%; margin: 0;
+  }
+  a { color: var(--stamp); }
+  a:focus-visible { outline: 3px solid var(--stamp); outline-offset: 3px; }
+</style>
+
+<div class="sheet">
+
+  <header class="masthead">
+    <hr class="rule-thick">
+    <div class="masthead-row">
+      <p class="label">Settlement of the Landing &middot; statement of stores</p>
+      <p class="label">Tick 16,106 &middot; year 2</p>
+    </div>
+    <hr class="rule">
+    <p class="label">Stocktake &middot; being identical to the last one &middot; and to the one before that</p>
+  </header>
+
+  <section class="hero">
+    <h1 class="wordmark">Nothing in,<br>nothing out</h1>
+    <p class="deck">A settlement of ten people held exactly seventy-six things for three and a half thousand ticks, and moved none of them.</p>
+    <hr class="rule">
+    <p class="thesis">The store was full. <em>It was full of the one thing nobody could spend.</em></p>
+  </section>
+
+  <section class="article">
+    <div class="article-head">
+      <span class="article-num">Item 1</span>
+      <h2 class="article-title">The statement</h2>
+    </div>
+
+    <p>Taken from the settlement&rsquo;s own record. Eleven hundred and eighty-seven consecutive samples, the first at tick 12,894 and the last at tick 16,409, reproduced here as a single column because there is only one column to reproduce.</p>
+
+    <div class="ledger-wrap">
+      <table class="ledger">
+        <caption>Stores of the Landing &middot; brought forward, this period, carried forward</caption>
+        <thead>
+          <tr><th>Item</th><th>B/f</th><th>In</th><th>Out</th><th>C/f</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>wood</td><td>70</td><td class="nil">0</td><td class="nil">0</td><td>70</td></tr>
+          <tr><td>stone</td><td class="red">0</td><td class="nil">0</td><td class="nil">0</td><td class="red">0</td></tr>
+          <tr><td>ore</td><td>6</td><td class="nil">0</td><td class="nil">0</td><td>6</td></tr>
+          <tr><td>food</td><td class="red">0</td><td class="nil">0</td><td class="nil">0</td><td class="red">0</td></tr>
+          <tr><td>plank</td><td class="nil">0</td><td class="nil">0</td><td class="nil">0</td><td class="nil">0</td></tr>
+          <tr><td>charcoal</td><td class="nil">0</td><td class="nil">0</td><td class="nil">0</td><td class="nil">0</td></tr>
+          <tr><td>iron</td><td class="nil">0</td><td class="nil">0</td><td class="nil">0</td><td class="nil">0</td></tr>
+          <tr><td>block</td><td class="nil">0</td><td class="nil">0</td><td class="nil">0</td><td class="nil">0</td></tr>
+          <tr><td>furniture</td><td class="nil">0</td><td class="nil">0</td><td class="nil">0</td><td class="nil">0</td></tr>
+        </tbody>
+        <tfoot>
+          <tr><td>held</td><td>76</td><td class="nil">0</td><td class="nil">0</td><td>76</td></tr>
+        </tfoot>
+      </table>
+    </div>
+
+    <p>Held: seventy-six. Highest figure reached at any point in the settlement&rsquo;s recorded history: seventy-six. The two being the same number is the whole of the finding.</p>
+
+    <p class="beat">Not nearly full. Not mostly full. Not one unit in or out, in either direction, for the whole of the period.</p>
+
+    <p class="lead-out">Four buildings were taken down during this period and the figure did not move. That is the line that turns a full shed into something worth publishing.</p>
+  </section>
+
+  <section class="article">
+    <div class="article-head">
+      <span class="article-num">Item 2</span>
+      <h2 class="article-title">What the seventy-six were</h2>
+    </div>
+
+    <p>Seventy of it was wood.</p>
+
+    <p>There is a great deal of wood on this coast and a settler can cut it with their hands. There is also, in the whole catalogue of things this settlement had unlocked, exactly one building made of wood and nothing else, and eleven of them were already standing. The hearth burns one log an evening. Nothing else in the valley spends a stick.</p>
+
+    <p>So the wood came in, and the wood stayed, and it went on coming in.</p>
+
+    <p class="beat">The store was not full of goods. It was full of the one material with nowhere to go, and it was holding the door shut against everything else.</p>
+  </section>
+
+  <section class="article">
+    <div class="article-head">
+      <span class="article-num">Item 3</span>
+      <h2 class="article-title">What was wanted, and what it cost</h2>
+    </div>
+
+    <p>The settlement had voted for a sawmill, a furnace and a yard, and had built none of them. The prices are not secret. They are in the same file as everything else:</p>
+
+    <ol class="ladder">
+      <li><span class="arrow">&rarr;</span><span>a sawmill wants 4 stone</span></li>
+      <li><span class="arrow">&rarr;</span><span>a yard wants 8 stone</span></li>
+      <li><span class="arrow">&rarr;</span><span>a furnace wants 14 stone</span></li>
+      <li><span class="arrow">&rarr;</span><span>a set of stone tools wants 2 stone</span></li>
+      <li><span class="arrow">&rarr;</span><span>stone held: nought</span></li>
+    </ol>
+
+    <p>Bare hands break rock perfectly well. Nobody was prevented from quarrying and nobody was idle. Settlers went out, worked the rock, and carried it home, and this is what the arithmetic did when they got there:</p>
+
+    <div class="record">
+      <div class="head">// what happens when a settler with stone reaches a full store</div>
+      <div class="tick">let room = Math.max(0, roomInStores(sim, town) - heldInStores(town));</div>
+      <div class="meta">76 &minus; 76 = 0</div>
+      <blockquote>&ldquo;So it goes on the ground beside the store, and it is <em>gone</em>. Not a second store with a worse roof &mdash; abandoned.&rdquo;</blockquote>
+      <div class="meta">&mdash; the comment above the line that does it, written when it was put there</div>
+    </div>
+
+    <p>Counted off the settlement&rsquo;s own feed for this period: <strong>three hundred and five stone</strong> destroyed on the grass outside a full store. One thousand and ninety-one wood. Three hundred and fifty-eight food, in a settlement at nought food.</p>
+
+    <p class="beat">Highest quantity of stone ever held in the stores of the Landing, across the entire run: nought.</p>
+
+    <p>And then, because somebody went and read the job list rather than the ladder, the other half of it.</p>
+
+    <p>This settlement has a miner. The miner&rsquo;s job is scored almost entirely on how short the settlement is of <em>stone</em>. The job declares that what it fetches is <em>stone</em>. The guard that stops a settler doing something pointless tests whether the settlement is short of <em>stone</em>.</p>
+
+    <div class="record">
+      <div class="head">// what the miner actually does when sent out</div>
+      <div class="tick">take: () =&gt; gatherFor(&hellip;&nbsp;'seam'&nbsp;&hellip;) ?? gatherFor(&hellip;&nbsp;'rock'&nbsp;&hellip;)</div>
+      <div class="meta">a seam is ore &middot; a rock is stone &middot; the seam is asked for first</div>
+    </div>
+
+    <p class="beat">A miner dispatched precisely because the valley had no stone walked to an ore seam and came home with ore. Every time. For as long as there was a seam anywhere near.</p>
+
+    <p>Which is why nine settlers out of ten were standing in that valley holding two or three ore apiece, and why there were six in the Landing&rsquo;s store and eleven in Halla&rsquo;s, and why not one of the three settlements had a single stone to its name. Nobody was idle. Nobody was in error. They were mining the wrong rock, on purpose, because they had been asked to.</p>
+
+    <p>Ore is also the worse thing to be wrong about. With no furnace standing, the number of ore this settlement can consume in the whole of its existence is four, once, for the sawmill it cannot build.</p>
+
+    <p class="lead-out">Nothing could be spent, because everything wanted stone. No stone could be put down, because nothing had been spent. And nobody was bringing any stone anyway. It is the hunger of last month said again a level up &mdash; ten people too full to eat and too hungry to put anything down, except that this time it is not ten people. It is the town.</p>
+  </section>
+
+  <div class="turn">
+    <h2>It took four buildings apart to pay for the yard</h2>
+    <p>Five kilns were standing, which was the last notice&rsquo;s fault and was corrected this period. A settler took four of them down by hand.</p>
+    <p>Taking a building down returns half of what it cost. A kiln costs eight wood and four stone. Four kilns came down.</p>
+    <p class="quiet">That is sixteen wood and eight stone recovered by the settlement&rsquo;s own labour &mdash; and a yard wants eight stone. The exact figure. The settlement had, for one afternoon, dismantled its way to precisely the thing standing between it and every other building on the list.</p>
+    <p>Every unit of it was carried to the store, found no room, and was set down on the ground outside, where the weather had it.</p>
+    <p class="quiet">The stores did not move by one. That is why the figure is the same before and after four buildings ceased to exist.</p>
+  </div>
+
+  <section class="article">
+    <div class="article-head">
+      <span class="article-num">Item 4</span>
+      <h2 class="article-title">A lock for a door nobody built</h2>
+    </div>
+
+    <p>Filed this period by Halla, a forester, and carried on the vote of a settlement of two:</p>
+
+    <div class="record">
+      <div class="head">## wish-198 &middot; Halla, forester &middot; tick 16034 <code>npc-07</code></div>
+      <div class="tick">- [x] A lock for the depot door to prevent theft of stored goods</div>
+      <blockquote>I&rsquo;d give my right hand for a proper lock on the depot door &mdash; so when I&rsquo;m gone, nobody steals what&rsquo;s not theirs.</blockquote>
+      <div class="meta">**Kind:** &mdash; the catalogue had no word for it</div>
+      <div class="meta">**Carried:** carried in Cato&rsquo;s claim &mdash; 2 of 2 first preferences, 1 round(s).</div>
+    </div>
+
+    <p>There is no theft in this game.</p>
+
+    <p>Not a hazard, not a trait, not a difficulty setting. A search of the entire source for <em>steal</em>, <em>theft</em>, <em>stolen</em> and <em>thief</em> returns one hit, and it is a comment about which goods would be worth stealing if anybody could. Nobody has ever taken a thing that was not theirs. Nobody can.</p>
+
+    <p>There is also no depot. There has never been a depot. There is no door in the settlement of Cato&rsquo;s claim, which is a lean-to on a rock in the bay holding eleven things in a shed that holds eight.</p>
+
+    <p class="beat">And she was right.</p>
+
+    <p>Goods were disappearing out of her settlement steadily, in quantity, week after week, and she had watched it happen and reached for the only explanation a person reaches for. Four hundred and fifty-one wood, a hundred and seventy food and a hundred and sixty-nine stone went off the heap outside that lean-to in this period alone. Somebody was taking it. She was simply wrong about who.</p>
+
+    <p>It was the weather, and behind the weather it was a settlement that had never built anywhere to put anything, and had never once put such a thing on a ballot, because nothing in the game had ever told it to.</p>
+  </section>
+
+  <section class="article">
+    <div class="article-head">
+      <span class="article-num">Item 5</span>
+      <h2 class="article-title">The number nobody was shown</h2>
+    </div>
+
+    <p>Every unit the weather takes off the heap outside is counted. It has been counted since the heap was written. The counter is called <code>dropped</code> and its own comment describes it as <em>the actual price of having nowhere to put things</em>.</p>
+
+    <div class="disclosure">
+      <p class="headline">Written in one place. Read in none.</p>
+      <hr>
+      <div class="fact"><span>Sites that increment it</span><span>1</span></div>
+      <div class="fact"><span>Sites that read it</span><span>0</span></div>
+      <div class="fact"><span>Ballots it appeared on</span><span>0</span></div>
+      <div class="fact"><span>Settlers ever told</span><span>0</span></div>
+      <div class="fact"><span>Periods it has been running</span><span>all of them</span></div>
+    </div>
+
+    <p>The ballot has known what to do with this for some time. A proposal that unlocks a depot or a granary is worth an extra two and a fifth to a settler in a cramped settlement, and there is a line written for them to say out loud when they vote for it &mdash; <em>&ldquo;We are carrying things about because there is nowhere to set them down.&rdquo;</em></p>
+
+    <p class="beat">No such proposal has ever been on a slate, so that line has never once been said.</p>
+
+    <p class="lead-out">This is the third time a feature of this game has turned out to be a decision nothing acts on, after the triage vote that ordered nothing and the migration nobody could use. It is beginning to look less like a defect and more like the house speciality.</p>
+  </section>
+
+  <div class="turn">
+    <h2>The first fix was bolted shut from three directions</h2>
+    <p>The answer to a frozen store is the one building on this coast made of wood and nothing else. A house is ten timber and twelve places to put something down, so it spends what is choking the store and adds the shelf that lets the stone in, in one afternoon. That was written, and it did not work, and here is the order in which it did not.</p>
+    <p class="quiet">It sat below the hall and the depot on the list of what to build next. A hall is forty-four units and a depot wants six boards, and a settlement whose store is frozen can accumulate neither &mdash; so the moment either was unlocked it became the standing answer for ever, and the branch written to unjam the place was unreachable underneath it.</p>
+    <p class="quiet">Having got past that, it put the question to a meeting. The meeting scores a proposed house on whether anybody is sleeping on the ground. Nobody was. It opened at minus nought point four five and was refused, and the card shown to the player said the settlement had decided the valley was big enough &mdash; which is a true sentence about a question nobody asked.</p>
+    <p class="quiet">And the other half of it, the part that lets a settler pick up what is already lying on the ground, filled their arms to exactly capacity. The rule above it sends anybody with a full load to the store. The store is full. That is why the heap is there. So the load came back off their back onto the same heap, and they turned round and picked it up again, for ever, and the person it caught was whoever was trying to build.</p>
+    <p>Three separate mechanisms, none of which knew about the others, all arriving at the same answer, which was no.</p>
+  </div>
+
+  <section class="article">
+    <div class="article-head">
+      <span class="article-num">Item 6</span>
+      <h2 class="article-title">Corrected this sitting, and left broken</h2>
+    </div>
+
+    <div class="two">
+      <div>
+        <h3>Corrected</h3>
+        <ul>
+          <li>A settlement whose store is full and which has never built anything that stores things will now put up a house for the corner rather than the bed. It is the only thing on this coast made of wood and nothing else, so it is the only move a jammed settlement has &mdash; and it spends the timber and adds the shelf in the same afternoon.</li>
+          <li>A settlement bleeding goods onto the grass can now say so on its own ballot, the way a starving one can now put food on its own slate. Eight units lost is the threshold. The Landing passed it a long time ago.</li>
+          <li>Goods on the ground can be picked up. Anybody short of a thing for a building takes it off the heap before walking past the heap to go and open fresh ground, which is what they were doing.</li>
+          <li>Halla&rsquo;s lock has a word now, and what it grants is not a lock.</li>
+          <li>The miner takes whichever rock the settlement is actually shorter of.</li>
+          <li>A settler&rsquo;s arms hold nine things rather than four. Boards, charcoal, iron, blocks and furniture weighed nothing at all, so a pack was a bottomless weatherproof private warehouse for five of the nine goods in the game &mdash; which is magic, and is also a standing argument against ever building a depot.</li>
+          <li>A caravan no longer shoves a neighbour past its own capacity, which is why a lean-to that holds eight was holding eleven.</li>
+          <li>A kiln burns for a furnace that is standing, rather than for one it is never going to have.</li>
+          <li>The opening line said four planks. The settlement starts with four logs and no planks, and one plank unlocks half the joinery ladder, so the prose was describing a more generous game than the one that starts.</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Left broken</h3>
+        <ul class="broken">
+          <li>The wood. Nothing spends it, it is free to cut, and it will fill any store big enough to hold it. That is a balance number and one run is a sample.</li>
+          <li>The house is a stopgap and is written as one. Twelve places against a depot&rsquo;s hundred and forty. A settlement that answers a full store with bedrooms for ever is a failure mode this only narrows.</li>
+          <li>Cato is on the island.</li>
+          <li>There are still no fish.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <div class="turn">
+    <h2>Nobody in this valley was ever robbed by a neighbour</h2>
+    <p>Everything anybody carried into a settlement&rsquo;s store became the settlement&rsquo;s the moment it went in. A settler who walked out down the coast walked out with what was in their hands and not one thing besides, however many loads they had brought in over a year.</p>
+    <p>Nobody voted for that. Nobody wrote it down. It was simply how it was, and it happened on every departure this valley has ever had.</p>
+    <p class="quiet">So the lock is real, and it is not for keeping anybody out. A locked store is a store with a share in it: what a settler can carry, drawn against what they actually delivered, on the day they go. Halla asked for a lock to stop people taking what was not theirs, in a world where nobody ever has.</p>
+    <p>The only thing in this valley that has ever taken what was not its own is the settlement, and it did it to everybody, every time, on the way out of the door she wanted locked.</p>
+  </div>
+
+  <section class="article">
+    <div class="article-head">
+      <span class="article-num">Item 7</span>
+      <h2 class="article-title">Instructions received, verbatim</h2>
+    </div>
+
+    <p>Reproduced exactly as delivered, including the capitals and the coinage. The reader is asked to note that every finding above began here, and that nothing in the automated checks &mdash; of which there are four, and they are good ones &mdash; had anything to say about any of it.</p>
+
+    <div class="record">
+      <blockquote>Back to the island! There is STILL something afoot. They are back to a one-kiln town. That was hoped for. HOWEVER. Nothing at all, else. NEVERNOTHING. Has been built, yet -moreso? WHY?!</blockquote>
+      <div class="meta">&mdash; the whole of the brief</div>
+    </div>
+
+    <p>Eleven hundred and eighty-seven samples in which nothing whatsoever happened, and the thing that found it was a person looking at a valley and noticing that nothing whatsoever was happening.</p>
+
+    <p class="beat">That is eleven for eleven. Every load-bearing fault this project has ever found has been found by somebody watching the valley and saying what they saw, and not one of them has ever been originated by a check.</p>
+  </section>
+
+  <section class="article cta">
+    <div class="article-head cta-head">
+      <span class="article-num">Item 8</span>
+      <h2 class="article-title">Statement of position</h2>
+    </div>
+
+    <h2 class="cta-line">Everything was fine and nothing moved</h2>
+
+    <ul class="struck">
+      <li>No errors were raised</li>
+      <li>No check failed</li>
+      <li>Nobody was idle</li>
+      <li>Every settler worked every day</li>
+    </ul>
+
+    <p>All four of those are true and were true throughout. The settlement worked a full year, in good order, at nought food, and finished it with precisely what it started with, having thrown seventeen hundred and seventy things onto the grass in the process.</p>
+
+    <div class="stamp-wrap">
+      <span class="stamp">Stocktake &mdash; 76 of 76</span>
+    </div>
+  </section>
+
+  <hr class="rule">
+
+  <footer class="stack-tight">
+    <p class="label">Statement of stores &middot; append-only &middot; landed rows are never edited</p>
+    <p class="legal">Frontier is not affiliated with The Settlers, with Anthropic, with Alibaba Cloud, or with the concept of settlement. Every figure in Item 1 is read from <code>agents/state.jsonl</code> across eleven hundred and eighty-seven consecutive samples and the column really is identical in all of them; readers who suspect the instrument rather than the valley are directed to Item 3, where the settlement&rsquo;s own feed says <em>the house is full</em> in as many words eight hundred and twenty-seven times over the same window. The counts of goods destroyed are taken from that feed and are floors rather than totals, the feed having been read only as far back as it goes. The four kilns were real, came down by hand, and returned exactly the stone that would have bought the yard. There is no theft in this game and no plan to add any. There is no depot in this valley and there never has been. <code>wish-22</code> asked for a furnace and was granted a charcoal kiln, and that vote stands. Amendment No. 1 declared this valley fixed forever and was withdrawn; it remains published. A launch readiness review returned NO GO and has not been appealed, there being no appellant. Cato remains on the island. Six sheep were scenery. Bren cannot die and neither can anybody else. A well was granted to a man who asked for fish. Not an ounce of human coding expertise. Not one ounce.</p>
+  </footer>
+
+</div>
