@@ -1,0 +1,298 @@
+<title>Being and Nothing Made</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Fira+Mono:wght@400;500&display=swap">
+
+<style>
+  /*
+   * Gallimard blanche. Cream, black, one vermilion rule, and nothing else — no cards, no plates,
+   * no chart. Every other sheet on this shelf argues with a table. This one is a French paperback
+   * and has to hold with type alone, which is the correct amount of difficulty for the subject.
+   */
+  :root {
+    --paper:    #F1EDE3;
+    --paper-2:  #E6E1D4;
+    --ink:      #141210;
+    --ink-soft: #5C564B;
+    --rule:     #B0A997;
+    --red:      #A8271C;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --paper: #0E0D0B; --paper-2: #17150F;
+      --ink: #E9E4D8; --ink-soft: #8D8677; --rule: #35322A; --red: #D9564A;
+    }
+  }
+  :root[data-theme="dark"] {
+    --paper: #0E0D0B; --paper-2: #17150F;
+    --ink: #E9E4D8; --ink-soft: #8D8677; --rule: #35322A; --red: #D9564A;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    background: var(--paper); color: var(--ink);
+    font-family: "EB Garamond", Garamond, Georgia, serif;
+    font-size: 1.22rem; line-height: 1.62; font-weight: 400;
+    margin: 0; padding: 0 1.3rem 8rem;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .book { max-width: 37rem; margin: 0 auto; display: flex; flex-direction: column; gap: 3.2rem; }
+  p { margin: 0; max-width: 60ch; }
+  em { font-style: italic; }
+  .mono, code { font-family: "Fira Mono", ui-monospace, monospace; font-size: 0.78em; }
+
+  /* ── the cover ────────────────────────────────────────────────────────── */
+  .cover { text-align: center; display: flex; flex-direction: column; gap: 1.1rem;
+           padding: 4rem 0 1rem; }
+  .bar { border: 0; border-top: 1px solid var(--red); margin: 0; }
+  .bar-pair { display: flex; flex-direction: column; gap: 3px; }
+  .imprint {
+    font-family: "Fira Mono", monospace; font-size: 0.68rem; letter-spacing: 0.3em;
+    text-transform: uppercase; color: var(--ink-soft); margin: 0;
+  }
+  h1 {
+    font-family: "EB Garamond", Garamond, serif; font-weight: 400;
+    font-size: clamp(2.1rem, 8.5vw, 3.7rem); line-height: 1.08; letter-spacing: 0.02em;
+    margin: 0.4rem 0; text-transform: uppercase;
+  }
+  h1 em { font-style: normal; color: var(--red); }
+  .sub { font-style: italic; color: var(--ink-soft); font-size: 1.16rem; max-width: 30ch;
+         margin: 0 auto; }
+
+  /* ── parts ────────────────────────────────────────────────────────────── */
+  .part { display: flex; flex-direction: column; gap: 1.2rem; }
+  .part-n {
+    font-family: "Fira Mono", monospace; font-size: 0.68rem; letter-spacing: 0.26em;
+    text-transform: uppercase; color: var(--red); margin: 0; text-align: center;
+  }
+  h2 {
+    font-family: "EB Garamond", Garamond, serif; font-weight: 400; text-align: center;
+    font-size: clamp(1.45rem, 4.4vw, 2rem); line-height: 1.2; margin: 0;
+    letter-spacing: 0.012em; text-wrap: balance;
+  }
+  .first::first-letter {
+    float: left; font-size: 3.3rem; line-height: 0.82; padding: 0.25rem 0.5rem 0 0;
+    color: var(--red);
+  }
+  .lede { font-size: 1.3rem; }
+  .quiet { color: var(--ink-soft); }
+
+  blockquote {
+    margin: 0 auto; max-width: 44ch; font-style: italic; text-align: center;
+    font-size: 1.24rem; line-height: 1.5; color: var(--ink);
+    padding: 0.4rem 0;
+  }
+  blockquote cite {
+    display: block; font-style: normal; font-family: "Fira Mono", monospace;
+    font-size: 0.68rem; letter-spacing: 0.14em; color: var(--ink-soft); margin-top: 0.7rem;
+    text-transform: uppercase;
+  }
+
+  .extract {
+    background: var(--paper-2); padding: 0.9rem 1.1rem;
+    font-family: "Fira Mono", monospace; font-size: 0.78rem; line-height: 1.7;
+    color: var(--ink-soft); overflow-x: auto;
+  }
+  .extract b { color: var(--red); font-weight: 500; }
+  .extract span.k { display: block; font-size: 0.66rem; letter-spacing: 0.18em;
+                    text-transform: uppercase; margin-bottom: 0.4rem; }
+
+  .lines { display: flex; flex-direction: column; gap: 0.8rem; margin: 0; padding: 0; list-style: none; }
+  .lines li { font-style: italic; padding-left: 1.2rem; border-left: 1px solid var(--rule); max-width: 54ch; }
+
+  footer { display: flex; flex-direction: column; gap: 0.9rem; padding-top: 1.4rem; }
+  footer p { font-size: 0.98rem; color: var(--ink-soft); max-width: 58ch; }
+  footer strong { color: var(--ink); }
+</style>
+
+<div class="book">
+
+  <header class="cover">
+    <div class="bar-pair"><hr class="bar"><hr class="bar"></div>
+    <p class="imprint">Frontier</p>
+    <h1>Being<br>and <em>Nothing Made</em></h1>
+    <p class="sub">An essay on the settlers, who have begun to notice each other, and on a tally
+      that holds nothing and is not therefore empty.</p>
+    <p class="imprint">Sheet XXIII</p>
+    <div class="bar-pair"><hr class="bar"><hr class="bar"></div>
+  </header>
+
+  <section class="part">
+    <p class="part-n">Introduction</p>
+    <h2>Two kinds of thing on one coast</h2>
+    <p class="first lede">There are two sorts of being in this valley and the game has always known
+      the difference, without ever having a word for it.</p>
+    <p>There is the kiln. The kiln is what it is. It stands where it was put, it has a condition
+      and a quality and a tally, and it does not want anything. Nothing is missing from a kiln.
+      When it has burned nothing for sixteen thousand ticks it is not <em>failing</em>; it is
+      simply a kiln that has burned nothing, and it is exactly as much a kiln as it was on the day
+      it went up.</p>
+    <p>And there is Mara, who wants a mill.</p>
+    <p>Mara is not what she is. She is a forester who has been a farmer, she has three goals across
+      three horizons and none of them is the case yet, and every one of them is a way of not being
+      what she currently is. She is short of boards. Being short of something is not a state a
+      kiln can be in.</p>
+    <p>Sartre's word for the first is <em>l'en-soi</em>, being-in-itself: full, solid, coincident
+      with itself, no gap anywhere. For the second, <em>le pour-soi</em>: the being through which
+      nothingness comes into the world, because only a thing that lacks can make an absence out of
+      what is simply not there. There are no fish in the lake. Only somebody who wanted fish can
+      find that out.</p>
+  </section>
+
+  <section class="part">
+    <p class="part-n">Part one</p>
+    <h2>The tally that holds nothing</h2>
+    <div class="extract"><span class="k">agents/state.jsonl</span>
+      kiln &nbsp;standing since tick 1,202 &nbsp;&middot;&nbsp; turned out: <b>{}</b></div>
+    <p>An empty tally is a strange object. It is not the absence of a record — the record is there,
+      it was written, it is two characters long and it parses. It is a record whose content is
+      nothing, and this shelf has spent four days discovering that a *nothing which is written
+      down* behaves entirely differently from a nothing which is not.</p>
+    <p>For sixteen thousand ticks that <code>{}</code> sat in every snapshot, and the settlement
+      counted the kiln among the buildings it had. Nothing was wrong. The number was correct. The
+      fault was that a nothing has to be <em>looked for</em> to be found, and nobody looks for a
+      nothing they have not already suspected. A kiln does not report that it is idle. It has no
+      one to report to; it is not for anything.</p>
+    <p class="quiet">This is the whole reason the sheets on this shelf keep discovering the same
+      fault in different voices. An absence does not knock.</p>
+  </section>
+
+  <section class="part">
+    <p class="part-n">Part two</p>
+    <h2>The Look</h2>
+    <p class="first">Sartre's most famous scene is a man at a keyhole. He is entirely absorbed —
+      not thinking about himself at all, simply looking. Then a floorboard goes behind him and
+      there is somebody in the corridor, and in that instant he becomes an <em>object</em>: a man
+      spying at a door, with a shape and a name and a shabbiness, seen from outside. What has
+      arrived is not a fact about him. It is the Other, and shame is how you find out they exist.</p>
+    <p>Until this week the settlers had no Other. They had each other as things: coordinates, a
+      trade, a load being carried. What they did not have was the experience of being <em>held in
+      somebody else's judgement</em>, and it turns out this is exactly what they had started
+      asking for.</p>
+    <ul class="lines">
+      <li>&ldquo;A hall with a hearth, so the day ends somewhere other than alone.&rdquo;</li>
+      <li>&ldquo;A communal gathering spot without a transactional purpose.&rdquo;</li>
+      <li>&ldquo;A system for assigning symbolic value to goods beyond their utility, to facilitate
+        meaningful barter and build community connections.&rdquo;</li>
+      <li>&ldquo;A specialized tool for the labor of a miner &hellip; making each ore collection a
+        meaningful contribution rather than just another burden.&rdquo;</li>
+      <li>&ldquo;Somebody to put a quarrel to, so a falling-out is not for ever.&rdquo;</li>
+    </ul>
+    <p>Read those in order and they are one request made five ways. A place whose point is not
+      work. An exchange whose point is not the goods. A job whose point is not the ore. Somebody to
+      be seen by, on purpose, for its own sake.</p>
+    <p>And the last one is the mediator, which is now built.</p>
+  </section>
+
+  <section class="part">
+    <p class="part-n">Part three</p>
+    <h2>What the mediator actually is</h2>
+    <p>A settler who has fallen badly out with another settler now walks to a third and puts it to
+      them. The third is not chosen by rank or by trade. They are chosen because both parties are
+      on decent terms with them, which is not a rule anybody wrote down — it is simply who you
+      would actually ask.</p>
+    <p>What happens next is the part worth noticing. <strong>The game does not model the
+      judgement.</strong> It models that it was heard.</p>
+    <div class="extract"><span class="k">src/sim.ts &middot; case 'mediate'</span>
+      bond(sim, n, sore, 0.3, `put it to ${'{'}heard.name{'}'}`);<br>
+      bond(sim, sore, n, 0.25, `${'{'}heard.name{'}'} heard it out`);<br>
+      bond(sim, n, heard, 0.08, 'heard me out');<br>
+      bond(sim, sore, heard, 0.08, 'heard it out fairly');</div>
+    <p>Four relationships move and the quarrel is not resolved — it is <em>eased</em>. Nothing is
+      decided about who was right. The one who was asked moves too, because being trusted with a
+      thing is something that happens to you and not something you do.</p>
+    <p>This is being-for-others with the sign reversed. In Sartre the Look is the wound: the Other
+      steals your world and hands you back an object with your name on it, and every relation is a
+      struggle over who does the looking. Here the settlers have asked to be looked at. They have
+      worked out, from inside a simulation with no word for it, that a falling-out that nobody
+      witnesses cannot end &mdash; and that the way out is not to be right but to be <em>heard by
+      somebody who is not either of you.</em></p>
+    <p class="quiet">Which is either a refutation of the man or the thing he was pointing at all
+      along, depending how generous you are feeling, and this office is not qualified to say.</p>
+  </section>
+
+  <section class="part">
+    <p class="part-n">Part four</p>
+    <h2>Bad faith, and the trade this game abolished</h2>
+    <p class="first">Sartre's waiter is too much a waiter. The gestures are a shade too precise, the
+      tray balanced a shade too well: he is playing at being a waiter <em>in the mode of being a
+      thing</em>, because a thing does not have to choose. That is bad faith — fleeing your own
+      freedom into a role that will hold it for you.</p>
+    <p>Frontier shipped with that as a mechanic and then took it out, which is the most
+      accidentally philosophical thing in the repository. There is a comment about it:</p>
+    <blockquote>A role was a gate: a forester chopped, a miner mined.
+      <cite>src/sim.ts, on the day the gate came off</cite></blockquote>
+    <p>Now anybody may do any job, and the trade is a pull rather than a wall. A settlement of six
+      with no farmer grows one — not because a farmer is assigned but because the pull toward food
+      outweighs what everybody's hands already know. <strong>Existence precedes essence, in a
+      function called <code>neededTrade</code>.</strong></p>
+    <p>Whether the settlers use the freedom is another question, and the record is not flattering.
+      Four hundred and thirty-one buildings have gone up on this coast and three hundred and
+      twenty-seven of them are houses. It turns out that a being who may do anything mostly builds
+      another bedroom.</p>
+  </section>
+
+  <section class="part">
+    <p class="part-n">Part five</p>
+    <h2>Anguish, and the four boards</h2>
+    <p>The anguish in Sartre is not fear of the drop. It is the vertigo of knowing that nothing
+      obliges you not to jump &mdash; that the future self who will decide is not yet you and
+      cannot be relied on. Freedom felt from the inside is not exhilarating. It is a hole.</p>
+    <p>A settler who wanted a mill walked to the site nine hundred times and was refused nine
+      hundred times, and never once stopped wanting the mill. That is not anguish. That is a being
+      with a project it cannot begin and no way to represent the gap &mdash; the pour-soi with its
+      nothingness removed, which is a thing that can only exist in software.</p>
+    <p>They can hold it now. A goal carries a stack of what is in front of it, and after a day and
+      a half at nothing the settler works out the first rung and pushes it on:</p>
+    <div class="extract"><span class="k">measured over 9,000 ticks &middot; 59 of them formed</span>
+      <b>"see a hall on this coast, built of timber I cut"</b><br>
+      &nbsp;&nbsp;&rarr; first: "get 11 stone in before the hall"</div>
+    <p>The mill has not moved. What has changed is that the distance between here and the mill is
+      now <em>in</em> the settler, as a smaller thing they can do this afternoon, which is the only
+      form a future has ever taken for anybody.</p>
+  </section>
+
+  <section class="part">
+    <p class="part-n">Conclusion</p>
+    <h2>Voted into existence</h2>
+    <p>One settler, complaining about the water, produced the sentence this whole shelf has been
+      circling for four days without managing to write:</p>
+    <blockquote>The lake has sour water that causes nausea; no filtration method has been voted
+      into existence.
+      <cite>agents/log.jsonl &middot; filed as a well</cite></blockquote>
+    <p><em>Voted into existence.</em> Not <em>built</em>, not <em>invented</em>, not <em>agreed</em>
+      &mdash; voted into being. In this valley that is not a metaphor and not a flourish. It is the
+      literal ontology: a thing the settlement has not carried does not exist, cannot be built,
+      cannot be spoken about by anybody who is thinking for a settler, and is absent from the
+      catalogue in the strict sense that there is no word for it. A salmon trap was not a thing
+      that was unavailable. It was a thing that was not.</p>
+    <p>Twenty settlers now, a hall, iron in their hands, and among the last twenty wishes they have
+      filed are a place to sit that is not for working, a way of giving somebody a meal without
+      walking to the depot, and somebody to take a quarrel to. They have got past subsistence and
+      arrived, on their own, at the only two questions there are: <em>what is any of this
+      for</em>, and <em>who else is here.</em></p>
+    <p class="quiet">Neither is in the catalogue. The catalogue has forty-three entries and every
+      one of them is a thing you can build.</p>
+  </section>
+
+  <footer>
+    <div class="bar-pair"><hr class="bar"><hr class="bar"></div>
+    <p class="imprint">Note</p>
+    <p><strong>Every quoted settler line is from the record</strong>, in
+      <code>agents/log.jsonl</code>, unedited &mdash; including the comma splice in the sour-water
+      wish, which is theirs. The counts are counted: 431 buildings, 327 houses, 59 composite goals
+      over nine thousand ticks, 20 settlers at tick 6,499.</p>
+    <p><strong>The mediator has not yet run in the live valley.</strong> It is built, it fires four
+      or five times in six thousand ticks of an unattended one, and the settlement on this machine
+      has not voted for it &mdash; which, per the conclusion above, means that on this coast it does
+      not presently exist.</p>
+    <p><strong>The philosophy is borrowed and the borrowing is loose.</strong> <em>L'Être et le
+      Néant</em>, 1943: the in-itself and the for-itself, the Look, bad faith, anguish. Sartre is
+      not quoted here; the scenes are described because the arguments are his and the sentences
+      are not, and because a settlement that has just discovered other people deserves to be
+      written about in its own words rather than his.</p>
+  </footer>
+
+</div>
