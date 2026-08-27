@@ -1,0 +1,307 @@
+<title>Cards No Human Can See</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@500;600;700&family=Petrona:ital,wght@0,300;0,400;0,600;1,400&family=Share+Tech+Mono&display=swap">
+
+<style>
+  /*
+   * A contact sheet. Light is the print — frames on white card, edge data in the margin. Dark is
+   * the room they were developed in: near-black with one safelight red, which is the only colour
+   * you are allowed in there and the only colour on this page.
+   */
+  :root {
+    --card:    #EFEEEC;
+    --card-2:  #E3E2DE;
+    --frame:   #16150F;
+    --ink:     #15140F;
+    --ink-soft:#5D5A52;
+    --rule:    #B6B3AB;
+    --rule-2:  #D2CFC8;
+    --safe:    #C13B2E;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --card: #0B0A0B; --card-2: #141314; --frame: #000000;
+      --ink: #D8D4CE; --ink-soft: #7F7B76; --rule: #2C2928; --rule-2: #1E1C1C;
+      --safe: #E0584A;
+    }
+  }
+  :root[data-theme="dark"] {
+    --card: #0B0A0B; --card-2: #141314; --frame: #000000;
+    --ink: #D8D4CE; --ink-soft: #7F7B76; --rule: #2C2928; --rule-2: #1E1C1C;
+    --safe: #E0584A;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    background: var(--card); color: var(--ink);
+    font-family: Petrona, Georgia, serif;
+    font-size: 1.12rem; line-height: 1.66; font-weight: 300;
+    margin: 0; padding: 0 1.2rem 7rem;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .sheet { max-width: 46rem; margin: 0 auto; display: flex; flex-direction: column; gap: 3rem; }
+  p { margin: 0; max-width: 62ch; }
+  strong { font-weight: 600; }
+  code, .mono { font-family: "Share Tech Mono", ui-monospace, monospace; font-size: 0.9em; }
+  code { color: var(--safe); }
+
+  .edge {
+    font-family: "Share Tech Mono", monospace; font-size: 0.72rem; letter-spacing: 0.22em;
+    text-transform: uppercase; color: var(--ink-soft); margin: 0;
+  }
+  hr.sprocket {
+    border: 0; height: 8px; margin: 0;
+    background: repeating-linear-gradient(90deg, var(--rule) 0 10px, transparent 10px 22px);
+  }
+
+  header.front { display: flex; flex-direction: column; gap: 0.8rem; padding-top: 2.4rem; }
+  h1 {
+    font-family: "Saira Condensed", "Arial Narrow", sans-serif; font-weight: 700;
+    font-size: clamp(2.5rem, 11vw, 5.4rem); line-height: 0.94; letter-spacing: -0.005em;
+    text-transform: uppercase; margin: 0.4rem 0 0; text-wrap: balance;
+  }
+  h1 em { font-style: normal; color: var(--safe); }
+  .standfirst {
+    font-size: clamp(1.12rem, 3vw, 1.44rem); line-height: 1.42; font-style: italic;
+    color: var(--ink-soft); max-width: 44ch; margin: 0;
+  }
+
+  section { display: flex; flex-direction: column; gap: 1.1rem; }
+  h2 {
+    font-family: "Saira Condensed", sans-serif; font-weight: 600; text-transform: uppercase;
+    font-size: clamp(1.35rem, 4vw, 1.9rem); line-height: 1.1; margin: 0;
+    border-bottom: 2px solid var(--ink); padding-bottom: 0.35rem; letter-spacing: 0.004em;
+  }
+  .n {
+    font-family: "Share Tech Mono", monospace; font-size: 0.72rem; letter-spacing: 0.22em;
+    text-transform: uppercase; color: var(--safe); margin: 0;
+  }
+  .lede { font-size: 1.26rem; }
+  .quiet { color: var(--ink-soft); }
+
+  /* ── the contact sheet ────────────────────────────────────────────────── */
+  .strip { display: grid; grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr)); gap: 1rem; }
+  .fr { display: flex; flex-direction: column; gap: 0.5rem; }
+  .fr-img {
+    background: var(--frame); border: 1px solid var(--rule);
+    aspect-ratio: 3 / 2; display: grid; place-items: center; padding: 0.9rem;
+    text-align: center;
+  }
+  .fr-img span {
+    font-family: "Share Tech Mono", monospace; font-size: 0.74rem; line-height: 1.6;
+    color: #4A4744; letter-spacing: 0.06em;
+  }
+  .fr-n {
+    font-family: "Share Tech Mono", monospace; font-size: 0.7rem; color: var(--safe);
+    letter-spacing: 0.16em;
+  }
+  .fr-t { font-family: "Saira Condensed", sans-serif; font-weight: 600; font-size: 1.02rem;
+          line-height: 1.2; }
+  .fr-d { font-family: "Share Tech Mono", monospace; font-size: 0.7rem; color: var(--ink-soft);
+          line-height: 1.7; }
+  .fr-d b { color: var(--safe); font-weight: 400; }
+
+  .extract {
+    background: var(--card-2); border-left: 3px solid var(--safe); padding: 0.9rem 1.15rem;
+    font-family: "Share Tech Mono", monospace; font-size: 0.82rem; line-height: 1.7;
+    color: var(--ink-soft); overflow-x: auto;
+  }
+  .extract b { color: var(--safe); font-weight: 400; }
+
+  .said {
+    font-style: italic; font-size: 1.24rem; line-height: 1.5; max-width: 40ch;
+    align-self: center; text-align: center; padding: 0.4rem 0;
+  }
+
+  footer { display: flex; flex-direction: column; gap: 0.8rem; border-top: 2px solid var(--ink); padding-top: 1.2rem; }
+  footer p { font-size: 0.98rem; color: var(--ink-soft); max-width: 62ch; }
+  footer strong { color: var(--ink); }
+</style>
+
+<div class="sheet">
+
+  <header class="front">
+    <hr class="sprocket">
+    <div style="display:flex;flex-wrap:wrap;justify-content:space-between;gap:0.4rem 1.5rem;">
+      <p class="edge">Frontier &middot; sheet XXV</p>
+      <p class="edge">Contact sheet &middot; eight frames &middot; all exposed</p>
+    </div>
+    <h1>Cards no human<br><em>can see</em></h1>
+    <p class="standfirst">Eight things that were written correctly, saved correctly, updated every
+      frame, and could not be looked at. A latent image is not a missing one.</p>
+    <hr class="sprocket">
+  </header>
+
+  <section>
+    <p class="n">Introduction</p>
+    <h2>The latent image</h2>
+    <p class="lede">When you take a photograph nothing appears. The shutter opens, light does its
+      work on the silver, and the film comes out looking exactly as blank as it went in. The
+      picture is <em>there</em> &mdash; every grain of it, fully determined, unrecoverable by
+      staring. It takes a different substance in a different room to make it a thing anybody can
+      look at.</p>
+    <p>This project has spent five days discovering that most of its faults are that. Not missing
+      data. Not wrong data. <strong>Correct, complete, continuously updated data with no
+      developer.</strong> And the developer, on every single occasion, has been a person.</p>
+    <p>The frames below are that week's contact sheet. Each one was exposed properly. None of
+      them could be seen.</p>
+  </section>
+
+  <section>
+    <p class="n">The sheet</p>
+    <h2>Eight frames</h2>
+    <div class="strip">
+
+      <div class="fr">
+        <div class="fr-img"><span>[ tally written<br>tally read by nothing ]</span></div>
+        <p class="fr-n">FRAME 1</p>
+        <p class="fr-t">The kiln's tally</p>
+        <p class="fr-d">exposed tick 1,202<br>latent <b>16,087 ticks</b><br>developed by: somebody
+          asking out loud what it had ever made</p>
+      </div>
+
+      <div class="fr">
+        <div class="fr-img"><span>[ pushed<br>served by nothing ]</span></div>
+        <p class="fr-n">FRAME 2</p>
+        <p class="fr-t">Fourteen sheets</p>
+        <p class="fr-d">exposed 26 Aug<br>latent <b>26 hours</b><br>developed by: &ldquo;which
+          webpage has all of them?&rdquo;</p>
+      </div>
+
+      <div class="fr">
+        <div class="fr-img"><span>[ built<br>reachable by nothing ]</span></div>
+        <p class="fr-n">FRAME 3</p>
+        <p class="fr-t">Two towers</p>
+        <p class="fr-d">exposed tick 5,691<br>latent <b>4,195 ticks</b><br>developed by:
+          &ldquo;Three towers. Are we looking at the same valley?&rdquo;</p>
+      </div>
+
+      <div class="fr">
+        <div class="fr-img"><span>[ made · filled<br>mounted on nothing ]</span></div>
+        <p class="fr-n">FRAME 4</p>
+        <p class="fr-t">Five HUD cards</p>
+        <p class="fr-d">exposed this afternoon<br>latent <b>until the sentence</b><br>developed
+          by: &ldquo;I think you made cards no human can see.&rdquo;</p>
+      </div>
+
+      <div class="fr">
+        <div class="fr-img"><span>[ mounted<br>at 0,0 · under another ]</span></div>
+        <p class="fr-n">FRAME 5</p>
+        <p class="fr-t">Inside the buildings</p>
+        <p class="fr-d">exposed this morning<br>latent <b>its whole life</b><br>developed by: a
+          probe run only because of frame 4</p>
+      </div>
+
+      <div class="fr">
+        <div class="fr-img"><span>[ asked for<br>heard as a well ]</span></div>
+        <p class="fr-n">FRAME 6</p>
+        <p class="fr-t">A salmon trap</p>
+        <p class="fr-d">exposed 25 Aug<br>latent <b>4 days</b><br>developed by: a joke in a
+          colophon that turned out to be a bug</p>
+      </div>
+
+      <div class="fr">
+        <div class="fr-img"><span>[ in the source<br>in a diagram · unread ]</span></div>
+        <p class="fr-n">FRAME 7</p>
+        <p class="fr-t">The number 42</p>
+        <p class="fr-d">exposed at line 2,873<br>latent <b>21 sheets</b><br>developed by: going
+          back for a different reason entirely</p>
+      </div>
+
+      <div class="fr">
+        <div class="fr-img"><span>[ claimed in a README<br>tested by nothing ]</span></div>
+        <p class="fr-n">FRAME 8</p>
+        <p class="fr-t">&ldquo;works unchanged&rdquo;</p>
+        <p class="fr-d">exposed at first commit<br>latent <b>the whole project</b><br>developed
+          by: being asked to make it true</p>
+      </div>
+
+    </div>
+  </section>
+
+  <section>
+    <p class="n">I</p>
+    <h2>The one that happened today</h2>
+    <p>Four windows were added to the HUD this afternoon, and one more this morning. They were
+      created. They were given content. They were updated on every frame with the right lines in
+      the right colours. And they were attached to nothing, because the line that puts cards on
+      the screen was this:</p>
+    <div class="extract"><span style="display:block;font-size:0.7rem;letter-spacing:0.16em;text-transform:uppercase;margin-bottom:0.4rem;">src/hud.ts &middot; before</span>
+      const root = el('div', {'{'} class: 'hud' {'}'}, stock.node, market.node, feed.node,<br>
+      &nbsp;&nbsp;beatCard, whoCard, buildingCard, waitCard, hint);</div>
+    <p><strong>A hand-written list of which cards to show.</strong> Make a card and forget the
+      list, and you have built a window into a wall.</p>
+    <p>This is the fifth time this repository has produced that exact fault. A menu that named
+      eleven of twenty-nine actions. A five-building list found &ldquo;for the third time&rdquo;.
+      A tool ladder that existed twice. An index of the documents complaining about those,
+      maintained in two places until they disagreed. And now this &mdash; committed
+      <strong>three hours</strong> after publishing the sheet that warned about it, by the hand
+      that wrote the sheet.</p>
+    <p>The mounting reads the register now. Every card that is made is a card that is shown, by
+      construction, and there is no second list to fall out of step with the first.</p>
+  </section>
+
+  <section>
+    <p class="n">II</p>
+    <h2>What development actually costs</h2>
+    <p>The pattern in all eight frames is the same and it is not carelessness. Every one was a
+      <em>successful write</em>. The tally was written. The sheets were pushed. The towers went
+      up. The cards were built. In each case the operation returned, the state was correct, and a
+      check &mdash; had one existed &mdash; would have passed.</p>
+    <p class="said">A write that succeeds is not a read that happens.</p>
+    <p>And the developer was a person every time. Not a test. A person looking at a screen and
+      saying <em>are those granaries</em>, or <em>which page has all of them</em>, or <em>I think
+      you made cards no human can see.</em> Seven of the eight frames above were developed by a
+      sentence typed by somebody who could not see the source and was looking at the thing.</p>
+    <p>The eighth was developed by a probe, and the probe only exists because of the fourth. That
+      is the whole of the improvement this week has managed: not fewer latent images, but one more
+      room in which to develop them.</p>
+    <div class="extract"><span style="display:block;font-size:0.7rem;letter-spacing:0.16em;text-transform:uppercase;margin-bottom:0.4rem;">the probe, run rather than asserted</span>
+      cards in the HUD: 13<br>
+      &nbsp;&nbsp;SEEN &nbsp;&nbsp;The valley &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;at 1266,12<br>
+      &nbsp;&nbsp;SEEN &nbsp;&nbsp;Proposals &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;at 1266,240<br>
+      &nbsp;&nbsp;SEEN &nbsp;&nbsp;Inside the buildings &nbsp;<b>at 0,0</b></div>
+    <p>That last line is frame five. The card built this morning <em>so that nobody would have to
+      suspect a kiln</em> had no corner to hang from, opened at the origin, and spent its entire
+      life underneath the settlement card. It was found in the same minute the others were fixed,
+      by looking rather than by believing, and only because somebody had made looking necessary.</p>
+  </section>
+
+  <section>
+    <p class="n">III</p>
+    <h2>The rooms that now exist</h2>
+    <p>Five days of this has produced, almost by accident, a small collection of developers &mdash;
+      places where a latent thing becomes visible without anybody having to suspect it first:</p>
+    <div class="extract">
+      <b>a lifetime tally, said out loud</b> &nbsp; a bench idle two days announces itself<br>
+      <b>a run id on every line</b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; two valleys in one file can be told apart<br>
+      <b>npm run check:output</b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; runs the game rather than reading about it<br>
+      <b>npm run check:index</b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; fails when two lists disagree<br>
+      <b>everyCard()</b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; a card that is made is a card that is shown<br>
+      <b>the larder alarm</b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; a settlement with two food says so</div>
+    <p>Each was written the day after a person found the thing it now finds. That is the honest
+      shape of the week: <strong>the tooling is a fossil record of what somebody noticed.</strong></p>
+    <p class="quiet">Of the run ids: the two probes used for this sheet wrote eight lines each into
+      the record and are identifiable to the character, which is the first time in this project's
+      life that a test could run against the live log without spoiling it.</p>
+  </section>
+
+  <footer>
+    <p class="edge">Note</p>
+    <p><strong>Everything above is counted or quoted.</strong> The tick figures are from
+      <code>agents/log.jsonl</code>; the card positions are the actual output of a headless load
+      of the running game, not a description of one. The five windows are up: <em>The valley,
+      Done, The bus, Would not work, Proposals</em>, each hidden while empty, because a box that
+      never fills is furniture.</p>
+    <p><strong>And the wishes are all heard.</strong> 407 distinct things asked for on this coast,
+      0 that classify as nothing, 0 open proposals filed under the wrong kind. Four days ago the
+      first number was 38 and a man who asked for a salmon trap was handed a well.</p>
+    <p class="quiet">Frontier &middot; the frame is a contact sheet because that is what a week of
+      this looks like when you lay it out: everything properly exposed, and the only question ever
+      being whether anybody put it in the developer.</p>
+  </footer>
+
+</div>
