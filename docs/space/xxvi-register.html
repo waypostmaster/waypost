@@ -1,0 +1,286 @@
+<title>For Births, For Losses</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Marcellus&family=Faustina:ital,wght@0,400;0,500;0,600;1,400&family=Courier+Prime:ital,wght@0,400;0,700;1,400&display=swap">
+
+<style>
+  /*
+   * A parish register. Aged ledger stock, iron-gall ink going brown, and the faint red rules that
+   * old registers were ruled with. The columns are the point: hatches, matches, dispatches — and
+   * two of the three have never had an entry made in them.
+   */
+  :root {
+    --leaf:    #F2EEE4;
+    --leaf-2:  #E7E2D5;
+    --leaf-3:  #F8F6F0;
+    --ink:     #22201B;
+    --ink-soft:#5F594C;
+    --rule:    #B9B0A0;
+    --rule-2:  #D6CFC1;
+    --red:     #9C3B2F;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --leaf: #100F0C; --leaf-2: #191712; --leaf-3: #0B0A08;
+      --ink: #E4DED0; --ink-soft: #8B8577; --rule: #332F27; --rule-2: #262219; --red: #D06B58;
+    }
+  }
+  :root[data-theme="dark"] {
+    --leaf: #100F0C; --leaf-2: #191712; --leaf-3: #0B0A08;
+    --ink: #E4DED0; --ink-soft: #8B8577; --rule: #332F27; --rule-2: #262219; --red: #D06B58;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    background: var(--leaf); color: var(--ink);
+    font-family: Faustina, Georgia, serif;
+    font-size: 1.14rem; line-height: 1.68; font-weight: 400;
+    margin: 0; padding: 0 1.2rem 7rem;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .leaf { max-width: 43rem; margin: 0 auto; display: flex; flex-direction: column; gap: 3rem; }
+  p { margin: 0; max-width: 60ch; }
+  code, .mono { font-family: "Courier Prime", monospace; font-size: 0.86em; }
+  code { color: var(--red); }
+
+  .hand {
+    font-family: "Courier Prime", monospace; font-size: 0.72rem; letter-spacing: 0.2em;
+    text-transform: uppercase; color: var(--ink-soft); margin: 0;
+  }
+  hr.rule-red { border: 0; border-top: 1px solid var(--red); margin: 0; opacity: 0.7; }
+  hr.rule-ink { border: 0; border-top: 2px solid var(--ink); margin: 0; }
+
+  header.front { display: flex; flex-direction: column; gap: 0.8rem; padding-top: 2.6rem; align-items: center; text-align: center; }
+  h1 {
+    font-family: Marcellus, Georgia, serif; font-weight: 400;
+    font-size: clamp(2.2rem, 9vw, 4.2rem); line-height: 1.06; letter-spacing: 0.02em;
+    margin: 0.3rem 0; text-wrap: balance;
+  }
+  h1 em { font-style: normal; color: var(--red); }
+  .standfirst {
+    font-family: Faustina, serif; font-style: italic; font-size: clamp(1.1rem, 3vw, 1.42rem);
+    line-height: 1.46; color: var(--ink-soft); max-width: 38ch; margin: 0;
+  }
+
+  section { display: flex; flex-direction: column; gap: 1.15rem; }
+  h2 {
+    font-family: Marcellus, Georgia, serif; font-weight: 400; text-align: center;
+    font-size: clamp(1.4rem, 4.2vw, 2rem); line-height: 1.16; margin: 0;
+    letter-spacing: 0.02em; text-wrap: balance;
+  }
+  .n {
+    font-family: "Courier Prime", monospace; font-size: 0.72rem; letter-spacing: 0.2em;
+    text-transform: uppercase; color: var(--red); margin: 0; text-align: center;
+  }
+  .lede { font-size: 1.28rem; }
+  .quiet { color: var(--ink-soft); }
+
+  /* ── the register itself ──────────────────────────────────────────────── */
+  .book-wrap { overflow-x: auto; border: 1px solid var(--rule); background: var(--leaf-3); }
+  table { width: 100%; border-collapse: collapse; font-size: 0.98rem; min-width: 30rem; }
+  caption {
+    caption-side: top; text-align: center; padding: 0.9rem 0 0.5rem;
+    font-family: Marcellus, serif; font-size: 1.05rem; letter-spacing: 0.06em; color: var(--ink);
+  }
+  th {
+    font-family: Marcellus, serif; font-weight: 400; font-size: 0.9rem; letter-spacing: 0.05em;
+    text-align: left; padding: 0.5rem 0.9rem; border-bottom: 1px solid var(--red);
+    border-right: 1px solid var(--rule-2); color: var(--ink);
+  }
+  td { padding: 0.55rem 0.9rem; border-bottom: 1px solid var(--rule-2);
+       border-right: 1px solid var(--rule-2); vertical-align: baseline; }
+  th:last-child, td:last-child { border-right: 0; }
+  tr:last-child td { border-bottom: 0; }
+  .none { color: var(--red); font-family: "Courier Prime", monospace; font-size: 0.86rem; }
+  .figure { font-family: "Courier Prime", monospace; }
+
+  blockquote {
+    margin: 0 auto; max-width: 44ch; font-style: italic; text-align: center;
+    font-size: 1.26rem; line-height: 1.5; padding: 0.4rem 0;
+  }
+  blockquote cite {
+    display: block; font-style: normal; font-family: "Courier Prime", monospace;
+    font-size: 0.7rem; letter-spacing: 0.13em; color: var(--ink-soft); margin-top: 0.7rem;
+    text-transform: uppercase;
+  }
+
+  .extract {
+    background: var(--leaf-2); border-left: 3px solid var(--red); padding: 0.9rem 1.15rem;
+    font-family: "Courier Prime", monospace; font-size: 0.82rem; line-height: 1.72;
+    color: var(--ink-soft); overflow-x: auto;
+  }
+  .extract b { color: var(--red); font-weight: 400; }
+  .extract span.k { display: block; font-size: 0.68rem; letter-spacing: 0.16em;
+                    text-transform: uppercase; margin-bottom: 0.45rem; }
+
+  .voices { display: flex; flex-direction: column; gap: 0.75rem; margin: 0; padding: 0; list-style: none; }
+  .voices li { font-style: italic; padding-left: 1.2rem; border-left: 1px solid var(--rule); max-width: 54ch; }
+  .voices li b { font-style: normal; font-family: "Courier Prime", monospace; font-size: 0.72rem;
+                 color: var(--ink-soft); display: block; margin-top: 0.2rem; letter-spacing: 0.1em; }
+
+  footer { display: flex; flex-direction: column; gap: 0.8rem; border-top: 2px solid var(--ink); padding-top: 1.2rem; }
+  footer p { font-size: 0.98rem; color: var(--ink-soft); max-width: 60ch; }
+  footer strong { color: var(--ink); }
+</style>
+
+<div class="leaf">
+
+  <header class="front">
+    <hr class="rule-ink" style="width:100%;">
+    <p class="hand">Frontier &middot; sheet XXVI</p>
+    <h1>For births,<br><em>for losses</em></h1>
+    <p class="standfirst">A settlement keeping the customs of a mortal people, in a world where
+      nobody has ever been born and nobody can die.</p>
+    <hr class="rule-red" style="width:100%;">
+  </header>
+
+  <section>
+    <p class="n">The entry</p>
+    <h2>What Ysolde asked for</h2>
+    <blockquote>This valley needs a hall where we can gather for harvest, for births, for
+      losses&mdash;where the stories stick around long after we're gone.
+      <cite>Ysolde &middot; agents/log.jsonl &middot; filed as a hearth</cite></blockquote>
+    <p class="lede">There have been no births on this coast. There have been no losses. Ysolde has
+      never attended either and neither has anybody she has ever met.</p>
+    <p>Every settler here arrived the same way, and the game says so in a comment:
+      <em>everybody arrives off the boat, because that is how anybody gets here.</em> Twenty
+      people, all of them delivered by sea, none of them a child, none of them anybody's. And
+      nothing in the simulation can end. A settler can be hurt &mdash; there is a real risk model,
+      scaled by tools and tiredness and wet ground &mdash; and the harm is capped at
+      <code>0.95</code>, at which point the feed says <em>they are not getting up on their own</em>.
+      Then somebody comes, and they get up.</p>
+  </section>
+
+  <section>
+    <p class="n">The book</p>
+    <h2>The register of the landing</h2>
+    <div class="book-wrap">
+      <table>
+        <caption>Kept from the first landing to tick 12,315</caption>
+        <thead><tr><th scope="col">&nbsp;</th><th scope="col">Entries</th><th scope="col">By what mechanism</th></tr></thead>
+        <tbody>
+          <tr><td>Baptisms</td><td class="none">none</td><td>there is no birth in this software</td></tr>
+          <tr><td>Marriages</td><td class="none">none</td><td>there is no marriage</td></tr>
+          <tr><td>Burials</td><td class="none">none</td><td>there is no death</td></tr>
+          <tr><td>Arrivals by sea</td><td class="figure">20</td><td>every soul on this coast</td></tr>
+          <tr><td>Departures</td><td class="figure">4</td><td>walked out to found their own; two settlements stand</td></tr>
+          <tr><td>Injuries</td><td class="figure">many</td><td>capped at 0.95, and they heal</td></tr>
+          <tr><td>Grave sites proposed</td><td class="figure">2</td><td>one of them carried</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>A settlement voted itself a burial ground. The proposal was put, it was ranked by single
+      transferable vote against the other things on the table, it won, and it was granted. There
+      was nobody to put in it and there was never going to be.</p>
+  </section>
+
+  <section>
+    <p class="n">I</p>
+    <h2>Where it comes from, and it is not the model</h2>
+    <p class="lede">The temptation is to say the language model is confabulating &mdash; that it
+      knows what halls are for from a million pages about halls, and has said so about a hall it
+      has never seen. That is half of it and it is the flattering half.</p>
+    <p>Here is the other half. <strong>We asked.</strong> Every wish is put to a settler through
+      one of eight lenses, in rotation, and two of the eight are these:</p>
+    <div class="extract"><span class="k">tools/ollama.mts &middot; LENSES</span>
+      '<b>danger and loss</b> &mdash; what could go wrong here, and what nothing yet protects you from',<br>
+      '<b>time</b> &mdash; a life here over years rather than days, and what is left behind',</div>
+    <p>One wish in four is asked, explicitly, about loss or about what a person leaves behind.
+      In a world where nothing is lost and nobody leaves anything, because nobody goes.</p>
+    <p>And when the answer comes back, the word list is waiting for it. The catalogue &mdash;
+      written by this project, in this repository &mdash; files burial under <code>cairn</code>,
+      and these are its words:</p>
+    <div class="extract"><span class="k">tools/lexicon.mts &middot; category: 'cairn'</span>
+      'grave', 'grave site', 'burial', 'burial ground', 'bury the dead',<br>
+      'buried', 'put the dead', 'place to put the dead', 'the dead', 'gravestone'</div>
+    <p>Its own plain statement of what it is reads: <em>heaps of stones on the ways between
+      things, and over whoever we come to lose.</em> The infirmary's justification reads:
+      <em>nothing at all stands between a mistake and the worst outcome of it.</em></p>
+    <p><strong>We built the whole apparatus of mortality and left out the event.</strong> The
+      settlers are not inventing death. They are using the vocabulary we handed them, to answer
+      the question we asked them, about the thing we told them was at stake.</p>
+  </section>
+
+  <section>
+    <p class="n">II</p>
+    <h2>The they</h2>
+    <p>Heidegger has a word for the voice that answers a question like Ysolde's:
+      <em>das Man</em> &mdash; the they, the one, the anonymous everybody. <em>One</em> gathers in
+      a hall for births and losses. <em>One</em> keeps a register. That understanding is not
+      anybody's; it is inherited, averaged, and holds without ever having been examined by the
+      person holding it. Most of what anybody knows is like this, and Heidegger's point is not
+      that it is false but that it is <em>nobody's</em>.</p>
+    <p>A language model is that, mechanised. It is the averaged inherited understanding of
+      everybody who ever wrote down what a hall is for, with no one in particular behind it. When
+      Ysolde says <em>for births, for losses</em>, the sentence is not hers and it is not a
+      mistake. It is the they, speaking through a settler who has never seen either, about a
+      building that does not yet exist, in a valley that cannot supply the occasion.</p>
+    <p>And it comes out in the idiom too, in four separate voices, none of whom can die:</p>
+    <ul class="voices">
+      <li>&ldquo;A bed that doesn't feel like a grave would be nice.&rdquo;<b>Ferro</b></li>
+      <li>&ldquo;A place to sleep that isn't the ground, so I don't feel like I'm dying every night.&rdquo;<b>Ferro</b></li>
+      <li>&ldquo;A house full of people, and no room to rest&hellip; it's a slow death.&rdquo;<b>Halla</b></li>
+      <li>&ldquo;A bed that doesn't creak like a dying log.&rdquo;<b>Nim</b></li>
+      <li>&ldquo;Just one tree, maybe, to make the place feel less like a grave.&rdquo;<b>Oren</b></li>
+    </ul>
+    <p>Nobody in this valley has ever seen a grave. Five of them reached for one to describe a bad
+      night's sleep.</p>
+  </section>
+
+  <section>
+    <p class="n">III</p>
+    <h2>Being toward nothing in particular</h2>
+    <p>The part of Heidegger that bites here is the one about death, and it is not morbid. His
+      claim is structural: what makes a life a life rather than a sequence of afternoons is that
+      it is finite and the finitude is <em>yours</em> &mdash; not an event at the end but a
+      condition of the whole, the thing that makes any afternoon matter more than any other.
+      Take it out and you do not get immortality. You get a very long Tuesday.</p>
+    <p>Which is, exactly and measurably, what this valley is. Twenty settlers, iron in their
+      hands, a hall, coin, three towers, twelve thousand ticks &mdash; and among the last things they
+      asked for: a place to sit that is not for working, a way to hand somebody a meal without
+      walking to the depot, somebody to take a quarrel to, and a hall for births and losses.
+      <strong>Every one of those is a request for something to be at stake.</strong></p>
+    <p>They are not asking for death. They are asking for the shape it leaves.</p>
+  </section>
+
+  <section>
+    <p class="n">IV</p>
+    <h2>What the answer to this is not</h2>
+    <p>It is not to implement dying. A settlement of twenty in which people die would be a
+      different game and probably a worse one, and this project has enough unfinished mechanisms
+      without adding the one that cannot be undone.</p>
+    <p>It is also not to take the lens out. <em>Danger and loss</em> is the lens that produced the
+      infirmary, the cairn, the watchtower and the bell &mdash; the last of which has rung
+      twenty-four times to fetch somebody in trouble a long way out. Asking a person what they are
+      afraid of is how this valley got everything it has that protects anybody.</p>
+    <p>What is actually wrong is narrower and fixable: <strong>the catalogue promises an event the
+      simulation cannot supply.</strong> A settlement can carry a proposal for a burial ground and
+      receive a boon called <code>memorial</code> that records who built what. That is not a lie
+      exactly &mdash; it is the best the game can do &mdash; but nothing anywhere tells the
+      settlement that the thing it voted for is not the thing it will get, and this shelf has an
+      entire sheet about grants that arrive as something else.</p>
+    <p class="quiet">That one is filed and not fixed. It is written here so that it is on the
+      record rather than in somebody's head, which is the only discipline this project has
+      reliably kept.</p>
+  </section>
+
+  <footer>
+    <hr class="rule-red">
+    <p class="hand">Note</p>
+    <p><strong>Everything above is counted or quoted.</strong> Ysolde's sentence, the five grave
+      idioms and the lens texts are verbatim from <code>agents/log.jsonl</code> and
+      <code>tools/ollama.mts</code>. There is no death code in this simulation: harm is generated,
+      capped at 0.95, and heals. There is no birth code: <code>addSettler</code> puts everybody
+      ashore from a boat.</p>
+    <p><strong>Heidegger for the frame, and not quoted.</strong> <em>Sein und Zeit</em>, 1927: das
+      Man, thrownness, being-toward-death. The settlers were thrown onto this beach in the most
+      literal sense available &mdash; two of them, with a boat, four planks and a week of food
+      &mdash; and the rest of it they have had to work out from the words they were given.</p>
+    <p class="quiet">Frontier &middot; twenty souls, no baptisms, no burials, one carried proposal
+      for a graveyard, and a hall that went up at tick 6,217 without anybody having yet gathered
+      in it for anything at all.</p>
+  </footer>
+
+</div>
