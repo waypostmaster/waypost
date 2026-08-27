@@ -1,0 +1,324 @@
+<title>Thanks for All the Fish</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Vollkorn:ital,wght@0,400;0,600;1,400&family=Anonymous+Pro:ital,wght@0,400;0,700;1,400&display=swap">
+
+<style>
+  /*
+   * A guide entry, in its two states: the printed page, and the device it is normally read on.
+   * Light is paper and a dark bottle-green. Dark is the screen — phosphor, but tempered, because
+   * a whole essay set in signal green is a joke you can only tell once and not to the reader.
+   */
+  :root {
+    --page:     #F2F1EC;
+    --page-2:   #E6E5DE;
+    --page-3:   #FAFAF7;
+    --ink:      #151A17;
+    --ink-soft: #5A635D;
+    --rule:     #A9AFA9;
+    --rule-2:   #C9CDC7;
+    --signal:   #1D6B45;
+    --alarm:    #9B3520;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --page: #080C0A; --page-2: #0F1613; --page-3: #050907;
+      --ink: #CFE9D8; --ink-soft: #6E9280;
+      --rule: #1C3D2D; --rule-2: #142B20;
+      --signal: #4FE08A; --alarm: #FF9A6B;
+    }
+  }
+  :root[data-theme="dark"] {
+    --page: #080C0A; --page-2: #0F1613; --page-3: #050907;
+    --ink: #CFE9D8; --ink-soft: #6E9280;
+    --rule: #1C3D2D; --rule-2: #142B20;
+    --signal: #4FE08A; --alarm: #FF9A6B;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    background: var(--page); color: var(--ink);
+    font-family: Vollkorn, Georgia, "Times New Roman", serif;
+    font-size: 1.12rem; line-height: 1.64; font-weight: 400;
+    margin: 0; padding: 0 1.15rem 7rem;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .guide { max-width: 47rem; margin: 0 auto; display: flex; flex-direction: column; gap: 2.8rem; }
+  p { margin: 0; max-width: 63ch; }
+  strong { font-weight: 600; }
+  code, .mono { font-family: "Anonymous Pro", ui-monospace, monospace; font-size: 0.86em; }
+  code { color: var(--signal); }
+
+  .tag {
+    font-family: "Anonymous Pro", monospace; font-size: 0.71rem; letter-spacing: 0.15em;
+    text-transform: uppercase; color: var(--ink-soft); margin: 0;
+  }
+  .rule { border: 0; border-top: 1px solid var(--rule); margin: 0; }
+  .rule-heavy { border: 0; border-top: 2px solid var(--signal); margin: 0; }
+
+  header.front { display: flex; flex-direction: column; gap: 0.5rem; padding-top: 2rem; }
+  .front-row { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 0.4rem 1.5rem; }
+
+  h1 {
+    font-family: Syne, "Helvetica Neue", Arial, sans-serif; font-weight: 800;
+    font-size: clamp(2.2rem, 9vw, 4.6rem); line-height: 0.98; letter-spacing: -0.03em;
+    margin: 1rem 0 0; text-wrap: balance;
+  }
+  h1 em { font-style: normal; color: var(--signal); }
+  .standfirst {
+    font-size: clamp(1.1rem, 2.9vw, 1.42rem); line-height: 1.42; font-style: italic;
+    max-width: 46ch; margin: 0; color: var(--ink-soft); text-wrap: balance;
+  }
+  .byline { font-family: "Anonymous Pro", monospace; font-size: 0.75rem; color: var(--ink-soft); max-width: 58ch; }
+
+  section { display: flex; flex-direction: column; gap: 1.05rem; }
+  h2 {
+    font-family: Syne, Arial, sans-serif; font-weight: 700;
+    font-size: clamp(1.25rem, 3.6vw, 1.85rem); line-height: 1.1; margin: 0;
+    border-bottom: 2px solid var(--signal); padding-bottom: 0.4rem; letter-spacing: -0.018em;
+  }
+  .ent {
+    font-family: "Anonymous Pro", monospace; font-size: 0.71rem; letter-spacing: 0.15em;
+    text-transform: uppercase; color: var(--signal); margin: 0;
+  }
+  .lede { font-size: 1.24rem; }
+  .quiet { color: var(--ink-soft); }
+
+  /* the device readout */
+  .screen {
+    background: var(--page-3); border: 1px solid var(--rule);
+    padding: 1.15rem 1.25rem; display: flex; flex-direction: column; gap: 0.5rem;
+    font-family: "Anonymous Pro", monospace; font-size: 0.84rem; line-height: 1.62;
+    overflow-x: auto;
+  }
+  .screen b { color: var(--signal); font-weight: 700; }
+  .screen i { color: var(--ink-soft); font-style: normal; }
+  .screen .bad { color: var(--alarm); font-weight: 700; }
+  .screen-k {
+    font-family: "Anonymous Pro", monospace; font-size: 0.68rem; letter-spacing: 0.15em;
+    text-transform: uppercase; color: var(--ink-soft); margin: 0 0 0.2rem;
+  }
+
+  blockquote {
+    margin: 0; padding: 0.2rem 0 0.2rem 1.2rem; border-left: 3px solid var(--signal);
+    max-width: 58ch; font-style: italic;
+  }
+  blockquote cite { display: block; font-style: normal; font-family: "Anonymous Pro", monospace;
+                    font-size: 0.75rem; color: var(--ink-soft); margin-top: 0.5rem; }
+
+  .tbl-wrap { overflow-x: auto; border-top: 2px solid var(--signal); border-bottom: 2px solid var(--signal); }
+  table { width: 100%; border-collapse: collapse; font-size: 0.93rem; font-variant-numeric: tabular-nums; min-width: 28rem; }
+  th {
+    font-family: "Anonymous Pro", monospace; font-size: 0.65rem; letter-spacing: 0.11em;
+    text-transform: uppercase; color: var(--ink-soft); font-weight: 400; text-align: left;
+    padding: 0.45rem 0.9rem 0.45rem 0; border-bottom: 1px solid var(--signal); white-space: nowrap;
+  }
+  td { padding: 0.44rem 0.9rem 0.44rem 0; border-bottom: 1px solid var(--rule-2); vertical-align: baseline; }
+  tr:last-child td { border-bottom: 0; }
+  .n { font-family: "Anonymous Pro", monospace; white-space: nowrap; }
+  .n-big { font-family: "Anonymous Pro", monospace; color: var(--signal); font-weight: 700; white-space: nowrap; }
+  .lbl { font-weight: 600; }
+
+  .answer {
+    border: 2px solid var(--signal); padding: 1.6rem 1.3rem; text-align: center;
+    display: flex; flex-direction: column; gap: 0.6rem; background: var(--page-3);
+  }
+  .answer-n {
+    font-family: Syne, Arial, sans-serif; font-weight: 800; color: var(--signal);
+    font-size: clamp(3.4rem, 15vw, 7rem); line-height: 0.9; margin: 0; letter-spacing: -0.04em;
+  }
+  .answer p { max-width: 44ch; margin: 0 auto; }
+
+  .foot {
+    border-left: 3px solid var(--rule); padding-left: 1.1rem; color: var(--ink-soft);
+    font-size: 0.95rem; display: flex; flex-direction: column; gap: 0.5rem;
+  }
+  .foot p { max-width: 60ch; }
+  .foot sup { color: var(--signal); font-weight: 600; }
+
+  footer { display: flex; flex-direction: column; gap: 0.7rem; border-top: 2px solid var(--signal); padding-top: 1.05rem; }
+  footer p { font-size: 0.97rem; color: var(--ink-soft); max-width: 66ch; }
+  footer strong { color: var(--ink); }
+</style>
+
+<div class="guide">
+
+  <header class="front">
+    <hr class="rule-heavy">
+    <div class="front-row">
+      <p class="tag">Frontier &middot; entry: the landing</p>
+      <p class="tag">Revision 41 &middot; supersedes all</p>
+    </div>
+    <hr class="rule">
+    <h1>Thanks for <em>all the fish</em></h1>
+    <p class="standfirst">On this coast the second most intelligent species spent four days trying
+      to tell somebody something, and every attempt was filed, numbered, and understood as
+      something else.</p>
+    <p class="byline">781 messages received &middot; 1,271 refused as repetitions &middot; 703
+      destroyed &middot; one of them was about fish and was recorded as a well</p>
+  </header>
+
+  <section>
+    <p class="ent">Entry &middot; part one</p>
+    <h2>The messages</h2>
+    <p class="lede">Every sixth time a settler is asked what to do, they are asked a second
+      question instead: what is this valley missing? They have now answered it
+      <strong>seven hundred and eighty-one times.</strong></p>
+    <p>It is worth saying plainly what that is. Nobody asked these people to file feature
+      requests. They were asked what was missing from the place they live, they answered as
+      people about a life, and the answers went into a markdown file with tick boxes on them. Of
+      the 781, one thousand two hundred and seventy-one further attempts were refused as
+      repetitions of something already on the list<sup>1</sup>, and seven hundred and three were
+      deleted &mdash; a median of eighty-two seconds after being written down.</p>
+    <p>The dolphins, in the story this borrows from, spent a long time trying to warn everybody
+      about something and were understood to be doing tricks. The mechanism here is more careful
+      than that and arrives in the same place: every message was received, logged, timed, costed,
+      classified, ranked by single transferable vote, and counted twice.</p>
+    <div class="foot">
+      <p><sup>1</sup> Which is a higher number than the number of messages, and that is not a typo.
+        More was refused than was heard. The refusals are in the record too, with reasons, because
+        this project does keep everything &mdash; which is the strangest part of it, and the part
+        that makes the rest of this sheet possible to write.</p>
+    </div>
+  </section>
+
+  <section>
+    <p class="ent">Entry &middot; part two</p>
+    <h2>Mara, tick 250</h2>
+    <p>On the twenty-fourth of August, a little after eight by the record&rsquo;s clock, a forester called
+      Mara was asked what the valley was missing. This is what she said, in full, and it is the
+      most remarkable line on the entire record:</p>
+    <blockquote>I wish the lake had a way to fish for salmon, but since we don't have fish, I wish
+      for a way to know when the lake is safe to swim without getting caught in a current.
+      <cite>agents/log-0001.jsonl &middot; wish-73 &middot; npc-01 &middot; tick 250</cite></blockquote>
+    <p class="lede">She asked for fish, noticed there were none, and downgraded her own request
+      inside the same sentence.</p>
+    <p>Nobody told her there were no fish. There is no line anywhere in this software that says so.
+      She worked it out, in the way you work out that a shop does not stock a thing by never once
+      seeing it on a shelf, and rather than ask for something the world plainly did not contain she
+      asked for the next thing down: a way to know whether the water was safe.</p>
+    <p>It was filed under <code>infirmary</code>.</p>
+    <p>Her wish then went to a vote, lost, and was deleted. The number it had been given &mdash;
+      <code>wish-73</code> &mdash; was handed to twenty other people over the following hour,
+      because the counter that issued it read the highest number still in the file and the file had
+      just had its highest number taken out of it.</p>
+  </section>
+
+  <section>
+    <p class="ent">Entry &middot; part three</p>
+    <h2>Mostly harmless</h2>
+    <p>Fourteen hours later, on the coast of a different valley, a farmer called Anselm tried
+      again. He was more direct about it than Mara had been:</p>
+    <div class="screen">
+      <p class="screen-k">agents/log-0002.jsonl &middot; 25 Aug 12:07:39</p>
+      <div><i>said    </i> I wish for a way to catch a salmon without having to fish for it,</div>
+      <div><i>        </i> since the water is too cold to hold my breath for long.</div>
+      <div><i>missing </i> <b>A salmon trap</b></div>
+      <div><i>category</i> <span class="bad">well</span></div>
+    </div>
+    <p>The Guide's famous entry on a certain planet ran to a single word, and then, after fifteen
+      years of field research, to two. The catalogue's entry on a salmon trap ran to one word for
+      four days and the word was <strong>well</strong>.</p>
+    <p>It was not malice or even carelessness. It was a word list. The classifier that turns what a
+      settler says into something the game can grant had no entry containing the word
+      <em>fish</em>, so it did what a word list does with a sentence it cannot parse: it found the
+      nearest thing it did know. Water. A well is water. The vote carried, the settlement was
+      granted a well, the well is still standing, and the record has been carrying the line
+      <em>there are no fish</em> in its own colophon ever since.</p>
+    <p>Anselm asked for a way of eating. He was given somewhere to drink.</p>
+  </section>
+
+  <section>
+    <p class="ent">Entry &middot; part four</p>
+    <h2>The Babel fish</h2>
+    <p>The joke that the borrowed book turns on is a fish you put in your ear that translates
+      anything into anything, and which by being so improbably useful is taken as proof of the
+      non-existence of God.</p>
+    <p>This game has one. It is called <code>classify()</code>, it is four hundred lines of word
+      lists, and it sits between fifteen people who talk about their lives and a simulation that
+      understands forty-one nouns. Everything they have ever asked for has gone through it. It is
+      the single most load-bearing component in the project and it is a list of words somebody
+      typed.</p>
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th scope="col">Through the Babel fish</th><th scope="col">Count</th><th scope="col">&nbsp;</th></tr></thead>
+        <tbody>
+          <tr><td class="lbl">Distinct things asked for</td><td class="n-big">401</td><td>in the settlers&rsquo; own words</td></tr>
+          <tr><td class="lbl">Understood as something</td><td class="n">392</td><td>rightly or otherwise &mdash; see: well</td></tr>
+          <tr><td class="lbl">Heard as nothing at all</td><td class="n-big">38</td><td>before this morning</td></tr>
+          <tr><td class="lbl">Heard as nothing at all</td><td class="n-big">9</td><td>now &mdash; and the nine are genuinely new ideas</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>Thirty of them came in from the cold at once and <strong>not one required a line of new
+      simulation</strong>. A footpath to the high meadows was always a road. A tunnel system was
+      always a shaft. A pulley was a cart, a tool rack was upkeep, a sundial was the forecast, and
+      a lantern, a chimney and a fireproof box for carrying embers between fires were all, every
+      one of them, the firepit. The world could already do these things. Nobody had told the fish
+      the words.</p>
+  </section>
+
+  <section>
+    <p class="ent">Entry &middot; part five</p>
+    <h2>The answer</h2>
+    <p>Two sheets ago this office measured exactly how much of the world a settler is shown when
+      the game stops and asks them what to do. It is the nearest tree, rock, seam and berry bush;
+      the five nearest buildings; and every person standing within a certain radius.</p>
+    <p>The radius is in the source, on line 2,873, and has been since the file was written:</p>
+    <div class="screen">
+      <p class="screen-k">src/sim.ts &middot; function nearby()</p>
+      <div>.filter((o) =&gt; o.id !== n.id &amp;&amp; dist(n.gx, n.gy, o.gx, o.gy) &lt; <b>42</b>)</div>
+    </div>
+    <div class="answer">
+      <p class="tag">The answer to life, the universe and everything</p>
+      <p class="answer-n">42</p>
+      <p>and the question, it turns out, was <em>how far can anybody here see?</em></p>
+    </div>
+    <p>Nobody chose it for the joke. It was chosen because it felt like a sensible distance to be
+      able to recognise somebody across, which is the only kind of number this codebase contains,
+      and it went unnoticed for four days and twenty sheets by a press that has otherwise counted
+      everything on this coast twice.</p>
+  </section>
+
+  <section>
+    <p class="ent">Entry &middot; part six</p>
+    <h2>So long</h2>
+    <p>As of this morning there are fish.</p>
+    <p>A weir is a thing a settlement can vote itself. A farmer who cannot find a bush, or whose
+      settlement is under a day's food for everybody in it, walks to the water instead. Berries
+      are the only food this game has ever had and they do not come back quickly enough for a
+      settlement that has grown &mdash; which is why this valley, holding two hundred and twenty-six
+      boards, twenty-four bars of iron, twenty-nine dressed blocks, three towers, a hall and two
+      hundred and two struck coins, was down to five food for twelve people. It had solved metal
+      and money and forgotten lunch.</p>
+    <p>And here the borrowed ending does not fit, which is the honest place to stop.</p>
+    <p class="lede">In the book the fish are what you thank people for on the way out. Here they
+      arrived, and nobody left.</p>
+    <p>The settlers are still on the coast. The hall went up at tick 6,217 and lifted the ceiling
+      from ten to twenty for the first time in this project's history, and people have started
+      coming through it. Nobody has voted for a weir yet, because nobody has been asked yet, and
+      when they are asked the words will be there. Mara's line about not having any fish is still
+      in the log, under a number that belonged to twenty-one people, filed as an infirmary. It will
+      stay there. Nothing here is ever deleted.</p>
+    <p>Anselm's well is still standing too.</p>
+  </section>
+
+  <footer>
+    <p class="tag">Guide note</p>
+    <p><strong>Every figure above is counted.</strong> 781 filings, 1,271 refusals, 703 strikes
+      and 396 distinct wordings are from <code>agents/log-0001.jsonl</code> through
+      <code>log.jsonl</code>, seventy megabytes, nothing removed. Mara's sentence and Anselm's are
+      reproduced exactly, including Mara's comma splice, which is hers.</p>
+    <p><strong>What this sheet does not claim.</strong> That the weir works. Run against an
+      unattended valley for six thousand ticks it fired once, because the fallback that looks for a
+      berry bush found one every single time and that settlement was never actually hungry. It was
+      built for this one. Whether it helps is a thing the next run will say.</p>
+    <p class="quiet">Frontier &middot; a coast simulated by a language model, whose settlers are
+      asked every sixth decision what the valley is missing. They have answered 781 times, and on
+      one of those occasions somebody worked out from the absence of any evidence that the world
+      contained no fish, and asked for something smaller.</p>
+  </footer>
+
+</div>
