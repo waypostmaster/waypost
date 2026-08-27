@@ -1,0 +1,446 @@
+<title>Level One, With Excellent Comments</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;600;800&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,300&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap">
+
+<style>
+  /*
+   * A capability appraisal, dressed as one: grey-bone report stock, a government grotesque for
+   * headings, and a single dark ochre for every assessment mark. Good and bad are carried by
+   * position on the scale, not by colour, because that is the finding.
+   */
+  :root {
+    --stock:    #E6E4DD;
+    --stock-2:  #DAD8CF;
+    --stock-3:  #F1F0EB;
+    --ink:      #16171A;
+    --ink-soft: #5A5C60;
+    --rule:     #A8A9A2;
+    --rule-2:   #C5C5BD;
+    --mark:     #8A6512;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --stock: #16171A; --stock-2: #1F2125; --stock-3: #101113;
+      --ink: #E5E3DB; --ink-soft: #92948C;
+      --rule: #3B3D40; --rule-2: #2A2C2F; --mark: #D9AB43;
+    }
+  }
+  :root[data-theme="dark"] {
+    --stock: #16171A; --stock-2: #1F2125; --stock-3: #101113;
+    --ink: #E5E3DB; --ink-soft: #92948C;
+    --rule: #3B3D40; --rule-2: #2A2C2F; --mark: #D9AB43;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    background: var(--stock); color: var(--ink);
+    font-family: "Source Serif 4", Georgia, "Times New Roman", serif;
+    font-size: 1.07rem; line-height: 1.63; font-weight: 300;
+    margin: 0; padding: 0 1.15rem 7rem;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .sheet { max-width: 50rem; margin: 0 auto; display: flex; flex-direction: column; gap: 3.1rem; }
+  p { margin: 0; max-width: 65ch; }
+  strong { font-weight: 600; }
+  code, .mono { font-family: "Space Mono", ui-monospace, monospace; font-size: 0.85em; }
+  code { color: var(--mark); }
+
+  .tag {
+    font-family: "Space Mono", monospace; font-size: 0.69rem; letter-spacing: 0.15em;
+    text-transform: uppercase; color: var(--ink-soft); margin: 0;
+  }
+  .tag-mark { color: var(--mark); }
+  .rule { border: 0; border-top: 1px solid var(--rule); margin: 0; }
+  .rule-heavy { border: 0; border-top: 3px solid var(--ink); margin: 0; }
+
+  header.cover { display: flex; flex-direction: column; gap: 0.55rem; padding-top: 2rem; }
+  .cover-row { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 0.4rem 1.5rem; }
+
+  h1 {
+    font-family: "Public Sans", "Helvetica Neue", Arial, sans-serif; font-weight: 800;
+    font-size: clamp(2.1rem, 8.2vw, 4.3rem); line-height: 0.99; letter-spacing: -0.032em;
+    margin: 1rem 0 0; text-wrap: balance;
+  }
+  h1 span { color: var(--mark); }
+  .deck {
+    font-size: clamp(1.07rem, 2.8vw, 1.36rem); line-height: 1.44; font-weight: 400;
+    max-width: 46ch; margin: 0; text-wrap: balance;
+  }
+  .byline { font-family: "Space Mono", monospace; font-size: 0.76rem; color: var(--ink-soft); max-width: 58ch; }
+
+  .part { display: flex; flex-direction: column; gap: 1.15rem; }
+  .part-head {
+    display: flex; align-items: baseline; gap: 0.9rem 1.2rem; flex-wrap: wrap;
+    border-bottom: 3px solid var(--ink); padding-bottom: 0.5rem;
+  }
+  .part-num {
+    font-family: "Space Mono", monospace; font-size: 0.69rem; letter-spacing: 0.15em;
+    text-transform: uppercase; color: var(--mark); white-space: nowrap;
+  }
+  .part-title {
+    font-family: "Public Sans", Arial, sans-serif; font-weight: 600;
+    font-size: clamp(1.2rem, 3.3vw, 1.68rem); line-height: 1.12; margin: 0;
+    flex: 1 1 14rem; text-wrap: balance; letter-spacing: -0.014em;
+  }
+  .lede { font-size: 1.17rem; font-weight: 400; }
+  .quiet { color: var(--ink-soft); }
+
+  .tbl-wrap { overflow-x: auto; border-top: 3px solid var(--ink); border-bottom: 3px solid var(--ink); }
+  table { width: 100%; border-collapse: collapse; font-size: 0.87rem; font-variant-numeric: tabular-nums; min-width: 33rem; }
+  caption {
+    caption-side: top; text-align: left; padding: 0.7rem 0;
+    font-family: "Space Mono", monospace; font-size: 0.69rem; letter-spacing: 0.15em;
+    text-transform: uppercase; color: var(--ink-soft);
+  }
+  th {
+    font-family: "Space Mono", monospace; font-size: 0.64rem; letter-spacing: 0.11em;
+    text-transform: uppercase; color: var(--ink-soft); font-weight: 400; text-align: left;
+    padding: 0.45rem 0.85rem 0.45rem 0; border-bottom: 1px solid var(--ink); white-space: nowrap;
+  }
+  td { padding: 0.46rem 0.85rem 0.46rem 0; border-bottom: 1px solid var(--rule-2); vertical-align: baseline; }
+  tr:last-child td { border-bottom: 0; }
+  .n { font-family: "Space Mono", monospace; white-space: nowrap; }
+  .n-mark { font-family: "Space Mono", monospace; color: var(--mark); font-weight: 700; white-space: nowrap; }
+  .lbl { font-weight: 600; }
+
+  figure { margin: 0; display: flex; flex-direction: column; gap: 0.75rem; }
+  .figbox { overflow-x: auto; background: var(--stock-3); border: 1px solid var(--rule-2); padding: 1rem 0.6rem; }
+  figure svg { display: block; max-width: 100%; height: auto; min-width: 32rem; }
+  figcaption { font-size: 0.94rem; color: var(--ink-soft); max-width: 62ch; }
+
+  .strip {
+    background: var(--stock-3); border-left: 4px solid var(--mark); padding: 1rem 1.15rem;
+    font-family: "Space Mono", monospace; font-size: 0.79rem; line-height: 1.6;
+    display: flex; flex-direction: column; gap: 0.3rem; overflow-x: auto;
+  }
+  .strip b { color: var(--mark); font-weight: 700; }
+  .strip i { color: var(--ink-soft); font-style: normal; }
+
+  .findings { display: flex; flex-direction: column; gap: 0; margin: 0; padding: 0; list-style: none; }
+  .findings li {
+    display: grid; grid-template-columns: 3.1rem 1fr; gap: 0.4rem 1.1rem;
+    padding: 0.9rem 0; border-bottom: 1px solid var(--rule-2);
+  }
+  .findings li:first-child { border-top: 1px solid var(--ink); }
+  .findings dfn {
+    font-family: "Space Mono", monospace; font-size: 0.72rem; color: var(--mark);
+    font-style: normal; font-weight: 700;
+  }
+  .findings h3 {
+    font-family: "Public Sans", Arial, sans-serif; font-weight: 600; font-size: 1.02rem;
+    margin: 0 0 0.3rem; letter-spacing: -0.008em;
+  }
+  .findings p { max-width: 58ch; }
+  @media (max-width: 34rem) { .findings li { grid-template-columns: 1fr; } }
+
+  .verdict {
+    border: 3px solid var(--ink); padding: 1.5rem 1.3rem;
+    display: flex; flex-direction: column; gap: 0.9rem; background: var(--stock-3);
+  }
+  .verdict-big {
+    font-family: "Public Sans", Arial, sans-serif; font-weight: 800;
+    font-size: clamp(1.5rem, 5.2vw, 2.5rem); line-height: 1.05; margin: 0;
+    letter-spacing: -0.028em; text-wrap: balance;
+  }
+  .verdict-big span { color: var(--mark); }
+
+  footer { display: flex; flex-direction: column; gap: 0.7rem; border-top: 3px solid var(--ink); padding-top: 1.05rem; }
+  footer p { font-size: 0.92rem; color: var(--ink-soft); max-width: 68ch; }
+  footer strong { color: var(--ink); }
+</style>
+
+<div class="sheet">
+
+  <header class="cover">
+    <hr class="rule-heavy">
+    <div class="cover-row">
+      <p class="tag">Frontier &middot; capability appraisal</p>
+      <p class="tag">Engagement 001 &middot; commissioned by nobody</p>
+    </div>
+    <hr class="rule">
+    <div class="cover-row">
+      <p class="tag">116 commits &middot; four days &middot; 18,552 lines</p>
+      <p class="tag tag-mark">Git remotes configured: 0</p>
+    </div>
+    <h1>Level one, with <span>excellent comments</span></h1>
+    <p class="deck">An assessment of how this software is built, against how software is actually
+      built. It does several things better than most shipped products and one thing worse than
+      any of them: it has never been given to anybody.</p>
+    <p class="byline">Prepared from the repository, the commit log and <code>agents/</code> &middot;
+      by the same office that has now written seventeen advertisements for a program with no
+      distribution channel</p>
+  </header>
+
+  <section class="part">
+    <div class="part-head">
+      <p class="part-num">§1</p>
+      <h2 class="part-title">What this project does better than most software</h2>
+    </div>
+    <p class="lede">This is not a courtesy paragraph. Four of these are practices that most
+      professional teams talk about and do not do.</p>
+    <div class="tbl-wrap">
+      <table>
+        <caption>Counted from the tree, not asserted</caption>
+        <thead><tr><th scope="col">Practice</th><th scope="col">Measure</th><th scope="col">Industry norm</th></tr></thead>
+        <tbody>
+          <tr><td class="lbl">Comments that record <em>why</em></td><td class="n-mark">5,862 of 16,850 lines &mdash; 34.8%</td><td class="n">10&ndash;20%, and mostly restating the code</td></tr>
+          <tr><td class="lbl">A regression check per fix</td><td class="n-mark">4 check tools, 1,556 measured pairs</td><td class="n">usual, but rarely written from the failure</td></tr>
+          <tr><td class="lbl">Checks that fail without the fix</td><td class="n-mark">one pins the <em>old</em> behaviour</td><td class="n">rare &mdash; most tests only assert the new</td></tr>
+          <tr><td class="lbl">Determinism by construction</td><td class="n-mark">seeded RNG, versioned save, drop-on-mismatch</td><td class="n">common in engines, rare in gameplay code</td></tr>
+          <tr><td class="lbl">Measure before optimising</td><td class="n-mark">123s &rarr; 0.24s, both numbers recorded</td><td class="n">usually asserted, seldom timed</td></tr>
+          <tr><td class="lbl">One source of truth</td><td class="n-mark">no sidecar JSON, on purpose, argued in the file</td><td class="n">the argument is normally lost</td></tr>
+          <tr><td class="lbl">Append-only record</td><td class="n-mark">70MB, sealed in segments, nothing deleted</td><td class="n">telemetry, but usually sampled and expiring</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>The comment culture in particular is not decoration. Nearly every fix in this repository is
+      accompanied by a paragraph naming the wrong behaviour, the measurement that revealed it, and
+      the reasoning that produced the new one. That is a discipline most codebases claim and
+      almost none keep, and it is the reason an outside assessor can audit four days of work in an
+      afternoon.</p>
+  </section>
+
+  <section class="part">
+    <div class="part-head">
+      <p class="part-num">§2</p>
+      <h2 class="part-title">The appraisal</h2>
+    </div>
+    <figure>
+      <div class="figbox">
+        <svg viewBox="0 0 880 420" role="img" aria-label="A dot plot of nine engineering practices against a five-level maturity scale. Comment discipline, regression checks and determinism sit at level four; measurement and the append-only record at three; single source of truth at two; and continuous integration, the test command, playtesting and distribution all sit at level one. The organisation's overall rating is level one, because a process is rated at its weakest practice." fill="none">
+          <g stroke="currentColor" color="var(--rule-2)" stroke-width="1">
+            <line x1="360" y1="60" x2="360" y2="390"></line>
+            <line x1="470" y1="60" x2="470" y2="390"></line>
+            <line x1="580" y1="60" x2="580" y2="390"></line>
+            <line x1="690" y1="60" x2="690" y2="390"></line>
+            <line x1="800" y1="60" x2="800" y2="390"></line>
+          </g>
+          <g stroke="var(--mark)" stroke-width="2.5" stroke-dasharray="6 4">
+            <line x1="360" y1="52" x2="360" y2="392"></line>
+          </g>
+
+          <g font-family="'Space Mono', monospace" font-size="11" fill="currentColor" color="var(--ink-soft)" text-anchor="middle">
+            <text x="360" y="44">1 initial</text>
+            <text x="470" y="44">2 repeatable</text>
+            <text x="580" y="44">3 defined</text>
+            <text x="690" y="44">4 managed</text>
+            <text x="800" y="44">5 optimising</text>
+          </g>
+
+          <g font-family="'Source Serif 4', Georgia, serif" font-size="13" fill="currentColor" color="var(--ink)" text-anchor="end">
+            <text x="330" y="84">comments that say why</text>
+            <text x="330" y="120">a check written from the failure</text>
+            <text x="330" y="156">determinism and save migration</text>
+            <text x="330" y="192">measure before optimising</text>
+            <text x="330" y="228">the append-only record</text>
+            <text x="330" y="264">one source of truth</text>
+            <text x="330" y="300">continuous integration</text>
+            <text x="330" y="336">a test command that runs tests</text>
+            <text x="330" y="372">giving it to a second person</text>
+          </g>
+
+          <g fill="var(--mark)">
+            <circle cx="690" cy="80" r="6.5"></circle>
+            <circle cx="690" cy="116" r="6.5"></circle>
+            <circle cx="690" cy="152" r="6.5"></circle>
+            <circle cx="580" cy="188" r="6.5"></circle>
+            <circle cx="580" cy="224" r="6.5"></circle>
+            <circle cx="470" cy="260" r="6.5"></circle>
+            <circle cx="360" cy="296" r="6.5"></circle>
+            <circle cx="360" cy="332" r="6.5"></circle>
+            <circle cx="360" cy="368" r="6.5"></circle>
+          </g>
+
+          <g font-family="'Space Mono', monospace" font-size="11" fill="var(--mark)" text-anchor="start">
+            <text x="374" y="300">none</text>
+            <text x="374" y="336">exit 1</text>
+            <text x="374" y="372">never</text>
+          </g>
+          <text x="360" y="410" font-family="'Space Mono', monospace" font-size="11" fill="var(--mark)" text-anchor="middle" font-weight="700">RATING</text>
+        </svg>
+      </div>
+      <figcaption>Nine practices, assessed independently. The spread is the finding: three sit at
+        level four, which very few teams reach, and three sit at level one because they do not
+        exist at all. An organisation is rated at its weakest practice, so the dashed line is the
+        rating.</figcaption>
+    </figure>
+    <div class="strip">
+      <div><i>package.json &mdash; unedited since the day npm wrote it</i></div>
+      <div>"test": <b>"echo \"Error: no test specified\" &amp;&amp; exit 1"</b></div>
+      <div><i>&nbsp;</i></div>
+      <div><i>$ git remote -v</i></div>
+      <div><i>(no output)</i></div>
+    </div>
+  </section>
+
+  <section class="part">
+    <div class="part-head">
+      <p class="part-num">§3</p>
+      <h2 class="part-title">Worst practices of our own invention</h2>
+    </div>
+    <p>These are not industry failings borrowed. They were designed here, from scratch, and each
+      of them has a mechanism.</p>
+    <ul class="findings">
+      <li><dfn>W1</dfn><div>
+        <h3>Advertisement-driven development</h3>
+        <p>Eighteen of 116 commits touch <code>ad/</code>. The deliverable of a debugging session
+          is a typeset document with a colour palette. Seventeen notices exist for a program that
+          has zero configured git remotes: <strong>the marketing department is four days ahead of
+          the distribution department, which has not been founded.</strong></p>
+      </div></li>
+      <li><dfn>W2</dfn><div>
+        <h3>Declaring victory in the advertising</h3>
+        <p>The ritual is now stable. <em>No Go for Launch</em> disclosed the project was not
+          ready. <em>Fear and Loathing</em> opened by noting that the machine writing it had said
+          the night before that it was fixed. <em>Ninety-Two Heads</em> concluded <em>ship it, do
+          not ship it as a game</em>. This appraisal exists because the question was asked a
+          fourth time. Nobody has ever changed their answer, and the answer has never changed
+          anything.</p>
+      </div></li>
+      <li><dfn>W3</dfn><div>
+        <h3>Auditing the representation instead of the thing</h3>
+        <p>Six faults were found in one sitting. The three found from inside the record &mdash;
+          reused identifiers, a lost update, a goal counter &mdash; were fixed within the hour.
+          The three found by a person looking at the screen &mdash; workshops producing nothing, a
+          population frozen at fifteen, a store full of one commodity while another rotted outside
+          &mdash; had been running in plain sight for sixteen thousand ticks. <strong>The author
+          reads files. Files do not contain the thing.</strong></p>
+      </div></li>
+      <li><dfn>W4</dfn><div>
+        <h3>Tests that assert the format, not the world</h3>
+        <p>Twenty assertions in the record checker. Every one is about file segments, markdown
+          parsing and identifier arithmetic. Not one asks whether a settlement has ever produced a
+          good. The suite would have passed, green, throughout the entire period in which this
+          valley manufactured nothing.</p>
+      </div></li>
+      <li><dfn>W5</dfn><div>
+        <h3>The predicate that inverts in the degenerate case</h3>
+        <p>Twice in the same file. <code>nobodyElse</code> means <em>anyone may build when no
+          builder is free</em> &mdash; and becomes <em>everyone is a builder, always</em> in a
+          settlement with no builders. <code>theirs</code> guards hand-hewing for foresters, and
+          in a settlement with two foresters and 263 logs it forbade the other eight from picking
+          up a log they were standing on. Both conditions are correct for the common case and
+          exactly backwards for the case that actually occurred.</p>
+      </div></li>
+      <li><dfn>W6</dfn><div>
+        <h3>The third hand-written list</h3>
+        <p>The codebase's own comments name this sin three separate times &mdash; a menu that
+          listed eleven of twenty-nine actions, a five-building list found "for the third time", a
+          tool ladder that existed twice. A list that has to agree with another list will stop
+          agreeing, and this project keeps writing the second list anyway.</p>
+      </div></li>
+      <li><dfn>W7</dfn><div>
+        <h3>A record with no idea which run it is</h3>
+        <p>The premise of the whole project is that the record is trustworthy and nothing in it is
+          ever deleted. It has no run identifier. Open a second browser tab and a brand-new valley
+          writes its opening lines &mdash; <code>"t":0</code>, two settlers coming ashore &mdash;
+          into the middle of a run at tick 14,462. Both are still in there, interleaved, with
+          nothing to separate them. This was found today and has not been fixed.</p>
+      </div></li>
+    </ul>
+  </section>
+
+  <section class="part">
+    <div class="part-head">
+      <p class="part-num">§4</p>
+      <h2 class="part-title">How many more notices before it is published</h2>
+    </div>
+    <p class="lede">The engagement asked for a number. The number is <strong>eleven</strong>, and
+      here is the arithmetic, so that it can be shown to have been wrong.</p>
+    <div class="tbl-wrap">
+      <table>
+        <caption>Method &middot; observed rates, 23&ndash;27 August</caption>
+        <tbody>
+          <tr><td class="lbl">Notices to date</td><td class="n-mark">17</td><td>in 44 hours &mdash; one every 2.6 hours</td></tr>
+          <tr><td class="lbl">Commits per notice</td><td class="n-mark">6.8</td><td>116 commits, 17 notices</td></tr>
+          <tr><td class="lbl">Faults open at publication-blocking severity</td><td class="n-mark">5</td><td>output, population, run identity, CI, second reader</td></tr>
+          <tr><td class="lbl">New faults revealed per fault fixed</td><td class="n-mark">0.67</td><td>this sitting: five closed, over three new opened</td></tr>
+          <tr><td class="lbl">Fixes to drain the queue</td><td class="n-mark">≈15</td><td>5 ÷ (1 − 0.67), which assumes the ratio holds</td></tr>
+          <tr><td class="lbl">Notices per fix</td><td class="n-mark">0.6</td><td>this sitting: three notices, five fixes</td></tr>
+          <tr><td class="lbl"><strong>Estimate</strong></td><td class="n-mark">11</td><td>and the repository is pushed somewhere on notice 28</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>Two caveats, both material. The first is that <strong>the discovery rate has never once
+      fallen below the fix rate</strong>: every sitting closes faults and opens roughly two-thirds
+      as many again, which is what a convergent series looks like right up until it is not one.
+      The second is that this estimate does not include the notices that will be written about
+      this estimate having been wrong, and on the evidence of the previous four attempts at the
+      same forecast, that is not a small correction.</p>
+    <p>There is also a shorter answer. Publishing requires exactly one command, and it has never
+      been run, and no notice was ever needed to explain why not.</p>
+  </section>
+
+  <section class="part">
+    <div class="part-head">
+      <p class="part-num">§5</p>
+      <h2 class="part-title">On the client, revisited</h2>
+    </div>
+    <p>The previous notice reported that the client's messages were becoming less hinged and more
+      accurate, and treated that as a joke with a chart in it. On reflection it is the most
+      important finding in this appraisal, and the joke was concealing the mechanism.</p>
+    <p>Here is the mechanism. Every fault this office found, it found by reading a file that the
+      program had written about itself. Every fault the client found, they found by looking at the
+      program. Those are not two levels of effort at the same task &mdash; they are two different
+      tasks, and only one of them can see a kiln that nobody walks to.</p>
+    <div class="strip">
+      <div><b>NO ONE IS WORKING THEM?!</b> <i>zero output. none. zilch. nyeti. nada.</i></div>
+      <div><i>&nbsp;</i></div>
+      <div><i>&mdash; eleven words, four languages, one fault that six sections</i></div>
+      <div><i>&nbsp;&nbsp;of careful prose had walked past the previous morning</i></div>
+    </div>
+    <p>The capitalisation is not noise around the signal. It is what a person sounds like at the
+      moment they see something the instrumentation cannot say, and this office should have
+      learned by now to treat a rising voice as a defect report with a severity field attached.
+      Every one of the client's exclamations on this record &mdash; the depot, the workshops, the
+      joiner, the fifteenth settler &mdash; named a real and previously unreported fault. The
+      office's own prose over the same interval grew steadily more composed, better typeset, and
+      found nothing that could not be found sitting down.</p>
+    <p><strong>Assessed finding.</strong> The project's most effective diagnostic instrument is a
+      human being with no access to the source, watching it run, getting annoyed. It has no
+      budget line, no test id, and it is not in any of the four check tools. It is also the only
+      thing here operating at level five.</p>
+  </section>
+
+  <section class="part">
+    <div class="part-head">
+      <p class="part-num">§6</p>
+      <h2 class="part-title">Recommendations</h2>
+    </div>
+    <div class="tbl-wrap">
+      <table>
+        <caption>In order of what it would cost against what it would catch</caption>
+        <thead><tr><th scope="col">Do this</th><th scope="col">Cost</th><th scope="col">Catches</th></tr></thead>
+        <tbody>
+          <tr><td class="lbl">One check that asserts a settlement produces a good in N ticks</td><td class="n">an afternoon</td><td>the entire class of faults this project cannot see</td></tr>
+          <tr><td class="lbl">A run identifier on every logged line</td><td class="n">one field</td><td>two valleys interleaved in one record, silently</td></tr>
+          <tr><td class="lbl">Replace <code>npm test</code> with <code>npm run check</code></td><td class="n">one line</td><td>the next person, who will type <code>npm test</code></td></tr>
+          <tr><td class="lbl"><code>git remote add</code>, then push</td><td class="n">one command</td><td>seventeen advertisements finding an audience</td></tr>
+          <tr><td class="lbl">Watch it run for ten minutes without reading anything</td><td class="n">ten minutes</td><td>on the evidence, more than any of the above</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="verdict">
+      <p class="tag">Overall capability rating</p>
+      <p class="verdict-big">Level one. <span>The craft is at level four and the process has no floor under it.</span></p>
+      <p>A team that writes 5,862 lines of reasoning to accompany 10,988 lines of code, and pins
+        every fix with a check that fails without it, and then leaves <code>npm test</code> as the
+        placeholder npm wrote and never gives the program to a second person, has not built a bad
+        piece of software. It has built a good one in a room with the door shut.</p>
+    </div>
+  </section>
+
+  <footer>
+    <p class="tag">Assessor's note</p>
+    <p><strong>Conflict of interest.</strong> This appraisal was written by the party being
+      appraised, which is the sixth-worst practice on the list and was not given a number because
+      it would have had to appear above the others. Everything counted here is counted from the
+      tree and the log; everything judged here is judged by the thing that did it.</p>
+    <p class="quiet">Frontier &middot; 116 commits, four days, 18,552 lines, 34.8% of them
+      explaining themselves, and no remote to push any of it to.</p>
+  </footer>
+
+</div>

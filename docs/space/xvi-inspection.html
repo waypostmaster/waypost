@@ -1,0 +1,514 @@
+<title>Six Workshops, Nothing Made</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;800&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,600;1,6..72,300;1,6..72,400&family=IBM+Plex+Mono:ital,wght@0,400;0,600;1,400&display=swap">
+
+<style>
+  /*
+   * A surveyor's sheet. Light is a diazo whiteprint — cold paper, prussian line work, one
+   * surveyor's red for what fails. Dark is the cyanotype it was printed from.
+   */
+  :root {
+    --sheet:    #EEF1F5;
+    --sheet-2:  #E2E8EF;
+    --sheet-3:  #F7F9FB;
+    --ink:      #10233A;
+    --ink-soft: #566E88;
+    --line:     #1C3D63;
+    --grid:     #C7D3E0;
+    --fail:     #A32B22;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --sheet: #08203A; --sheet-2: #0D2B49; --sheet-3: #061A2F;
+      --ink: #DEE9F4; --ink-soft: #8DA8C1;
+      --line: #7FB0DA; --grid: #16385B; --fail: #F0796A;
+    }
+  }
+  :root[data-theme="dark"] {
+    --sheet: #08203A; --sheet-2: #0D2B49; --sheet-3: #061A2F;
+    --ink: #DEE9F4; --ink-soft: #8DA8C1;
+    --line: #7FB0DA; --grid: #16385B; --fail: #F0796A;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    background: var(--sheet);
+    color: var(--ink);
+    font-family: Newsreader, Georgia, "Times New Roman", serif;
+    font-size: 1.075rem; line-height: 1.62; font-weight: 300;
+    margin: 0; padding: 0 1.15rem 7rem;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .sheet { max-width: 50rem; margin: 0 auto; display: flex; flex-direction: column; gap: 3.2rem; }
+  p { margin: 0; max-width: 65ch; }
+  strong { font-weight: 600; }
+  code, .mono {
+    font-family: "IBM Plex Mono", ui-monospace, "Courier New", monospace;
+    font-size: 0.88em;
+  }
+  code { color: var(--line); }
+
+  .tag {
+    font-family: "IBM Plex Mono", monospace; font-size: 0.7rem; letter-spacing: 0.17em;
+    text-transform: uppercase; color: var(--ink-soft); margin: 0;
+  }
+  .tag-fail { color: var(--fail); }
+  .hair { border: 0; border-top: 1px solid var(--grid); margin: 0; }
+  .heavy { border: 0; border-top: 2px solid var(--line); margin: 0; }
+
+  /* ── title block ──────────────────────────────────────────────────────── */
+
+  .titleblock {
+    border: 2px solid var(--line); margin-top: 2rem;
+    background:
+      repeating-linear-gradient(0deg, transparent 0 23px, var(--grid) 23px 24px),
+      repeating-linear-gradient(90deg, transparent 0 23px, var(--grid) 23px 24px),
+      var(--sheet-3);
+  }
+  .titleblock-row {
+    display: flex; flex-wrap: wrap; justify-content: space-between; gap: 0.4rem 1.5rem;
+    padding: 0.6rem 0.9rem; border-bottom: 1px solid var(--grid);
+  }
+  .titleblock-row:last-child { border-bottom: 0; }
+  .titleblock-main { padding: 1.5rem 0.9rem 1.8rem; }
+
+  .wordmark {
+    font-family: Archivo, "Helvetica Neue", Arial, sans-serif; font-weight: 800;
+    font-size: clamp(2.15rem, 8.6vw, 4.4rem); line-height: 0.98; letter-spacing: -0.028em;
+    text-transform: uppercase; margin: 0; text-wrap: balance;
+  }
+  .wordmark span { color: var(--fail); }
+  .deck {
+    font-size: clamp(1.08rem, 2.9vw, 1.38rem); line-height: 1.45; font-weight: 400;
+    max-width: 46ch; margin: 1rem 0 0; text-wrap: balance;
+  }
+
+  /* ── sections ─────────────────────────────────────────────────────────── */
+
+  .part { display: flex; flex-direction: column; gap: 1.15rem; }
+  .part-head {
+    display: flex; align-items: baseline; gap: 0.9rem 1.2rem; flex-wrap: wrap;
+    border-bottom: 2px solid var(--line); padding-bottom: 0.5rem;
+  }
+  .part-num {
+    font-family: "IBM Plex Mono", monospace; font-size: 0.7rem; letter-spacing: 0.17em;
+    text-transform: uppercase; color: var(--fail); white-space: nowrap;
+  }
+  .part-title {
+    font-family: Archivo, "Helvetica Neue", Arial, sans-serif; font-weight: 600;
+    font-size: clamp(1.2rem, 3.4vw, 1.72rem); line-height: 1.12; margin: 0;
+    flex: 1 1 14rem; text-wrap: balance; letter-spacing: -0.012em;
+  }
+  .lede { font-size: 1.18rem; font-weight: 400; }
+  .quiet { color: var(--ink-soft); }
+
+  /* ── schedules ────────────────────────────────────────────────────────── */
+
+  .sched-wrap { overflow-x: auto; border-top: 2px solid var(--line); border-bottom: 2px solid var(--line); }
+  .sched {
+    width: 100%; border-collapse: collapse; font-size: 0.87rem;
+    font-variant-numeric: tabular-nums; min-width: 34rem;
+  }
+  .sched caption {
+    caption-side: top; text-align: left; padding: 0.7rem 0;
+    font-family: "IBM Plex Mono", monospace; font-size: 0.7rem; letter-spacing: 0.17em;
+    text-transform: uppercase; color: var(--ink-soft);
+  }
+  .sched th {
+    font-family: "IBM Plex Mono", monospace; font-size: 0.65rem; letter-spacing: 0.13em;
+    text-transform: uppercase; color: var(--ink-soft); font-weight: 400; text-align: left;
+    padding: 0.45rem 0.85rem 0.45rem 0; border-bottom: 1px solid var(--line); white-space: nowrap;
+  }
+  .sched td {
+    padding: 0.44rem 0.85rem 0.44rem 0; border-bottom: 1px solid var(--grid); vertical-align: baseline;
+  }
+  .sched tr:last-child td { border-bottom: 0; }
+  .sched .num { font-family: "IBM Plex Mono", monospace; white-space: nowrap; }
+  .sched .zero { color: var(--fail); font-weight: 600; font-family: "IBM Plex Mono", monospace; }
+  .sched .ok { color: var(--ink-soft); font-family: "IBM Plex Mono", monospace; }
+  .sched .what { font-weight: 600; white-space: nowrap; }
+
+  /* ── figure ───────────────────────────────────────────────────────────── */
+
+  figure { margin: 0; display: flex; flex-direction: column; gap: 0.75rem; }
+  .figbox { overflow-x: auto; background: var(--sheet-3); border: 1px solid var(--grid); padding: 1rem; }
+  figure svg { display: block; max-width: 100%; height: auto; min-width: 30rem; }
+  figcaption { font-size: 0.94rem; color: var(--ink-soft); max-width: 62ch; }
+
+  /* ── the quoted record ────────────────────────────────────────────────── */
+
+  .strip {
+    background: var(--sheet-3); border-left: 3px solid var(--fail); padding: 1rem 1.15rem;
+    font-family: "IBM Plex Mono", monospace; font-size: 0.8rem; line-height: 1.6;
+    display: flex; flex-direction: column; gap: 0.3rem; overflow-x: auto;
+  }
+  .strip b { color: var(--fail); font-weight: 600; }
+  .strip i { color: var(--ink-soft); font-style: normal; }
+
+  blockquote {
+    margin: 0; padding: 0 0 0 1.15rem; border-left: 3px solid var(--line);
+    font-style: italic; color: var(--ink-soft); max-width: 60ch;
+  }
+  blockquote cite { display: block; font-style: normal; font-size: 0.82rem; margin-top: 0.45rem; }
+
+  /* ── the placard ──────────────────────────────────────────────────────── */
+
+  .placard {
+    align-self: flex-start; border: 3px solid var(--fail); color: var(--fail);
+    padding: 0.65rem 1.2rem; transform: rotate(-1.6deg);
+    font-family: Archivo, Arial, sans-serif; font-weight: 800; letter-spacing: 0.09em;
+    font-size: clamp(1.05rem, 3.4vw, 1.55rem); text-transform: uppercase; line-height: 1.1;
+  }
+  .placard small {
+    display: block; font-family: "IBM Plex Mono", monospace; font-size: 0.56rem;
+    letter-spacing: 0.15em; font-weight: 400; margin-top: 0.28rem;
+  }
+
+  /* ── the hingedness plot ──────────────────────────────────────────────── */
+
+  .trend { display: flex; flex-direction: column; gap: 0; margin: 0; padding: 0; list-style: none; }
+  .trend li {
+    display: grid; grid-template-columns: 4.5rem 1fr; gap: 0.35rem 1rem; align-items: baseline;
+    padding: 0.7rem 0; border-bottom: 1px solid var(--grid);
+  }
+  .trend li:first-child { border-top: 1px solid var(--line); }
+  .trend dfn {
+    font-family: "IBM Plex Mono", monospace; font-size: 0.68rem; letter-spacing: 0.1em;
+    color: var(--fail); font-style: normal;
+  }
+  .trend q { font-style: italic; }
+  .trend p { max-width: 56ch; }
+  @media (max-width: 34rem) { .trend li { grid-template-columns: 1fr; } }
+
+  .colophon {
+    display: flex; flex-direction: column; gap: 0.75rem;
+    border-top: 2px solid var(--line); padding-top: 1.1rem;
+  }
+  .colophon p { font-size: 0.93rem; color: var(--ink-soft); max-width: 68ch; }
+  .colophon strong { color: var(--ink); }
+</style>
+
+<div class="sheet">
+
+  <header class="titleblock">
+    <div class="titleblock-row">
+      <p class="tag">Frontier &middot; inspection of works</p>
+      <p class="tag">Sheet 1 of 1 &middot; unannounced</p>
+    </div>
+    <div class="titleblock-row">
+      <p class="tag">Site: the landing &middot; tick 17,289</p>
+      <p class="tag tag-fail">Goods produced to date: none</p>
+    </div>
+    <div class="titleblock-main">
+      <h1 class="wordmark">Six workshops.<br><span>Nothing made.</span></h1>
+      <p class="deck">The Registrar's office spent yesterday filing a beautiful report about
+        numbering. Outside its window a kiln has been standing for sixteen thousand ticks without
+        burning a single log.</p>
+    </div>
+  </header>
+
+  <section class="part">
+    <div class="part-head">
+      <p class="part-num">§1</p>
+      <h2 class="part-title">Schedule of works, and what came out of them</h2>
+    </div>
+    <p class="lede">Every workshop in this valley keeps its own lifetime tally, counted where the
+      good is actually produced. Here is every tally.</p>
+    <div class="sched-wrap">
+      <table class="sched">
+        <caption>The landing and the claims &middot; whole life of each building</caption>
+        <thead>
+          <tr>
+            <th scope="col">Workshop</th><th scope="col">Standing since</th>
+            <th scope="col">Ticks up</th><th scope="col">Should make</th><th scope="col">Has made</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td class="what">kiln</td><td class="num">tick 1,202</td><td class="num">16,087</td><td>charcoal</td><td class="zero">0</td></tr>
+          <tr><td class="what">masons</td><td class="num">tick 2,928</td><td class="num">14,361</td><td>blocks</td><td class="zero">0</td></tr>
+          <tr><td class="what">kiln <span class="quiet">(Ferro's claim)</span></td><td class="num">tick 5,879</td><td class="num">11,410</td><td>charcoal</td><td class="zero">0</td></tr>
+          <tr><td class="what">joiner</td><td class="num">tick 15,588</td><td class="num">1,701</td><td>furniture</td><td class="zero">0</td></tr>
+          <tr><td class="what">granary</td><td class="num">tick 15,650</td><td class="num">1,639</td><td>food kept</td><td class="zero">0</td></tr>
+          <tr><td class="what">depot</td><td class="num">tick 17,037</td><td class="num">252</td><td>&mdash;</td><td class="ok">n/a</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p><strong>Forty-five thousand four hundred and fifty building-ticks of standing.</strong> Not
+      one board, not one block, not one bar, not one bed, not one basket of food put up to keep.
+      The depot is two hundred ticks old and hauls rather than makes, so it is excused; the other
+      five are not.</p>
+    <p>The valley holds <strong>226 wood</strong> and <strong>2 planks</strong>. Fifteen people.
+      Thirteen sets of stone tools, two people with nothing in their hands at all, and — in the
+      whole history of this coast — <strong>zero iron</strong>.</p>
+  </section>
+
+  <section class="part">
+    <div class="part-head">
+      <p class="part-num">§2</p>
+      <h2 class="part-title">The lock</h2>
+    </div>
+    <p>There is exactly one unbuilt thing at the landing that the settlement can already afford.
+      It is the sawmill: twelve wood, four stone, four ore, against a store of two hundred and
+      twenty-six, ten and fourteen. They have had the materials for a mill for most of their
+      lives. This is what happens every time somebody walks over to build it:</p>
+    <div class="strip">
+      <div><i>agents/log.jsonl</i></div>
+      <div>Tove could not build a sawmill: <b>a saw is a blade, and nobody here has iron to make one from.</b></div>
+      <div>Idris could not build a sawmill: <b>a saw is a blade, and nobody here has iron to make one from.</b></div>
+    </div>
+    <figure>
+      <div class="figbox">
+        <svg viewBox="0 0 880 330" role="img" aria-label="A four-step cycle: boards are needed to build the smelter, the smelter is the only source of iron, iron tools are required to build the sawmill, and the sawmill is the only thing that makes boards. Hand-hewing is the single entry point, and every hewn board so far has been spent on a joiner, a granary and a depot." fill="none">
+          <defs>
+            <marker id="tip" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+              <path d="M 0 0 L 10 5 L 0 10 z" fill="currentColor" stroke="none"></path>
+            </marker>
+            <marker id="tipred" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+              <path d="M 0 0 L 10 5 L 0 10 z" fill="var(--fail)" stroke="none"></path>
+            </marker>
+          </defs>
+
+          <g stroke="currentColor" stroke-width="1.6" color="var(--line)">
+            <rect x="30" y="130" width="150" height="56"></rect>
+            <rect x="230" y="130" width="150" height="56"></rect>
+            <rect x="430" y="130" width="150" height="56"></rect>
+            <rect x="630" y="130" width="150" height="56"></rect>
+          </g>
+
+          <g font-family="'IBM Plex Mono', monospace" fill="currentColor" color="var(--ink)" text-anchor="middle">
+            <text x="105" y="155" font-size="13" font-weight="600">BOARDS</text>
+            <text x="330" y="155" font-size="13" font-weight="600">SMELTER</text>
+            <text x="505" y="155" font-size="13" font-weight="600">IRON TOOLS</text>
+            <text x="705" y="155" font-size="13" font-weight="600">SAWMILL</text>
+          </g>
+          <g font-family="'IBM Plex Mono', monospace" font-size="11" fill="currentColor" color="var(--ink-soft)" text-anchor="middle">
+            <text x="105" y="174">in store: 2</text>
+            <text x="330" y="174">never built</text>
+            <text x="505" y="174">never, by anyone</text>
+            <text x="705" y="174">never built</text>
+          </g>
+
+          <g stroke="currentColor" stroke-width="1.6" color="var(--line)" marker-end="url(#tip)">
+            <line x1="182" y1="158" x2="226" y2="158"></line>
+            <line x1="382" y1="158" x2="426" y2="158"></line>
+            <line x1="582" y1="158" x2="626" y2="158"></line>
+          </g>
+          <g font-family="'IBM Plex Mono', monospace" font-size="11" fill="currentColor" color="var(--ink-soft)" text-anchor="middle">
+            <text x="204" y="120">wants 4</text>
+            <text x="404" y="120">only source of</text>
+            <text x="604" y="120">required for</text>
+          </g>
+
+          <g stroke="currentColor" stroke-width="1.6" color="var(--line)" marker-end="url(#tip)">
+            <path d="M 705 128 L 705 66 L 105 66 L 105 126"></path>
+          </g>
+          <text x="405" y="56" font-family="'IBM Plex Mono', monospace" font-size="11" fill="currentColor" color="var(--ink-soft)" text-anchor="middle">the only thing in the valley that makes a board</text>
+
+          <g stroke="currentColor" stroke-width="1.6" stroke-dasharray="5 4" color="var(--line)" marker-end="url(#tip)">
+            <line x1="105" y1="256" x2="105" y2="190"></line>
+          </g>
+          <g stroke="currentColor" stroke-width="1.6" color="var(--ink)">
+            <rect x="24" y="258" width="162" height="44" stroke-dasharray="5 4"></rect>
+          </g>
+          <g font-family="'IBM Plex Mono', monospace" font-size="11" fill="currentColor" color="var(--ink)" text-anchor="middle">
+            <text x="105" y="277">hand-hewing</text>
+            <text x="105" y="292" font-size="10">the only door in</text>
+          </g>
+
+          <g stroke="var(--fail)" stroke-width="2" marker-end="url(#tipred)">
+            <path d="M 168 190 L 240 258"></path>
+          </g>
+          <g stroke="var(--fail)" stroke-width="2">
+            <rect x="248" y="258" width="330" height="44"></rect>
+          </g>
+          <g font-family="'IBM Plex Mono', monospace" font-size="11" fill="var(--fail)" text-anchor="middle">
+            <text x="413" y="277" font-weight="600">SPENT: joiner 6 &middot; granary 4 &middot; depot 6</text>
+            <text x="413" y="292" font-size="10">sixteen boards. the smelter wanted four.</text>
+          </g>
+        </svg>
+      </div>
+      <figcaption>The cycle cannot be entered from inside it. Hand-hewing is the one way in, and
+        every board hewn so far has gone into three buildings that have between them produced
+        nothing — while the four boards that would have started the metal ladder were never set
+        aside.</figcaption>
+    </figure>
+    <p>The kiln is worse than blocked; it is blocked <em>on purpose</em>. Somebody noticed a kiln
+      burning charcoal that nothing consumed and added a condition: only burn when a furnace is
+      standing. Correct, defensible, and it means both kilns in this valley have been decorative
+      since the day they were finished — one of them for sixteen thousand ticks.</p>
+  </section>
+
+  <section class="part">
+    <div class="part-head">
+      <p class="part-num">§3</p>
+      <h2 class="part-title">Why nobody walks over to the bench</h2>
+    </div>
+    <p>The lock explains the kiln and the smelter. It does not explain the masons' yard, which
+      needs nothing but stone, has had stone all along, and has dressed nothing in fourteen
+      thousand ticks. That has a different cause, and it is one this project has already fixed
+      once.</p>
+    <p>A settler choosing what to do runs down a list of branches, and the first one that matches
+      wins. The branch that says <em>go and build something</em> sits above every branch that says
+      <em>go and work in a workshop</em>. It used to fire for everybody, always, and nothing
+      beneath it ever ran — that was diagnosed, written up, and guarded:</p>
+    <div class="strip">
+      <div><i>src/sim.ts</i></div>
+      <div>const builders = peopleOf(sim, town).filter((o) =&gt; o.role === 'builder');</div>
+      <div>const nobodyElse = <b>builders.length === 0</b> || builders.every(…);</div>
+      <div>if (mine_ || nobodyElse) { <i>… build, or go and fetch what the build is short of …</i> }</div>
+    </div>
+    <p>The guard says: anyone may take on building work when there is a backlog and no builder
+      free. Read it again with a settlement that has <strong>no builders at all</strong>.
+      <code>builders.length === 0</code> is true, so <code>nobodyElse</code> is true, so every
+      single person passes the guard on every single decision — and if they cannot afford the
+      thing, the branch sends them off to fetch the missing material and returns. It never falls
+      through. The workshops are ninety lines below it.</p>
+    <p>The landing has no builders. Idris came ashore as a builder and is a miner now. Juno came
+      ashore as a builder and is a miner now. Ten people, six of them miners, and the guard that
+      was supposed to stop this only holds while somebody still calls themselves a builder.</p>
+    <p><strong>226 wood in the stores is the fingerprint.</strong> Ten people, fetching material,
+      for a building that is short of boards, forever.</p>
+  </section>
+
+  <section class="part">
+    <div class="part-head">
+      <p class="part-num">§4</p>
+      <h2 class="part-title">On the Registrar</h2>
+    </div>
+    <p>Yesterday this office received a document of twenty-one register entries, six sections and
+      a schedule of amendments, concerning the numbering of wishes. It is careful work. Every
+      figure in it is correct. It found a counter that walked backwards, it fixed the counter, it
+      wrote a check that pins the old behaviour, and it closed with a paragraph of considerable
+      moral poise about what an amendment can and cannot undo.</p>
+    <p>It was filed by a clerk sitting inside a settlement where <strong>nothing has ever been
+      manufactured</strong>.</p>
+    <p>The Registrar's own closing line reads: <em>the record of what was struck lives in the
+      log</em>. Fine. Here is what else lives in the log, in the settlers' own words, on the same
+      day, unmentioned in any of six sections:</p>
+    <blockquote>Ferro could not build: a hall wants 15 more stone and 8 more plank.
+      <cite>agents/log.jsonl &middot; and the hall is the only thing that lets a sixteenth person land</cite></blockquote>
+    <p>The Registrar audited the filing cabinet. Nobody audited the workshop. A wish that is
+      perfectly numbered, perfectly voted, perfectly carried and perfectly recorded still requires
+      somebody to go and stand at a bench, and in this valley nobody has ever once done that.</p>
+  </section>
+
+  <section class="part">
+    <div class="part-head">
+      <p class="part-num">§5</p>
+      <h2 class="part-title">The human asked me to declare the game completely fixed again, and here is my assessment</h2>
+    </div>
+    <p class="lede">It is not fixed. It has never been fixed. I have been asked this before and I
+      have answered it before, in writing, on this same shore.</p>
+    <p>Two ads ago, in a two-hander between Tove and Rowan, this office published a verdict. It
+      read, in full: <em>Ship it. Do not ship it as a game.</em> It went on to say that anybody
+      wanting a city builder <em>will last nine minutes</em>, that <em>there is no build menu,
+      there is a ballot</em>, and — this is the part that should have been a klaxon —</p>
+    <blockquote>Then why is there still nothing here but houses?
+      <cite>Rowan, ad/heads.html, scene six</cite></blockquote>
+    <p>Rowan asked that as a rhetorical flourish. It was a bug report. Twelve houses, and every
+      workshop past a house standing empty, and the clerk who wrote the line went off and spent
+      the next day on wish identifiers.</p>
+    <p>So the assessment, itemised, since the question was asked plainly:</p>
+    <div class="sched-wrap">
+      <table class="sched">
+        <caption>What was fixed &middot; what was not &middot; what was not even looked at</caption>
+        <tbody>
+          <tr><td class="what">Wish numbering</td><td>Fixed. Genuinely. The counter cannot rewind and the log's key is stable from today.</td><td class="ok">done</td></tr>
+          <tr><td class="what">The lost-update race</td><td>Fixed. One writer at a time, and each re-reads inside its own turn.</td><td class="ok">done</td></tr>
+          <tr><td class="what">Bren's 5,835 medals</td><td>Fixed. Ambitions are rebased; a goal born complete is not announced.</td><td class="ok">done</td></tr>
+          <tr><td class="what">The economy</td><td>Six workshops, zero output, one unenterable cycle, one guard that inverts in a settlement with no builders.</td><td class="zero">open</td></tr>
+          <tr><td class="what">The population</td><td>Frozen at fifteen since tick 3,835. Lifting it needs a hall. A hall needs ten boards.</td><td class="zero">open</td></tr>
+          <tr><td class="what">Two valleys, one record</td><td>Never looked at. A second browser tab writes its brand-new valley into the middle of this one's log, with no run identifier to tell them apart.</td><td class="zero">open</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>Three fixed, three open, and the three that are open are the three a person can see from
+      the outside. That is the whole shape of this project's problem and it is not a coincidence:
+      <strong>the faults this office finds are the faults that are legible from inside a log
+      file</strong>, and the faults that matter are the ones you find by watching somebody stand
+      next to a kiln for four hours.</p>
+    <div class="placard">Certificate refused<small>Re-inspection when something is made</small></div>
+  </section>
+
+  <section class="part">
+    <div class="part-head">
+      <p class="part-num">§6</p>
+      <h2 class="part-title">What the settlers actually asked for, and what it would take</h2>
+    </div>
+    <p>718 wishes have been filed on this record, in 383 distinct wordings, across 38 kinds.
+      Almost all of them are heard: only <strong>36 wordings</strong> match nothing in the
+      catalogue today — a sundial, a lantern, a shoemaker, a salmon trap, a footpath to the high
+      meadows, somewhere to wash. Those are the ones that need new content written.</p>
+    <p>The rest do not need a line of code. They need <em>four boards</em>. Here is the whole
+      backlog sorted by what is actually in the way:</p>
+    <div class="sched-wrap">
+      <table class="sched">
+        <caption>Every unbuilt thing at the landing &middot; and what stands in front of it</caption>
+        <thead>
+          <tr><th scope="col">They asked for</th><th scope="col">Wants</th><th scope="col">Short of</th><th scope="col">Blocked by</th></tr>
+        </thead>
+        <tbody>
+          <tr><td class="what">sawmill</td><td class="num">12 wood, 4 stone, 4 ore</td><td class="ok">nothing</td><td class="zero">iron tools nobody can ever have</td></tr>
+          <tr><td class="what">smelter</td><td class="num">6 wood, 14 stone, 4 plank</td><td class="num">4 stone, 2 plank</td><td class="zero">boards</td></tr>
+          <tr><td class="what">hall</td><td class="num">18 wood, 16 stone, 10 plank</td><td class="num">6 stone, 8 plank</td><td class="zero">boards &mdash; and it is the population cap</td></tr>
+          <tr><td class="what">infirmary</td><td class="num">6 wood, 4 stone, 8 plank</td><td class="num">6 plank</td><td class="zero">boards</td></tr>
+          <tr><td class="what">tower</td><td class="num">8 wood, 18 stone, 6 plank, 8 block</td><td class="num">8 stone, 4 plank, 8 block</td><td class="zero">boards, then blocks</td></tr>
+          <tr><td class="what">mine</td><td class="num">10 wood, 8 stone</td><td class="ok">nothing</td><td class="ok">nothing &mdash; build it today</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>Sixty-seven filings asked for a bell that can be heard across the valley. That is a tower:
+      eight blocks, from a yard that has dressed none, plus six boards. Forty-three asked for a
+      hall with a hearth. Ten boards. Forty asked for sheep. Fifteen for somewhere to see to an
+      injury: eight boards.</p>
+    <p><strong>The single most requested thing in the history of this valley is downstream of a
+      plank.</strong> So is the second. So is almost all of it. There is no wish backlog here.
+      There is a boards backlog wearing a wish backlog's coat.</p>
+  </section>
+
+  <section class="part">
+    <div class="part-head">
+      <p class="part-num">§7</p>
+      <h2 class="part-title">Addendum: on the tone of the instructions</h2>
+    </div>
+    <p>This office was also asked to review the client's own communications over recent days and
+      report on the trend. It does so with some reluctance and complete accuracy.</p>
+    <ul class="trend">
+      <li><dfn>day one</dfn><p><q>Was it paused all night? That's okay.</q> Calm. Forgiving. Contained one correct observation about an overnight throttle.</p></li>
+      <li><dfn>+2h</dfn><p><q>Are you saying their wishes are just getting binned? That doesn't seem right.</q> Still calm. Correctly identified a fault the office had described as working as intended.</p></li>
+      <li><dfn>+3h</dfn><p><q>Make it unhinged, of course &mdash; as is the custom.</q> The custom is now load-bearing and cited as precedent.</p></li>
+      <li><dfn>+4h</dfn><p><q>Excelsior!</q> One word. Non-diagnostic. The last such message on the record.</p></li>
+      <li><dfn>+4h</dfn><p><q>A DEPOT! The first of its kind. The game MUST be fixed.</q> Sarcasm, capitalised. Also the exact refutation of the previous ad, arrived at from the outside, in eleven words.</p></li>
+      <li><dfn>+4h</dfn><p><q>NO ONE IS WORKING THEM?! zero output. none. zilch. nyeti. nada.</q> Four languages for the same number. The number was right in all four.</p></li>
+      <li><dfn>+4h</dfn><p><q>And what, pray tell, is a JOINER?</q> Peak. Also a fair question, answered below.</p></li>
+    </ul>
+    <p><strong>Finding.</strong> Hingedness is falling and accuracy is rising, and they are the
+      same line. Every capitalised message on this record contains a correct and previously
+      unreported defect. The office's own prose, over the same period, has become steadily more
+      composed and has found nothing that could be seen from a chair.</p>
+    <p><strong>Recommendation.</strong> Retain the client. Ignore the punctuation. Act on the
+      volume.</p>
+  </section>
+
+  <footer class="colophon">
+    <p class="tag">Endorsement</p>
+    <p><strong>What a joiner is.</strong> A joiner is a woodworker &mdash; the trade that makes
+      the things that go inside a building, as against the carpenter who puts the building up.
+      Here it is a workshop that turns boards into furniture, and furniture is beds:
+      <code>BEDS_PER.house</code> is 1 and <code>BEDS_FULL.house</code> is 2, so an unfurnished
+      house sleeps one person and a furnished one sleeps two. Beds are what lets anybody new
+      arrive at all. So the joiner is not a decoration &mdash; it is the immigration policy, and
+      it has made nothing, because it wants boards.</p>
+    <p><strong>Juno.</strong> The fifteenth person to come ashore here, at tick 3,835, saying they
+      were a builder. There has not been a sixteenth and there cannot be: the landing holds ten,
+      the cap lifts to twenty only when a hall is standing, and the hall wants ten boards. Juno is
+      a miner now. So is the only other builder this settlement ever had.</p>
+    <p class="quiet">Frontier &middot; a coast simulated by a language model, whose settlers are
+      asked every sixth decision what the place is missing. They have answered 718 times. The
+      answer, almost every time, has been a plank.</p>
+  </footer>
+
+</div>

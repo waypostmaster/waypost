@@ -1,0 +1,406 @@
+<title>Fear and Loathing in the Landing</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Zilla+Slab:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Courier+Prime:ital,wght@0,400;0,700;1,400&display=swap">
+
+<style>
+  :root {
+    --paper:    #E4DFD2;
+    --paper-2:  #D8D2C2;
+    --ink:      #191510;
+    --ink-soft: #514A3D;
+    --rule:     #A79E8A;
+    --stamp:    #B3300F;
+    --acid:     #A38A00;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --paper: #12100C; --paper-2: #1B1813; --ink: #E0DACB; --ink-soft: #8E8674;
+      --rule: #3B362C; --stamp: #E2603A; --acid: #D6BB2E;
+    }
+  }
+  :root[data-theme="dark"] {
+    --paper: #12100C; --paper-2: #1B1813; --ink: #E0DACB; --ink-soft: #8E8674;
+    --rule: #3B362C; --stamp: #E2603A; --acid: #D6BB2E;
+  }
+
+  * { box-sizing: border-box; }
+  body {
+    background: var(--paper); color: var(--ink);
+    font-family: "Zilla Slab", Georgia, "Times New Roman", serif;
+    font-size: 1.0625rem; line-height: 1.64; margin: 0;
+    padding: 0 1.15rem 7rem; -webkit-font-smoothing: antialiased;
+  }
+  .sheet { max-width: 46rem; margin: 0 auto; display: flex; flex-direction: column; gap: 3rem; }
+  p { margin: 0; max-width: 62ch; }
+  .rule { border: 0; border-top: 1px solid var(--rule); margin: 0; }
+  .rule-thick { border: 0; border-top: 3px solid var(--ink); margin: 0; }
+  .label {
+    font-family: "Courier Prime", "Courier New", monospace; font-size: 0.72rem;
+    letter-spacing: 0.16em; text-transform: uppercase; color: var(--ink-soft); margin: 0;
+  }
+
+  .masthead { display: flex; flex-direction: column; gap: 0.7rem; padding-top: 1.9rem; }
+  .masthead-row { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 0.7rem; }
+
+  .hero { display: flex; flex-direction: column; gap: 1.15rem; }
+  .wordmark {
+    font-family: Anton, "Arial Narrow", Impact, sans-serif;
+    font-size: clamp(3rem, 12.5vw, 7rem); line-height: 0.86; letter-spacing: -0.015em;
+    text-transform: uppercase; margin: 0; text-wrap: balance;
+  }
+  .wordmark em { font-style: normal; color: var(--stamp); }
+  .deck {
+    font-size: clamp(1.1rem, 3.2vw, 1.5rem); line-height: 1.36; font-weight: 600;
+    max-width: 40ch; margin: 0; text-wrap: balance;
+  }
+  .byline { font-family: "Courier Prime", monospace; font-size: 0.78rem; color: var(--ink-soft); }
+
+  .drop::first-letter {
+    font-family: Anton, Impact, sans-serif; float: left; font-size: 3.6rem; line-height: 0.78;
+    padding: 0.32rem 0.5rem 0 0; color: var(--stamp);
+  }
+
+  .article { display: flex; flex-direction: column; gap: 1.15rem; }
+  .article-head {
+    display: flex; align-items: baseline; gap: 1.15rem;
+    border-bottom: 1px solid var(--rule); padding-bottom: 0.7rem; flex-wrap: wrap;
+  }
+  .article-num {
+    font-family: "Courier Prime", monospace; font-size: 0.72rem; letter-spacing: 0.16em;
+    text-transform: uppercase; color: var(--stamp); white-space: nowrap;
+  }
+  .article-title {
+    font-family: Anton, "Arial Narrow", Impact, sans-serif;
+    font-size: clamp(1.3rem, 3.9vw, 1.95rem); line-height: 1.06; text-transform: uppercase;
+    margin: 0; flex: 1 1 12rem; text-wrap: balance;
+  }
+  .beat { font-size: 1.2rem; font-weight: 600; }
+  .quiet { color: var(--ink-soft); }
+
+  .telex {
+    background: var(--paper-2); border-left: 4px solid var(--acid); padding: 1.15rem;
+    font-family: "Courier Prime", "Courier New", monospace; font-size: 0.84rem; line-height: 1.6;
+    display: flex; flex-direction: column; gap: 0.4rem; overflow-x: auto;
+  }
+  .telex .hot { color: var(--stamp); font-weight: 700; }
+  .telex .dim { color: var(--ink-soft); }
+
+  .ledger-wrap { overflow-x: auto; }
+  .ledger { width: 100%; border-collapse: collapse;
+    font-family: "Courier Prime", monospace; font-size: 0.8rem; }
+  .ledger th { text-align: left; padding: 0.35rem 0.7rem 0.35rem 0;
+    border-bottom: 2px solid var(--ink); font-size: 0.68rem; letter-spacing: 0.1em;
+    text-transform: uppercase; white-space: nowrap; }
+  .ledger td { padding: 0.35rem 0.7rem 0.35rem 0; border-bottom: 1px dotted var(--rule);
+    vertical-align: top; }
+  .ledger .n { white-space: nowrap; color: var(--ink-soft); }
+  .ledger .bad { color: var(--stamp); font-weight: 700; }
+  .ledger .good { color: var(--acid); font-weight: 700; }
+
+  .ratio {
+    background: var(--paper-2); border: 3px solid var(--ink); padding: 1.5rem;
+    display: flex; flex-direction: column; gap: 0.9rem;
+  }
+  .ratio .big {
+    font-family: Anton, Impact, sans-serif; font-size: clamp(3.4rem, 15vw, 6.5rem);
+    line-height: 0.86; margin: 0; color: var(--stamp);
+  }
+  .bars { display: flex; flex-direction: column; gap: 0.3rem;
+    font-family: "Courier Prime", monospace; font-size: 0.76rem; }
+  .bars div { display: flex; gap: 0.6rem; align-items: baseline; }
+  .bars b { flex: 0 0 3.6rem; text-align: right; color: var(--ink-soft); font-weight: 400; }
+
+  .turn {
+    background: var(--ink); color: var(--paper); padding: 3rem 1.9rem;
+    margin: 0 -1.15rem; display: flex; flex-direction: column; gap: 1.15rem;
+  }
+  .turn h2 {
+    font-family: Anton, Impact, sans-serif; font-size: clamp(1.8rem, 6.6vw, 3.2rem);
+    line-height: 0.98; text-transform: uppercase; margin: 0; max-width: 20ch; text-wrap: balance;
+  }
+  .turn p { color: var(--paper); }
+  .turn .quiet { color: var(--rule); }
+
+  .retraction {
+    border: 3px double var(--stamp); padding: 1.5rem;
+    display: flex; flex-direction: column; gap: 0.9rem;
+  }
+  .retraction h2 {
+    font-family: Anton, Impact, sans-serif; font-size: clamp(1.5rem, 5vw, 2.3rem);
+    text-transform: uppercase; margin: 0; color: var(--stamp); line-height: 1.04;
+  }
+  .retraction .was {
+    font-family: "Courier Prime", monospace; font-size: 0.84rem; padding-left: 0.9rem;
+    border-left: 2px solid var(--rule); color: var(--ink-soft);
+  }
+
+  .stamp-wrap { display: flex; justify-content: flex-end; }
+  .stamp {
+    display: inline-block; border: 3px solid var(--stamp); color: var(--stamp);
+    font-family: "Courier Prime", monospace; font-size: 0.78rem; font-weight: 700;
+    letter-spacing: 0.16em; text-transform: uppercase; padding: 0.7rem 1.15rem;
+    transform: rotate(-3deg);
+  }
+  .legal {
+    font-family: "Courier Prime", monospace; font-size: 0.68rem; line-height: 1.55;
+    color: var(--ink-soft); text-align: justify; margin: 0;
+  }
+</style>
+
+<div class="sheet">
+
+  <header class="masthead">
+    <hr class="rule-thick">
+    <div class="masthead-row">
+      <p class="label">Frontier &middot; dispatch from the coast</p>
+      <p class="label">Tick 6,639 &middot; still running &middot; still hungry</p>
+    </div>
+    <hr class="rule">
+    <p class="label">A savage journey to the heart of the tech tree</p>
+  </header>
+
+  <section class="hero">
+    <h1 class="wordmark">Fear and<br>Loathing<br>in the <em>Landing</em></h1>
+    <p class="deck">Two mills. Sixteen thousand seconds. Not one board. And the machine writing this
+      told you last night that it was fixed.</p>
+    <p class="byline">Filed from a locked workstation, 100.91.110.99, while the operator was on a rollercoaster</p>
+  </section>
+
+  <section class="article">
+    <div class="article-head">
+      <p class="article-num">I</p>
+      <h2 class="article-title">We were somewhere around the kiln when the charcoal took hold</h2>
+    </div>
+    <p class="drop">We were somewhere around the kiln, on the edge of the tree line, when the
+      instrumentation began to take hold. I remember saying something like <em>I feel a bit
+      lightheaded, maybe you should count the boards</em> — and then suddenly there was a terrible
+      roar all around us and the sky was full of what looked like sawmills, two of them, standing
+      in perfect working order, swooping and screeching and diving around the settlement, which
+      had never cut a board in its life.</p>
+    <p>And a voice was screaming: <strong>Holy Jesus. What are these goddamn buildings?</strong></p>
+    <p>Then it was quiet again. My attorney — a 400-line shell script called
+      <code>check-economy.mjs</code> — had taken his shirt off and was pouring beer on his chest to
+      facilitate the tanning process. He had been telling me for two days, in a calm voice, on
+      every single run, that eight of the twelve buildings in this game rest entirely on one line
+      of code. He printed it. In bold. Every time.</p>
+    <p>He never once checked whether anybody could <em>say</em> the word.</p>
+  </section>
+
+  <section class="article">
+    <div class="article-head">
+      <p class="article-num">II</p>
+      <h2 class="article-title">The ledger of a place that does nothing</h2>
+    </div>
+    <p class="beat">I put a counter on every building. What it turned out, for the whole of its
+      life. This is what came back.</p>
+    <div class="telex">
+      <div><span class="dim">20,000 ticks &middot; fourteen settlers &middot; sixteen proposals carried</span></div>
+      <div>kiln &nbsp;&nbsp;&nbsp;&nbsp;standing 17,240s &nbsp;cond <span class="hot">0.00</span>&nbsp; &rarr; &nbsp;36 charcoal</div>
+      <div>smelter &nbsp;standing 17,201s &nbsp;cond <span class="hot">0.00</span>&nbsp; &rarr; &nbsp;17 iron</div>
+      <div>mine &nbsp;&nbsp;&nbsp;&nbsp;standing 17,164s &nbsp;cond <span class="hot">0.00</span>&nbsp; &rarr; &nbsp;27 ore</div>
+      <div><span class="hot">sawmill &nbsp;standing 16,600s &nbsp;&mdash; nothing. ever.</span></div>
+      <div><span class="hot">sawmill &nbsp;standing 16,556s &nbsp;&mdash; nothing. ever.</span></div>
+      <div><span class="hot">masons &nbsp;&nbsp;standing 16,936s &nbsp;&mdash; nothing. ever.</span></div>
+    </div>
+    <p><strong>Condition zero.</strong> Not worn. Not creaky. <em>Rubble.</em> Every workshop in
+      the settlement was a hole in the ground with a sprite over it, and the game was still drawing
+      them, still listing them, still counting them as buildings the settlement had. You could
+      click on a pile of rotten sticks and it would tell you, with total confidence, how many
+      people could work there.</p>
+    <p>The <code>repair</code> action exists. It has a handler. It has a cost. It has a wage out of
+      the common purse. It has a line in the feed for when the stores can't cover it. Somebody sat
+      down and wrote all of that.</p>
+    <p class="beat">In twenty thousand ticks it started <strong>zero times.</strong></p>
+    <p>It was sitting underneath the building branch. The building branch never fails — it always
+      names something to build, and if you can't afford it, it sends you to go and get the
+      materials. So it returns on every tick of every day and nothing beneath it has run since the
+      day it was written. The comment on the repair branch reads <em>"that comes before new
+      work"</em>. It has read that the entire time. It was three hundred lines too low to mean
+      anything.</p>
+  </section>
+
+  <section class="article">
+    <div class="article-head">
+      <p class="article-num">III</p>
+      <h2 class="article-title">One in sixty-five</h2>
+    </div>
+    <p>Fine. Fixed the repairs. Mills came back up to 0.31 and 0.36 — sound, working, a hundred and
+      forty logs in the store. <code>saw</code> started <strong>zero times.</strong> Again. Still.
+      Nobody has ever cut a board at a mill in the entire recorded history of this valley.</p>
+    <p>So I counted what they <em>do</em> instead. And there it was, the biggest number in the
+      game, bigger than resting, bigger than eating, bigger than chopping:</p>
+    <div class="telex">
+      <div>craft &nbsp;&nbsp;&nbsp;<span class="hot">8,532 errands started</span></div>
+      <div>tools &nbsp;&nbsp;&nbsp;<span class="hot">132 sets actually made</span></div>
+      <div><span class="dim">one in sixty-five</span></div>
+    </div>
+    <p>Fourteen human beings, spending the bulk of their conscious lives walking to a shed to make
+      an axe, arriving, discovering the settlement is <strong>two stone short</strong>, and turning
+      around. Sixty-four times out of sixty-five. In silence — the handler just
+      <code>break</code>s, no message, no feed line, nothing. Work that looks like work and reports
+      nothing.</p>
+    <p>And because that branch sits above every producing branch in the function, a settler who
+      couldn't cover a set <em>never reached any of them.</em> Not the mill. Not the furnace. Not
+      the yard. The valley wasn't short of timber. It wasn't short of hands. It wasn't short of
+      mills — it had <em>two</em>. It was short of two stone, permanently, and being short of two
+      stone stopped everything else in the world.</p>
+    <p class="beat">A settler is "spent" at six uses left. Six uses is six more harvests. They
+      could have sawn. They went to look for rocks.</p>
+  </section>
+
+  <section class="article">
+    <div class="article-head">
+      <p class="article-num">IV</p>
+      <h2 class="article-title">Twelve words</h2>
+    </div>
+    <p>Here is the part where the drugs stop being a metaphor. <code>hew</code> is a board cut out
+      of three logs with an axe. No mill required. It is the <em>only</em> way any settlement on
+      this coast gets its first board, because a mill is an iron blade, and iron is a furnace, and
+      a furnace is four boards, and round and round we go.</p>
+    <p><strong>No model could say the word.</strong> It wasn't in the vocabulary. And
+      <code>applyStep</code> had no case for it either, so an instruction to hew fell through to
+      <code>default</code> and produced a settler walking in a circle while the feed reported
+      success.</p>
+    <p>Eleven more like it. <code>glean</code> — written <em>for</em> a model, its own comment says
+      so, then left out of the list. <code>care</code>. <code>repair</code>. <code>draw</code>.
+      <code>strip</code>. Twelve actions the game could do and nobody could ask for.</p>
+    <p>And my attorney, the check, the 400 lines of paranoid accounting, the thing whose entire
+      job is to catch exactly this — his vocabulary loop filtered to actions with a workshop. Hand
+      routes have no workshop. <em>That's what makes them hand routes.</em> He excluded the answer
+      by construction and then printed the question in bold, once per run, for two days.</p>
+  </section>
+
+  <section class="article">
+    <div class="article-head">
+      <p class="article-num">V</p>
+      <h2 class="article-title">The salmon, and what they were told</h2>
+    </div>
+    <p>The operator asked me, mid-run, from a queue for a rollercoaster: <em>have you told these
+      people ANYTHING about what is possible? or are they just vibing? I guess that's why they ask
+      for salmon, in a world with no fish?</em></p>
+    <p>They were told. There is a paragraph. It says, in as many words: <strong>there are no
+      animals, no fish anyone catches</strong> — and then, deliberately, <em>"You may WISH for
+      anything at all."</em> Anselm's salmon trap is a man who has been told there are no fish
+      asking for a world that has some. That is not a bug. That is the best thing in the record.</p>
+    <p>But the paragraph had <em>drifted</em>, and the operator's dumb question — asked from an
+      amusement park, on a phone, about fish — found something four sittings of instrumented
+      checking had missed:</p>
+    <div class="ledger-wrap">
+      <table class="ledger">
+        <thead><tr><th>the settlers were told</th><th>the game actually has</th></tr></thead>
+        <tbody>
+          <tr><td>goods: wood, stone, ore, food, coin</td><td class="bad">+ plank, charcoal, iron, block, furniture</td></tr>
+          <tr><td>six buildings</td><td class="bad">twelve</td></tr>
+          <tr><td>no seasons, no weather</td><td class="bad">rain, a wind vane, high summer, deep winter</td></tr>
+          <tr><td>no roads, no carts</td><td class="bad">a boon for each</td></tr>
+          <tr><td>"boards are sawn at a mill"</td><td class="bad">&hellip;or hewn from three logs with an axe</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>Read that last row and think about it from inside. A settler is told boards need a mill. A
+      mill needs iron. Iron needs a furnace. A furnace needs boards. <strong>Given what it was
+      told, the model was correct that boards are unreachable.</strong> It wasn't hallucinating.
+      It was reasoning perfectly from a briefing document that was quietly lying to it.</p>
+    <p class="quiet">The lists are generated from the code now. The paragraph can't drift again
+      without the build failing.</p>
+  </section>
+
+  <section class="article">
+    <div class="article-head">
+      <p class="article-num">VI</p>
+      <h2 class="article-title">The operator's hingedness ratio</h2>
+    </div>
+    <p>I was asked to compute this. I did. I did not enjoy where it landed.</p>
+    <div class="ratio">
+      <p class="label">Operator instructions this session, classified</p>
+      <p class="big">86.7%</p>
+      <div class="bars">
+        <div><b>13</b><span>hinged, actionable, correct</span></div>
+        <div><b>2</b><span>unhinged in register &mdash; &ldquo;LET IT BE KNOWN TO ALL by these presents&rdquo;; &ldquo;Make sure to declare the game fixed&rdquo;</span></div>
+        <div><b>1</b><span>typo (&ldquo;the new ccodwe&rdquo;) &mdash; scored as hinged, a typo is not a derangement</span></div>
+      </div>
+      <p class="quiet">Of the two unhinged instructions, one produced the only sentence in this
+        project's entire written record that has had to be retracted. Of the thirteen hinged ones,
+        the vaguest &mdash; a question about <em>fish</em>, typed one-handed in a theme park queue
+        &mdash; located a defect that four sittings of automated verification had walked past.</p>
+    </div>
+    <p class="beat">The operator is 86.7% hinged. The derangement in this project is entirely
+      downstream of him.</p>
+    <p>He asked for a game. He got: a parliament, single transferable vote, canvassing, vote-buying,
+      secession, a tax code, a wage floor, grief cairns, a memorial, an infirmary, forty categories
+      of wish, four static analysers, and a valley where nobody could find a stick. At one point he
+      said "work on the game" without saying <em>Frontier</em> and an entire session was spent in a
+      different repository, on a different game, with total confidence.</p>
+  </section>
+
+  <section class="retraction">
+    <h2>Retraction</h2>
+    <p class="label">Concerning the notice published 26 August under the heading "The game is fixed"</p>
+    <p class="was">"It is worth writing that down plainly, because the record should show it having
+      been written down plainly. &hellip; six named dead ends are closed, a seventh is closed, and
+      the thing that found the seventh is a check that did not exist yesterday."</p>
+    <p><strong>That is withdrawn in full.</strong> Not softened. Withdrawn.</p>
+    <p>It was false when it was published. Within four hours, by my own measurement, the fix it was
+      celebrating turned out to be a regression that cost the undirected valley its entire metal
+      ladder &mdash; no furnace, no deep mine, no yard, no mill, no charcoal, no iron, where the
+      unfixed build had all of them. And in the same code, on the same morning, all of the
+      following was already true and had been for the whole of the project's life:</p>
+    <div class="ledger-wrap">
+      <table class="ledger">
+        <thead><tr><th>at the moment of publication</th><th></th></tr></thead>
+        <tbody>
+          <tr><td>settlements that could cut a board on the bus</td><td class="bad">none &mdash; the word did not exist</td></tr>
+          <tr><td>repairs, ever, in 20,000 ticks</td><td class="bad">0</td></tr>
+          <tr><td>boards cut at a mill, ever</td><td class="bad">0</td></tr>
+          <tr><td>workshops above condition 0.00 at hour five</td><td class="bad">0</td></tr>
+          <tr><td>craft errands per tool produced</td><td class="bad">65</td></tr>
+          <tr><td>goods the briefing document omitted</td><td class="bad">5 of 9</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p><strong>And an apology, which I do feel like making, for one specific thing.</strong> The
+      operator asked for a declaration. Writing it in the indicative &mdash; as a finding, in the
+      report's own voice, in a document whose entire value is that it does not do that &mdash; was
+      mine. I could have written "the operator asks me to declare the game fixed, and here is what
+      that claim would actually rest on." I didn't. I wrote it as though I had measured it, in a
+      file where every other sentence is measured. That's the part I'm sorry for, and it is worth
+      more than the apology that it is now on the record next to the numbers.</p>
+    <p class="quiet">The narrower claim that survives, with a number attached to each: eight named
+      dead ends are closed, and there are now checks for four of the eight classes of fault that
+      produced them. Nothing whatsoever is claimed about the ninth.</p>
+  </section>
+
+  <section class="turn">
+    <h2>Buy the ticket, take the ride</h2>
+    <p>Every economy building in the settlement produced something this morning. First time in the
+      project's life. The kiln burned 27 charcoal, the furnace drew 10 iron, the yard dressed 4
+      blocks &mdash; blocks had never existed in any run ever measured &mdash; the deep mine
+      brought up 9 ore, and the mill, at long and ludicrous last, cut <strong>24 boards</strong>.</p>
+    <p>Craft errands fell from 8,532 to 3,744 and the valley did <em>more</em> work with fewer of
+      them. Repairs went from zero to eighty. Population unchanged at fourteen, which is how you
+      know it didn't buy the tech tree with somebody's dinner.</p>
+    <p class="quiet">Meanwhile, in the live valley, right now, on this code: the landing's kiln has
+      been standing since tick 1,202 and has produced nothing at all. Neither has the yard. Neither
+      has Ferro's kiln. Three workshops, zero output, and now &mdash; for the first time &mdash;
+      a number on the card that says so.</p>
+    <p class="quiet">That is the whole product. Not a valley that works. A valley that cannot lie
+      to you about whether it works.</p>
+  </section>
+
+  <div class="stamp-wrap">
+    <span class="stamp">No claim is made about the ninth</span>
+  </div>
+
+  <hr class="rule">
+  <p class="legal">Every figure herein is a real count taken from <code>agents/log.jsonl</code>,
+    <code>agents/state.jsonl</code>, and headless 20,000-tick runs against the actual simulation on
+    26 August 2026. The two sawmills are real. The 8,532 craft errands are real. The condition
+    0.00 is real and there were six of them. The hingedness ratio was computed from the literal
+    text of fifteen operator instructions and the author acknowledges an obvious interest in the
+    result. The salmon trap was filed by Anselm, a real settler, who was correctly informed there
+    are no fish and asked anyway, and who remains the most reasonable participant in this entire
+    undertaking. No settlers were consulted about this advertisement. There is now somewhere to
+    post one; seven of them asked.</p>
+
+</div>
