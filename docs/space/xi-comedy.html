@@ -1,0 +1,384 @@
+<title>Nine Houses</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Zilla+Slab:ital,wght@0,400;0,600;0,700;1,400&family=Courier+Prime:ital,wght@0,400;0,700;1,400&display=swap">
+
+<style>
+  :root {
+    --paper:      #DCDFD9;
+    --paper-2:    #D2D6CF;
+    --ink:        #14171A;
+    --ink-soft:   #4A5052;
+    --rule:       #A5ABA2;
+    --stamp:      #A9201C;
+    --stone:      #9AA09B;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --paper: #14171A; --paper-2: #1B1F22; --ink: #D9DCD6; --ink-soft: #8D948F;
+      --rule: #3A4044; --stamp: #D94B44; --stone: #454C4E;
+    }
+  }
+  :root[data-theme="dark"] {
+    --paper: #14171A; --paper-2: #1B1F22; --ink: #D9DCD6; --ink-soft: #8D948F;
+    --rule: #3A4044; --stamp: #D94B44; --stone: #454C4E;
+  }
+
+  * { box-sizing: border-box; }
+  body {
+    background: var(--paper); color: var(--ink);
+    font-family: "Zilla Slab", Georgia, "Times New Roman", serif;
+    font-size: 1.0625rem; line-height: 1.62; margin: 0;
+    padding: 0 1.15rem 7rem; -webkit-font-smoothing: antialiased;
+  }
+  .sheet { max-width: 46rem; margin: 0 auto; display: flex; flex-direction: column; gap: 3rem; }
+
+  .label {
+    font-family: "Courier Prime", "Courier New", monospace; font-size: 0.72rem;
+    letter-spacing: 0.16em; text-transform: uppercase; color: var(--ink-soft); margin: 0;
+  }
+  .rule { border: 0; border-top: 1px solid var(--rule); margin: 0; }
+  .rule-thick { border: 0; border-top: 3px solid var(--ink); margin: 0; }
+  p { margin: 0; max-width: 60ch; }
+  .stack-tight { display: flex; flex-direction: column; gap: 0.7rem; }
+
+  .masthead { display: flex; flex-direction: column; gap: 0.7rem; padding-top: 1.9rem; }
+  .masthead-row { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 0.7rem; }
+
+  .hero { display: flex; flex-direction: column; gap: 1.15rem; }
+  .wordmark {
+    font-family: Anton, "Arial Narrow", Impact, sans-serif; font-weight: 400;
+    font-size: clamp(4.2rem, 19vw, 10.5rem); line-height: 0.84; letter-spacing: -0.015em;
+    text-transform: uppercase; margin: 0; text-wrap: balance;
+  }
+  .deck {
+    font-size: clamp(1.15rem, 3.4vw, 1.6rem); line-height: 1.35; font-weight: 600;
+    max-width: 36ch; margin: 0; text-wrap: balance;
+  }
+  .thesis {
+    font-family: Anton, "Arial Narrow", Impact, sans-serif;
+    font-size: clamp(1.7rem, 6.2vw, 3.1rem); line-height: 1.02; text-transform: uppercase;
+    margin: 0; max-width: 22ch; text-wrap: balance;
+  }
+  .thesis em { font-style: normal; color: var(--stamp); }
+
+  .article { display: flex; flex-direction: column; gap: 1.15rem; }
+  .article-head {
+    display: flex; align-items: baseline; gap: 1.15rem;
+    border-bottom: 1px solid var(--rule); padding-bottom: 0.7rem; flex-wrap: wrap;
+  }
+  .article-num {
+    font-family: "Courier Prime", "Courier New", monospace; font-size: 0.72rem;
+    letter-spacing: 0.16em; text-transform: uppercase; color: var(--stamp); white-space: nowrap;
+  }
+  .article-title {
+    font-family: Anton, "Arial Narrow", Impact, sans-serif;
+    font-size: clamp(1.35rem, 4vw, 2rem); line-height: 1.05; text-transform: uppercase;
+    margin: 0; flex: 1 1 12rem; text-wrap: balance;
+  }
+  .beat { font-size: 1.2rem; font-weight: 600; }
+  .lead-out { color: var(--ink-soft); }
+
+  .transcript {
+    background: var(--paper-2); border-left: 4px solid var(--stamp); padding: 1.15rem;
+    font-family: "Courier Prime", "Courier New", monospace; font-size: 0.86rem; line-height: 1.6;
+    display: flex; flex-direction: column; gap: 0.5rem; overflow-x: auto;
+  }
+  .transcript .cue { color: var(--stamp); font-weight: 700; }
+  .transcript .stage { color: var(--ink-soft); font-style: italic; }
+
+  .roll-wrap { overflow-x: auto; }
+  .roll {
+    width: 100%; border-collapse: collapse;
+    font-family: "Courier Prime", "Courier New", monospace; font-size: 0.8rem;
+  }
+  .roll th {
+    text-align: left; padding: 0.35rem 0.7rem 0.35rem 0; border-bottom: 2px solid var(--ink);
+    font-size: 0.68rem; letter-spacing: 0.1em; text-transform: uppercase; white-space: nowrap;
+  }
+  .roll td { padding: 0.35rem 0.7rem 0.35rem 0; border-bottom: 1px dotted var(--rule);
+    vertical-align: top; }
+  .roll .n { color: var(--ink-soft); white-space: nowrap; }
+  .roll .claim { font-weight: 700; }
+  .roll .verdict { color: var(--stamp); font-weight: 700; white-space: nowrap; }
+
+  .tally {
+    display: flex; flex-wrap: wrap; gap: 0.28rem; padding: 0.7rem 0;
+  }
+  .tally .mark {
+    background: var(--stone); color: var(--paper);
+    font-family: "Courier Prime", "Courier New", monospace; font-size: 0.68rem;
+    letter-spacing: 0.02em; text-align: center; padding: 0.45rem 0.6rem;
+    border-radius: 0.15rem;
+  }
+  .tally .mark.now { background: var(--stamp); }
+  :root:not([data-theme="light"]) .tally .mark { color: var(--ink); }
+  @media (prefers-color-scheme: light) { :root:not([data-theme="dark"]) .tally .mark { color: #F2F4F1; } }
+
+  .turn {
+    background: var(--ink); color: var(--paper); padding: 3rem 1.9rem;
+    margin: 0 -1.15rem; display: flex; flex-direction: column; gap: 1.15rem;
+  }
+  .turn h2 {
+    font-family: Anton, "Arial Narrow", Impact, sans-serif;
+    font-size: clamp(1.9rem, 7vw, 3.4rem); line-height: 0.98; text-transform: uppercase;
+    margin: 0; max-width: 18ch; text-wrap: balance;
+  }
+  .turn p { color: var(--paper); }
+  .turn .quiet { color: var(--rule); }
+
+  .inscription {
+    font-size: 1.15rem; line-height: 1.5; font-style: italic;
+    border-left: 3px solid var(--stamp); padding-left: 1.15rem; max-width: 46ch;
+  }
+
+  .stamp-wrap { display: flex; justify-content: flex-end; }
+  .stamp {
+    display: inline-block; border: 3px solid var(--stamp); color: var(--stamp);
+    font-family: "Courier Prime", "Courier New", monospace; font-size: 0.8rem; font-weight: 700;
+    letter-spacing: 0.18em; text-transform: uppercase; padding: 0.7rem 1.15rem;
+    transform: rotate(-4deg);
+  }
+  .legal {
+    font-family: "Courier Prime", "Courier New", monospace; font-size: 0.68rem; line-height: 1.5;
+    color: var(--ink-soft); text-align: justify; max-width: 100%; margin: 0;
+  }
+  a { color: var(--stamp); }
+</style>
+
+<div class="sheet">
+
+  <header class="masthead">
+    <hr class="rule-thick">
+    <div class="masthead-row">
+      <p class="label">Frontier &middot; an isometric valley whose settlers are agents</p>
+      <p class="label">Tick 4,866 &middot; the seventh all-clear</p>
+    </div>
+    <hr class="rule">
+    <p class="label">I fed a bot nine hours of settlers and asked it to build a civilisation</p>
+  </header>
+
+  <section class="hero">
+    <h1 class="wordmark">Nine<br>Houses</h1>
+    <p class="deck">A comedy of error, one unhinged prompt misunderstood at a time.</p>
+    <hr class="rule">
+    <p class="thesis">Fourteen people. One kiln. <em>Nobody could find a stick.</em></p>
+  </section>
+
+  <section class="article">
+    <div class="article-head">
+      <p class="article-num">Act I</p>
+      <h2 class="article-title">The valley, in its own words</h2>
+    </div>
+    <p class="beat">Verbatim from the record. Nothing here has been improved.</p>
+    <div class="transcript">
+      <div><span class="cue">MARA:</span> More wood for the hall. <span class="stage">&times; 336</span></div>
+      <div class="stage">There is no hall. There has never been a hall. The hall is not
+        unlocked, priced, agreed, proposed, or possible.</div>
+      <div><span class="cue">MARA:</span> A few more trees won't hurt. <span class="stage">&times; 188</span></div>
+      <div><span class="cue">MARA:</span> Gotta get some wood before I starve. <span class="stage">&times; 200</span></div>
+      <div class="stage">The settlement holds 107 wood. Wood is not food. Mara knows this
+        and continues.</div>
+      <div><span class="cue">EVERYONE:</span> Back to the depot. <span class="stage">&times; 715</span></div>
+      <div class="stage">There is no depot. The depot was voted in at tick 830 and waits on a
+        board. The word &ldquo;depot&rdquo; resolves to whichever house is nearest, which is all of them.</div>
+    </div>
+    <p>Every line above is a real count out of <code>agents/log.jsonl</code>. The most-said
+      sentence in the history of this valley is a plan to walk to a building that does not exist,
+      and the second is a request for materials for a building that cannot exist, and both are said
+      by a woman who is starving on top of a hundred logs.</p>
+  </section>
+
+  <section class="article">
+    <div class="article-head">
+      <p class="article-num">Act II</p>
+      <h2 class="article-title">What the settlers asked for</h2>
+    </div>
+    <p>Three hundred and sixty-six wishes were filed that the catalogue had no word for. These are
+      real. These were typed by people made of arithmetic who have two stones and a boat.</p>
+    <div class="transcript">
+      <div>&ldquo;A chainsaw for forestry, to fell trees rapidly and safely without tiring out the forester.&rdquo;</div>
+      <div>&ldquo;A woodchipper to process sawdust into pellets or lumber for construction.&rdquo;</div>
+      <div>&ldquo;A water testing kit to check for safety before drinking lake water.&rdquo;</div>
+      <div>&ldquo;A moisture sensor to determine when cut wood has dried sufficiently.&rdquo;</div>
+      <div>&ldquo;A way to see through the lake to the bottom, enabling the discovery of stone or ore deposits.&rdquo;</div>
+      <div>&ldquo;A designated driftwood collection area with natural tide-driven accumulation patterns.&rdquo;</div>
+      <div>&ldquo;A natural soundscape at night, where the water's gentle movement is the dominant
+        sound and not the creaking of wood and stone.&rdquo;</div>
+    </div>
+    <p>The settlement that filed a request for a moisture sensor could not, on that day or any
+      other, make a plank. It had been unable to make a plank since the boat. It would remain
+      unable to make a plank for four thousand eight hundred and sixty-six ticks, which is the
+      entire recorded history of the place. It wanted the sensor for the planks.</p>
+    <p class="lead-out">Two of the three hundred and sixty-six were things this game genuinely had
+      no word for and now does: a notice board, asked for seven times, and a ledger of who has done
+      what for whom, asked for fifteen. Both are built. Both do something you can measure. That is
+      the part of this document that is not a joke.</p>
+  </section>
+
+  <section class="article">
+    <div class="article-head">
+      <p class="article-num">Act III</p>
+      <h2 class="article-title">Seven hundred and fifty-six times, nothing</h2>
+    </div>
+    <p class="beat">The single most common event in a nine-hour run of this game was a sentence
+      with no subject and no object.</p>
+    <div class="transcript">
+      <div>756 &times; &ldquo;<em>&laquo;name&raquo;</em> could not do that, and turned to what they
+        would do instead.&rdquo;</div>
+      <div class="stage">Could not do what. Instead of what. For seven hundred and fifty-six
+        consecutive occasions the game declined to say, and the model on the other end of the wire
+        was therefore asked to learn from a silence.</div>
+    </div>
+    <p>It had twenty-odd different reasons available to it and used none of them. This report
+      noticed the same line one sitting ago, at fifty occurrences, described it as
+      <em>&ldquo;a message that names nothing&rdquo;</em>, fixed the two things behind it, and then
+      left the message alone. It is now fifteen times larger and it says exactly as much.</p>
+  </section>
+
+  <section class="article">
+    <div class="article-head">
+      <p class="article-num">Act IV</p>
+      <h2 class="article-title">The dead ends, declared living</h2>
+    </div>
+    <p>You asked for a catalogue. This is the catalogue. Every row is a real commit or a real
+      section of the report in which a dead end in this valley was found, explained at length,
+      fixed, measured, and pronounced closed.</p>
+    <div class="roll-wrap">
+      <table class="roll">
+        <thead>
+          <tr><th>#</th><th>The declaration</th><th>Then</th></tr>
+        </thead>
+        <tbody>
+          <tr><td class="n">1</td><td class="claim">No, they did not have the technology</td><td class="verdict">houses</td></tr>
+          <tr><td class="n">2</td><td class="claim">Half of what they wished for could never have happened</td><td class="verdict">houses</td></tr>
+          <tr><td class="n">3</td><td class="claim">The sawmill, and the three things stopping it</td><td class="verdict">houses</td></tr>
+          <tr><td class="n">4</td><td class="claim">Beds are given, not allotted &mdash; and four votes stop being lies</td><td class="verdict">houses</td></tr>
+          <tr><td class="n">5</td><td class="claim">Nothing named hollow is hollow any more</td><td class="verdict">houses</td></tr>
+          <tr><td class="n">6</td><td class="claim">The valley that could not ask for a furnace</td><td class="verdict">houses</td></tr>
+          <tr><td class="n">7</td><td class="claim">A salmon trap, a well that was a hall, and a tax that took nothing</td><td class="verdict">houses</td></tr>
+          <tr><td class="n">8</td><td class="claim">Two more roads to a valley of nothing but houses</td><td class="verdict">houses</td></tr>
+          <tr><td class="n">9</td><td class="claim">The list that granted a house, and a settlement with nothing to point at</td><td class="verdict">houses</td></tr>
+          <tr><td class="n">10</td><td class="claim">Six sheep of scenery, a pick nobody had a word for, and a check for both</td><td class="verdict">houses</td></tr>
+          <tr><td class="n">11</td><td class="claim">The prices nobody could pay, and the door that was never opened</td><td class="verdict">houses</td></tr>
+          <tr><td class="n">12</td><td class="claim">The tree that was felled and vanished</td><td class="verdict">houses</td></tr>
+          <tr><td class="n">13</td><td class="claim">The triage button held a vote nothing read</td><td class="verdict">houses</td></tr>
+          <tr><td class="n">14</td><td class="claim">The store that was full of the one thing nobody could spend</td><td class="verdict">houses</td></tr>
+          <tr><td class="n">15</td><td class="claim">The escape hatch that was bolted shut from three directions</td><td class="verdict">houses</td></tr>
+          <tr><td class="n">16</td><td class="claim">Nobody could find a stick <span class="n">&mdash; today</span></td><td class="verdict">&mdash;</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="tally">
+      <span class="mark">fixed</span><span class="mark">fixed</span><span class="mark">fixed</span>
+      <span class="mark">fixed</span><span class="mark">fixed</span><span class="mark">fixed</span>
+      <span class="mark">fixed</span><span class="mark">fixed</span><span class="mark">fixed</span>
+      <span class="mark">fixed</span><span class="mark">fixed</span><span class="mark">fixed</span>
+      <span class="mark">fixed</span><span class="mark">fixed</span><span class="mark">fixed</span>
+      <span class="mark now">fixed</span>
+    </div>
+    <p class="lead-out">Sixteen. Six of them are sections of the report; the rest are commits. Each
+      one is correct about the fault it found. Each one is wrong about the sentence at the end.</p>
+  </section>
+
+  <section class="article">
+    <div class="article-head">
+      <p class="article-num">Act V</p>
+      <h2 class="article-title">The prompts, and what was heard</h2>
+    </div>
+    <p class="beat">The other half of the comedy, and the half with a person in it.</p>
+    <div class="transcript">
+      <div><span class="cue">SAID:</span> make the settlers agents</div>
+      <div><span class="cue">HEARD:</span> build a parliament, a tax code, single transferable vote,
+        canvassing, vote-buying, secession, and a permanent per-settler voting record</div>
+      <div class="stage">This was correct.</div>
+      <div><span class="cue">SAID:</span> is there a point to that button</div>
+      <div><span class="cue">HEARD:</span> the button holds a full sitting of the island, ranks
+        everything agreed, records every ballot, and is read by nobody at all</div>
+      <div class="stage">This was also correct, which was worse.</div>
+      <div><span class="cue">SAID:</span> Cuiridh mi clach air do ch&agrave;rn</div>
+      <div><span class="cue">HEARD:</span> Gaelic. A cairn. Fourteen settlers who cannot die and a
+        grave site nobody could raise because it wanted eight stone and they were carrying nine.</div>
+      <div><span class="cue">SAID:</span> work on the game</div>
+      <div><span class="cue">HEARD:</span> a different game, in a different repository, for some time</div>
+      <div class="stage">The word &ldquo;Frontier&rdquo; had not been said. This is now written down
+        in a memory file so that it cannot happen again, which is the same fix strategy as the
+        fifteen rows above.</div>
+      <div><span class="cue">SAID:</span> trace down all the dead ends</div>
+      <div><span class="cue">HEARD:</span> trace down all the dead ends</div>
+      <div class="stage">Dead ends were left.</div>
+    </div>
+  </section>
+
+  <section class="article">
+    <div class="article-head">
+      <p class="article-num">Act VI</p>
+      <h2 class="article-title">The actual fault, which is very stupid</h2>
+    </div>
+    <p class="beat">Nine settlers in ten were holding nothing. For the whole run.</p>
+    <div class="transcript">
+      <div>bare-handed &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 14,952 of 16,439 &nbsp; (91%)</div>
+      <div>snapshots with nobody holding a tool &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 660 of 1,629 &nbsp; (40%)</div>
+      <div>boards, ever, in the landing &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0 of 1,629</div>
+      <div>bars of iron, ever, in the landing &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0 of 1,629</div>
+    </div>
+    <p>A house costs ten wood and nothing else. Everything else on this coast wants a board, and
+      cutting a board wants an axe, and making an axe wants an axe's worth of attention that nobody
+      was paying. <strong>A house is the only thing fourteen empty-handed people can build.</strong>
+      They built nine of it. Then eleven of it.</p>
+    <p>The game already knew. The settler thinking for themselves puts tools above the work and the
+      comment says why &mdash; <em>&ldquo;A builder without an axe cannot make a saw.&rdquo;</em>
+      Left alone, this valley equips itself by tick 86 and is cutting boards by tick 286. Hand it to
+      a model and that branch is never reached, because a settler on the bus runs the plan they were
+      given, and the plan was:</p>
+    <div class="transcript">
+      <div>280 &times; haul &nbsp; 245 &times; chop &nbsp; 227 &times; rest &nbsp; 146 &times; goto</div>
+      <div>1 &times; build &nbsp; <span class="cue">0 &times; craft &nbsp; 0 &times; hew</span></div>
+    </div>
+    <p class="lead-out">Bare hands are now the first thing a settler on the bus sees to before they
+      will take an instruction. On a valley directed exactly the way the night was directed: before,
+      no stone was ever mined and no tool was ever made in four thousand ticks. After, stone at tick
+      65 and an axe at tick 69.</p>
+    <p class="lead-out">It was first written one level higher than that, where it also applied to
+      the settlers thinking for themselves &mdash; who were never the problem. That version got
+      every settler tooled up, thirteen of thirteen, and cost the valley its furnace, its deep mine,
+      its yard, its mill, all of its charcoal and every bar of iron it would ever have smelted. The
+      number being watched went up and the thing it stood for went away. It is the sixteenth fault
+      in the table above, committed twice in one morning, four hours apart.</p>
+  </section>
+
+  <section class="turn">
+    <h2>The game is fixed</h2>
+    <p>Every refusal now says what it was and what stopped it. Every settler can get an axe into
+      their hand whoever is thinking for them. The ladder is walked from bare hands by a check that
+      fails the build and prints what the whole thing is standing on, which turns out to be one line
+      of code that lets you hack a plank out of a log with an axe, badly.</p>
+    <p><strong>Eight of the twelve buildings in this game and three of its nine goods rest entirely
+      on that one line.</strong> Nobody knew. Now something does, and it says so every time you run
+      the checks.</p>
+    <p class="quiet">This is the sixteenth time. The seventeenth is presumably running right now, in
+      a browser tab, on the old code, building a house.</p>
+  </section>
+
+  <section class="article">
+    <p class="inscription">&ldquo;More wood for the hall.&rdquo;<br>
+      &mdash; Mara, forester, three hundred and thirty-six times, about a hall that was never
+      proposed, never priced and never possible, while standing on a hundred and seven logs she
+      could not lift a plank out of.</p>
+  </section>
+
+  <div class="stamp-wrap">
+    <span class="stamp">Dead ends: none remaining&thinsp;*</span>
+  </div>
+
+  <hr class="rule">
+  <p class="legal">* Terms. &ldquo;None remaining&rdquo; refers to the dead ends found. Every figure
+    in this document is a real count taken from <code>agents/log.jsonl</code> and
+    <code>agents/state.jsonl</code> on 26 August 2026, from a valley that was still running at the
+    time and was on its eleventh house when the counting stopped. The chainsaw request is real. The
+    moisture sensor is real. Mara is real in every sense that matters to Mara. No settler was
+    consulted about this advertisement; there is nowhere in the valley to post one, which is the
+    thing seven of them asked for and were refused without a reason, and which is granted today. Frontier is an isometric valley whose settlers are agents, and its
+    settlers have now asked for a notice board more times than any human has asked for anything.</p>
+
+</div>

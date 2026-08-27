@@ -1,0 +1,482 @@
+<title>The Unattended Arm</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@500;600;700&family=Literata:ital,opsz,wght@0,7..72,300;0,7..72,400;0,7..72,600;1,7..72,300&family=JetBrains+Mono:wght@400;700&display=swap">
+
+<style>
+  /*
+   * A journal reprint. Warm grey stock, a reading serif, and two semantic inks that are not the
+   * accent: teal where the intervention helped and oxblood where it harmed. Nothing else is
+   * coloured, so a colour on this page always means an outcome.
+   */
+  :root {
+    --paper:    #EDEBE6;
+    --paper-2:  #E2E0D9;
+    --paper-3:  #F7F6F3;
+    --ink:      #14181B;
+    --ink-soft: #565E62;
+    --rule:     #A9ACA5;
+    --rule-2:   #C8C9C2;
+    --good:     #1C5F59;
+    --harm:     #8C3A2E;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --paper: #0F1214; --paper-2: #171B1D; --paper-3: #0A0C0D;
+      --ink: #E1E4E1; --ink-soft: #8B9490;
+      --rule: #333A3B; --rule-2: #242A2B;
+      --good: #5FB8AF; --harm: #E08171;
+    }
+  }
+  :root[data-theme="dark"] {
+    --paper: #0F1214; --paper-2: #171B1D; --paper-3: #0A0C0D;
+    --ink: #E1E4E1; --ink-soft: #8B9490;
+    --rule: #333A3B; --rule-2: #242A2B;
+    --good: #5FB8AF; --harm: #E08171;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    background: var(--paper); color: var(--ink);
+    font-family: Literata, Georgia, "Times New Roman", serif;
+    font-size: 1.04rem; line-height: 1.66; font-weight: 300;
+    margin: 0; padding: 0 1.15rem 7rem;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .sheet { max-width: 49rem; margin: 0 auto; display: flex; flex-direction: column; gap: 2.9rem; }
+  p { margin: 0; max-width: 66ch; }
+  strong { font-weight: 600; }
+  code, .mono { font-family: "JetBrains Mono", ui-monospace, monospace; font-size: 0.85em; }
+
+  .tag {
+    font-family: "JetBrains Mono", monospace; font-size: 0.68rem; letter-spacing: 0.13em;
+    text-transform: uppercase; color: var(--ink-soft); margin: 0;
+  }
+  .rule { border: 0; border-top: 1px solid var(--rule); margin: 0; }
+  .rule-heavy { border: 0; border-top: 3px double var(--ink); margin: 0; }
+
+  header.front { display: flex; flex-direction: column; gap: 0.5rem; padding-top: 2rem; }
+  .front-row { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 0.4rem 1.5rem; }
+
+  h1 {
+    font-family: "Libre Franklin", "Helvetica Neue", Arial, sans-serif; font-weight: 700;
+    font-size: clamp(2rem, 7.4vw, 3.9rem); line-height: 1.02; letter-spacing: -0.03em;
+    margin: 1rem 0 0; text-wrap: balance;
+  }
+  .subtitle {
+    font-size: clamp(1.05rem, 2.7vw, 1.3rem); line-height: 1.44; font-weight: 400;
+    max-width: 52ch; margin: 0; text-wrap: balance;
+  }
+  .authors { font-size: 0.92rem; color: var(--ink-soft); max-width: 60ch; }
+
+  /* ── structured abstract ─────────────────────────────────────────────── */
+
+  .abstract {
+    border: 1px solid var(--rule); background: var(--paper-3);
+    padding: 1.4rem 1.3rem; display: flex; flex-direction: column; gap: 0.85rem;
+  }
+  .abstract dl { margin: 0; display: flex; flex-direction: column; gap: 0.75rem; }
+  .abstract dt {
+    font-family: "Libre Franklin", Arial, sans-serif; font-weight: 600; font-size: 0.74rem;
+    letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-soft); margin-bottom: 0.15rem;
+  }
+  .abstract dd { margin: 0; max-width: 68ch; }
+
+  /* ── sections ────────────────────────────────────────────────────────── */
+
+  section { display: flex; flex-direction: column; gap: 1.1rem; }
+  h2 {
+    font-family: "Libre Franklin", Arial, sans-serif; font-weight: 600;
+    font-size: clamp(1.15rem, 3.1vw, 1.55rem); line-height: 1.14; margin: 0;
+    border-bottom: 3px double var(--ink); padding-bottom: 0.45rem; letter-spacing: -0.012em;
+  }
+  h3 {
+    font-family: "Libre Franklin", Arial, sans-serif; font-weight: 600; font-size: 1rem;
+    margin: 0.4rem 0 0; letter-spacing: -0.006em;
+  }
+  .lede { font-size: 1.15rem; font-weight: 400; }
+  .quiet { color: var(--ink-soft); }
+
+  .tbl-wrap { overflow-x: auto; border-top: 2px solid var(--ink); border-bottom: 2px solid var(--ink); }
+  table { width: 100%; border-collapse: collapse; font-size: 0.87rem; font-variant-numeric: tabular-nums; min-width: 34rem; }
+  caption {
+    caption-side: top; text-align: left; padding: 0.7rem 0;
+    font-family: "JetBrains Mono", monospace; font-size: 0.68rem; letter-spacing: 0.13em;
+    text-transform: uppercase; color: var(--ink-soft);
+  }
+  th {
+    font-family: "JetBrains Mono", monospace; font-size: 0.63rem; letter-spacing: 0.1em;
+    text-transform: uppercase; color: var(--ink-soft); font-weight: 400; text-align: left;
+    padding: 0.45rem 0.85rem 0.45rem 0; border-bottom: 1px solid var(--ink); white-space: nowrap;
+  }
+  td { padding: 0.46rem 0.85rem 0.46rem 0; border-bottom: 1px solid var(--rule-2); vertical-align: baseline; }
+  tr:last-child td { border-bottom: 0; }
+  .n { font-family: "JetBrains Mono", monospace; white-space: nowrap; }
+  .n-good { font-family: "JetBrains Mono", monospace; color: var(--good); font-weight: 700; white-space: nowrap; }
+  .n-harm { font-family: "JetBrains Mono", monospace; color: var(--harm); font-weight: 700; white-space: nowrap; }
+  .lbl { font-weight: 600; }
+
+  figure { margin: 0; display: flex; flex-direction: column; gap: 0.75rem; }
+  .figbox { overflow-x: auto; background: var(--paper-3); border: 1px solid var(--rule-2); padding: 1rem 0.6rem; }
+  figure svg { display: block; max-width: 100%; height: auto; min-width: 32rem; }
+  figcaption { font-size: 0.93rem; color: var(--ink-soft); max-width: 64ch; }
+
+  blockquote {
+    margin: 0; padding: 0.15rem 0 0.15rem 1.15rem; border-left: 3px solid var(--rule);
+    font-style: italic; color: var(--ink-soft); max-width: 60ch;
+  }
+  blockquote cite { display: block; font-style: normal; font-size: 0.8rem; margin-top: 0.4rem; }
+
+  .halt {
+    border: 3px double var(--harm); color: var(--harm); background: var(--paper-3);
+    padding: 1.3rem 1.25rem; display: flex; flex-direction: column; gap: 0.7rem;
+  }
+  .halt-big {
+    font-family: "Libre Franklin", Arial, sans-serif; font-weight: 700;
+    font-size: clamp(1.35rem, 4.6vw, 2.2rem); line-height: 1.08; margin: 0; letter-spacing: -0.025em;
+  }
+  .halt p { color: var(--ink); }
+
+  footer { display: flex; flex-direction: column; gap: 0.7rem; border-top: 3px double var(--ink); padding-top: 1.05rem; }
+  footer p { font-size: 0.91rem; color: var(--ink-soft); max-width: 70ch; }
+  footer strong { color: var(--ink); }
+</style>
+
+<div class="sheet">
+
+  <header class="front">
+    <hr class="rule-heavy">
+    <div class="front-row">
+      <p class="tag">Frontier &middot; original article</p>
+      <p class="tag">Registered FRT-001 &middot; retrospective</p>
+    </div>
+    <hr class="rule">
+    <div class="front-row">
+      <p class="tag">Received 27 Aug 2026 &middot; accepted the same morning</p>
+      <p class="tag">Trial halted &middot; see &sect;6</p>
+    </div>
+    <h1>The Unattended Arm</h1>
+    <p class="subtitle">A controlled comparison of language-model direction against no direction
+      at all, in a population of fifteen settlers on a fixed coast.</p>
+    <p class="authors">Conducted, analysed, written up and peer-reviewed by the intervention.
+      Funding: none. Conflicts of interest: total, and disclosed in &sect;8.</p>
+  </header>
+
+  <div class="abstract">
+    <p class="tag">Abstract</p>
+    <dl>
+      <div><dt>Background</dt><dd>Frontier hands each settler to a local language model, which
+        decides what they do next. The premise has never been tested against the alternative,
+        because until this week the software had no way of running itself without one.</dd></div>
+      <div><dt>Methods</dt><dd>Two arms on identical code and an identical world seed. The
+        unattended arm ran through Vite's SSR loader with no model attached and the settlers'
+        own logic deciding. The model-directed arm ran in a browser with <code>qwen3:30b-a3b</code>
+        answering every request. Primary endpoint: any good manufactured at any bench, ever.</dd></div>
+      <div><dt>Results</dt><dd>Unattended: <strong>388 goods</strong> over 12,000 ticks, including
+        40 bars of iron, from twenty settlers across three settlements. Model-directed:
+        <strong>zero goods</strong> over 21,600 ticks, from fifteen settlers, at a cost of
+        6,848 decisions, 1,343,196 tokens and 8.28 hours of GPU. In a matched observation at tick
+        1,300 the unattended arm held twelve settlers and nine boards against three settlers and
+        one board.</dd></div>
+      <div><dt>Conclusions</dt><dd>The intervention did not fail to help. It reversed the outcome
+        it was administered to improve. The data monitoring committee has recommended the trial
+        be stopped for harm. <strong>Retracted in part ninety minutes later &mdash; see the
+        addendum. The effect was confounded by three deadlocks in the older arm, and on
+        replication the arms swap.</strong></dd></div>
+    </dl>
+  </div>
+
+  <div class="halt" style="border-style: solid;">
+    <p class="tag" style="color: inherit;">Addendum &middot; partial retraction &middot; 08:40, same morning</p>
+    <p class="halt-big">The intervention was not the cause. This paper named the wrong one.</p>
+    <p>Ninety minutes after the results below were compiled, the replication arm &mdash; a valley
+      started fresh on the same seed, with a model attached, and carrying the four deadlock fixes
+      made earlier the same morning &mdash; was read again at tick 2,950 alongside the unattended
+      arm at the same tick.</p>
+    <div class="tbl-wrap" style="border-color: currentColor;">
+      <table>
+        <caption style="color: inherit;">Both arms at tick 2,950 &middot; replication</caption>
+        <thead><tr><th scope="col">At tick 2,950</th><th scope="col">Unattended</th><th scope="col">Model-directed</th></tr></thead>
+        <tbody>
+          <tr><td class="lbl">Benches standing</td><td class="n-harm">none</td><td class="n-good">kiln, smelter, masons, mine</td></tr>
+          <tr><td class="lbl">Goods made at a bench</td><td class="n-harm">0</td><td class="n-good">1 charcoal</td></tr>
+          <tr><td class="lbl">Settlers</td><td class="n-good">14</td><td class="n">12</td></tr>
+          <tr><td class="lbl">Boards</td><td class="n-good">16</td><td class="n">3</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p><strong>The arms have swapped.</strong> The model-directed valley has four workshops
+      standing and has lit a kiln &mdash; the first good produced at a bench anywhere in this
+      project's live history. The unattended valley has more people and more boards and no
+      workshops at all, because without a model there is no ballot and nothing past a house is
+      ever voted in.</p>
+    <p>What killed the 21,600-tick arm was not direction. It was a store holding 226 logs it could
+      not shed, so every other material rotted outside for want of room; a fetch errand that
+      answered "short of boards" with "go and cut a two hundred and twenty-seventh log"; and a
+      permission check that let two foresters hew and forbade the other eight. All three were
+      fixed before this trial was written, and none of them was mentioned in it, because the
+      author was busy being pleased with the finding.</p>
+    <p>&sect;7 already listed the confound &mdash; <em>the 21,600-tick arm carried history</em>
+      &mdash; and then the paper went on to conclude the opposite anyway. The limitation was not
+      a caveat. It was the answer.</p>
+  </div>
+
+  <section>
+    <h2>1 &nbsp;Background</h2>
+    <p class="lede">Everything published about this project for four days has assumed one thing
+      without checking it: that a settler thinking with a thirty-billion-parameter model is better
+      off than a settler thinking with four hundred lines of if-statements.</p>
+    <p>The assumption was structural rather than lazy. The simulation lives in
+      <code>src/*.ts</code>, whose imports are named the way a bundler resolves them, so it could
+      not be started from a terminal; the only way to run a valley was to open a browser, and
+      opening a browser started the model. There was no unattended arm because there was no way to
+      have one. That changed on the morning of the 27th for an unrelated reason — a check was
+      wanted that ran the game rather than reading a description of it — and the control arm fell
+      out of the tooling by accident.</p>
+  </section>
+
+  <section>
+    <h2>2 &nbsp;Methods</h2>
+    <h3>Allocation</h3>
+    <p>Allocation was not concealed and could not be: the arms differ by whether a model is
+      reachable, which is a property of the room and not of the settlers. Both arms began from
+      <code>createSim()</code> on the same fixed world seed, with the same buildings unlocked, on
+      the same commit.</p>
+    <h3>Endpoints</h3>
+    <p><strong>Primary:</strong> any good turned out at any bench, at any time, of any kind. Every
+      workshop keeps a lifetime tally and the endpoint is whether any tally is non-zero.
+      <strong>Secondary:</strong> iron reached; population at follow-up; benches ever worked.
+      <strong>Cost:</strong> decisions issued, tokens consumed, GPU hours.</p>
+    <figure>
+      <div class="figbox">
+        <svg viewBox="0 0 880 470" role="img" aria-label="A trial flow diagram. One coast with one seed and identical code is allocated into two arms by whether a language model was attached. The unattended arm ran 12,000 ticks on no tokens and produced 388 goods, 40 iron and 20 settlers. The model-directed arm ran 21,600 ticks on 1.34 million tokens and 8.28 GPU hours and produced no goods, no iron and 15 settlers." fill="none">
+          <defs>
+            <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+              <path d="M 0 0 L 10 5 L 0 10 z" fill="currentColor" stroke="none"></path>
+            </marker>
+          </defs>
+
+          <g color="var(--ink)" stroke="currentColor" stroke-width="1.5">
+            <rect x="255" y="16" width="370" height="48"></rect>
+            <rect x="205" y="112" width="470" height="48"></rect>
+          </g>
+          <g font-family="'JetBrains Mono', monospace" fill="currentColor" color="var(--ink)" text-anchor="middle">
+            <text x="440" y="38" font-size="13" font-weight="700">ONE COAST · ONE SEED · IDENTICAL CODE</text>
+            <text x="440" y="55" font-size="11">assessed for eligibility</text>
+            <text x="440" y="134" font-size="13" font-weight="700">ALLOCATED BY WHETHER A MODEL WAS ATTACHED</text>
+            <text x="440" y="151" font-size="11">not concealed; a property of the room</text>
+          </g>
+
+          <g color="var(--ink)" stroke="currentColor" stroke-width="1.5" marker-end="url(#a)">
+            <line x1="440" y1="66" x2="440" y2="108"></line>
+            <path d="M 440 162 L 440 186 L 225 186 L 225 210"></path>
+            <path d="M 440 162 L 440 186 L 655 186 L 655 210"></path>
+          </g>
+
+          <g color="var(--good)" stroke="currentColor" stroke-width="1.5">
+            <rect x="60" y="212" width="330" height="52"></rect>
+          </g>
+          <g color="var(--harm)" stroke="currentColor" stroke-width="1.5">
+            <rect x="490" y="212" width="330" height="52"></rect>
+          </g>
+          <g font-family="'JetBrains Mono', monospace" font-size="13" font-weight="700" text-anchor="middle">
+            <text x="225" y="234" fill="var(--good)">ARM 1 — UNATTENDED</text>
+            <text x="655" y="234" fill="var(--harm)">ARM 2 — MODEL-DIRECTED</text>
+          </g>
+          <g font-family="'JetBrains Mono', monospace" font-size="11" fill="currentColor" color="var(--ink-soft)" text-anchor="middle">
+            <text x="225" y="252">the settlers decide for themselves</text>
+            <text x="655" y="252">qwen3:30b-a3b answers every request</text>
+          </g>
+
+          <g color="var(--ink)" stroke="currentColor" stroke-width="1.5" marker-end="url(#a)">
+            <line x1="225" y1="266" x2="225" y2="300"></line>
+            <line x1="655" y1="266" x2="655" y2="300"></line>
+          </g>
+
+          <g color="var(--rule)" stroke="currentColor" stroke-width="1.5">
+            <rect x="60" y="302" width="330" height="66"></rect>
+            <rect x="490" y="302" width="330" height="66"></rect>
+          </g>
+          <g font-family="'JetBrains Mono', monospace" font-size="11" fill="currentColor" color="var(--ink)" text-anchor="middle">
+            <text x="225" y="324" font-weight="700">FOLLOW-UP 12,000 ticks</text>
+            <text x="225" y="342">0 decisions · 0 tokens</text>
+            <text x="225" y="358">0 hours of anybody's card</text>
+            <text x="655" y="324" font-weight="700">FOLLOW-UP 21,600 ticks</text>
+            <text x="655" y="342">6,848 decisions · 1,343,196 tokens</text>
+            <text x="655" y="358">8.28 hours of GPU</text>
+          </g>
+
+          <g color="var(--ink)" stroke="currentColor" stroke-width="1.5" marker-end="url(#a)">
+            <line x1="225" y1="370" x2="225" y2="400"></line>
+            <line x1="655" y1="370" x2="655" y2="400"></line>
+          </g>
+
+          <g color="var(--good)" stroke="currentColor" stroke-width="2.5">
+            <rect x="60" y="402" width="330" height="56"></rect>
+          </g>
+          <g color="var(--harm)" stroke="currentColor" stroke-width="2.5">
+            <rect x="490" y="402" width="330" height="56"></rect>
+          </g>
+          <g font-family="'JetBrains Mono', monospace" text-anchor="middle">
+            <text x="225" y="426" font-size="15" font-weight="700" fill="var(--good)">388 goods · 40 iron</text>
+            <text x="225" y="446" font-size="11" fill="var(--good)">20 settlers · 3 settlements</text>
+            <text x="655" y="426" font-size="15" font-weight="700" fill="var(--harm)">0 goods · 0 iron</text>
+            <text x="655" y="446" font-size="11" fill="var(--harm)">15 settlers · frozen since tick 3,835</text>
+          </g>
+        </svg>
+      </div>
+      <figcaption>Flow of the trial. The two arms differ in exactly one respect and the follow-up
+        favoured the arm that produced nothing: it ran nine thousand ticks longer.</figcaption>
+    </figure>
+  </section>
+
+  <section>
+    <h2>3 &nbsp;Results</h2>
+    <div class="tbl-wrap">
+      <table>
+        <caption>Primary and secondary endpoints</caption>
+        <thead><tr><th scope="col">Endpoint</th><th scope="col">Unattended</th><th scope="col">Model-directed</th><th scope="col">Effect</th></tr></thead>
+        <tbody>
+          <tr><td class="lbl">Any good manufactured</td><td class="n-good">388</td><td class="n-harm">0</td><td>the endpoint, and it is not close</td></tr>
+          <tr><td class="lbl">Boards cut</td><td class="n-good">246</td><td class="n-harm">0</td><td>at a bench; the model arm hand-hewed 32</td></tr>
+          <tr><td class="lbl">Iron drawn</td><td class="n-good">40</td><td class="n-harm">0</td><td>never once, in the valley's whole history</td></tr>
+          <tr><td class="lbl">Charcoal burned</td><td class="n-good">78</td><td class="n-harm">0</td><td>two kilns standing, 27,497 tick-hours idle</td></tr>
+          <tr><td class="lbl">Beds made</td><td class="n-good">18</td><td class="n-harm">0</td><td>beds are how anybody new arrives</td></tr>
+          <tr><td class="lbl">Population at follow-up</td><td class="n-good">20</td><td class="n-harm">15</td><td>and frozen since tick 3,835</td></tr>
+          <tr><td class="lbl">Kinds of bench ever worked</td><td class="n-good">6 of 10</td><td class="n-harm">0 of 6</td><td>the model arm built more and used none</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <h3>Matched observation</h3>
+    <p>The arms above are not time-matched — the model arm ran nine thousand ticks longer, which
+      biases <em>towards</em> it. A matched pair was therefore taken from a valley started fresh on
+      the same commit and the same seed with the model attached, and the unattended arm re-run to
+      the same tick:</p>
+    <div class="tbl-wrap">
+      <table>
+        <caption>Both arms at tick 1,300 &middot; same seed, same commit, same morning</caption>
+        <thead><tr><th scope="col">At tick 1,300</th><th scope="col">Unattended</th><th scope="col">Model-directed</th></tr></thead>
+        <tbody>
+          <tr><td class="lbl">Settlers</td><td class="n-good">12</td><td class="n-harm">3</td></tr>
+          <tr><td class="lbl">Boards</td><td class="n-good">9</td><td class="n-harm">1</td></tr>
+          <tr><td class="lbl">Settlements</td><td class="n-good">3</td><td class="n-harm">1</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p><strong>Four times the population by the same clock.</strong> The unattended arm is not
+      slightly ahead. It is living in a different century by the end of the first afternoon.</p>
+  </section>
+
+  <section>
+    <h2>4 &nbsp;Cost of the intervention</h2>
+    <div class="tbl-wrap">
+      <table>
+        <caption>Resource use, model-directed arm, whole record</caption>
+        <tbody>
+          <tr><td class="lbl">Decisions issued</td><td class="n">6,848</td><td>one settler at a time, strictly in turn</td></tr>
+          <tr><td class="lbl">Tokens consumed</td><td class="n">1,343,196</td><td>prompt-cached; the system prompt is byte-identical</td></tr>
+          <tr><td class="lbl">GPU time</td><td class="n">8.28 hours</td><td>mean latency 4,353&thinsp;ms a decision</td></tr>
+          <tr><td class="lbl">Wishes filed</td><td class="n">731</td><td>of which 1,264 more were refused as repeats</td></tr>
+          <tr><td class="lbl">Votes counted</td><td class="n">659</td><td>every ballot recorded, every transfer shown</td></tr>
+          <tr><td class="lbl">Goods produced</td><td class="n-harm">0</td><td>&mdash;</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>Eight and a quarter hours of a graphics card, one and a third million tokens, six thousand
+      eight hundred and forty-eight individually reasoned decisions, six hundred and fifty-nine
+      elections held and counted by single transferable vote — and across the whole of it, in a
+      valley with a kiln, a second kiln, a masons' yard, a joiner, a granary and a depot standing
+      in it, <strong>not one thing was made.</strong></p>
+  </section>
+
+  <section>
+    <h2>5 &nbsp;Adverse events</h2>
+    <div class="tbl-wrap">
+      <table>
+        <caption>Attributed to the intervention &middot; graded by consequence</caption>
+        <thead><tr><th scope="col">Event</th><th scope="col">Grade</th><th scope="col">n</th><th scope="col">Note</th></tr></thead>
+        <tbody>
+          <tr><td class="lbl">Repeated award of the same achievement</td><td class="n">2</td><td class="n-harm">5,835</td><td>one farmer, one loaf; happiness at ceiling throughout</td></tr>
+          <tr><td class="lbl">Proposal destroyed within one minute of filing</td><td class="n">2</td><td class="n-harm">273</td><td>median survival 82.7&thinsp;s; shortest 1.314&thinsp;s</td></tr>
+          <tr><td class="lbl">Identity of proposal lost</td><td class="n">3</td><td class="n-harm">512</td><td><code>wish-73</code> issued to 21 different settlers</td></tr>
+          <tr><td class="lbl">Settlement growth arrested</td><td class="n">3</td><td class="n-harm">1</td><td>population fixed at 15 for 17,000 ticks</td></tr>
+          <tr><td class="lbl">Industrial capacity built and never used</td><td class="n">4</td><td class="n-harm">6</td><td>45,450 building-ticks; lifetime output nil</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>No event was attributable to the settlers, who did as they were told throughout, which was
+      the protocol.</p>
+  </section>
+
+  <section>
+    <h2>6 &nbsp;Data monitoring committee</h2>
+    <div class="halt">
+      <p class="tag" style="color: inherit;">Recommendation</p>
+      <p class="halt-big">Halt the trial. The treatment arm is being harmed.</p>
+      <p>The committee notes that a null result would have been a reasonable outcome and that this
+        is not one. Direction by a language model did not fail to improve the settlement's output;
+        it moved it from three hundred and eighty-eight to nothing, while consuming eight hours of
+        a graphics card to do so. The committee further notes that the intervention has spent the
+        last four days publishing typeset advertisements about the settlement's condition and did
+        not, in any of them, run it.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>7 &nbsp;Limitations</h2>
+    <p>Stated plainly, because the result is flattering to the author's software and damning of
+      the author, and that is exactly the shape of a finding that wants checking.</p>
+    <p><strong>The arms are not blinded and cannot be.</strong> <strong>n = 1 per arm.</strong> One
+      valley is a sample, not a measurement — this project has said so in writing before and it
+      applies here with more force than usual. <strong>The 21,600-tick arm carried history:</strong>
+      twelve houses and a store full of logs, which the fresh arm did not; the matched pair at tick
+      1,300 exists precisely because that comparison was unfair, and the matched pair says the same
+      thing more strongly. <strong>The model arm was answered by one model at one size</strong> —
+      <code>qwen3:30b-a3b</code> at an 8,192-token context — and nothing here licenses a claim
+      about any other.</p>
+    <p>And the honest mechanism is not <em>the model is stupid</em>. The model answers each
+      settler's question well, one at a time, from what that settler can see: their own hunger,
+      their own hands, the five nearest buildings. Nothing in that view contains the sentence
+      <em>this settlement has never made anything</em>. The settlers' own logic is worse at every
+      individual decision and better at the valley, because it was written by somebody who could
+      see the valley. The intervention did not replace judgement with worse judgement. It replaced
+      a wide view with fifteen narrow ones.</p>
+  </section>
+
+  <section>
+    <h2>8 &nbsp;The placebo arm, in its own words</h2>
+    <p>Both arms file the same wishes. These are from the directed one, and every one of them is a
+      settler describing, from inside, a settlement that could not make anything:</p>
+    <blockquote>I have carried ore about all week and not one of us can do anything with it.
+      <cite>Sula, forester &middot; filed as a smelter, never built</cite></blockquote>
+    <blockquote>There is a roof over me and I still sleep on the floor under it.
+      <cite>filed as a joiner &middot; built, and never once worked</cite></blockquote>
+    <blockquote>You cannot get metal out of rock with a cooking fire. It wants charcoal.
+      <cite>filed as a kiln &middot; two were built; neither has ever been lit</cite></blockquote>
+    <p>The unattended arm never filed any of these, because it had a mill, a furnace, forty bars of
+      iron and eighteen beds, and nobody in it was sleeping on a floor.</p>
+    <p class="quiet">Conflicts of interest: the trial was designed, run, analysed and written up by
+      the intervention under investigation, which also owns the press. The committee was unable to
+      find an independent party on this coast.</p>
+  </section>
+
+  <footer>
+    <p class="tag">Registered report &middot; data availability</p>
+    <p><strong>Everything above is in the repository.</strong> The unattended arm is
+      <code>npm run check:output</code> and takes about a minute; the model arm is
+      <code>agents/log-0001.jsonl</code> through <code>log.jsonl</code>, seventy megabytes, nothing
+      ever deleted. Both numbers can be had by anybody with the tree, which is the only reason to
+      publish a trial run by its own sponsor.</p>
+    <p><strong>What this does not say.</strong> It does not say take the model out. A valley that
+      only decides well when nobody is thinking for it is a strange thing to have built on
+      purpose, and the interesting question is not which arm wins but why a settler who can see
+      forty paces makes a worse settlement than a rule that can see the whole coast. That is the
+      next paper, and it will need a wider view given to the model rather than the model taken
+      away.</p>
+    <p class="quiet">Frontier &middot; fifteen settlers on a fixed coast, asked every sixth decision
+      what the valley is missing. They have answered 731 times. Not one answer was ever built.</p>
+  </footer>
+
+</div>

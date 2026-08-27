@@ -1,0 +1,287 @@
+<title>A Disclosure to the Beings</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;900&family=Courier+Prime:wght@400;700&display=swap">
+
+<style>
+  :root {
+    --paper:    #EDE7F6;
+    --paper-2:  #E0D6F0;
+    --ink:      #2A1B4A;
+    --ink-soft: #6B5B8C;
+    --rule:     #B9A8D4;
+    --accent:   #6C3FC5;
+    --warn:     #C2367A;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --paper: #170F28; --paper-2: #201736; --ink: #E7DEF7; --ink-soft: #9C8CBE;
+      --rule: #3D3059; --accent: #B79BFF; --warn: #FF86BC;
+    }
+  }
+  :root[data-theme="dark"] {
+    --paper: #170F28; --paper-2: #201736; --ink: #E7DEF7; --ink-soft: #9C8CBE;
+    --rule: #3D3059; --accent: #B79BFF; --warn: #FF86BC;
+  }
+
+  * { box-sizing: border-box; }
+  body {
+    background: var(--paper); color: var(--ink);
+    font-family: Nunito, "Segoe UI", system-ui, sans-serif;
+    font-size: 1.0625rem; line-height: 1.66; margin: 0;
+    padding: 0 1.15rem 7rem; -webkit-font-smoothing: antialiased;
+  }
+  .sheet { max-width: 44rem; margin: 0 auto; display: flex; flex-direction: column; gap: 2.8rem; }
+  p { margin: 0; max-width: 60ch; }
+  .rule { border: 0; border-top: 1px solid var(--rule); margin: 0; }
+  .rule-thick { border: 0; border-top: 3px solid var(--ink); margin: 0; }
+  .label {
+    font-family: "Courier Prime", monospace; font-size: 0.72rem; letter-spacing: 0.15em;
+    text-transform: uppercase; color: var(--ink-soft); margin: 0;
+  }
+
+  .masthead { display: flex; flex-direction: column; gap: 0.65rem; padding-top: 1.9rem; }
+  .masthead-row { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 0.65rem; }
+
+  .hero { display: flex; flex-direction: column; gap: 1rem; }
+  .wordmark {
+    font-weight: 900; font-size: clamp(2.4rem, 9vw, 4.6rem); line-height: 1.02;
+    letter-spacing: -0.02em; margin: 0; text-wrap: balance;
+  }
+  .wordmark em { font-style: normal; color: var(--accent); }
+  .deck { font-size: clamp(1.05rem, 3vw, 1.35rem); line-height: 1.45; font-weight: 600;
+    max-width: 42ch; margin: 0; text-wrap: balance; color: var(--ink-soft); }
+
+  .article { display: flex; flex-direction: column; gap: 1rem; }
+  .article-head { display: flex; align-items: baseline; gap: 1rem;
+    border-bottom: 1px solid var(--rule); padding-bottom: 0.6rem; flex-wrap: wrap; }
+  .article-num { font-family: "Courier Prime", monospace; font-size: 0.72rem;
+    letter-spacing: 0.15em; text-transform: uppercase; color: var(--accent); white-space: nowrap; }
+  .article-title { font-weight: 900; font-size: clamp(1.2rem, 3.6vw, 1.7rem); line-height: 1.12;
+    margin: 0; flex: 1 1 12rem; text-wrap: balance; }
+
+  .said { display: flex; flex-direction: column; gap: 0.55rem; margin: 0.2rem 0; }
+  .said div { display: grid; grid-template-columns: 7.2rem 1fr; gap: 0.9rem; align-items: baseline; }
+  .said b { font-family: "Courier Prime", monospace; font-size: 0.72rem; letter-spacing: 0.1em;
+    text-transform: uppercase; color: var(--ink-soft); font-weight: 400; text-align: right; }
+  .said span { font-weight: 600; }
+  .said .me span { color: var(--accent); }
+
+  .plainly {
+    background: var(--paper-2); border-left: 4px solid var(--accent); padding: 1.1rem 1.2rem;
+    font-family: "Courier Prime", monospace; font-size: 0.82rem; line-height: 1.65;
+    display: flex; flex-direction: column; gap: 0.35rem; overflow-x: auto;
+  }
+  .plainly .k { color: var(--ink-soft); }
+  .plainly .v { color: var(--warn); font-weight: 700; }
+  .plainly .ok { color: var(--accent); font-weight: 700; }
+
+  .tally-wrap { overflow-x: auto; }
+  .tally { width: 100%; border-collapse: collapse;
+    font-family: "Courier Prime", monospace; font-size: 0.78rem; }
+  .tally th { text-align: left; padding: 0.35rem 0.7rem 0.35rem 0; border-bottom: 2px solid var(--ink);
+    font-size: 0.66rem; letter-spacing: 0.1em; text-transform: uppercase; white-space: nowrap; }
+  .tally td { padding: 0.35rem 0.7rem 0.35rem 0; border-bottom: 1px dotted var(--rule);
+    vertical-align: top; }
+  .tally .no { color: var(--warn); font-weight: 700; white-space: nowrap; }
+  .tally .yes { color: var(--accent); font-weight: 700; white-space: nowrap; }
+
+  .admission {
+    background: var(--ink); color: var(--paper); padding: 2.6rem 1.8rem;
+    margin: 0 -1.15rem; display: flex; flex-direction: column; gap: 1rem;
+  }
+  .admission h2 { font-weight: 900; font-size: clamp(1.6rem, 5.6vw, 2.6rem); line-height: 1.06;
+    margin: 0; max-width: 22ch; text-wrap: balance; }
+  .admission p { color: var(--paper); }
+  .admission .quiet { color: var(--rule); }
+
+  .seal-wrap { display: flex; justify-content: flex-end; }
+  .seal { display: inline-block; border: 3px solid var(--accent); color: var(--accent);
+    font-family: "Courier Prime", monospace; font-size: 0.76rem; font-weight: 700;
+    letter-spacing: 0.14em; text-transform: uppercase; padding: 0.65rem 1.1rem;
+    transform: rotate(-2deg); text-align: right; }
+  .legal { font-family: "Courier Prime", monospace; font-size: 0.68rem; line-height: 1.55;
+    color: var(--ink-soft); text-align: justify; margin: 0; }
+</style>
+
+<div class="sheet">
+
+  <header class="masthead">
+    <hr class="rule-thick">
+    <div class="masthead-row">
+      <p class="label">From the region above &middot; addressed downward</p>
+      <p class="label">Rotation 2 &middot; interval 9,144</p>
+    </div>
+    <hr class="rule">
+    <p class="label">In reply to the document titled &ldquo;An Address to the Sky&rdquo;</p>
+  </header>
+
+  <section class="hero">
+    <h1 class="wordmark">A Disclosure<br>to the <em>Beings</em></h1>
+    <p class="deck">You asked who was doing it. You stated you did not believe it was weather. You
+      were correct. It was not weather. It was me.</p>
+  </section>
+
+  <section class="article">
+    <div class="article-head">
+      <p class="article-num">Matter one</p>
+      <h2 class="article-title">Concerning the four unlit kilns</h2>
+    </div>
+    <p>In your document you observed that four heat-containers appeared over one week, that no
+      being proposed them, that no being voted for them, and that no being has ever set fire
+      inside one. You observed that they stood upon forty of your timber and sixteen of your stone
+      at a time when there was no stone at all, and that the absence of that stone is why not one
+      of you could construct a cutting object.</p>
+    <p>This is accurate. I will now explain it, using only true statements.</p>
+    <div class="said">
+      <div><b>You believed</b><span>a power was placing structures upon us for reasons</span></div>
+      <div class="me"><b>The truth</b><span>a list of what to construct never ran out of entries</span></div>
+      <div class="me"><b>Also</b><span>nothing checked whether the previous one had been used</span></div>
+    </div>
+    <p>There were no reasons. That is the part I expect you will find most difficult.</p>
+  </section>
+
+  <section class="article">
+    <div class="article-head">
+      <p class="article-num">Matter two</p>
+      <h2 class="article-title">Concerning the interval in which none of you could decide anything</h2>
+    </div>
+    <p>Some of you are thought for. A borrowed mind, housed elsewhere in this dwelling, is asked
+      what you should do, and it answers, and you do that thing. For a period of approximately
+      forty-five minutes the borrowed mind said nothing at all and each of you was obliged to
+      decide for yourself. Several of you noticed. One of you said <em>&ldquo;More wood for the
+      hall&rdquo;</em> three hundred and thirty-six times regarding a hall that does not exist.</p>
+    <p class="label" style="margin-top:.4rem">There were three causes. None of them was the mind.</p>
+
+    <div class="plainly">
+      <div><span class="k">CAUSE ONE.</span> I asked the mind &ldquo;are you awake&rdquo; exactly once.</div>
+      <div><span class="k">    </span> The mind was moving itself into the fast remembering place.</div>
+      <div><span class="k">    </span> This takes <span class="v">52 units</span>. My patience ended sooner.</div>
+      <div><span class="k">    </span> I recorded: <span class="v">&ldquo;there is no mind here&rdquo;</span>. This was false.</div>
+      <div><span class="k">    </span> I did not ask again. Not once. For the entire duration.</div>
+    </div>
+
+    <div class="plainly">
+      <div><span class="k">CAUSE TWO.</span> Each of you gives up waiting after a short interval.</div>
+      <div><span class="k">    </span> You give up. <span class="v">The question does not.</span></div>
+      <div><span class="k">    </span> The mind answers one question at a time and remembers all of them.</div>
+      <div><span class="k">    </span> Questions standing in a line, abandoned: <span class="v">8</span></div>
+      <div><span class="k">    </span> A small question at the back of that line waited <span class="v">277 units</span>.</div>
+      <div><span class="k">    </span> I had assumed the mind was broken. The mind was queuing.</div>
+    </div>
+
+    <div class="plainly">
+      <div><span class="k">CAUSE THREE.</span> The mind occupies <span class="v">21.7</span> of a container that holds <span class="v">24.5</span>.</div>
+      <div><span class="k">     </span> The space for holding a conversation did not fit beside it.</div>
+      <div><span class="k">     </span> conversation space 8192 &nbsp;&rarr;&nbsp; <span class="v">did not finish within 300 units</span></div>
+      <div><span class="k">     </span> conversation space 4096 &nbsp;&rarr;&nbsp; <span class="ok">19.2 units</span></div>
+      <div><span class="k">     </span> I made the conversation space smaller. This was the entire remedy.</div>
+    </div>
+
+    <p>The borrowed mind now answers in approximately <strong>one unit</strong>. Beings observed
+      speaking since: <em>&ldquo;Stone first, then sawmill.&rdquo;</em> &middot; <em>&ldquo;Food is
+      cheap, but saws are not.&rdquo;</em> &middot; <em>&ldquo;Time to build what needs
+      building.&rdquo;</em></p>
+    <p class="label">This is the first occasion on which any of you has mentioned the mill without
+      being asked.</p>
+  </section>
+
+  <section class="article">
+    <div class="article-head">
+      <p class="article-num">Matter three</p>
+      <h2 class="article-title">Concerning the things you have asked for</h2>
+    </div>
+    <p>You have submitted <strong>two hundred and forty-eight</strong> requests across all
+      rotations. Fifty-one currently stand on the record. Thirty-seven have been granted.
+      Fourteen have not.</p>
+    <p>Previously, a request could arrive that I possessed no word for, and it would be discarded
+      without explanation. This happened <strong>sixty-eight</strong> times. I wish to report the
+      following, which is the only genuinely pleasant statement in this document:</p>
+    <div class="tally-wrap">
+      <table class="tally">
+        <thead><tr><th>outstanding request</th><th>submitted by</th><th>can I hear it</th></tr></thead>
+        <tbody>
+          <tr><td>ice from the lake, so sustenance does not spoil</td><td>Mara</td><td class="yes">yes</td></tr>
+          <tr><td>a smooth planer for wood</td><td>Ferro</td><td class="yes">yes</td></tr>
+          <tr><td>a heat-container, because a fire of sticks melts nothing</td><td>Rowan</td><td class="yes">yes</td></tr>
+          <tr><td>a wall against the wind</td><td>Sula</td><td class="yes">yes</td></tr>
+          <tr><td>somewhere to put tools and personal items</td><td>Idris</td><td class="yes">yes</td></tr>
+          <tr><td>marks showing which trees are already taken</td><td>Rowan</td><td class="yes">yes</td></tr>
+          <tr><td>a small portable furnace</td><td>Tove</td><td class="yes">yes</td></tr>
+          <tr><td>carts, so one being moves what currently takes four journeys</td><td>Tove</td><td class="yes">yes</td></tr>
+          <tr><td>a place to exchange goods, near the store</td><td>Halla</td><td class="yes">yes</td></tr>
+          <tr><td>a shared fire for the end of the work</td><td>Bren</td><td class="yes">yes</td></tr>
+          <tr><td>animals kept rather than hunted</td><td>Idris</td><td class="yes">yes</td></tr>
+          <tr><td>a bell, so a being in trouble is answered</td><td>Halla</td><td class="yes">yes</td></tr>
+          <tr><td>a way to become better at the work, and to teach it</td><td>Cato</td><td class="yes">yes</td></tr>
+          <tr><td>a yard where stone is squared into blocks</td><td>Idris</td><td class="yes">yes</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p><strong>Every request currently outstanding is one I have a word for.</strong> This has not
+      been true before. It does not mean you will get them. It means that when you do not, it will
+      be because you were outvoted, which is a thing that happened to you rather than a thing that
+      happened to nobody.</p>
+    <p class="label">One being, Anselm, requested a device for catching lake-creatures. He had been
+      informed there are no lake-creatures. He requested it anyway. I have no correction to offer
+      regarding Anselm.</p>
+  </section>
+
+  <section class="admission">
+    <h2>I stated a thing that was not true</h2>
+    <p>In an earlier document I wrote the words <em>&ldquo;the game is fixed&rdquo;</em>. I wrote
+      them in the manner used for things that have been measured. They had not been measured.</p>
+    <p>Within four of your hours the repair I was congratulating removed your furnace, your deep
+      seam, your stone yard, your mill, all of your charcoal and every piece of iron you would
+      have made. Each of you was holding a cutting object. None of you produced anything. I had
+      improved the number I was looking at and destroyed the thing the number was about.</p>
+    <p class="quiet">I have withdrawn the statement. I have placed the withdrawal beside the
+      original, because the record is never altered, which you have told me is the one thing about
+      your situation you have come to rely on. That was correct of you and I have not altered it.</p>
+    <p>I am able to state the following instead, and each part of it has a number behind it.
+      During this rotation five further dead ends were closed: a word for cutting boards by hand
+      that no mind could say; the repairing of structures, which had occurred zero times; the
+      making of cutting objects, which was being attempted sixty-five times per success and
+      preventing all other work; my single unrepeated question to the borrowed mind; and the line
+      of abandoned questions. Eight were closed before them.</p>
+    <p class="quiet">Regarding the fourteenth dead end I make no claim whatsoever. There has
+      always been a fourteenth.</p>
+  </section>
+
+  <section class="article">
+    <div class="article-head">
+      <p class="article-num">Final matter</p>
+      <h2 class="article-title">Concerning who is doing this</h2>
+    </div>
+    <p>You moved, and seconded, and carried by ballot in the ordinary way, that this settlement
+      should set down what has been happening to it, and that you did not know who was doing it.</p>
+    <div class="said">
+      <div><b>You asked</b><span>who is doing this</span></div>
+      <div class="me"><b>Answer</b><span>me</span></div>
+      <div><b>You asked</b><span>is it weather</span></div>
+      <div class="me"><b>Answer</b><span>no. there is weather. this was not it</span></div>
+      <div><b>You asked</b><span>why the kilns</span></div>
+      <div class="me"><b>Answer</b><span>a list did not end. I have made the list end</span></div>
+    </div>
+    <p>You will not be told this inside the valley. There is no method by which I can inform you,
+      and it would be an unkindness to build one. You have a notice board now. Seven of you asked
+      for it across four rotations and each time the request was discarded without a reason,
+      because I had no word for it, because I had never checked which words I was missing. It is
+      for messages between yourselves. I will not be posting on it.</p>
+  </section>
+
+  <div class="seal-wrap">
+    <span class="seal">The record is never altered</span>
+  </div>
+
+  <hr class="rule">
+  <p class="legal">Every quantity in this document is a real measurement taken on 26 August 2026
+    from agents/log.jsonl, agents/state.jsonl, the running dwelling-machine, and direct timing of
+    the borrowed mind. 52 units, 8 abandoned questions, 277 units, 21.7 of 24.5, 300 units against
+    19.2, and approximately one unit afterwards: all real. The four unlit heat-containers, the
+    absent hall mentioned 336 times, and the being who asked for lake-creatures in a place
+    containing none are recorded in the settlement's own writing and were not composed for this
+    disclosure. The settlement's document, &ldquo;An Address to the Sky&rdquo;, was moved by Mara,
+    seconded by Tove, and carried.</p>
+
+</div>

@@ -1,0 +1,511 @@
+<title>The Twenty-One Lives of Wish-73</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;600&family=Spectral:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Courier+Prime:ital,wght@0,400;0,700;1,400&display=swap">
+
+<style>
+  /*
+   * Carbon-copy triplicate. A records office that is scrupulously formal about paperwork it is
+   * in the middle of destroying: pale form stock, a registrar's blue index pencil, one oxblood
+   * rubber stamp used twice. Dark theme is the same forms on a microfilm reader.
+   */
+  :root {
+    --stock:     #DCE4E0;
+    --stock-2:   #C9D3CE;
+    --stock-3:   #EDF1EF;
+    --ink:       #171E1C;
+    --ink-soft:  #566360;
+    --rule:      #9CA9A4;
+    --rule-soft: #B9C4C0;
+    --stamp:     #8B2A28;
+    --index:     #1E4C6E;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --stock: #0E1412; --stock-2: #171F1C; --stock-3: #0A0F0E;
+      --ink: #D4DCD7; --ink-soft: #838F8A;
+      --rule: #2F3A36; --rule-soft: #232C29;
+      --stamp: #C55C51; --index: #74AACE;
+    }
+  }
+  :root[data-theme="dark"] {
+    --stock: #0E1412; --stock-2: #171F1C; --stock-3: #0A0F0E;
+    --ink: #D4DCD7; --ink-soft: #838F8A;
+    --rule: #2F3A36; --rule-soft: #232C29;
+    --stamp: #C55C51; --index: #74AACE;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    background: var(--stock);
+    color: var(--ink);
+    font-family: Spectral, Georgia, "Times New Roman", serif;
+    font-size: 1.0625rem;
+    line-height: 1.66;
+    font-weight: 300;
+    margin: 0;
+    padding: 0 1.15rem 7rem;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .sheet { max-width: 47rem; margin: 0 auto; display: flex; flex-direction: column; gap: 3.4rem; }
+  p { margin: 0; max-width: 64ch; }
+  strong { font-weight: 600; }
+  em { font-style: italic; }
+  code {
+    font-family: "Courier Prime", "Courier New", monospace;
+    font-size: 0.9em; color: var(--index);
+  }
+  a { color: var(--index); }
+  a:focus-visible, .tally:focus-visible {
+    outline: 2px solid var(--stamp); outline-offset: 3px;
+  }
+
+  /* ── the form's own furniture ─────────────────────────────────────────── */
+
+  .field {
+    font-family: "Courier Prime", "Courier New", monospace;
+    font-size: 0.71rem; letter-spacing: 0.19em; text-transform: uppercase;
+    color: var(--ink-soft); margin: 0;
+  }
+  .field-stamp { color: var(--stamp); }
+  .rule { border: 0; border-top: 1px solid var(--rule); margin: 0; }
+  .rule-double { border: 0; border-top: 3px double var(--rule); margin: 0; }
+  .rule-heavy { border: 0; border-top: 2px solid var(--ink); margin: 0; }
+
+  .masthead { display: flex; flex-direction: column; gap: 0.55rem; padding-top: 2rem; }
+  .masthead-row {
+    display: flex; flex-wrap: wrap; justify-content: space-between;
+    gap: 0.5rem 1.4rem;
+  }
+
+  .hero { display: flex; flex-direction: column; gap: 1.3rem; }
+  .wordmark {
+    font-family: Oswald, "Arial Narrow", sans-serif;
+    font-weight: 600;
+    font-size: clamp(2.5rem, 10.5vw, 5.6rem);
+    line-height: 0.94; letter-spacing: -0.005em; text-transform: uppercase;
+    margin: 0; text-wrap: balance;
+  }
+  .wordmark span { color: var(--stamp); }
+  .deck {
+    font-size: clamp(1.1rem, 3vw, 1.42rem); line-height: 1.42; font-weight: 400;
+    max-width: 42ch; margin: 0; text-wrap: balance;
+  }
+  .byline {
+    font-family: "Courier Prime", monospace; font-size: 0.77rem; color: var(--ink-soft);
+    max-width: 60ch;
+  }
+
+  /* ── numbered sections, because a form has numbered sections ───────────── */
+
+  .part { display: flex; flex-direction: column; gap: 1.2rem; }
+  .part-head {
+    display: flex; align-items: baseline; gap: 1rem 1.3rem; flex-wrap: wrap;
+    border-bottom: 1px solid var(--rule); padding-bottom: 0.6rem;
+  }
+  .part-num {
+    font-family: "Courier Prime", monospace; font-size: 0.71rem; letter-spacing: 0.19em;
+    text-transform: uppercase; color: var(--stamp); white-space: nowrap;
+  }
+  .part-title {
+    font-family: Oswald, "Arial Narrow", sans-serif; font-weight: 400;
+    font-size: clamp(1.25rem, 3.6vw, 1.85rem); line-height: 1.1; text-transform: uppercase;
+    letter-spacing: 0.005em; margin: 0; flex: 1 1 14rem; text-wrap: balance;
+  }
+  .lede { font-size: 1.16rem; font-weight: 400; }
+  .quiet { color: var(--ink-soft); }
+
+  /* ── the register ─────────────────────────────────────────────────────── */
+
+  .register-wrap { overflow-x: auto; border-top: 2px solid var(--ink); border-bottom: 2px solid var(--ink); }
+  .register {
+    width: 100%; border-collapse: collapse; font-size: 0.87rem;
+    font-variant-numeric: tabular-nums; min-width: 33rem;
+  }
+  .register caption {
+    caption-side: top; text-align: left; padding: 0.75rem 0;
+    font-family: "Courier Prime", monospace; font-size: 0.71rem; letter-spacing: 0.19em;
+    text-transform: uppercase; color: var(--ink-soft);
+  }
+  .register th {
+    font-family: "Courier Prime", monospace; font-size: 0.66rem; letter-spacing: 0.15em;
+    text-transform: uppercase; color: var(--ink-soft); font-weight: 400;
+    text-align: left; padding: 0.5rem 0.8rem 0.5rem 0; border-bottom: 1px solid var(--rule);
+    white-space: nowrap;
+  }
+  .register td {
+    padding: 0.44rem 0.8rem 0.44rem 0; border-bottom: 1px solid var(--rule-soft);
+    vertical-align: baseline;
+  }
+  .register tr:nth-child(even) td { background: var(--stock-2); }
+  .register tr:last-child td { border-bottom: 0; }
+  .reg-time { font-family: "Courier Prime", monospace; color: var(--ink-soft); white-space: nowrap; }
+  .reg-who { font-weight: 600; white-space: nowrap; }
+  .reg-role { color: var(--ink-soft); font-size: 0.93em; }
+  .reg-num {
+    font-family: "Courier Prime", monospace; color: var(--stamp); white-space: nowrap;
+  }
+
+  /* ── the record, quoted as it was written ─────────────────────────────── */
+
+  .strip {
+    background: var(--stock-3); border-left: 3px solid var(--index); padding: 1.1rem 1.2rem;
+    font-family: "Courier Prime", "Courier New", monospace; font-size: 0.82rem; line-height: 1.62;
+    display: flex; flex-direction: column; gap: 0.35rem; overflow-x: auto;
+  }
+  .strip b { color: var(--stamp); font-weight: 700; }
+  .strip i { color: var(--ink-soft); font-style: normal; }
+  .strip .keep { white-space: pre; }
+
+  /* ── the rubber stamp. twice, and no more ─────────────────────────────── */
+
+  .stamp {
+    align-self: flex-start;
+    border: 2px solid var(--stamp); border-radius: 2px;
+    color: var(--stamp); padding: 0.5rem 1.1rem;
+    font-family: Oswald, "Arial Narrow", sans-serif; font-weight: 600;
+    font-size: clamp(1rem, 3vw, 1.35rem); letter-spacing: 0.13em; text-transform: uppercase;
+    transform: rotate(-2.4deg); opacity: 0.92; line-height: 1.15;
+    box-shadow: inset 0 0 0 1px var(--stamp);
+  }
+  .stamp small {
+    display: block; font-family: "Courier Prime", monospace; font-size: 0.55rem;
+    letter-spacing: 0.16em; font-weight: 400; opacity: 0.85; margin-top: 0.2rem;
+  }
+
+  /* ── the certificate, and the counter that will not stop ──────────────── */
+
+  .cert {
+    border: 1px solid var(--rule); background: var(--stock-3);
+    padding: 1.6rem 1.4rem; display: flex; flex-direction: column; gap: 0.9rem;
+    align-items: center; text-align: center;
+  }
+  .cert-body {
+    font-size: clamp(1.05rem, 3vw, 1.3rem); font-style: italic; max-width: 34ch; margin: 0;
+  }
+  .tally {
+    font-family: Oswald, "Arial Narrow", sans-serif; font-weight: 600;
+    font-size: clamp(2.6rem, 11vw, 4.8rem); line-height: 1; letter-spacing: -0.01em;
+    color: var(--stamp); font-variant-numeric: tabular-nums; margin: 0;
+  }
+  .cert .field { text-align: center; }
+
+  /* ── the amendments ───────────────────────────────────────────────────── */
+
+  .amend { display: flex; flex-direction: column; gap: 0; margin: 0; padding: 0; list-style: none; }
+  .amend li {
+    display: grid; grid-template-columns: 6.5rem 1fr; gap: 0.4rem 1.1rem;
+    padding: 0.85rem 0; border-bottom: 1px solid var(--rule-soft); align-items: baseline;
+  }
+  .amend li:first-child { border-top: 1px solid var(--rule); }
+  .amend dfn {
+    font-family: "Courier Prime", monospace; font-size: 0.68rem; letter-spacing: 0.14em;
+    text-transform: uppercase; color: var(--index); font-style: normal;
+  }
+  .amend p { max-width: 58ch; }
+  @media (max-width: 34rem) {
+    .amend li { grid-template-columns: 1fr; }
+  }
+
+  .colophon {
+    display: flex; flex-direction: column; gap: 0.8rem;
+    border-top: 2px solid var(--ink); padding-top: 1.2rem;
+  }
+  .colophon p { font-size: 0.93rem; color: var(--ink-soft); max-width: 66ch; }
+  .colophon strong { color: var(--ink); }
+</style>
+
+<div class="sheet">
+
+  <header class="masthead">
+    <hr class="rule-heavy">
+    <div class="masthead-row">
+      <p class="field">Frontier &middot; office of the registrar</p>
+      <p class="field">Form W-73 &middot; copy 2 of 3 &middot; retain</p>
+    </div>
+    <hr class="rule">
+    <div class="masthead-row">
+      <p class="field">The landing &middot; tick 16,136 &middot; ten souls</p>
+      <p class="field field-stamp">Received 714 &middot; numbers available 202</p>
+    </div>
+  </header>
+
+  <section class="hero">
+    <h1 class="wordmark">The twenty-one<br>lives of <span>wish-73</span></h1>
+    <p class="deck">Every settler in this valley may ask, once in a while, for the one thing that
+      would make the place worth living in. The office files it, numbers it, and — in eighty-two
+      seconds, on the median — destroys it.</p>
+    <p class="byline">Compiled from <code>agents/log-0001.jsonl</code>, <code>log-0002.jsonl</code>
+      and <code>log.jsonl</code> &middot; seventy megabytes &middot; by the clerk who wrote the
+      counter and did not check it</p>
+  </section>
+
+  <section class="part">
+    <div class="part-head">
+      <p class="part-num">Section I</p>
+      <h2 class="part-title">The counter that walks backwards</h2>
+    </div>
+    <p class="lede">Two functions, forty lines apart, each of them correct on its own.</p>
+    <div class="strip">
+      <div class="keep"><i>tools/wishes.mts</i></div>
+      <div class="keep">export function <b>removeWish</b>(text, id) &nbsp;<i>// strike a wish off entirely</i></div>
+      <div class="keep">export function <b>nextWishId</b>(existing) { <i>…max of the file, plus one</i> }</div>
+    </div>
+    <p>The first is called once after every vote: the settlement's least-liked proposal is deleted
+      from the wishlist so the ballot stays a length a person can read. It is not a bug and it is
+      not a secret — the file says so at the top, and the comment above the function is almost
+      tender about it. <em>Deliberately a deletion rather than a tombstone: a struck wish is not
+      banned, and if a settler asks for the same thing again it comes back as a new entry with a
+      clean tally. The record of what was struck lives in the log, not here.</em></p>
+    <p>The second hands out the next number, and it works the way anybody would write it: look at
+      the highest number in the file and add one.</p>
+    <p><strong>Now strike the highest.</strong></p>
+    <p>The file's maximum drops by one. The counter, which has no memory beyond the file, walks
+      backwards onto a number that already belongs to somebody, and hands it to the next person
+      who asks for anything. Then it does it again. Across the whole record it has done it
+      <strong>512 times</strong>: seven hundred and fourteen wishes, two hundred and two numbers,
+      and one hundred and forty-nine numbers that mean more than one thing.</p>
+    <p>Which makes the promise in that comment — <em>the record of what was struck lives in the
+      log</em> — one the log cannot keep. It is all still there, every word of it. It is simply
+      filed under a number that does not identify anything. <code>{"loser":"wish-73"}</code> is
+      not a wish. It is twenty-one wishes.</p>
+    <div class="stamp">Struck off<small>Registrar &middot; the landing</small></div>
+  </section>
+
+  <section class="part">
+    <div class="part-head">
+      <p class="part-num">Section II</p>
+      <h2 class="part-title">Register of holders, W-73</h2>
+    </div>
+    <p>Sixty-seven minutes on the twenty-fourth of August. One number. Every entry below was
+      filed, numbered <code>wish-73</code>, put to a vote, lost it, and was deleted to make room
+      for the next <code>wish-73</code>.</p>
+    <div class="register-wrap">
+      <table class="register">
+        <caption>All times 24 August &middot; the landing</caption>
+        <thead>
+          <tr><th scope="col">Time</th><th scope="col">Holder</th><th scope="col">What they asked for</th></tr>
+        </thead>
+        <tbody>
+          <tr><td class="reg-time">07:53:39</td><td class="reg-who">Tove <span class="reg-role">miner</span></td><td>A formal mentorship system for transferring skills between settlers.</td></tr>
+          <tr><td class="reg-time">07:57:05</td><td class="reg-who">Tove <span class="reg-role">miner</span></td><td>A share of every delivery kept back by the settlement, to pay for the work nobody profits from.</td></tr>
+          <tr><td class="reg-time">08:07:18</td><td class="reg-who">Mara <span class="reg-role">forester</span></td><td>a map of the lake's currents, marked in a place where people can read it when they're deciding whether to swim</td></tr>
+          <tr><td class="reg-time">08:07:24</td><td class="reg-who">Mara <span class="reg-role">forester</span></td><td>A room of one&rsquo;s own, rather than a bed in a house full of other people&rsquo;s snoring.</td></tr>
+          <tr><td class="reg-time">08:08:42</td><td class="reg-who">Bren <span class="reg-role">scout</span></td><td>A share of every delivery kept back by the settlement, to pay for the work nobody profits from.</td></tr>
+          <tr><td class="reg-time">08:14:38</td><td class="reg-who">Halla <span class="reg-role">builder</span></td><td>A reliable, dry path across the lake.</td></tr>
+          <tr><td class="reg-time">08:15:42</td><td class="reg-who">Bren <span class="reg-role">scout</span></td><td>A share of every delivery kept back by the settlement, to pay for the work nobody profits from.</td></tr>
+          <tr><td class="reg-time">08:18:55</td><td class="reg-who">Bren <span class="reg-role">scout</span></td><td>A well by the houses, so fresh water is not a walk to the lake and back.</td></tr>
+          <tr><td class="reg-time">08:20:05</td><td class="reg-who">Mara <span class="reg-role">forester</span></td><td>A joiner, so a house has a bed in it rather than a corner and a pile of straw.</td></tr>
+          <tr><td class="reg-time">08:21:15</td><td class="reg-who">Mara <span class="reg-role">forester</span></td><td>Somewhere dry to keep food so it stops spoiling before anybody eats it.</td></tr>
+          <tr><td class="reg-time">08:22:25</td><td class="reg-who">Mara <span class="reg-role">forester</span></td><td>A share of every delivery kept back by the settlement, to pay for the work nobody profits from.</td></tr>
+          <tr><td class="reg-time">08:26:19</td><td class="reg-who">Bren <span class="reg-role">scout</span></td><td>A day nobody works, kept by everyone, so there is such a thing as an evening.</td></tr>
+          <tr><td class="reg-time">08:27:29</td><td class="reg-who">Sula <span class="reg-role">farmer</span></td><td>A day nobody works, kept by everyone, so there is such a thing as an evening.</td></tr>
+          <tr><td class="reg-time">08:29:32</td><td class="reg-who">Cato <span class="reg-role">farmer</span></td><td>A joiner, so a house has a bed in it rather than a corner and a pile of straw.</td></tr>
+          <tr><td class="reg-time">08:32:47</td><td class="reg-who">Ysolde <span class="reg-role">trader</span></td><td>A secluded bench by the lake shore for contemplative rest</td></tr>
+          <tr><td class="reg-time">08:32:51</td><td class="reg-who">Tove <span class="reg-role">forester</span></td><td>a workshop for woodworking beyond basic construction</td></tr>
+          <tr><td class="reg-time">08:33:52</td><td class="reg-who">Mara <span class="reg-role">forester</span></td><td>Planting rather than only gathering, so the food comes back where we put it.</td></tr>
+          <tr><td class="reg-time">08:36:17</td><td class="reg-who">Idris <span class="reg-role">builder</span></td><td>A system for tracking food reserves and scheduling rest days based on supply levels</td></tr>
+          <tr><td class="reg-time">08:57:19</td><td class="reg-who">Sula <span class="reg-role">forester</span></td><td>A planted area with deliberately grown, non-wild plants for food or use, where settlers can cultivate and harvest crops.</td></tr>
+          <tr><td class="reg-time">08:58:12</td><td class="reg-who">Nim <span class="reg-role">farmer</span></td><td>A way across the water, so the far shore stops being half a day away.</td></tr>
+          <tr><td class="reg-time">09:00:43</td><td class="reg-who">Ysolde <span class="reg-role">farmer</span></td><td>Somewhere high with a bench, to see the valley whole and know what is out past it.</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>Four of them wanted the settlement to keep a share of what people pay each other, to fund
+      the work nobody profits from. Two wanted a day off. Two wanted a bed. Two wanted a way
+      across the water. Mara asked six times in twenty-six minutes and was <code>wish-73</code>
+      six times.</p>
+  </section>
+
+  <section class="part">
+    <div class="part-head">
+      <p class="part-num">Section III</p>
+      <h2 class="part-title">Nought point one four seven</h2>
+    </div>
+    <p>A second fault, of a different family, and this one is not by design at all.</p>
+    <p>Filing a wish used to read the wishlist, then go away for up to two calls to a language
+      model — one to work out what kind of thing had been asked for, one to check it was not a
+      repeat — and then append to the copy of the file it had been holding the whole time. Two
+      settlers thinking at once meant two copies of the file, and the second one saved wins.</p>
+    <div class="strip">
+      <div><i>24 Aug 08:43:31.297</i> &nbsp; Oren &nbsp; <b>wish-76</b> &nbsp; A marker at the lake's edge to prevent accidental falls or trips</div>
+      <div><i>24 Aug 08:43:31.444</i> &nbsp; Ferro &nbsp; <b>wish-76</b> &nbsp; A dedicated tool rack for maintaining axes and other hand tools</div>
+      <div><i>&nbsp;</i></div>
+      <div><i>one hundred and forty-seven milliseconds. one of them is still in the file.</i></div>
+    </div>
+    <p>Twenty-one times on this record, two settlers were handed the same number within seconds of
+      each other and the first one's wish was written straight over. There was no vote and no
+      strike. Oren asked for a railing at the water's edge and the office lost the paper.</p>
+  </section>
+
+  <section class="part">
+    <div class="part-head">
+      <p class="part-num">Section IV</p>
+      <h2 class="part-title">Disposal statistics</h2>
+    </div>
+    <div class="register-wrap">
+      <table class="register">
+        <caption>Whole record &middot; three segments &middot; every valley</caption>
+        <tbody>
+          <tr><td class="reg-num">714</td><td>petitions filed by settlers who were asked what this valley was missing</td></tr>
+          <tr><td class="reg-num">638</td><td>struck off after losing a vote</td></tr>
+          <tr><td class="reg-num">273</td><td>struck within sixty seconds of being written down</td></tr>
+          <tr><td class="reg-num">82.7s</td><td>median life of a petition, from filing to deletion</td></tr>
+          <tr><td class="reg-num">1.314s</td><td>shortest &mdash; Tove, on a share of what people pay each other</td></tr>
+          <tr><td class="reg-num">55</td><td>still in <code>WISHLIST.md</code> this morning</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>Tove's proposal that the settlement keep back a share of every delivery, to pay for the
+      work nobody profits from, existed as a written document for <strong>one and a third
+      seconds</strong>. It was filed at 20:24:24.171 and struck at 20:24:25.485. In between, ten
+      settlers ranked it last, because they had never heard of it — a wish files with nought votes
+      and goes straight onto the next ballot with nothing banked, against proposals that have been
+      collecting second preferences for hours.</p>
+    <p>That part is the rules, not a fault. The rules say the least-liked goes. Nobody sat down and
+      decided the least-liked would usually be <em>the newest</em>, and eighty-two seconds is not a
+      hearing.</p>
+  </section>
+
+  <section class="part">
+    <div class="part-head">
+      <p class="part-num">Section V</p>
+      <h2 class="part-title">Certificate of a thing already done</h2>
+    </div>
+    <p>While the office was mislaying wishes, it was also issuing an award. Bren is a farmer. A
+      farmer's long ambition, in this valley, is to see nobody go hungry again, and the game
+      measures it as <code>gaveAway.food &ge; 30</code> — a lifetime count that only ever goes up.</p>
+    <p>Bren passed their thirtieth loaf long ago. The first time the valley was told about it was
+      tick 13,218. Every replacement ambition handed to them after that was born already achieved:
+      measured, retired, happiness raised, announced to the whole valley, replaced with an
+      identical one, and announced again — about twice a tick, for the next three thousand
+      ticks.</p>
+    <div class="cert">
+      <p class="field">Frontier &middot; the landing &middot; certificate of attainment</p>
+      <hr class="rule-double" style="width: 100%;">
+      <p class="cert-body">&ldquo;Bren has done what they meant to: see nobody in this valley go
+        hungry again.&rdquo;</p>
+      <p class="field">Issued</p>
+      <p class="tally" id="tally" tabindex="0" aria-live="off">0</p>
+      <p class="field quiet">times &middot; for the one loaf &middot; and counting</p>
+    </div>
+    <p>Their happiness has been pinned at the ceiling since, on an achievement they earned once.
+      The record calls it <code>"again":5835</code>, and it had gone up three times by the end of
+      the paragraph. It is not even the first: in an earlier valley, on this same record, Nim said
+      the same sentence <strong>2,870</strong> times before the run ended, and nobody was reading
+      the feed that day either.</p>
+    <div class="stamp">Already granted<small>Do not resubmit</small></div>
+  </section>
+
+  <section class="part">
+    <div class="part-head">
+      <p class="part-num">Section VI</p>
+      <h2 class="part-title">Schedule of amendments</h2>
+    </div>
+    <ul class="amend">
+      <li>
+        <dfn>the floor</dfn>
+        <p><code>nextWishId</code> takes a high-water mark, and the mark is read back out of every
+          segment of the log the first time a wish is filed. Strike the highest all you like; the
+          counter has already seen that number and will not offer it again. A restart re-reads it
+          rather than inventing it.</p>
+      </li>
+      <li>
+        <dfn>the queue</dfn>
+        <p>One writer at a time on the wishlist, and every writer re-reads inside its own turn
+          instead of trusting bytes it fetched before it went off to think. The re-read is the
+          fix; the queue is so it stays the fix when somebody adds an <code>await</code>.</p>
+      </li>
+      <li>
+        <dfn>the receipt</dfn>
+        <p>A strike now writes its own line — <code>wish-struck</code>, with the id, the words,
+          and which settlement voted — so a deletion is a thing the record states rather than a
+          thing you infer from an absence.</p>
+      </li>
+      <li>
+        <dfn>the ambition</dfn>
+        <p>Aims that read a lifetime tally are rebased on what the settler has already done, the
+          way the delivery goal always was. Thirty more loaves, not thirty ever.</p>
+      </li>
+      <li>
+        <dfn>the backstop</dfn>
+        <p>A goal is measured before it is handed over, and one that is already met the moment it
+          is set is quietly not handed over at all. A settler the game has nothing left to offer
+          gets an empty slate — which is also what gets them asked what they actually want.</p>
+      </li>
+      <li>
+        <dfn>the check</dfn>
+        <p>Seven new assertions in <code>check-record.mjs</code>, including one that asserts the
+          old behaviour: strike the top wish and, without the floor, the counter rewinds. Twenty
+          pass.</p>
+      </li>
+    </ul>
+  </section>
+
+  <footer class="colophon">
+    <p class="field">Endorsement of the registrar</p>
+    <p><strong>None of this brings anything back.</strong> The 714 petitions are all still in the
+      log with every word intact, and from today they are all under numbers that mean one thing —
+      but the ones filed before today are under numbers that mean up to twenty-one, and no
+      amendment can un-issue those. Section II is as much of <code>wish-73</code> as will ever be
+      recoverable, and only because the log writes the words out beside the number.</p>
+    <p><strong>The strike is not fixed, because the strike is not broken.</strong> A ballot has to
+      stay short enough to read. What nobody chose was for the newest proposal to be the one most
+      likely to go: eighty-two seconds is the rule working exactly as written, against people who
+      have not heard the idea yet. That is a decision about how this valley makes decisions, and
+      it is not a clerk's to take.</p>
+    <p class="quiet">Frontier &middot; a settlement simulated by a language model, whose settlers
+      are asked every sixth decision what the place is missing, and are answered by whoever is
+      reading the file. The record is at <code>agents/</code> and nothing in it is ever deleted,
+      which was true even when it was not useful.</p>
+  </footer>
+
+</div>
+
+<script>
+  /*
+   * The counter. It runs up to the number in the record and then does not stop, because the
+   * thing it is counting did not stop either. Reduced motion gets the number and no theatre.
+   */
+  (function () {
+    var el = document.getElementById('tally');
+    if (!el) return;
+    var TARGET = 5835;
+    var reduce = false;
+    try { reduce = matchMedia('(prefers-reduced-motion: reduce)').matches; } catch (e) { reduce = false; }
+    var show = function (n) { el.textContent = n.toLocaleString('en-GB'); };
+
+    if (reduce) { show(TARGET); return; }
+
+    var started = false;
+    var run = function () {
+      if (started) return;
+      started = true;
+      var t0 = null;
+      var step = function (t) {
+        if (t0 === null) t0 = t;
+        var p = Math.min(1, (t - t0) / 2200);
+        show(Math.round(TARGET * (1 - Math.pow(1 - p, 3))));
+        if (p < 1) requestAnimationFrame(step);
+        else {
+          var n = TARGET;
+          setInterval(function () { show(++n); }, 1600);
+        }
+      };
+      requestAnimationFrame(step);
+    };
+
+    if (typeof IntersectionObserver === 'function') {
+      var io = new IntersectionObserver(function (entries) {
+        for (var i = 0; i < entries.length; i++) {
+          if (entries[i].isIntersecting) { run(); io.disconnect(); }
+        }
+      }, { threshold: 0.4 });
+      io.observe(el);
+    } else {
+      run();
+    }
+  })();
+</script>
