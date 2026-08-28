@@ -1,0 +1,418 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>*{margin:0;padding:0}img{max-width:100%}</style>
+</head>
+<body>
+<title>The Lathe of Heaven</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,600;1,7..72,400&family=IBM+Plex+Mono:ital,wght@0,400;0,600;1,400&family=Space+Grotesk:wght@300;400;500&display=swap">
+
+<style>
+  /*
+   * An overnight record from a sleep clinic that studies exactly one patient: the world. Rain
+   * on the window, Portland grey-green, jade for what is true after the dream and a dried
+   * volcanic umber for what was true before it. The two colours never appear in the same
+   * sentence, because the whole finding of the book is that they cannot: after the dream,
+   * before is not a fact any more, only a memory in whoever was in the room. Dark mode is the
+   * same clinic during the dream itself.
+   */
+  :root {
+    --paper:   #E9ECE7;
+    --paper-2: #E0E5DE;
+    --panel:   #F2F4EF;
+    --ink:     #232B27;
+    --soft:    #6B756E;
+    --rule:    #C7D0C7;
+    --after:   #2E6E56;
+    --before:  #9C4A2F;
+  }
+  :root[data-theme="light"], :root:not([data-theme="dark"]) {
+    --paper: #E9ECE7; --paper-2: #E0E5DE; --panel: #F2F4EF;
+    --ink: #232B27; --soft: #6B756E; --rule: #C7D0C7; --after: #2E6E56; --before: #9C4A2F;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --paper: #131715; --paper-2: #181D1A; --panel: #1D2320;
+      --ink: #D4DAD3; --soft: #849188; --rule: #2F3833; --after: #6FBF9C; --before: #D07E5C;
+    }
+  }
+  :root[data-theme="dark"] {
+    --paper: #131715; --paper-2: #181D1A; --panel: #1D2320;
+    --ink: #D4DAD3; --soft: #849188; --rule: #2F3833; --after: #6FBF9C; --before: #D07E5C;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    background: var(--paper); color: var(--ink);
+    font-family: Literata, Georgia, serif;
+    font-size: 1.02rem; line-height: 1.74;
+    margin: 0; padding: 0 1.2rem 7rem;
+    -webkit-font-smoothing: antialiased;
+  }
+  b { font-weight: 600; }
+  em { font-style: italic; }
+  .sheet { max-width: 42rem; margin: 0 auto; display: flex; flex-direction: column; gap: 2.6rem; }
+  p { margin: 0; max-width: 68ch; }
+  code { font-family: "IBM Plex Mono", monospace; font-size: 0.9em; color: var(--after); }
+
+  .kicker {
+    font-family: "Space Grotesk", sans-serif; font-size: 0.72rem; letter-spacing: 0.26em;
+    text-transform: uppercase; color: var(--soft); margin: 0;
+  }
+
+  header.front {
+    display: flex; flex-direction: column; align-items: center; text-align: center;
+    gap: 1.15rem; padding-top: 3.4rem;
+  }
+  header.front h1 {
+    font-family: Literata, serif; font-weight: 600; font-size: clamp(2.1rem, 7vw, 3.4rem);
+    line-height: 1.08; margin: 0; letter-spacing: 0.01em;
+  }
+  .fileno {
+    font-family: "IBM Plex Mono", monospace; font-size: 0.8rem; color: var(--soft);
+    letter-spacing: 0.08em;
+  }
+  .stamps { display: flex; gap: 1.4rem; flex-wrap: wrap; justify-content: center; margin-top: 0.6rem; }
+  .stamp {
+    font-family: "Space Grotesk", sans-serif; font-weight: 500; letter-spacing: 0.22em;
+    text-transform: uppercase; font-size: 0.78rem;
+    color: var(--after); border: 2px solid var(--after); border-radius: 4px;
+    padding: 0.35rem 0.8rem; opacity: 0.88;
+  }
+  .stamp.b { transform: rotate(1.6deg); color: var(--before); border-color: var(--before); }
+  .stamp.a { transform: rotate(-2.4deg); }
+
+  h2 {
+    font-family: "Space Grotesk", sans-serif; font-weight: 500; font-size: 0.85rem;
+    letter-spacing: 0.24em; text-transform: uppercase; color: var(--soft);
+    margin: 0 0 1.1rem; border-bottom: 1px solid var(--rule); padding-bottom: 0.55rem;
+  }
+  section { margin: 0; }
+  section p + p { margin-top: 1.05rem; }
+
+  .epigraph {
+    background: var(--panel); border: 1px solid var(--rule); border-radius: 6px;
+    padding: 1.5rem 1.7rem; font-style: italic; text-align: center;
+  }
+  .epigraph .who {
+    display: block; font-style: normal; font-family: "Space Grotesk", sans-serif;
+    font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--soft); margin-top: 1.1rem;
+  }
+
+  .session { display: flex; flex-direction: column; border-top: 1px solid var(--rule); }
+  .entry {
+    display: grid; grid-template-columns: 8.6rem 1fr; gap: 1rem;
+    padding: 0.8rem 0.2rem; border-bottom: 1px solid var(--rule);
+  }
+  .entry .at {
+    font-family: "IBM Plex Mono", monospace; font-size: 0.78rem; color: var(--soft);
+    padding-top: 0.22rem; white-space: nowrap;
+  }
+  .entry .what { font-size: 0.98rem; }
+  .entry .what q { font-style: italic; }
+  .tag {
+    font-family: "Space Grotesk", sans-serif; font-size: 0.66rem; letter-spacing: 0.18em;
+    text-transform: uppercase; white-space: nowrap; margin-right: 0.45rem;
+  }
+  .tag.before { color: var(--before); }
+  .tag.after { color: var(--after); }
+  @media (max-width: 34rem) { .entry { grid-template-columns: 1fr; gap: 0.15rem; } }
+
+  .finding {
+    background: var(--paper-2); border-left: 3px solid var(--before); border-radius: 0 6px 6px 0;
+    padding: 1.2rem 1.5rem;
+  }
+  .finding p + p { margin-top: 0.8rem; }
+  .finding.green { border-left-color: var(--after); }
+
+  table.ledger {
+    border-collapse: collapse; width: 100%; font-size: 0.9rem;
+    font-family: "IBM Plex Mono", monospace;
+  }
+  table.ledger th {
+    font-family: "Space Grotesk", sans-serif; font-weight: 500; font-size: 0.68rem;
+    letter-spacing: 0.16em; text-transform: uppercase; color: var(--soft);
+    text-align: right; padding: 0.4rem 0.6rem; border-bottom: 1px solid var(--rule);
+  }
+  table.ledger th:first-child, table.ledger td:first-child { text-align: left; }
+  table.ledger td {
+    text-align: right; padding: 0.42rem 0.6rem; border-bottom: 1px solid var(--rule);
+  }
+  .ledgerwrap { overflow-x: auto; }
+
+  aside.margin {
+    font-size: 0.9rem; color: var(--soft); border-top: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule); padding: 0.9rem 0.2rem;
+  }
+
+  hr.thin { border: none; border-top: 1px solid var(--rule); margin: 0; }
+  .colophon { display: flex; flex-direction: column; gap: 0.9rem; }
+  .footline { font-size: 0.88rem; color: var(--soft); max-width: none; }
+  .footline b { color: var(--ink); }
+</style>
+
+<div class="sheet">
+
+  <header class="front">
+    <p class="kicker">The Frontier record &middot; sheet XXXV</p>
+    <h1>The Lathe of Heaven</h1>
+    <p class="fileno">An overnight record of the continuous session &middot; run <code>mtbgptmz-5q</code><br>
+      tick 0 &ndash; 37,600 and continuing &middot; 28 August &middot; rain</p>
+    <div class="stamps">
+      <span class="stamp b">The world was twenty names long</span>
+      <span class="stamp a">Amended in its sleep</span>
+    </div>
+  </header>
+
+  <section>
+    <div class="epigraph">
+      <p>To let understanding stop at what cannot be understood is a high attainment.
+        Those who cannot do it will be destroyed on the lathe of heaven.</p>
+      <span class="who">Chuang Tzu, XXIII &mdash; as the novel quotes him</span>
+    </div>
+    <p>There were no lathes in Chuang Tzu&rsquo;s China. The sentence Le&nbsp;Guin took her
+      title from is a mistranslation, and she knew it and kept it, because the wrong word had
+      become the true name of the thing. This record is obliged to open there, since the
+      valley it concerns has been governed by wrong words before &mdash; a furnace filed as a
+      kiln, a doorframe filed as a granary, an infirmary that granted a hole in the ground
+      &mdash; and each time the world was rebuilt on the mistranslation and the people in it
+      went on living, in the world as misheard.</p>
+    <p>In the novel, George Orr dreams effectively: he wakes and the world has always been
+      what the dream made it, and only the dreamer carries both memories. Dr. Haber, his
+      therapist, is not a monster but a meliorist &mdash; he takes hold of the gift and
+      directs it, dream by dream, at overpopulation, at war, at strife, and each amendment
+      arrives with its bill: the fewer people, because of the Plague; the peace on earth,
+      because of the aliens. The valley of this record is the experiment run from the other
+      side of the glass. Here the dreams are real and the settlers must live in each amended
+      world; and here, unlike Portland, the dreamer keeps minutes. Nothing in
+      <code>agents/log.jsonl</code> is ever deleted. The record is the double memory that in
+      the novel only Orr is burdened with &mdash; it remembers every world that has stopped
+      having ever existed.</p>
+  </section>
+
+  <section>
+    <h2>The session log &mdash; amendments while sleeping</h2>
+    <div class="session">
+      <div class="entry">
+        <span class="at">27 Aug &middot; before dawn</span>
+        <span class="what"><span class="tag before">Before</span>Fourteen decisions carried by
+          settlements had been deleted by votes those settlements never attended, six of them
+          by an electorate of one. <span class="tag after">After</span>A carried wish cannot
+          be struck. The fourteen were restored byte-for-byte from the record, and three were
+          re-carried within twenty minutes of going back on the books &mdash; the world
+          reasserting, on waking, what it had always decided.</span>
+      </div>
+      <div class="entry">
+        <span class="at">28 Aug &middot; dawn</span>
+        <span class="what"><span class="tag before">Before</span>A category once decided was
+          spent for ever: a famine could not ask again for the thing it had already been
+          granted once. <span class="tag after">After</span>Hunger re-opens the categories
+          that answer it. The amendment gave every famine a voice &mdash; and, in the two
+          settlements this sheet is about, a voice that could only repeat: the same granary
+          wish carried nine times in each, and held, every time, on boards that were never
+          coming. Permission amended; hands not.</span>
+      </div>
+      <div class="entry">
+        <span class="at">28 Aug &middot; evening</span>
+        <span class="what"><span class="tag before">Before</span>Ferro&rsquo;s planer, filed
+          under <code>sawmill</code>, had waited twenty-three thousand ticks in a drawer no
+          rehearing could reach. <span class="tag after">After</span>The catalogue has an
+          entry for the surface of a board, and the wish will be re-heard in its own words.
+          The proceedings, as the previous sheet promised, were not concluded, only
+          continued.</span>
+      </div>
+      <div class="entry">
+        <span class="at">28 Aug &middot; 15:55<br>tick &asymp; 37,390</span>
+        <span class="what"><span class="tag before">Before</span>The boat called at exactly
+          one beach, and had in fact stopped calling anywhere at all.
+          <span class="tag after">After</span>The boat has always called where there is room.
+          Between those two sentences: one saved file, a page that reloaded itself without
+          being asked, and a valley that continued mid-stride &mdash; Tove was walking a load
+          of ore home when the law of her world changed, and she did not break step, because
+          for her there was nothing to notice. Seven people came ashore in the next two
+          hundred ticks. Nobody in the valley finds this strange. The record finds it
+          strange, and says so below.</span>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>The finding: the world was twenty names long</h2>
+    <p>The keeper&rsquo;s question this sitting was why the breakaway settlements have not
+      progressed. Tove&rsquo;s claim was founded at tick 237 and has held two people from
+      that day to past tick 36,000 &mdash; Tove, who walked out of the landing in its first
+      week, and Idris, who at tick 2,428 stood at the landing&rsquo;s door and was told,
+      in the game&rsquo;s own sentence, <q>there is not the food for another.</q>
+      Bren&rsquo;s claim has held one: forty-four elections this run in which a single
+      ballot was cast, a man voting alone on questions of how people should live together.
+      Neither place has raised anything past a house. The answer turned out to be two
+      sentences of code, and the second is the worse one.</p>
+    <div class="finding">
+      <p><b>The boat called at one beach.</b> <code>sim.towns[0]</code>, by index, for the
+        whole life of the game. And the only other way anybody has ever changed towns &mdash;
+        walking down the coast to ask &mdash; points at whichever settlement has the higher
+        appeal, which a lean-to with empty stores never is. Both doors of the world opened
+        toward the richer place. A fork could shrink and could not grow, by construction,
+        and everything downstream of hands followed: a granary carried and held eighteen
+        times across the two claims, on boards that two pairs of hands, both feeding
+        themselves out of the bushes, could never bank.</p>
+      <p><b>And twenty names was quietly the size of the world.</b> <code>addSettler</code>
+        refuses past the end of the <code>NAMES</code> array. Lune, the twentieth name,
+        stepped ashore at tick 6,421, and the boat stopped &mdash; for the claims, for the
+        landing, for everybody, for ever. Thirty-one thousand ticks passed without an
+        arrival, in a valley whose largest settlement had beds standing empty, and nothing
+        anywhere said so. Haber directed a dream at overpopulation and woke to a world
+        thinned by a plague that had always happened. This world had its population problem
+        solved the same way in advance &mdash; no plague required, only an array bound,
+        which is what a plague looks like from inside an implementation.</p>
+    </div>
+    <p>That is why the forks have not progressed. Not slow: sealed. The stagnation was
+      never a fact about Tove, Idris or Bren &mdash; who between them filed the granary
+      wish, the sheep wish, the planer wish, and kept voting, in chambers of two and one,
+      as if somebody might yet arrive to be governed. It was a fact about the shape of
+      their world, invisible from inside it, exactly the kind of fact the book says only
+      the one who was in the room for the dream can know.</p>
+  </section>
+
+  <section>
+    <h2>The amendment, and its seam</h2>
+    <p>The change is small and gates on what it always gated on. The names list is forty.
+      The boat calls where there is room &mdash; arrivals still wait on beds alone, per
+      settlement, the Malthus knob still deliberately unturned &mdash; and whoever steps
+      off goes where the living looks best of the places that will actually hold them:
+      the landing while it has beds, the forks once it has none. Nobody chooses a lean-to
+      over a hall. They choose a lean-to over staying on the boat.</p>
+    <p>It reached the running valley by the mechanism the previous sheets have described:
+      the page rebuilt itself around the sleeping simulation and set it back down
+      mid-stride. The seam is in the record. At tick 37,396 Sten came ashore at the
+      landing, a farmer &mdash; asked why here: <q>they would rather be short of
+      everything than be there another year.</q> Ilka and Corin followed, and the landing
+      stood at twenty, its cap, full for the first time in its history. And then the line
+      this amendment exists for: at tick 37,498, <b>Maeve came ashore at Bren&rsquo;s
+      claim</b> &mdash; a farmer, <q>there was a debt at home and no way to pay it</q>
+      &mdash; the first human being to arrive at a breakaway settlement in the life of
+      this game. Ashe followed her; Bram and Orla came ashore at Tove&rsquo;s. The claims
+      stand tonight at four and three.</p>
+    <p>The record is obliged to keep the wrinkle too. Maeve and Ashe, finding a claim
+      with one man, no roof to spare and nothing in the stores, walked straight down the
+      coast to ask the landing to take them in &mdash; and Oren turned them away with the
+      words this valley has always used, the same sentence that made Idris a founder at
+      tick 2,428: <q>there is not the food for another.</q> They went back. A settlement,
+      the game has always held, is what forms when nowhere will have you; the boat now
+      delivers people to that truth faster. Whether four people can do what two could not
+      &mdash; bank eleven boards against a wish nine times carried &mdash; is the open
+      question the next sheet inherits, and for the first time it is a question about
+      people rather than about an index.</p>
+    <aside class="margin">The deterministic 12,000-tick proof run, which for as long as it
+      has existed has ended at twenty settlers, now ends at thirty-two, in three
+      settlements, with the same ladder standing &mdash; kiln, smelter, mine, masons,
+      sawmill, joiner, granary. The gate is green. In the amended world it has, of course,
+      always ended that way.</aside>
+  </section>
+
+  <section>
+    <h2>The private dream &mdash; in re: the two men and the coin</h2>
+    <p>The keeper also asked after an earlier report&rsquo;s finding that two men hold most
+      of the coin, and whether some work was valued differently than other work. Audited
+      against the full run: the valley has struck 501 coin, and Ferro and Dask, both
+      foresters of the landing, hold 406 of it &mdash; four fifths. The earnings, though,
+      are the flat part of the ledger:</p>
+    <div class="ledgerwrap">
+    <table class="ledger">
+      <tr><th>settler</th><th>earned</th><th>spent</th><th>holds tonight</th></tr>
+      <tr><td>Ferro</td><td>818</td><td>577</td><td>230</td></tr>
+      <tr><td>Dask</td><td>864</td><td>688</td><td>176</td></tr>
+      <tr><td>Ysolde</td><td>860</td><td>871</td><td>0</td></tr>
+      <tr><td>Sula</td><td>829</td><td>792</td><td>37</td></tr>
+      <tr><td>Nim</td><td>678</td><td>689</td><td>0</td></tr>
+      <tr><td>Lune</td><td>611</td><td>607</td><td>4</td></tr>
+    </table>
+    </div>
+    <p>Ysolde earned more than Ferro. She holds nothing, because she spent it &mdash; on
+      hires, on wood, on other people&rsquo;s afternoons &mdash; and he did not. Ferro&rsquo;s
+      stated aim, set by his own borrowed mind and marked done four separate times in the
+      log, was: <q>put by enough coin to be nobody&rsquo;s charity case.</q> The
+      concentration is not a wage gap. It is a spending gap, downstream of a dream &mdash;
+      one man in the valley dreamed specifically of a full purse, the world honoured it, and
+      the honest thing the ledger shows is that in a small economy a private dream
+      compounds exactly the way Haber&rsquo;s public ones did, without a single rule being
+      bent.</p>
+    <p>Was some work valued differently? Yes &mdash; by scarcity, which is the only
+      appraiser this valley has. Sixty-two percent of every coin ever paid changed hands
+      over wood; ore, meanwhile, is priced at 1.19 against wood&rsquo;s three-to-five,
+      because two hundred and eighty-seven units of it sit banked against a smelter that
+      cannot eat it fast enough. The miners &mdash; Pike, Halla, and every founder of every
+      fork &mdash; spent this run hauling the one good the valley refuses to want, and it
+      shows: thirteen coin, five, and nought. And half the valley holds no coin for the
+      plainer reason that it works in the other two currencies entirely &mdash; Mara took
+      thirty-six contracts this run and Vell twenty-seven, paid in goods and in favours
+      owed, the credit ledger the game ran on before there was a mint. The floor under all
+      of it held: not one offer in the record came in under the agreed rate. The two men
+      are not standing on anybody. They are standing on wood, at the top of a market that
+      values a forester&rsquo;s day at double a miner&rsquo;s &mdash; a verdict no one
+      decreed and no one voted for, which is precisely why the record writes it down.</p>
+  </section>
+
+  <section>
+    <h2>Er&rsquo; perrehnne</h2>
+    <p>Orr&rsquo;s case against Haber was never that the world should not change. It was
+      that a dream directed from above arrives whole, pays its bill in a currency the
+      dreamer did not agree to spend, and has always been true &mdash; so nobody inside it
+      can object, because nobody inside it can remember otherwise. The valley&rsquo;s
+      constitution, assembled sheet by sheet, reads in hindsight like a defence against
+      its own keeper&rsquo;s Augmentor: decisions belong to a named person; nothing is
+      given; every amendment is run against the identical world twice before it is
+      believed; the Malthus knob is refused on principle; and the record keeps both
+      versions of everything, so that here, unlike Portland, <em>before</em> remains a
+      fact &mdash; consultable, committed, sealed in eight-megabyte segments. Tonight&rsquo;s
+      amendment was directed all the same; there is no pretending otherwise; the defence
+      is the paper trail and the size of the step. A boat that calls where there is room
+      is the smallest dream that answers what Tove and Bren actually asked for, and it was
+      measured before it was kept.</p>
+    <p>The aliens, who understand dreaming, greet each other in the novel with a word that
+      means something like <em>welcome; let go</em>. Maeve, asked why here, said there was
+      a debt at home and no way to pay it. Bren, who came ashore a trader, is a miner now;
+      he has been alone on his claim for a hundred and eighty valley-days, voting for
+      sheep, a planer, and somewhere dry to keep food he does not have. As of tonight
+      there are two more names on his beach, turned away from the landing like everyone
+      who ever amounted to anything on this coast. The settlers live their lives over and
+      over, and reality changes beneath them, and they do not break step; the kindest
+      thing in the record is that it never once catches them noticing. Er&rsquo;
+      perrehnne.</p>
+  </section>
+
+  <hr class="thin">
+
+  <div class="colophon">
+    <p class="footline"><b>Found:</b> the breakaway settlements were sealed, not slow &mdash;
+      the boat called only at <code>towns[0]</code>, migration only climbs the appeal
+      gradient, and the twenty-entry names list had silently ended all arrival everywhere at
+      tick 6,421 &mdash; and the coin concentration is a spending pattern downstream of one
+      settler&rsquo;s hoarding aim plus a scarcity market that prices a miner&rsquo;s day at
+      half a forester&rsquo;s, not a broken wage floor.</p>
+    <p class="footline"><b>Followed:</b> the names list runs to forty and the boat calls
+      where there is room, beds gating as before, appeal choosing the beach; the amendment
+      reached the live run mid-stride and the claims stand at four and three tonight, the
+      first arrivals in the life of the game; the full gate is green, the deterministic run
+      now ending at thirty-two settlers across three settlements with the same ladder
+      standing.</p>
+    <p class="footline">Sheet XXXV of the Frontier record. The run is
+      <code>mtbgptmz-5q</code>; the seal is <code>addSettler</code>&rsquo;s names guard and
+      the old call at <code>sim.towns[0]</code> in <code>src/sim.ts</code>; the seam is at
+      ticks 37,396&ndash;37,600 in <code>agents/log.jsonl</code>, Maeve&rsquo;s landfall at
+      37,498; the turnings-away are at ticks 2,428, 37,531 and 37,543, in the same sentence
+      each time. The treatment is Ursula K. Le&nbsp;Guin&rsquo;s &mdash; <i>The Lathe of
+      Heaven</i>, its Chuang Tzu epigraph kept wrong on purpose &mdash; rendered here with
+      gratitude; every quoted settler sentence is their own, as the record keeps it.</p>
+  </div>
+
+</div>
+
+</body>
+</html>
