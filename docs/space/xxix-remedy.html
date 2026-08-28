@@ -1,0 +1,294 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>*{margin:0;padding:0}img{max-width:100%}</style>
+</head>
+<body>
+<title>The Remedy for Irreversibility</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Courier+Prime:wght@400;700&family=Jost:wght@400;500&display=swap">
+
+<style>
+  /*
+   * Proceedings of a colloquium, in the manner of the ones typed up in Geneva and New York in
+   * the 1950s: a cover page carrying three names, the case put as a file of exhibits, then each
+   * respondent given her pages. Ivory paper, charcoal ink, and one colour — the carmine of a
+   * registrar's strike-through — spent on what the valley struck off and nowhere else.
+   */
+  :root {
+    --paper:   #F2EEE3;
+    --paper-2: #EAE5D8;
+    --card:    #F8F5EC;
+    --ink:     #23211C;
+    --soft:    #6E6858;
+    --rule:    #C9C2B0;
+    --rule-2:  #DAD4C4;
+    --carmine: #8E2A35;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --paper: #14130F; --paper-2: #1B1914; --card: #201E18;
+      --ink: #E6E1D3; --soft: #8F8877; --rule: #38342A; --rule-2: #2A2721;
+      --carmine: #D66A76;
+    }
+  }
+  :root[data-theme="dark"] {
+    --paper: #14130F; --paper-2: #1B1914; --card: #201E18;
+    --ink: #E6E1D3; --soft: #8F8877; --rule: #38342A; --rule-2: #2A2721;
+    --carmine: #D66A76;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    background: var(--paper); color: var(--ink);
+    font-family: "EB Garamond", Georgia, serif;
+    font-size: 1.17rem; line-height: 1.66;
+    margin: 0; padding: 0 1.2rem 7rem;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .sheet { max-width: 44rem; margin: 0 auto; display: flex; flex-direction: column; gap: 3.1rem; }
+  p { margin: 0; max-width: 64ch; }
+  code, .mono { font-family: "Courier Prime", monospace; font-size: 0.86em; }
+  code { color: var(--carmine); }
+
+  .stamp {
+    font-family: Jost, "Segoe UI", sans-serif; font-size: 0.72rem; letter-spacing: 0.26em;
+    text-transform: uppercase; color: var(--soft); margin: 0;
+  }
+  hr.thin { border: 0; border-top: 1px solid var(--rule); margin: 0; }
+
+  header.front {
+    display: flex; flex-direction: column; align-items: center; text-align: center;
+    gap: 1.15rem; padding-top: 3.6rem;
+  }
+  header.front h1 {
+    font-weight: 500; font-size: clamp(2.4rem, 7.5vw, 4rem); line-height: 1.04;
+    margin: 0; letter-spacing: -0.01em; text-wrap: balance; font-style: italic;
+  }
+  header.front .sub {
+    font-size: clamp(1.05rem, 2.6vw, 1.3rem); color: var(--soft); max-width: 44ch;
+    margin: 0; font-style: italic;
+  }
+  .names {
+    font-family: Jost, sans-serif; font-size: 0.8rem; letter-spacing: 0.22em;
+    text-transform: uppercase; color: var(--ink); display: flex; gap: 1.6rem;
+    flex-wrap: wrap; justify-content: center;
+  }
+  .imprint {
+    font-family: Jost, sans-serif; font-size: 0.68rem; letter-spacing: 0.2em;
+    text-transform: uppercase; color: var(--soft); margin: 0; line-height: 2.1;
+  }
+
+  .lede { font-size: 1.28rem; line-height: 1.55; }
+  .lede:first-letter {
+    font-weight: 600; float: left; font-size: 3.4em; line-height: 0.8;
+    padding: 0.05em 0.12em 0 0; color: var(--carmine);
+  }
+
+  section { display: flex; flex-direction: column; gap: 1.15rem; }
+  h2 {
+    font-weight: 600; font-size: 1.55rem; margin: 0; letter-spacing: -0.005em;
+    text-wrap: balance;
+  }
+  h2 .n {
+    font-family: Jost, sans-serif; font-size: 0.6em; font-weight: 500;
+    color: var(--carmine); letter-spacing: 0.18em; margin-right: 0.7em;
+    text-transform: uppercase;
+  }
+
+  /* The case file: exhibits in typescript, one struck through in the registrar's hand. */
+  .file {
+    background: var(--card); border: 1px solid var(--rule-2);
+    font-family: "Courier Prime", monospace; font-size: 0.92rem; line-height: 1.75;
+    padding: 1.6rem 1.8rem;
+  }
+  .file .k {
+    font-family: Jost, sans-serif; font-size: 0.66rem; letter-spacing: 0.2em;
+    text-transform: uppercase; color: var(--soft); display: block; margin-bottom: 0.7rem;
+  }
+  .file .row { display: flex; gap: 1rem; border-bottom: 1px dotted var(--rule-2); padding: 0.25rem 0; }
+  .file .row:last-child { border-bottom: 0; }
+  .file .row b { min-width: 7.2rem; font-weight: 700; }
+  .file .struck { text-decoration: line-through; text-decoration-color: var(--carmine); text-decoration-thickness: 2px; }
+  .file .note { color: var(--carmine); }
+
+  blockquote.pull {
+    margin: 0; padding: 1.35rem 0 1.35rem 1.5rem; border-left: 3px solid var(--carmine);
+    font-style: italic; font-size: 1.38rem; line-height: 1.4; text-wrap: pretty;
+  }
+  blockquote.pull cite {
+    display: block; margin-top: 0.8rem; font-family: Jost, sans-serif; font-style: normal;
+    font-size: 0.66rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--soft);
+  }
+
+  .respondent {
+    border-top: 1px solid var(--rule); padding-top: 1.6rem;
+  }
+  .respondent .who {
+    font-family: Jost, sans-serif; font-size: 0.72rem; letter-spacing: 0.24em;
+    text-transform: uppercase; color: var(--carmine); margin-bottom: 0.4rem;
+  }
+
+  .aside { color: var(--soft); font-size: 1.02rem; }
+  .aside b { color: var(--ink); }
+
+  footer { display: flex; flex-direction: column; gap: 0.9rem; border-top: 3px double var(--ink); padding-top: 1.4rem; }
+</style>
+
+<div class="sheet">
+
+  <header class="front">
+    <p class="stamp">Frontier &middot; the record &middot; sheet xxix</p>
+    <hr class="thin" style="width:100%">
+    <h1>The Remedy for&nbsp;Irreversibility</h1>
+    <p class="sub">Proceedings of a colloquium on a faculty the valley wrote down, put to a
+    vote, gave zero votes, struck off, asked for again, and never once used.</p>
+    <div class="names">
+      <span>H.&nbsp;Arendt</span><span>J.&nbsp;Hersch</span><span>L.&nbsp;Andreas-Salomé</span>
+    </div>
+    <hr class="thin" style="width:100%">
+    <p class="imprint">Run mtbgptmz-5q &middot; twenty-one thousand ticks &middot; mediations to date: none</p>
+  </header>
+
+  <p class="lede">
+    Nine falling-outs stand on this valley's books. The record keeps each one perfectly: who,
+    with whom, at what tick, decaying at nothing — a bad feeling implemented as carefully as a
+    granary. The valley also wrote the cure. A settler carrying a quarrel may take it to a third
+    person both parties trust, and what that third person decides is not modelled; that both
+    accept it, is. The mechanism is complete, tested, and has never run. This colloquium was
+    convened to say why, and its three respondents were chosen because the question is not
+    technical. The technical half took an evening. The question is why a settlement that filed
+    the wish twice gave it, both times, precisely zero votes.
+  </p>
+
+  <section>
+    <h2><span class="n">The file</span>Exhibits, as the record has them</h2>
+    <div class="file">
+      <span class="k">Exhibit A &middot; the quarrels standing</span>
+      <div class="row"><b>on the books</b><span>Halla–Idris &middot; Rowan–Tove &middot; Juno–Bren &middot; Vell–Bren &middot;
+      Ysolde–Perrin &middot; Rowan–Perrin &middot; Juno–Tove &middot; Idris–Juno &middot; Cato–Oren</span></div>
+      <div class="row"><b>decay rate</b><span>nothing. A quarrel here is the one crop that keeps.</span></div>
+    </div>
+    <div class="file">
+      <span class="k">Exhibit B &middot; the asking</span>
+      <div class="row"><b>wish-283</b><span class="struck">Somebody to put a quarrel to, so a falling-out is not for ever.</span></div>
+      <div class="row"><b>the count</b><span>zero first preferences. Eliminated in round one, behind the weir,
+      the pickaxe, the sheep pen, and everything else on the paper. <span class="note">Struck off.</span></span></div>
+      <div class="row"><b>wish-307</b><span>the same sentence, asked again by Lune at tick 13,457. Votes: zero.</span></div>
+      <div class="row"><b>mediations</b><span>in the life of the valley: none.</span></div>
+    </div>
+    <blockquote class="pull">
+      Idris and I have not spoken in a season and neither of us can remember starting it.
+      <cite>Lune, forester &middot; wish-307, filed and left unvoted</cite>
+    </blockquote>
+  </section>
+
+  <section class="respondent">
+    <div class="who">First respondent &middot; on action</div>
+    <h2>What is done cannot be undone, and this valley proves it by construction</h2>
+    <p>
+      The first respondent observed that the valley has, without meaning to, implemented her
+      whole predicament. Action is irreversible: a deed once done goes on doing, past every
+      intention of the doer — and here that is not a metaphor but a data structure. The bond is
+      written, it decays at nothing, and it costs the settlement work every day it stands. What
+      she called the remedy is the single faculty that releases people from what they did: not
+      undoing — nothing undoes — but <em>forgiving</em>, which lets the doer begin again as
+      someone other than the person who did it.
+    </p>
+    <p>
+      And she noted, approvingly, that the valley's mechanism got the deepest part right by
+      accident. Forgiveness in her account is not private; it happens between people, in the
+      space where they appear to one another. The valley cannot <em>forgive</em> by setting a
+      number, and it does not try — the errand is to <em>go to a third person both parties
+      trust</em>, out loud, where being trusted with it is a thing that happens to you. The code
+      even says what she said: not resolved, <em>eased</em>. A quarrel three days old comes back
+      if nobody does anything else about it. Which is also true.
+    </p>
+  </section>
+
+  <section class="respondent">
+    <div class="who">Second respondent &middot; on freedom</div>
+    <h2>A faculty on the books is not yet a freedom</h2>
+    <p>
+      The second respondent took the file's driest line — <em>mediations to date: none</em> —
+      and put her whole case in it. Freedom, she held, is not a possession but an act: it exists
+      in the moment somebody does it, here and now, and at no other time and in no other way. A
+      valley may carry the boon, print the errand in the grammar, and default the cooldown
+      correctly, and it has thereby granted exactly nothing — a freedom never exercised is
+      indistinguishable, from inside a life, from a freedom never had. The settlers were not
+      deprived of reconciliation. They were furnished with it and did not do it, which is a
+      different finding, and a harder one.
+    </p>
+    <p>
+      Though she entered one correction against the management, having read the engine. For the
+      whole life of this valley the reconciliation errand stood in the queue <em>below</em> the
+      building arm, and the building arm — as sheet xxviii established — returned an errand on
+      every tick of every day, for a granary nobody wanted. The hour in which a settler might
+      have carried a quarrel to a friend was spent walking to a peg and finding the stores
+      short. Her verdict: the faculty was real, the occasion never arrived, and an occasion that
+      structurally cannot arrive is not an occasion. Freedom needs the afternoon in which to
+      happen. The granary took the afternoons.
+    </p>
+  </section>
+
+  <section class="respondent">
+    <div class="who">Third respondent &middot; on why zero votes</div>
+    <h2>The quarrel is kept because it is load-bearing</h2>
+    <p>
+      The third respondent addressed the only question the other two left standing: the zero.
+      Twice asked, twice worth nothing at the count — while the same ballots found votes for a
+      weir, a pickaxe, a name carved in stone. Her reading: nobody votes to give up a grudge,
+      because a grudge is not a debt waiting on a clerk; it is furniture. It organises the
+      person who keeps it. Lune's line is the whole case in one sentence — <em>neither of us can
+      remember starting it</em> — a quarrel that has outlived its own cause and is kept anyway,
+      which means it is kept for what it does, not for what it was about.
+    </p>
+    <p>
+      And the work is where the keeping hides. A settler asked to rank reconciliation against a
+      pickaxe will take the pickaxe every time, not because the pickaxe matters more but because
+      the pickaxe asks nothing of them. Industry is the respectable form of avoidance — this
+      valley's ballots are full of settlers explaining, in their own words, that they are tired,
+      that ore is what they get paid in, that sheep can wait, that everything can wait. She did
+      not think the settlers cynical. She thought them exactly as people are: the last item on
+      every ballot is the only one that would change who they have to be.
+    </p>
+  </section>
+
+  <section>
+    <h2><span class="n">The finding</span>Two causes, both removed tonight</h2>
+    <p>
+      The colloquium finds that the mediation never fired for two reasons stacked one on the
+      other. It was never granted: struck off with zero votes, re-asked, unvoted — and the
+      sittings carried one wish at a time into a backlog of nineteen, so whatever loses to bread
+      lost to bread for ever (the sittings seat up to three now, same ballots, counted again
+      without each winner). And it was never reachable: the build arm above it never failed, so
+      the errand below the granary was dead code wearing a boon. The granary treadmill is out,
+      the wish is granted — ticked by the hand that runs the weather, which the record should
+      say plainly — and the first quarrel put to a third person will be the first exercise of a
+      faculty this valley has owned, in some sense, all along.
+    </p>
+    <p class="aside">
+      <b>Reserved.</b> The report on mediation as it is actually practised — the put case, the
+      hearing, what carries a settlement's assent — waits, with its own three respondents, on
+      rhetoric and dialectic, until there is a mediation on the books to report. This colloquium
+      rules only on the empty ledger. The next one gets the act.
+    </p>
+  </section>
+
+  <footer>
+    <p class="stamp">Filed to the record as sheet xxix &middot; 28 Aug, past midnight</p>
+    <p class="imprint">
+      Nine quarrels standing &middot; mediations to date: none &middot; the boon carried by hand
+      &middot; the afternoons returned to the settlers
+    </p>
+  </footer>
+
+</div>
+
+</body>
+</html>

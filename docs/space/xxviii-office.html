@@ -1,0 +1,361 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>*{margin:0;padding:0}img{max-width:100%}</style>
+</head>
+<body>
+<title>Nobody Works Here</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;900&family=Public+Sans:ital,wght@0,400;0,500;0,700;1,400&family=Courier+Prime:ital,wght@0,400;0,700;1,400&display=swap">
+
+<style>
+  /*
+   * A documentary about a workplace, in the manner of the ones filmed in Scranton in the 2000s:
+   * a title card in white grotesque on a black band, interview frames with a lower-third under
+   * each speaker, and one photocopied memo from management that answers none of the questions
+   * it raises.
+   *
+   * Fluorescent light rather than paper: office white with a grey bias, toner ink, and the one
+   * colour a documentary allows itself — the dull corporate blue of a lower-third — spent on
+   * captions and on the numbers, and nowhere else.
+   */
+  :root {
+    --office:   #F2F2EE;
+    --office-2: #E9E9E4;
+    --card:     #FBFBF9;
+    --toner:    #191B1D;
+    --soft:     #62676C;
+    --rule:     #C9CBC6;
+    --rule-2:   #DBDDD8;
+    --chyron:   #1D5C99;
+    --postit:   #F5E9B8;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --office: #101214; --office-2: #16191C; --card: #1B1F23;
+      --toner: #E4E7E9; --soft: #838B91; --rule: #2C3237; --rule-2: #22272B;
+      --chyron: #5C9BD6; --postit: #3A3524;
+    }
+  }
+  :root[data-theme="dark"] {
+    --office: #101214; --office-2: #16191C; --card: #1B1F23;
+    --toner: #E4E7E9; --soft: #838B91; --rule: #2C3237; --rule-2: #22272B;
+    --chyron: #5C9BD6; --postit: #3A3524;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    background: var(--office); color: var(--toner);
+    font-family: "Public Sans", "Segoe UI", system-ui, sans-serif;
+    font-size: 1.06rem; line-height: 1.68;
+    margin: 0; padding: 0 1.2rem 7rem;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .sheet { max-width: 44rem; margin: 0 auto; display: flex; flex-direction: column; gap: 3rem; }
+  p { margin: 0; max-width: 64ch; }
+  code, .mono { font-family: "Courier Prime", monospace; font-size: 0.92em; }
+  code { color: var(--chyron); }
+
+  .stamp {
+    font-family: "Courier Prime", monospace; font-size: 0.72rem; letter-spacing: 0.22em;
+    text-transform: uppercase; color: var(--soft); margin: 0;
+  }
+
+  /* The title card: white grotesque on a black band, held a beat too long. */
+  header.front { padding-top: 3.4rem; display: flex; flex-direction: column; gap: 1.2rem; }
+  .titlecard {
+    background: var(--toner); color: var(--office);
+    padding: clamp(2rem, 6vw, 3.4rem) clamp(1.4rem, 5vw, 2.6rem);
+    display: flex; flex-direction: column; gap: 0.9rem;
+  }
+  .titlecard h1 {
+    font-family: Archivo, "Helvetica Neue", Arial, sans-serif; font-weight: 900;
+    font-size: clamp(2.3rem, 7.5vw, 4.1rem); line-height: 0.98; margin: 0;
+    letter-spacing: -0.02em; text-wrap: balance;
+  }
+  .titlecard .sub {
+    font-family: "Courier Prime", monospace; font-size: 0.78rem; letter-spacing: 0.2em;
+    text-transform: uppercase; opacity: 0.72;
+  }
+  .imprint {
+    font-family: "Courier Prime", monospace; font-size: 0.7rem; letter-spacing: 0.18em;
+    text-transform: uppercase; color: var(--soft); line-height: 2; margin: 0;
+  }
+
+  .lede { font-size: 1.22rem; line-height: 1.55; }
+
+  section { display: flex; flex-direction: column; gap: 1.1rem; }
+  h2 {
+    font-family: Archivo, "Helvetica Neue", Arial, sans-serif; font-weight: 700;
+    font-size: 1.45rem; margin: 0; letter-spacing: -0.01em; text-wrap: balance;
+  }
+  h2 .n {
+    font-family: "Courier Prime", monospace; font-size: 0.66em; font-weight: 400;
+    color: var(--chyron); letter-spacing: 0.12em; margin-right: 0.7em;
+  }
+
+  /* An interview frame: the quote, then the lower-third that tells you who is talking. */
+  figure.head { margin: 0; background: var(--card); border: 1px solid var(--rule-2); }
+  figure.head blockquote {
+    margin: 0; padding: 1.5rem 1.6rem 1.3rem;
+    font-size: 1.12rem; line-height: 1.55; font-style: italic; text-wrap: pretty;
+  }
+  figure.head blockquote em { font-style: normal; }
+  figure.head figcaption {
+    background: var(--chyron); color: #fff;
+    font-family: Archivo, "Helvetica Neue", Arial, sans-serif;
+    padding: 0.5rem 1.6rem; font-size: 0.82rem; letter-spacing: 0.06em;
+  }
+  figure.head figcaption b { font-weight: 700; text-transform: uppercase; }
+  figure.head figcaption span { opacity: 0.85; font-weight: 500; }
+
+  /* The memo. Photocopied: slightly rotated, Courier, a subject line it never lives up to. */
+  .memo {
+    background: var(--card); border: 1px solid var(--rule);
+    font-family: "Courier Prime", monospace; font-size: 0.95rem; line-height: 1.6;
+    padding: 1.8rem 1.9rem; transform: rotate(-0.4deg);
+    box-shadow: 2px 3px 0 var(--rule-2);
+  }
+  .memo h3 {
+    margin: 0 0 1rem; font-size: 1rem; font-weight: 700; letter-spacing: 0.3em;
+    text-transform: uppercase; text-align: center;
+  }
+  .memo .field { display: flex; gap: 0.6rem; }
+  .memo .field b { min-width: 4.4rem; font-weight: 700; }
+  .memo hr { border: 0; border-top: 1px solid var(--rule); margin: 1rem 0; }
+  .memo p { max-width: none; margin: 0 0 0.9rem; }
+  .memo p:last-child { margin-bottom: 0; }
+
+  .table-wrap { overflow-x: auto; }
+  table.numbers { border-collapse: collapse; width: 100%; min-width: 30rem; font-size: 0.95rem; }
+  table.numbers th {
+    font-family: "Courier Prime", monospace; font-size: 0.68rem; letter-spacing: 0.16em;
+    text-transform: uppercase; color: var(--soft); font-weight: 400; text-align: left;
+    padding: 0 0.9rem 0.55rem 0; border-bottom: 2px solid var(--toner);
+  }
+  table.numbers td { padding: 0.68rem 0.9rem 0.68rem 0; border-bottom: 1px solid var(--rule-2); vertical-align: top; }
+  table.numbers td.fig {
+    font-family: Archivo, "Helvetica Neue", Arial, sans-serif; font-weight: 900;
+    font-size: 1.3rem; color: var(--chyron); white-space: nowrap; width: 6.2rem;
+    font-variant-numeric: tabular-nums;
+  }
+  table.numbers td.what { font-weight: 500; width: 40%; }
+  table.numbers td.but { color: var(--soft); }
+
+  .postit {
+    background: var(--postit); padding: 1.1rem 1.3rem; max-width: 30rem;
+    font-family: "Courier Prime", monospace; font-size: 0.92rem; line-height: 1.55;
+    transform: rotate(0.6deg); box-shadow: 2px 3px 0 var(--rule-2);
+  }
+
+  .aside { color: var(--soft); font-size: 0.95rem; }
+  .aside b { color: var(--toner); }
+
+  footer { display: flex; flex-direction: column; gap: 0.9rem; border-top: 3px double var(--toner); padding-top: 1.4rem; }
+</style>
+
+<div class="sheet">
+
+  <header class="front">
+    <p class="stamp">Frontier &middot; the record &middot; sheet xxviii</p>
+    <div class="titlecard">
+      <span class="sub">A documentary crew has been in the valley for some time</span>
+      <h1>Nobody Works Here</h1>
+      <span class="sub">Run mtbgptmz-5q &middot; seventeen thousand ticks &middot; filmed as found</span>
+    </div>
+    <p class="imprint">
+      The camera was pointed at a sawmill that has cut 1,311 boards.<br>
+      The card on the sawmill said: <em>nobody works here.</em><br>
+      Both of these were true. This sheet is about how.
+    </p>
+  </header>
+
+  <p class="lede">
+    Every workplace documentary is the same discovery made slowly: the office is not what the
+    org chart says it is. The org chart of this valley says two granaries, a flock of six, and a
+    staffed mill. The camera found a skyline of seven granaries, a live sheep in what can only be
+    called the break room, and not one visible worker anywhere in seventeen thousand ticks of
+    footage. None of it was a lie. All of it was the gap between what a record says and what a
+    camera can catch.
+  </p>
+
+  <section>
+    <h2><span class="n">COLD OPEN</span>The sheep is not lunch</h2>
+    <p>
+      The management of this valley has been handing out food at the flock, and the player —
+      reasonably, having watched it happen — asked what, exactly, was being handed out. Milk?
+      Sliders? A live sheep has been left standing on the slope either way, which narrows the
+      question to something a documentary has to answer on camera or not at all.
+    </p>
+    <p>
+      The record answers it. The tend errand reads: <em>taken off the animals rather than out of
+      them. Nothing is wasted here now because nothing is taken: the rest is still a sheep.</em>
+      The flock is never decremented. Six sheep went on to the grass when the vote carried and
+      six sheep are on the grass now, each one wearing its own seed and drifting its own drift.
+      What comes away in a settler's hands is whatever a sheep yields while remaining entirely a
+      sheep — which is milk, and was always going to be milk, because the alternative subtracts
+      a sheep and this game has nowhere to put a death. There is no slaughter in the catalogue,
+      no meat among the nine goods, and no grave except the cairn, which is for presence, not
+      loss. Death stays outside the simulation. The management position, stated once and never
+      revisited, is that this is fine.
+    </p>
+    <figure class="head">
+      <blockquote>A handful of sheep would feed us better than a season of berry-picking.</blockquote>
+      <figcaption><b>Bren</b> <span>&middot; miner, the landing &middot; wish-304, the one that carried 16 of 17</span></figcaption>
+    </figure>
+    <figure class="head">
+      <blockquote>I keep thinking this place wants animals in it. It is too quiet by half.</blockquote>
+      <figcaption><b>Idris</b> <span>&middot; forester &middot; wish-306, filed after the sheep already existed</span></figcaption>
+    </figure>
+  </section>
+
+  <section>
+    <h2><span class="n">MEMO</span>From management, regarding the restructuring</h2>
+    <div class="memo">
+      <h3>Memorandum</h3>
+      <div class="field"><b>From:</b> <span>the fallback on the last line of <span class="mono">wantsBuilding</span></span></div>
+      <div class="field"><b>To:</b> <span>every builder, for ever</span></div>
+      <div class="field"><b>Re:</b> <span>what this settlement should build next</span></div>
+      <hr>
+      <p>Granary.</p>
+      <p>
+        This memo was reissued on every tick of every day to a settlement that already had every
+        granary it wanted. It could not say nothing, because the function could not say nothing.
+        1,090 granaries were started against stores too short to raise them. 550 were raised,
+        found surplus, and taken apart for seven units back of the fourteen each one cost. At
+        the worst of it seven stood at once, in a settlement whose own reckoning wanted two.
+      </p>
+      <p>
+        The player photographed the skyline and asked whether ruins had stopped undrawing.
+        Nothing had failed to undraw. Every granary in the picture was real. The picture was of
+        this memo.
+      </p>
+    </div>
+    <p class="aside">
+      The fallback now answers <b>nothing</b> when every rung is climbed, which the instruction
+      path could already say — <em>the landing has all the granarys it wants</em> — and the
+      self-directed path could not. A settlement that wants nothing built hears nothing, and its
+      builders fall through to the work underneath: the roof that needs patching, the flock, an
+      evening.
+    </p>
+  </section>
+
+  <section>
+    <h2><span class="n">B-ROLL</span>The quarter of granaries, by the numbers</h2>
+    <div class="table-wrap">
+      <table class="numbers">
+        <tr><th>figure</th><th>what it counts</th><th>and what it cost</th></tr>
+        <tr>
+          <td class="fig">1,090</td>
+          <td class="what">granaries started and abandoned at the pegs</td>
+          <td class="but">a walk out and a walk back, times a thousand and ninety</td>
+        </tr>
+        <tr>
+          <td class="fig">550</td>
+          <td class="what">granaries raised, then taken down as surplus</td>
+          <td class="but">seven units recovered of fourteen spent, per cycle</td>
+        </tr>
+        <tr>
+          <td class="fig">7</td>
+          <td class="what">standing at once, tick 10,371 — the photograph</td>
+          <td class="but">against a cap of two the settlement had already set itself</td>
+        </tr>
+        <tr>
+          <td class="fig">2</td>
+          <td class="what">granaries the landing actually wants, and now has</td>
+          <td class="but">sixty places of dry storage each, one keeper's bench</td>
+        </tr>
+      </table>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="n">THE BRANCH</span>A requisition that can never clear</h2>
+    <p>
+      Every fork this valley has ever thrown — a claim, two people, a lean-to — has stalled, and
+      the player asked why. The answer is an expense report. A hall costs forty-four units and
+      the build check wants all of them banked at once. A claim's lean-to holds eight. Its first
+      house holds twelve more. A settler carries about five. Twenty-five against forty-four:
+      the branch was not slow to afford its hall, it was <em>arithmetically unable to hold the
+      money</em>, and the ladder had no way down — so the kiln and the mill the branch could
+      actually raise sat unreachable beneath a requisition that would never, ever clear.
+    </p>
+    <figure class="head">
+      <blockquote>Tove&rsquo;s claim, seventeen thousand ticks in: one claim, one house, two people,
+      and a hall on order since the vote carried. Nothing else was ever attempted.</blockquote>
+      <figcaption><b>The record</b> <span>&middot; agents/state.jsonl, read back without comment</span></figcaption>
+    </figure>
+    <p>
+      The hall and the depot now wait for their boards before they claim the ladder — a
+      settlement that has banked ten planks is one whose storage has already outgrown the trap —
+      and a fork falls through to the kiln it can actually build. The branch gets to become an
+      office before it is billed for the conference room.
+    </p>
+  </section>
+
+  <section>
+    <h2><span class="n">THE DESK</span>The camera pans to an empty chair</h2>
+    <p>
+      And the title of this sheet. The card on every workshop has a line for who works there,
+      and the player has never once seen it filled. Sheet xxvii found half of the reason: every
+      worker stands <em>inside</em> the building, under the roof, drawn over — there has never
+      been one to see. This sheet files the other half: a shift is a few seconds long, and the
+      card only listed the people standing at the bench <em>at this exact moment</em>. A mill
+      that had cut 1,311 boards and a mill that had never once run said the same three words.
+      The one question a person asks a workshop — <em>is anybody ever here?</em> — had two true
+      answers and the card gave the useless one.
+    </p>
+    <div class="postit">
+      the card now remembers:<br>
+      &ldquo;quiet now &mdash; Mara stood the last shift, at 3,742s&rdquo;<br>
+      and only a bench that has honestly never run still says<br>
+      &ldquo;nobody has ever worked here.&rdquo;
+    </div>
+    <p class="aside">
+      Also found in the footage: everybody else was forbidden from helping. The rule meant to
+      send non-builders to a backlog read <b>no builder free</b> as <em>every builder at a build
+      site</em> — so one builder resting was a picket line, and a hall the settlement could
+      afford waited five thousand ticks while the foresters watched. A builder is spoken-for
+      when they are busy with anything at all now; only an idle one is reason to leave it to
+      the trade.
+    </p>
+  </section>
+
+  <section>
+    <h2><span class="n">TALKING HEAD</span>Exit interview</h2>
+    <figure class="head">
+      <blockquote>Mara started a granary and found the stores short.</blockquote>
+      <figcaption><b>The feed</b> <span>&middot; said 1,090 times, in those words, about eleven people</span></figcaption>
+    </figure>
+    <figure class="head">
+      <blockquote>…took down a granary nobody was using. 7 of it came back.</blockquote>
+      <figcaption><b>The feed</b> <span>&middot; said 550 times, and true every time</span></figcaption>
+    </figure>
+    <p>
+      That is the whole documentary. An office where the standing order could not say
+      &ldquo;nothing,&rdquo; a branch billed past what it could hold, a perk nobody could name,
+      and a camera that never caught anybody at a desk because the desks were behind the walls
+      and the shifts were seconds long. Nobody in it was lazy. Nobody in it was lying. The
+      paperwork was simply asking the wrong questions, which is the most ordinary workplace
+      finding there is.
+    </p>
+  </section>
+
+  <footer>
+    <p class="stamp">Filed to the record as sheet xxviii &middot; 27 Aug, after dark</p>
+    <p class="imprint">
+      The sheep are still on the slope. The milk is still milk. Death remains outside the
+      simulation, by standing decision. The skyline is two granaries now, and the card at the
+      mill will tell you who stood the last shift.
+    </p>
+  </footer>
+
+</div>
+
+</body>
+</html>
