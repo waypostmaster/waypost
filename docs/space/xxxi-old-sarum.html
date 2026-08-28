@@ -1,0 +1,321 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>*{margin:0;padding:0}img{max-width:100%}</style>
+</head>
+<body>
+<title>Old Sarum</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,600;1,400&family=IM+Fell+English:ital@0;1&family=Courier+Prime:wght@400;700&display=swap">
+
+<style>
+  /*
+   * A parliamentary return, in the dress of the blue books of the 1830s: "Return, ordered to be
+   * printed" — the instrument by which the unreformed House was made to count its own boroughs.
+   * Foolscap, iron-gall ink, and one colour — the red of a division lobby — spent on the tallies
+   * and on what was struck, and nowhere else. The Reform Act was mostly tables.
+   */
+  :root {
+    --paper:   #F4EFE2;
+    --paper-2: #ECE6D5;
+    --card:    #FAF6EA;
+    --ink:     #26231C;
+    --soft:    #6E6858;
+    --rule:    #C9C1AC;
+    --rule-2:  #DAD3C0;
+    --division:#8F2E2E;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --paper: #15130E; --paper-2: #1C1913; --card: #211E17;
+      --ink: #E7E2D2; --soft: #918A77; --rule: #3A352A; --rule-2: #2B2820;
+      --division: #D98B7F;
+    }
+  }
+  :root[data-theme="dark"] {
+    --paper: #15130E; --paper-2: #1C1913; --card: #211E17;
+    --ink: #E7E2D2; --soft: #918A77; --rule: #3A352A; --rule-2: #2B2820;
+    --division: #D98B7F;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    background: var(--paper); color: var(--ink);
+    font-family: "EB Garamond", Georgia, serif;
+    font-size: 1.16rem; line-height: 1.64;
+    margin: 0; padding: 0 1.2rem 7rem;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .sheet { max-width: 44rem; margin: 0 auto; display: flex; flex-direction: column; gap: 2.8rem; }
+  p { margin: 0; max-width: 66ch; }
+  code, .mono { font-family: "Courier Prime", monospace; font-size: 0.82em; }
+  code { color: var(--division); }
+  b { font-weight: 600; }
+
+  .stamp {
+    font-family: "IM Fell English", serif; font-size: 0.86rem; letter-spacing: 0.22em;
+    text-transform: uppercase; color: var(--soft); margin: 0;
+  }
+  hr.thin { border: 0; border-top: 1px solid var(--rule); margin: 0; }
+
+  header.front {
+    display: flex; flex-direction: column; align-items: center; text-align: center;
+    gap: 1.1rem; padding-top: 3.4rem;
+  }
+  header.front h1 {
+    font-family: "IM Fell English", serif;
+    font-size: 3rem; font-weight: 400; letter-spacing: 0.12em; text-transform: uppercase;
+    margin: 0; line-height: 1.1;
+  }
+  header.front .sub { color: var(--soft); font-style: italic; max-width: 36rem; }
+  .runhead {
+    display: flex; justify-content: space-between; width: 100%;
+    font-family: "IM Fell English", serif; font-size: 0.78rem; letter-spacing: 0.14em;
+    text-transform: uppercase; color: var(--soft);
+    border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule);
+    padding: 0.45rem 0.2rem;
+  }
+
+  .abstract {
+    background: var(--card); border: 1px solid var(--rule-2);
+    padding: 1.4rem 1.6rem; font-size: 1.02rem; line-height: 1.6;
+  }
+  .abstract .lead { font-family: "IM Fell English", serif; font-size: 0.76rem; letter-spacing: 0.2em;
+    text-transform: uppercase; color: var(--soft); display: block; margin-bottom: 0.7rem; }
+
+  section h2 {
+    font-family: "IM Fell English", serif; font-size: 0.95rem; letter-spacing: 0.18em;
+    text-transform: uppercase; font-weight: 400; color: var(--ink);
+    margin: 0 0 1.1rem; padding-bottom: 0.5rem; border-bottom: 1px solid var(--rule);
+  }
+  section h2 .n { color: var(--division); margin-right: 0.7em; }
+  section { display: flex; flex-direction: column; gap: 1.05rem; }
+
+  blockquote {
+    margin: 0.35rem 0 0.35rem 0; padding: 0.9rem 1.25rem;
+    background: var(--paper-2); border-left: 3px solid var(--division);
+    font-style: italic; max-width: 60ch;
+  }
+  blockquote .who { display: block; font-style: normal; font-family: "IM Fell English", serif;
+    font-size: 0.78rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--soft);
+    margin-top: 0.55rem; }
+
+  .exhibit {
+    font-family: "Courier Prime", monospace; font-size: 0.86rem; line-height: 1.6;
+    background: var(--card); border: 1px solid var(--rule-2);
+    padding: 1.1rem 1.3rem; overflow-x: auto;
+  }
+  .exhibit .tag { color: var(--division); }
+
+  table { border-collapse: collapse; font-size: 0.98rem; width: 100%; }
+  th { font-family: "IM Fell English", serif; font-size: 0.76rem; letter-spacing: 0.14em;
+    text-transform: uppercase; font-weight: 400; color: var(--soft); text-align: left;
+    padding: 0.4rem 1rem 0.4rem 0; border-bottom: 1px solid var(--rule); }
+  td { padding: 0.42rem 1rem 0.42rem 0; border-bottom: 1px solid var(--rule-2); vertical-align: top; }
+  td.t { font-family: "Courier Prime", monospace; font-size: 0.82em; white-space: nowrap; }
+  td.n { text-align: right; font-variant-numeric: tabular-nums; }
+  .tablewrap { overflow-x: auto; }
+  .red { color: var(--division); }
+
+  .footline { color: var(--soft); font-size: 0.95rem; }
+  .colophon { display: flex; flex-direction: column; gap: 0.5rem; padding-top: 0.4rem; }
+  a { color: var(--division); }
+</style>
+
+<div class="sheet">
+
+  <header class="front">
+    <p class="stamp">The Frontier Record &middot; Sheet XXXI</p>
+    <h1>Old Sarum</h1>
+    <p class="sub">A return of every vote taken in the valley; of the members asked who could not
+      be reached; and of fourteen decisions deleted from the record by the boroughs down the
+      coast &mdash; six of them by an electorate of one.</p>
+    <div class="runhead"><span>Return &middot; ordered to be printed</span><span>28 Aug, before dawn</span></div>
+  </header>
+
+  <div class="abstract">
+    <span class="lead">Ordered</span>
+    The keeper asked one question of the record: dig back through the history and see whether
+    anybody was ever accidentally disenfranchised. The answer is yes, twice over, and in neither
+    case did the record say so at the time. First, the silent kind: of 684 votes that can be
+    audited against a census, <b>339 were missing at least one living member of the town that
+    voted</b> &mdash; 1,470 ballots that never existed, lost to a swallowed error on the bus, with
+    nothing anywhere naming the people who were asked and never answered. Second, the loud kind
+    that nobody heard: a wish that carries in one settlement stays votable in the others, and
+    when it <i>lost</i> a vote down the coast it was struck &mdash; deleted from the record
+    entirely, Carried note and all. <b>Fourteen settlement decisions went off the books that
+    way</b>, one of them the valley&rsquo;s only carried word for growing food, deleted by the
+    starving town itself. Three repairs are made, and the record answered one of them within
+    twenty minutes.
+  </div>
+
+  <section>
+    <h2><span class="n">I.</span> The borough</h2>
+    <p>Old Sarum is the grass mound in Wiltshire that returned two members to Parliament while
+      Manchester returned none: the borough had voters and no town, the city had a town and no
+      voters, and the return that printed those two facts side by side is most of why the system
+      did not survive the printing. This valley grew its own. At four in the morning the game
+      held a vote in Bren&rsquo;s claim, and Bren&rsquo;s claim is one man:</p>
+    <div class="exhibit">
+      <span class="tag">VOTES.md &middot; 2026-08-28 04:00:23 &middot; 1 settlers voted</span><br>
+      - <b>Bren</b>: wish-320 &gt; wish-316 &gt; wish-311<br>
+      &nbsp;&nbsp;&gt; I want to climb without getting hurt — it's the most dangerous thing I do.
+      And the rope's for trees, which I don't need. I'm fine with birds.<br>
+      <br>
+      <b>Carried:</b> wish-320 — Lines and ladders rigged where the work is high.<br>
+      <span class="red"><b>Struck off:</b> wish-316 — A rope to pull the trees down from the
+      valley floor.</span>
+    </div>
+    <p>Nothing in that sitting is wrong on its face. A claim of one is entitled to its meeting
+      &mdash; that is the whole argument of anybody having walked out &mdash; and Bren is
+      entitled to not need a rope. What he was not entitled to, and was given by the machinery,
+      is the last line. <b>wish-316 had already carried</b>, two first preferences of two, in
+      Tove&rsquo;s claim, forty minutes earlier. The strike deleted it from
+      <code>agents/WISHLIST.md</code> whole: the wish, the votes, and the note recording that a
+      settlement of two had resolved to build it. One voter, sitting down the coast, erased two
+      voters&rsquo; standing decision &mdash; and the record of the erasure names neither of
+      them.</p>
+  </section>
+
+  <section>
+    <h2><span class="n">II.</span> The members who could not be reached</h2>
+    <p>The quieter fault first, because it is the one the keeper actually asked about. When a
+      settlement gathers to vote, the whole town is sent to the bus, one ballot at a time. A
+      settler whose ballot dies in transit &mdash; a timeout, a jammed model, a request that
+      outlives its asker &mdash; is caught by a silent handler whose comment reads <i>&ldquo;an
+      election with a missing voter is still an election.&rdquo;</i> True. But the record wrote
+      only <i>&ldquo;N settlers voted,&rdquo;</i> never who was asked, so a member dropped by the
+      bus is indistinguishable, for ever, from a town that was simply that size.</p>
+    <p>Audited against the census in the state snapshots &mdash; each vote matched to the town
+      roster nearest it in time &mdash; the scale of it is not a rounding error:</p>
+    <div class="tablewrap"><table>
+      <tr><th>votes auditable against a census</th><td class="n">684</td></tr>
+      <tr><th>short at least one living member</th><td class="n"><b>339</b></td></tr>
+      <tr><th>ballots that never existed</th><td class="n"><b>1,470</b></td></tr>
+    </table></div>
+    <p>And it is not evenly spread. The members most often absent from their own meetings, over
+      the life of the record:</p>
+    <div class="tablewrap"><table>
+      <tr><th>member</th><th>meetings missed</th><th>member</th><th>meetings missed</th></tr>
+      <tr><td>Ysolde</td><td class="n">136</td><td>Anselm</td><td class="n">121</td></tr>
+      <tr><td>Pike</td><td class="n">135</td><td>Mara</td><td class="n">106</td></tr>
+      <tr><td>Ferro</td><td class="n">133</td><td>Idris</td><td class="n">104</td></tr>
+      <tr><td>Rowan</td><td class="n">131</td><td>Bren</td><td class="n">98</td></tr>
+      <tr><td>Tove</td><td class="n">122</td><td>Sula</td><td class="n">95</td></tr>
+    </table></div>
+    <p>A hundred and thirty-six meetings is not a member with poor attendance; it is a constituent
+      the bus reliably fails and a record that never noticed. No claim is made here about which
+      individual votes would have gone differently &mdash; that cannot be reconstructed, which is
+      precisely the indictment. A franchise nobody can audit is not one.</p>
+  </section>
+
+  <section>
+    <h2><span class="n">III.</span> Fourteen decisions, deleted</h2>
+    <p>The second fault is a collision of two correct rules. A wish that carries in one
+      settlement stays on the other settlements&rsquo; slates, because two settlements can each
+      want a sawmill &mdash; that is right. And the wish that comes last in a count is struck
+      off, deleted from the file, because a struck wish is not banned and comes back clean if
+      anybody asks again &mdash; that is right too, <i>for an open wish</i>. The guard between
+      them checked only whether the loser had carried <i>in the count being held</i>. Whether it
+      had carried last week, in somebody else&rsquo;s town, two first preferences of two, was
+      never asked. So every cross-coast slate was a loaded gun, and over two days it went off
+      fourteen times:</p>
+    <div class="tablewrap"><table>
+      <tr><th>wish</th><th>what it was</th><th>carried in</th><th>deleted by</th></tr>
+      <tr><td class="t">wish-132</td><td><b>planting</b> — a way to put trees back</td><td>Tove&rsquo;s claim</td><td class="red">the landing</td></tr>
+      <tr><td class="t">wish-307</td><td><b>mediation</b> — somebody to put a quarrel to</td><td>Tove&rsquo;s claim</td><td class="red">the landing</td></tr>
+      <tr><td class="t">wish-154</td><td>hearth — a roofed place to gather</td><td>Halla&rsquo;s claim</td><td class="red">Bren&rsquo;s claim</td></tr>
+      <tr><td class="t">wish-155</td><td>watch — warning signals for accidents</td><td>the landing</td><td class="red">the landing</td></tr>
+      <tr><td class="t">wish-159</td><td>marking worked trees</td><td>Tove&rsquo;s claim</td><td class="red">Bren&rsquo;s claim</td></tr>
+      <tr><td class="t">wish-196</td><td>well — a cistern for lake water</td><td>the landing</td><td class="red">Bren&rsquo;s claim</td></tr>
+      <tr><td class="t">wish-211</td><td>cairns, on the ways and over the lost</td><td>Bren&rsquo;s claim</td><td class="red">Bren&rsquo;s claim</td></tr>
+      <tr><td class="t">wish-213</td><td>ferry — a bridge at the narrows</td><td>Ferro&rsquo;s claim</td><td class="red">the landing</td></tr>
+      <tr><td class="t">wish-217</td><td>catching fish in the lake</td><td>Ferro&rsquo;s claim</td><td class="red">Tove&rsquo;s claim</td></tr>
+      <tr><td class="t">wish-266</td><td>solitude — a bench on the shore</td><td>Bren&rsquo;s claim</td><td class="red">the landing</td></tr>
+      <tr><td class="t">wish-278</td><td>memorial — names cut in stone</td><td>Tove&rsquo;s claim</td><td class="red">the landing</td></tr>
+      <tr><td class="t">wish-282</td><td>ledger — a communal hour log</td><td>Tove&rsquo;s claim</td><td class="red">Bren&rsquo;s claim</td></tr>
+      <tr><td class="t">wish-291</td><td>solitude — a bench on the shore</td><td>the landing</td><td class="red">Tove&rsquo;s claim</td></tr>
+      <tr><td class="t">wish-316</td><td>a rope to pull the trees down</td><td>Tove&rsquo;s claim</td><td class="red">Bren&rsquo;s claim</td></tr>
+    </table></div>
+    <p>Six of the fourteen deletions were cast by an electorate of one. Two more by an electorate
+      of two. And the first row is the one that rewrites the previous sheet: <b>Sheet XXX closed
+      on a prediction</b> &mdash; that the landing, starving, would come to its one remaining
+      food word, <code>planting</code>, <i>&ldquo;arriving at the meeting by the only door left
+      open.&rdquo;</i> What Sheet XXX did not know is that the door had already been taken off
+      its hinges: on the 27th the landing&rsquo;s own vote struck wish-132 &mdash; carried in
+      Tove&rsquo;s claim, ten rounds, Mara&rsquo;s <i>&ldquo;we have cut the near slope bare&rdquo;</i>
+      &mdash; and deleted the valley&rsquo;s only carried planting from the record. The
+      starving town deleted hunger&rsquo;s last word from its own future slates, while the sheet
+      predicting it would reach for that word was being typeset.</p>
+  </section>
+
+  <section>
+    <h2><span class="n">IV.</span> Three repairs</h2>
+    <p><b>The record now names who could not be reached.</b> Every vote writes its absentees
+      under the ballots &mdash; <i>&ldquo;Asked, and could not be reached: &hellip; cast no
+      ballot&rdquo;</i> &mdash; and the log event carries the same list, so the question the
+      keeper asked tonight takes one grep to answer from now on. The ballots are recorded, not
+      retried: they share one model on one card, a sitting already takes half a minute, and
+      whether a failed ballot deserves a second attempt is a design call that belongs to the
+      keeper. Visibility first; nothing can be repaired that cannot be seen.</p>
+    <p><b>A carried wish may not be struck.</b> Twice over, on the principle that a rule
+      enforced in one place is a rule: the vote handler now asks whether the loser carried
+      <i>anywhere, ever</i> before striking, and <code>removeWish</code> itself refuses to
+      delete any block whose box is ticked, whoever calls it. Two new cases in the record check
+      hold both for good. A carried wish that loses a vote down the coast now loses it, and
+      that is all: <i>&ldquo;Lost here &hellip; It already carried in another settlement, so it
+      keeps its place on the record; nothing is struck.&rdquo;</i></p>
+    <p><b>And the fourteen are restored.</b> Each block was recovered byte-for-byte from the
+      committed record &mdash; the same votes, the same Carried note, Mara&rsquo;s same
+      sentence &mdash; re-inserted in its place with one line added: struck off in error, and
+      restored. Nothing is deleted. What was deliberately <i>not</i> restored is the strike
+      itself for open wishes, which keeps its old meaning: a wish nobody has carried and nobody
+      ranks still leaves the file, still lives in the log, and still comes back clean if
+      somebody asks again.</p>
+  </section>
+
+  <section>
+    <h2><span class="n">V.</span> What the record did next</h2>
+    <p>The repairs went in while the valley was running, and the valley did not wait to be asked
+      about them. Within twenty minutes of the restoration: Bren&rsquo;s claim voted again and
+      <b>carried the rope</b> &mdash; the same wish-316 his previous sitting had deleted, back on
+      his slate and this time ranked first, <i>&ldquo;can&rsquo;t haul ore while my hand&rsquo;s
+      still shaking from that skid.&rdquo;</i> His next sitting carried <b>the cairns</b>,
+      wish-211, a second restored decision. Tove and Idris carried <b>the tree-marking</b>,
+      wish-159, a third. And three votes have already closed with the new line in them &mdash;
+      <i>lost here, nothing is struck</i> &mdash; each one a deletion that did not happen.</p>
+    <p>The prediction inherited from Sheet XXX stands re-armed. <code>planting</code> is back on
+      the record, carried in Tove&rsquo;s claim, open to the landing &mdash; and the landing is
+      down to two food for seventeen people. If the theory and the mechanism are both right, the
+      next time hunger reaches that meeting it will find the door back on its hinges. The record
+      will say.</p>
+    <blockquote>We have cut the near slope bare and I am walking twice as far as I did.
+      <span class="who">Mara, forester &mdash; wish-132, carried, deleted, restored</span></blockquote>
+  </section>
+
+  <hr class="thin">
+
+  <div class="colophon">
+    <p class="footline"><b>Found:</b> the franchise had two silent holes — 1,470 ballots lost to
+      a swallowed error and never recorded, and fourteen carried decisions deleted from the
+      record by votes their settlements never attended, six of them by an electorate of one.</p>
+    <p class="footline"><b>Followed:</b> every vote now names who could not be reached; a
+      carried wish cannot be struck, enforced twice and checked; and all fourteen decisions are
+      restored to the record byte-for-byte — three of them re-carried by other settlements
+      within twenty minutes.</p>
+    <p class="footline">Sheet XXXI of the Frontier record. The run is
+      <span class="mono">mtbgptmz-5q</span>; the audit script, the fourteen, and every restored
+      block are in the record — <span class="mono">agents/WISHLIST.md</span>,
+      <span class="mono">agents/VOTES.md</span>, <span class="mono">agents/log.jsonl</span> —
+      and every quoted sentence is a settler&rsquo;s own.</p>
+  </div>
+
+</div>
+
+</body>
+</html>
