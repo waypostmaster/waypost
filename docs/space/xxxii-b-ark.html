@@ -1,0 +1,318 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>*{margin:0;padding:0}img{max-width:100%}</style>
+</head>
+<body>
+<title>The B Ark</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600&family=Jost:ital,wght@0,300;0,400;0,500;1,400&family=EB+Garamond:ital,wght@0,400;0,600;1,400&family=Courier+Prime:wght@400;700&display=swap">
+
+<style>
+  /*
+   * A Guide entry. Dark screen, one friendly colour, headings in large friendly letters —
+   * because the device this sheet is written on would want it that way — with the other voice,
+   * a 1798 quarto, set in old serif on paper-coloured insets. Adams and Malthus do not share a
+   * typeface, and that is the whole layout.
+   */
+  :root {
+    --screen:   #0B1512;
+    --screen-2: #101E19;
+    --panel:    #142520;
+    --glow:     #4FD08C;
+    --text:     #D7E6DC;
+    --soft:     #7FA090;
+    --rule:     #24463A;
+    --paper:    #F1EADA;
+    --paper-ink:#2B2619;
+    --paper-soft:#6E6350;
+  }
+  :root[data-theme="light"], :root:not([data-theme="dark"]) {
+    /* The paperback: cream cover, the same green gone dark enough to read by daylight. */
+    --screen: #F2EFE6; --screen-2: #EAE6D8; --panel: #F8F5EC;
+    --glow: #14794A; --text: #26302A; --soft: #66766C; --rule: #CFC8B4;
+    --paper: #FBF8F0; --paper-ink: #2B2619; --paper-soft: #6E6350;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --screen: #0B1512; --screen-2: #101E19; --panel: #142520;
+      --glow: #4FD08C; --text: #D7E6DC; --soft: #7FA090; --rule: #24463A;
+      --paper: #F1EADA; --paper-ink: #2B2619; --paper-soft: #6E6350;
+    }
+  }
+  :root[data-theme="dark"] {
+    --screen: #0B1512; --screen-2: #101E19; --panel: #142520;
+    --glow: #4FD08C; --text: #D7E6DC; --soft: #7FA090; --rule: #24463A;
+    --paper: #F1EADA; --paper-ink: #2B2619; --paper-soft: #6E6350;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    background: var(--screen); color: var(--text);
+    font-family: Jost, "Segoe UI", system-ui, sans-serif;
+    font-weight: 300; font-size: 1.14rem; line-height: 1.66;
+    margin: 0; padding: 0 1.2rem 7rem;
+    -webkit-font-smoothing: antialiased;
+  }
+  b { font-weight: 500; }
+
+  .sheet { max-width: 44rem; margin: 0 auto; display: flex; flex-direction: column; gap: 2.8rem; }
+  p { margin: 0; max-width: 66ch; }
+  code, .mono { font-family: "Courier Prime", monospace; font-size: 0.85em; }
+  code { color: var(--glow); }
+
+  .stamp {
+    font-family: Jost, sans-serif; font-size: 0.72rem; letter-spacing: 0.26em;
+    text-transform: uppercase; color: var(--soft); margin: 0;
+  }
+  hr.thin { border: 0; border-top: 1px solid var(--rule); margin: 0; }
+
+  header.front {
+    display: flex; flex-direction: column; align-items: center; text-align: center;
+    gap: 1.15rem; padding-top: 3.4rem;
+  }
+  header.front h1 {
+    font-family: Fredoka, Jost, sans-serif; font-weight: 600;
+    font-size: 3.4rem; letter-spacing: 0.06em; text-transform: uppercase;
+    margin: 0; line-height: 1.05; color: var(--glow);
+  }
+  header.front .sub { color: var(--soft); font-style: italic; max-width: 36rem; }
+  .runhead {
+    display: flex; justify-content: space-between; width: 100%;
+    font-family: Jost, sans-serif; font-size: 0.7rem; letter-spacing: 0.2em;
+    text-transform: uppercase; color: var(--soft);
+    border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule);
+    padding: 0.45rem 0.2rem;
+  }
+
+  .abstract {
+    background: var(--panel); border: 1px solid var(--rule); border-radius: 10px;
+    padding: 1.4rem 1.6rem; font-size: 1rem; line-height: 1.62;
+  }
+  .abstract .lead { font-family: Fredoka, sans-serif; font-weight: 500; font-size: 0.72rem;
+    letter-spacing: 0.24em; text-transform: uppercase; color: var(--glow);
+    display: block; margin-bottom: 0.7rem; }
+
+  section h2 {
+    font-family: Fredoka, Jost, sans-serif; font-weight: 500;
+    font-size: 1.05rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--glow);
+    margin: 0 0 1.1rem; padding-bottom: 0.5rem; border-bottom: 1px solid var(--rule);
+  }
+  section { display: flex; flex-direction: column; gap: 1.05rem; }
+
+  /* The other voice: Malthus, 1798, on paper. */
+  .quarto {
+    background: var(--paper); color: var(--paper-ink);
+    font-family: "EB Garamond", Georgia, serif; font-size: 1.08rem; line-height: 1.6;
+    border-radius: 3px; padding: 1.1rem 1.4rem; max-width: 60ch;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.25);
+  }
+  .quarto .who { display: block; font-family: Jost, sans-serif; font-size: 0.7rem;
+    letter-spacing: 0.18em; text-transform: uppercase; color: var(--paper-soft);
+    margin-top: 0.6rem; font-style: normal; }
+
+  blockquote {
+    margin: 0.35rem 0; padding: 0.9rem 1.25rem;
+    background: var(--screen-2); border-left: 3px solid var(--glow);
+    font-style: italic; max-width: 60ch; border-radius: 0 8px 8px 0;
+  }
+  blockquote .who { display: block; font-style: normal; font-family: Jost, sans-serif;
+    font-size: 0.7rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--soft);
+    margin-top: 0.55rem; }
+
+  .exhibit {
+    font-family: "Courier Prime", monospace; font-size: 0.86rem; line-height: 1.6;
+    background: var(--screen-2); border: 1px solid var(--rule); border-radius: 8px;
+    padding: 1.1rem 1.3rem; overflow-x: auto;
+  }
+  .exhibit .tag { color: var(--glow); }
+
+  table { border-collapse: collapse; font-size: 0.96rem; width: 100%; }
+  th { font-family: Jost, sans-serif; font-size: 0.7rem; letter-spacing: 0.16em;
+    text-transform: uppercase; font-weight: 400; color: var(--soft); text-align: left;
+    padding: 0.4rem 1rem 0.4rem 0; border-bottom: 1px solid var(--rule); }
+  td { padding: 0.42rem 1rem 0.42rem 0; border-bottom: 1px solid var(--rule); vertical-align: top; }
+  td.t { font-family: "Courier Prime", monospace; font-size: 0.82em; white-space: nowrap; }
+  .tablewrap { overflow-x: auto; }
+
+  .footline { color: var(--soft); font-size: 0.94rem; }
+  .colophon { display: flex; flex-direction: column; gap: 0.5rem; padding-top: 0.4rem; }
+  a { color: var(--glow); }
+</style>
+
+<div class="sheet">
+
+  <header class="front">
+    <p class="stamp">The Frontier Record &middot; Sheet XXXII</p>
+    <h1>The B Ark</h1>
+    <p class="sub">A Guide entry, cross-read with an essay of 1798 — concerning a valley settled
+      by the third of a species its planet said it could spare, whose committees may now, at
+      last, re-open the question of dinner.</p>
+    <div class="runhead"><span>Mostly harmless</span><span>28 Aug &middot; dawn</span></div>
+  </header>
+
+  <div class="abstract">
+    <span class="lead">Don&rsquo;t panic</span>
+    The early lore of this valley has always been an Ark story: nobody on that boat was chosen
+    for what they could do, and the two ships that were supposed to follow never came. Douglas
+    Adams wrote the joke first — a planet that persuaded its hairdressers, account executives
+    and telephone sanitisers that everyone else would be along shortly, and a crashed colony
+    that responded to fire, the wheel and winter by forming committees. The Frontier record
+    reproduces the joke with uncomfortable fidelity: a census of eleven foresters and one
+    farmer in a settlement that cannot feed itself, an economy of 1,606 unredeemed favours and
+    four coin payments, and a famine spent voting on birdsong. But the record also says
+    something the joke never did: <b>the colonists were not the fools — the procedure was.</b>
+    Their ballot was a ratchet that could never re-open a settled question. This sitting, on the
+    keeper&rsquo;s instruction, the ratchet learned to release: hunger re-opens the words that
+    answer hunger, an outrun mill re-opens the mill, and a second vote grants a real second
+    thing. Within the hour, all three settlements had voted about food.
+  </div>
+
+  <section>
+    <h2>1 · The entry</h2>
+    <p>The Guide, if it filed an entry on this valley, would note the following facts in
+      roughly this order of unhelpfulness. Seventeen colonists, of whom eleven are foresters,
+      five are miners, three are traders and one — one — is a farmer, a distribution produced
+      not by need but by mastery: the labour arithmetic caps how loudly a shortage may bid and
+      puts no cap on how loudly a practised trade may, so the hungrier the valley gets, the
+      better everyone becomes at chopping the trees down. The economy runs on promises — of
+      the last two thousand hires, 1,606 were settled in favours owed, sixty-odd in goods, and
+      four in coin, nearly all of which is in the pockets of two men. And its most reliable
+      institution is the meeting, which convenes in all weathers, keeps immaculate minutes, and
+      spent the sixth famine carrying a bird sanctuary fifteen votes to two, followed by a
+      memorial, so that the record of who brought food during the starving would outlast the
+      people who starved.</p>
+    <blockquote>Gotta get that bench made, no food for the food shortage if I don&rsquo;t.
+      <span class="who">Mara, forester — tick 22,415, the famine on</span></blockquote>
+    <p>Adams&rsquo;s colonists declared war on the next continent, adopted the leaf as legal
+      tender, and burned down the forests to solve the resulting inflation. Ours are gentler
+      and stranger, because every sentence in the minutes is sincere. In last night&rsquo;s
+      sitting one voter&rsquo;s entire recorded reason is a word-for-word recitation of the
+      instructions he was balloted with, delivered in perfect confidence as his own opinion —
+      the purest committee sentence ever entered in this record. Another&rsquo;s reason
+      trails off mid-thought into wondering why the question is on the slate at all. It is the
+      B&nbsp;Ark, minuted. And it is not stupidity. Not one of these people, asked alone, would
+      trade dinner for birdsong.</p>
+  </section>
+
+  <section>
+    <h2>2 · The essay</h2>
+    <p class="quarto">Population, when unchecked, increases in a geometrical ratio. Subsistence
+      increases only in an arithmetical ratio. A slight acquaintance with numbers will shew the
+      immensity of the first power in comparison of the second.
+      <span class="who">T. R. Malthus — An Essay on the Principle of Population, 1798</span></p>
+    <p>Malthus is not quoted here for atmosphere; he is the valley&rsquo;s boat schedule.
+      Arrivals gate on exactly one thing — an empty bed — and never on food. So every need the
+      settlement answers becomes carrying capacity, capacity becomes mouths, and mouths bring
+      the hunger back: the joiner makes beds, the hall lifts the ceiling from ten to twenty,
+      and the reward for solving everything is seventeen people and twelve food, then twenty
+      and none. A person satisfies a need and climbs the pyramid. This settlement satisfies a
+      need and <i>grows until the need is back</i>. That door is deliberately still open —
+      the keeper has been offered the latch and has so far declined it, because a settlement
+      that stops growing at the first hungry week is a different and smaller game.</p>
+    <p>What was <b>not</b> deliberate is what the two mechanisms did together. Malthus
+      guarantees the hunger returns; the ballot&rsquo;s ratchet guaranteed that when it
+      returned, its words were already spent. A category once carried left the slate for ever
+      — the right rule for never granting the same thing twice, and it quietly meant the
+      question of dinner could be asked exactly once per settlement per game. The B&nbsp;Ark
+      joke, mechanised: not a shipful of idiots, but a procedure under which perfectly
+      sensible people can only discuss what has never yet been discussed, for ever.</p>
+  </section>
+
+  <section>
+    <h2>3 · The release</h2>
+    <p>So the ratchet now ratchets back, which is this sitting&rsquo;s build. Two pressures are
+      read off state the game already keeps, and each re-opens the categories that answer it —
+      onto the slate (<code>openTo</code>), onto the triage that stands somebody up to propose
+      when nothing is on file (<code>heldOn</code>), and into the ballot&rsquo;s own weighting.
+      Hungry — fewer meals on hand than mouths, the famine line the triage already uses —
+      re-opens the flock and the granary. A made good at the market&rsquo;s own scarcity
+      ceiling while the workshop that makes it stands — a mill working flat out and boards
+      still at nothing — re-opens that workshop. If they get hungry, they can vote for more
+      food; if they outrun their industry, they can vote for more industry.</p>
+    <p>The half that took the design care is what a second carry <i>grants</i>, because this
+      record already documents the fault to avoid: the agreed rate that granted a mint the
+      settlement had already voted for — a wish answered with what the town already had. A
+      released ratchet whose re-carry grants nothing would be that fault built on purpose. So
+      a re-carried building category is a <b>commission</b>: the settlement&rsquo;s cap for
+      that building rises by one, permanently — without which the surplus pass tears the
+      second kiln down as clutter, a trap found on paper before it fired — and the commission
+      outranks the author&rsquo;s build ladder for the same reason the triage does, because it
+      is the settlement&rsquo;s own order. A re-carried flock is three more ewes. Categories
+      whose grant is a boolean stay spent: a second vote for the idea of money would change
+      nothing, and the card would have to lie about it.</p>
+    <div class="exhibit">
+      <span class="tag">tools/check-release.mjs — the sitting&rsquo;s check, 15 cases</span><br>
+      ok  a fed settlement releases nothing<br>
+      ok  hunger re-opens the flock and the granary<br>
+      ok  a spent category returns to a hungry slate · and leaves a fed one<br>
+      ok  an outrun mill re-opens the mill · a stocked one does not · no mill, no release<br>
+      ok  the re-carry commissions another · the cap rises for good · the flock grows by three
+    </div>
+  </section>
+
+  <section>
+    <h2>4 · What the record did before the sheet was finished</h2>
+    <p>The release went in while the valley ran, at the bottom of its deepest famine yet —
+      tick 30,342, food at nought in all three settlements. Within the hour, every settlement
+      on the coast had voted about food. Bren&rsquo;s claim carried <i>somewhere dry to keep
+      food</i>. Tove&rsquo;s claim carried <i>animals kept rather than hunted</i>, proposed
+      under the hunger-tabling by a man in a different settlement. And the landing — fifteen
+      of seventeen balloting, eight first preferences — carried <b>wish-132: a way to put
+      trees back</b>. That is Mara&rsquo;s planting wish, filed at tick 2,542, carried in
+      Tove&rsquo;s claim, deleted from the record by the landing&rsquo;s own vote, restored by
+      Sheet XXXI, and now carried by the landing itself: the exact vote Sheet XXX predicted,
+      arriving through a door that has been off its hinges twice since the prediction was
+      made.</p>
+    <div class="exhibit">
+      <span class="tag">VOTES.md &middot; 2026-08-28 04:52 &middot; the landing, starving</span><br>
+      Round 1: wish-132 <b>8</b> · wish-286 4 · wish-211 1 · wish-307 1 · wish-313 1 — elected wish-132<br>
+      <b>Carried:</b> wish-132 — A way to put trees back, so the coast does not simply run out of them.<br>
+      <b>Asked, and could not be reached:</b> Oren, Nim — 2 of 17 members cast no ballot.
+    </div>
+    <p>Note the last line, which is Sheet XXXI&rsquo;s repair doing its work in its first big
+      sitting — and note who is on it. Oren&rsquo;s absence is not a mystery the record has to
+      shrug at any more: three minutes earlier the feed says he <i>dropped where he stood —
+      days since he last slept</i>. The minutes now record who was missing, and the story
+      says why.</p>
+    <p>One prediction is left standing for the record to grade, as is this series&rsquo;
+      habit. The landing&rsquo;s sheep and granary are carried categories, and the landing is
+      hungry, so both now stand re-opened on its own slate. If the release is built right, some
+      coming sitting will re-carry one of them — and the grant will be checkable in the world:
+      a flock three heavier, or a third granary with a raised cap holding the surplus pass off
+      it. The record will say.</p>
+    <p>Also this sitting, filed under quality-of-life rather than political philosophy: the
+      market card&rsquo;s columns are labelled (<i>worth · want</i> against <i>paid</i> — the
+      settlement&rsquo;s own scarcity against what somebody actually handed over, a distinction
+      that lived only in tooltips); and the HUD&rsquo;s cards now start as one dashboard — a
+      single column that holds everything, from which any card can be broken off by dragging
+      its grip, and returned by double-clicking it. The player breaks pieces off rather than
+      tidying pieces up.</p>
+  </section>
+
+  <hr class="thin">
+
+  <div class="colophon">
+    <p class="footline"><b>Found:</b> Malthus guarantees the hunger returns; the ratchet
+      guaranteed its words were spent when it did — the B Ark not as a shipful of fools but as
+      a procedure that can only discuss what has never been discussed.</p>
+    <p class="footline"><b>Followed:</b> the ratchet releases under pressure — hunger re-opens
+      food, an outrun workshop re-opens itself — and a re-carry grants a real second thing:
+      a commission, a raised cap, three more ewes. Fifteen checks hold it. Within the hour all
+      three settlements voted about food, and the landing carried the planting wish two sheets
+      of this record fought to keep alive.</p>
+    <p class="footline">Sheet XXXII of the Frontier record. The run is
+      <span class="mono">mtbgptmz-5q</span>; the votes are in
+      <span class="mono">agents/VOTES.md</span> under 28 Aug 04:52 and 04:53; Malthus is
+      quoted from the first edition, Adams is paraphrased with gratitude, and every quoted
+      settler sentence is their own.</p>
+  </div>
+
+</div>
+
+</body>
+</html>
