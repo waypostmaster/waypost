@@ -1,0 +1,387 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>*{margin:0;padding:0}img{max-width:100%}</style>
+</head>
+<body>
+<title>Prepotency</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400&family=Courier+Prime:wght@400;700&family=Jost:wght@400;500&display=swap">
+
+<style>
+  /*
+   * An offprint, in the manner of the psychology journals of the 1940s: a running head, an
+   * abstract in small type, numbered sections, one figure. Maslow published "A Theory of Human
+   * Motivation" in 1943 in exactly this dress. Ivory paper, iron-gall ink, and one colour — the
+   * marginal blue of a reader's pencil — spent on the tiers of the pyramid and on what the
+   * valley did with them, and nowhere else.
+   */
+  :root {
+    --paper:   #F3EFE4;
+    --paper-2: #ECE7D9;
+    --card:    #F9F6ED;
+    --ink:     #26241E;
+    --soft:    #6F6959;
+    --rule:    #CBC4B2;
+    --rule-2:  #DBD5C5;
+    --pencil:  #2E5A8F;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --paper: #14130F; --paper-2: #1B1914; --card: #201E18;
+      --ink: #E6E1D3; --soft: #8F8877; --rule: #38342A; --rule-2: #2A2721;
+      --pencil: #7FA8D9;
+    }
+  }
+  :root[data-theme="dark"] {
+    --paper: #14130F; --paper-2: #1B1914; --card: #201E18;
+    --ink: #E6E1D3; --soft: #8F8877; --rule: #38342A; --rule-2: #2A2721;
+    --pencil: #7FA8D9;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    background: var(--paper); color: var(--ink);
+    font-family: "PT Serif", Georgia, serif;
+    font-size: 1.12rem; line-height: 1.68;
+    margin: 0; padding: 0 1.2rem 7rem;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .sheet { max-width: 44rem; margin: 0 auto; display: flex; flex-direction: column; gap: 2.9rem; }
+  p { margin: 0; max-width: 66ch; }
+  code, .mono { font-family: "Courier Prime", monospace; font-size: 0.86em; }
+  code { color: var(--pencil); }
+
+  .stamp {
+    font-family: Jost, "Segoe UI", sans-serif; font-size: 0.72rem; letter-spacing: 0.26em;
+    text-transform: uppercase; color: var(--soft); margin: 0;
+  }
+  hr.thin { border: 0; border-top: 1px solid var(--rule); margin: 0; }
+
+  header.front {
+    display: flex; flex-direction: column; align-items: center; text-align: center;
+    gap: 1.1rem; padding-top: 3.4rem;
+  }
+  header.front h1 {
+    font-size: 2.5rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase;
+    margin: 0; line-height: 1.15;
+  }
+  header.front .sub { color: var(--soft); font-style: italic; max-width: 34rem; }
+  .runhead {
+    display: flex; justify-content: space-between; width: 100%;
+    font-family: Jost, sans-serif; font-size: 0.7rem; letter-spacing: 0.2em;
+    text-transform: uppercase; color: var(--soft);
+    border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule);
+    padding: 0.45rem 0.2rem;
+  }
+
+  .abstract {
+    background: var(--card); border: 1px solid var(--rule-2);
+    padding: 1.4rem 1.6rem; font-size: 0.98rem; line-height: 1.62;
+  }
+  .abstract .lead { font-family: Jost, sans-serif; font-size: 0.7rem; letter-spacing: 0.24em;
+    text-transform: uppercase; color: var(--soft); display: block; margin-bottom: 0.7rem; }
+
+  section h2 {
+    font-family: Jost, sans-serif; font-size: 0.85rem; letter-spacing: 0.22em;
+    text-transform: uppercase; font-weight: 500; color: var(--ink);
+    margin: 0 0 1.1rem; padding-bottom: 0.5rem; border-bottom: 1px solid var(--rule);
+  }
+  section h2 .n { color: var(--pencil); margin-right: 0.7em; }
+  section { display: flex; flex-direction: column; gap: 1.05rem; }
+
+  blockquote {
+    margin: 0.35rem 0 0.35rem 0; padding: 0.9rem 1.25rem;
+    background: var(--paper-2); border-left: 3px solid var(--pencil);
+    font-style: italic; max-width: 60ch;
+  }
+  blockquote .who { display: block; font-style: normal; font-family: Jost, sans-serif;
+    font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--soft);
+    margin-top: 0.55rem; }
+
+  .exhibit {
+    font-family: "Courier Prime", monospace; font-size: 0.88rem; line-height: 1.6;
+    background: var(--card); border: 1px solid var(--rule-2);
+    padding: 1.1rem 1.3rem; overflow-x: auto;
+  }
+  .exhibit .tag { color: var(--pencil); }
+
+  figure { margin: 0.5rem 0 0; display: flex; flex-direction: column; gap: 0.8rem; }
+  figure svg { width: 100%; height: auto; display: block; }
+  figcaption { font-size: 0.9rem; color: var(--soft); max-width: 60ch; }
+  figcaption b { color: var(--ink); font-weight: 700; }
+
+  table { border-collapse: collapse; font-size: 0.95rem; width: 100%; }
+  th { font-family: Jost, sans-serif; font-size: 0.7rem; letter-spacing: 0.18em;
+    text-transform: uppercase; font-weight: 500; color: var(--soft); text-align: left;
+    padding: 0.4rem 1rem 0.4rem 0; border-bottom: 1px solid var(--rule); }
+  td { padding: 0.42rem 1rem 0.42rem 0; border-bottom: 1px solid var(--rule-2); vertical-align: top; }
+  td.t { font-family: "Courier Prime", monospace; font-size: 0.84em; white-space: nowrap; }
+  .tablewrap { overflow-x: auto; }
+  .tier { color: var(--pencil); font-family: Jost, sans-serif; font-size: 0.72rem;
+    letter-spacing: 0.16em; text-transform: uppercase; }
+
+  .footline { color: var(--soft); font-size: 0.92rem; }
+  .colophon { display: flex; flex-direction: column; gap: 0.5rem; padding-top: 0.4rem; }
+  a { color: var(--pencil); }
+</style>
+
+<div class="sheet">
+
+  <header class="front">
+    <p class="stamp">The Frontier Record &middot; Sheet XXX</p>
+    <h1>Prepotency</h1>
+    <p class="sub">A theory of human motivation, read against a valley that voted for birdsong
+      during a famine &mdash; and for a memorial of the famine while it was still on.</p>
+    <div class="runhead"><span>Offprint &middot; read against the record</span><span>28 Aug, the small hours</span></div>
+  </header>
+
+  <div class="abstract">
+    <span class="lead">Abstract</span>
+    The theory under test says that human needs stand in an order &mdash; bread, then safety,
+    then company, then standing, then meaning &mdash; and that a lower need, unmet, seizes the
+    whole organism until it is answered. The valley under observation holds seventeen people,
+    twelve food, a furnace, a mint, two mills and a granary, and its two most recent collective
+    decisions were a bird sanctuary, fifteen votes of seventeen, and a record of who did what
+    here, eleven of seventeen. The finding is that the theory holds inside each settler, in the
+    plain sense that it is written into the order of their own decisions; that it held for the
+    settlement exactly once, on the way up; and that it cannot hold a second time, because the
+    ballot these people decide with is a pyramid with a ratchet in it. Three mechanisms are
+    named, two repairs are made, and one prediction is left standing for the record to answer.
+  </div>
+
+  <section>
+    <h2><span class="n">I.</span> The case</h2>
+    <p>At tick 24,000 the game put up a story beat it reserves for a settlement that is plainly
+      working and plainly not eating:</p>
+    <div class="exhibit">
+      <span class="tag">beat &middot; famine-0-6 &middot; "Nothing to eat"</span><br>
+      the landing has 12 food for 17 people, and 5 workshops turning things out.<br>
+      It has solved everything except dinner.
+    </div>
+    <p>The keeper read it and asked the right question: it says what is wrong, and nothing about
+      what happens next. Hold that; it is repaired in &sect;V. First, what the seventeen people
+      in question were deciding while their stores stood at twelve.</p>
+    <p>An hour and a half before the beat, the landing carried a bird sanctuary on fifteen first
+      preferences of seventeen &mdash; over a weather vane, over somebody to put a quarrel to.
+      Sula, who asked for it, wanted to wake to birdsong <i>&ldquo;like I used to in the old
+      country.&rdquo;</i> An hour and a half after the beat, the same seventeen carried a
+      memorial &mdash; a record of who did what here, so the work outlasts the people who did
+      it &mdash; on eleven first preferences. One ballot gave the game away twice in one
+      sentence:</p>
+    <blockquote>The record&hellip; that&rsquo;s the real thing &mdash; keeps us from forgetting
+      who brought food when the valley was starving, or who hauled stone for the hall.
+      <span class="who">Osk, forester, voting for the memorial, during the famine</span></blockquote>
+    <p>And between the two sittings, a forester stood in the middle of the shortage and said the
+      quiet part into the record:</p>
+    <blockquote>Gotta get that bench made, no food for the food shortage if I don&rsquo;t.
+      <span class="who">Mara, tick 22,415</span></blockquote>
+  </section>
+
+  <section>
+    <h2><span class="n">II.</span> The theory, abstracted</h2>
+    <p>Maslow, 1943. Needs stand in ranks, and the ranks are ordered by <b>prepotency</b>: the
+      body first &mdash; food, water, warmth, sleep; then safety &mdash; shelter, health, the
+      security of what you hold; then belonging &mdash; company, and somewhere the day can end
+      among people; then esteem &mdash; standing, mastery, the worth of a day&rsquo;s work
+      acknowledged; then, last and least urgent, what he called self-actualization &mdash; the
+      hour that is not for anything, the view, the song, the work that outlasts you. The claim
+      with teeth is the dynamic one, and it cuts both ways. A satisfied need stops motivating
+      &mdash; <i>the sated man is not moved by bread</i> &mdash; and an unsatisfied lower need,
+      returning, is meant to seize the whole organism again: the man who has known hunger drops
+      the poem and goes back to the field.</p>
+    <p>Maslow himself flagged the exceptions &mdash; people who put esteem before love, artists
+      who create while hungry, the order being typical rather than fixed &mdash; and this valley
+      will furnish him several more. The catalogue the settlers vote from maps onto his ranks
+      almost without remainder:</p>
+    <figure>
+      <svg viewBox="0 0 720 330" role="img" aria-label="The five tiers of the hierarchy, with the valley's catalogue entries placed on each, from self-actualization at the top to the physiological at the base" style="color: var(--ink);">
+        <g font-family="Jost, sans-serif" font-size="12" fill="currentColor">
+          <!-- pyramid layers, base to tip -->
+          <g stroke="var(--pencil)" stroke-width="1" fill="var(--card)">
+            <polygon points="60,318 660,318 610,266 110,266"/>
+            <polygon points="118,258 602,258 552,206 168,206"/>
+            <polygon points="176,198 544,198 494,146 226,146"/>
+            <polygon points="234,138 486,138 436,86 284,86"/>
+            <polygon points="292,78 428,78 360,10"/>
+          </g>
+          <g text-anchor="middle">
+            <text x="360" y="60" font-size="11" letter-spacing="2">MEANING</text>
+            <text x="360" y="115" font-size="11" letter-spacing="2">ESTEEM</text>
+            <text x="360" y="175" font-size="11" letter-spacing="2">BELONGING</text>
+            <text x="360" y="235" font-size="11" letter-spacing="2">SAFETY</text>
+            <text x="360" y="295" font-size="11" letter-spacing="2">THE BODY</text>
+          </g>
+          <g font-size="10.5" fill="var(--soft)" text-anchor="middle">
+            <text x="360" y="130">wage &middot; coin &middot; market &middot; teaching &middot; the pick &middot; the survey</text>
+            <text x="360" y="190">the hall &middot; the firepit &middot; mediation &middot; a custom &middot; the ledger</text>
+            <text x="360" y="250">shelter &middot; infirmary &middot; the watch &middot; the vane &middot; rigging &middot; a lock</text>
+            <text x="360" y="310">the weir &middot; the rows &middot; the sheep &middot; the granary &middot; the well &middot; a bed</text>
+          </g>
+          <text x="360" y="44" font-size="10.5" fill="var(--soft)" text-anchor="middle">solitude &middot; the lookout &middot; birdsong &middot; the memorial</text>
+          <!-- the famine line -->
+          <g stroke="var(--pencil)" stroke-dasharray="4 4" stroke-width="1.2">
+            <line x1="30" y1="318" x2="60" y2="318"/>
+            <line x1="660" y1="318" x2="690" y2="318"/>
+          </g>
+          <text x="695" y="322" font-size="10" fill="var(--pencil)">12 / 17</text>
+        </g>
+      </svg>
+      <figcaption><b>Fig.&thinsp;1.</b> The catalogue, ranked. Every kind a settler can propose,
+        placed on the tier of the need it answers. The dashed line is where the landing&rsquo;s
+        stores stood against its mouths when it voted for the top of the figure.</figcaption>
+    </figure>
+  </section>
+
+  <section>
+    <h2><span class="n">III.</span> The record, read upward</h2>
+    <p>Read the landing&rsquo;s grants in the order it carried them this run, and for a long
+      stretch the theory looks embarrassed: an agreed wage &mdash; esteem &mdash; carried
+      <i>ninth from the top of the figure and first in time</i>, before the settlement had a
+      well. Tools before water. A joiner before an infirmary.</p>
+    <div class="tablewrap"><table>
+      <tr><th>carried</th><th>what</th><th>tier</th></tr>
+      <tr><td class="t">12:17&ndash;12:35</td><td>a wage, a road, the grindstone, the joiner, the infirmary</td><td class="tier">esteem &middot; safety</td></tr>
+      <tr><td class="t">12:41&ndash;13:05</td><td>planted rows, the storehouse, teaching, the wall, the well</td><td class="tier">the body &middot; safety</td></tr>
+      <tr><td class="t">13:10&ndash;14:44</td><td>the lookout, the bell, the depot, the hall</td><td class="tier">meaning &middot; safety &middot; belonging</td></tr>
+      <tr><td class="t">20:23&ndash;22:55</td><td>the pick, <b>the weir</b>, the bench on the shore, the north trail, <b>the sheep</b></td><td class="tier">esteem &middot; the body &middot; meaning</td></tr>
+      <tr><td class="t">02:42&ndash;03:33</td><td><b>the bird sanctuary</b> &middot; <b>the memorial</b></td><td class="tier">meaning</td></tr>
+    </table></div>
+    <p>But the early inversion is not a violation, and saying why is most of the theory: <i>a
+      met need does not motivate.</i> When the wage carried, the landing was small and the coast
+      was thick with berries &mdash; bread was answered, so bread was invisible, exactly as the
+      sated man&rsquo;s bread should be. The ballot asks what the valley is <i>missing</i>, and
+      what a fed valley of ten was missing was the worth of a day&rsquo;s work. The climb was
+      honest. The theory&rsquo;s hard half comes later: at seventeen mouths the berries stopped
+      keeping up, the lower tier fell open again, and prepotency says it should have seized the
+      meeting the way it seizes a man. The weir and the sheep did carry &mdash; fifteen and
+      sixteen of seventeen, the two biggest majorities in the landing&rsquo;s history, hunger
+      voting exactly as Maslow says it does. And then the pyramid was climbed, the ratchet took,
+      and the two sittings held <i>during</i> the famine were about birdsong and being
+      remembered.</p>
+  </section>
+
+  <section>
+    <h2><span class="n">IV.</span> Why the pyramid does not re-invert</h2>
+    <p><b>The ballot is a ratchet.</b> A category once carried leaves the slate for that
+      settlement for ever &mdash; <code>openTo</code> drops everything the settlement has
+      decided, which is the right rule for not granting the same thing twice and has a side
+      effect nobody chose: the bottom of the pyramid is votable exactly once. Of the nineteen
+      proposals standing open on the books at the time of the beat, the landing could be offered
+      <i>none</i> &mdash; every one asks for something it already holds. So the slate climbs the
+      figure whether the stomach does or not, and a sitting held in a famine chooses between a
+      custom, a memorial and a rope ladder, because those are the only words left. Maslow&rsquo;s
+      pyramid is dynamic &mdash; need comes back, seizes, re-orders. This one is climbed once,
+      in one direction, and the ladder is pulled up behind each rung.</p>
+    <p><b>In the person, the theory is implemented &mdash; literally.</b> A settler&rsquo;s own
+      decision function runs in prepotency order, top of the file to bottom: eating before the
+      hurt, the hurt before sleep, tools before any trade, the trade before the evening, the
+      evening before the hour by the water. It works; nobody in this valley has ever died. But a
+      hungry settler feeds <i>themself</i> &mdash; bush to mouth, and the pack never reaches the
+      stores &mdash; so individual prepotency never aggregates. Seventeen people can each obey
+      the hierarchy perfectly while the settlement, the only body that votes, stays hungry at
+      the collective scale where no hierarchy operates at all.</p>
+    <p><b>Esteem is load-bearing in the labour market.</b> A settler ranks a day&rsquo;s work by
+      what the valley is short of <i>plus what their own hands know plus what they are for</i>
+      &mdash; and the shortage term is capped while the mastery terms are not. A famine pulls at
+      strength 1.6 at most; a practised forester&rsquo;s own trade meets that number before the
+      shortage term contributes anything. The census falls out of the arithmetic: eleven
+      foresters, five miners, three traders, and one farmer, in a valley of twenty that cannot
+      feed itself. Read the ballots and the settlers vote as their trades too &mdash;
+      <i>&ldquo;I&rsquo;m a forester, so wish-311 makes the most sense for me.&rdquo;</i>
+      Practice tells is the game&rsquo;s proudest rule, and it is Maslow&rsquo;s inversion built
+      into the wage structure: mastery outbids hunger in the aggregate, which is the oldest
+      complaint anybody has made about a real economy.</p>
+    <p><b>And the beds convert every answered need into new hunger.</b> Arrivals are gated on
+      one thing: an empty bed. Not food &mdash; beds. The joiner makes furniture, the hall
+      lifted the ceiling from ten to twenty, and every tier the settlement solves becomes
+      carrying capacity, which becomes mouths, until food binds again. A person satisfies a need
+      and moves up the pyramid; this settlement satisfies a need and <i>grows until the need is
+      back</i>. Malthus is standing at the bottom of Maslow&rsquo;s figure, holding the door.</p>
+  </section>
+
+  <section>
+    <h2><span class="n">V.</span> Two repairs, and what was left standing</h2>
+    <p><b>The beat has a second act.</b> &ldquo;Something that does not run out has to be voted
+      in&rdquo; was the right sentence the first time and a dead letter by the sixth famine, said
+      to a settlement that had carried the weir fifteen to two. The beat now reads the town it
+      fires at: where the votes are not yet carried it still says vote; where they are, it says
+      the true thing &mdash; that a vote is permission, not dinner; that one person in seventeen
+      spends the day at food; and that what happens next, unless afternoons move to the water or
+      the beds stop being built, is more of this.</p>
+    <p><b>The craft deadlock is closed, and it was a small tragedy in three thousand acts.</b>
+      Tove &mdash; bare-handed, one stone in her pack, at a lean-to too full to take it &mdash;
+      was walking to the door once a tick because tool-making spent the <i>stores</i>, and what
+      is on somebody&rsquo;s back is not the stores. She could neither put the stone down nor
+      spend it, and the record counted her three thousand walks without comment. The grindstone
+      has stated the house rule all along: the cost comes <i>out of your own pack first and the
+      settlement&rsquo;s stores second</i>. Craft obeys it now. Tove had a stone axe within
+      minutes of the fix, and her next recorded act was to carry food to somebody laid up.</p>
+    <p><b>And the valley got a word it was missing.</b> Halla asked, two days ago, for
+      <i>&ldquo;a rope ladder for safely accessing the deep woods&rdquo;</i> &mdash; and the
+      catalogue, having no entry for the climb, had wedged her exact phrases into
+      <code>road</code>, which answers time and not the drop. There is a <code>rigging</code>
+      entry now: lines and ladders where the work is high, cutting the hazard of the four jobs a
+      settler climbs to, on the near side of the mill so the people working with the least are
+      not asked to earn iron before they stop falling. It classifies as itself, the record
+      re-heard the wish within the hour, and the landing put it straight on its next slate
+      &mdash; where it took one first preference of seventeen and was struck off, six ballots
+      asking for the strike, at the sitting that carried the memorial. The fix obeyed the
+      inversion it was built to document. Struck is not banned; it returns if she asks again.</p>
+    <p>Two things were deliberately not touched. The ratchet stands, because it is the same rule
+      as <i>the game does not retcon a decision</i>, and unwinding it is the keeper&rsquo;s call
+      and not this sheet&rsquo;s. And the beds still gate the boat, because a settlement that
+      stops growing at the first hungry week is a different game, and choosing it is a design
+      decision, not a repair.</p>
+  </section>
+
+  <section>
+    <h2><span class="n">VI.</span> Verdict, and a prediction</h2>
+    <p>Does the valley follow the hierarchy of needs? <b>In the person, exactly &mdash; it is
+      the order of the branches. In the meeting, once.</b> The settlement climbed the pyramid
+      honestly, tier by tier, each rank going quiet as it was answered, which is the theory
+      working. What it cannot do is come back down: the ballot has no memory of hunger, so a
+      need that returns finds its words already spent, and seventeen hungry people spend a
+      famine voting on birdsong &mdash; not because they are fools, but because every ballot
+      below that one has already carried. The game deviates from Maslow at exactly one joint,
+      and it is a mechanism, not a mood: <i>his hierarchy is dynamic and this one has a
+      ratchet.</i></p>
+    <p>One release in the ratchet already exists, and it makes a prediction. The landing never
+      carried <code>planting</code> &mdash; the one food word still open to it &mdash; and the
+      game&rsquo;s own triage tables a food category when the stores fall under the mouths. If
+      the theory and the mechanism are both right, the landing&rsquo;s next vote on anything to
+      eat will be an orchard: hunger&rsquo;s last remaining word, arriving at the meeting by the
+      only door left open. The record will say.</p>
+    <blockquote>I want to wake up to the sound of birds instead of just the wind, like I used to
+      in the old country before we came here.
+      <span class="who">Sula, miner &mdash; wish-311, carried 15 of 17, twelve food in the stores</span></blockquote>
+    <p>She is at the top of the figure because the figure is the only direction the ballot still
+      has. Maslow would have recognised her anyway: his own footnotes are full of people who
+      sang hungry. The theory&rsquo;s last word belongs to the exceptions, and so, apparently,
+      does the valley&rsquo;s.</p>
+  </section>
+
+  <hr class="thin">
+
+  <div class="colophon">
+    <p class="footline"><b>Found:</b> why a settlement that solved iron, coin and the roof
+      cannot re-open the question of dinner: the ballot is a pyramid with a ratchet in it.</p>
+    <p class="footline"><b>Followed:</b> the famine beat diagnoses instead of repeating itself,
+      craft pays out of the pack first and Tove has an axe, and the climb has a word of its own
+      in the catalogue &mdash; heard, slated, and struck off in favour of a memorial, all inside
+      one hour.</p>
+    <p class="footline">Sheet XXX of the Frontier record. The run is
+      <span class="mono">mtbgptmz-5q</span>; the beat is <span class="mono">famine-0-6</span>;
+      the votes are on the record in <span class="mono">agents/VOTES.md</span>, and every quoted
+      sentence is a settler&rsquo;s own.</p>
+  </div>
+
+</div>
+
+</body>
+</html>
