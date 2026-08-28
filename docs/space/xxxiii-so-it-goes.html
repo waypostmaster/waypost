@@ -1,0 +1,341 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>*{margin:0;padding:0}img{max-width:100%}</style>
+</head>
+<body>
+<title>So It Goes</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Courier+Prime:ital,wght@0,400;0,700;1,400&family=Jost:ital,wght@0,300;0,400;0,500;1,400&display=swap">
+
+<style>
+  /*
+   * A typescript. The body is typewriter Courier on paper, because that is what the man's pages
+   * looked like; the headings are the fat sans of a seventies Dell paperback spine; the one
+   * colour is that paperback's orange. Dark mode is the same typescript read late, by one lamp.
+   */
+  :root {
+    --paper:   #F5F0E4;
+    --paper-2: #EDE7D6;
+    --panel:   #FAF6EC;
+    --ink:     #2A2620;
+    --soft:    #6F6857;
+    --rule:    #D5CCB4;
+    --orange:  #C7431D;
+  }
+  :root[data-theme="light"], :root:not([data-theme="dark"]) {
+    --paper: #F5F0E4; --paper-2: #EDE7D6; --panel: #FAF6EC;
+    --ink: #2A2620; --soft: #6F6857; --rule: #D5CCB4; --orange: #C7431D;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --paper: #171512; --paper-2: #1E1B17; --panel: #211E19;
+      --ink: #DDD5C4; --soft: #92896F; --rule: #38332A; --orange: #F0713F;
+    }
+  }
+  :root[data-theme="dark"] {
+    --paper: #171512; --paper-2: #1E1B17; --panel: #211E19;
+    --ink: #DDD5C4; --soft: #92896F; --rule: #38332A; --orange: #F0713F;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    background: var(--paper); color: var(--ink);
+    font-family: "Courier Prime", "Courier New", monospace;
+    font-size: 1.02rem; line-height: 1.72;
+    margin: 0; padding: 0 1.2rem 7rem;
+    -webkit-font-smoothing: antialiased;
+  }
+  b { font-weight: 700; }
+
+  .sheet { max-width: 42rem; margin: 0 auto; display: flex; flex-direction: column; gap: 2.6rem; }
+  p { margin: 0; max-width: 68ch; }
+  code { font-family: inherit; color: var(--orange); font-size: 0.95em; }
+
+  .stamp {
+    font-family: Jost, sans-serif; font-size: 0.72rem; letter-spacing: 0.26em;
+    text-transform: uppercase; color: var(--soft); margin: 0;
+  }
+
+  header.front {
+    display: flex; flex-direction: column; align-items: center; text-align: center;
+    gap: 1.15rem; padding-top: 3.4rem;
+  }
+  header.front h1 {
+    font-family: "Archivo Black", Jost, sans-serif; font-weight: 400;
+    font-size: 3.1rem; letter-spacing: 0.02em; text-transform: uppercase;
+    margin: 0; line-height: 1.02; color: var(--orange);
+  }
+  header.front .sub { color: var(--soft); font-style: italic; max-width: 36rem; }
+  .runhead {
+    display: flex; justify-content: space-between; width: 100%;
+    font-family: Jost, sans-serif; font-size: 0.7rem; letter-spacing: 0.2em;
+    text-transform: uppercase; color: var(--soft);
+    border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule);
+    padding: 0.45rem 0.2rem;
+  }
+
+  .abstract {
+    background: var(--panel); border: 1px solid var(--rule); border-radius: 4px;
+    padding: 1.4rem 1.6rem; font-size: 0.95rem; line-height: 1.68;
+  }
+  .abstract .lead { font-family: "Archivo Black", sans-serif; font-size: 0.72rem;
+    letter-spacing: 0.24em; text-transform: uppercase; color: var(--orange);
+    display: block; margin-bottom: 0.7rem; }
+
+  section h2 {
+    font-family: "Archivo Black", Jost, sans-serif; font-weight: 400;
+    font-size: 1rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--orange);
+    margin: 0 0 1.1rem; padding-bottom: 0.5rem; border-bottom: 1px solid var(--rule);
+  }
+  section { display: flex; flex-direction: column; gap: 1.05rem; }
+
+  /* The typescript's section break: three asterisks, centred, as the drafts had them. */
+  .asterisks {
+    text-align: center; color: var(--soft); letter-spacing: 1.4em; padding-left: 1.4em;
+    font-size: 1.1rem; margin: 0.2rem 0;
+  }
+
+  blockquote {
+    margin: 0.35rem 0; padding: 0.85rem 1.25rem;
+    background: var(--paper-2); border-left: 3px solid var(--orange);
+    font-style: italic; max-width: 62ch; border-radius: 0 4px 4px 0;
+  }
+  blockquote .who { display: block; font-style: normal; font-family: Jost, sans-serif;
+    font-size: 0.7rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--soft);
+    margin-top: 0.55rem; }
+
+  .exhibit {
+    font-size: 0.86rem; line-height: 1.62;
+    background: var(--paper-2); border: 1px solid var(--rule); border-radius: 4px;
+    padding: 1.05rem 1.3rem; overflow-x: auto;
+  }
+  .exhibit .tag { color: var(--orange); font-weight: 700; }
+
+  .footline { color: var(--soft); font-size: 0.9rem; }
+  .colophon { display: flex; flex-direction: column; gap: 0.5rem; padding-top: 0.4rem; }
+  hr.thin { border: 0; border-top: 1px solid var(--rule); margin: 0; }
+  a { color: var(--orange); }
+</style>
+
+<div class="sheet">
+
+  <header class="front">
+    <p class="stamp">The Frontier Record &middot; Sheet XXXIII</p>
+    <h1>So It Goes</h1>
+    <p class="sub">A report on the last hours of the valley, mined from the paperbacks of
+      Kurt Vonnegut &mdash; concerning a place where nothing can die, audited by the writer
+      who tagged every death with the same three words.</p>
+    <div class="runhead"><span>All this happened, more or less</span><span>28 Aug &middot; morning</span></div>
+  </header>
+
+  <div class="abstract">
+    <span class="lead">Listen:</span>
+    The keeper asked one question of the record this morning: <b>has any mediator ever been
+    engaged?</b> The answer is no. Not once, in eighty-four megabytes of log. Tove&rsquo;s
+    claim agreed to <i>somebody to put a quarrel to</i> fifty-seven valley days ago and the
+    office has heard nothing, because the settlements that voted for a mediator have no
+    quarrels, and the settlement with the quarrels votes the mediator down before breakfast,
+    reliably, while its own ballots say things like <i>I want to get Idris to stop avoiding
+    me</i>. This sheet reports that audit, and three other things the paperbacks turn out to
+    have been about all along: a refresh of the page that was a ten-second timequake; one
+    word of mine-timber that seeded the catalogue like ice-nine, so that every wish about
+    wood was heard as a wish for a deep mine; and Ferro&rsquo;s rope &mdash; carried in two
+    settlements this morning and granting nothing, because the valley had no word for it.
+    It has a word now. <b>The record re-hears a wish the moment there is a name for what it
+    asked.</b>
+  </div>
+
+  <section>
+    <h2>1 &middot; Unstuck in time</h2>
+    <p>The run is <code>mtbgptmz-5q</code>. It opened on the words <i>It is high summer
+      now</i> and it has not stopped since: one continuous valley, thirty-three thousand
+      ticks, through the whole of last night and into this morning. At around five the
+      keeper pressed F5. The valley wrote itself down in the doorway on the way out &mdash;
+      it always does; leaving is the one thing it is never careless about &mdash; and came
+      back mid-stride, same run, same tick, same twenty people walking to the same
+      depot. In <i>Timequake</i> the universe flinches ten years backward and everybody
+      relives the decade on autopilot, and the catastrophe is not the rerun but the moment
+      free will kicks back in and nobody remembers how to steer. The valley&rsquo;s timequake
+      lasted about ten seconds and harmed nobody, but the prescription for coming out the
+      far side of one is the same, and it is the best sentence in that book:</p>
+    <blockquote>You were sick, but now you&rsquo;re well again, and there&rsquo;s work to do.
+      <span class="who">Kilgore Trout &mdash; Timequake, 1997</span></blockquote>
+    <p>The archive this sheet is read from is Tralfamadorian. Four log files, every moment
+      of the run still in them, all equally present; nothing in there is lost when the clock
+      moves on, it is simply <i>that way</i> at that tick, the way the moment is structured.
+      The aliens of <i>Slaughterhouse-Five</i> read all such moments at once and are calm
+      about the bad ones. The record-keeping here asks the same of its reader: one frame of
+      the file says thirteen settlers are bare-handed, and the run says otherwise, and the
+      run is the truth.</p>
+    <p>Which brings up the refrain. Vonnegut tagged every death in that book with the same
+      three words, over a hundred of them, general and champagne alike. The audit finds the
+      refrain has almost nothing to attach to in this valley: <b>no settler has ever died
+      here, and none has ever been born</b> &mdash; the record of births and losses was
+      built two sittings ago and stands empty at both ends, arrivals only, life permanent.
+      In the whole run the refrain fits exactly two things. The first is the wood:</p>
+    <div class="exhibit">
+      <span class="tag">agents/log.jsonl &middot; 6,882 occurrences this run</span><br>
+      &ldquo;wood on the stack outside the depot has gone the way of things left out.&rdquo;<br>
+      So it goes.
+    </div>
+    <p>The second is a friendship. The game&rsquo;s own text for the mediation wish says why
+      it was asked for: <i>a falling-out is not for ever</i> &mdash; which is to say that
+      until wish-307, it was. In a valley where nobody can die, a quarrel is the only
+      mortal thing. That is the finding of section 2, and it is why the second half of the
+      keeper&rsquo;s question this morning &mdash; <i>is it the button that&rsquo;s
+      important, or the friends we didn&rsquo;t lose along the way?</i> &mdash; answers
+      itself. The friends. It was always going to be the friends.</p>
+  </section>
+
+  <section>
+    <h2>2 &middot; The office of the unengaged</h2>
+    <p>The audit, plainly. Wish-307, <i>somebody to put a quarrel to, so a falling-out is
+      not for ever</i>, carried in Tove&rsquo;s claim at tick 21,558 &mdash; one voter,
+      Idris, whose reason was that mediating quarrels keeps people working together. The
+      boon stood up an office: a settler with a grudge takes it to a third person both
+      parties still like &mdash; not a rule anybody wrote down, just who you would actually
+      ask &mdash; and what the hearer decides is not modelled, only that both people accept
+      it. Fifty-seven valley days later the count of quarrels put to anybody stands at
+      nought. The office has never opened. Nobody in Tove&rsquo;s claim is on bad enough
+      terms with anybody to need it.</p>
+    <p>Meanwhile the landing &mdash; seventeen people, the oldest settlement, the one whose
+      minutes contain <i>Idris and I have not spoken in a season and neither of us can
+      remember starting it</i> &mdash; put wish-307 on its slate five times this morning
+      and killed it five ways: eliminated with nought first preferences at 04:17, waved off
+      at 04:26, at 04:34, named the formal loser of the count at 04:54 and again at 05:00.
+      The reasons given are a Vonnegut chorus. Nim: <i>our work speaks for itself</i>.
+      Osk:</p>
+    <blockquote>It&rsquo;s not like we&rsquo;ve got any real fights to mediate, just a few
+      words left unsaid.
+      <span class="who">Osk, forester &mdash; balloting against the mediator, 04:17</span></blockquote>
+    <p>A few words left unsaid being the exact species of thing a mediator exists to hear.
+      And on the same slates, morning after morning, one voter keeps ranking the mediator
+      first and losing. Her reasons are not about procedure:</p>
+    <blockquote>I want to get Idris to stop avoiding me &mdash; maybe even join me for a
+      meal.
+      <span class="who">Lune, forester &mdash; ranking wish-307 first, 05:09</span></blockquote>
+    <p>So the finding is symmetrical, and it is the joke Vonnegut would have kept: the
+      settlements that bought the office have no custom for it, and the settlement with the
+      custom will not buy the office. <i>God Bless You, Mr. Rosewater</i> is the paperback
+      for this, because its entire machinery &mdash; a foundation, an office, a listed
+      telephone &mdash; exists to deliver one uninstitutional sentence, the one about babies:
+      <i>God damn it, you&rsquo;ve got to be kind.</i> The record shows the valley keeps
+      that commandment ambiently, without the office. At tick 32,105, in the middle of this
+      morning&rsquo;s audit, with no mediator anywhere:</p>
+    <div class="exhibit">
+      <span class="tag">agents/log.jsonl &middot; t 32,105</span><br>
+      &ldquo;Anselm gave 4 stone to Idris, and would not hear of being paid.&rdquo;
+    </div>
+    <p>The kindness is fine. It is the repair that has no path. An unengaged mediator in a
+      deathless valley is not a dead letter; he is the only undertaker the place will ever
+      need, retained against the only kind of death there is, and the town that needs the
+      funeral keeps voting to have no undertaker. The office stands. The record will note
+      the day it opens.</p>
+  </section>
+
+  <section>
+    <h2>3 &middot; Ice-nine</h2>
+    <p><i>Cat&rsquo;s Cradle</i> ends the world with a seed crystal: one chip of ice-nine
+      that teaches every drop of water it touches a new way to be water, and the ocean
+      learns it in a day. The catalogue that hears this valley&rsquo;s wishes had a chip of
+      it in the mine-shaft entry. The word was <code>timbered</code> &mdash; a pit-prop
+      word, <i>timbered and propped</i>, honest mining English. But the catalogue&rsquo;s
+      stemmer reads inflections off words so that <i>sheltered</i> can be heard as
+      <i>shelter</i>, and it read the inflection off <code>timbered</code> and got
+      <code>timber</code>. From that moment, to the catalogue, <b>the word timber &mdash;
+      alone, in any sentence &mdash; was a wish for a deep mine.</b> In a valley of eleven
+      foresters. Mara asked for a hand-cranked winch to lift timber off the forest floor,
+      and the record filed her under holes in the hill:</p>
+    <blockquote>A hand-cranked winch to pull the big trees down from the valley floor
+      without getting trapped in the branches.
+      <span class="who">Mara, forester &mdash; wish-327, filed as: a mineshaft</span></blockquote>
+    <p>The fix is one phrase: the shaft&rsquo;s entry now holds <i>timbered and propped</i>
+      whole, which keeps the pit-prop sense and cannot be stemmed down to a tree. The
+      trees got their word back. The ocean unfroze. And the audit that found it turned up
+      Bokonon&rsquo;s pair of teams along the way: Sula, Anselm and Pike once asked for the
+      same thing in three trades&rsquo; different words &mdash; which timber is worth the
+      walk &mdash; and the catalogue&rsquo;s survey entry now names all three, a
+      <b>karass</b>, a team doing its one job without knowing it is a team. The winch and
+      the mineshaft, filed together on the strength of a suffix, were the other thing, the
+      false team, the <b>granfalloon</b> &mdash; <i>if you wish to examine a granfalloon,
+      just remove the skin of a toy balloon.</i></p>
+  </section>
+
+  <section>
+    <h2>4 &middot; The rope, delivered</h2>
+    <p>The whole of <i>The Sirens of Titan</i> is the discovery that human history &mdash;
+      Stonehenge, the Great Wall, all of it &mdash; was arranged by machines to deliver one
+      spare part to one stranded messenger. The message being carried, when it is finally
+      unsealed, is a single dot: <i>Greetings.</i> Here is the valley&rsquo;s version.
+      Ferro filed wish-316 last night: <i>a rope to pull the trees down from the valley
+      floor</i>. <i>I&rsquo;d give my left hand</i>, he said. It went to the ballot this
+      morning and <b>carried in two settlements inside one minute</b> &mdash; the landing at
+      04:17, Bren&rsquo;s claim at 04:17 &mdash; and granted precisely nothing, because the
+      catalogue had no word for a rope that is not a ladder. The climb-words belong to the
+      rigging; the bare word <i>rope</i> deliberately belongs to nobody. A decision, on the
+      record, twice, attached to no thing: the fault this record documents more than any
+      other.</p>
+    <p>This sitting the catalogue learned the words &mdash; <code>winch</code>,
+      <code>windlass</code>, <code>a rope to pull</code>, <code>lift timber</code> &mdash;
+      and they were put where they honestly belong, in the cart&rsquo;s entry, because a
+      cart was never the box on wheels: it is mechanical advantage on a load somebody was
+      otherwise carrying on their back. Ferro&rsquo;s rope and Mara&rsquo;s winch both
+      answer to it now. And because a wish on the record as <i>new</i> is re-heard from its
+      own words every time the record is read, the healing is not prospective paperwork:
+      the server already answers <code>cart</code> for both, and three older wishes that
+      had sat as <i>new</i> since before the catalogue could hear them &mdash; Anselm&rsquo;s
+      axe-mending, Pike&rsquo;s harvest-marks, Bren&rsquo;s way to catch fish &mdash; came
+      back healed in the same pass, upkeep, survey, fishery. The rehearing rule grants what
+      carried before there was a name for it. Bren&rsquo;s claim took Ferro&rsquo;s rope up,
+      and is owed the cart&rsquo;s boon &mdash; <i>everyone can carry three more</i> &mdash;
+      and the line the log will write when it pays is known in advance: <i>asked for this
+      before there was a name for it</i>. That prediction is left standing for the record
+      to grade, as is this series&rsquo; habit. A rope is a small spare part to arrange a
+      morning around. The dot it carries says Greetings.</p>
+    <p class="asterisks">* * *</p>
+    <p>Two loose pages, clipped to the back of the report. In this morning&rsquo;s minutes
+      a voter&rsquo;s recorded reason breaks off mid-sentence, in real time, upon noticing
+      the machinery: <i>Wait, we have a joiner in the settlement (standing: joiner &mdash;
+      has made 14 furniture). So why are there two wishes for a joiner? The settlement has
+      a joiner:</i> &mdash; and there the ballot ends, on a colon, like Dwayne Hoover
+      handed the author&rsquo;s notes in <i>Breakfast of Champions</i>. And over every
+      ballot that begins <i>I&rsquo;m a forester, so&mdash;</i>, as every ballot here does,
+      hangs the moral of <i>Mother Night</i>, the one Vonnegut said was the only moral he
+      ever knew he had: <b>we are what we pretend to be, so we must be careful about what
+      we pretend to be.</b> The pretending is the whole of a settler. It seems to be
+      enough.</p>
+  </section>
+
+  <hr class="thin">
+
+  <div class="colophon">
+    <p class="footline"><b>Found:</b> engagements of the mediator to date: none &mdash; the
+      towns that bought the office have no quarrels, and the town with the quarrels votes
+      the office down; in a valley where life is permanent, a falling-out is the only
+      mortal thing, and <i>so it goes</i> attaches to nothing here but stacked wood and
+      friendship.</p>
+    <p class="footline"><b>Followed:</b> the shaft&rsquo;s entry no longer owns the word
+      <i>timber</i> (one stemmed suffix had made every wood wish a wish for a deep mine);
+      the cart&rsquo;s entry learned the winch and the rope; wish-327&rsquo;s misfiling was
+      corrected on the record before it could grant a mine; and the rehearing now reaches
+      wish-316, carried twice this morning with no name &mdash; Bren&rsquo;s claim stands
+      owed the cart&rsquo;s boon, the grant left as this sheet&rsquo;s prediction. The full
+      gate is green, the 12,000-tick output run included.</p>
+    <p class="footline">Sheet XXXIII of the Frontier record. The run is
+      <code>mtbgptmz-5q</code>; the mediation carry is in <code>agents/log.jsonl</code> at
+      tick 21,558 and the votes against it under 28 Aug 04:17&ndash;05:18; the paperbacks
+      are quoted briefly and with gratitude &mdash; <i>Slaughterhouse-Five</i>,
+      <i>Cat&rsquo;s Cradle</i>, <i>The Sirens of Titan</i>, <i>Mother Night</i>,
+      <i>Breakfast of Champions</i>, <i>God Bless You, Mr. Rosewater</i>,
+      <i>Timequake</i> &mdash; and every quoted settler sentence is their own.</p>
+  </div>
+
+</div>
+
+</body>
+</html>
