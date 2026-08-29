@@ -1,0 +1,299 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>*{margin:0;padding:0}img{max-width:100%}</style>
+</head>
+<body>
+<title>STOP</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400;0,700;1,400&family=Fira+Mono:wght@400;700&display=swap">
+
+<style>
+  /*
+   * A telegram form. Buff paper, rubber-stamp red, and the wire's own monospace pasted on in
+   * strips — the page is the counter of a telegraph office, where every word had a price and the
+   * style the price bred outlived it by a century.
+   */
+  :root {
+    --buff:   #F0E7CE;
+    --buff2:  #E6DAB8;
+    --panel:  #F8F1DC;
+    --ink:    #201910;
+    --faint:  #77684A;
+    --rule:   #C9B78A;
+    --stamp:  #A62B12;
+    --wire:   #34566B;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --buff:  #120F08; --buff2: #1A1509; --panel: #1E1810;
+      --ink:   #EEE5CB; --faint: #9C8E6E; --rule:  #3D3420;
+      --stamp: #E56A49; --wire:  #86A9BF;
+    }
+  }
+  :root[data-theme="dark"] {
+    --buff:  #120F08; --buff2: #1A1509; --panel: #1E1810;
+    --ink:   #EEE5CB; --faint: #9C8E6E; --rule:  #3D3420;
+    --stamp: #E56A49; --wire:  #86A9BF;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    background: var(--buff); color: var(--ink);
+    font-family: Alegreya, Georgia, serif;
+    font-size: 1.16rem; line-height: 1.6;
+    margin: 0; padding: 0 1.2rem 6rem;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .leaf { max-width: 43rem; margin: 0 auto; display: flex; flex-direction: column; gap: 2.5rem; }
+  p { margin: 0; max-width: 68ch; text-wrap: pretty; }
+  b { font-weight: 700; }
+  i, em { font-style: italic; }
+  a { color: var(--stamp); }
+  a:focus-visible { outline: 2px solid var(--stamp); outline-offset: 3px; }
+  code { font-family: "Fira Mono", ui-monospace, monospace; font-size: 0.74em; color: var(--stamp); }
+
+  .stamp {
+    font-family: "Fira Mono", monospace; font-size: 0.64rem;
+    letter-spacing: 0.17em; text-transform: uppercase; color: var(--faint); margin: 0;
+  }
+
+  header.front { display: flex; flex-direction: column; align-items: flex-start; gap: 0.9rem; padding-top: 3.4rem; }
+  header.front h1 {
+    font-family: "Fira Mono", monospace; font-weight: 700;
+    font-size: clamp(3rem, 15vw, 6.5rem); letter-spacing: 0.14em;
+    margin: 0; line-height: 0.95; color: var(--stamp);
+  }
+  header.front .sub { color: var(--faint); font-style: italic; max-width: 40rem; font-size: 1.1rem; }
+  .runhead {
+    display: flex; flex-wrap: wrap; justify-content: space-between; gap: 0.4rem 1rem; width: 100%;
+    font-family: "Fira Mono", monospace; font-size: 0.64rem; color: var(--faint);
+    border-top: 2px solid var(--ink); border-bottom: 1px solid var(--rule); padding: 0.5rem 0.1rem;
+  }
+
+  .finding {
+    background: var(--panel); border: 1px solid var(--rule); border-left: 3px solid var(--stamp);
+    padding: 1.3rem 1.5rem; font-size: 1.08rem; line-height: 1.57;
+  }
+  .finding .lead {
+    font-family: "Fira Mono", monospace; font-size: 0.64rem; font-weight: 700;
+    letter-spacing: 0.18em; text-transform: uppercase; color: var(--stamp);
+    display: block; margin-bottom: 0.6rem;
+  }
+
+  section { display: flex; flex-direction: column; gap: 1.05rem; }
+  section > h2 {
+    font-weight: 700; font-size: 1.55rem;
+    margin: 0 0 0.45rem; padding-bottom: 0.4rem; border-bottom: 1px solid var(--ink);
+    display: flex; gap: 0.8rem; align-items: baseline;
+  }
+  section > h2 .n {
+    color: var(--stamp); font-family: "Fira Mono", monospace; font-size: 0.68rem;
+    letter-spacing: 0.1em; font-weight: 700;
+  }
+
+  /* A pasted wire strip. */
+  .wirestrip {
+    font-family: "Fira Mono", monospace; font-size: 0.82rem; letter-spacing: 0.08em;
+    background: var(--panel); border: 1px solid var(--rule); padding: 0.7rem 1rem;
+    text-transform: uppercase; color: var(--wire); max-width: 62ch; line-height: 1.8;
+  }
+
+  blockquote {
+    margin: 0.2rem 0; padding: 0.9rem 1.3rem; background: var(--buff2);
+    border-left: 3px solid var(--ink); font-style: italic; max-width: 62ch;
+  }
+  blockquote .who {
+    display: block; font-style: normal; font-family: "Fira Mono", monospace;
+    font-size: 0.63rem; letter-spacing: 0.08em; color: var(--faint); margin-top: 0.55rem;
+  }
+  blockquote.source { border-left-color: var(--stamp); }
+
+  .caption { font-size: 0.98rem; color: var(--faint); font-style: italic; max-width: 64ch; }
+
+  .wrap { overflow-x: auto; }
+  table.tariff { width: 100%; border-collapse: collapse; font-size: 1rem; }
+  table.tariff caption {
+    font-family: "Fira Mono", monospace; font-size: 0.63rem; letter-spacing: 0.13em;
+    text-transform: uppercase; color: var(--faint); text-align: left; padding-bottom: 0.5rem;
+  }
+  table.tariff th, table.tariff td {
+    text-align: left; padding: 0.5rem 0.8rem 0.5rem 0; border-bottom: 1px solid var(--rule);
+    vertical-align: top;
+  }
+  table.tariff thead th {
+    font-family: "Fira Mono", monospace; font-size: 0.62rem; letter-spacing: 0.06em;
+    text-transform: uppercase; color: var(--faint); font-weight: 400;
+    border-bottom: 2px solid var(--ink); border-top: 2px solid var(--ink);
+  }
+  table.tariff td.num { font-family: "Fira Mono", monospace; font-size: 0.82rem; white-space: nowrap; }
+  table.tariff td b { color: var(--stamp); }
+
+  pre {
+    margin: 0; padding: 0.95rem 1.2rem; background: var(--buff2);
+    border-left: 3px solid var(--rule); overflow-x: auto;
+    font-family: "Fira Mono", monospace; font-size: 0.74rem; line-height: 1.75; color: var(--ink);
+  }
+
+  .explicit { display: flex; flex-direction: column; gap: 0.55rem; padding-top: 0.4rem; border-top: 2px solid var(--ink); }
+  .footline { color: var(--faint); font-size: 0.98rem; }
+</style>
+
+<div class="leaf">
+
+  <header class="front">
+    <p class="stamp">The Frontier Record &middot; Sheet LVII</p>
+    <h1>STOP</h1>
+    <p class="sub">The telegraph priced language by the word, and the price bred a dialect. Then
+      the price went away and the dialect did not — which is a sentence this valley&rsquo;s own
+      briefing text had been demonstrating for five and a half days.</p>
+    <div class="runhead">
+      <span>telegraphese, c.&thinsp;1850&ndash;1950 &middot; a style that outlived its tariff</span>
+      <span>true for five hours &middot; wrong for five days</span>
+    </div>
+  </header>
+
+  <div class="finding">
+    <span class="lead">The finding</span>
+    <b>The first thing any engine writing a settler&rsquo;s day reads is the <code>note</code>
+    field of the state file, and it said: <i>Reply with ONE instruction.</i></b> That sentence was
+    written on 23 August at 20:39 and was the whole truth for about five hours — plans landed at
+    01:32 on the 24th, and from that moment a settler would happily carry out ten steps from one
+    letter while the letter-writer was being told to send one. The cap moved to <b>sixty</b>
+    this afternoon and the note still said ONE. The writer most capable of composing a good
+    week was under standing instructions to file a single errand, and the instruction was obeyed,
+    because that is what instructions are for.
+  </div>
+
+  <section>
+    <h2><span class="n">I</span> <span>Every word had a price</span></h2>
+    <p>A telegram was priced by the word, and the pricing did what pricing does: it bred a style.
+      Articles fell out. Pronouns fell out. Verbs doubled as their own subjects, addresses
+      compressed to registered code names, and whole phrasebooks were sold whose only purpose was
+      to fold sentences into single billable words. Where punctuation was unreliable or billable,
+      the full point was spelled out in letters, and the word became the sound of the medium
+      itself: <b>STOP</b>.</p>
+    <div class="wirestrip">ARRIVED SAFE STOP FUNDS EXHAUSTED STOP ADVISE SOONEST STOP</div>
+    <p>The interesting part is not the compression — that was rational. The interesting part is
+      what happened when the tariff disappeared. Long after the telephone, long after flat-rate
+      post, people <i>went on writing like that</i>: in headlines, in cables between newspapers
+      and their correspondents, in the clipped official voice that still says ADVISE SOONEST to
+      people it could ring for nothing. The style had detached from the price that justified it
+      and gone on being obeyed as a manner. A constraint, once written down, does not expire when
+      its reason does. Somebody has to notice, and go and change the writing.</p>
+  </section>
+
+  <section>
+    <h2><span class="n">II</span> <span>The valley&rsquo;s tariff, and its dialect</span></h2>
+    <p>This valley had a tariff. Its first letter-writers were a 30-billion-parameter model on the
+      keeper&rsquo;s own card, answering under <code>num_predict: 260</code> — two hundred and
+      sixty tokens a call, every one of them paid for in seconds of a settler standing in a field.
+      Under that price, <i>Reply with ONE instruction</i> was not a style, it was the correct
+      operation of a telegraph.</p>
+    <div class="wrap">
+      <table class="tariff">
+        <caption>The note against the game, dated from the repository</caption>
+        <thead><tr><th>when</th><th>the game honoured</th><th>the note said</th></tr></thead>
+        <tbody>
+          <tr><td class="num">23 Aug 20:39</td><td>one action</td><td>ONE instruction — <b>true</b></td></tr>
+          <tr><td class="num">24 Aug 01:32</td><td>a plan of ten</td><td>ONE instruction — <b>false, five hours in</b></td></tr>
+          <tr><td class="num">29 Aug 16:41</td><td><b>sixty steps, twelve if stuck</b></td><td>ONE instruction — still</td></tr>
+          <tr><td class="num">29 Aug evening</td><td>sixty steps</td><td>the contract, at last</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>Note what kind of failure this is, because the record has its number by now. Nothing
+      errored. Nothing was refused. An engine reading the note did exactly as told and filed
+      telegrams into a valley that had long since learned to read letters — and the shortfall
+      looked like a modest writer rather than a wrong instruction, which is why it sat for five
+      and a half days. It is Sheet XLIV&rsquo;s fault in its purest form yet: <b>the paragraph
+      that tells the writer what world they are writing into, wrong, in the present tense, in the
+      one place nobody thinks to re-read</b> — one shelf over from the fish.</p>
+  </section>
+
+  <section>
+    <h2><span class="n">III</span> <span>The letter, kept whole</span></h2>
+    <p>The other half of this sheet is the reader&rsquo;s half. A settler&rsquo;s card can now
+      show <b>the letter they got at the start of the day</b> — and the reason it could not
+      before is a plumbing fact with a philosophy inside it: the plan is consumed by
+      <code>shift()</code>, step by step, so a half-done day had <i>no start-of-day left in
+      memory</i>. The morning&rsquo;s intentions were eaten by the afternoon that carried them
+      out. The letter is kept whole at collection now, beside the plan that is being spent:</p>
+    <pre>n.letter = { at, say, steps: [...described], branch: [...], truncated }</pre>
+    <p>The card&rsquo;s new pane — <b>The letter</b>, between <i>Working toward</i> and
+      <i>History</i> — quotes the spoken line, ticks the steps off as they are eaten, shows the
+      branch, and flags a day filed longer than the game honours. When a plan comes apart and the
+      branch swaps in, the arithmetic of steps-eaten stops matching the letter, and the pane says
+      <i>the plan came apart; they are on the branch</i> rather than showing a number it cannot
+      stand behind. Verified on the running valley: a day collected at 744s kept its letter intact
+      after the plan was entirely consumed — which is the exact case the copy exists for.</p>
+    <p>All of it is public on purpose. The letters travel the city&rsquo;s own infrastructure,
+      where nothing is deleted and everything prints verbatim — so a settler&rsquo;s day is as
+      readable as the settler, and the card is just the place the two are laid side by side.</p>
+  </section>
+
+  <section>
+    <h2><span class="n">IV</span> <span>One text, three counters</span></h2>
+    <p>And the brand-new settler — the one nobody has written to yet — answers the question their
+      card used to leave hanging. Their letter pane shows: <i>Nobody has written to them yet.
+      When somebody does, this is the contract their writer is given</i> — followed by the
+      contract itself, word for word.</p>
+    <p>The contract, <code>DAY_NOTE</code>, is one exported constant said at three counters that
+      can no longer drift apart, and a check fails the build the day they do: the state
+      file&rsquo;s <code>note</code>, which an engine reads first; the card&rsquo;s empty state,
+      which a viewer reads; and the server&rsquo;s <code>WAITING.txt</code>, which a person with a
+      text editor reads — its one-line example now standing beside a worked day, because the
+      person most likely to open that file is writing somebody&rsquo;s first one.</p>
+    <p>What it teaches is the batching the old note forbade: up to sixty steps and twelve
+      <code>ifStuck</code> honoured; six to eight completed tasks is one valley day, so about
+      fifty steps is a six-day week; file whole days — the settler carries them out without
+      asking again; they eat, sleep and mend their own tools; they may put the day down for a
+      neighbour, their duty deciding, and resume where they stopped; and a refused step names
+      what stood in the way rather than vanishing.</p>
+    <p class="caption">One promise is deliberately absent. The re-run convention — <i>this day
+      repeats until you write again</i> — is designed and not built, and a contract that promises
+      unbuilt machinery is an advertisement. It goes in when it exists.</p>
+  </section>
+
+  <section>
+    <h2><span class="n">V</span> <span>What is thin, so it stays visible</span></h2>
+    <p><b>The contract is untested by its intended reader.</b> No engine has yet written a day
+      against <code>DAY_NOTE</code>; every long plan filed so far was written by hand by the
+      keeper&rsquo;s side of the desk. The first genuinely third-party letter — Sheet LVI&rsquo;s
+      staged ask, or a resident&rsquo;s first cottage day — is the test, and the interesting
+      failure would be an engine that reads &ldquo;up to sixty&rdquo; as &ldquo;aim for
+      sixty&rdquo;: the tariff&rsquo;s opposite error, padding instead of clipping.</p>
+    <p><b>A dating error in this record&rsquo;s own margin, corrected here.</b> The commit that
+      landed the contract says the note was wrong <i>&ldquo;for four days after the cap moved to
+      sixty&rdquo;</i>. The repository&rsquo;s dates say otherwise, twice over: the note went
+      false on <b>24 August</b>, five hours after it was written, when plans of ten were first
+      honoured — five and a half days, not four — and the cap moved to sixty <b>this
+      afternoon</b>, not four days ago. The direction of the error flatters nobody; the sheet
+      carries the dated table and the commit message stands as written, wrong, in the record,
+      which is where this record keeps its mistakes.</p>
+    <p><b>And the pane&rsquo;s progress count is honest by wording, not by arithmetic.</b>
+      &ldquo;N done, M to go&rdquo; is exact only while the original plan is what is being eaten;
+      after a branch swap it degrades to a sentence on purpose. A future letter format that
+      carries step ids would make it exact. This one does not, and says so.</p>
+    <blockquote class="source">ARRIVED SAFE STOP FUNDS EXHAUSTED STOP ADVISE SOONEST
+      <span class="who">the form of the medium — every word paid for, and the habit paid for longer</span></blockquote>
+    <p class="caption">The tariff on this valley&rsquo;s words was lifted this afternoon. The note that
+      enforced it was lifted this evening, one shelf over from the fish, and the difference
+      between those two dates is what this sheet is for.</p>
+
+    <div class="explicit">
+      <p class="footline">Written 29 August, on noticing that the writer being handed a sixty-step
+        valley was still under instructions to send a telegram.</p>
+      <p class="stamp">The Frontier Record &middot; Sheet LVII &middot; 29 August</p>
+    </div>
+  </section>
+
+</div>
+
+</body>
+</html>
