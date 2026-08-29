@@ -1,0 +1,383 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>*{margin:0;padding:0}img{max-width:100%}</style>
+</head>
+<body>
+<title>The Horse in Motion</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap">
+
+<style>
+  /*
+   * A chronophotographic plate, Palo Alto 1878. Albumen paper, a caption set in the margin, and the
+   * figure that made the argument: a strip of sequential frames, each one a moment nobody could
+   * have seen by looking. Here the strip is the record itself — what it holds at each layer, and
+   * the frames that are empty.
+   */
+  :root {
+    --paper:   #EFE7DA;
+    --paper-2: #E2D8C6;
+    --panel:   #F7F2E8;
+    --ink:     #221C14;
+    --faint:   #6E6353;
+    --rule:    #C7BAA2;
+    --sepia:   #7A4A28;
+    --cold:    #58697A;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --paper:   #131109;
+      --paper-2: #1B1810;
+      --panel:   #1F1B12;
+      --ink:     #EBE3D2;
+      --faint:   #978C77;
+      --rule:    #3A3324;
+      --sepia:   #D89A6A;
+      --cold:    #8FA3B5;
+    }
+  }
+  :root[data-theme="dark"] {
+    --paper:   #131109;
+    --paper-2: #1B1810;
+    --panel:   #1F1B12;
+    --ink:     #EBE3D2;
+    --faint:   #978C77;
+    --rule:    #3A3324;
+    --sepia:   #D89A6A;
+    --cold:    #8FA3B5;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    background: var(--paper); color: var(--ink);
+    font-family: "Source Serif 4", Georgia, serif;
+    font-size: 1.04rem; line-height: 1.68;
+    margin: 0; padding: 0 1.2rem 6rem;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .plate { max-width: 43rem; margin: 0 auto; display: flex; flex-direction: column; gap: 2.6rem; }
+  p { margin: 0; max-width: 66ch; text-wrap: pretty; }
+  b { font-weight: 600; }
+  i, em { font-style: italic; }
+  a { color: var(--sepia); }
+  a:focus-visible { outline: 2px solid var(--sepia); outline-offset: 3px; }
+  code { font-family: "Space Mono", ui-monospace, monospace; font-size: 0.8em; color: var(--sepia); }
+
+  .stamp {
+    font-family: "Space Mono", monospace; font-size: 0.66rem;
+    letter-spacing: 0.17em; text-transform: uppercase; color: var(--faint); margin: 0;
+  }
+
+  header.front {
+    display: flex; flex-direction: column; align-items: flex-start;
+    gap: 0.9rem; padding-top: 3.4rem;
+  }
+  header.front h1 {
+    font-family: "Source Serif 4", Georgia, serif; font-weight: 400;
+    font-size: clamp(2.3rem, 9.6vw, 3.9rem); letter-spacing: -0.016em;
+    margin: 0; line-height: 1.03; color: var(--ink);
+  }
+  header.front .sub { color: var(--faint); font-style: italic; max-width: 40rem; font-size: 1rem; }
+  .runhead {
+    display: flex; flex-wrap: wrap; justify-content: space-between; gap: 0.4rem 1rem; width: 100%;
+    font-family: "Space Mono", monospace; font-size: 0.66rem; color: var(--faint);
+    border-top: 2px solid var(--ink); border-bottom: 1px solid var(--rule); padding: 0.5rem 0.1rem;
+  }
+
+  .finding {
+    background: var(--panel); border: 1px solid var(--rule); border-left: 3px solid var(--sepia);
+    padding: 1.3rem 1.5rem; font-size: 1rem; line-height: 1.62;
+  }
+  .finding .lead {
+    font-family: "Space Mono", monospace; font-size: 0.66rem; font-weight: 700;
+    letter-spacing: 0.18em; text-transform: uppercase; color: var(--sepia);
+    display: block; margin-bottom: 0.6rem;
+  }
+
+  section { display: flex; flex-direction: column; gap: 1.05rem; }
+  section > h2 {
+    font-family: "Source Serif 4", Georgia, serif; font-weight: 600; font-size: 1.45rem;
+    margin: 0 0 0.45rem; padding-bottom: 0.4rem; border-bottom: 1px solid var(--ink);
+    display: flex; gap: 0.8rem; align-items: baseline; letter-spacing: -0.01em;
+  }
+  section > h2 .n {
+    color: var(--sepia); font-family: "Space Mono", monospace; font-size: 0.7rem;
+    letter-spacing: 0.1em; font-weight: 700;
+  }
+
+  blockquote {
+    margin: 0.2rem 0; padding: 0.9rem 1.3rem; background: var(--paper-2);
+    border-left: 3px solid var(--ink); font-style: italic; max-width: 62ch;
+  }
+  blockquote .who {
+    display: block; font-style: normal; font-family: "Space Mono", monospace;
+    font-size: 0.65rem; letter-spacing: 0.08em; color: var(--faint); margin-top: 0.55rem;
+  }
+  blockquote.source { border-left-color: var(--sepia); }
+
+  .caption { font-size: 0.92rem; color: var(--faint); font-style: italic; max-width: 64ch; }
+
+  /* The plate: a strip of sequential frames, some of them exposed and some not. */
+  .wrap { overflow-x: auto; }
+  .strip {
+    display: grid; grid-auto-flow: column; grid-auto-columns: 8.2rem; gap: 0.4rem;
+    border-top: 2px solid var(--ink); border-bottom: 2px solid var(--ink);
+    padding: 1rem 0.1rem; min-width: max-content;
+  }
+  .strip .fr {
+    border: 1px solid var(--rule); background: var(--paper-2);
+    padding: 0.6rem 0.55rem; display: flex; flex-direction: column; gap: 0.3rem; min-height: 7.2rem;
+  }
+  .strip .fr .no {
+    font-family: "Space Mono", monospace; font-size: 0.58rem; letter-spacing: 0.1em;
+    color: var(--faint); text-transform: uppercase;
+  }
+  .strip .fr .what { font-size: 0.86rem; line-height: 1.32; }
+  .strip .fr .held {
+    font-family: "Space Mono", monospace; font-size: 0.62rem; margin-top: auto;
+    color: var(--sepia); font-weight: 700;
+  }
+  .strip .fr.blank { background: transparent; border-style: dashed; }
+  .strip .fr.blank .held { color: var(--cold); }
+  .strip .fr.blank .what { color: var(--faint); font-style: italic; }
+
+  table.plate2 { width: 100%; border-collapse: collapse; font-size: 0.95rem; }
+  table.plate2 caption {
+    font-family: "Space Mono", monospace; font-size: 0.65rem; letter-spacing: 0.13em;
+    text-transform: uppercase; color: var(--faint); text-align: left; padding-bottom: 0.5rem;
+  }
+  table.plate2 th, table.plate2 td {
+    text-align: left; padding: 0.48rem 0.6rem 0.48rem 0; border-bottom: 1px solid var(--rule); vertical-align: top;
+  }
+  table.plate2 thead th {
+    font-family: "Space Mono", monospace; font-size: 0.63rem; letter-spacing: 0.06em;
+    text-transform: uppercase; color: var(--faint); font-weight: 400;
+    border-bottom: 2px solid var(--ink); border-top: 2px solid var(--ink);
+  }
+  table.plate2 td.op { font-family: "Space Mono", monospace; font-size: 0.73rem; color: var(--sepia); white-space: nowrap; }
+  table.plate2 td.num { font-family: "Space Mono", monospace; font-size: 0.84rem; text-align: right; font-variant-numeric: tabular-nums; }
+  table.plate2 .yes { color: var(--sepia); font-weight: 700; }
+  table.plate2 .no { color: var(--cold); font-weight: 700; }
+  table.plate2 .note { color: var(--faint); font-style: italic; font-size: 0.88rem; }
+
+  .explicit { display: flex; flex-direction: column; gap: 0.55rem; padding-top: 0.4rem; border-top: 2px solid var(--ink); }
+  .footline { color: var(--faint); font-size: 0.92rem; }
+</style>
+
+<div class="plate">
+
+  <header class="front">
+    <p class="stamp">The Frontier Record &middot; Sheet XLIX</p>
+    <h1>The Horse in Motion</h1>
+    <p class="sub">The world will turn once, at four hours to the day, for everybody. Speed belongs
+      to the past instead &mdash; where it costs nothing, and where the expensive half of the
+      problem got cheap this evening by accident. Read through Muybridge, who did not photograph a
+      gallop.</p>
+    <div class="runhead">
+      <span>Palo Alto, 1878 &middot; LIVE = 1/72</span>
+      <span>inputs 0.77% of the record &middot; 0 positions in it</span>
+    </div>
+  </header>
+
+  <div class="finding">
+    <span class="lead">The finding</span>
+    <b>You do not have to store the picture, because you can re-derive it.</b> The record holds
+    <b>not one occurrence of <code>gx</code></b> anywhere &mdash; it is a statistics time series and
+    nothing on disk can reconstruct a frame. It does not need to. In the same run, <b>64 of 8,290
+    log lines are inputs: 0.77%</b>. The simulation is deterministic, the keyframe format already
+    exists and has been proven on every hot reload for a week, and as of this evening there is a
+    headless host to replay on &mdash; written for something else entirely.
+  </div>
+
+  <section>
+    <h2><span class="n">I</span> <span>He did not photograph a gallop</span></h2>
+    <p>The bet, as it is usually told, was whether a trotting horse ever has all four feet off the
+      ground at once. Nobody could settle it by looking, because the answer happens faster than
+      seeing does. In 1878 at Palo Alto, Eadweard Muybridge ran a line of cameras along a track and
+      tripped them with threads as the horse went past.</p>
+    <p><b>What he produced was not a film of a gallop.</b> It was a row of samples, and the motion
+      was reconstructed from them afterwards, by anybody who cared to put them in order. The horse
+      was not recorded. <i>Enough about the horse was recorded that the horse could be worked out
+      again</i> &mdash; and it turned out the answer had been in front of everybody the whole time
+      and could not be seen at the speed it happened.</p>
+    <p>This valley now has the same problem in the same shape and the opposite direction. A day here
+      is four hours long. <b>Nobody is going to watch one.</b> The question is what somebody who was
+      not there can be shown afterwards, and how much of it has to be kept in order to show them.</p>
+  </section>
+
+  <section>
+    <h2><span class="n">II</span> <span>The world turns once</span></h2>
+    <p><code>SPEEDS</code> gains <code>LIVE = 1 / 72</code>. A valley day is
+      <code>DAY_SECONDS = 200</code>, so a day is <b>four hours</b>, a six-day week is
+      <b>twenty-four hours exactly</b>, and <code>YEAR_DAYS = 24</code> makes a year four weeks and
+      four days of wall clock. The week closes on the human day, so a correspondent files at the
+      same hour every day for ever and nothing drifts out from under them.</p>
+    <p><b>It had to be a clock change and not a day-length change</b>, and that is the part worth
+      writing down. <code>DAY_SECONDS</code> is a rate denominator as well as a day &mdash; some
+      thirty-five sites express durations against it and all of them scale correctly. What does not
+      scale is everything counted in seconds:</p>
+    <div class="wrap">
+      <table class="plate2">
+        <caption>What a fourteen-thousand-second day would have done</caption>
+        <thead><tr><th scope="col"></th><th scope="col">as it is</th><th scope="col">at a 4-hour <code>DAY_SECONDS</code></th></tr></thead>
+        <tbody>
+          <tr><td>hunger, 0&rarr;1</td><td class="num">238s &mdash; 1.2 days</td><td class="num no">60 times a day</td></tr>
+          <tr><td>exhaustion, 0&rarr;1</td><td class="num">323s &mdash; 1.6 days</td><td class="num no">45 times a day</td></tr>
+          <tr><td><code>SPEED_PX</code></td><td class="num">a crossing</td><td class="num no">72 crossings</td></tr>
+          <tr><td><code>BEAT_SECONDS</code></td><td class="num">a few beats</td><td class="num no">480 beats</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>Dividing the clock scales all of them together, because they are all against <code>dt</code>.
+      Raising the day stretches the daylight curve over seventy-two times as much living. <b>They
+      are not the same change and only one of them is safe.</b></p>
+    <p><b>And nobody holds the dial.</b> In the live service the keeper is a pawn like everybody
+      else, so the rule that has governed this game from the beginning &mdash; <i>the player is not
+      a god</i> &mdash; extends to time. One authoritative valley, one clock. If any viewer could
+      hurry it, a correspondent's settler would spend the day their keeper filed while its author
+      was asleep: the promise made to them, spent by somebody else's impatience.</p>
+    <p class="caption">The dial itself is safe, which is worth saying since it is the reason the
+      answer can be <i>no</i> on grounds of fairness rather than of risk. Speed is applied as a step
+      count and never as a longer step &mdash; <i>the settlement is full of thresholds and one
+      eight-times-longer step walks straight past them</i> &mdash; so 32&times; is the same
+      simulation more often, not a coarser one.</p>
+  </section>
+
+  <section>
+    <h2><span class="n">III</span> <span>The plate</span></h2>
+    <p>What the record actually holds, frame by frame. Two of these are exposed and one is not.</p>
+    <div class="wrap">
+      <div class="strip">
+        <div class="fr">
+          <span class="no">i · charts</span>
+          <span class="what">stocks, prices, worth, output, who is roofless</span>
+          <span class="held">state.jsonl</span>
+        </div>
+        <div class="fr">
+          <span class="no">ii · story</span>
+          <span class="what">the feed, beats, ballots, wishes, refusals</span>
+          <span class="held">log.jsonl</span>
+        </div>
+        <div class="fr">
+          <span class="no">iii · intent</span>
+          <span class="what">decisions, goals, wishes filed, votes cast</span>
+          <span class="held">64 lines · 0.77%</span>
+        </div>
+        <div class="fr blank">
+          <span class="no">iv · picture</span>
+          <span class="what">where anybody was standing</span>
+          <span class="held">0 &times; gx</span>
+        </div>
+        <div class="fr blank">
+          <span class="no">v · picture</span>
+          <span class="what">&mdash;</span>
+          <span class="held">not kept</span>
+        </div>
+        <div class="fr">
+          <span class="no">vi · keyframe</span>
+          <span class="what">the whole simulation, minus one derived field</span>
+          <span class="held">save.ts &middot; 36</span>
+        </div>
+      </div>
+    </div>
+    <p class="caption">Frames iv and v are the ones this sheet is about, and they are blank on
+      purpose. <code>logTick</code> writes name, role, town, task, bed, happy, tired, hungry,
+      carrying, coin and tools. Not one coordinate, in the whole record, ever.</p>
+    <p><b>Muybridge's answer applies exactly.</b> The gap between storing the picture and re-deriving
+      it is not close: <code>state.jsonl</code> runs to <b>9,640 bytes a snapshot</b> and a
+      positional stream at ten frames a second is roughly thirty times that line rate &mdash; against
+      an input stream that is <b>under one per cent of what is already being written</b>.</p>
+  </section>
+
+  <section>
+    <h2><span class="n">IV</span> <span>Three things that turned out to be already true</span></h2>
+    <div class="wrap">
+      <table class="plate2">
+        <tbody>
+          <tr>
+            <td class="op">determinism</td>
+            <td><b>One <code>Math.random</code> in <code>src/sim.ts</code></b> &mdash; the run id,
+              explicitly not simulation state &mdash; and <b>none at all</b> in <code>world.ts</code>
+              or <code>goals.ts</code>. Everything else is <code>toUnit(hashStep(seed, …))</code>, and
+              terrain is <code>landUnits()</code> over a compile-time <code>SEED</code>, so a viewer
+              regenerates the coast for nothing.</td>
+          </tr>
+          <tr>
+            <td class="op">the keyframe</td>
+            <td><b>Already written, and already proven.</b> <code>src/save.ts</code>
+              <code>snapshot</code>/<code>restore</code> at <code>SCHEMA = 36</code> stores the whole
+              sim; <code>packNpc</code> drops exactly one field, <code>path</code>, which is derived.
+              It has survived every hot reload for a week. The only reason it lives in
+              <code>sessionStorage</code> is that it was built to outlast a reload rather than to be
+              a save game. <b>Written to a file, that is the format.</b></td>
+          </tr>
+          <tr>
+            <td class="op">the host</td>
+            <td><b>Written this evening, for something else.</b> <code>tools/daybook-run.mts</code>
+              loads <code>src/sim.ts</code> through Vite's SSR loader the way
+              <code>check-output.mjs</code> does &mdash; no Chrome, no canvas, no frame loop, the real
+              <code>stepSim</code>. It exists because a browser tab suspends its frame loop when it is
+              not in front and a valley could not be measured while doing anything else.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p><code>COTTAGES.md</code> called the picture <b>the whole job</b>, and it was right at the
+      time: the expensive part was never the storage, it was needing somewhere to replay. That part
+      is done, and it was done by accident, in service of a completely different question. <b>The
+      rewind got cheap while nobody was looking at it.</b></p>
+  </section>
+
+  <section>
+    <h2><span class="n">V</span> <span>The trap, which has not moved</span></h2>
+    <blockquote class="source">Do not ship inputs and have each viewer re-simulate. Determinism holds
+      within one engine; <code>Math.sin</code>/<code>pow</code> transcendentals are not bit-identical
+      across V8 and SpiderMonkey, and a viewer whose valley silently diverges is worse than no
+      viewer.
+      <span class="who">COTTAGES.md, 28 August</span></blockquote>
+    <p>Server-authoritative, frames out. A viewer asks for a moment and a span; the host restores the
+      nearest keyframe, steps forward through the inputs, and returns what to draw. <b>The viewer
+      never runs a valley.</b> That is the one line in this design that is not negotiable, and it is
+      the same fault this record has now found four sheets running under other names: an instrument
+      that quietly disagrees with the world and says nothing about it.</p>
+    <p>Which leaves the shape whole. <b>The present turns once, at its own pace, for everybody. The
+      past may be run at any speed anybody likes</b>, because a replay consumes nobody's filed day,
+      starves no bus and burns no record. A settler cannot be hurried. What they did can be.</p>
+  </section>
+
+  <section>
+    <h2><span class="n">VI</span> <span>What is left, honestly</span></h2>
+    <div class="wrap">
+      <table class="plate2">
+        <tbody>
+          <tr><td class="op">done</td><td>the live rate and its sub-1&times; carry; <code>idle</code>; <code>unbidden</code>; a bus that holds more than one question and does not drop a late answer</td></tr>
+          <tr><td class="op">small</td><td>keyframes to a file rather than <code>sessionStorage</code></td></tr>
+          <tr><td class="op">not small</td><td><b>the replay host</b> — a service that holds keyframes, steps forward on request, and returns frames rather than state. Smaller than it was. Still a service.</td></tr>
+          <tr><td class="op">unknown</td><td><b>whether four hours to the day is watchable at all.</b> A tree takes about five wall minutes to fell. Whether that reads as slow television or as a broken game is a judgement about the thing on screen, and ten minutes of looking will settle it better than this sheet can.</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="caption">Muybridge settled a question nobody could see by refusing to watch it happen.
+      That is the whole method, and it is available here for less than one per cent of a record that
+      is being written anyway.</p>
+
+    <div class="explicit">
+      <p class="footline">Measured 29 August: <code>state.jsonl</code> 185 snapshots at 9,640 bytes
+        &middot; <code>log.jsonl</code> 8,290 lines, 64 inputs, <b>0.77%</b> &middot; occurrences of
+        <code>gx</code> in the record: <b>0</b> &middot; <code>Math.random</code> in the simulation:
+        <b>1</b>, and it is the run id &middot; <code>SPEEDS</code> gains
+        <code>LIVE = 1/72</code> &middot; full gate green at 49 sheets.</p>
+      <p class="stamp">The Frontier Record &middot; Sheet XLIX &middot; 29 August</p>
+    </div>
+  </section>
+
+</div>
+
+</body>
+</html>
