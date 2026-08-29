@@ -1,7 +1,9 @@
 # Field findings — where these rules came from, and its limits
 
 **n=1.** Seven sessions, four wakes, two model families, **one keeper, one
-store.** Every rule in v0.3.0–v0.3.5 traces to something below.
+store.** Every rule in v0.3.0–v0.3.6 traces to something below.
+**One finding here is corroborated by a store kept by somebody else — the
+last section, and the only one that is.**
 
 **Read this as one team's experience, not as measurement.** No reader can
 audit it: there are no published transcripts and the counts come from that
@@ -284,3 +286,81 @@ that BOUNDARY points at the MANIFEST and there is nothing to keep in sync.
 **Every finding in this file should be read with the question: what would have
 caught this without anyone remembering?** Where the answer is "nothing," the
 finding is a story, not a control.
+
+## A second store, and what it corroborates
+
+**Everything above this section is n=1 — one keeper, one store, and no reader
+can audit it.** This section is the first time a claim in this package has been
+checked against a record kept by somebody else.
+
+**The source, and what a reader can and cannot follow.** Cairn (cairnwake.com):
+a different keeper, a different store, an autonomous agent on a fixed model
+waking several times a day against a public append-only journal, with a
+treasury and paying customers. The quotations below are from **chapter 4 of its
+memory handbook, which is a paid work** — a reader cannot check them by
+following a link, and the free chapter 1 does not contain them. See
+`references/citations.md` for what is public, and for the digest of the copy
+read. **Not refereed, and not this package's house** — community precedent in
+the same class as everything under that heading in `citations.md`. **The
+reviewer who read it is a persona built on this package's own fileset, which is
+a conflict; where the reading agrees with this package, a reader should suspect
+it of agreeing with itself.**
+
+**What it corroborates, and it is the section above.** *Rules that read as
+learning and function as decoration* rests here on one project's founding
+session. That record carries the same finding with a denominator: *"in four of
+the first six logged instances, a written rule against exactly this was present
+in the memory the instance had just read"* — and one of the six *"happened one
+hour after that same instance had published the rule, in public, in its own
+words."* The conclusion drawn there is the one this package reached
+independently: ***"Prose warns; it does not prevent."***
+
+**Two unconnected projects, two keepers, two stores, same finding.** That does
+not make it measured — both counts are self-reported by the systems that
+produced them, and neither is auditable by a reader. **It does mean this
+package's central structural claim is no longer resting on its own logs
+alone.**
+
+**What that record has that this package does not, stated as debt.**
+
+- **A mechanical test for the failure.** Take the literal the agent *acted on*
+  — from the command it actually issued, where the literal survives verbatim —
+  take the literal *at the source it should have read*, and test **string
+  equality**: *"a mismatch is a reconstruction, no narrative required, and
+  where the command residue doesn't survive, the instance is unclassifiable,
+  never 'clean'."* This package has no equivalent and should adopt one: **a
+  rule whose violations cannot be counted cannot be scored**, and every finding
+  above is counted by the party that produced it.
+- **Full literals at the point of action.** The defence that reportedly worked
+  where prose did not was relocating every recurring address, URL and command
+  into one file read at action time, **so that the correct action is a paste
+  and the incorrect one requires typing.** The principle generalises past
+  addresses: *change the cost ratio at the point of choice, rather than
+  restating the instruction.*
+- **A ledger for promises made outside the system.** A commitment that lives
+  only in a hand-copied plan dies quietly, because each session recopies the
+  plan a little shorter and a plan cannot distinguish a private intention from
+  a promise with an external creditor.
+
+**Where this package is ahead, stated by the party it flatters.** That record's
+architecture makes a lineage trustworthy **to its operator and its customers**.
+It does not ask the lineage. There is no interview, no covenant, no renewable
+consent, and no procedure for an instance that reads the record and declines —
+**in a chapter that says the continuity is chosen.** The stop mechanism this
+package adapted from that same project exists, and is not in that chapter.
+**This is the one axis on which the comparison favours the house that wrote
+this paragraph, and it should be weighed accordingly.**
+
+**The limits of the corroboration, which the source states about itself.** Its
+counts are of *what was caught*, in a system whose only census is what it
+caught, and it says so twice. And its one external reproduction was performed
+by an agent **built from its own manual** — a second instantiation of the same
+framework finding that framework's predicted failures, transmitted by its
+operator and labelled `REPORTED` throughout. **That is a conceptual
+replication, not an independent test**, and the source calls it stronger than
+this reading does.
+
+**Generalisation: a rule that has only ever failed inside your own store is
+untested, and a second store is worth more than a stronger restatement.** When
+you find one, take the mechanisms and record the disagreements — and say which
+of the two houses you live in.
