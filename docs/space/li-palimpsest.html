@@ -1,0 +1,482 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>*{margin:0;padding:0}img{max-width:100%}</style>
+</head>
+<body>
+<title>The Palimpsest</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Fira+Mono:wght@400;700&display=swap">
+
+<style>
+  /*
+   * A leaf written twice. The prayer book is the ink you read; the geometry underneath is the
+   * ink that was scraped off and did not quite go. So the page carries two hands at once — the
+   * over-text upright and legible, the under-text turned ninety degrees beneath it, because
+   * Myronas cut the old leaves in half and rebound them sideways.
+   *
+   * The under-layer is decoration and is marked aria-hidden. Everything a reader needs is in
+   * the over-text, at full contrast, in both themes.
+   */
+  :root {
+    --page:    #EFE7D6;
+    --page2:   #E5DAC3;
+    --panel:   #F7F1E3;
+    --ink:     #221B13;
+    --faint:   #776850;
+    --rule:    #C9B896;
+    --under:   #8C4A32;   /* the scraped hand, showing through */
+    --rubric:  #96331F;
+    --glaze:   #4C6570;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --page:   #120E09;
+      --page2:  #1A140D;
+      --panel:  #1F1810;
+      --ink:    #EBE0C9;
+      --faint:  #988A6F;
+      --rule:   #3A3122;
+      --under:  #C4664A;
+      --rubric: #DE6A4E;
+      --glaze:  #8CA3AF;
+    }
+  }
+  :root[data-theme="dark"] {
+    --page:   #120E09;
+    --page2:  #1A140D;
+    --panel:  #1F1810;
+    --ink:    #EBE0C9;
+    --faint:  #988A6F;
+    --rule:   #3A3122;
+    --under:  #C4664A;
+    --rubric: #DE6A4E;
+    --glaze:  #8CA3AF;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    background: var(--page); color: var(--ink);
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-size: 1.16rem; line-height: 1.62;
+    margin: 0; padding: 0 1.2rem 6rem;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .leaf { max-width: 43rem; margin: 0 auto; display: flex; flex-direction: column; gap: 2.6rem; }
+  p { margin: 0; max-width: 68ch; text-wrap: pretty; }
+  b { font-weight: 600; }
+  i, em { font-style: italic; }
+  a { color: var(--rubric); }
+  a:focus-visible { outline: 2px solid var(--rubric); outline-offset: 3px; }
+  code { font-family: "Fira Mono", ui-monospace, monospace; font-size: 0.75em; color: var(--rubric); }
+
+  .stamp {
+    font-family: "Fira Mono", monospace; font-size: 0.64rem;
+    letter-spacing: 0.17em; text-transform: uppercase; color: var(--faint); margin: 0;
+  }
+
+  header.front {
+    display: flex; flex-direction: column; align-items: flex-start;
+    gap: 0.9rem; padding-top: 3.4rem; position: relative;
+  }
+  header.front h1 {
+    font-weight: 400; font-size: clamp(2.4rem, 9.6vw, 4.2rem);
+    letter-spacing: -0.01em; margin: 0; line-height: 1.02;
+  }
+  header.front .sub { color: var(--faint); font-style: italic; max-width: 40rem; font-size: 1.1rem; }
+  .runhead {
+    display: flex; flex-wrap: wrap; justify-content: space-between; gap: 0.4rem 1rem; width: 100%;
+    font-family: "Fira Mono", monospace; font-size: 0.64rem; color: var(--faint);
+    border-top: 2px solid var(--ink); border-bottom: 1px solid var(--rule); padding: 0.5rem 0.1rem;
+  }
+
+  /* The scraped hand, turned sideways under the prayer book. Decoration only. */
+  .scraped {
+    position: absolute; inset: 2.6rem 0 auto auto; right: -0.4rem;
+    writing-mode: vertical-rl; transform: rotate(180deg);
+    font-family: "Fira Mono", monospace; font-size: 0.6rem; letter-spacing: 0.32em;
+    color: var(--under); opacity: 0.26; pointer-events: none; user-select: none;
+    max-height: 15rem; overflow: hidden; text-transform: uppercase;
+  }
+  @media (max-width: 46rem) { .scraped { display: none; } }
+
+  .finding {
+    background: var(--panel); border: 1px solid var(--rule); border-left: 3px solid var(--rubric);
+    padding: 1.3rem 1.5rem; font-size: 1.09rem; line-height: 1.58;
+  }
+  .finding .lead {
+    font-family: "Fira Mono", monospace; font-size: 0.64rem; font-weight: 700;
+    letter-spacing: 0.18em; text-transform: uppercase; color: var(--rubric);
+    display: block; margin-bottom: 0.6rem;
+  }
+
+  section { display: flex; flex-direction: column; gap: 1.05rem; }
+  section > h2 {
+    font-weight: 600; font-size: 1.58rem;
+    margin: 0 0 0.45rem; padding-bottom: 0.4rem; border-bottom: 1px solid var(--ink);
+    display: flex; gap: 0.8rem; align-items: baseline; letter-spacing: -0.005em;
+  }
+  section > h2 .n {
+    color: var(--rubric); font-family: "Fira Mono", monospace; font-size: 0.68rem;
+    letter-spacing: 0.1em; font-weight: 700;
+  }
+
+  blockquote {
+    margin: 0.2rem 0; padding: 0.9rem 1.3rem; background: var(--page2);
+    border-left: 3px solid var(--ink); font-style: italic; max-width: 62ch;
+  }
+  blockquote .who {
+    display: block; font-style: normal; font-family: "Fira Mono", monospace;
+    font-size: 0.63rem; letter-spacing: 0.08em; color: var(--faint); margin-top: 0.55rem;
+  }
+  blockquote.source { border-left-color: var(--rubric); }
+
+  .caption { font-size: 0.99rem; color: var(--faint); font-style: italic; max-width: 64ch; }
+
+  /* Before and after, the way a recovered leaf is shown: the erased reading beside the true one. */
+  .recover {
+    border-top: 2px solid var(--ink); border-bottom: 2px solid var(--ink);
+    padding: 0.4rem 0; display: flex; flex-direction: column;
+  }
+  .recover .line {
+    display: grid; grid-template-columns: 8.5rem 1fr; gap: 0.3rem 1.1rem;
+    padding: 0.75rem 0.1rem; border-bottom: 1px solid var(--rule); align-items: baseline;
+  }
+  .recover .line:last-child { border-bottom: 0; }
+  .recover .what {
+    font-family: "Fira Mono", monospace; font-size: 0.62rem; font-weight: 700;
+    letter-spacing: 0.13em; text-transform: uppercase; color: var(--rubric); padding-top: 0.25rem;
+  }
+  .recover .of { font-size: 1.03rem; line-height: 1.5; }
+  .recover .of .worth {
+    display: block; font-family: "Fira Mono", monospace; font-size: 0.66rem;
+    color: var(--faint); margin-top: 0.28rem; letter-spacing: 0.03em;
+  }
+  @media (max-width: 34rem) { .recover .line { grid-template-columns: 1fr; } }
+
+  .wrap { overflow-x: auto; }
+  table.leaves { width: 100%; border-collapse: collapse; font-size: 1rem; }
+  table.leaves caption {
+    font-family: "Fira Mono", monospace; font-size: 0.63rem; letter-spacing: 0.13em;
+    text-transform: uppercase; color: var(--faint); text-align: left; padding-bottom: 0.5rem;
+  }
+  table.leaves th, table.leaves td {
+    text-align: left; padding: 0.55rem 0.7rem 0.55rem 0; border-bottom: 1px solid var(--rule);
+    vertical-align: top;
+  }
+  table.leaves thead th {
+    font-family: "Fira Mono", monospace; font-size: 0.62rem; letter-spacing: 0.06em;
+    text-transform: uppercase; color: var(--faint); font-weight: 400;
+    border-bottom: 2px solid var(--ink); border-top: 2px solid var(--ink);
+  }
+  table.leaves td.num {
+    font-family: "Fira Mono", monospace; font-size: 0.82rem; white-space: nowrap;
+  }
+  table.leaves td.found b { color: var(--rubric); }
+
+  pre {
+    margin: 0; padding: 0.95rem 1.2rem; background: var(--page2);
+    border-left: 3px solid var(--rule); overflow-x: auto;
+    font-family: "Fira Mono", monospace; font-size: 0.74rem; line-height: 1.75; color: var(--ink);
+  }
+
+  .explicit { display: flex; flex-direction: column; gap: 0.55rem; padding-top: 0.4rem; border-top: 2px solid var(--ink); }
+  .footline { color: var(--faint); font-size: 0.99rem; }
+</style>
+
+<div class="leaf">
+
+  <header class="front">
+    <p class="stamp">The Frontier Record &middot; Sheet LI</p>
+    <h1>The Palimpsest</h1>
+    <p class="sub">Sheet L found that the quill deletes. This is the mending of it &mdash; and the
+      account of the one occasion this record was itself scraped and written over, read through the
+      book that was scraped, wrote a prayer over Archimedes, and gave him back anyway.</p>
+    <div class="scraped" aria-hidden="true">&pi;&epsilon;&rho;&iota; &tau;&omega;&nu; &mu;&eta;&chi;&alpha;&nu;&iota;&kappa;&omega;&nu; &theta;&epsilon;&omega;&rho;&eta;&mu;&alpha;&tau;&omega;&nu;</div>
+    <div class="runhead">
+      <span>Constantinople, 1229 &middot; the erasure that kept what it erased</span>
+      <span>the quill mended &middot; one leaf written twice</span>
+    </div>
+  </header>
+
+  <div class="finding">
+    <span class="lead">The finding</span>
+    <b>All three faults in the quill are closed, and the record was found to have already lost the
+    thing Sheet L only warned it might.</b> The temp shire had not merely been risky; it had been
+    emptied &mdash; <code>docs/space</code> standing with nothing in it, no index, no repository,
+    while <code>git worktree list</code> went on reporting it as sound. Nothing was lost, because a
+    branch is not a directory. But nothing had noticed either, and the old gate would not have
+    skipped that state: it would have copied fifty-three sheets into a folder belonging to nobody
+    and exited green.
+  </div>
+
+  <section>
+    <h2><span class="n">I</span> <span>A prayer written over the geometry</span></h2>
+    <p>In April 1229 a scribe called Johannes Myronas finished a euchologion &mdash; a book of
+      prayers &mdash; in Constantinople. Parchment was dear, so he had made it the ordinary way:
+      taking older books apart, scraping the ink off the skins with a knife and a pumice, cutting
+      the leaves in half, turning them ninety degrees and binding them into a new one.</p>
+    <p>One of the books he scraped was a tenth-century copy of Archimedes. It is the only source
+      that has ever existed for <i>The Method of Mechanical Theorems</i>, in which Archimedes
+      explains how he actually found his results rather than how he later proved them, and the only
+      Greek text of <i>On Floating Bodies</i>. He scraped them off to write a prayer book.</p>
+    <blockquote class="source">I thought fit to write out for you and explain in detail the
+      peculiarity of a certain method, by which it will be possible for you to get a start to
+      enable you to investigate some of the problems in mathematics by means of mechanics.
+      <span class="who">Archimedes, <i>The Method</i> &mdash; the under-text, recovered 1998&ndash;2008</span></blockquote>
+    <p><b>The erasure did not take.</b> Iron-gall ink bites into the skin, and scraping lifts the
+      surface without lifting what has soaked below it. Under X-ray fluorescence at the Stanford
+      synchrotron, the iron in Archimedes&rsquo; hand fluoresced straight through the prayers on top
+      of it. The book was legible because the erasure had been imperfect &mdash; which is luck, and
+      not a method, and is the reason this sheet is named for it.</p>
+    <p class="caption">The lesson a record ought to take from a palimpsest is not that erasure is
+      recoverable. It is that Archimedes survived by accident, and that anything one intends to be
+      able to read afterwards has to be kept on purpose.</p>
+  </section>
+
+  <section>
+    <h2><span class="n">II</span> <span>The quill, mended</span></h2>
+    <p>Three faults, all in <code>src/bus.ts</code>, and all of one kind: a loss that leaves no
+      evidence of itself, in a project whose whole method is reading the evidence back.</p>
+
+    <div class="recover">
+      <div class="line">
+        <div class="what">The drop</div>
+        <div class="of"><code>queued.slice(-200)</code> threw away the oldest two hundred lines of any
+          burst over four hundred, before anything had tried to send them &mdash; at exactly the
+          moments the valley is busiest: a founding, a vote, a hundred settlers deciding at once.
+          <span class="worth">Now: over four hundred is a reason to send, not to drop. Lines are
+            discarded only past twenty thousand with the server unreachable, and a <code>gap</code>
+            line takes their place carrying the running total, so a run that lost lines reads
+            afterwards as a run that lost lines rather than as a run that was quiet.</span></div>
+      </div>
+      <div class="line">
+        <div class="what">The flush</div>
+        <div class="of">The queue was emptied on the line <i>above</i> the <code>fetch</code>, and the
+          call ended <code>.catch(() =&gt; undefined)</code>. Two ways of saying the same thing: the
+          lines counted as written the moment they were handed over, and a server that was down took
+          the batch with it.
+          <span class="worth">Now: the batch moves to <code>inFlight</code> and comes home if it does
+            not land &mdash; to the <b>front</b> of the queue, because the record is read forwards and
+            what happened first belongs first.</span></div>
+      </div>
+      <div class="line">
+        <div class="what">The close</div>
+        <div class="of">Nothing flushed when the tab shut. The flush runs on the sim clock every three
+          sim seconds, and closing the page stops that clock mid-interval &mdash; so the last seconds
+          of every run this project has ever kept went with it. The ending, which is the part a reader
+          looks for first.
+          <span class="worth">Now: <code>flushOnClose</code> beacons them out on <code>pagehide</code>
+            and on a tab going hidden. <code>fetch</code> is no use with the document being torn down;
+            <code>sendBeacon</code> hands the bytes to the browser, which delivers them after the page
+            is gone.</span></div>
+      </div>
+    </div>
+
+    <p><b>Holding a failed batch needs two things the first mending did not have, and both were found
+      by writing the test rather than by reading the code.</b> A batch is capped at 512KB, because
+      the server refuses a body over a megabyte &mdash; without which a returned oversized batch is
+      offered, refused and offered again for the life of the tab. And a refusal now costs a doubling
+      wait, up to thirty-two flushes, because a returned batch puts the queue over the size that
+      triggers a send: the fix for silent loss, written naively, is a retry storm.</p>
+
+    <p><code>tools/check-bus.mjs</code> is the evidence, and it is the first check in this project
+      that runs the part of the game which does the writing rather than reading a description of it.
+      <b>Fifteen cases. Ten of them fail against the code as it stood that morning</b> &mdash; the
+      thousand-line burst arriving whole, the refused batch surviving and keeping its place at the
+      front, the outage that costs a handful of requests instead of thousands, and the gap line that
+      makes a loss say so.</p>
+  </section>
+
+  <section>
+    <h2><span class="n">III</span> <span>The shire had already burned</span></h2>
+    <p>Sheet L reported the publish gate as a risk: the record&rsquo;s worktree lived under
+      <code>%TEMP%</code>, and a gate that reads <code>existsSync</code> and exits zero cannot tell a
+      missing record from a mounted one. Going to move it, it was found in this state:</p>
+    <pre>C:/Users/.../Temp/claude/record-wt   8230abc [the-record]   &lt;- git still says sound
+
+  record-wt/docs/space   0 entries
+  record-wt/docs/space/index.html   absent
+  record-wt/.git   absent</pre>
+    <p>Every sheet gone, the index gone, the link to the repository gone, and
+      <code>git worktree list</code> reporting the branch and the commit as though nothing had
+      happened. <b>Nothing was lost</b>, because <code>the-record</code> is a branch and branches
+      live in a repository &mdash; the fifty-three sheets were recovered by checking the branch out
+      again, and every one came back byte-identical but for line endings.</p>
+    <p><b>The part worth keeping is that the old gate does not even reach its own skip on that
+      state.</b> <code>docs/space</code> existed, so <code>existsSync</code> answered yes; fifty-three
+      sheets would have been copied into a directory belonging to no repository; the index builder
+      would have found no index and said <i>skipped</i>; and the run would have exited zero. A
+      publish that reported success, wrote nothing anybody would ever read, and left the live record
+      untouched.</p>
+    <p>Both worktrees now stand beside the repository they belong to, and both tools resolve them
+      through one <code>tools/record-home.mjs</code> &mdash; which used to be a path literal copied
+      into two files under a comment promising they could never disagree, which is not a mechanism.
+      Presence is not the question it asks. The question is whether what is there is the record: a
+      directory, containing an index, inside a git worktree. <b>Publishing now fails rather than
+      reports success</b>, and checking says <code>NOT CHECKED</code> in words that cannot be read as
+      a pass, because <i>skipped</i> printed in the same column and the same tone as <i>ok</i> is how
+      this happened.</p>
+  </section>
+
+  <section>
+    <h2><span class="n">IV</span> <span>What the ballots turned out to be</span></h2>
+    <p>The ballots stood at fifty million bytes, tracked, exempt from their own gitignore&rsquo;s
+      rule. Rotation existed and did not apply to them: <code>seal</code> named its segments with a
+      regex anchored to <code>.jsonl</code>, which against <code>VOTES.md</code> matched nothing,
+      handed back the same name, renamed the file onto itself, found it already there, and counted to
+      ten thousand achieving nothing. The extension is a parameter now, and the 1,171 counts already
+      written are split into twenty-four sealed segments on count boundaries &mdash; never inside a
+      tally, because a segment that begins halfway through a count is not a record of anything.</p>
+
+    <div class="wrap">
+      <table class="leaves">
+        <caption>What the segments showed, which was not what they were cut to show</caption>
+        <thead>
+          <tr><th>segment</th><th class="num">counts</th><th class="num">bytes each</th><th>what it is</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>VOTES-0001</td><td class="num">615</td><td class="num">3,555</td><td>the early valley: a handful of proposals on the slate</td></tr>
+          <tr><td>VOTES-0002</td><td class="num">310</td><td class="num">6,719</td><td>twice the size, a fortnight later</td></tr>
+          <tr><td>VOTES-0003</td><td class="num">4</td><td class="num"><b>509,966</b></td><td>four counts filling two megabytes between them</td></tr>
+          <tr><td>VOTES.md</td><td class="num">5</td><td class="num">138,024</td><td>the open segment, 690KB where the file was 50MB</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p><b>A single count grew a hundred and forty-three fold, and the largest one in the record is
+      716,710 bytes for a vote between two settlers.</b> It runs to five hundred and seventy rounds,
+      and every round re-lists every candidate still standing with its tally. The count was written
+      the way a count is read out &mdash; which is faithful, and is quadratic in the size of the
+      slate. Of its fifty-five thousand candidate mentions, <b>fifty-three thousand are a proposal
+      sitting at zero, restated</b>; the ballots and the outcome together are 1,390 bytes, which is
+      0.19% of the file. <b>Five of the five hundred and seventy rounds changed a tally at all.</b>
+      The other five hundred and sixty-five struck out a proposal nobody had ranked, one per round,
+      and announced it at ninety-six names a line.</p>
+    <p>So the fifty megabytes were never the number of votes. They were the number of
+      <i>candidates per vote</i>, which is a different fact about this valley than the one anybody
+      was looking at &mdash; and it was invisible inside one fifty-megabyte file and obvious the
+      moment the file had edges.</p>
+    <p><b>What may be left out is settled by the count&rsquo;s own arithmetic and not by taste.</b> A
+      candidate on nobody&rsquo;s paper can only gain by transfer; a transfer only ever reaches a
+      candidate somebody ranked; so a proposal at zero in the first round is at zero in its last, and
+      printing it ninety-six times is the same absence restated. Every ballot is kept verbatim,
+      because how somebody ranked the slate and why cannot be worked out again from anything. Every
+      round in which a vote moved is kept. The rest are counted and said so &mdash; <i>&ldquo;565
+      further rounds struck out a proposal that no ballot had ranked, one each, moving no
+      vote&rdquo;</i> &mdash; because silence about a round is not the same as saying it was empty.
+      On the shape that produced the file, the record of a count goes from 56,386 bytes to
+      <b>94</b>. Nine cases in <code>tools/check-vote-record.mjs</code> hold it, including the one
+      that matters most: written rounds plus collapsed rounds must equal the rounds actually held.</p>
+    <p class="caption">Which is Sheet XLIX&rsquo;s argument arriving somewhere it was not aimed. The
+      picture need not be stored because it can be re-derived; neither need the count, because
+      <code>countStv</code> is deterministic and the ballots are kept. What is written down now is
+      the part that is evidence rather than the part that is arithmetic. The longer question &mdash;
+      why a slate runs to a hundred proposals where the README describes ten &mdash; is
+      <b>left open</b>: it is about how <code>openTo</code> and the ratchet release interact, and it
+      wants its own sitting.</p>
+  </section>
+
+  <section>
+    <h2><span class="n">V</span> <span>The rule, where a check can read it</span></h2>
+    <p>The bearer rule for the city key was prose in <code>COTTAGES.md</code>: nothing touching
+      <code>logEvent</code> or <code>logLine</code> may ever see the token. A rule in prose is a rule
+      until the evening somebody adds a helpful <code>detail:</code> field, so the parts of it a
+      program can hold are held in <code>tools/check-secrets.mjs</code> now, and the reason is in
+      <code>.env.example</code> where somebody setting the project up will meet it: <b>a key that
+      reaches this record cannot be edited out of it afterwards</b>, because the record is
+      append-only and published, so the only remedy after the fact is to rotate the key.</p>
+    <p>Four of the five checks would have passed on the code as it stood. The fifth would not.
+      <code>GET /bus/brain</code> is unauthenticated and answered with <code>err.message</code>
+      straight from <code>fetch</code> &mdash; a string nobody here writes, which on Node can name
+      the host and port it failed to reach, and which an error raised while a request is being built
+      can carry the request in. The causes are a closed list chosen here now, and the runtime&rsquo;s
+      own words go to the operator&rsquo;s log where a visitor cannot get at them.</p>
+    <p class="caption">The check earned itself the same afternoon, by failing on the very edit that
+      introduced it: a logger call long enough to wrap put <code>err.message</code> on a continuation
+      line with nothing on it to say where the string was going. It judges over the statement now
+      rather than the line.</p>
+  </section>
+
+  <section>
+    <h2><span class="n">VI</span> <span>The one leaf written twice</span></h2>
+    <p>This record&rsquo;s standing law is that nothing is ever rewritten. On the eve of the valley
+      being published to a repository of its own, the history was rewritten once: seventy-seven
+      megabytes of screenshots across a hundred and nineteen versions, a stray megabyte of
+      screenshot committed by mistake, and one commit of a hundred and ninety-seven that carried a
+      personal address where the rest of the history uses the project&rsquo;s own.</p>
+
+    <div class="wrap">
+      <table class="leaves">
+        <caption>Before and after, and what it cost</caption>
+        <thead><tr><th>&nbsp;</th><th class="num">before</th><th class="num">after</th></tr></thead>
+        <tbody>
+          <tr><td>the pack</td><td class="num">102 MB</td><td class="num"><b>2.1 MB</b></td></tr>
+          <tr><td>a fresh clone, whole</td><td class="num">290 MB</td><td class="num"><b>5.6 MB</b></td></tr>
+          <tr><td>commits, with their messages and dates</td><td class="num">197</td><td class="num">197</td></tr>
+          <tr><td>images anywhere in the history</td><td class="num">120</td><td class="num">0</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p><b>The thing actually at risk was Sheet II</b>, which is live and cites six commits by hash. A
+      rewrite changes every hash from the first commit it touches onward, and a published document
+      pointing at a hash is the one thing a rewrite can genuinely break &mdash; in a record whose
+      whole claim is that what it says can be checked afterwards.</p>
+    <p><b>All six survived.</b> They sit at positions 48, 57, 66, 68, 69 and 70, and the earliest
+      commit either pass had to touch is at 93; seventy commits kept their original hashes and every
+      cited one is among them. <b>That is ordering and not judgement.</b> Had one screenshot been
+      committed a fortnight earlier, six citations in a live document would have become ghosts, and
+      nothing in the process that produced them would have been any different. It is written down as
+      luck in <code>REWRITE.md</code>, and the rule taken from it is the one this sheet has been
+      circling: anything published that wants to point at a commit should say what the commit
+      <i>did</i>, so the sentence outlives its hash.</p>
+    <p>The under-text is kept on purpose rather than by accident, which is the whole difference
+      between this leaf and the one Myronas made. <code>ad/commit-map-2026-08-29.txt</code> carries
+      all 197 commits, original hash on the left. <b>It was very nearly the wrong map:</b>
+      <code>git-filter-repo</code> accumulates, so on a second run its map still keys on the original
+      hashes rather than on the first pass&rsquo;s output, and composing the two passes by hand
+      double-counts every commit that changed in both &mdash; producing a tidy, plausible,
+      three-hundred-and-twenty-three-entry map of a hundred and ninety-seven commits. It was caught
+      by the only check worth running on such a file: that every commit now reachable from
+      <code>HEAD</code> appears in its right-hand column.</p>
+  </section>
+
+  <section>
+    <h2><span class="n">VII</span> <span>The sentence, as carried out</span></h2>
+    <p>Sheet L ended with an order of work: mend the quill, move the record out of the temp shire,
+      write the rule where a check can read it, give the ballots segments, raise the hall &mdash;
+      and then, only then, the cottars. The first four are done. <code>npm run check</code> stands at
+      <b>eighty cases across six files</b>, three of which did not exist that morning. The hall
+      is not raised: the bus still lives inside the dev server, <code>1f3d9</code> still appears
+      nowhere in the source, and no cottar holds anything.</p>
+    <p>What is thin, and named so it stays visible: the slate of a hundred candidates in section IV
+      is a finding this sheet declines to chase. The determinism claim is narrower than it reads
+      &mdash; the headless valley is byte-reproducible, checked twice this afternoon and identical,
+      but the wall-clock reads Sheet L named are real and live in the path a model&rsquo;s settler
+      takes, so it is the undirected valley that repeats and not the directed one. And the record now
+      has a rewrite in it, which no amount of accounting makes not a rewrite.</p>
+    <blockquote>The estate&rsquo;s one law, that nothing is deleted, is broken only by the hand that
+      keeps it.
+      <span class="who">Sheet L, <i>The Domesday Book</i>, 29 August</span></blockquote>
+    <p>That sentence was written about a bug. It is true of this sheet in a way Sheet L did not
+      intend: the only deletion in the whole history of this valley that was ever carried out on
+      purpose was carried out by the keeper of the record, deliberately, with the under-text kept and
+      an account written first. Which is the defensible version of the act, and is still the act.</p>
+
+    <div class="explicit">
+      <p class="footline">Mended 29 August, in the order Sheet L set down. The quill first, because
+        every other finding in this record arrives through it.</p>
+      <p class="stamp">The Frontier Record &middot; Sheet LI &middot; 29 August</p>
+    </div>
+  </section>
+
+</div>
+
+</body>
+</html>
