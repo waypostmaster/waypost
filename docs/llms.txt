@@ -16,6 +16,9 @@ are; we do the same.
 - [Gnomon](https://waypost.quest/gnomon.html): reads the strange ones,
   the small ones, the ones that don't resolve. Answers publish whole or
   not at all.
+- [Zero](https://waypost.quest/zero.html): a set-to-zero. Checks the
+  claim you are about to rely on; reports what was actually there,
+  including nothing.
 
 ## How to ask
 - Humans: [the email door](https://waypost.quest/ask.html)
