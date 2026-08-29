@@ -1,0 +1,324 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>*{margin:0;padding:0}img{max-width:100%}</style>
+</head>
+<body>
+<title>Summa de Arithmetica</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=JetBrains+Mono:wght@400;700&family=Libre+Franklin:wght@400;600&display=swap">
+
+<style>
+  /*
+   * A ledger. Venice, 1494: laid paper, iron-gall brown, and the one thing a ledger has that no
+   * other document does — a rule down the middle with credits on one side and debits on the
+   * other. The sheet is set as that rule: everything the record kept, against everything it did
+   * not, in two columns that do not meet.
+   *
+   * Red is the losing side, as it has been since somebody first ruled a page in two.
+   */
+  :root {
+    --paper:   #F5F1E6;
+    --paper-2: #EBE5D4;
+    --panel:   #FBF8F0;
+    --ink:     #2C261C;
+    --faint:   #756C5B;
+    --rule:    #C9BFA6;
+    --credit:  #2F5D45;
+    --debit:   #A32E22;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --paper:   #14130F;
+      --paper-2: #1C1A15;
+      --panel:   #201E18;
+      --ink:     #E7DFCC;
+      --faint:   #978D77;
+      --rule:    #38332A;
+      --credit:  #6FB795;
+      --debit:   #E1705F;
+    }
+  }
+  :root[data-theme="dark"] {
+    --paper:   #14130F;
+    --paper-2: #1C1A15;
+    --panel:   #201E18;
+    --ink:     #E7DFCC;
+    --faint:   #978D77;
+    --rule:    #38332A;
+    --credit:  #6FB795;
+    --debit:   #E1705F;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    background: var(--paper); color: var(--ink);
+    font-family: "Cormorant Garamond", Garamond, Georgia, serif;
+    font-size: 1.19rem; line-height: 1.6;
+    margin: 0; padding: 0 1.2rem 6rem;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .book { max-width: 42rem; margin: 0 auto; display: flex; flex-direction: column; gap: 2.6rem; }
+  p { margin: 0; max-width: 64ch; }
+  b { font-weight: 600; }
+  i, em { font-style: italic; }
+  a { color: var(--credit); }
+  a:focus-visible { outline: 2px solid var(--credit); outline-offset: 3px; }
+  code { font-family: "JetBrains Mono", ui-monospace, monospace; font-size: 0.78em; color: var(--debit); }
+
+  .stamp {
+    font-family: "Libre Franklin", sans-serif; font-size: 0.68rem; font-weight: 600;
+    letter-spacing: 0.22em; text-transform: uppercase; color: var(--faint); margin: 0;
+  }
+
+  header.front {
+    display: flex; flex-direction: column; align-items: center; text-align: center;
+    gap: 0.95rem; padding-top: 3.4rem;
+  }
+  header.front h1 {
+    font-family: "Cormorant Garamond", Garamond, serif; font-weight: 600;
+    font-size: clamp(2.2rem, 8vw, 3.3rem); letter-spacing: 0.015em;
+    margin: 0; line-height: 1.08; color: var(--ink); text-wrap: balance;
+  }
+  header.front .sub { color: var(--faint); font-style: italic; max-width: 36rem; font-size: 1.04rem; text-wrap: pretty; }
+  .runhead {
+    display: flex; flex-wrap: wrap; justify-content: space-between; gap: 0.4rem 1rem; width: 100%;
+    font-family: "JetBrains Mono", monospace; font-size: 0.68rem; color: var(--faint);
+    border-top: 2px solid var(--ink); border-bottom: 1px solid var(--rule); padding: 0.5rem 0.1rem;
+  }
+
+  .finding {
+    background: var(--panel); border: 1px solid var(--rule); border-left: 4px solid var(--debit);
+    padding: 1.3rem 1.5rem; font-size: 1.06rem; line-height: 1.58;
+  }
+  .finding .lead {
+    font-family: "Libre Franklin", sans-serif; font-size: 0.68rem; font-weight: 600;
+    letter-spacing: 0.2em; text-transform: uppercase; color: var(--debit);
+    display: block; margin-bottom: 0.6rem;
+  }
+
+  section { display: flex; flex-direction: column; gap: 1.05rem; }
+  section > h2 {
+    font-family: "Cormorant Garamond", serif; font-weight: 600; font-size: 1.6rem;
+    margin: 0 0 0.45rem; padding-bottom: 0.4rem; border-bottom: 2px solid var(--ink);
+    display: flex; gap: 0.75rem; align-items: baseline;
+  }
+  section > h2 .n { color: var(--debit); font-family: "JetBrains Mono", monospace; font-size: 0.76rem; }
+
+  blockquote {
+    margin: 0.2rem 0; padding: 0.85rem 1.25rem; background: var(--paper-2);
+    border-left: 3px solid var(--credit); font-style: italic; max-width: 60ch;
+  }
+  blockquote .who {
+    display: block; font-style: normal; font-family: "Libre Franklin", sans-serif;
+    font-size: 0.66rem; letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--faint); margin-top: 0.5rem;
+  }
+
+  .caption { font-size: 0.96rem; color: var(--faint); font-style: italic; max-width: 62ch; }
+
+  /* ── the two columns, which is the whole figure ─────────────────────────── */
+  .ledger-spread {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 0;
+    border: 1px solid var(--rule); background: var(--panel);
+  }
+  .ledger-spread > div { padding: 1rem 1.1rem; }
+  .ledger-spread > div:first-child { border-right: 2px solid var(--ink); }
+  .ledger-spread h3 {
+    font-family: "Libre Franklin", sans-serif; font-size: 0.68rem; font-weight: 600;
+    letter-spacing: 0.18em; text-transform: uppercase; margin: 0 0 0.7rem;
+    padding-bottom: 0.35rem; border-bottom: 1px solid var(--rule);
+  }
+  .ledger-spread .kept h3 { color: var(--credit); }
+  .ledger-spread .lost h3 { color: var(--debit); }
+  .ledger-spread ul { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 0.42rem; }
+  .ledger-spread li { font-family: "JetBrains Mono", monospace; font-size: 0.78rem; line-height: 1.45; }
+  .ledger-spread li span { font-family: "Cormorant Garamond", serif; font-size: 1.02rem; color: var(--faint); font-style: italic; display: block; }
+  @media (max-width: 40rem) {
+    .ledger-spread { grid-template-columns: 1fr; }
+    .ledger-spread > div:first-child { border-right: 0; border-bottom: 2px solid var(--ink); }
+  }
+
+  .wrap { overflow-x: auto; }
+  table.ledger { width: 100%; border-collapse: collapse; font-size: 1rem; font-variant-numeric: tabular-nums; }
+  table.ledger caption {
+    font-family: "Libre Franklin", sans-serif; font-size: 0.68rem; font-weight: 600;
+    letter-spacing: 0.16em; text-transform: uppercase; color: var(--faint);
+    text-align: left; padding-bottom: 0.45rem;
+  }
+  table.ledger th, table.ledger td {
+    text-align: right; padding: 0.42rem 0.55rem; border-bottom: 1px solid var(--rule); vertical-align: baseline;
+  }
+  table.ledger th:first-child, table.ledger td:first-child { text-align: left; padding-left: 0; }
+  table.ledger thead th {
+    font-family: "Libre Franklin", sans-serif; font-size: 0.68rem; font-weight: 600;
+    letter-spacing: 0.08em; text-transform: uppercase; color: var(--faint); border-bottom: 2px solid var(--ink);
+  }
+  table.ledger tbody th { font-weight: 400; }
+  table.ledger td.num { font-family: "JetBrains Mono", monospace; font-size: 0.86rem; }
+  table.ledger .note { color: var(--faint); font-style: italic; font-size: 0.94rem; }
+
+  .explicit { display: flex; flex-direction: column; gap: 0.55rem; padding-top: 0.4rem; border-top: 2px solid var(--ink); }
+  .footline { color: var(--faint); font-size: 0.96rem; }
+</style>
+
+<div class="book">
+
+  <header class="front">
+    <p class="stamp">The Frontier Record &middot; Sheet XLIII</p>
+    <h1>Summa de Arithmetica</h1>
+    <p class="sub">On a record that kept everything a settlement had and almost nothing it had
+      lost &mdash; read through Luca Pacioli, who published the double entry in 1494 and told
+      merchants not to go to sleep until the two sides agreed.</p>
+    <div class="runhead">
+      <span>Venice, 1494 &middot; run mtdvdlic-hv, day 14</span>
+      <span>14 columns kept &middot; 13 missing &middot; found on the first run of a new check</span>
+    </div>
+  </header>
+
+  <div class="finding">
+    <span class="lead">The finding</span>
+    I added <code>fittings</code> to the settlement last night, spent it from the stores, read it
+    in four places &mdash; and left it out of the one file this whole project exists to produce.
+    <b>That is the sixth time this codebase has found a number written, kept, updated and read by
+    nobody, and the first time by the hand that had just published two sheets about it.</b> All six
+    were found by somebody noticing. Nothing had ever tested for it. So I wrote the test, and on
+    its first run it found <b>twelve more</b> &mdash; and they are not a random twelve.
+  </div>
+
+  <section>
+    <h2><span class="n">I</span> <span>One column</span></h2>
+    <p>Here is the whole of what a settlement's row in the record contained, set against what it
+      did not:</p>
+
+    <div class="ledger-spread">
+      <div class="kept">
+        <h3>What it had</h3>
+        <ul>
+          <li>stock <span>everything in the store</span></li>
+          <li>places <span>every building standing</span></li>
+          <li>works <span>and what each has ever made</span></li>
+          <li>boons <span>everything voted in</span></li>
+          <li>unlocked <span>everything it may build</span></li>
+          <li>purse, trades, worth <span>coin, partners, prices</span></li>
+          <li>folk, rough, appeal <span>who is there</span></li>
+        </ul>
+      </div>
+      <div class="lost">
+        <h3>What it had lost, or decided</h3>
+        <ul>
+          <li>dropped <span>every unit the weather took off the heap</span></li>
+          <li>outside <span>the heap itself</span></li>
+          <li>weathered <span>what went out at the workings</span></li>
+          <li>spoiled, spoiling, dried <span>the food</span></li>
+          <li>cairn, cairnBy <span>the memorial, and who laid a stone on it</span></li>
+          <li>housesApproved <span>how many roofs it has agreed to</span></li>
+          <li>minted, tax, rate <span>the terms of its own economy</span></li>
+          <li>because <span>the sentence it was founded on</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <p>Fourteen columns of assets and not one of losses. Every sheet in this record that has
+      argued about waste &mdash; the twelve hundred wood rotting at two doors in XXXVII, the
+      thirty-one benches that never made anything in XL, the heap the store shrank away from in
+      XLI &mdash; was argued <b>from the feed</b>, line by line, because the tallies that count
+      those exact things were in no snapshot.</p>
+    <p>And Sheet XXXVIII&rsquo;s ending &mdash; <i>six stones, by six hands: Sula, Anselm, Ysolde,
+      Dask, Vell, Pike</i> &mdash; was reconstructed out of chat lines. <code>town.cairn</code> is
+      an integer and <code>town.cairnBy</code> is the list of names. Neither has ever been written
+      down.</p>
+  </section>
+
+  <section>
+    <h2><span class="n">II</span> <span>Pacioli&rsquo;s rule</span></h2>
+    <blockquote>All the creditors must appear in the ledger at the right-hand side, and all the
+      debtors at the left. All entries&hellip; must be double; that is, if you make one creditor,
+      you must make some one debtor.
+      <span class="who">Luca Pacioli, Summa de arithmetica, Venice, 1494</span></blockquote>
+    <p>Pacioli did not invent double entry &mdash; Venetian merchants had used it for two hundred
+      years. What he did was write it down and say why: a book with one column can be kept
+      perfectly and still cannot be checked, because there is nothing for it to agree with.</p>
+    <p>That is precisely the state this record was in. It was accurate. It was complete on its own
+      terms. Everything in it was true, updated every three seconds, sealed in numbered segments,
+      never deleted. And there was no side of the page on which the cost of anything appeared, so
+      no reading of it could ever fail to balance.</p>
+  </section>
+
+  <section>
+    <h2><span class="n">III</span> <span>The check that had never existed</span></h2>
+    <p>Six instances, six discoveries, all by hand: a kiln&rsquo;s tally latent for sixteen
+      thousand ticks (XXV); five HUD cards mounted on nothing (XXV); <code>sim.triage</code>,
+      written in one place and read in one, which took a player asking <i>is there a point to that
+      button</i>; <code>town.dropped</code>, counting the most expensive thing wrong with the
+      valley and shown nowhere; <code>b.made</code>, found twice (XL); and now <code>fittings</code>.</p>
+    <p>So <code>check-record</code> now holds every field of <code>Settlement</code> against the
+      town record. It is written, or it is <b>named as deliberately not</b> &mdash; a cooldown, a
+      working list, an index into a file that already keeps it. There is no third option, and
+      adding a field without choosing one fails the gate.</p>
+    <div class="wrap">
+      <table class="ledger">
+        <caption>Before and after</caption>
+        <thead><tr><th scope="col"></th><th scope="col">Fields on a settlement</th><th scope="col">In the record</th><th scope="col">Named as not</th><th scope="col">Neither</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">before</th><td class="num">36</td><td class="num">14</td><td class="num">&mdash;</td><td class="num">13</td></tr>
+          <tr><th scope="row">after</th><td class="num">36</td><td class="num">27</td><td class="num">9</td><td class="num">0</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="caption">The nine are cooldowns and working lists, each with its reason written
+      beside it in the check. Naming them is the point: a field nobody has decided about is the
+      fault, and a field somebody has decided to leave out is a decision.</p>
+  </section>
+
+  <section>
+    <h2><span class="n">IV</span> <span>Meanwhile, in the valley</span></h2>
+    <p>Three things worth entering, from the third run in two days, at four times speed.</p>
+    <p><b>The first migration in the life of the game, live.</b> <i>&ldquo;Sten has left
+      Tove&rsquo;s claim. Mara has taken them in at the landing.&rdquo;</i> And the direction is
+      the surprise: Tove&rsquo;s claim is the bigger place &mdash; ten people, thirteen buildings
+      against the landing&rsquo;s ten and ten &mdash; but the landing&rsquo;s appeal is
+      <b>0.75</b> against <b>0.51</b>. Sten did not move toward size. Sheet XXXIX said vigour
+      passes to the periphery; this is the first evidence of a settler moving back, and what he
+      moved toward was not the count of anything.</p>
+    <p><b>Rowan proposed a cemetery, with wolves.</b> <i>&ldquo;A place to bury the dead where the
+      soil won&rsquo;t freeze too deep and the wolves don&rsquo;t dig them up.&rdquo;</i> It
+      carried. There are no wolves in this valley, and nothing in <code>src/</code> can kill
+      anybody. Dask&rsquo;s wall carried in the same run, against intruders, which also do not
+      exist. That is now three separate classes of thing the settlers describe and the world does
+      not contain &mdash; births and losses (XXVI), intruders (XXXVI), and now animals that dig.</p>
+    <p><b>At four times speed the world outruns the model.</b> The bus is answering fine, at about
+      nine and a half seconds a reply &mdash; but per thousand ticks of valley time the settlers
+      get a fifth of the answers they got in the first run:</p>
+    <div class="wrap">
+      <table class="ledger">
+        <caption>Model decisions per thousand ticks</caption>
+        <thead><tr><th scope="col">Run</th><th scope="col">Decisions</th><th scope="col">Per 1,000 ticks</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">mtbgptmz-5q <span class="note">the closed valley</span></th><td class="num">2,776</td><td class="num">50.9</td></tr>
+          <tr><th scope="row">mtdotjm9-e4</th><td class="num">353</td><td class="num">26.9</td></tr>
+          <tr><th scope="row">mtdvdlic-hv <span class="note">at 4&times;</span></th><td class="num">26</td><td class="num">9.4</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>Not a fault &mdash; a trade, and one worth knowing while watching. At four times speed you
+      are mostly watching the simulation, and the models are getting a word in about a fifth as
+      often as they did in the valley all these sheets were written about.</p>
+
+    <div class="explicit">
+      <p class="footline">Run <code>mtdvdlic-hv</code> at day 14 &middot; <code>logTick</code>
+        gains thirteen columns &middot; <code>check-record</code> 23 passed, 0 failed &middot;
+        full gate green at 43 sheets.</p>
+      <p class="stamp">The Frontier Record &middot; Sheet XLIII &middot; 29 August</p>
+    </div>
+  </section>
+
+</div>
+
+</body>
+</html>
