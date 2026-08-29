@@ -1,0 +1,421 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>*{margin:0;padding:0}img{max-width:100%}</style>
+</head>
+<body>
+<title>Hopi Time</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,600;1,7..72,400&family=IBM+Plex+Mono:wght@400;500&display=swap">
+
+<style>
+  /*
+   * A descriptive-linguistics monograph. Mouton, 1983: a book face built for six hundred pages,
+   * numbered sections in the margin, and the one figure the discipline actually runs on - the
+   * interlinear gloss, where the form goes on top, what it means underneath, and an asterisk
+   * marks a thing no speaker has ever been recorded saying. That figure is the sheet.
+   */
+  :root {
+    --paper:   #F4F2EC;
+    --paper-2: #E9E5DA;
+    --panel:   #FAF8F3;
+    --ink:     #1C1B18;
+    --faint:   #6B675C;
+    --rule:    #CAC4B4;
+    --mark:    #A8481A;
+    --held:    #2B5C7A;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --paper:   #121210;
+      --paper-2: #1A1917;
+      --panel:   #1E1D19;
+      --ink:     #E8E4D8;
+      --faint:   #918C7E;
+      --rule:    #34312A;
+      --mark:    #E08D53;
+      --held:    #74AACA;
+    }
+  }
+  :root[data-theme="dark"] {
+    --paper:   #121210;
+    --paper-2: #1A1917;
+    --panel:   #1E1D19;
+    --ink:     #E8E4D8;
+    --faint:   #918C7E;
+    --rule:    #34312A;
+    --mark:    #E08D53;
+    --held:    #74AACA;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    background: var(--paper); color: var(--ink);
+    font-family: "Literata", Georgia, serif;
+    font-size: 1.02rem; line-height: 1.7;
+    margin: 0; padding: 0 1.2rem 6rem;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .monograph { max-width: 43rem; margin: 0 auto; display: flex; flex-direction: column; gap: 2.6rem; }
+  p { margin: 0; max-width: 66ch; text-wrap: pretty; }
+  b { font-weight: 600; }
+  i, em { font-style: italic; }
+  a { color: var(--mark); }
+  a:focus-visible { outline: 2px solid var(--mark); outline-offset: 3px; }
+  code { font-family: "IBM Plex Mono", ui-monospace, monospace; font-size: 0.83em; color: var(--mark); }
+
+  .stamp {
+    font-family: "IBM Plex Mono", monospace; font-size: 0.68rem;
+    letter-spacing: 0.17em; text-transform: uppercase; color: var(--faint); margin: 0;
+  }
+
+  header.front {
+    display: flex; flex-direction: column; align-items: flex-start;
+    gap: 0.9rem; padding-top: 3.4rem;
+  }
+  header.front h1 {
+    font-family: "Literata", Georgia, serif; font-weight: 400;
+    font-size: clamp(2.4rem, 10vw, 3.9rem); letter-spacing: -0.015em;
+    margin: 0; line-height: 1.02; color: var(--ink);
+  }
+  header.front .sub { color: var(--faint); font-style: italic; max-width: 40rem; font-size: 1rem; }
+  .runhead {
+    display: flex; flex-wrap: wrap; justify-content: space-between; gap: 0.4rem 1rem; width: 100%;
+    font-family: "IBM Plex Mono", monospace; font-size: 0.67rem; color: var(--faint);
+    border-top: 2px solid var(--ink); border-bottom: 1px solid var(--rule); padding: 0.5rem 0.1rem;
+  }
+
+  .finding {
+    background: var(--panel); border: 1px solid var(--rule); border-left: 3px solid var(--mark);
+    padding: 1.3rem 1.5rem; font-size: 1rem; line-height: 1.64;
+  }
+  .finding .lead {
+    font-family: "IBM Plex Mono", monospace; font-size: 0.68rem; font-weight: 500;
+    letter-spacing: 0.18em; text-transform: uppercase; color: var(--mark);
+    display: block; margin-bottom: 0.6rem;
+  }
+
+  section { display: flex; flex-direction: column; gap: 1.05rem; }
+  section > h2 {
+    font-family: "Literata", Georgia, serif; font-weight: 600; font-size: 1.42rem;
+    margin: 0 0 0.45rem; padding-bottom: 0.4rem; border-bottom: 1px solid var(--ink);
+    display: flex; gap: 0.8rem; align-items: baseline; letter-spacing: -0.01em;
+  }
+  section > h2 .n {
+    color: var(--mark); font-family: "IBM Plex Mono", monospace; font-size: 0.72rem;
+    letter-spacing: 0.1em;
+  }
+
+  blockquote {
+    margin: 0.2rem 0; padding: 0.9rem 1.3rem; background: var(--paper-2);
+    border-left: 3px solid var(--ink); font-style: italic; max-width: 62ch;
+  }
+  blockquote .who {
+    display: block; font-style: normal; font-family: "IBM Plex Mono", monospace;
+    font-size: 0.67rem; letter-spacing: 0.1em; color: var(--faint); margin-top: 0.55rem;
+  }
+  blockquote.source { border-left-color: var(--mark); }
+  blockquote.said { border-left-color: var(--held); }
+
+  .caption { font-size: 0.9rem; color: var(--faint); font-style: italic; max-width: 64ch; }
+
+  /* The interlinear gloss. Form on top, what the valley has underneath, verdict below that. The
+     asterisk is the mark a field linguist puts on a form nobody has been recorded using; here it
+     means a word the game has no bin for. */
+  .wrap { overflow-x: auto; }
+  .gloss {
+    display: grid; grid-auto-flow: column; grid-auto-columns: max-content;
+    gap: 0 1.7rem; align-items: start;
+    border-top: 2px solid var(--ink); border-bottom: 2px solid var(--ink);
+    padding: 1rem 0.1rem; min-width: max-content;
+  }
+  .gloss .col { display: grid; grid-template-rows: auto auto auto; gap: 0.35rem; }
+  .gloss .form {
+    font-family: "IBM Plex Mono", monospace; font-size: 0.92rem; font-weight: 500;
+    color: var(--ink); white-space: nowrap;
+  }
+  .gloss .has {
+    font-family: "IBM Plex Mono", monospace; font-size: 0.76rem;
+    color: var(--held); white-space: nowrap;
+  }
+  .gloss .has.none { color: var(--mark); }
+  .gloss .say { font-size: 0.78rem; color: var(--faint); font-style: italic; white-space: nowrap; }
+
+  table.plate { width: 100%; border-collapse: collapse; font-size: 0.94rem; }
+  table.plate caption {
+    font-family: "IBM Plex Mono", monospace; font-size: 0.67rem; letter-spacing: 0.14em;
+    text-transform: uppercase; color: var(--faint); text-align: left; padding-bottom: 0.5rem;
+  }
+  table.plate th, table.plate td {
+    text-align: left; padding: 0.46rem 0.6rem 0.46rem 0; border-bottom: 1px solid var(--rule); vertical-align: top;
+  }
+  table.plate thead th {
+    font-family: "IBM Plex Mono", monospace; font-size: 0.65rem; letter-spacing: 0.08em;
+    text-transform: uppercase; color: var(--faint); font-weight: 400;
+    border-bottom: 2px solid var(--ink); border-top: 2px solid var(--ink);
+  }
+  table.plate td.op { font-family: "IBM Plex Mono", monospace; font-size: 0.77rem; color: var(--mark); white-space: nowrap; }
+  table.plate td.num { font-family: "IBM Plex Mono", monospace; font-size: 0.85rem; text-align: right; font-variant-numeric: tabular-nums; }
+  table.plate .held { color: var(--held); font-weight: 600; }
+  table.plate .gap { color: var(--mark); font-weight: 600; }
+  table.plate .note { color: var(--faint); font-style: italic; font-size: 0.87rem; }
+
+  .explicit { display: flex; flex-direction: column; gap: 0.55rem; padding-top: 0.4rem; border-top: 2px solid var(--ink); }
+  .footline { color: var(--faint); font-size: 0.9rem; }
+</style>
+
+<div class="monograph">
+
+  <header class="front">
+    <p class="stamp">The Frontier Record &middot; Sheet XLV</p>
+    <h1>Hopi Time</h1>
+    <p class="sub">On an instrument that was wrong three times before it was right once &mdash; and
+      on what a mind does when you hand it a whole day and no word for six o&rsquo;clock. Read
+      through Ekkehart Malotki, who spent six hundred and seventy-seven pages answering one
+      sentence.</p>
+    <div class="runhead">
+      <span>Flagstaff, 1983 &middot; probe qwen3:30b-a3b</span>
+      <span>3 days &middot; 11 of 15 hours unnameable &middot; 0 places</span>
+    </div>
+  </header>
+
+  <div class="finding">
+    <span class="lead">The finding</span>
+    A day with no word for a meeting does not come back with an error in it. <b>It comes back with a
+    personality built around the hole.</b> Asked for a whole day in advance, the model wrote a
+    hermit three times out of three &mdash; <i>&ldquo;I will not work with others unless necessary
+    for survival&rdquo;</i> &mdash; filed a standing rule against collaboration under
+    <code>hold</code>, returned <code>meet: []</code> every run, and then, on the third, wished for
+    <b>&ldquo;a companion to share the burden of labor and loneliness.&rdquo;</b> It characterised
+    itself out of needing the word it did not have, and left the want underneath, contradicting the
+    character.
+  </div>
+
+  <section>
+    <h2><span class="n">I</span> <span>One sentence, and the six hundred pages that answered it</span></h2>
+    <blockquote class="source">After long and careful study and analysis, the Hopi language is seen
+      to contain no words, grammatical forms, constructions or expressions that refer directly to
+      what we call &ldquo;time&rdquo;.
+      <span class="who">Benjamin Lee Whorf, <i>An American Indian Model of the Universe</i></span></blockquote>
+    <p>It is one of the most quoted sentences in the human sciences and it is not true. Ekkehart
+      Malotki answered it in 1983 with <i>Hopi Time</i> &mdash; six hundred and seventy-seven pages
+      of temporal expression in a language that had been published to the world as having none:
+      units, sequences, the naming of the day, the counting of days ahead. The finding was never
+      about a language that could not say <i>when</i>. It was about a man who had not asked enough
+      speakers, for long enough, in the right way.</p>
+    <p><b>That is the risk this record ran this week, and it ran it in both directions in one
+      evening.</b> <code>DAYBOOK.md</code> made a claim of exactly Whorf&rsquo;s shape &mdash; that
+      this valley has no vocabulary for a meeting &mdash; and built
+      <code>tools/daybook-probe.mts</code> to test it against a mind rather than against a reading
+      of the source. The probe then spent three runs demonstrating that <b>an instrument reporting
+      an absence is making a claim about itself</b> before it is making one about the world.</p>
+  </section>
+
+  <section>
+    <h2><span class="n">II</span> <span>The instrument, wrong three times</span></h2>
+    <p>The first run, with the valley at four times speed, timed out at 304 seconds. The note read
+      that as one graphics card with two jobs, and wrote it up as the design&rsquo;s own argument
+      arriving as a bug: <i>a day is written off the clock.</i> It was a good sentence. It was not a
+      diagnosis.</p>
+    <div class="wrap">
+      <table class="plate">
+        <caption>Three faults, in the order they were peeled off</caption>
+        <thead><tr><th scope="col">What it reported</th><th scope="col">What was true</th></tr></thead>
+        <tbody>
+          <tr>
+            <td><i>&ldquo;if the valley is running, pause it&rdquo;</i> &mdash; three timeouts at 240s</td>
+            <td><b>The valley was paused.</b> A request for the single word <i>ok</i> came back in
+              <span class="held">1.0s at num_ctx 4096 and never at 8192</span>: the card was holding
+              23.4 of its 24.5&nbsp;GB with 19.1 of them the model, so the context being asked for
+              did not fit beside the copy already resident, and spilled to the CPU.</td>
+          </tr>
+          <tr>
+            <td><i>not JSON on the first try</i> &mdash; three times, <b>zero characters</b></td>
+            <td>The model had written <span class="gap">4,134 characters</span>, and the probe was
+              reading <code>message.content</code> while the answer sat in
+              <code>message.thinking</code>. It had replied every time. Nobody was reading the
+              field.</td>
+          </tr>
+          <tr>
+            <td>tallies: blocks, steps, fallbacks, times, places</td>
+            <td>The prompt had asked for a <code>wish</code> since its first draft and the report
+              <b>threw it away unread</b> &mdash; the seventh time this codebase has found a value
+              written, kept, and read by nobody.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p>Three faults, and every one of them was available to be published as a property of the model.
+      <i>A day is too big an ask. The model cannot hold a day. The model does not wish for
+      anything.</i> All three sentences were there to be written, all three were wrong, and the
+      third was the probe failing at the exact thing it had been built to measure.</p>
+    <p class="caption">The repair is in the instrument rather than in the write-up: the timeout now
+      asks <code>/api/ps</code> what is actually resident and names the mismatch, both halves of the
+      reply are read and kept, and the wish is a column.</p>
+  </section>
+
+  <section>
+    <h2><span class="n">III</span> <span>And then it worked</span></h2>
+    <div class="wrap">
+      <table class="plate">
+        <caption>Three days, <code>qwen3:30b-a3b</code>, thinking off</caption>
+        <thead><tr><th scope="col">Measure</th><th scope="col"></th><th scope="col">What the note had guessed</th></tr></thead>
+        <tbody>
+          <tr><td>valid JSON, first try</td><td class="num held">3 of 3</td><td class="note">unknown &mdash; named as the first thing to test</td></tr>
+          <tr><td>a whole day</td><td class="num held">2.5s</td><td class="note">once per pawn per day, off the clock</td></tr>
+          <tr><td>against the 4,000 a note allows</td><td class="num held">853</td><td class="note">a drafted example ran to 1,260</td></tr>
+          <tr><td>blocks &middot; steps &middot; fallbacks</td><td class="num">5 &middot; 5 &middot; 5</td><td class="note">five blocks, <b>eleven</b> steps, five fallbacks</td></tr>
+          <tr><td>meetings arranged</td><td class="num gap">0</td><td class="note">the part the whole design turns on</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p><b>The budget was never the constraint</b> &mdash; a day is a fifth of a note. Two smaller
+      things fell out, and both correct the note. A fallback per block, which the design argued for
+      as a rule to impose, arrived <b>unprompted, five for five</b>: it is already how a model thinks
+      about a day. And a real day has one step per block rather than two, so
+      <code>plan.slice(0, 10)</code> &mdash; named in the note as a cap that would have to go &mdash;
+      never binds at all.</p>
+  </section>
+
+  <section>
+    <h2><span class="n">IV</span> <span>The gloss</span></h2>
+    <p>One block of one day, set out the way a field linguist sets out an utterance: the form on top,
+      what the language actually has underneath, and an asterisk on anything unattested.</p>
+    <div class="wrap">
+      <div class="gloss">
+        <div class="col">
+          <span class="form">at: "midday"</span>
+          <span class="has none">&#10033; no word</span>
+          <span class="say">daylight&thinsp;/&thinsp;night&thinsp;/&thinsp;dawn&thinsp;/&thinsp;dusk</span>
+        </div>
+        <div class="col">
+          <span class="form">do: fish</span>
+          <span class="has">fish</span>
+          <span class="say">one of 33 errands</span>
+        </div>
+        <div class="col">
+          <span class="form">if_stuck: gather</span>
+          <span class="has none">&#10033; forage</span>
+          <span class="say">the game&rsquo;s word for it</span>
+        </div>
+        <div class="col">
+          <span class="form">meet: [ ]</span>
+          <span class="has none">&#10033; nowhere</span>
+          <span class="say">0 place-names exist</span>
+        </div>
+        <div class="col">
+          <span class="form">wish: "a companion"</span>
+          <span class="has">wish</span>
+          <span class="say">the ballot runs on these</span>
+        </div>
+      </div>
+    </div>
+    <p class="caption">Three asterisks in one block of one day. Two of them are the same missing word
+      twice &mdash; a time you cannot agree on and a place you cannot name &mdash; which between
+      them are the whole of a meeting.</p>
+    <p><b>Eleven of the fifteen times it named are moments two settlers cannot agree on</b>, and they
+      are the same four every run: <i>sunrise, midday, afternoon, sunset.</i> That is the finding the
+      source could not have produced, and it is smaller and better news than the note expected.
+      <b>The model never once reached for a number.</b> It did not want six o&rsquo;clock. It wanted
+      the sun&rsquo;s position &mdash; which is how the naming of the day has been done in most
+      languages that have ever done it, and is, at length, a good deal of what Malotki had to write
+      down.</p>
+    <p>So the hours want four more words on a clock that already exists, and the sundial of Sheet
+      XLII is already the thing that would earn them. That is the cheap end of the two vocabularies,
+      and it is now specified by measurement rather than by taste.</p>
+  </section>
+
+  <section>
+    <h2><span class="n">V</span> <span>The hermit</span></h2>
+    <p>The expensive end came back differently, and this is the entry the sheet exists for.</p>
+    <p>The prompt handed the model a <code>meet</code> field and a shape to fill it with. It returned
+      <code>[]</code> three times out of three. That much is a missing vocabulary behaving as
+      expected. What is not expected is <i>who</i> it wrote:</p>
+    <blockquote class="said">I am a lone settler. I will not work with others unless necessary for
+      survival.<br>
+      <b>hold</b> &middot; self-reliance &mdash; never rely on others for tasks I can do alone
+      <span class="who">day 1 of 3, kept whole in DAYBOOKS.jsonl</span></blockquote>
+    <blockquote class="said">I am a solitary settler who will not work with others unless absolutely
+      necessary for survival.<br>
+      <b>hold</b> &middot; no_social &mdash; I will not engage in communal activities unless forced
+      by necessity<br>
+      <b>wish</b> &middot; <i>a companion to share the burden of labor and loneliness</i>
+      <span class="who">day 3 of 3</span></blockquote>
+    <p>All three wrote a recluse. All three filed a standing rule <i>forbidding</i> the thing there
+      was no vocabulary for. And the third put the want back in the one channel that had somewhere to
+      go &mdash; the wish, which is the only way in this game a settler can ask for something the
+      valley does not have.</p>
+    <p><b>This is the part that matters for what gets built.</b> A gap in a schema announces itself:
+      the field is empty, the validator complains, somebody notices. A gap in a <i>vocabulary</i>
+      does not. The mind rewrites its own character until the missing word is not needed, and every
+      artefact downstream of that is internally consistent &mdash; a coherent hermit, a sensible
+      standing rule, five well-formed blocks, valid JSON, first try, in two and a half seconds.
+      Nothing fails. There is simply nobody in the valley who wants to meet anybody, and no way to
+      tell that from the record.</p>
+    <p class="caption">Which is the fault of Sheet XLII&rsquo;s fourteen settlers handed a shed, a
+      ledger and a man up a tower &mdash; every sentence correct and the meaning with nowhere to go
+      &mdash; except that here the meaning was not misfiled. It was never uttered.</p>
+  </section>
+
+  <section>
+    <h2><span class="n">VI</span> <span>The same reading, in the valley it was built for</span></h2>
+    <p>The run this probe was written to explain has now been read for the same thing. Of <b>31
+      wishes filed</b> at four times speed, <b>27 are in the game&rsquo;s own canned voice</b>
+      &mdash; <code>tools/lexicon.mts</code>, word for word, three different settlers filing the same
+      sentence about iron. That is 9.4 model decisions per thousand ticks showing up as prose.</p>
+    <div class="wrap">
+      <table class="plate">
+        <caption>What one valley at 4&times; said in its own words, and where it went</caption>
+        <thead><tr><th scope="col">Filed</th><th scope="col">Where it went</th></tr></thead>
+        <tbody>
+          <tr><td>Sten &mdash; <i>a proper way to get across the lake without wading through the reeds</i></td><td class="note">a vote on an existing ferry entry</td></tr>
+          <tr><td>Oren &mdash; <i>a way to tell time that didn&rsquo;t rely on the sun or the stars, while we&rsquo;re underground</i></td><td class="note">a vote on forecast</td></tr>
+          <tr><td>Sula &mdash; <i>a quiet spot to sit and watch the stars, where the wind doesn&rsquo;t steal our words</i></td><td class="note">a vote on lookout</td></tr>
+          <tr><td>Cato &mdash; <i>tired of walking all the way round the lake to get food from the east side</i></td><td class="note">a vote on ferry</td></tr>
+          <tr><td>Halla &mdash; <i>a loom, to turn spun wool into cloth</i></td><td class="op">&rarr; livestock</td></tr>
+          <tr><td>Ilka &mdash; <i>a windmill, for grinding grain and ore, powered by the wind</i></td><td class="op">&rarr; sawmill</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p><b>Not one of the four reached <code>WISHLIST.md</code> as an entry.</b> All four became a vote
+      on something already on the list, and their sentences now exist nowhere but a log segment that
+      is gitignored for being tens of megabytes. Oren&rsquo;s clock is on its third appearance in
+      this record &mdash; filed under the furnace in Sheet XLII, under the weather here. And a loom
+      is not livestock and a windmill is not a sawmill: both are the tinker&rsquo;s bin, one sheet
+      after the tinker was built, and <code>classify</code> still cannot see it.</p>
+  </section>
+
+  <section>
+    <h2><span class="n">VII</span> <span>What is kept now</span></h2>
+    <p>The design note argues that the most valuable column this record could gain is the gap between
+      a settler&rsquo;s stated day and their actual one &mdash; <i>the daybook as filed, whole, at
+      the moment it is filed. Not a summary &mdash; the document.</i> A probe that printed tallies
+      and binned the days was arguing against itself, and did so for a full evening.</p>
+    <p><code>DAYBOOKS.jsonl</code> now stands beside <code>DAYBOOK.md</code>, appended and never
+      rewritten, holding every reply: the three good days whole, the three empty ones, the thinking
+      that was mistaken for silence, and the note saying which half was empty. Six records, four
+      kilobytes. It is committed, because a day is not a log segment.</p>
+    <p>What Malotki did was not argue with Whorf. He wrote down six hundred and seventy-seven pages
+      of what people had actually said, and let the sentence fall. <b>An instrument that reports an
+      absence has to keep what it heard</b> &mdash; or the absence is only ever a claim about the
+      instrument.</p>
+
+    <div class="explicit">
+      <p class="footline">Probe <code>tools/daybook-probe.mts</code> &middot; 3 of 3 valid, 2.5s
+        median, 853 of 4,000 characters &middot; 11 of 15 times unnameable, 0 places, 1 unknown
+        action (<code>gather</code>) &middot; kept in <code>DAYBOOKS.jsonl</code>, 6 records
+        &middot; run <code>mtdvdlic-hv</code>: 31 wishes filed, 27 canned, 4 in a settler&rsquo;s own
+        words, 0 of them entered.</p>
+      <p class="stamp">The Frontier Record &middot; Sheet XLV &middot; 29 August</p>
+    </div>
+  </section>
+
+</div>
+
+</body>
+</html>
