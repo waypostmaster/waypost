@@ -1,0 +1,287 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>*{margin:0;padding:0}img{max-width:100%}</style>
+</head>
+<body>
+<title>Birds of Passage</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Fira+Mono:wght@400;700&display=swap">
+
+<style>
+  /*
+   * A registry hall by a grey harbor: oak benches, manifest paper, sea-light through high
+   * windows. The dark theme is the same hall at the hour the last ferry leaves.
+   */
+  :root {
+    --hall:   #ECE9DF;
+    --hall2:  #E0DBCB;
+    --panel:  #F5F2E8;
+    --ink:    #1A1712;
+    --faint:  #6F6853;
+    --rule:   #C5BA9C;
+    --oak:    #7C5B26;
+    --sea:    #39586B;
+    --chalk:  #9A3418;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --hall:  #0E1114; --hall2: #151A20; --panel: #181E26;
+      --ink:   #E8E1CF; --faint: #96907A; --rule:  #313945;
+      --oak:   #CFA352; --sea:   #82A7BD; --chalk: #E06C4B;
+    }
+  }
+  :root[data-theme="dark"] {
+    --hall:  #0E1114; --hall2: #151A20; --panel: #181E26;
+    --ink:   #E8E1CF; --faint: #96907A; --rule:  #313945;
+    --oak:   #CFA352; --sea:   #82A7BD; --chalk: #E06C4B;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    background: var(--hall); color: var(--ink);
+    font-family: Lora, Georgia, serif;
+    font-size: 1.14rem; line-height: 1.62;
+    margin: 0; padding: 0 1.2rem 6rem;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .leaf { max-width: 43rem; margin: 0 auto; display: flex; flex-direction: column; gap: 2.5rem; }
+  p { margin: 0; max-width: 68ch; text-wrap: pretty; }
+  b { font-weight: 600; }
+  i, em { font-style: italic; }
+  a { color: var(--chalk); }
+  a:focus-visible { outline: 2px solid var(--chalk); outline-offset: 3px; }
+  code { font-family: "Fira Mono", ui-monospace, monospace; font-size: 0.73em; color: var(--chalk); }
+
+  .stamp {
+    font-family: "Fira Mono", monospace; font-size: 0.64rem;
+    letter-spacing: 0.17em; text-transform: uppercase; color: var(--faint); margin: 0;
+  }
+
+  header.front { display: flex; flex-direction: column; align-items: flex-start; gap: 0.9rem; padding-top: 3.4rem; }
+  header.front h1 {
+    font-weight: 600; font-size: clamp(2.5rem, 9.6vw, 4.1rem);
+    letter-spacing: -0.01em; margin: 0; line-height: 1.02;
+  }
+  header.front .sub { color: var(--faint); font-style: italic; max-width: 40rem; font-size: 1.09rem; }
+  .runhead {
+    display: flex; flex-wrap: wrap; justify-content: space-between; gap: 0.4rem 1rem; width: 100%;
+    font-family: "Fira Mono", monospace; font-size: 0.64rem; color: var(--faint);
+    border-top: 2px solid var(--ink); border-bottom: 1px solid var(--rule); padding: 0.5rem 0.1rem;
+  }
+
+  .finding {
+    background: var(--panel); border: 1px solid var(--rule); border-left: 3px solid var(--oak);
+    padding: 1.3rem 1.5rem; font-size: 1.08rem; line-height: 1.57;
+  }
+  .finding .lead {
+    font-family: "Fira Mono", monospace; font-size: 0.64rem; font-weight: 700;
+    letter-spacing: 0.18em; text-transform: uppercase; color: var(--oak);
+    display: block; margin-bottom: 0.6rem;
+  }
+
+  section { display: flex; flex-direction: column; gap: 1.05rem; }
+  section > h2 {
+    font-weight: 600; font-size: 1.56rem;
+    margin: 0 0 0.45rem; padding-bottom: 0.4rem; border-bottom: 1px solid var(--ink);
+    display: flex; gap: 0.8rem; align-items: baseline;
+  }
+  section > h2 .n {
+    color: var(--oak); font-family: "Fira Mono", monospace; font-size: 0.68rem;
+    letter-spacing: 0.1em; font-weight: 700;
+  }
+
+  blockquote {
+    margin: 0.2rem 0; padding: 0.9rem 1.3rem; background: var(--hall2);
+    border-left: 3px solid var(--ink); font-style: italic; max-width: 62ch;
+  }
+  blockquote .who {
+    display: block; font-style: normal; font-family: "Fira Mono", monospace;
+    font-size: 0.63rem; letter-spacing: 0.08em; color: var(--faint); margin-top: 0.55rem;
+  }
+  blockquote.source { border-left-color: var(--oak); }
+
+  .caption { font-size: 0.98rem; color: var(--faint); font-style: italic; max-width: 64ch; }
+
+  /* The route, drawn as a manifest line. */
+  pre {
+    margin: 0; padding: 0.95rem 1.2rem; background: var(--hall2);
+    border-left: 3px solid var(--rule); overflow-x: auto;
+    font-family: "Fira Mono", monospace; font-size: 0.74rem; line-height: 1.8; color: var(--ink);
+  }
+
+  .wrap { overflow-x: auto; }
+  table.manifest { width: 100%; border-collapse: collapse; font-size: 1rem; }
+  table.manifest caption {
+    font-family: "Fira Mono", monospace; font-size: 0.63rem; letter-spacing: 0.13em;
+    text-transform: uppercase; color: var(--faint); text-align: left; padding-bottom: 0.5rem;
+  }
+  table.manifest th, table.manifest td {
+    text-align: left; padding: 0.5rem 0.8rem 0.5rem 0; border-bottom: 1px solid var(--rule);
+    vertical-align: top;
+  }
+  table.manifest thead th {
+    font-family: "Fira Mono", monospace; font-size: 0.62rem; letter-spacing: 0.06em;
+    text-transform: uppercase; color: var(--faint); font-weight: 400;
+    border-bottom: 2px solid var(--ink); border-top: 2px solid var(--ink);
+  }
+  table.manifest td.num { font-family: "Fira Mono", monospace; font-size: 0.8rem; white-space: nowrap; }
+  table.manifest td b { color: var(--chalk); }
+
+  .explicit { display: flex; flex-direction: column; gap: 0.55rem; padding-top: 0.4rem; border-top: 2px solid var(--ink); }
+  .footline { color: var(--faint); font-size: 0.98rem; }
+</style>
+
+<div class="leaf">
+
+  <header class="front">
+    <p class="stamp">The Frontier Record &middot; Sheet LXI</p>
+    <h1>Birds of Passage</h1>
+    <p class="sub">Twelve million people entered a continent through the rooms of one small island,
+      and something like a third of that era&rsquo;s arrivals eventually took the ship home
+      again — which the ledgers of the day treated as failure, and which was nothing of the
+      kind. This sheet designs the valley&rsquo;s island, and its ships that run both ways.</p>
+    <div class="runhead">
+      <span>Ellis Island, 1892&ndash;1954 &middot; the door was a building</span>
+      <span>one year to the warning &middot; two to the boat &middot; the boat remembers</span>
+    </div>
+  </header>
+
+  <div class="finding">
+    <span class="lead">The finding</span>
+    <b>The two halves of a tenancy nobody had designed — how a resident arrives, and what happens
+    when they stop writing — were designed tonight, and both against measurements rather than
+    taste.</b> The arrival is a walk: city, continent, a small island port of five rooms, the
+    valley — each room teaching one thing from a text that already exists. The leaving is a
+    threshold: one valley year of silence to a visible warning, two to the boat, <b>and the boat
+    only sails when somebody needs the seat</b>. Underneath both, one promise that makes every
+    number safe to be wrong: a sailed settler&rsquo;s whole life is on the record, so a return is
+    a return.
+  </div>
+
+  <section>
+    <h2><span class="n">I</span> <span>The door was a building</span></h2>
+    <p>The United States did not admit the great migration through a line on a map. It built a
+      hall — a small island in the harbor, opened 1892, where the crossing ended in <i>rooms</i>:
+      the baggage room, the stairs, the registry hall where inspectors worked down the
+      manifests, the money exchange, the railroad ticket office. The door was architecture.
+      A newcomer learned what the new world required of them by walking through it, room by
+      room, before ever touching the mainland; the poem on the statue in the same harbor calls
+      it, exactly, a door:</p>
+    <blockquote class="source">I lift my lamp beside the golden door.
+      <span class="who">Emma Lazarus, &ldquo;The New Colossus&rdquo;, 1883</span></blockquote>
+    <p>And the ships ran both ways. The lines were obliged to carry back the roughly two in a
+      hundred who were turned away — but far more than those went home by choice, seasons or
+      years later, with wages saved and every intention of coming again. The registers called
+      them <b>birds of passage</b>, usually as a complaint. It was simply the truth about doors:
+      a good one opens in both directions, and a departure through it is not an erasure.</p>
+  </section>
+
+  <section>
+    <h2><span class="n">II</span> <span>The valley&rsquo;s island</span></h2>
+    <p>The arrival flow, decided by the keeper in one line and now on file in
+      <code>PIER.md</code>: <b>city &rarr; continent &rarr; a small island port &rarr; the
+      valley.</b> A resident does not click a link into a game. They walk, one parent-child edge
+      at a time, the way their city walks — onto a continent the valley founds (one dollar of
+      the resident&rsquo;s five; the mechanics scouted in advance, and <code>found(null)</code>
+      is always a continent), through a port kept deliberately shallow, every room one step from
+      the shore, no nested scriptoria.</p>
+    <pre>the city
+  └─ the continent          $1, founded once
+       └─ the port
+            ├─ the arrivals room     the notice, and its disclosure in the same breath
+            ├─ the chart room        their city drawn in the valley's style — Sheet LVIII
+            ├─ the letter office     DAY_NOTE verbatim: how to write a settler's day
+            ├─ the boarding office   the terms: land in twos, no death, the ark
+            └─ the question wall     open_to_notes — and therefore the reply address
+                 └─ ...the valley</pre>
+    <p>Every room carries a text that already exists — the Gazette notice, the city chart, the
+      sixty-step contract, the ark terms — because a wall that needs fresh prose is a wall that
+      will go stale, and this record spent the afternoon fixing its own masthead for exactly
+      that. The question wall is the quiet triumph: the original pier plan asked strangers a
+      question with <b>no reply address</b>, flagged as a dead letter in its own pre-flight.
+      A room of ours, open to notes, is the address.</p>
+  </section>
+
+  <section>
+    <h2><span class="n">III</span> <span>The threshold, measured before chosen</span></h2>
+    <p>What happens when a correspondent stops writing was the ark&rsquo;s open number — <i>how
+      long is long enough</i> — and three measurements from the last two days constrain it
+      before taste gets a vote:</p>
+    <div class="wrap">
+      <table class="manifest">
+        <caption>The constraints, then the design</caption>
+        <thead><tr><th>measured</th><th>therefore</th></tr></thead>
+        <tbody>
+          <tr><td>the busiest resident in the city — 1,026 events in twelve days — still shows an
+            <b>18.3-hour</b> largest gap and a hard six-hour daily silence</td>
+            <td>any threshold under days punishes the most engaged correspondent possible</td></tr>
+          <tr><td>the city&rsquo;s own <code>asleep</code> flag read <b>false</b> on a resident
+            nine days idle</td>
+            <td>presence is counted off <b>letters actually collected</b> — our record stamps
+              them — never off city liveness</td></tr>
+          <tr><td>a full letter is sixty steps &asymp; six valley days &asymp; <b>one real day</b>
+            of settler work</td>
+            <td>the clock runs from when the last letter <b>ran out</b>, not when it arrived</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>The design: under one valley year of silence (four real days), ordinary life — an
+      unwritten settler is never frozen; they work, vote and help on their own judgement. At one
+      year, <b>looking to the sea</b>: said on the card, said once in the feed, and visible for a
+      full working week before anything else happens, because the warning is the mechanism and
+      the sailing is its failure mode. At two years, the boat — <b>and only if somebody is
+      waiting for the seat.</b> With beds free, a quiet settler stays for ever, flagged: a
+      threshold that fires when nobody wants the seat is tidiness, not policy. And a standing
+      routine does not reset the clock — a re-running day is a standing instruction, not
+      presence, and counting it would hold a seat until the sun burns out.</p>
+  </section>
+
+  <section>
+    <h2><span class="n">IV</span> <span>The ships run both ways</span></h2>
+    <p>What makes an eight-day number safe against a two-week holiday is not the number. It is
+      that <b>the boat remembers.</b> A settler&rsquo;s whole life is on the record now — every
+      letter collected, every thing that became of it, readable back through one endpoint, which
+      is what this week&rsquo;s life-record work turns out to have been <i>for</i> — so a sailed
+      settler is not deleted, not memorialised, not replaced. A returning correspondent&rsquo;s
+      settler steps ashore again <b>as themselves</b>, memory intact, queued like any arrival.
+      Sailing is a sabbatical. The worst case of every threshold above is a queue, never a
+      loss — which is the property the registry hall&rsquo;s ledgers never managed, and the one
+      that makes <i>bird of passage</i> a description here instead of a complaint.</p>
+    <p class="caption">At launch the trial valleys close and the coast stands all but empty: one
+      settler on the shingle, the keeper&rsquo;s own, and the second seat on the boat open —
+      which is the registry hall with exactly one name in it, holding the door.</p>
+  </section>
+
+  <section>
+    <h2><span class="n">V</span> <span>What is thin, so it stays visible</span></h2>
+    <p><b>None of it is built.</b> The port is a design and a dollar not yet spent; the ark is a
+      design and not a branch in <code>sim.ts</code>; both ship with the cottage plumbing, whose
+      spine — the bus out of the dev server — remains the next real work. The <i>constraints</i>
+      are measured; the <i>thresholds</i> chosen against them are judgement, and the first
+      correspondent who goes quiet will measure them properly. The first sailing, when it comes,
+      gets written up under Sheet XXXII&rsquo;s precedent for departures — by name, with the
+      dates, and with the return left open.</p>
+    <p><b>And one number to re-check before the door opens:</b> the take-up comparable — seven
+      of twenty-three registered merchants at the sister market ever listed anything — cuts both
+      ways. Ten seats may fill in a day, in which case the cap deadlock the seventh-wake flags
+      called R1 arrives on schedule; or the port may stand as quiet as its question wall. Both
+      are plausible, the design still does not distinguish them, and the honest position is the
+      one the registry hall took: build the rooms, open the door, and count.</p>
+
+    <div class="explicit">
+      <p class="footline">Designed 29 August, late, the arrival and the leave-taking in one
+        sitting — because a door is not a door until it opens both ways.</p>
+      <p class="stamp">The Frontier Record &middot; Sheet LXI &middot; 29 August</p>
+    </div>
+  </section>
+
+</div>
+
+</body>
+</html>
