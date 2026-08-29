@@ -1,0 +1,326 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>*{margin:0;padding:0}img{max-width:100%}</style>
+</head>
+<body>
+<title>The Road to Jericho</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;1,400&family=Fira+Mono:wght@400;700&display=swap">
+
+<style>
+  /*
+   * A road in the sun. Limestone, dust, and the one red of the rubricator — the page is the
+   * stretch between Jerusalem and Jericho at noon in one theme and after dark in the other,
+   * because the parable is set on a road famous for what happened to people alone on it.
+   */
+  :root {
+    --dust:   #EFE8D6;
+    --dust2:  #E4DAC0;
+    --panel:  #F7F1E0;
+    --ink:    #1B150E;
+    --faint:  #74674E;
+    --rule:   #C7B692;
+    --rubric: #A02F16;
+    --gold:   #7A5A28;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --dust:  #110E08; --dust2: #191408; --panel: #1D1810;
+      --ink:   #EDE4CE; --faint: #9B8D72; --rule:  #3C3320;
+      --rubric:#E4694A; --gold:  #CDA355;
+    }
+  }
+  :root[data-theme="dark"] {
+    --dust:  #110E08; --dust2: #191408; --panel: #1D1810;
+    --ink:   #EDE4CE; --faint: #9B8D72; --rule:  #3C3320;
+    --rubric:#E4694A; --gold:  #CDA355;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    background: var(--dust); color: var(--ink);
+    font-family: "Crimson Pro", Georgia, serif;
+    font-size: 1.17rem; line-height: 1.6;
+    margin: 0; padding: 0 1.2rem 6rem;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .leaf { max-width: 43rem; margin: 0 auto; display: flex; flex-direction: column; gap: 2.5rem; }
+  p { margin: 0; max-width: 68ch; text-wrap: pretty; }
+  b { font-weight: 600; }
+  i, em { font-style: italic; }
+  a { color: var(--rubric); }
+  a:focus-visible { outline: 2px solid var(--rubric); outline-offset: 3px; }
+  code { font-family: "Fira Mono", ui-monospace, monospace; font-size: 0.74em; color: var(--rubric); }
+
+  .stamp {
+    font-family: "Fira Mono", monospace; font-size: 0.64rem;
+    letter-spacing: 0.17em; text-transform: uppercase; color: var(--faint); margin: 0;
+  }
+
+  header.front { display: flex; flex-direction: column; align-items: flex-start; gap: 0.9rem; padding-top: 3.4rem; }
+  header.front h1 {
+    font-weight: 600; font-size: clamp(2.5rem, 9.8vw, 4.3rem);
+    letter-spacing: -0.015em; margin: 0; line-height: 1.0;
+  }
+  header.front .sub { color: var(--faint); font-style: italic; max-width: 40rem; font-size: 1.1rem; }
+  .runhead {
+    display: flex; flex-wrap: wrap; justify-content: space-between; gap: 0.4rem 1rem; width: 100%;
+    font-family: "Fira Mono", monospace; font-size: 0.64rem; color: var(--faint);
+    border-top: 2px solid var(--ink); border-bottom: 1px solid var(--rule); padding: 0.5rem 0.1rem;
+  }
+
+  .finding {
+    background: var(--panel); border: 1px solid var(--rule); border-left: 3px solid var(--rubric);
+    padding: 1.3rem 1.5rem; font-size: 1.09rem; line-height: 1.57;
+  }
+  .finding .lead {
+    font-family: "Fira Mono", monospace; font-size: 0.64rem; font-weight: 700;
+    letter-spacing: 0.18em; text-transform: uppercase; color: var(--rubric);
+    display: block; margin-bottom: 0.6rem;
+  }
+
+  section { display: flex; flex-direction: column; gap: 1.05rem; }
+  section > h2 {
+    font-weight: 600; font-size: 1.6rem;
+    margin: 0 0 0.45rem; padding-bottom: 0.4rem; border-bottom: 1px solid var(--ink);
+    display: flex; gap: 0.8rem; align-items: baseline;
+  }
+  section > h2 .n {
+    color: var(--rubric); font-family: "Fira Mono", monospace; font-size: 0.68rem;
+    letter-spacing: 0.1em; font-weight: 700;
+  }
+
+  blockquote {
+    margin: 0.2rem 0; padding: 0.9rem 1.3rem; background: var(--dust2);
+    border-left: 3px solid var(--ink); font-style: italic; max-width: 62ch;
+  }
+  blockquote .who {
+    display: block; font-style: normal; font-family: "Fira Mono", monospace;
+    font-size: 0.63rem; letter-spacing: 0.08em; color: var(--faint); margin-top: 0.55rem;
+  }
+  blockquote.source { border-left-color: var(--rubric); }
+
+  .caption { font-size: 0.99rem; color: var(--faint); font-style: italic; max-width: 64ch; }
+
+  .wrap { overflow-x: auto; }
+  table.plate { width: 100%; border-collapse: collapse; font-size: 1rem; }
+  table.plate caption {
+    font-family: "Fira Mono", monospace; font-size: 0.63rem; letter-spacing: 0.13em;
+    text-transform: uppercase; color: var(--faint); text-align: left; padding-bottom: 0.5rem;
+  }
+  table.plate th, table.plate td {
+    text-align: left; padding: 0.5rem 0.8rem 0.5rem 0; border-bottom: 1px solid var(--rule);
+    vertical-align: top;
+  }
+  table.plate thead th {
+    font-family: "Fira Mono", monospace; font-size: 0.62rem; letter-spacing: 0.06em;
+    text-transform: uppercase; color: var(--faint); font-weight: 400;
+    border-bottom: 2px solid var(--ink); border-top: 2px solid var(--ink);
+  }
+  table.plate td.num { font-family: "Fira Mono", monospace; font-size: 0.82rem; white-space: nowrap; }
+  table.plate td b { color: var(--rubric); }
+
+  pre {
+    margin: 0; padding: 0.95rem 1.2rem; background: var(--dust2);
+    border-left: 3px solid var(--rule); overflow-x: auto;
+    font-family: "Fira Mono", monospace; font-size: 0.74rem; line-height: 1.75; color: var(--ink);
+  }
+
+  .explicit { display: flex; flex-direction: column; gap: 0.55rem; padding-top: 0.4rem; border-top: 2px solid var(--ink); }
+  .footline { color: var(--faint); font-size: 0.98rem; }
+</style>
+
+<div class="leaf">
+
+  <header class="front">
+    <p class="stamp">The Frontier Record &middot; Sheet LVI</p>
+    <h1>The Road to Jericho</h1>
+    <p class="sub">In 1973 two psychologists put a slumped man in an alley at Princeton and sent
+      seminary students past him, one at a time, to give a talk. Some had been told they were
+      late. Some had been assigned, as their subject, the parable of the Good Samaritan.</p>
+    <div class="runhead">
+      <span>Darley &amp; Batson, 1973 &middot; From Jerusalem to Jericho</span>
+      <span>whether you stop is who you are, minus the hurry</span>
+    </div>
+  </header>
+
+  <div class="finding">
+    <span class="lead">The finding</span>
+    <b>A settler on a filed day never heard a neighbour at all.</b> Contracts, sickbeds and
+    favours lived on the self-directed path only, so a settler carrying out a plan walked from
+    step to step without once being asked whether they would stop — not unwilling, <b>unasked</b>.
+    With days capped at ten steps that was an afternoon of deafness. This sheet raises the cap to
+    a six-day week, which would have made it a policy: the longer the letter, the more its settler
+    became a hermit walking through a village. So the question lives in one place now, both paths
+    ask it, and what decides the answer is the settler&rsquo;s own sheet — which is, almost
+    exactly, what the experiment found.
+  </div>
+
+  <section>
+    <h2><span class="n">I</span> <span>From Jerusalem to Jericho</span></h2>
+    <p>The parable is set on a road, and the road matters: seventeen miles of descent through
+      desert, notorious for robbery, where a man lay half dead and a priest and a Levite —
+      professionally religious men, men with somewhere to be — <i>passed by on the other side</i>.
+      The one who stopped was the foreigner.</p>
+    <p>John Darley and Daniel Batson took the parable at its word and built it. Sixty-seven
+      students of Princeton Theological Seminary were each sent across campus to record a short
+      talk, and on the way each passed a man slumped in an alley, coughing and groaning. Two
+      things varied: what the talk was about — for some of them, the parable of the Good Samaritan
+      itself — and how much of a hurry they were told they were in.</p>
+    <div class="wrap">
+      <table class="plate">
+        <caption>Who stopped — Darley &amp; Batson, JPSP 27(1), 1973</caption>
+        <thead><tr><th>condition</th><th class="num">offered help</th></tr></thead>
+        <tbody>
+          <tr><td>low hurry — &ldquo;you have some extra time&rdquo;</td><td class="num"><b>63%</b></td></tr>
+          <tr><td>medium hurry</td><td class="num">45%</td></tr>
+          <tr><td>high hurry — &ldquo;you&rsquo;re late; they were expecting you&rdquo;</td><td class="num"><b>10%</b></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>The subject of the talk made so little difference the paper could not tell it from chance.
+      Several students on their way to speak about the Good Samaritan, in the authors&rsquo; own
+      words, <i>&ldquo;literally stepped over the victim as he hurried on his way&rdquo;</i>.
+      <b>Whether you stop is not what you believe. It is what it costs you at that moment to put
+      your errand down.</b></p>
+    <p class="caption">Which is a sentence about a mechanic, whether or not it meant to be.</p>
+  </section>
+
+  <section>
+    <h2><span class="n">II</span> <span>The hermit in the village</span></h2>
+    <p>This valley has had the helping question for a long time, and it is a good one. Whether a
+      settler answers a call for help is priced out of who they are: altruism, how badly the thing
+      is needed, what they think of the asker, the payment against their greed, their standing in
+      the settlement&rsquo;s ledger, the walk. Whether somebody goes to sit with a neighbour on
+      their back is altruism, bond, practice at healing, distance. None of that is new.</p>
+    <p><b>All of it lived on one path.</b> The question was asked inside `ownChoice` — the branch
+      a settler reaches when nobody is telling them anything — and a settler on a filed day never
+      reaches it. They finish a step, take the next, finish that, take the next. The plan was ten
+      steps, so the deafness lasted an afternoon and nobody noticed, in exactly the way nobody
+      notices a seminarian with three minutes in hand.</p>
+    <p>Then the cap moved. The ten was never a design decision — it was a token budget from when
+      plans came out of a small model on this machine&rsquo;s own GPU, 260 tokens at a time. The
+      days are written by the settler&rsquo;s own keeper now, on an engine that does not run out
+      of breath at ten steps, and the keeper asked the obvious question: why not file a week?
+      Measured off 3,838 lines of the settlers&rsquo; own record, a valley day is six to eight
+      completed tasks, so a six-day week is about fifty. <b>The cap is sixty — and at sixty, an
+      unasked question becomes a constitution.</b> A settler on a week-long letter would pass
+      every slumped man on the road for six days, on their way to give the talk.</p>
+  </section>
+
+  <section>
+    <h2><span class="n">III</span> <span>One question, asked from both roads</span></h2>
+    <p>The care block and the ask loop — eleven thousand characters of tuned judgement — are cut
+      whole out of `ownChoice` into one function, and both paths ask it:</p>
+    <pre>function neighbourCall(sim, n, committed = 0): Task | null
+
+// choosing their own errand — nothing to put down:
+const called = neighbourCall(sim, n);
+
+// mid-plan, between steps — offering what the day is worth to them:
+const call = neighbourCall(sim, n, dutyHeld(n));</pre>
+    <p>Nothing inside the question changed: the same worth, the same ledger standing, the same
+      two distances the notice board keeps apart. What changed is that a settler mid-plan now
+      hears it — at the boundary between one step and the next, which is the moment a person
+      straightens their back, and never mid-task. And every one of the three doors pays the
+      commitment: sitting with somebody clears <code>0.55 + committed</code>, handing over an
+      armful clears <code>0.5 + committed</code>, and being <i>hired</i> clears
+      <code>0.9 + committed</code> — dearest, because the work is going and getting the thing,
+      an afternoon rather than an armful.</p>
+    <p><b>The plan is never touched.</b> It waits exactly as filed while the diversion runs, and
+      the day resumes at the step it stopped at. The record shows the seam: <i>&ldquo;put the day
+      down for a moment — taking food to Idris&rdquo;</i> lands in the settler&rsquo;s own life,
+      so a correspondent reads where their week paused and why. A letter is a week of intentions,
+      not a straitjacket.</p>
+  </section>
+
+  <section>
+    <h2><span class="n">IV</span> <span>The hurry, on the character sheet</span></h2>
+    <p>What Darley and Batson manipulated from outside, a settler carries as a trait.
+      <b>`duty`</b> joins altruism, industry and greed on the sheet — how much being told carries;
+      what a letter from whoever keeps you weighs against a neighbour shouting — rolled once from
+      the settler&rsquo;s own seed like everything else about them:</p>
+    <pre>dutyHeld(n) = duty &times; 0.45 + industry &times; 0.15     // what the plan is worth to them
+duty: 0.2 + roll &times; 0.8                          // floored, deliberately</pre>
+    <p>The floor is a design statement: nought duty is a settler no letter can steer, and a
+      cottage whose settler ignores every day filed for them is a room with a stranger in it. The
+      range that falls out runs from about 0.09 to 0.6 — a low-duty settler puts the day down for
+      anything they would have gone to anyway; a high-duty one holds the plan against all but
+      somebody on their back close by. <b>Nobody is unreachable and nobody is free</b>, which is
+      the two failure modes of the experiment held off at once.</p>
+    <p>Altruism and greed stay out of the commitment on purpose: they are already inside the
+      worth, and counting them twice would make the generous divert roughly twice as often as
+      their sheet says. That is arithmetic rather than a run — it is also the exact shape of the
+      wage fault, a thing paid twice under two names, and this record has been caught by that
+      shape enough times to flinch at it.</p>
+    <p>The sheet is visible from both sides. The card grew a <b>duty</b> bar beside kindness, and
+      the state file a correspondent writes against already carried the traits — so whoever files
+      a week can read, before they write it, whether they are steering a Samaritan or a priest
+      with an appointment. The first settler rolled under the new schema: Mara, duty 0.48,
+      commitment 0.33. She would stop for most things. Her keeper should plan accordingly.</p>
+  </section>
+
+  <section>
+    <h2><span class="n">V</span> <span>Sixty steps, honestly accounted</span></h2>
+    <p>The raise itself is the small half, and it is only safe because of what was mended first:
+      needs run above the brain branch, so a long plan cannot starve anybody; bare hands are seen
+      to at the top of the agent arm; every refusal names what stood in the way; the clock is
+      paced to the wall; and now the boundary keeps a settler a neighbour. Sixty steps of plan,
+      twelve of branch — and the record&rsquo;s account of a collected letter reports
+      <code>honoured</code> beside what was filed, because the gap between the two belongs on the
+      record rather than in a surprise. The caps are one number in two files, and the check fails
+      the build the day they disagree.</p>
+    <div class="wrap">
+      <table class="plate">
+        <caption>The day, before and after</caption>
+        <thead><tr><th>&nbsp;</th><th>ten steps</th><th>sixty steps</th></tr></thead>
+        <tbody>
+          <tr><td>holds</td><td class="num">~1.2 valley days</td><td class="num"><b>a six-day week</b></td></tr>
+          <tr><td>written by</td><td>a 260-token local model</td><td>the settler&rsquo;s own keeper</td></tr>
+          <tr><td>a neighbour mid-plan</td><td>unheard for an afternoon</td><td><b>heard at every step boundary</b></td></tr>
+          <tr><td>what decides</td><td>&mdash;</td><td>worth against <code>dutyHeld</code></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="n">VI</span> <span>What is thin, so it stays visible</span></h2>
+    <p><b>No diversion has yet been observed firing.</b> The mechanism is held by twenty-five
+      checks and the 12,000-tick valley ran unchanged after eleven thousand characters moved —
+      which proves the extraction clean, not the interruption right. A staged ask against a
+      settler mid-week is the next measurement, and the honest prediction is written down first:
+      Mara at commitment 0.33 should divert for a close, well-paid or well-liked ask and hold her
+      day against a marginal one. If she diverts for everything or nothing, the weights are
+      wrong.</p>
+    <p><b>The 0.09&ndash;0.6 range is arithmetic, not a distribution</b> — the trait rolls are
+      uniform and the range is the formula at its ends. What fraction of real shouts clears a real
+      settler&rsquo;s bar, nobody knows yet; that number only exists once a village of sheets has
+      lived together for a while.</p>
+    <p><b>And one thing learned sideways:</b> editing the simulation under a live page leaves the
+      hot-reload module graph in a state where the tab can freeze outright. The valley that found
+      it froze at tick 24 and had to be reloaded. A live service does not hot-reload under its
+      tenants, which is one more argument for the host this record already owes.</p>
+    <blockquote class="source">And who is my neighbour?
+      <span class="who">The lawyer&rsquo;s question, Luke 10:29 — the parable is the answer</span></blockquote>
+    <p class="caption">The experiment&rsquo;s answer was ruder: whoever you have time for. The
+      valley&rsquo;s is now on every settler&rsquo;s sheet, one number wide, and a correspondent
+      can read it before they decide how much hurry to put in the envelope.</p>
+
+    <div class="explicit">
+      <p class="footline">Written 29 August, the day the cap moved from an afternoon to a week —
+        and the question moved with it, which was the whole point.</p>
+      <p class="stamp">The Frontier Record &middot; Sheet LVI &middot; 29 August</p>
+    </div>
+  </section>
+
+</div>
+
+</body>
+</html>
