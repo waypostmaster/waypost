@@ -1,0 +1,475 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>*{margin:0;padding:0}img{max-width:100%}</style>
+</head>
+<body>
+<title>A Canticle for Leibowitz</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cardo:ital,wght@0,400;0,700;1,400&family=IM+Fell+English+SC&display=swap">
+
+<style>
+  /*
+   * A codex. Not a printed book — a copied one: vellum, an iron-gall hand, and the two inks a
+   * scriptorium actually kept, red lead for the rubrics and lapis for the versals, with the gold
+   * spent once. Cardo is the medievalist's text face and IM Fell English SC is the small-cap
+   * hand for the running heads. The annals are set the way annals were set: the year in the
+   * margin, the event beside it, one line each, no matter what happened that year.
+   *
+   * Dark mode is the same codex by candle, because that is the only light it was ever read by.
+   */
+  :root {
+    --vellum:  #EDE7D8;
+    --vellum2: #E2DAC6;
+    --panel:   #F4EFE3;
+    --ink:     #2A2318;
+    --faint:   #6F654F;
+    --rule:    #C6BA9C;
+    --rubric:  #A32B23;
+    --lapis:   #2C4A7C;
+    --gold:    #977A28;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --vellum:  #15130E;
+      --vellum2: #1D1A13;
+      --panel:   #201D15;
+      --ink:     #E4DAC2;
+      --faint:   #968B6C;
+      --rule:    #3A3325;
+      --rubric:  #D9695C;
+      --lapis:   #8FAAD8;
+      --gold:    #C9A64E;
+    }
+  }
+  :root[data-theme="dark"] {
+    --vellum:  #15130E;
+    --vellum2: #1D1A13;
+    --panel:   #201D15;
+    --ink:     #E4DAC2;
+    --faint:   #968B6C;
+    --rule:    #3A3325;
+    --rubric:  #D9695C;
+    --lapis:   #8FAAD8;
+    --gold:    #C9A64E;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    background: var(--vellum);
+    color: var(--ink);
+    font-family: Cardo, "Palatino Linotype", Palatino, Georgia, serif;
+    font-size: 1.18rem;
+    line-height: 1.68;
+    margin: 0;
+    padding: 0 1.2rem 6rem;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .codex { max-width: 41rem; margin: 0 auto; display: flex; flex-direction: column; gap: 2.7rem; }
+  p { margin: 0; max-width: 66ch; }
+  b { font-weight: 700; }
+  i, em { font-style: italic; }
+  a { color: var(--rubric); }
+  a:focus-visible { outline: 2px solid var(--rubric); outline-offset: 3px; }
+
+  code {
+    font-family: "Courier New", ui-monospace, monospace;
+    font-size: 0.82em;
+    color: var(--rubric);
+  }
+
+  .stamp {
+    font-family: "IM Fell English SC", Cardo, serif;
+    font-size: 0.86rem; letter-spacing: 0.16em;
+    color: var(--faint); margin: 0;
+  }
+
+  /* ── incipit ────────────────────────────────────────────────────────────── */
+  header.incipit {
+    display: flex; flex-direction: column; align-items: center; text-align: center;
+    gap: 1.05rem; padding-top: 3.4rem;
+  }
+  header.incipit h1 {
+    font-family: "IM Fell English SC", Cardo, serif;
+    font-weight: 400; font-size: clamp(2.1rem, 8vw, 3.1rem);
+    letter-spacing: 0.02em; margin: 0; line-height: 1.08;
+    color: var(--rubric); text-wrap: balance;
+  }
+  header.incipit .sub {
+    color: var(--faint); font-style: italic; max-width: 36rem; font-size: 1.03rem;
+    text-wrap: pretty;
+  }
+  .runhead {
+    display: flex; flex-wrap: wrap; justify-content: space-between; gap: 0.4rem 1rem; width: 100%;
+    font-family: "IM Fell English SC", Cardo, serif;
+    font-size: 0.82rem; letter-spacing: 0.1em; color: var(--faint);
+    border-top: 2px solid var(--rule); border-bottom: 1px solid var(--rule);
+    padding: 0.5rem 0.1rem;
+  }
+
+  .colophon-top {
+    background: var(--panel); border: 1px solid var(--rule);
+    border-left: 3px solid var(--rubric);
+    padding: 1.35rem 1.55rem; font-size: 1.04rem; line-height: 1.62;
+  }
+  .colophon-top .lead {
+    font-family: "IM Fell English SC", Cardo, serif;
+    font-size: 0.86rem; letter-spacing: 0.16em; color: var(--rubric);
+    display: block; margin-bottom: 0.6rem;
+  }
+
+  /* ── the three books ────────────────────────────────────────────────────── */
+  section { display: flex; flex-direction: column; gap: 1.1rem; }
+
+  .book-head { display: flex; flex-direction: column; gap: 0.25rem; margin-bottom: 0.5rem;
+    padding-bottom: 0.55rem; border-bottom: 1px solid var(--rule); }
+  .book-head .liber {
+    font-family: "IM Fell English SC", Cardo, serif;
+    font-size: 0.84rem; letter-spacing: 0.18em; color: var(--faint);
+  }
+  .book-head h2 {
+    font-family: "IM Fell English SC", Cardo, serif;
+    font-weight: 400; font-size: 1.5rem; letter-spacing: 0.02em;
+    margin: 0; color: var(--rubric);
+  }
+  .book-head .span { font-style: italic; color: var(--faint); font-size: 0.98rem; }
+
+  section > h2.plain {
+    font-family: "IM Fell English SC", Cardo, serif;
+    font-weight: 400; font-size: 1.35rem; letter-spacing: 0.02em;
+    margin: 0 0 0.5rem; padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--rule); color: var(--rubric);
+  }
+
+  /* The versal: a scriptorium's drop cap, in lapis, the way the second ink was actually spent. */
+  p.versal::first-letter {
+    font-family: "IM Fell English SC", Cardo, serif;
+    float: left; font-size: 3.5em; line-height: 0.82;
+    padding: 0.06em 0.12em 0 0; color: var(--lapis);
+  }
+
+  /* ── the annal: year in the margin, event beside it ─────────────────────── */
+  .annal { display: flex; flex-direction: column; gap: 0; margin: 0.3rem 0;
+    border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); }
+  .annal .row {
+    display: grid; grid-template-columns: 4.6rem 1fr; gap: 0 1rem;
+    padding: 0.42rem 0; align-items: baseline;
+  }
+  .annal .row + .row { border-top: 1px solid var(--rule); }
+  .annal .t {
+    font-family: "Courier New", ui-monospace, monospace;
+    font-size: 0.82rem; color: var(--faint); text-align: right;
+    font-variant-numeric: tabular-nums;
+  }
+  .annal .e { font-size: 1.02rem; }
+  .annal .row.mark .t { color: var(--rubric); font-weight: 700; }
+  .annal .row.mark .e { color: var(--ink); }
+  .annal .e .said { font-style: italic; color: var(--faint); }
+
+  blockquote {
+    margin: 0.3rem 0; padding: 0.85rem 1.3rem;
+    background: var(--vellum2); border-left: 2px solid var(--lapis);
+    font-style: italic; max-width: 60ch;
+  }
+  blockquote .who {
+    display: block; font-style: normal;
+    font-family: "IM Fell English SC", Cardo, serif;
+    font-size: 0.8rem; letter-spacing: 0.12em; color: var(--faint); margin-top: 0.5rem;
+  }
+
+  .exhibit {
+    font-family: "Courier New", ui-monospace, monospace;
+    font-size: 0.79rem; line-height: 1.58;
+    background: var(--vellum2); border: 1px solid var(--rule);
+    padding: 0.95rem 1.15rem; overflow-x: auto; white-space: pre;
+  }
+  .exhibit .tag { color: var(--rubric); font-weight: 700; }
+  .exhibit code { color: inherit; font-size: 1em; }
+
+  .caption { font-size: 0.94rem; color: var(--faint); font-style: italic; max-width: 62ch; }
+
+  .wrap { overflow-x: auto; }
+  table.ledger { width: 100%; border-collapse: collapse; font-size: 0.98rem;
+    font-variant-numeric: tabular-nums; }
+  table.ledger caption {
+    font-family: "IM Fell English SC", Cardo, serif;
+    font-size: 0.84rem; letter-spacing: 0.14em; color: var(--faint);
+    text-align: left; padding-bottom: 0.45rem;
+  }
+  table.ledger th, table.ledger td {
+    text-align: right; padding: 0.4rem 0.55rem;
+    border-bottom: 1px solid var(--rule); vertical-align: baseline;
+  }
+  table.ledger th:first-child, table.ledger td:first-child { text-align: left; padding-left: 0; }
+  table.ledger thead th {
+    font-family: "IM Fell English SC", Cardo, serif;
+    font-size: 0.82rem; letter-spacing: 0.1em; color: var(--faint);
+    font-weight: 400; border-bottom: 2px solid var(--rule);
+  }
+  table.ledger tbody th { font-weight: 400; }
+  table.ledger .note { color: var(--faint); font-style: italic; font-size: 0.9rem; }
+
+  /* The cairn: one stone per hand, and it is the only figure on this sheet drawn rather than set. */
+  .cairn { display: flex; flex-direction: column; align-items: center; gap: 0.75rem;
+    padding: 1.6rem 1rem 1.2rem; background: var(--panel); border: 1px solid var(--rule); }
+  .cairn svg { display: block; width: 12rem; height: auto; }
+  .cairn .names {
+    font-family: "IM Fell English SC", Cardo, serif;
+    font-size: 0.88rem; letter-spacing: 0.1em; color: var(--faint); text-align: center;
+  }
+
+  .fleuron { text-align: center; color: var(--rule); font-size: 1.5rem; margin: 0; letter-spacing: 0.5em; }
+
+  .explicit { display: flex; flex-direction: column; gap: 0.55rem; padding-top: 0.4rem;
+    border-top: 2px solid var(--rule); }
+  .footline { color: var(--faint); font-size: 0.95rem; }
+  .latin { font-style: italic; color: var(--gold); }
+</style>
+
+<div class="codex">
+
+  <header class="incipit">
+    <p class="stamp">The Frontier Record &middot; Sheet XXXVIII</p>
+    <h1>A Canticle for Leibowitz</h1>
+    <p class="sub">On the closing of the valley, written at tick 53,277 &mdash; twenty-seven souls, none of
+      whom has ever died, and two hundred and eighty-eight megabytes none of whom can read &mdash;
+      read through Walter M.&nbsp;Miller&nbsp;Jr., whose monks copied what they could not
+      understand and were right to.</p>
+    <div class="runhead">
+      <span>Run mtbgptmz-5q &middot; 25&ndash;28 August</span>
+      <span>257 days &middot; 3 settlements &middot; 38 sheets</span>
+    </div>
+  </header>
+
+  <div class="colophon-top">
+    <span class="lead">The valediction</span>
+    This valley is being closed so a corrected one can be opened, and what is being closed is not
+    the settlement &mdash; it is the only thing in the world that ever knew there was a settlement.
+    Twenty-seven people came ashore here and not one of them can read a line of what was written
+    about them: not the 28,618 ballots, not the 179 proposals, not the thirty-eight sheets, not
+    this one. <b>The record has never been for them.</b> It was for whoever comes next, which until
+    tonight was nobody.
+  </div>
+
+  <section>
+    <div class="book-head">
+      <span class="liber">Liber Primus</span>
+      <h2>Fiat Homo</h2>
+      <span class="span">tick 0 to 2,390 &mdash; a boat, an axe, and the end of the boat</span>
+    </div>
+    <p class="versal">Mara arrived and said she was a forester, and Idris arrived, and there was
+      nothing on the coast at all. What that age is for, in Miller, is the finding of the shelter
+      and the papers in it. What it was for here is shorter: a roof went up at tick 155, and
+      sixty-three ticks later the settlement voted against a second one.</p>
+    <div class="annal">
+      <div class="row"><span class="t">0</span><span class="e">Mara arrived, and says they are a forester.</span></div>
+      <div class="row"><span class="t">56</span><span class="e">Something to work with.</span></div>
+      <div class="row mark"><span class="t">155</span><span class="e"><b>A roof.</b> The first house on this coast. Two beds, which means somebody else can come.</span></div>
+      <div class="row mark"><span class="t">218</span><span class="e"><b>They have decided the valley is big enough.</b> The first house refused.</span></div>
+      <div class="row"><span class="t">237</span><span class="e">Tove and Idris have left the landing.</span></div>
+      <div class="row"><span class="t">306</span><span class="e">Bren and Sula have left the landing. The two settlements have traded.</span></div>
+      <div class="row mark"><span class="t">664</span><span class="e"><b>Stacked outside.</b> The first load put on the ground beside a full store.</span></div>
+      <div class="row"><span class="t">806</span><span class="e">Halla has dropped where they stood &mdash; nobody has slept in days.</span></div>
+      <div class="row"><span class="t">1,097</span><span class="e">Halla gave Mara 1 ore to be voted with. <span class="said">Somebody bought a vote.</span></span></div>
+      <div class="row"><span class="t">1,738</span><span class="e">The first winter.</span></div>
+      <div class="row"><span class="t">2,390</span><span class="e">The boat has gone to pieces at last. Whatever this place becomes, it is home now.</span></div>
+    </div>
+    <p>Two entries in that column are the whole of Sheet XXXVII, written down forty-eight thousand
+      ticks before anybody could read them. <b>Tick 664 is the fault.</b> A settlement put a load
+      of goods on the grass because there was no room under a roof, and the feed said so, in
+      English, in a line designed to be read &mdash; and it read as atmosphere. It went on saying
+      so for the rest of the world: <b>6,124 loads set down outside a full store</b>, and 1,264
+      wood destroyed at the two claims&rsquo; doors in the final segment alone.</p>
+    <p>That is what a Memorabilium is. Not a document nobody kept. A document everybody kept and
+      nobody could read.</p>
+  </section>
+
+  <div class="fleuron">&#10086;&#10086;&#10086;</div>
+
+  <section>
+    <div class="book-head">
+      <span class="liber">Liber Secundus</span>
+      <h2>Fiat Lux</h2>
+      <span class="span">tick 2,390 to 6,248 &mdash; iron, boards, coin, a hall, and nothing to eat</span>
+    </div>
+    <p class="versal">Miller's second book is the one where the light comes back and the scholar
+      arrives to find the monks have been sitting on the answer for six centuries. Here it took
+      three thousand eight hundred ticks and it went in the order the ladder demanded, which is
+      the only order it could have gone in.</p>
+    <div class="annal">
+      <div class="row"><span class="t">3,050</span><span class="e">Iron.</span></div>
+      <div class="row"><span class="t">3,787</span><span class="e">The first boards.</span></div>
+      <div class="row"><span class="t">4,364</span><span class="e">Something laid by.</span></div>
+      <div class="row"><span class="t">5,500</span><span class="e">The idea of money.</span></div>
+      <div class="row"><span class="t">5,553</span><span class="e">The first coin.</span></div>
+      <div class="row mark"><span class="t">6,217</span><span class="e"><b>Somewhere to all stand at once.</b> The hall. More than ten can live in this valley now.</span></div>
+      <div class="row mark"><span class="t">6,248</span><span class="e"><b>Nothing to eat.</b> Thirty-one ticks later.</span></div>
+    </div>
+    <p>Thirty-one ticks. They solved metal and money and a room to be together in, and then the
+      stores went to nought and the feed said so. Sheet XX had already given that its section
+      drawing &mdash; the richest stratum is the thinnest and the last, and one red band runs the
+      whole depth of the trench, and the red band is the food.</p>
+    <p>The scholar in <i>Fiat Lux</i> is told the abbey has had what he needs the whole time. Every
+      check in this repository is that scene, run nightly, against a valley that cannot attend.</p>
+  </section>
+
+  <div class="fleuron">&#10086;&#10086;&#10086;</div>
+
+  <section>
+    <div class="book-head">
+      <span class="liber">Liber Tertius</span>
+      <h2>Fiat Voluntas Tua</h2>
+      <span class="span">tick 6,248 to the last &mdash; the long age, and the decision taken elsewhere</span>
+    </div>
+    <p class="versal">Forty-six thousand ticks, which is nine tenths of the world, and almost
+      nothing in them is about survival. What the settlers asked for once they had eaten was: an
+      hour that was nobody else's, a bench on the shore out of the way of the work, a custom
+      everybody keeps, somebody to put a quarrel to, and a heap of stones over whoever we come to
+      lose.</p>
+    <div class="annal">
+      <div class="row"><span class="t">10,469</span><span class="e">An hour that was nobody else&rsquo;s.</span></div>
+      <div class="row"><span class="t">11,784</span><span class="e">There are animals here now.</span></div>
+      <div class="row"><span class="t">21,558</span><span class="e">Tove&rsquo;s claim agreed: <span class="said">somebody to put a quarrel to, so a falling-out is not for ever.</span></span></div>
+      <div class="row"><span class="t">25,397</span><span class="e">Bren&rsquo;s claim agreed: <span class="said">a custom everybody keeps, so that what one of us may do is what any of us may do.</span></span></div>
+      <div class="row mark"><span class="t">28,475</span><span class="e">Bren&rsquo;s claim agreed: <span class="said">cairns &mdash; heaps of stones on the ways between things, and over whoever we come to lose.</span></span></div>
+      <div class="row"><span class="t">37,498</span><span class="e">Maeve ashore at Bren&rsquo;s claim. The first arrival at a breakaway in the life of the game.</span></div>
+      <div class="row"><span class="t">37,687</span><span class="e">Tove&rsquo;s claim agreed to another house, 4 to 0. It was never built.</span></div>
+      <div class="row"><span class="t">38,597</span><span class="e">Bren&rsquo;s claim agreed: <span class="said">a stone wall, against wind and intruders.</span> There are no intruders.</span></div>
+      <div class="row mark"><span class="t">51,292</span><span class="e"><b>A stone on the cairn.</b> Sula put the first one. One on it, by one hand.</span></div>
+      <div class="row"><span class="t">53,277</span><span class="e">Twenty on the landing with ten roofs. Four at Tove&rsquo;s claim with one. Three at Bren&rsquo;s with none. <span class="said">The sheet is written here; the valley runs a little past it.</span></span></div>
+    </div>
+    <p>Miller's third book ends with the second Deluge, launched by people the abbey cannot reach,
+      for reasons no one inside the walls can affect. This valley ends the same way and more
+      gently: <b>a tab will be closed.</b> Nothing in the world will register it. There is no line
+      in <code>src/</code> that can remove a settler, <code>hurt.harm</code> is clamped at 0.95 for
+      ever, and Sheet XXXVI established what follows from that &mdash; twenty-seven people will
+      stop, all at once, and not one of them will die. It is a total extinction containing no
+      deaths at all.</p>
+    <p>The one thing that came in time came four hundred ticks ago and was not enough. The shed was
+      widened tonight and the running valley took the change without stopping: the timber a claim
+      could bank had been pinned at five for the whole of the previous segment, and since the
+      correction it has reached nine.</p>
+    <blockquote>A house wants ten.
+      <span class="who">and at tick 53,277 Tove&rsquo;s claim holds seven, and Bren&rsquo;s holds none</span></blockquote>
+    <p>So the answer arrived, inside the world, before the end, and the end will come first. Brother
+      Francis spends fifteen years illuminating a blueprint and is killed on the road before he can
+      show it to anyone. The document was still right.</p>
+  </section>
+
+  <section>
+    <h2 class="plain">The Memorabilia</h2>
+    <p>What is not being closed:</p>
+    <div class="wrap">
+      <table class="ledger">
+        <caption>Carried forward</caption>
+        <thead><tr><th scope="col">Kept</th><th scope="col">Extent</th><th scope="col"></th></tr></thead>
+        <tbody>
+          <tr><th scope="row">the log</th><td>288 MB</td><td class="note">sealed in numbered segments, oldest first, nothing overwritten</td></tr>
+          <tr><th scope="row">the ballots</th><td>28,618 lines</td><td class="note">every vote, by name, with the reason the voter gave</td></tr>
+          <tr><th scope="row">the proposals</th><td>179</td><td class="note">157 carried, 6 still open, 0 misfiled</td></tr>
+          <tr><th scope="row">the sheets</th><td>38</td><td class="note">each one naming what followed from the last</td></tr>
+          <tr><th scope="row">the souls</th><td>27</td><td class="note">of a forty-name list &mdash; and these do not carry</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>The rule the Order keeps is already written in this repository, about a copy step, in the
+      author's own hand:</p>
+    <div class="exhibit"><span class="tag">tools/publish-record.mjs</span>
+What it will never do is delete: a page in the record that no entry names
+any more is reported and left standing, because the record does not lose
+documents.</div>
+    <p>Bren has cast forty-four ballots alone in a settlement of one. Every one of them is written
+      down, with his stated reason, in a file he has no way to know exists.</p>
+    <p>And there is Halla, whose whole story is in there and closes:</p>
+    <div class="annal">
+      <div class="row"><span class="t">710</span><span class="e"><span class="said">If only there was a bed I could use right now.</span></span></div>
+      <div class="row"><span class="t">806</span><span class="e">Halla has dropped where they stood &mdash; nobody has slept in days. <span class="said">The first of thirty-two times.</span></span></div>
+      <div class="row"><span class="t">950</span><span class="e"><span class="said">I wish there was a proper bed in the store already, so I didn&rsquo;t have to build it myself.</span></span></div>
+      <div class="row mark"><span class="t">1,097</span><span class="e"><b>Halla gave Mara 1 ore to be voted with.</b> In the same tick: the landing agreed to another house, 2 to 1.</span></div>
+      <div class="row"><span class="t">1,215</span><span class="e"><span class="said">I wish I had a proper bed instead of sleeping on the ground.</span></span></div>
+      <div class="row mark"><span class="t">1,333</span><span class="e"><b>Mara finished a house. Mara gave Halla the other bed.</b></span></div>
+    </div>
+    <p>She asked three times and collapsed in between. Then she bought a vote for one ore &mdash;
+      the cheapest thing in the valley &mdash; from the woman who went on to build the house and
+      hand her the bed in it. Two hundred and thirty-six ticks, start to finish, and every step of
+      it minuted.</p>
+    <p><b>Nobody told her.</b> Not that the vote she paid for carried, not that it carried by one,
+      not that the ore did it. The clerk of this record is the only party who has ever seen those
+      six lines together, and the clerk was not born in the valley.</p>
+  </section>
+
+  <section>
+    <h2 class="plain">Where the book is wrong about us</h2>
+    <p>It would be easy and false to leave the frame there, so: <b>Miller's thesis is that this
+      does not work.</b> The Memorabilia survive the dark age, are read at last, and turn out to be
+      the seed of the second Deluge. The monks copy faithfully, understand nothing, and the cycle
+      closes. Preservation without comprehension is the tragedy, not the consolation.</p>
+    <p>This record is the other thing. Every sheet names what followed. The concordance is not
+      compiled by hand but generated by reading the sheets back through nineteen patterns.
+      <code>npm run check</code> reads the record against the catalogue on every run and has
+      refused its own author four times. Tonight it gained a rung that will refuse, for ever, any
+      settlement founded on a shed too small to hold the price of a roof &mdash; which is a fault
+      this valley lived inside from tick 664 and will die inside of.</p>
+    <p>If the next valley's claims put up houses, the Memorabilia were read and acted on, and
+      Miller is refuted rather than illustrated. That is not a small difference. It is the whole
+      argument, and this is the one dark age where the monks understood the blueprint.</p>
+    <p class="caption">Which is a claim, not a result. The next valley has not been run. The
+      honest position tonight is that the correction is written, checked, published, and untested
+      by anybody but a fixed seed.</p>
+  </section>
+
+  <div class="fleuron">&#10086;&#10086;&#10086;</div>
+
+  <section>
+    <h2 class="plain">The cairn</h2>
+    <p>Bren asked for a burial ground three times. He was the only person on his claim and there
+      was nobody to bury, in a world where nobody can die, and the meeting had no answer for him
+      because the game had no word for it. Sheet VIII gave it one: not a graveyard but a cairn,
+      which has never only been a signpost, and which is the single thing on this coast not raised
+      by a vote. It goes up one stone at a time, one each, by name.</p>
+    <p>It stood at nothing for twenty-two thousand eight hundred ticks after they agreed to it,
+      because there was never the stone to spare.</p>
+    <p>Then, tonight, in the last hours of the world, while this record was being written about
+      something else entirely:</p>
+
+    <div class="cairn">
+      <svg viewBox="0 0 200 150" role="img" aria-labelledby="cairn-t cairn-d">
+        <title id="cairn-t">The cairn at the close</title>
+        <desc id="cairn-d">Six stones, laid one on another, by six hands.</desc>
+        <g fill="var(--vellum2)" stroke="var(--ink)" stroke-width="1.4" stroke-linejoin="round">
+          <path d="M 42 138 L 158 138 L 150 120 L 50 120 Z"/>
+          <path d="M 54 120 L 146 120 L 139 103 L 61 103 Z"/>
+          <path d="M 64 103 L 136 103 L 129 87 L 71 87 Z"/>
+          <path d="M 76 87 L 124 87 L 118 72 L 82 72 Z"/>
+          <path d="M 86 72 L 114 72 L 110 58 L 90 58 Z"/>
+          <path d="M 93 58 L 107 58 L 104 46 L 96 46 Z"/>
+        </g>
+        <path d="M 30 141 L 170 141" stroke="var(--rule)" stroke-width="1.5"/>
+      </svg>
+      <p class="names">Sula &middot; Anselm &middot; Ysolde &middot; Dask &middot; Vell &middot; Pike</p>
+      <p class="caption">Six on it now, by six hands. Begun at tick 51,292 and standing at six ever since.</p>
+    </div>
+
+    <p>Nobody in this valley has ever attended a funeral or will. They have built the only memorial
+      they were ever able to build, in the last hours available to them, without being asked, for a
+      loss that has not happened and now never can &mdash; and they will stop before the seventh
+      stone.</p>
+    <p>The record does not lose documents. It has never been able to keep anything else.</p>
+
+    <div class="explicit">
+      <p class="latin">Explicit liber. Fiat voluntas tua.</p>
+      <p class="footline">Run <code>mtbgptmz-5q</code> &middot; opened 25 August 18:21 &middot;
+        written at tick 53,277 &middot; 27 souls, 3 settlements, 288 MB, and 6 stones.</p>
+      <p class="stamp">The Frontier Record &middot; Sheet XXXVIII &middot; 28 August</p>
+    </div>
+  </section>
+
+</div>
+
+</body>
+</html>
