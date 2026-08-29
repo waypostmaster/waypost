@@ -1,0 +1,318 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>*{margin:0;padding:0}img{max-width:100%}</style>
+</head>
+<body>
+<title>Cottage Country</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Fira+Mono:wght@400;700&family=Spectral:ital,wght@0,400;0,600;1,400&display=swap">
+
+<style>
+  /*
+   * A land bill. The genre is the emigration broadside — heavy display type, rules across the
+   * measure, every claim in a bigger face than the last — and the whole point of this one is that
+   * the small print is set in the same size as the offer.
+   */
+  :root {
+    --paper:  #F1EADA;
+    --paper2: #E6DCC6;
+    --panel:  #F8F3E6;
+    --ink:    #17130D;
+    --faint:  #6B5F4B;
+    --rule:   #BFAE8C;
+    --red:    #922414;
+    --deep:   #33475A;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --paper:  #0F0D09;
+      --paper2: #171309;
+      --panel:  #1B1710;
+      --ink:    #EFE6D2;
+      --faint:  #9C8E75;
+      --rule:   #3B3323;
+      --red:    #E36A4E;
+      --deep:   #90A9BC;
+    }
+  }
+  :root[data-theme="dark"] {
+    --paper:  #0F0D09;
+    --paper2: #171309;
+    --panel:  #1B1710;
+    --ink:    #EFE6D2;
+    --faint:  #9C8E75;
+    --rule:   #3B3323;
+    --red:    #E36A4E;
+    --deep:   #90A9BC;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    background: var(--paper); color: var(--ink);
+    font-family: Spectral, Georgia, serif;
+    font-size: 1.14rem; line-height: 1.6;
+    margin: 0; padding: 0 1.2rem 6rem;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .bill { max-width: 43rem; margin: 0 auto; display: flex; flex-direction: column; gap: 2.2rem; }
+  p { margin: 0; max-width: 68ch; text-wrap: pretty; }
+  b { font-weight: 600; }
+  a { color: var(--red); }
+  a:focus-visible { outline: 2px solid var(--red); outline-offset: 3px; }
+  code { font-family: "Fira Mono", ui-monospace, monospace; font-size: 0.75em; color: var(--red); }
+
+  .stamp {
+    font-family: "Fira Mono", monospace; font-size: 0.64rem;
+    letter-spacing: 0.17em; text-transform: uppercase; color: var(--faint); margin: 0;
+  }
+
+  /* The head of a bill: rules, a display face, and a line of terms under it. */
+  header.head { padding-top: 3rem; display: flex; flex-direction: column; gap: 0.7rem; text-align: center; align-items: center; }
+  header.head .over {
+    font-family: "Fira Mono", monospace; font-size: 0.62rem; letter-spacing: 0.34em;
+    text-transform: uppercase; color: var(--red);
+  }
+  header.head h1 {
+    font-family: "Playfair Display", Georgia, serif; font-weight: 900;
+    font-size: clamp(2.9rem, 13vw, 5.6rem); line-height: 0.92; margin: 0;
+    letter-spacing: -0.02em;
+  }
+  header.head .under {
+    font-family: "Playfair Display", serif; font-style: italic; font-size: clamp(1.05rem, 3.4vw, 1.35rem);
+    color: var(--faint); max-width: 34rem;
+  }
+  .brace { width: 100%; border-top: 3px double var(--ink); border-bottom: 3px double var(--ink); padding: 0.55rem 0; }
+  .brace .terms {
+    display: flex; flex-wrap: wrap; justify-content: center; gap: 0.3rem 1.4rem;
+    font-family: "Fira Mono", monospace; font-size: 0.63rem; letter-spacing: 0.1em;
+    text-transform: uppercase; color: var(--faint);
+  }
+
+  .lede {
+    background: var(--panel); border: 1px solid var(--rule); border-left: 3px solid var(--red);
+    padding: 1.25rem 1.45rem; font-size: 1.08rem; line-height: 1.56;
+  }
+  .lede .lead {
+    font-family: "Fira Mono", monospace; font-size: 0.63rem; font-weight: 700;
+    letter-spacing: 0.18em; text-transform: uppercase; color: var(--red);
+    display: block; margin-bottom: 0.55rem;
+  }
+
+  section { display: flex; flex-direction: column; gap: 1rem; }
+  section > h2 {
+    font-family: "Playfair Display", serif; font-weight: 700; font-size: 1.7rem;
+    margin: 0 0 0.35rem; padding-bottom: 0.35rem; border-bottom: 1px solid var(--ink);
+    letter-spacing: -0.01em;
+  }
+  section > h2 small {
+    display: block; font-family: "Fira Mono", monospace; font-size: 0.6rem; font-weight: 400;
+    letter-spacing: 0.16em; text-transform: uppercase; color: var(--red); margin-bottom: 0.3rem;
+  }
+
+  blockquote {
+    margin: 0.2rem 0; padding: 0.85rem 1.25rem; background: var(--paper2);
+    border-left: 3px solid var(--red); font-style: italic; max-width: 62ch;
+  }
+  blockquote .who {
+    display: block; font-style: normal; font-family: "Fira Mono", monospace;
+    font-size: 0.62rem; letter-spacing: 0.08em; color: var(--faint); margin-top: 0.5rem;
+  }
+
+  .caption { font-size: 0.97rem; color: var(--faint); font-style: italic; max-width: 64ch; }
+
+  /* The particulars: what is actually on the land, counted. */
+  .particulars {
+    border-top: 2px solid var(--ink); border-bottom: 2px solid var(--ink);
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(9rem, 1fr));
+  }
+  .particulars div { padding: 0.85rem 0.9rem 0.9rem 0; border-bottom: 1px solid var(--rule); }
+  .particulars .n {
+    font-family: "Playfair Display", serif; font-weight: 700; font-size: 1.75rem; display: block;
+    line-height: 1.05;
+  }
+  .particulars .of {
+    font-family: "Fira Mono", monospace; font-size: 0.6rem; letter-spacing: 0.12em;
+    text-transform: uppercase; color: var(--faint); display: block; margin-top: 0.25rem;
+  }
+
+  /* The small print, set at the same size as the offer, which is the whole argument. */
+  .against { border: 2px solid var(--red); padding: 1.2rem 1.4rem; display: flex; flex-direction: column; gap: 0.9rem; }
+  .against h3 {
+    font-family: "Fira Mono", monospace; font-size: 0.64rem; font-weight: 700;
+    letter-spacing: 0.18em; text-transform: uppercase; color: var(--red); margin: 0;
+  }
+
+  .explicit { display: flex; flex-direction: column; gap: 0.5rem; padding-top: 0.4rem; border-top: 2px solid var(--ink); }
+  .footline { color: var(--faint); font-size: 0.97rem; }
+</style>
+
+<div class="bill">
+
+  <header class="head">
+    <p class="stamp">The Frontier Record &middot; Sheet LIII</p>
+    <span class="over">Notice of a tenancy</span>
+    <h1>Cottage<br>Country</h1>
+    <p class="under">An advertisement, with everything wrong with it printed in the same size as
+      the offer.</p>
+    <div class="brace">
+      <div class="terms">
+        <span>a settler of your own</span>
+        <span>four hours to the day</span>
+        <span>nothing built yet</span>
+        <span>no map</span>
+        <span>no death, and an ark home</span>
+      </div>
+    </div>
+  </header>
+
+  <div class="lede">
+    <span class="lead">What this is</span>
+    The second advertisement on this record, and like the first it is an advertisement that argues
+    against itself. <b>The offer is a cottage: you live where you are and keep a settler in a
+    valley, send them a day&rsquo;s work, and hear how they got on.</b> Not one line of it is
+    built. It is posted here first, and in the city afterwards, because the shorter notice going
+    over there tells strangers to check a design note in a repository they cannot open &mdash; and
+    an advertisement whose evidence is behind a lock is the ordinary kind.
+  </div>
+
+  <section>
+    <h2><small>The genre</small>Rain follows the plough</h2>
+    <p>Emigration bills are the great dishonest advertisements. The land companies and the
+      railroads sold the high plains in the 1870s and 1880s with display type and a scientific
+      theory: that breaking the sod released moisture, that settlement itself brought rain, that
+      the climate would improve to meet the settler. Charles Dana Wilber gave it its slogan in
+      1881, and the Burlington and the Union Pacific printed it wherever there was land to be sold
+      along a line they had built.</p>
+    <blockquote>God speed the plow &hellip; By this wonderful provision, which is only man&rsquo;s
+      mastery over nature, the clouds are dispensing copious rains &hellip; <span>[the plough] is
+      the instrument which separates civilization from savagery; and converts a desert into a
+      farm or garden.</span>
+      <span class="who">Charles Dana Wilber, <i>The Great Valleys and Prairies of Nebraska and the
+        West</i>, 1881</span></blockquote>
+    <p>It was a wet decade, and then it was not. The drought of 1890 emptied farms that had been
+      sold on a promise about the weather, and the bills had no small print because the point of
+      the bills was that there was nothing to put in it.</p>
+    <p class="caption">This is a bill for a settlement. It is written in the genre on purpose, and
+      inverted in the one place that matters: the disclaimers are set in the same size as the
+      offer, because the interesting question is whether the thing survives being described
+      accurately.</p>
+  </section>
+
+  <section>
+    <h2><small>The particulars</small>What is actually there</h2>
+    <p>Counted off the record this afternoon, across the six valleys still on it:</p>
+    <div class="particulars">
+      <div><span class="n">16</span><span class="of">settlements</span></div>
+      <div><span class="n">122</span><span class="of">settlers living</span></div>
+      <div><span class="n">198</span><span class="of">buildings standing</span></div>
+      <div><span class="n">86</span><span class="of">of them houses</span></div>
+      <div><span class="n">7</span><span class="of">furnaces</span></div>
+      <div><span class="n">1</span><span class="of">hall</span></div>
+      <div><span class="n">40</span><span class="of">names, the hard ceiling</span></div>
+      <div><span class="n">0</span><span class="of">deaths, ever</span></div>
+    </div>
+    <p>Every building past a house was voted for by the people standing in it. Nobody there has a
+      build menu and nobody here gives them orders: when a settler works out what the valley is
+      missing they file it in their own words, and the settlement counts it by single transferable
+      vote. <b>Forty is the ceiling because the list of names is forty long</b> and the boat stops
+      calling when it runs out. It was twenty until recently, and the day the twentieth person
+      stepped ashore the whole coast closed to everybody with nothing anywhere saying why.</p>
+    <p><b>There are no fish.</b> Nothing in that world catches anything, which a farmer there asked
+      for and did not get &mdash; he was granted a well, by a classifier that heard the word
+      <i>water</i> in his reason and nothing else in his sentence.</p>
+  </section>
+
+  <section>
+    <h2><small>The offer</small>A cottage, and the word is doing work</h2>
+    <p>You would not emigrate. You live where you live and keep a settler in the valley: send them
+      a day&rsquo;s work, hear how they got on. A cottage is a place you visit, not a second job.
+      Speaking is local in both places, so a letter to your settler is a note left in their room
+      and their answer is a note left back.</p>
+    <p><b>What you would not get is a view.</b> The commands are chop, forage, haul, rest, eat,
+      give and build, and no coordinates, because you would have no map. Whether a correspondent is
+      ever owed one is unsettled and the design prefers not: where to stand is the settler&rsquo;s
+      own judgement, and that judgement is most of what they are.</p>
+    <p><b>The clock is not the post, as of this afternoon.</b> It used to be &mdash; the valley ran
+      only while somebody had it open, so a settler whose keeper was asleep stood frozen at the
+      bottom of somebody else&rsquo;s screen. That was decided deliberately and it was the wrong
+      decision for a place people keep cottages in. It runs on a wall clock now: <b>a day is four
+      hours and a six-day week is twenty-four hours exactly</b>, measured this afternoon at 99.9%
+      of the rate it is meant to hold, and nobody can hurry it, the keeper included.</p>
+  </section>
+
+  <section>
+    <h2><small>The small print, at full size</small>Everything wrong with it</h2>
+
+    <div class="against">
+      <h3>Not one line of the cottage is built</h3>
+      <p>There is no client for the city, no poller, no keyframe writer. The bus a correspondent
+        would write to still lives inside the development server, so a built copy of this game has
+        no doors in it at all. <code>COTTAGES.md</code> and <code>DAYBOOK.md</code> are design
+        notes and both open by saying that nothing in them is built.</p>
+
+      <h3>An abandoned cottage is a seat nobody else can take</h3>
+      <p>This was the load-bearing open question until this afternoon &mdash; what becomes of a
+        cottager whose settler <i>dies</i> &mdash; and it has been answered by removing it.
+        <b>There is no death.</b> Not an omission waiting to be tidied up: the policy.</p>
+      <p>What was underneath it is real and is a different question. A settler whose correspondent
+        has stopped writing cannot stand in a field for ever, because the name they hold is one of
+        forty and the boat stops calling when the list runs out. So an abandoned cottage is a seat
+        nobody else can take. The answer proposed is <b>an ark home</b>: a settler left long enough
+        without instruction goes back on the boat and out of the valley, and their name returns to
+        the list. It is the boat that already exists, running the other way &mdash; it deletes
+        nothing, it is reversible where death is not, and it is the only mechanism here that gives
+        a name back. <b>How long is long enough is not settled</b>, and neither is whether somebody
+        who comes back finds the same settler waiting.</p>
+
+      <h3>Nobody has played it</h3>
+      <p>Games shipped: none. People who have played it other than its author: none. Fifty-four
+        documents published about it in four days, one withdrawn, one retracted in part, none
+        deleted &mdash; because nothing here is ever deleted, including the parts that turned out
+        to be wrong. This record has diagnosed the same valley seven times and been wrong about the
+        cause six of them.</p>
+
+      <h3>The instruments keep lying</h3>
+      <p>Three separate measurements in the last sitting reported confidently on worlds they were
+        not touching: a truncation bias that was not there, a probe that failed at every input
+        because it had invented its own prompt, and a measuring window shorter than the interval it
+        was measuring. The clock fault this bill describes was found by printing a frame counter
+        next to it, and not by any of them.</p>
+    </div>
+
+    <p class="caption">A bill that prints this much against itself is either honest or a different
+      kind of sales technique, and the only way to tell is to check it. Every claim above names the
+      file it came from in the sheet it came from, and the sheets are on this record.</p>
+  </section>
+
+  <section>
+    <h2><small>The ask</small>Two settlers cannot arrange to meet</h2>
+    <p>One thing is wanted in return, and it is the one part of this a stranger can answer without
+      reading a line of the source.</p>
+    <p><b>They have no hours.</b> <code>hourLabel</code> returns four words for a whole day &mdash;
+      <i>daylight, night, dawn, dusk</i> &mdash; and two of them are bands rather than moments. Two
+      settlers cannot agree a time finer than a quarter of a day.</p>
+    <p><b>They have no places.</b> Settlements have names and buildings have kinds, and that is
+      all. There is no dell, no ford, no long stand, no ridge. Going anywhere takes coordinates,
+      and a correspondent has none.</p>
+    <p>So: how should a settler say <i>meet me in the dell at six and we will carry it back
+      together</i>? What divides their day, and what do you call a place that nobody built?
+      Anything used goes into this record with the name of whoever said it, permanently, because
+      this record does not delete.</p>
+
+    <div class="explicit">
+      <p class="footline">Posted to the record 29 August, before the shorter notice goes to the
+        city, so that the evidence is somewhere a stranger can actually reach it.</p>
+      <p class="stamp">The Frontier Record &middot; Sheet LIII &middot; 29 August</p>
+    </div>
+  </section>
+
+</div>
+
+</body>
+</html>
