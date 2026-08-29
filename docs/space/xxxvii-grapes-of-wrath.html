@@ -1,0 +1,519 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>*{margin:0;padding:0}img{max-width:100%}</style>
+</head>
+<body>
+<title>The Grapes of Wrath</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap">
+
+<style>
+  /*
+   * A crop report. California, 1939: a printed return on what a season yielded and what was
+   * destroyed to keep the price up, set on manila stock in the condensed gothic every government
+   * notice of that decade was set in, ruled and tabulated because the argument is arithmetic.
+   * The one colour on the sheet is the kerosene.
+   */
+  :root {
+    --paper:   #E8DFC6;
+    --paper-2: #DDD2B4;
+    --panel:   #F1EAD6;
+    --ink:     #221E15;
+    --soft:    #6B6046;
+    --rule:    #BFB18E;
+    --kero:    #9E3B18;
+    --olive:   #4E5B33;
+    --spill:   #B4531F;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --paper:   #15140E;
+      --paper-2: #1E1C14;
+      --panel:   #222016;
+      --ink:     #E2D9C0;
+      --soft:    #948868;
+      --rule:    #3B3527;
+      --kero:    #DE7248;
+      --olive:   #9BAE6C;
+      --spill:   #C9663A;
+    }
+  }
+  :root[data-theme="dark"] {
+    --paper:   #15140E;
+    --paper-2: #1E1C14;
+    --panel:   #222016;
+    --ink:     #E2D9C0;
+    --soft:    #948868;
+    --rule:    #3B3527;
+    --kero:    #DE7248;
+    --olive:   #9BAE6C;
+    --spill:   #C9663A;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: "Source Serif 4", Georgia, "Times New Roman", serif;
+    font-size: 1.09rem;
+    line-height: 1.62;
+    margin: 0;
+    padding: 0 1.2rem 6rem;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .sheet { max-width: 41rem; margin: 0 auto; display: flex; flex-direction: column; gap: 2.7rem; }
+  p { margin: 0; max-width: 66ch; }
+  b { font-weight: 600; }
+  i { font-style: italic; }
+  a { color: var(--kero); }
+  a:focus-visible, .tally:focus-visible { outline: 2px solid var(--kero); outline-offset: 3px; }
+
+  code {
+    font-family: "Courier New", ui-monospace, monospace;
+    font-size: 0.85em;
+    color: var(--kero);
+  }
+
+  .stamp {
+    font-family: Oswald, "Arial Narrow", sans-serif;
+    font-size: 0.72rem; font-weight: 400;
+    letter-spacing: 0.3em; text-transform: uppercase;
+    color: var(--soft); margin: 0;
+  }
+
+  /* ── front matter ───────────────────────────────────────────────────────── */
+  header.front {
+    display: flex; flex-direction: column; align-items: center; text-align: center;
+    gap: 1.1rem; padding-top: 3.4rem;
+  }
+  header.front h1 {
+    font-family: Oswald, "Arial Narrow", sans-serif;
+    font-weight: 500; font-size: clamp(2.3rem, 9vw, 3.5rem);
+    letter-spacing: 0.04em; text-transform: uppercase;
+    margin: 0; line-height: 1.02; color: var(--kero);
+    text-wrap: balance;
+  }
+  header.front .sub {
+    color: var(--soft); font-style: italic; max-width: 36rem; font-size: 1.02rem;
+    text-wrap: pretty;
+  }
+  .runhead {
+    display: flex; flex-wrap: wrap; justify-content: space-between; gap: 0.4rem 1rem; width: 100%;
+    font-family: Oswald, "Arial Narrow", sans-serif;
+    font-size: 0.7rem; font-weight: 300; letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--soft);
+    border-top: 2px solid var(--rule); border-bottom: 1px solid var(--rule);
+    padding: 0.5rem 0.1rem;
+  }
+
+  .abstract {
+    background: var(--panel); border: 1px solid var(--rule);
+    border-left: 3px solid var(--kero);
+    padding: 1.35rem 1.55rem; font-size: 1rem; line-height: 1.6;
+  }
+  .abstract .lead {
+    font-family: Oswald, "Arial Narrow", sans-serif;
+    font-size: 0.7rem; font-weight: 500; letter-spacing: 0.26em;
+    text-transform: uppercase; color: var(--kero);
+    display: block; margin-bottom: 0.7rem;
+  }
+
+  /* ── sections ───────────────────────────────────────────────────────────── */
+  section { display: flex; flex-direction: column; gap: 1.05rem; }
+  section > h2 {
+    font-family: Oswald, "Arial Narrow", sans-serif;
+    font-weight: 400; font-size: 0.82rem;
+    letter-spacing: 0.22em; text-transform: uppercase; color: var(--kero);
+    margin: 0 0 0.75rem; padding-bottom: 0.45rem;
+    border-bottom: 1px solid var(--rule);
+    display: flex; gap: 0.85rem; align-items: baseline;
+  }
+  section > h2 .n { color: var(--soft); font-weight: 300; }
+
+  blockquote {
+    margin: 0.3rem 0; padding: 0.85rem 1.25rem;
+    background: var(--paper-2); border-left: 2px solid var(--kero);
+    font-style: italic; max-width: 60ch;
+  }
+  blockquote .who {
+    display: block; font-style: normal;
+    font-family: Oswald, "Arial Narrow", sans-serif;
+    font-size: 0.68rem; font-weight: 300; letter-spacing: 0.18em;
+    text-transform: uppercase; color: var(--soft); margin-top: 0.55rem;
+  }
+
+  .exhibit {
+    font-family: "Courier New", ui-monospace, monospace;
+    font-size: 0.8rem; line-height: 1.58;
+    background: var(--paper-2); border: 1px solid var(--rule);
+    padding: 0.95rem 1.15rem; overflow-x: auto; white-space: pre;
+  }
+  .exhibit .tag { color: var(--kero); font-weight: 700; }
+  .exhibit .good { color: var(--olive); font-weight: 700; }
+  .exhibit code { color: inherit; font-size: 1em; }
+
+  .caption { font-size: 0.92rem; color: var(--soft); font-style: italic; max-width: 62ch; }
+
+  /* ── the ledger ─────────────────────────────────────────────────────────── */
+  .wrap { overflow-x: auto; }
+  table.ledger {
+    width: 100%; border-collapse: collapse; font-size: 0.95rem;
+    font-variant-numeric: tabular-nums;
+  }
+  table.ledger caption {
+    font-family: Oswald, "Arial Narrow", sans-serif;
+    font-size: 0.68rem; font-weight: 400; letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--soft); text-align: left; padding-bottom: 0.5rem;
+  }
+  table.ledger th, table.ledger td {
+    text-align: right; padding: 0.42rem 0.55rem;
+    border-bottom: 1px solid var(--rule); vertical-align: baseline;
+  }
+  table.ledger th:first-child, table.ledger td:first-child { text-align: left; padding-left: 0; }
+  table.ledger thead th {
+    font-family: Oswald, "Arial Narrow", sans-serif;
+    font-size: 0.68rem; font-weight: 400; letter-spacing: 0.14em;
+    text-transform: uppercase; color: var(--soft);
+    border-bottom: 2px solid var(--rule);
+  }
+  table.ledger tbody th { font-weight: 400; }
+  table.ledger td.bad { color: var(--kero); font-weight: 600; }
+  table.ledger td.good { color: var(--olive); font-weight: 600; }
+  table.ledger tr.rule-top td, table.ledger tr.rule-top th { border-top: 2px solid var(--rule); }
+  table.ledger .note { color: var(--soft); font-size: 0.88rem; font-style: italic; }
+
+  /* ── the shelf diagram ──────────────────────────────────────────────────── */
+  figure.plate { margin: 0; display: flex; flex-direction: column; gap: 0.8rem; }
+  figure.plate .frame {
+    background: var(--panel); border: 1px solid var(--rule); padding: 1.4rem 1.2rem 1.1rem;
+    overflow-x: auto;
+  }
+  figure.plate svg { display: block; width: 100%; height: auto; min-width: 30rem; }
+
+  /* ── the change list ────────────────────────────────────────────────────── */
+  ol.changes { margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 1.15rem; counter-reset: chg; }
+  ol.changes li { display: grid; grid-template-columns: 2.2rem 1fr; gap: 0 0.9rem; counter-increment: chg; }
+  ol.changes li::before {
+    content: counter(chg, decimal-leading-zero);
+    font-family: Oswald, "Arial Narrow", sans-serif; font-weight: 300;
+    font-size: 0.95rem; letter-spacing: 0.08em; color: var(--kero);
+    padding-top: 0.28rem;
+  }
+  ol.changes h3 {
+    grid-column: 2; margin: 0 0 0.3rem;
+    font-family: Oswald, "Arial Narrow", sans-serif; font-weight: 400;
+    font-size: 0.98rem; letter-spacing: 0.03em;
+  }
+  ol.changes p { grid-column: 2; font-size: 1rem; }
+
+  .withdrawn {
+    background: var(--paper-2); border: 1px dashed var(--rule);
+    padding: 1.2rem 1.4rem; display: flex; flex-direction: column; gap: 0.9rem;
+  }
+  .withdrawn .lead {
+    font-family: Oswald, "Arial Narrow", sans-serif;
+    font-size: 0.7rem; font-weight: 500; letter-spacing: 0.24em;
+    text-transform: uppercase; color: var(--soft);
+  }
+
+  .fleuron { text-align: center; color: var(--rule); font-size: 1.4rem; margin: 0; letter-spacing: 0.6em; }
+
+  .colophon { display: flex; flex-direction: column; gap: 0.55rem; padding-top: 0.3rem; border-top: 2px solid var(--rule); }
+  .footline { color: var(--soft); font-size: 0.94rem; }
+</style>
+
+<div class="sheet">
+
+  <header class="front">
+    <p class="stamp">The Frontier Record &middot; Sheet XXXVII</p>
+    <h1>The Grapes of Wrath</h1>
+    <p class="sub">On two settlements that destroyed one thousand two hundred and sixty-four wood
+      at their own doors while four of their people slept on the ground &mdash; read through
+      Steinbeck, who wrote the chapter about oranges sprayed with kerosene in sight of the
+      hungry.</p>
+    <div class="runhead">
+      <span>California, 1939 &middot; the claims, tick 48,117</span>
+      <span>Run mtbgptmz-5q</span>
+    </div>
+  </header>
+
+  <div class="abstract">
+    <span class="lead">The finding</span>
+    The claims were not slow and they were not outvoted. <b>A lean-to held eight and a house costs
+    ten.</b> Goods in this valley are one pool with a ceiling and anything that will not fit goes on
+    the grass and is gone &mdash; so a settlement founded on a <code>claim</code> could cut timber
+    for as long as it liked and never once have the price of a roof under cover at the same time.
+    The landing never met it: it lands with a boat that holds twenty. No fork met it either, for as
+    long as the boat called at one beach and a fork could not grow. The day Sheet XXXV pointed
+    arrivals at the forks, it became the whole of their story.
+  </div>
+
+  <section>
+    <h2><span class="n">I</span> <span>Four on the ground, and the wood at the door</span></h2>
+    <p>The record at tick 48,117, after roughly ten thousand four hundred sim seconds &mdash; some
+      fifty-two days &mdash; of nothing changing:</p>
+    <div class="wrap">
+      <table class="ledger">
+        <caption>The coast as the state file has it</caption>
+        <thead>
+          <tr><th scope="col">Settlement</th><th scope="col">Folk</th><th scope="col">Houses</th><th scope="col">On the ground</th><th scope="col">What it can put things in</th></tr>
+        </thead>
+        <tbody>
+          <tr><th scope="row">the landing</th><td>20</td><td>10</td><td class="good">0</td><td class="note">50 places standing, a depot holding 140</td></tr>
+          <tr><th scope="row">Tove&rsquo;s claim</th><td>4</td><td>1</td><td class="bad">2</td><td class="note">a lean-to and one house</td></tr>
+          <tr><th scope="row">Bren&rsquo;s claim</th><td>3</td><td class="bad">0</td><td class="bad">2</td><td class="note">a lean-to</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>In the same window, at the doors of those two claims, <b>1,264 wood rotted on the grass</b>.
+      A house costs ten. That is a hundred and twenty-six houses&rsquo; worth of timber destroyed
+      within sight of four people who had no roof.</p>
+    <p>Which is the shape of the thing, and it is not scarcity. It is destruction, next to want.</p>
+    <blockquote>There is a crime here that goes beyond denunciation. There is a sorrow here that
+      weeping cannot symbolize. There is a failure here that topples all our success.
+      <span class="who">Steinbeck, 1939 &middot; chapter twenty-five</span></blockquote>
+  </section>
+
+  <section>
+    <h2><span class="n">II</span> <span>The arithmetic</span></h2>
+    <p><code>HOLDS.claim</code> was <b>8</b>. <code>BUILD_COST.house</code> is <b>10&nbsp;wood</b>.
+      <code>roomInStores</code> is the sum of what everything standing holds, scaled by condition,
+      and the <code>haul</code> case tips whatever will not fit onto <code>town.outside</code>,
+      where the weather takes it. Two numbers, and one of them is smaller than the other.</p>
+
+    <figure class="plate">
+      <div class="frame">
+        <svg viewBox="0 0 620 250" role="img" aria-labelledby="plate-t plate-d">
+          <title id="plate-t">The lean-to against the price of a house</title>
+          <desc id="plate-d">At eight places, a load of ten wood overruns the shelf by two, and the
+            two that overrun are destroyed &mdash; so ten is never banked. At twelve places the
+            same load fits with two places spare.</desc>
+
+          <!-- as it stood -->
+          <text x="0" y="14" fill="var(--soft)" font-family="Oswald, sans-serif" font-size="11" letter-spacing="2.4">AS IT STOOD &mdash; A LEAN-TO HOLDS 8</text>
+          <g>
+            <!-- the eight places -->
+            <g fill="var(--paper-2)" stroke="var(--rule)" stroke-width="1.5">
+              <rect x="0" y="30" width="34" height="34"/><rect x="38" y="30" width="34" height="34"/>
+              <rect x="76" y="30" width="34" height="34"/><rect x="114" y="30" width="34" height="34"/>
+              <rect x="152" y="30" width="34" height="34"/><rect x="190" y="30" width="34" height="34"/>
+              <rect x="228" y="30" width="34" height="34"/><rect x="266" y="30" width="34" height="34"/>
+            </g>
+            <!-- filled -->
+            <g fill="var(--olive)" opacity="0.75">
+              <rect x="6" y="36" width="22" height="22"/><rect x="44" y="36" width="22" height="22"/>
+              <rect x="82" y="36" width="22" height="22"/><rect x="120" y="36" width="22" height="22"/>
+              <rect x="158" y="36" width="22" height="22"/><rect x="196" y="36" width="22" height="22"/>
+              <rect x="234" y="36" width="22" height="22"/><rect x="272" y="36" width="22" height="22"/>
+            </g>
+            <!-- the two that do not fit -->
+            <g fill="var(--spill)">
+              <rect x="310" y="36" width="22" height="22" opacity="0.9"/>
+              <rect x="348" y="36" width="22" height="22" opacity="0.9"/>
+            </g>
+            <path d="M 304 74 L 380 74" stroke="var(--spill)" stroke-width="1.5" stroke-dasharray="3 3"/>
+            <text x="386" y="52" fill="var(--spill)" font-family="Oswald, sans-serif" font-size="12" letter-spacing="1.2">ON THE GRASS. GONE.</text>
+            <text x="0" y="90" fill="var(--soft)" font-family="Source Serif 4, serif" font-size="13" font-style="italic">a house wants ten &mdash; so ten is never banked, and the claim never builds</text>
+          </g>
+
+          <!-- rule -->
+          <path d="M 0 116 L 620 116" stroke="var(--rule)" stroke-width="1"/>
+
+          <!-- as it stands -->
+          <text x="0" y="146" fill="var(--soft)" font-family="Oswald, sans-serif" font-size="11" letter-spacing="2.4">AS IT STANDS &mdash; A LEAN-TO HOLDS 12</text>
+          <g>
+            <g fill="var(--paper-2)" stroke="var(--rule)" stroke-width="1.5">
+              <rect x="0" y="162" width="34" height="34"/><rect x="38" y="162" width="34" height="34"/>
+              <rect x="76" y="162" width="34" height="34"/><rect x="114" y="162" width="34" height="34"/>
+              <rect x="152" y="162" width="34" height="34"/><rect x="190" y="162" width="34" height="34"/>
+              <rect x="228" y="162" width="34" height="34"/><rect x="266" y="162" width="34" height="34"/>
+              <rect x="304" y="162" width="34" height="34"/><rect x="342" y="162" width="34" height="34"/>
+              <rect x="380" y="162" width="34" height="34"/><rect x="418" y="162" width="34" height="34"/>
+            </g>
+            <g fill="var(--olive)" opacity="0.75">
+              <rect x="6" y="168" width="22" height="22"/><rect x="44" y="168" width="22" height="22"/>
+              <rect x="82" y="168" width="22" height="22"/><rect x="120" y="168" width="22" height="22"/>
+              <rect x="158" y="168" width="22" height="22"/><rect x="196" y="168" width="22" height="22"/>
+              <rect x="234" y="168" width="22" height="22"/><rect x="272" y="168" width="22" height="22"/>
+              <rect x="310" y="168" width="22" height="22"/><rect x="348" y="168" width="22" height="22"/>
+            </g>
+            <path d="M 380 206 L 452 206" stroke="var(--rule)" stroke-width="1.5"/>
+            <text x="458" y="184" fill="var(--soft)" font-family="Oswald, sans-serif" font-size="12" letter-spacing="1.2">TWO SPARE</text>
+            <text x="0" y="222" fill="var(--soft)" font-family="Source Serif 4, serif" font-size="13" font-style="italic">twelve, not ten &mdash; a lean-to that only just clears the price stops clearing it the first wet fortnight</text>
+          </g>
+        </svg>
+      </div>
+      <figcaption class="caption">Twelve rather than ten because <code>placesIn</code> scales what a
+        building holds by its condition. The margin is the point of the number.</figcaption>
+    </figure>
+
+    <p>Right now Bren&rsquo;s claim holds <code>wood&nbsp;1, ore&nbsp;4, plank&nbsp;1</code> &mdash;
+      six things in a shed that holds seven, four of them ore it has no kiln to burn.
+      <code>src/sim.ts</code> even carries a branch written to unjam exactly this state, and it is
+      gated on <code>town.stock.wood&nbsp;&gt;=&nbsp;10</code>: the one number such a settlement can
+      never reach. The escape hatch was fitted with the lock it was meant to open.</p>
+  </section>
+
+  <div class="fleuron">&#10087;&#10087;&#10087;</div>
+
+  <section>
+    <h2><span class="n">III</span> <span>It was not the ballot</span></h2>
+    <p>The obvious suspect is the vote, because houses past the first need one. The record clears
+      it twice over.</p>
+    <p><b>Tove&rsquo;s claim put the motion at tick 37,687</b>, days after the newcomers landed, and
+      carried it <b>4&nbsp;to&nbsp;0</b> &mdash; unanimous, every voice in the settlement. Fifty-two
+      days later the house is not standing. <code>mayHouse</code> has been answering <i>yes</i> the
+      whole time, on a single lookup, without ever needing to hold the meeting again.</p>
+    <p><b>Bren&rsquo;s claim never needed a vote at all.</b> <code>wantsBuilding</code> returns
+      <code>'house'</code> unconditionally while <code>houses&nbsp;===&nbsp;0</code>. There has been
+      nothing to refuse and nobody refusing it.</p>
+    <p>What the settlers were told instead, in the feed, in the game&rsquo;s own words:</p>
+    <div class="exhibit"><span class="tag">agents/log.jsonl</span>
+Orla could not build: a house wants 7 more wood.
+Maeve could not build: a house wants 7 more wood.</div>
+    <p class="caption">Said to Orla with four people standing in that yard carrying fifteen wood
+      between them and the lean-to holding five more. Hold that line; section VII comes back to
+      it.</p>
+  </section>
+
+  <section>
+    <h2><span class="n">IV</span> <span>Why it surfaced now</span></h2>
+    <p>Sheet XXXV pointed the boat at the forks. Before that a claim could shrink and could not
+      grow, so nobody was ever housed badly enough at one to notice what its shed held. The moment
+      arrivals were routed by <code>roomFor</code>, both claims filled to
+      <code>beds&nbsp;+&nbsp;ROUGH_SLEEPERS</code> and stopped &mdash; leaving exactly two roofless
+      at each, at settlements too small to hold the cure.</p>
+    <p>The amendment did not create the fault. It delivered people to it. That is the ordinary way
+      a sealed thing is discovered: not by inspection, but by somebody being made to live in it.</p>
+  </section>
+
+  <section>
+    <h2><span class="n">V</span> <span>What was changed</span></h2>
+    <ol class="changes">
+      <li>
+        <h3>The lean-to now holds twelve</h3>
+        <p><code>HOLDS.claim</code>, 8&nbsp;&rarr;&nbsp;12. One number, and it is the whole
+          finding.</p>
+      </li>
+      <li>
+        <h3>A new rung in the ladder check &mdash; <i>the shed against the price</i></h3>
+        <p><code>check-economy.mjs</code> now reads <code>HOLDS</code>, <code>BUILD_COST</code> and
+          <code>newSettlement</code>&rsquo;s own <code>unlocked</code> list, and refuses any
+          founding seat that holds less than the cheapest thing a settlement founded on one may
+          build. Its wording against the old value is set out below.</p>
+      </li>
+      <li>
+        <h3>The check that should have caught it was blind</h3>
+        <p><code>/function applyStep\(([\s\S]*?)\n\}\n/</code> cannot match
+          <code>\r\n}\r\n</code>, and git hands this tree back with CRLF endings. The capture came
+          back empty, so all twenty-nine actions were reported as words <code>applyStep</code> has
+          no case for &mdash; thirty-two dead ends, none of them real, and
+          <code>npm&nbsp;run&nbsp;check</code> exited 1 before it ever reached the checks that
+          matter. The fix is one <code>\r?</code>.</p>
+      </li>
+      <li>
+        <h3>A builder was charged twice for a distant site</h3>
+        <p>The <code>build</code> case debited the stores even for a site the stores cannot reach,
+          so somebody who had carried the whole cost out to the far shore paid for it once out of
+          their pack and once out of a shed sixteen tiles behind them. <code>atHand</code> was
+          already computed two lines above; it simply was not asked.</p>
+      </li>
+    </ol>
+    <div class="exhibit"><span class="tag">the new rung, against the old value</span>
+claim: holds 8, and the cheapest thing a settlement founded on one may
+       build is a house at 10 &mdash; it can never bank the price of anything</div>
+    <p>A check that fails wrongly on half the machines it runs on is worse than no check, because it
+      stops being read. This was the file that would have named a lean-to too small to hold the
+      price of a house, and on the machine where that was happening it was not running.
+      <b><code>npm&nbsp;run&nbsp;check</code> now passes end to end for the first time in this
+      working tree.</b></p>
+  </section>
+
+  <section>
+    <h2><span class="n">VI</span> <span>Measured</span></h2>
+    <p>Headless, fixed seed, the same coast left to itself:</p>
+    <div class="wrap">
+      <table class="ledger">
+        <caption>At tick 6,000, across all settlements</caption>
+        <thead>
+          <tr><th scope="col"></th><th scope="col">Settlers</th><th scope="col">Houses</th><th scope="col">On the ground</th><th scope="col">Lost to the grass</th></tr>
+        </thead>
+        <tbody>
+          <tr><th scope="row">before</th><td>26</td><td>22</td><td>3</td><td class="bad">570</td></tr>
+          <tr><th scope="row">after</th><td class="good">30</td><td class="good">29</td><td class="good">1</td><td class="good">148</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>And the repo&rsquo;s own gate, which runs the real <code>stepSim</code> for twelve thousand
+      ticks with no model holding its hand:</p>
+    <div class="exhibit"><span class="tag">before</span>  12000 ticks &middot; 32 settlers &middot; 3 settlement(s)
+<span class="good">after </span>  12000 ticks &middot; 39 settlers &middot; 3 settlement(s)</div>
+  </section>
+
+  <section>
+    <h2><span class="n">VII</span> <span>Built, measured, withdrawn</span></h2>
+    <p>Return to the line in section III. Four places in <code>sim.ts</code> ask whether
+      <i>one&nbsp;person</i> can pay for a building &mdash; the stores plus that settler&rsquo;s own
+      pack &mdash; and two of the four are what a model is briefed with and answered by. But a
+      raising is not a withdrawal from a warehouse. It is a day when the people who live here turn
+      up at a patch of ground with what they have on their backs, and the thing goes up out of
+      that.</p>
+    <p>So it was built: <code>handsAt</code> and <code>toHandFor</code>, the yard counted at all
+      four sites, each neighbour&rsquo;s contribution recorded as a bond and a memory. Then it was
+      measured across five variants against the same seed, and it does not earn its place.</p>
+    <div class="wrap">
+      <table class="ledger">
+        <caption>The sweep &mdash; tick 6,000, one seed each</caption>
+        <thead>
+          <tr><th scope="col">Variant</th><th scope="col">Settlers</th><th scope="col">Houses</th><th scope="col">On the ground</th><th scope="col">Lost to the grass</th></tr>
+        </thead>
+        <tbody>
+          <tr><th scope="row">as found</th><td>26</td><td>22</td><td>3</td><td>570</td></tr>
+          <tr class="rule-top"><th scope="row">lean-to only <span class="note">&mdash; shipped</span></th><td class="good">30</td><td class="good">29</td><td class="good">1</td><td>148</td></tr>
+          <tr><th scope="row">hands only</th><td>28</td><td>25</td><td>3</td><td>250</td></tr>
+          <tr><th scope="row">lean-to + hands</th><td>26</td><td>22</td><td>3</td><td>160</td></tr>
+          <tr><th scope="row">everything on</th><td>27</td><td class="bad">19</td><td class="bad">6</td><td class="good">91</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="withdrawn">
+      <span class="lead">Withdrawn</span>
+      <p>With everything on, waste collapses &mdash; 570 to 91, the best figure in the sweep &mdash;
+        and houses fall from 29 to 19 while people sleeping on the ground rise from 1 to 6. Roofless
+        is the metric that opened this sheet. The narrower version, without the shed rule, came out
+        level with doing nothing at all.</p>
+      <p>So it is out, and this paragraph is the record of it rather than a comment in the file. It
+        is a good idea that measured badly, which is the only kind worth writing down.</p>
+    </div>
+    <p>One thing that sweep exposed and nothing here fixes: in two runs of three, a penned claim
+      weathers its only lean-to below the price faster than it can repair it &mdash; too poor to
+      keep the shed that would let it stop being poor. Different fault. Same family.</p>
+  </section>
+
+  <div class="fleuron">&#10087;&#10087;&#10087;</div>
+
+  <section>
+    <h2><span class="n">VIII</span> <span>The register</span></h2>
+    <p>Two settlements agreed on a house. One of them agreed unanimously. Neither was refused
+      anything, by anybody, at any point. The wood was cut, carried home, found no room, put down
+      beside the door, and taken by the weather &mdash; one thousand two hundred and sixty-four
+      times, at the feet of four people with nowhere to sleep.</p>
+    <p>Nothing in the valley was against them. The shed was eight and the roof was ten.</p>
+    <div class="colophon">
+      <p class="footline"><code>src/sim.ts</code> &middot; <code>tools/check-economy.mjs</code>
+        &middot; <code>npm run check</code> green &middot; two files, one number, and a check so it
+        cannot come back.</p>
+      <p class="stamp">The Frontier Record &middot; Sheet XXXVII &middot; 28 August</p>
+    </div>
+  </section>
+
+</div>
+
+</body>
+</html>
