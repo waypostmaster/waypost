@@ -1,0 +1,288 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>*{margin:0;padding:0}img{max-width:100%}</style>
+</head>
+<body>
+<title>The Broom</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Vollkorn:ital,wght@0,400;0,600;1,400&family=Fira+Mono:wght@400;700&display=swap">
+
+<style>
+  /*
+   * A flooded workshop. Cellar stone, rising water, broom-straw gold — and the light theme is the
+   * same cellar with the shutters open, after the master has said the word.
+   */
+  :root {
+    --cellar:  #EDE8DB;
+    --cellar2: #E1D9C5;
+    --panel:   #F6F1E3;
+    --ink:     #1C1710;
+    --faint:   #72684F;
+    --rule:    #C6B893;
+    --straw:   #8A6A20;
+    --flood:   #33586E;
+    --spell:   #9A3313;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --cellar: #0D1013; --cellar2: #131820; --panel: #171D27;
+      --ink:    #EAE2CD; --faint:  #97906F; --rule:  #303845;
+      --straw:  #D5A94E; --flood:  #7FA8C0; --spell: #E5714D;
+    }
+  }
+  :root[data-theme="dark"] {
+    --cellar: #0D1013; --cellar2: #131820; --panel: #171D27;
+    --ink:    #EAE2CD; --faint:  #97906F; --rule:  #303845;
+    --straw:  #D5A94E; --flood:  #7FA8C0; --spell: #E5714D;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    background: var(--cellar); color: var(--ink);
+    font-family: Vollkorn, Georgia, serif;
+    font-size: 1.15rem; line-height: 1.62;
+    margin: 0; padding: 0 1.2rem 6rem;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .leaf { max-width: 43rem; margin: 0 auto; display: flex; flex-direction: column; gap: 2.5rem; }
+  p { margin: 0; max-width: 68ch; text-wrap: pretty; }
+  b { font-weight: 600; }
+  i, em { font-style: italic; }
+  a { color: var(--spell); }
+  a:focus-visible { outline: 2px solid var(--spell); outline-offset: 3px; }
+  code { font-family: "Fira Mono", ui-monospace, monospace; font-size: 0.73em; color: var(--spell); }
+
+  .stamp {
+    font-family: "Fira Mono", monospace; font-size: 0.64rem;
+    letter-spacing: 0.17em; text-transform: uppercase; color: var(--faint); margin: 0;
+  }
+
+  header.front { display: flex; flex-direction: column; align-items: flex-start; gap: 0.9rem; padding-top: 3.4rem; }
+  header.front h1 {
+    font-weight: 600; font-size: clamp(2.6rem, 10vw, 4.4rem);
+    letter-spacing: -0.01em; margin: 0; line-height: 1.0;
+  }
+  header.front .sub { color: var(--faint); font-style: italic; max-width: 40rem; font-size: 1.1rem; }
+  .runhead {
+    display: flex; flex-wrap: wrap; justify-content: space-between; gap: 0.4rem 1rem; width: 100%;
+    font-family: "Fira Mono", monospace; font-size: 0.64rem; color: var(--faint);
+    border-top: 2px solid var(--ink); border-bottom: 1px solid var(--rule); padding: 0.5rem 0.1rem;
+  }
+
+  .finding {
+    background: var(--panel); border: 1px solid var(--rule); border-left: 3px solid var(--spell);
+    padding: 1.3rem 1.5rem; font-size: 1.08rem; line-height: 1.57;
+  }
+  .finding .lead {
+    font-family: "Fira Mono", monospace; font-size: 0.64rem; font-weight: 700;
+    letter-spacing: 0.18em; text-transform: uppercase; color: var(--spell);
+    display: block; margin-bottom: 0.6rem;
+  }
+
+  section { display: flex; flex-direction: column; gap: 1.05rem; }
+  section > h2 {
+    font-weight: 600; font-size: 1.58rem;
+    margin: 0 0 0.45rem; padding-bottom: 0.4rem; border-bottom: 1px solid var(--ink);
+    display: flex; gap: 0.8rem; align-items: baseline;
+  }
+  section > h2 .n {
+    color: var(--spell); font-family: "Fira Mono", monospace; font-size: 0.68rem;
+    letter-spacing: 0.1em; font-weight: 700;
+  }
+
+  blockquote {
+    margin: 0.2rem 0; padding: 0.9rem 1.3rem; background: var(--cellar2);
+    border-left: 3px solid var(--ink); font-style: italic; max-width: 62ch;
+  }
+  blockquote .who {
+    display: block; font-style: normal; font-family: "Fira Mono", monospace;
+    font-size: 0.63rem; letter-spacing: 0.08em; color: var(--faint); margin-top: 0.55rem;
+  }
+  blockquote.source { border-left-color: var(--straw); }
+
+  .caption { font-size: 0.98rem; color: var(--faint); font-style: italic; max-width: 64ch; }
+
+  .wrap { overflow-x: auto; }
+  table.plate { width: 100%; border-collapse: collapse; font-size: 1rem; }
+  table.plate caption {
+    font-family: "Fira Mono", monospace; font-size: 0.63rem; letter-spacing: 0.13em;
+    text-transform: uppercase; color: var(--faint); text-align: left; padding-bottom: 0.5rem;
+  }
+  table.plate th, table.plate td {
+    text-align: left; padding: 0.5rem 0.8rem 0.5rem 0; border-bottom: 1px solid var(--rule);
+    vertical-align: top;
+  }
+  table.plate thead th {
+    font-family: "Fira Mono", monospace; font-size: 0.62rem; letter-spacing: 0.06em;
+    text-transform: uppercase; color: var(--faint); font-weight: 400;
+    border-bottom: 2px solid var(--ink); border-top: 2px solid var(--ink);
+  }
+  table.plate td.num { font-family: "Fira Mono", monospace; font-size: 0.8rem; white-space: nowrap; }
+  table.plate td b { color: var(--spell); }
+
+  pre {
+    margin: 0; padding: 0.95rem 1.2rem; background: var(--cellar2);
+    border-left: 3px solid var(--rule); overflow-x: auto;
+    font-family: "Fira Mono", monospace; font-size: 0.74rem; line-height: 1.75; color: var(--ink);
+  }
+
+  .explicit { display: flex; flex-direction: column; gap: 0.55rem; padding-top: 0.4rem; border-top: 2px solid var(--ink); }
+  .footline { color: var(--faint); font-size: 0.98rem; }
+</style>
+
+<div class="leaf">
+
+  <header class="front">
+    <p class="stamp">The Frontier Record &middot; Sheet LIX</p>
+    <h1>The Broom</h1>
+    <p class="sub">Goethe, 1797: an apprentice borrows the master&rsquo;s spell, sets a broom
+      carrying water, and discovers he never learned the word that makes it stop. This valley
+      wrote that spell deliberately, gave one broom the stopping-word, and left the other
+      carrying.</p>
+    <div class="runhead">
+      <span>Der Zauberlehrling &middot; the spell without the stop-word</span>
+      <span>caps six and five &middot; nobody has ever worked here</span>
+    </div>
+  </header>
+
+  <div class="finding">
+    <span class="lead">The finding</span>
+    <b>The valley is voting itself granaries in an unbounded loop, and every one of them stands
+    unworked.</b> Thirty settlers is permanent hunger; hunger re-opens the <code>storehouse</code>
+    category at every meeting; a hungry electorate carries it; and a re-carry — by Sheet
+    XXXII&rsquo;s own deliberate design — raises the settlement&rsquo;s granary cap for good and
+    commissions another one. Then everybody is still hungry at the next meeting. Measured on the
+    running valley this evening: <b>56 storehouse carries in one run&rsquo;s log, caps raised to
+    six and five in two settlements, and every granary card reading <i>nobody has ever worked
+    here</i></b> — because putting food up is an afternoon somebody must choose, and hungry
+    settlers forage instead. The famine response is eating the famine&rsquo;s lunch.
+  </div>
+
+  <section>
+    <h2><span class="n">I</span> <span>The spell without the stop-word</span></h2>
+    <p>The old sorcerer goes out and the apprentice, who has watched the words work but never
+      learned them all, sets a broom to carry water to the bath. It carries. It keeps carrying.
+      The bath fills, the floor floods, and the boy discovers the gap in his education is
+      precisely the word that makes a servant stop:</p>
+    <blockquote class="source">The spirits that I summoned — I now cannot rid myself of them.
+      <span class="who">Goethe, &ldquo;Der Zauberlehrling&rdquo;, 1797</span></blockquote>
+    <p>In desperation he takes an axe to the broom, and the two halves each pick up a bucket.
+      The poem&rsquo;s engineering lesson is exact: <b>a process given a trigger and no
+      terminating condition does not wind down, it compounds</b> — and striking at it without
+      understanding the mechanism doubles it. Only the master&rsquo;s word ends the flood, and
+      the master&rsquo;s word is the one thing that was never delegated.</p>
+  </section>
+
+  <section>
+    <h2><span class="n">II</span> <span>The spell in this valley</span></h2>
+    <p>The ratchet is Sheet XXXII&rsquo;s, and it was right to build: <i>pressure re-opens the
+      categories that answer it</i>. A starving settlement must be able to say so at a meeting —
+      that was the whole finding of the famine that could not speak. And the re-carry grant is
+      honest by design: carrying a vote must hand over a real second thing, or it is the wage
+      fault, a settlement handed what it already had. So a re-carried <code>storehouse</code>
+      raises the granary cap permanently and queues a commission that drives
+      <code>wantsBuilding</code> above the builder&rsquo;s own ladder.</p>
+    <p>Put a large valley behind that spell and watch. Thirty settlers cannot feed themselves off
+      the bushes, so <code>foodOnHand &lt; folk.length</code> is true at every meeting, so the
+      broom fills the bath for ever:</p>
+    <div class="wrap">
+      <table class="plate">
+        <caption>Run mteu9jh3-ny, this evening, read off the live valley at t≈3,964</caption>
+        <thead><tr><th>settlement</th><th class="num">granaries standing</th><th class="num">granary cap</th><th>worked, ever</th></tr></thead>
+        <tbody>
+          <tr><td>the landing</td><td class="num">2</td><td class="num"><b>6</b></td><td><b>never</b></td></tr>
+          <tr><td>Oren&rsquo;s claim</td><td class="num">3, +1 commissioned</td><td class="num"><b>5</b></td><td><b>never</b></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>Each cap point is one re-carry; the log holds <b>56</b> storehouse carries for the run. The
+      newest were raised back to back — a depot by Maeve at 3,658s, a granary by Tove at 3,775s —
+      into a lamplit cluster dense enough that the keeper, watching from the couch, asked the
+      question that is this sheet&rsquo;s title in different words: <i>&ldquo;They have built…
+      too many somethings.&rdquo;</i> And the cruellest line closes the loop: the commission
+      outranks the builder&rsquo;s ladder, so <b>the labour that could be putting food up is
+      raising the next empty granary.</b> Buckets, carried faster, into a bath nobody drinks
+      from.</p>
+  </section>
+
+  <section>
+    <h2><span class="n">III</span> <span>The axe that fell once</span></h2>
+    <p>The bitter part is that this exact flood has happened before, was diagnosed, and was
+      fixed — <b>one branch too low.</b> <code>releasedTo</code> carries a long comment about run
+      <code>mtbgptmz-5q</code>: a settlement of twenty standing at <i>sixteen masons&rsquo;
+      yards, fifteen of which had never squared a stone</i>, ten joiners, six sawmills, four
+      kilns — thirty-one of thirty-nine benches with no lifetime output, two blocks short of
+      voting for a seventeenth yard. The fix was the <code>unused</code> guard: <i>a bench that
+      has never once made anything holds the category shut until somebody stands at it.</i></p>
+    <pre>if (foodOnHand(town) < folk.length) {
+  out.set('livestock', 'the settlement is hungry');     // ← no guard
+  out.set('storehouse', 'the settlement is hungry');    // ← no guard
+}
+/* …six lines later, for the workshops only… */
+const unused = standing.find((b) => ITEMS.every((it) => (b.made[it] ?? 0) === 0));
+if (unused !== undefined) continue;                     // ← the axe, one branch too low</pre>
+    <p>The guard was applied to the workshop loop and <b>the hunger branch, six lines above it in
+      the same function, releases unconditionally.</b> The file convicts itself: the diagnosis,
+      the fix, and the unfixed recurrence share a screenful. The axe fell, and the half it missed
+      picked up a bucket.</p>
+  </section>
+
+  <section>
+    <h2><span class="n">IV</span> <span>The bucket nobody could ever empty</span></h2>
+    <p>And routing hunger through the same guard would not have worked either, which is why this
+      sheet exists before the fix does. The guard reads <code>b.made</code>, the lifetime tally
+      written by <code>turnedOut</code> — and <b>the <code>keep</code> action, the actual work of
+      standing in a granary putting food up, never calls it.</b> A granary worked every afternoon
+      of its life still reads as never-used. Guard the hunger branch naively and the category
+      slams shut the moment the first granary stands, for ever: a genuinely starving settlement
+      that mans its granary daily could never legitimately earn a second one. The broom either
+      floods the cellar or refuses to fetch water at all, and both are the same missing word.</p>
+    <p>The comment beside the guard remarks that <code>made</code> is <i>&ldquo;the second time
+      this file has found that number kept and read by nobody.&rdquo;</i> This is the third —
+      kept, read by the guard, and <b>never written by the one building the guard most needed to
+      read it on.</b></p>
+  </section>
+
+  <section>
+    <h2><span class="n">V</span> <span>The master&rsquo;s word, written before it is spoken</span></h2>
+    <p>The fix is not landed — a build session holds the working tree tonight, and two writers in
+      one checkout is how files get eaten — so the predictions go on the record first, which is
+      what this record is for:</p>
+    <p><b>The fix has two halves and needs both.</b> <code>keep</code> tallies what it lays by
+      through <code>turnedOut</code>, so a worked granary finally reads as worked; and the hunger
+      release passes the same test as the workshops — no re-carry while an unworked storehouse
+      stands or a commission is unbuilt. <b>Predicted:</b> caps freeze at their current six and
+      five while the standing granaries go unworked; the first settlement that actually mans one
+      becomes able to earn a sibling honestly; and a fresh thirty-settler valley ends its first
+      evening with one or two granaries, not eleven allowances. <b>Refuted by:</b> a starving
+      settlement that works its granary daily and still cannot re-carry — that is the guard too
+      tight, the broom refusing the well — or caps that rise anyway, which is a third door
+      nobody has found.</p>
+    <p class="caption">What is thin: the numbers are one evening of one run, and &ldquo;the
+      labour is eaten by commissions&rdquo; is inferred from the commission&rsquo;s priority in
+      <code>wantsBuilding</code>, not measured as hours diverted. The check this earns belongs in
+      <code>check-release.mjs</code>, whose fifteen cases cover the ratchet and none of them ask
+      whether the famine branch can stop.</p>
+    <blockquote>In die Ecke, Besen! Besen! Seid&rsquo;s gewesen.
+      <span class="who">the master&rsquo;s word — into the corner, broom: it is over. The one
+        line the apprentice never learned, and the one this sheet is filing the vocabulary
+        for.</span></blockquote>
+
+    <div class="explicit">
+      <p class="footline">Observed 29 August by the keeper, from the couch, in lamplight the
+        granaries themselves were casting. The record&rsquo;s instruments all read green at the
+        time.</p>
+      <p class="stamp">The Frontier Record &middot; Sheet LIX &middot; 29 August</p>
+    </div>
+  </section>
+
+</div>
+
+</body>
+</html>
