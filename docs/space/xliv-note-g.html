@@ -1,0 +1,350 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>*{margin:0;padding:0}img{max-width:100%}</style>
+</head>
+<body>
+<title>Note G</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Display&family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&family=DM+Mono:wght@400;500&display=swap">
+
+<style>
+  /*
+   * A scientific memoir. London, 1843: Caslon on laid paper, an engraved operation table, rules
+   * in the one red a plate printer would pay for, and nothing else coloured at all. Ada's Note G
+   * is a table — operation, nature of operation, variables acted upon, result — so the figure on
+   * this sheet is that table, with the columns renamed.
+   */
+  :root {
+    --paper:   #F1EDE3;
+    --paper-2: #E6E0D1;
+    --panel:   #F8F5EC;
+    --ink:     #221F1A;
+    --faint:   #6F6A5E;
+    --rule:    #C3BCA9;
+    --plate:   #9B2C24;
+    --counted: #2E6157;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --paper:   #15140F;
+      --paper-2: #1D1B15;
+      --panel:   #201E17;
+      --ink:     #E6E0CF;
+      --faint:   #948D7B;
+      --rule:    #383327;
+      --plate:   #DE7167;
+      --counted: #6DB6A4;
+    }
+  }
+  :root[data-theme="dark"] {
+    --paper:   #15140F;
+    --paper-2: #1D1B15;
+    --panel:   #201E17;
+    --ink:     #E6E0CF;
+    --faint:   #948D7B;
+    --rule:    #383327;
+    --plate:   #DE7167;
+    --counted: #6DB6A4;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    background: var(--paper); color: var(--ink);
+    font-family: "Libre Caslon Text", Georgia, serif;
+    font-size: 1.05rem; line-height: 1.68;
+    margin: 0; padding: 0 1.2rem 6rem;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .memoir { max-width: 42rem; margin: 0 auto; display: flex; flex-direction: column; gap: 2.6rem; }
+  p { margin: 0; max-width: 64ch; }
+  b { font-weight: 700; }
+  i, em { font-style: italic; }
+  a { color: var(--plate); }
+  a:focus-visible { outline: 2px solid var(--plate); outline-offset: 3px; }
+  code { font-family: "DM Mono", ui-monospace, monospace; font-size: 0.84em; color: var(--plate); }
+
+  .stamp {
+    font-family: "DM Mono", monospace; font-size: 0.7rem;
+    letter-spacing: 0.16em; text-transform: uppercase; color: var(--faint); margin: 0;
+  }
+
+  header.front {
+    display: flex; flex-direction: column; align-items: center; text-align: center;
+    gap: 0.9rem; padding-top: 3.4rem;
+  }
+  header.front h1 {
+    font-family: "Libre Caslon Display", Georgia, serif; font-weight: 400;
+    font-size: clamp(2.6rem, 11vw, 4.2rem); letter-spacing: 0.01em;
+    margin: 0; line-height: 1; color: var(--ink);
+  }
+  header.front .sub { color: var(--faint); font-style: italic; max-width: 36rem; font-size: 1rem; text-wrap: pretty; }
+  .runhead {
+    display: flex; flex-wrap: wrap; justify-content: space-between; gap: 0.4rem 1rem; width: 100%;
+    font-family: "DM Mono", monospace; font-size: 0.68rem; color: var(--faint);
+    border-top: 2px solid var(--ink); border-bottom: 1px solid var(--rule); padding: 0.5rem 0.1rem;
+  }
+
+  .finding {
+    background: var(--panel); border: 1px solid var(--rule); border-left: 3px solid var(--plate);
+    padding: 1.3rem 1.5rem; font-size: 1rem; line-height: 1.62;
+  }
+  .finding .lead {
+    font-family: "DM Mono", monospace; font-size: 0.7rem; font-weight: 500;
+    letter-spacing: 0.18em; text-transform: uppercase; color: var(--plate);
+    display: block; margin-bottom: 0.6rem;
+  }
+
+  section { display: flex; flex-direction: column; gap: 1.05rem; }
+  section > h2 {
+    font-family: "Libre Caslon Display", Georgia, serif; font-weight: 400; font-size: 1.55rem;
+    margin: 0 0 0.45rem; padding-bottom: 0.4rem; border-bottom: 1px solid var(--ink);
+    display: flex; gap: 0.75rem; align-items: baseline;
+  }
+  section > h2 .n { color: var(--plate); font-family: "DM Mono", monospace; font-size: 0.76rem; }
+
+  blockquote {
+    margin: 0.2rem 0; padding: 0.9rem 1.3rem; background: var(--paper-2);
+    border-left: 3px solid var(--ink); font-style: italic; max-width: 60ch;
+  }
+  blockquote .who {
+    display: block; font-style: normal; font-family: "DM Mono", monospace;
+    font-size: 0.68rem; letter-spacing: 0.1em; color: var(--faint); margin-top: 0.55rem;
+  }
+  blockquote.source { border-left-color: var(--plate); }
+
+  .caption { font-size: 0.92rem; color: var(--faint); font-style: italic; max-width: 62ch; }
+
+  .wrap { overflow-x: auto; }
+  table.plate { width: 100%; border-collapse: collapse; font-size: 0.95rem; }
+  table.plate caption {
+    font-family: "DM Mono", monospace; font-size: 0.68rem; letter-spacing: 0.14em;
+    text-transform: uppercase; color: var(--faint); text-align: left; padding-bottom: 0.5rem;
+  }
+  table.plate th, table.plate td {
+    text-align: left; padding: 0.46rem 0.6rem 0.46rem 0; border-bottom: 1px solid var(--rule); vertical-align: top;
+  }
+  table.plate thead th {
+    font-family: "DM Mono", monospace; font-size: 0.66rem; letter-spacing: 0.08em;
+    text-transform: uppercase; color: var(--faint); font-weight: 400;
+    border-bottom: 2px solid var(--ink); border-top: 2px solid var(--ink);
+  }
+  table.plate td.op { font-family: "DM Mono", monospace; font-size: 0.78rem; color: var(--plate); white-space: nowrap; }
+  table.plate td.num { font-family: "DM Mono", monospace; font-size: 0.86rem; text-align: right; font-variant-numeric: tabular-nums; }
+  table.plate .counted { color: var(--counted); font-weight: 700; }
+  table.plate .note { color: var(--faint); font-style: italic; font-size: 0.88rem; }
+
+  .explicit { display: flex; flex-direction: column; gap: 0.55rem; padding-top: 0.4rem; border-top: 2px solid var(--ink); }
+  .footline { color: var(--faint); font-size: 0.92rem; }
+</style>
+
+<div class="memoir">
+
+  <header class="front">
+    <p class="stamp">The Frontier Record &middot; Sheet XLIV</p>
+    <h1>Note G</h1>
+    <p class="sub">On the line this game draws between the part that counts and the part that
+      decides &mdash; and on what happened to a valley when the deciding half got a fifth as many
+      words in &mdash; read through Ada Lovelace, who wrote down the difference in 1843 and has
+      been quoted at machines ever since.</p>
+    <div class="runhead">
+      <span>London, 1843 &middot; run mtdvdlic-hv</span>
+      <span>33 actions &middot; 4 hours &middot; 0 place-names</span>
+    </div>
+  </header>
+
+  <div class="finding">
+    <span class="lead">The finding</span>
+    This valley is mostly arithmetic, and it is arithmetic <b>on purpose</b>. The line is drawn in
+    the source, in as many words, and it has never had a sheet: the ballot is counted by a pure
+    function because a count has one right answer; the debts are reckoned by a rule; the ladder,
+    the placement and the audits are all arithmetic. What the model does is want things. And the
+    strongest evidence the line is in the right place arrived by accident this week, when the
+    valley was run at four times speed and the deciding half got <b>a fifth as many words in</b>
+    &mdash; and the place kept running, because what carries it is the counting.
+  </div>
+
+  <section>
+    <h2><span class="n">I</span> <span>The line, in the author&rsquo;s own hand</span></h2>
+    <blockquote class="source">Single-seat STV &mdash; which is instant-runoff, and is a counting
+      rule rather than an opinion. <b>Kept away from the model on purpose.</b> The settlers decide
+      what they want; the arithmetic that turns their ballots into a result has one right answer,
+      and a language model asked to do it would produce a plausible one instead. Everything here
+      is pure and deterministic, so the same ballots always give the same rounds, and the rounds
+      are the thing worth showing.
+      <span class="who">tools/stv.mts, the first eight lines</span></blockquote>
+    <p><i>Would produce a plausible one instead.</i> That is the whole architecture of this game in
+      six words, and it is the reason the record can be read back at all. A plausible count cannot
+      be checked, cannot be reproduced, and cannot be disagreed with &mdash; and a valley whose
+      votes are plausible is a valley where nothing that happened actually happened.</p>
+    <blockquote>The Analytical Engine has no pretensions whatever to <i>originate</i> anything. It
+      can do <i>whatever we know how to order it</i> to perform.
+      <span class="who">Ada Lovelace, Note G to Menabrea&rsquo;s sketch, 1843</span></blockquote>
+    <p>Note G is remembered for that sentence and is mostly something else: a table. Operation,
+      nature of operation, variables acted upon, result &mdash; the first published algorithm, set
+      out so that anybody could work it by hand and get the same answer. Both halves matter here.
+      The engine does not originate; and the arithmetic is written down where it can be checked.</p>
+  </section>
+
+  <section>
+    <h2><span class="n">II</span> <span>Where the line actually falls</span></h2>
+    <div class="wrap">
+      <table class="plate">
+        <caption>The division, as the tree has it</caption>
+        <thead><tr><th scope="col">Operation</th><th scope="col">Nature of it</th><th scope="col">Whose</th></tr></thead>
+        <tbody>
+          <tr><td class="op">countStv</td><td>turning ballots into a result</td><td class="counted">counted</td></tr>
+          <tr><td class="op">wantsBuilding</td><td>what a settlement puts up next</td><td class="counted">counted</td></tr>
+          <tr><td class="op">releasedTo</td><td>whether a need has re-opened a question</td><td class="counted">counted</td></tr>
+          <tr><td class="op">findFree</td><td>whether the ground will take a building</td><td class="counted">counted</td></tr>
+          <tr><td class="op">owes / standing</td><td>what a favour is worth a week later</td><td class="counted">counted</td></tr>
+          <tr><td class="op">skillFrom</td><td>what somebody is worth at a trade</td><td class="counted">counted</td></tr>
+          <tr><td class="op">check-*</td><td>whether any of the above is lying</td><td class="counted">counted</td></tr>
+          <tr><td class="op">wish</td><td><b>what this valley is missing</b></td><td>the mind</td></tr>
+          <tr><td class="op">goals</td><td><b>what somebody is working toward</b></td><td>the mind</td></tr>
+          <tr><td class="op">plan / ifStuck</td><td><b>how they mean to spend the afternoon</b></td><td>the mind</td></tr>
+          <tr><td class="op">say</td><td><b>what they tell each other</b></td><td>the mind</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>Seven to four, and the seven are load-bearing. Every sheet in this record that found a fault
+      found it on the left-hand column &mdash; a lean-to that held less than a house cost, a
+      release condition read at the store and answered with a building, a ceiling at twenty-eight,
+      a footprint written in one file and asserted in seven. <b>Not one repair in this whole
+      record has been made by changing what a settler is allowed to want.</b> Every one has been
+      made to the left-hand column &mdash; which is not because the wanting is always right, but
+      because the counting is the half that can be checked, and a fault you cannot check is a
+      fault you cannot fix.</p>
+  </section>
+
+  <section>
+    <h2><span class="n">III</span> <span>The accident that tested it</span></h2>
+    <p>The valley has been run at four times speed. The bus is answering fine &mdash; about nine
+      and a half seconds a reply, clean JSON &mdash; but the world is moving four times faster past
+      a queue that runs at wall-clock speed:</p>
+    <div class="wrap">
+      <table class="plate">
+        <caption>Model decisions per thousand ticks of valley time</caption>
+        <thead><tr><th scope="col">Run</th><th scope="col">Decisions</th><th scope="col">Per 1,000 ticks</th></tr></thead>
+        <tbody>
+          <tr><td>mtbgptmz-5q <span class="note">the closed valley</span></td><td class="num">2,776</td><td class="num">50.9</td></tr>
+          <tr><td>mtdotjm9-e4</td><td class="num">353</td><td class="num">26.9</td></tr>
+          <tr><td>mtdvdlic-hv <span class="note">at 4&times;</span></td><td class="num">26</td><td class="num counted">9.4</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>A fifth of the words, and the valley did not stop. It founded two breakaways, carried a
+      wall, a cemetery, a hearth, a well, a joiner and a valuation system, built thirteen houses,
+      and produced the first migration in the life of the game. All of that is the left-hand
+      column. <b>What is thinner at four times speed is not the world but the interiority</b>
+      &mdash; fewer wishes, fewer things said, fewer plans, and more of `chooseJob`, which is a
+      good clerk and has never had an idea.</p>
+    <p class="caption">Which is worth knowing while watching rather than as a fault to fix: at four
+      times speed you are watching the counting, and the deciding is getting a word in about a
+      fifth as often as it did in the valley all these sheets were written about.</p>
+  </section>
+
+  <section>
+    <h2><span class="n">IV</span> <span>The best arithmetic in the tree</span></h2>
+    <p>If one mechanism here deserves to outlive the game it is the credit, and the reason is a
+      distinction that took a measurement to find.</p>
+    <p>A favour is written down <b>by name</b>. Somebody hired on credit is owed; the hirer owes.
+      It is worked off in goods rather than coin, reckoned once a day, and costs the creditor&rsquo;s
+      good opinion at three hundredths a day on debts over six. It is <i>deliberately soft &mdash;
+      no interest, no enforcement, nobody comes for you.</i> What it does is weigh: a debtor comes
+      when their creditor calls, and a creditor whose debt goes unanswered stops thinking well of
+      them.</p>
+    <p>And then the part that is not obvious. A settlement that has voted a ledger in reckons a
+      person&rsquo;s standing as <b>what they are owed by the place, less what they owe it</b>
+      &mdash; netted, never summed:</p>
+    <blockquote class="source">Summed, a ledger is a blanket penalty: the asker&rsquo;s debts to
+      eleven people add up past the cap on the first day, so every request in the valley is treated
+      as a bad one and nobody helps anybody. Measured with it written that way: <b>hostile pairs
+      went from two and a half to ten</b> &mdash; which is the fault the whole helping system was
+      rewritten to fix, reintroduced by the thing meant to help.
+      <span class="who">src/sim.ts, above the standing</span></blockquote>
+    <p>Somebody who has carried half the valley&rsquo;s stone is worth going out for, whoever they
+      carried it for. Somebody who has had a hand off everybody once cannot get a second one from a
+      stranger. That is one line of arithmetic and it is the difference between a coast where
+      people help each other and one where nobody does.</p>
+    <p><b>And here is what the counting cannot supply.</b> Across <b>199 proposals on file</b>, in
+      four valleys, not one settler has ever asked for their debts to be cleared. Not once, not in
+      a title, not in anybody&rsquo;s own words. The nearest is Pike, who asked for the opposite
+      &mdash; <i>a way to trade a day&rsquo;s work for a night&rsquo;s rest without having to run a
+      favour for someone else</i> &mdash; which is a request to work <b>without incurring one</b>.
+      Nobody wants absolution. Somebody wanted not to be obliged in the first place.</p>
+    <p class="caption">That is the right-hand column doing the only thing it can do, and doing it
+      better than any rule would have: telling you what people actually want, which was not what
+      the mechanism was built to offer.</p>
+  </section>
+
+  <section>
+    <h2><span class="n">V</span> <span>What the valley still cannot say</span></h2>
+    <p>Two vocabularies are missing, and both were found by reading rather than by anything going
+      wrong.</p>
+    <div class="wrap">
+      <table class="plate">
+        <caption>What can be named</caption>
+        <thead><tr><th scope="col"></th><th scope="col">Words</th><th scope="col"></th></tr></thead>
+        <tbody>
+          <tr><td>errands a settler can be asked for</td><td class="num counted">33</td><td class="note">and every one is a case in <code>applyStep</code></td></tr>
+          <tr><td>goods that can be carried or handed over</td><td class="num counted">9</td><td class="note">all four out of the ground, five made</td></tr>
+          <tr><td>buildings that can be named</td><td class="num counted">13</td><td class="note">as of the tinker</td></tr>
+          <tr><td>times of day</td><td class="num">4</td><td class="note"><code>daylight, night, dawn, dusk</code></td></tr>
+          <tr><td>places on the map</td><td class="num">0</td><td class="note">settlements have names; nothing else does</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>Thirty-three ways to spend an hour and <b>four words for when</b>. Two settlers cannot agree
+      a time finer than a quarter of a day, because <code>hourLabel</code> returns
+      <code>dawn</code> for a band and not a moment. And nothing on this coast has a name except
+      the settlements: there is no dell, no ridge, no ford, no long stand. <code>goto</code> takes
+      coordinates, which is a thing a settler standing in a field cannot say to another one.</p>
+    <p>Both are the shape Sheet XLII named &mdash; a whole category of intent with no bin. And half
+      of the second one is already standing: <b>the cairn</b>. A heap of stones on the ways between
+      things, the one structure here nobody votes for, going up one stone at a time by name. A
+      cairn that has been <i>named</i> is a landmark two people can agree on, and naming one is
+      work done with hands at a place somebody chose &mdash; which is the rule the roads had to
+      learn in Sheet XLI.</p>
+  </section>
+
+  <section>
+    <h2><span class="n">VI</span> <span>The counting audits the mind, and the author</span></h2>
+    <p>The last thing worth entering is what the left-hand column did to this evening&rsquo;s work.
+      Adding one word to the catalogue &mdash; a trade for the person who makes a thing &mdash; was
+      refused, in order:</p>
+    <div class="wrap">
+      <table class="plate">
+        <caption>Refusals, all correct</caption>
+        <tbody>
+          <tr><td class="op">check-lexicon</td><td>the new entry&rsquo;s own wording filed itself as somebody else&rsquo;s kind &mdash; twice, for two different entries</td></tr>
+          <tr><td class="op">check-capabilities</td><td><i>unlocks a bench, which has nothing anybody does in it</i></td></tr>
+          <tr><td class="op">check-economy</td><td>four ways: no prerequisite, no way for a stuck settlement to propose the way out, and a building a model could not ask for</td></tr>
+          <tr><td class="op">check-lexicon</td><td>and then, the moment the word existed, it re-read four valleys of back catalogue and found two old proposals that now read as the new kind &mdash; refusing to pass until the open one was refiled</td></tr>
+          <tr><td class="op">check-record</td><td>a new field on the settlement that reached no file, and then twelve more nobody had noticed</td></tr>
+          <tr><td class="op">tsc</td><td>a regular expression committed in a state that would not compile</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>Every one of those is arithmetic refusing an author, which is what Note G&rsquo;s table was
+      for: the operations written down where anybody can work them by hand and get the same answer.
+      A record whose counting could be talked round would not be a record. It would be a
+      plausible one.</p>
+
+    <div class="explicit">
+      <p class="footline">Run <code>mtdvdlic-hv</code> &middot; <code>tools/stv.mts</code>,
+        <code>owes</code>, the <code>ledger</code> standing, <code>hourLabel</code> &middot; 199
+        proposals on file, 0 open misfiles, 0 unheard &middot; full gate green at 44 sheets.</p>
+      <p class="stamp">The Frontier Record &middot; Sheet XLIV &middot; 29 August</p>
+    </div>
+  </section>
+
+</div>
+
+</body>
+</html>
