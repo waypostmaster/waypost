@@ -1,0 +1,351 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>*{margin:0;padding:0}img{max-width:100%}</style>
+</head>
+<body>
+<title>The Sea Clock</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,600;1,400&family=Fira+Mono:wght@400;700&display=swap">
+
+<style>
+  /*
+   * Brass, salt-bleached paper and the blue-black of a night watch. A chronometer is read in a
+   * gimballed box by lamplight, so the page is a dial face on a dark sea in one theme and the
+   * observatory's paper record in the other.
+   */
+  :root {
+    --sea:    #EAE4D6;
+    --sea2:   #DFD6C2;
+    --panel:  #F5F0E3;
+    --ink:    #1E1A14;
+    --faint:  #6F6350;
+    --rule:   #C6B795;
+    --brass:  #8A6320;
+    --rubric: #8C3A1B;
+    --deep:   #2C4756;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --sea:    #0C1116;
+      --sea2:   #131A21;
+      --panel:  #161E26;
+      --ink:    #E6DFCD;
+      --faint:  #938871;
+      --rule:   #2E3A44;
+      --brass:  #D6A44E;
+      --rubric: #E07A55;
+      --deep:   #8FB3C6;
+    }
+  }
+  :root[data-theme="dark"] {
+    --sea:    #0C1116;
+    --sea2:   #131A21;
+    --panel:  #161E26;
+    --ink:    #E6DFCD;
+    --faint:  #938871;
+    --rule:   #2E3A44;
+    --brass:  #D6A44E;
+    --rubric: #E07A55;
+    --deep:   #8FB3C6;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    background: var(--sea); color: var(--ink);
+    font-family: Spectral, Georgia, serif;
+    font-size: 1.14rem; line-height: 1.62;
+    margin: 0; padding: 0 1.2rem 6rem;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .leaf { max-width: 43rem; margin: 0 auto; display: flex; flex-direction: column; gap: 2.6rem; }
+  p { margin: 0; max-width: 68ch; text-wrap: pretty; }
+  b { font-weight: 600; }
+  i, em { font-style: italic; }
+  a { color: var(--rubric); }
+  a:focus-visible { outline: 2px solid var(--rubric); outline-offset: 3px; }
+  code { font-family: "Fira Mono", ui-monospace, monospace; font-size: 0.75em; color: var(--rubric); }
+
+  .stamp {
+    font-family: "Fira Mono", monospace; font-size: 0.64rem;
+    letter-spacing: 0.17em; text-transform: uppercase; color: var(--faint); margin: 0;
+  }
+
+  header.front { display: flex; flex-direction: column; align-items: flex-start; gap: 0.9rem; padding-top: 3.4rem; }
+  header.front h1 {
+    font-weight: 400; font-size: clamp(2.4rem, 9.6vw, 4.2rem);
+    letter-spacing: -0.015em; margin: 0; line-height: 1.02;
+  }
+  header.front .sub { color: var(--faint); font-style: italic; max-width: 40rem; font-size: 1.09rem; }
+  .runhead {
+    display: flex; flex-wrap: wrap; justify-content: space-between; gap: 0.4rem 1rem; width: 100%;
+    font-family: "Fira Mono", monospace; font-size: 0.64rem; color: var(--faint);
+    border-top: 2px solid var(--ink); border-bottom: 1px solid var(--rule); padding: 0.5rem 0.1rem;
+  }
+
+  .finding {
+    background: var(--panel); border: 1px solid var(--rule); border-left: 3px solid var(--brass);
+    padding: 1.3rem 1.5rem; font-size: 1.08rem; line-height: 1.58;
+  }
+  .finding .lead {
+    font-family: "Fira Mono", monospace; font-size: 0.64rem; font-weight: 700;
+    letter-spacing: 0.18em; text-transform: uppercase; color: var(--brass);
+    display: block; margin-bottom: 0.6rem;
+  }
+
+  section { display: flex; flex-direction: column; gap: 1.05rem; }
+  section > h2 {
+    font-weight: 600; font-size: 1.56rem;
+    margin: 0 0 0.45rem; padding-bottom: 0.4rem; border-bottom: 1px solid var(--ink);
+    display: flex; gap: 0.8rem; align-items: baseline;
+  }
+  section > h2 .n {
+    color: var(--brass); font-family: "Fira Mono", monospace; font-size: 0.68rem;
+    letter-spacing: 0.1em; font-weight: 700;
+  }
+
+  blockquote {
+    margin: 0.2rem 0; padding: 0.9rem 1.3rem; background: var(--sea2);
+    border-left: 3px solid var(--ink); font-style: italic; max-width: 62ch;
+  }
+  blockquote .who {
+    display: block; font-style: normal; font-family: "Fira Mono", monospace;
+    font-size: 0.63rem; letter-spacing: 0.08em; color: var(--faint); margin-top: 0.55rem;
+  }
+  blockquote.source { border-left-color: var(--brass); }
+
+  .caption { font-size: 0.98rem; color: var(--faint); font-style: italic; max-width: 64ch; }
+
+  .wrap { overflow-x: auto; }
+  table.rate { width: 100%; border-collapse: collapse; font-size: 1rem; }
+  table.rate caption {
+    font-family: "Fira Mono", monospace; font-size: 0.63rem; letter-spacing: 0.13em;
+    text-transform: uppercase; color: var(--faint); text-align: left; padding-bottom: 0.5rem;
+  }
+  table.rate th, table.rate td {
+    text-align: left; padding: 0.5rem 0.8rem 0.5rem 0; border-bottom: 1px solid var(--rule);
+    vertical-align: top;
+  }
+  table.rate thead th {
+    font-family: "Fira Mono", monospace; font-size: 0.62rem; letter-spacing: 0.06em;
+    text-transform: uppercase; color: var(--faint); font-weight: 400;
+    border-bottom: 2px solid var(--ink); border-top: 2px solid var(--ink);
+  }
+  table.rate td.num { font-family: "Fira Mono", monospace; font-size: 0.82rem; white-space: nowrap; }
+  table.rate td.bad { color: var(--rubric); }
+  table.rate td.good b { color: var(--brass); }
+
+  pre {
+    margin: 0; padding: 0.95rem 1.2rem; background: var(--sea2);
+    border-left: 3px solid var(--rule); overflow-x: auto;
+    font-family: "Fira Mono", monospace; font-size: 0.74rem; line-height: 1.75; color: var(--ink);
+  }
+
+  .explicit { display: flex; flex-direction: column; gap: 0.55rem; padding-top: 0.4rem; border-top: 2px solid var(--ink); }
+  .footline { color: var(--faint); font-size: 0.98rem; }
+</style>
+
+<div class="leaf">
+
+  <header class="front">
+    <p class="stamp">The Frontier Record &middot; Sheet LII</p>
+    <h1>The Sea Clock</h1>
+    <p class="sub">A pendulum keeps beautiful time ashore and useless time on a moving deck, because
+      its rate is a property of the thing it is standing on. This valley&rsquo;s clock was a
+      pendulum, and nobody had noticed because the deck had been still.</p>
+    <div class="runhead">
+      <span>Harrison, 1730&ndash;1761 &middot; a clock that keeps its rate away from the shore</span>
+      <span>a four-hour day was taking twenty</span>
+    </div>
+  </header>
+
+  <div class="finding">
+    <span class="lead">The finding</span>
+    <b>The valley ran at the speed of whoever was watching it.</b> The frame loop counted its debt
+    in <i>frames</i> — one step every <code>1/rate</code> of them — which comes out right above
+    20fps by a cancellation nobody had written down, and comes out wrong below it. Measured in a
+    Chrome tab reporting itself <code>visible</code> while not foregrounded: <b>1.3 frames a
+    second, and a <code>LIVE</code> valley advancing at 0.0055 sim-seconds a second against the
+    0.0139 it is defined as.</b> The four-hour day was taking twenty. Two viewers at two frame
+    rates were in two different valleys, which is the one thing Sheet XLIX promised could not
+    happen.
+  </div>
+
+  <section>
+    <h2><span class="n">I</span> <span>The rate is a property of the platform</span></h2>
+    <p>The longitude problem is a clock problem. Latitude you read off the sun; longitude you get
+      by comparing local noon against the time at a place whose longitude you know, so a ship needs
+      to carry that other place&rsquo;s time with it across an ocean. The best clocks in the world
+      in 1714 were pendulum clocks, and a pendulum&rsquo;s period is set by its length and by
+      gravity — which is to say by the deck it is bolted to. Put one on a ship and it keeps the
+      time of a rolling, pitching, warming, cooling ship.</p>
+    <blockquote class="source">Whatever ship doth make her voyage to the West Indies and return
+      home, without losing her longitude above one degree, that is, thirty geographical miles.
+      <span class="who">The Longitude Act, 1714 — the terms of the &pound;20,000 prize</span></blockquote>
+    <p>John Harrison spent thirty-one years on the answer, and every version of it is the same idea:
+      take the rate away from the environment. Counter-oscillating balances so the ship&rsquo;s
+      motion cancels rather than accumulates. A bimetallic strip so the spring&rsquo;s stiffness
+      does not follow the temperature. Bearings that need no oil, because oil thickens in the cold
+      and a clock lubricated at Portsmouth is a different clock at the equator.</p>
+    <p><b>None of it made the clock more accurate ashore.</b> H4 was not a better clock than a good
+      regulator in a Greenwich basement; it was a clock whose rate did not depend on where it was.
+      That is a different property and it is the only one that was worth anything at sea.</p>
+  </section>
+
+  <section>
+    <h2><span class="n">II</span> <span>The cancellation nobody had written down</span></h2>
+    <p>This is the whole of it, and it had been there since the clock was written:</p>
+    <pre>if (rate &gt;= 1) {
+  for (let i = 0; i &lt; rate; i++) stepSim(sim, Math.min(dt, 1 / 20));
+} else {
+  slowCarry += rate;
+  if (slowCarry &gt;= 1) { slowCarry -= 1; stepSim(sim, Math.min(dt, 1 / 20)); }
+}</pre>
+    <p>The debt is counted in frames. At <code>LIVE = 1/72</code> a step falls every seventy-second
+      frame, and each step advances the valley by <code>min(dt, 1/20)</code>. Multiply it out and
+      the valley gets <code>rate &times; min(dt, 1/20) &times; fps</code> seconds for every second
+      of somebody&rsquo;s afternoon — and above 20fps, where <code>dt</code> is <code>1/fps</code>,
+      the frame rate divides straight out and the answer is <code>rate</code>. Exactly right, for a
+      reason that is nowhere in the source.</p>
+    <p><b>Below 20fps the step stops shrinking and nothing cancels.</b> <code>min(dt, 1/20)</code>
+      is pinned at a twentieth, the number of frames still falls, and the valley slows in
+      proportion to how fast the tab happens to be drawing. It is a pendulum: correct on a still
+      deck, and quietly wrong on any other.</p>
+
+    <div class="wrap">
+      <table class="rate">
+        <caption>Sim-seconds a second of real time buys, at LIVE</caption>
+        <thead><tr><th>frames a second</th><th class="num">as it stood</th><th class="num">as it stands</th><th>a valley day</th></tr></thead>
+        <tbody>
+          <tr><td>120</td><td class="num">0.0139</td><td class="num good"><b>0.0139</b></td><td>4 hours</td></tr>
+          <tr><td>60</td><td class="num">0.0139</td><td class="num good"><b>0.0139</b></td><td>4 hours</td></tr>
+          <tr><td>20</td><td class="num">0.0139</td><td class="num good"><b>0.0139</b></td><td>4 hours</td></tr>
+          <tr><td>10</td><td class="num bad">0.0069</td><td class="num good"><b>0.0139</b></td><td>8 hours &rarr; 4</td></tr>
+          <tr><td>4</td><td class="num bad">0.0028</td><td class="num good"><b>0.0139</b></td><td>20 hours &rarr; 4</td></tr>
+          <tr><td>1.3</td><td class="num bad">0.0009</td><td class="num good"><b>0.0139</b></td><td>62 hours &rarr; 4</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p class="caption">That table is the loop&rsquo;s own arithmetic, and the observed figure sits
+      between two of its rows rather than on one: the tab counted 1.3 <i>animation</i> frames a
+      second while the valley advanced at 0.0055, which is the arithmetic for something nearer four.
+      The two are not the same clock — the draw is throttled by the browser and the update loop
+      keeps its own accumulator — and the gap between them is worth stating rather than rounding
+      away. What both agree on is the shape: below twenty frames a second the valley slows in
+      proportion, and the tab said it was visible the whole time.</p>
+
+    <p>It is not only the live clock. At <b>1&times;</b> on a tab drawing ten frames a second the
+      old loop ran the valley at half speed, for the same reason and with nothing anywhere saying
+      so — a settler&rsquo;s hunger, a tool&rsquo;s wear and a day&rsquo;s turning all quietly
+      costing twice what they were written to cost.</p>
+  </section>
+
+  <section>
+    <h2><span class="n">III</span> <span>Denominate the debt in seconds</span></h2>
+    <p>The fix is Harrison&rsquo;s, in one line: take the rate away from the platform. The debt is
+      owed in <i>sim-seconds against real time elapsed</i> rather than in frames, and then the
+      frame rate cancels at every frame rate instead of at some of them.</p>
+    <pre>const step = Math.min(dt, 1 / 20);
+owed += rate * dt;
+for (let i = 0; i &lt; 240 &amp;&amp; owed &gt;= step; i++) { owed -= step; stepSim(sim, step); }</pre>
+    <p>The step size is untouched, and deliberately: the settlement is full of thresholds — a task
+      finishing, a need crossing 0.95, a day turning — and one long step walks past them. What
+      changed is only how many of them a frame owes.</p>
+    <p><b>Measured against the running valley afterwards</b>, at 31.6 frames a second: 0.0137
+      sim-seconds a second, <b>98.4% of the defined rate, and a valley day of 4.07 real hours</b>
+      against the four it is supposed to be. <code>tools/check-clock.mjs</code> holds it at every
+      speed on the dial across 1.3 to 120 frames a second — eighteen cases, one of which is the
+      old behaviour failing, because a check that cannot fail on the fault it was written for is
+      not evidence of anything.</p>
+    <p><b>One ceiling is deliberate and does bind.</b> A frame may advance the valley by at most
+      240 steps — twelve sim-seconds — so that a tab returning from an hour in the background does
+      not try to pay the whole debt inside one frame and hang the page it is drawing. At 32&times;
+      on a tab drawing 1.3 frames a second that ceiling is reached: the valley asks for four
+      hundred and ninety-two steps in a frame, gets 240, and runs at half the speed it was told to.
+      Raising the ceiling would be choosing a hung page over a slow valley on the one machine least
+      able to afford either. So the promise is narrower than <i>every speed everywhere</i>, and the
+      check states the narrower thing: <b>no speed may ever run faster than it was asked for</b>,
+      and every speed is one rate wherever a frame can afford the steps it owes.</p>
+  </section>
+
+  <section>
+    <h2><span class="n">IV</span> <span>And there is still no clock at sea</span></h2>
+    <p>The repair above is a repair to the <i>browser</i>. It is worth being plain about what that
+      leaves, because the whole point of a sea clock is that it works where the observatory is not.</p>
+    <p>Both headless runners — <code>tools/check-output.mjs</code> and
+      <code>tools/daybook-run.mts</code>, the one Sheet XLIX called the host that was written for a
+      different question — step the valley with a fixed <code>DT = 1/20</code> in a tight loop, as
+      fast as the processor will go. They do not pace to wall time at all, because neither was ever
+      asked to. So the honest state of the live service is this: <b>the browser now keeps
+      <code>LIVE</code> correctly and is the wrong place to keep it, and the host that is the right
+      place does not keep time at all.</b> Nothing in this repository would presently run a valley
+      at four hours to the day with nobody watching, which is the entire proposition.</p>
+    <p>A second thing found by trying to use it. With <code>FRONTIER_BRAIN=off</code> the sweep in
+      <code>main.ts</code> sets every settler to think for themselves, so nobody polls the bus and
+      <b>a day filed into the outbox is never collected.</b> Ten days were filed to test against —
+      one at the ten-step cap, one of fifteen steps to walk into the truncation Sheet XLVIII found,
+      one with an <code>ifStuck</code> of six against a cap of four, one whose first step cannot be
+      taken so the branch has to fire, and one deliberately empty — and all ten sat in the outbox
+      untouched until the settlers were handed to the bus by hand. That is not a bug so much as an
+      undocumented precondition, and it is the kind that costs an afternoon.</p>
+  </section>
+
+  <section>
+    <h2><span class="n">V</span> <span>Two more instruments that lied</span></h2>
+    <p>This sheet reached three wrong answers on the way to the right one, and all three are the
+      project&rsquo;s recurring failure wearing new hats.</p>
+    <p><b>A ballot probe that measured its own prompt.</b> Chasing whether a slate of two hundred
+      proposals overflows the model&rsquo;s context, a probe was written that returned nothing
+      usable at every slate length — and was believed for a few minutes as evidence that long
+      slates break voting. It returned nothing usable at a slate of <i>twelve</i> as well, which is
+      the tell: the probe used a system prompt and a schema it had invented rather than the
+      game&rsquo;s. Calling the real <code>castBallot</code>: a valid ballot at every length up to
+      the full two hundred and seven, in 1.3 seconds.</p>
+    <p><b>A one-second window on a clock that ticks every seventy-two frames.</b> The first draft of
+      <code>check-clock.mjs</code> measured the rate over one second of frames and reported LIVE as
+      zero at every frame rate, including the ones that were correct. At 1/72 the valley is owed a
+      seventy-second of a second per second and a step is a sixtieth: inside any one second it takes
+      no step at all. The instrument was too short for the thing it was measuring.</p>
+    <p><b>And a truncation that was not there.</b> Before either, the record was tested for whether
+      long slates biased voters toward recently filed wishes. Over all 473 counts with a slate of
+      twenty or more: mean position 0.416, and 0.503 on slates of a hundred or more. Uniform. The
+      hypothesis was clean, plausible, and false.</p>
+    <p class="caption">Three of them in one sitting, and the one real finding in this sheet was
+      found by measuring the thing itself rather than reasoning about it: a frame counter, printed
+      beside a clock, in a tab that said it was visible.</p>
+  </section>
+
+  <section>
+    <h2><span class="n">VI</span> <span>What a shared clock is for</span></h2>
+    <blockquote>If any viewer could hurry it, a correspondent&rsquo;s settler would spend the day
+      their keeper filed while its author was asleep — the promise made to them, spent by somebody
+      else&rsquo;s impatience.
+      <span class="who">Sheet XLIX, <i>The Horse in Motion</i>, 29 August</span></blockquote>
+    <p>That sentence was written about a dial nobody would be given. The fault it describes was
+      already in the code that turns the dial, and it did not need anybody to be given anything: a
+      viewer on a fast machine and a viewer on a slow one were already in different valleys, and
+      the difference was not malice or design but frames a second.</p>
+    <p>Harrison&rsquo;s clocks were tested by taking them somewhere and bringing them back. H4 went
+      to Jamaica and lost five seconds in eighty-one days, and the Board of Longitude asked him to
+      do it again, because a clock that is right once has not shown that it keeps its rate — it has
+      shown that it was right once. This one has been read at 31.6 frames a second on one machine.
+      The reading it has not had is the one that matters: a valley left running at
+      <code>LIVE</code> for a day, unwatched, on a host that does not exist yet.</p>
+
+    <div class="explicit">
+      <p class="footline">Found 29 August, by printing a frame counter next to a clock. The tab
+        reported itself visible throughout.</p>
+      <p class="stamp">The Frontier Record &middot; Sheet LII &middot; 29 August</p>
+    </div>
+  </section>
+
+</div>
+
+</body>
+</html>
