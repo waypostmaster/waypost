@@ -1,0 +1,336 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>*{margin:0;padding:0}img{max-width:100%}</style>
+</head>
+<body>
+<title>The Bald Soprano</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Work+Sans:ital,wght@0,400;0,600;1,400&family=Space+Mono:wght@400;700&display=swap">
+
+<style>
+  /*
+   * A playbill. Paris, 1950, at the Théâtre des Noctambules: cheap poster stock, one flat colour
+   * pulled through a hand press, and a condensed sans shouting at the top because that is what a
+   * fringe bill for an anti-play looked like. The one ornament is a clock face with no hands.
+   *
+   * No chart. The figure that matters is a table of what people asked for beside what they were
+   * handed, and setting it as anything but two columns would be softening it.
+   */
+  :root {
+    --paper:   #F0EDE6;
+    --paper-2: #E3DFD4;
+    --panel:   #F7F5EF;
+    --ink:     #1A1A18;
+    --faint:   #6E6C64;
+    --rule:    #C4C0B4;
+    --press:   #C4472B;
+    --stamp:   #2F4F4A;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --paper:   #131311;
+      --paper-2: #1B1B18;
+      --panel:   #1E1E1B;
+      --ink:     #EAE6DA;
+      --faint:   #918D82;
+      --rule:    #34342F;
+      --press:   #E4735A;
+      --stamp:   #6FA79C;
+    }
+  }
+  :root[data-theme="dark"] {
+    --paper:   #131311;
+    --paper-2: #1B1B18;
+    --panel:   #1E1E1B;
+    --ink:     #EAE6DA;
+    --faint:   #918D82;
+    --rule:    #34342F;
+    --press:   #E4735A;
+    --stamp:   #6FA79C;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    background: var(--paper); color: var(--ink);
+    font-family: "Work Sans", "Helvetica Neue", Arial, sans-serif;
+    font-size: 1.08rem; line-height: 1.66;
+    margin: 0; padding: 0 1.2rem 6rem;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .bill { max-width: 42rem; margin: 0 auto; display: flex; flex-direction: column; gap: 2.6rem; }
+  p { margin: 0; max-width: 66ch; }
+  b { font-weight: 600; }
+  i, em { font-style: italic; }
+  a { color: var(--press); }
+  a:focus-visible { outline: 2px solid var(--press); outline-offset: 3px; }
+  code { font-family: "Space Mono", ui-monospace, monospace; font-size: 0.82em; color: var(--press); }
+
+  .stamp {
+    font-family: "Space Mono", monospace; font-size: 0.72rem;
+    letter-spacing: 0.18em; text-transform: uppercase; color: var(--faint); margin: 0;
+  }
+
+  header.bill-top {
+    display: flex; flex-direction: column; align-items: center; text-align: center;
+    gap: 0.9rem; padding-top: 3.2rem;
+  }
+  header.bill-top h1 {
+    font-family: Anton, "Arial Narrow", sans-serif; font-weight: 400;
+    font-size: clamp(2.6rem, 12vw, 4.6rem); letter-spacing: 0.005em;
+    margin: 0; line-height: 0.94; color: var(--press);
+    text-transform: uppercase; text-wrap: balance;
+  }
+  header.bill-top .sub { color: var(--faint); font-style: italic; max-width: 36rem; font-size: 1rem; text-wrap: pretty; }
+  .runhead {
+    display: flex; flex-wrap: wrap; justify-content: space-between; gap: 0.4rem 1rem; width: 100%;
+    font-family: "Space Mono", monospace; font-size: 0.7rem; letter-spacing: 0.06em;
+    color: var(--faint); border-top: 3px solid var(--ink); border-bottom: 1px solid var(--rule);
+    padding: 0.5rem 0.1rem;
+  }
+
+  .clockface { display: flex; justify-content: center; padding-top: 0.2rem; }
+  .clockface svg { width: 4.6rem; height: 4.6rem; }
+
+  .finding {
+    background: var(--panel); border: 1px solid var(--rule); border-left: 4px solid var(--press);
+    padding: 1.3rem 1.5rem; font-size: 1rem; line-height: 1.6;
+  }
+  .finding .lead {
+    font-family: Anton, sans-serif; font-size: 0.94rem; letter-spacing: 0.14em;
+    text-transform: uppercase; color: var(--press); display: block; margin-bottom: 0.55rem;
+  }
+
+  section { display: flex; flex-direction: column; gap: 1.05rem; }
+  section > h2 {
+    font-family: Anton, "Arial Narrow", sans-serif; font-weight: 400; font-size: 1.5rem;
+    letter-spacing: 0.02em; text-transform: uppercase; margin: 0 0 0.45rem;
+    padding-bottom: 0.4rem; border-bottom: 2px solid var(--ink);
+    display: flex; gap: 0.7rem; align-items: baseline;
+  }
+  section > h2 .n { color: var(--press); font-family: "Space Mono", monospace; font-size: 0.8rem; }
+
+  blockquote {
+    margin: 0.2rem 0; padding: 0.8rem 1.2rem; background: var(--paper-2);
+    border-left: 3px solid var(--stamp); font-style: italic; max-width: 60ch;
+  }
+  blockquote .who {
+    display: block; font-style: normal; font-family: "Space Mono", monospace;
+    font-size: 0.7rem; letter-spacing: 0.08em; text-transform: uppercase;
+    color: var(--faint); margin-top: 0.5rem;
+  }
+
+  .caption { font-size: 0.9rem; color: var(--faint); font-style: italic; max-width: 62ch; }
+
+  .wrap { overflow-x: auto; }
+  table.bill-table { width: 100%; border-collapse: collapse; font-size: 0.95rem; }
+  table.bill-table caption {
+    font-family: Anton, sans-serif; font-size: 0.9rem; letter-spacing: 0.12em;
+    text-transform: uppercase; color: var(--faint); text-align: left; padding-bottom: 0.5rem;
+  }
+  table.bill-table th, table.bill-table td {
+    text-align: left; padding: 0.5rem 0.6rem 0.5rem 0; border-bottom: 1px solid var(--rule); vertical-align: top;
+  }
+  table.bill-table thead th {
+    font-family: "Space Mono", monospace; font-size: 0.68rem; letter-spacing: 0.08em;
+    text-transform: uppercase; color: var(--faint); font-weight: 400; border-bottom: 2px solid var(--ink);
+  }
+  table.bill-table .said { max-width: 34ch; }
+  table.bill-table .got {
+    font-family: "Space Mono", monospace; font-size: 0.86rem; color: var(--press); white-space: nowrap;
+  }
+  table.bill-table .why { color: var(--faint); font-size: 0.86rem; font-style: italic; }
+  table.bill-table td.n { font-family: "Space Mono", monospace; color: var(--faint); font-size: 0.8rem; white-space: nowrap; }
+
+  ol.works { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 0.9rem; }
+  ol.works li {
+    border: 1px solid var(--rule); background: var(--panel); padding: 0.85rem 1.05rem;
+    display: grid; grid-template-columns: 1fr; gap: 0.3rem;
+  }
+  ol.works .name { font-family: Anton, sans-serif; font-size: 1.08rem; letter-spacing: 0.02em; }
+  ol.works .cost { font-family: "Space Mono", monospace; font-size: 0.8rem; color: var(--faint); }
+  ol.works .does { font-size: 0.97rem; }
+  ol.works .read { font-family: "Space Mono", monospace; font-size: 0.78rem; color: var(--stamp); }
+
+  .explicit { display: flex; flex-direction: column; gap: 0.55rem; padding-top: 0.4rem; border-top: 3px solid var(--ink); }
+  .footline { color: var(--faint); font-size: 0.92rem; }
+</style>
+
+<div class="bill">
+
+  <header class="bill-top">
+    <p class="stamp">The Frontier Record &middot; Sheet XLII</p>
+    <h1>The Bald Soprano</h1>
+    <div class="clockface" aria-hidden="true">
+      <svg viewBox="0 0 100 100">
+        <circle cx="50" cy="50" r="42" fill="none" stroke="var(--ink)" stroke-width="3"></circle>
+        <g stroke="var(--ink)" stroke-width="2.5" stroke-linecap="round">
+          <line x1="50" y1="12" x2="50" y2="20"></line>
+          <line x1="88" y1="50" x2="80" y2="50"></line>
+          <line x1="50" y1="88" x2="50" y2="80"></line>
+          <line x1="12" y1="50" x2="20" y2="50"></line>
+        </g>
+        <text x="50" y="60" text-anchor="middle" fill="var(--press)" font-size="30"
+          font-family="Anton, sans-serif">17</text>
+      </svg>
+    </div>
+    <p class="sub">On fourteen settlers who asked for a mechanism and were handed a shed, a ledger,
+      a man up a tower and a furnace &mdash; read through Ionesco, whose clock strikes seventeen
+      and whose title names somebody who is not in the play.</p>
+    <div class="runhead">
+      <span>Paris, 1950 &middot; run mtdotjm9-e4</span>
+      <span>14 proposals &middot; 9 kinds &middot; 0 of them right</span>
+    </div>
+  </header>
+
+  <div class="finding">
+    <span class="lead">The finding</span>
+    Every trade on this coast either pulls something out of the ground or raises a structure.
+    <b>Nobody makes a thing.</b> So when a settler asks for one, the catalogue puts it in whichever
+    bin is nearest by vocabulary &mdash; and the vocabulary is not about mechanisms, so the answers
+    come out as comedy. Fourteen proposals, nine kinds, and not one of them landed on what was
+    asked for. Two settlers asked to keep time and were handed the debt book and the forge, and
+    the two asks did not even land in the same bin as each other.
+  </div>
+
+  <section>
+    <h2><span class="n">I</span> <span>The bill</span></h2>
+    <div class="wrap">
+      <table class="bill-table">
+        <caption>What was asked for, and what the catalogue heard</caption>
+        <thead><tr><th scope="col">No.</th><th scope="col">What the settler asked for</th><th scope="col">Filed as</th><th scope="col">Which is</th></tr></thead>
+        <tbody>
+          <tr><td class="n">384</td><td class="said">A sundial, carved from wood and stone, to mark the passing hours</td><td class="got">ledger</td><td class="why">the book of who owes what</td></tr>
+          <tr><td class="n">623</td><td class="said">A mechanical clock <b>with no need for ore or fire</b> to keep time</td><td class="got">smelter</td><td class="why">the furnace it names to rule out</td></tr>
+          <tr><td class="n">32</td><td class="said">A pulley system for moving heavy logs <b>without hauling them</b> all the way back on foot</td><td class="got">cart</td><td class="why">carry more on your back</td></tr>
+          <tr><td class="n">327</td><td class="said">A mechanical device to lift timber safely from the forest floor</td><td class="got">new</td><td class="why">nothing fitted; XXXIV refiled it</td></tr>
+          <tr><td class="n">321</td><td class="said">A tension alarm system of ropes and weights for the tower</td><td class="got">watch</td><td class="why">a man standing up a tower</td></tr>
+          <tr><td class="n">152</td><td class="said">A bell that can be heard across the valley, so anyone in trouble can call</td><td class="got">watch</td><td class="why">a man standing up a tower</td></tr>
+          <tr><td class="n">155</td><td class="said">A system of warning signals &mdash; a bell or flag &mdash; for accidents</td><td class="got">watch</td><td class="why">a man standing up a tower</td></tr>
+          <tr><td class="n">358</td><td class="said">A drying rack for berries, of wood and rope, placed where berries grow</td><td class="got">storehouse</td><td class="why">a granary, which is indoors</td></tr>
+          <tr><td class="n">473</td><td class="said">Drying racks for herbs, <b>not in the granary</b></td><td class="got">storehouse</td><td class="why">the granary</td></tr>
+          <tr><td class="n">493</td><td class="said">A covered drying area for berries, with racks to spread them evenly</td><td class="got">storehouse</td><td class="why">the granary</td></tr>
+          <tr><td class="n">196</td><td class="said">A water cistern or aqueduct to store and transport lake water</td><td class="got">well</td><td class="why">a hole in the ground</td></tr>
+          <tr><td class="n">292</td><td class="said">A rain catchment at the valley&rsquo;s lowest point, stone channels and a basin</td><td class="got">well</td><td class="why">a hole in the ground</td></tr>
+          <tr><td class="n">590</td><td class="said">A shingle mill for splitting wood into roof tiles at scale</td><td class="got">sawmill</td><td class="why">the mill they already have</td></tr>
+          <tr><td class="n">392</td><td class="said">A standardised currency by weight and metal composition</td><td class="got">wage</td><td class="why">a day&rsquo;s pay</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>Read wish-473 again. A settler asked for drying racks <i>and said, in the same sentence,
+      not in the granary</i> &mdash; and was filed under the granary. Read wish-623: a clock
+      <i>with no need for ore or fire</i>, filed under the furnace. Read wish-32: a pulley
+      <i>so the logs need not be carried</i>, answered with a bigger armful.</p>
+    <p>Three separate settlers were told the answer to a bell is a man standing up a tower, and
+      three more were told the answer to a rack of drying berries is a building for berries that
+      are already dry.</p>
+  </section>
+
+  <section>
+    <h2><span class="n">II</span> <span>The clock strikes seventeen</span></h2>
+    <blockquote>MRS SMITH: There, it is nine o&rsquo;clock. <i>(The clock strikes seven times.
+      Silence. The clock strikes three times. Silence. The clock does not strike.)</i>
+      <span class="who">Ionesco, La Cantatrice chauve, 1950</span></blockquote>
+    <p>Ionesco wrote it after trying to learn English from a phrasebook and finding that the
+      sentences, all perfectly correct, added up to nothing anybody could mean. The clock strikes
+      whatever it strikes. The title names a bald soprano who never appears and is mentioned once,
+      by mistake, by a fireman.</p>
+    <p>Which is the shape of this exactly. Nothing in the catalogue is broken. Every word in it is
+      a real word with a real grant behind it, every classification is consistent, and
+      <code>check-lexicon</code> and <code>check-record</code> both pass the whole set: <b>0 open
+      misfiles, 0 unheard, 2,252 negation pairs correct.</b> The sentences are all correct. It is
+      the meaning that has nowhere to go.</p>
+    <p class="caption">This is the class Sheet XLI could only name with one specimen &mdash; heard
+      confidently as the thing the settler said in order to rule it out. Fourteen specimens now,
+      and it is not an edge case. It is what a catalogue does when it has no bin for a whole kind
+      of want.</p>
+  </section>
+
+  <section>
+    <h2><span class="n">III</span> <span>What was missing was a trade</span></h2>
+    <p>Fourteen mechanisms is not fourteen features anybody wanted. It is <b>one wish asked
+      fourteen times</b>, and the wish is for a person: somebody who makes things that are not
+      buildings. There has never been such a trade here, so there was never a word, so there was
+      never a bin.</p>
+    <p>So there is a <code>tinker</code> now, and the vote grants <b>a bench and nothing else</b>.
+      Every mechanism after it costs boards, iron and a shift, made by somebody standing at it
+      &mdash; which is the rule the roads boon was breaking one sheet ago and the reason this
+      grant is not another invisible percentage.</p>
+
+    <ol class="works">
+      <li>
+        <span class="name">A pulley and sheer-legs</span>
+        <span class="cost">3 plank &middot; 2 iron &middot; one shift &mdash; for wish-32</span>
+        <span class="does">A load that used to want two trips wants one.</span>
+        <span class="read">read in capacityOf() &mdash; +3, and it stacks with a cart, because a cart and a block are different things</span>
+      </li>
+      <li>
+        <span class="name">Drying racks</span>
+        <span class="cost">4 plank &middot; one shift &mdash; for wish-358, 473, 493</span>
+        <span class="does">What is stacked outside no longer goes off before anybody can carry it in.</span>
+        <span class="read">read in outsideStep() &mdash; the heap spoils at 0.4&times;</span>
+      </li>
+      <li>
+        <span class="name">A bell on a rope</span>
+        <span class="cost">2 plank &middot; 2 iron &middot; one shift &mdash; for wish-152, 155, 321</span>
+        <span class="does">A call for help is heard from the far side of the workings.</span>
+        <span class="read">read in the hearing radius &mdash; +90, whether or not anybody is looking your way</span>
+      </li>
+      <li>
+        <span class="name">A sundial</span>
+        <span class="cost">4 stone &middot; 2 plank &middot; one shift &mdash; for wish-384 and wish-623</span>
+        <span class="does">People stop because it is evening, rather than because they fell over.</span>
+        <span class="read">read where a settler decides to rest &mdash; 0.88 becomes 0.74</span>
+      </li>
+    </ol>
+
+    <p>The sundial is the one worth stating plainly. <code>hourLabel</code> has existed in this
+      game for its whole life, is drawn on the HUD and handed to every model in the state file, and
+      <b>nothing in the simulation has ever read it.</b> Perrin asked for a clock <i>so we
+      don&rsquo;t have to wait for the sun to tell us</i>. What a settlement gets is not the hour.
+      It is the thing knowing the hour is actually for: stopping at one.</p>
+  </section>
+
+  <section>
+    <h2><span class="n">IV</span> <span>The checks refused it four times</span></h2>
+    <p>Adding a word to this catalogue is not a one-line change, and the gate said so:</p>
+    <div class="wrap">
+      <table class="bill-table">
+        <caption>What would not pass, and why it was right</caption>
+        <thead><tr><th scope="col">Refused</th><th scope="col">Because</th></tr></thead>
+        <tbody>
+          <tr><td class="got">check-lexicon</td><td class="why">the entry&rsquo;s own wording filed itself as <code>furniture</code> &mdash; the word <i>bench</i> belongs to the joiner</td></tr>
+          <tr><td class="got">check-capabilities</td><td class="why"><i>unlocks a tinker, which has nothing anybody does in it</i> &mdash; a building with no work in it is a granted nothing</td></tr>
+          <tr><td class="got">check-economy</td><td class="why"><code>prerequisiteFor</code> and <code>heldOn</code> had no case, so a settlement stuck without iron could never propose the furnace that unsticks it</td></tr>
+          <tr><td class="got">check-economy</td><td class="why"><i>has a price and a sprite, and a model cannot ask for one</i></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>And then the thing worth the whole sheet. The moment the word existed,
+      <code>check-lexicon</code> re-read the back catalogue and found <b>wish-384 and wish-623 now
+      reading as <code>tinker</code></b> &mdash; it caught its own two worst misfilings
+      retroactively, and refused to pass until the open one was corrected. The sundial had already
+      carried under <code>ledger</code>, so that vote stands, as every vote here does. The clock is
+      refiled.</p>
+    <p class="caption">Measured after: a bench standing at tick 4,460 and all four mechanisms made
+      by 4,580, which was too cheap for something the record had been asking for fourteen times, so
+      the costs went up and the shift from six seconds to ten. Full gate green at 49 kinds &mdash;
+      13 unlocking a building, 38 granting a boon the game reads, nothing granting nothing.</p>
+
+    <div class="explicit">
+      <p class="footline">Run <code>mtdotjm9-e4</code> &middot; <code>FITTINGS</code>,
+        <code>rig</code>, <code>WORK_AT</code>, <code>prerequisiteFor</code>, <code>heldOn</code>
+        &middot; save schema 34 &rarr; 35 &middot; wish-623 refiled from <code>smelter</code>.</p>
+      <p class="stamp">The Frontier Record &middot; Sheet XLII &middot; 29 August</p>
+    </div>
+  </section>
+
+</div>
+
+</body>
+</html>
