@@ -124,6 +124,17 @@
 
   .caption { font-size: 0.9rem; color: var(--faint); font-style: italic; max-width: 64ch; }
 
+  /* A correction stands beside what it corrects. Nothing above it is edited or removed. */
+  .corrigendum {
+    background: var(--paper-2); border: 1px solid var(--mark); border-left: 4px solid var(--mark);
+    padding: 1.2rem 1.4rem; font-size: 0.97rem; line-height: 1.62;
+    display: flex; flex-direction: column; gap: 0.8rem;
+  }
+  .corrigendum .lead {
+    font-family: "IBM Plex Mono", monospace; font-size: 0.68rem; font-weight: 500;
+    letter-spacing: 0.18em; text-transform: uppercase; color: var(--mark);
+  }
+
   /* The interlinear gloss. Form on top, what the valley has underneath, verdict below that. The
      asterisk is the mark a field linguist puts on a form nobody has been recorded using; here it
      means a word the game has no bin for. */
@@ -257,6 +268,31 @@
     <p class="caption">The repair is in the instrument rather than in the write-up: the timeout now
       asks <code>/api/ps</code> what is actually resident and names the mismatch, both halves of the
       reply are read and kept, and the wish is a column.</p>
+
+    <div class="corrigendum">
+      <span class="lead">Corrigendum &middot; entered 29 August, after publication</span>
+      <p><b>The first of the three faults was not a discovery. It was a rediscovery, and the
+        measurement above had already been taken three days earlier by the same hand.</b>
+        <code>.env</code> in this tree, written 26 August:</p>
+      <blockquote class="source">qwen3:30b-a3b is 21.7GB on a 24.5GB card, so an 8192-token KV
+        cache does not fit alongside it and spills over PCIe. Same model, same 5.9KB settler state,
+        same 64 tokens out: num_ctx 8192 &rarr; did not finish inside 300s. num_ctx 4096 &rarr;
+        19.2s.
+        <span class="who">.env, three days before this sheet</span></blockquote>
+      <p>The probe reads <code>FRONTIER_NUM_CTX</code> precisely so that it and the valley are
+        never pointed at different settings by accident. It was run with bare <code>node</code>,
+        which does not load <code>.env</code>, so it took its own <code>?? 8192</code> default and
+        walked into a wall this repository had already measured, written down, and explained.</p>
+      <p><b>The fault above is real and the sheet's account of the machine is correct.</b> What is
+        wrong is the framing: §II presents as an instrument discovering its own limits an instrument
+        rediscovering a limit already recorded in the file whose only purpose is to override that
+        exact number. Which makes this the same finding one level up, and it belongs to the sheet
+        rather than to the model: <b>a written lesson does not fire.</b> The note was on this disk,
+        dated, correct, and unread &mdash; and what caught it was not care but a later grep for
+        something else.</p>
+      <p class="caption">Nothing above has been edited. A record that corrects through rather than
+        beside it is a record you cannot check.</p>
+    </div>
   </section>
 
   <section>
