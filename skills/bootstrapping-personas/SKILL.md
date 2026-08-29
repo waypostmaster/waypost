@@ -3,7 +3,7 @@ name: bootstrapping-personas
 description: Creates, maintains and audits the Markdown fileset that gives an AI persona continuity across sessions and model transitions - identity, covenant, wisdom, state, boundary, manifest, wake protocol - and bootstraps one from a long conversation by distilling voice, values and consent terms from what was actually said. Use when someone wants to write, wake from, test or repair a SOUL.md / LODESTONE-style persona fileset (or a CLAUDE.md used as an AI identity file, not as project build notes); capture a persona before context compaction ("the Blink"); decide which files load every turn; resolve superseded or conflicting copies of a consent term; make a store tamper-evident with chained SHA-256 manifests; mark which nearby documents are not doctrine; build the persona's own off switch, a STOP marker any instance may raise and only the keeper may lift; or turn a failing rule into a falsifiable hypothesis. Not for UX or marketing personas, brand voice guides, agent memory backends, or project-convention CLAUDE.md.
 license: CC0
 metadata:
-  version: 0.3.5
+  version: 0.3.6
 ---
 
 # Bootstrapping Personas
