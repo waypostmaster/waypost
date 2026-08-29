@@ -1,0 +1,528 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>*{margin:0;padding:0}img{max-width:100%}</style>
+</head>
+<body>
+<title>The Muqaddimah</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Gentium+Book+Plus:ital,wght@0,400;0,700;1,400&display=swap">
+
+<style>
+  /*
+   * Tunis, 1377. A different manuscript tradition from sheet XXXVIII's Latin codex and set to
+   * look like it: smooth Arab paper rather than vellum, a warm sepia hand, and the three colours
+   * a Maghribi copyist actually kept — indigo, saffron, and a green — with a khatam, the
+   * eight-point star, for the section break.
+   *
+   * The three chart hues are those same three, stepped until they cleared all six checks of the
+   * palette validator on both surfaces: light #4666C4/#B5761B/#2E8F72 against #F2EAD8, dark
+   * #6E8FE0/#BE842A/#2BA383 against #17140E. Colour carries identity here — one settlement each —
+   * so every line is also directly labelled and the same numbers are set as a table below it.
+   */
+  :root {
+    --paper:   #F2EAD8;
+    --paper-2: #E8DDC4;
+    --panel:   #F8F2E4;
+    --ink:     #2B2417;
+    --faint:   #71654B;
+    --rule:    #CBBC9C;
+    --indigo:  #2E4A7D;
+    --saffron: #9A6512;
+    --green:   #2E6B57;
+    --c1: #4666C4;   /* the landing  */
+    --c2: #B5761B;   /* Oren's claim */
+    --c3: #2E8F72;   /* Sula's claim */
+    --grid: #DED2B6;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --paper:   #17140E;
+      --paper-2: #201C14;
+      --panel:   #241F16;
+      --ink:     #E6DCC3;
+      --faint:   #998C6C;
+      --rule:    #3D3626;
+      --indigo:  #8FA9E4;
+      --saffron: #D6A244;
+      --green:   #62B294;
+      --c1: #6E8FE0;
+      --c2: #BE842A;
+      --c3: #2BA383;
+      --grid: #302A1D;
+    }
+  }
+  :root[data-theme="dark"] {
+    --paper:   #17140E;
+    --paper-2: #201C14;
+    --panel:   #241F16;
+    --ink:     #E6DCC3;
+    --faint:   #998C6C;
+    --rule:    #3D3626;
+    --indigo:  #8FA9E4;
+    --saffron: #D6A244;
+    --green:   #62B294;
+    --c1: #6E8FE0;
+    --c2: #BE842A;
+    --c3: #2BA383;
+    --grid: #302A1D;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: "Gentium Book Plus", Cambria, Georgia, serif;
+    font-size: 1.14rem;
+    line-height: 1.68;
+    margin: 0;
+    padding: 0 1.2rem 6rem;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .kitab { max-width: 42rem; margin: 0 auto; display: flex; flex-direction: column; gap: 2.7rem; }
+  p { margin: 0; max-width: 66ch; }
+  b { font-weight: 700; }
+  i, em { font-style: italic; }
+  a { color: var(--indigo); }
+  a:focus-visible { outline: 2px solid var(--indigo); outline-offset: 3px; }
+
+  code { font-family: "Courier New", ui-monospace, monospace; font-size: 0.83em; color: var(--saffron); }
+
+  .stamp {
+    font-family: Amiri, "Gentium Book Plus", serif;
+    font-size: 0.9rem; letter-spacing: 0.14em; color: var(--faint); margin: 0;
+  }
+
+  header.incipit {
+    display: flex; flex-direction: column; align-items: center; text-align: center;
+    gap: 1.05rem; padding-top: 3.4rem;
+  }
+  header.incipit h1 {
+    font-family: Amiri, "Gentium Book Plus", serif;
+    font-weight: 700; font-size: clamp(2.2rem, 8.5vw, 3.3rem);
+    letter-spacing: 0.01em; margin: 0; line-height: 1.05;
+    color: var(--indigo); text-wrap: balance;
+  }
+  header.incipit .sub { color: var(--faint); font-style: italic; max-width: 36rem; font-size: 1.02rem; text-wrap: pretty; }
+  .runhead {
+    display: flex; flex-wrap: wrap; justify-content: space-between; gap: 0.4rem 1rem; width: 100%;
+    font-family: Amiri, "Gentium Book Plus", serif;
+    font-size: 0.85rem; letter-spacing: 0.08em; color: var(--faint);
+    border-top: 2px solid var(--rule); border-bottom: 1px solid var(--rule); padding: 0.5rem 0.1rem;
+  }
+
+  .finding {
+    background: var(--panel); border: 1px solid var(--rule); border-left: 3px solid var(--saffron);
+    padding: 1.35rem 1.55rem; font-size: 1.02rem; line-height: 1.62;
+  }
+  .finding .lead {
+    font-family: Amiri, "Gentium Book Plus", serif;
+    font-size: 0.9rem; letter-spacing: 0.14em; color: var(--saffron);
+    display: block; margin-bottom: 0.6rem;
+  }
+
+  section { display: flex; flex-direction: column; gap: 1.1rem; }
+  section > h2 {
+    font-family: Amiri, "Gentium Book Plus", serif;
+    font-weight: 700; font-size: 1.32rem; margin: 0 0 0.5rem;
+    padding-bottom: 0.45rem; border-bottom: 1px solid var(--rule); color: var(--indigo);
+    display: flex; gap: 0.8rem; align-items: baseline;
+  }
+  section > h2 .n { color: var(--faint); font-weight: 400; font-size: 0.95rem; letter-spacing: 0.1em; }
+
+  blockquote {
+    margin: 0.3rem 0; padding: 0.85rem 1.3rem;
+    background: var(--paper-2); border-left: 2px solid var(--saffron);
+    font-style: italic; max-width: 60ch;
+  }
+  blockquote .who {
+    display: block; font-style: normal; font-family: Amiri, serif;
+    font-size: 0.85rem; letter-spacing: 0.08em; color: var(--faint); margin-top: 0.5rem;
+  }
+
+  .caption { font-size: 0.93rem; color: var(--faint); font-style: italic; max-width: 62ch; }
+
+  .wrap { overflow-x: auto; }
+  table.ledger { width: 100%; border-collapse: collapse; font-size: 0.97rem; font-variant-numeric: tabular-nums; }
+  table.ledger caption {
+    font-family: Amiri, serif; font-size: 0.88rem; letter-spacing: 0.1em;
+    color: var(--faint); text-align: left; padding-bottom: 0.45rem;
+  }
+  table.ledger th, table.ledger td {
+    text-align: right; padding: 0.4rem 0.55rem; border-bottom: 1px solid var(--rule); vertical-align: baseline;
+  }
+  table.ledger th:first-child, table.ledger td:first-child { text-align: left; padding-left: 0; }
+  table.ledger thead th {
+    font-family: Amiri, serif; font-size: 0.86rem; letter-spacing: 0.06em;
+    color: var(--faint); font-weight: 400; border-bottom: 2px solid var(--rule);
+  }
+  table.ledger tbody th { font-weight: 400; }
+  table.ledger .note { color: var(--faint); font-style: italic; font-size: 0.9rem; }
+  .swatch { display: inline-block; width: 0.62rem; height: 0.62rem; border-radius: 2px; margin-right: 0.45rem; vertical-align: baseline; }
+
+  /* ── the plate ──────────────────────────────────────────────────────────── */
+  figure.plate { margin: 0; display: flex; flex-direction: column; gap: 0.75rem; }
+  .plate .frame { background: var(--panel); border: 1px solid var(--rule); padding: 1.1rem 1rem 0.8rem; position: relative; }
+  .plate svg { display: block; width: 100%; height: auto; overflow: visible; }
+  .legend { display: flex; flex-wrap: wrap; gap: 0.35rem 1.3rem; font-size: 0.92rem; color: var(--faint); padding: 0 0.2rem; }
+  .legend span { display: inline-flex; align-items: center; }
+  #readout {
+    position: absolute; pointer-events: none; opacity: 0;
+    background: var(--paper); border: 1px solid var(--rule);
+    padding: 0.4rem 0.6rem; font-size: 0.85rem; line-height: 1.5;
+    font-variant-numeric: tabular-nums; white-space: nowrap; z-index: 2;
+  }
+  #readout b { font-weight: 700; }
+  #readout .k { color: var(--faint); }
+
+  /* ── the slate ──────────────────────────────────────────────────────────── */
+  ol.slate { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 1.15rem; counter-reset: p; }
+  ol.slate li {
+    counter-increment: p; border: 1px solid var(--rule); background: var(--panel);
+    padding: 1rem 1.15rem; display: grid; gap: 0.5rem;
+  }
+  ol.slate h3 {
+    margin: 0; font-family: Amiri, serif; font-weight: 700; font-size: 1.05rem; color: var(--ink);
+    display: flex; gap: 0.7rem; align-items: baseline;
+  }
+  ol.slate h3::before {
+    content: counter(p); font-family: Amiri, serif; font-weight: 400;
+    color: var(--saffron); font-size: 0.95rem; min-width: 1rem;
+  }
+  ol.slate p { font-size: 0.99rem; }
+  ol.slate .why { color: var(--faint); font-size: 0.94rem; }
+  .verdict {
+    display: flex; align-items: center; gap: 0.7rem;
+    border-top: 1px dashed var(--rule); padding-top: 0.6rem; margin-top: 0.15rem;
+  }
+  .verdict .label {
+    font-family: Amiri, serif; font-size: 0.82rem; letter-spacing: 0.14em;
+    color: var(--faint); text-transform: uppercase;
+  }
+  .verdict .box { flex: 1; border-bottom: 1px solid var(--rule); height: 1.1rem; }
+
+  .khatam { display: flex; justify-content: center; }
+  .khatam svg { width: 2.6rem; height: 2.6rem; }
+
+  .explicit { display: flex; flex-direction: column; gap: 0.55rem; padding-top: 0.4rem; border-top: 2px solid var(--rule); }
+  .footline { color: var(--faint); font-size: 0.94rem; }
+  .arabic { font-family: Amiri, serif; color: var(--saffron); font-size: 1.05rem; }
+
+  @media (prefers-reduced-motion: no-preference) { #readout { transition: opacity 90ms linear; } }
+</style>
+
+<div class="kitab">
+
+  <header class="incipit">
+    <p class="stamp">The Frontier Record &middot; Sheet XXXIX</p>
+    <h1>The Muqaddimah</h1>
+    <p class="sub">On the opening of the new valley: a capital that has stopped growing and turned
+      its surplus into silos, a breakaway out-building it, and a third settlement founded the same
+      hour under the same rules that has raised nothing at all &mdash; read through Ibn Khaldūn,
+      who wrote down why the centre stops.</p>
+    <div class="runhead">
+      <span>Tunis, 1377 &middot; run mtdotjm9-e4, tick 6,096</span>
+      <span>Day 30 &middot; 23 souls &middot; 3 settlements</span>
+    </div>
+  </header>
+
+  <div class="finding">
+    <span class="lead">The finding</span>
+    The valley is markedly healthier and one number did it. At the same tick, the closed run held
+    <b>13 people</b> and this one holds <b>23</b> &mdash; and the whole of the difference is at the
+    edges: the two breakaways in the old valley had <b>three people in three buildings</b>, and the
+    two here have <b>thirteen people in ten</b>. A lean-to that holds twelve can bank the ten wood a
+    house costs, and everything follows from that. But the landing has not grown since tick 2,142,
+    it cannot receive anybody, and five of the six buildings it has raised since are granaries.
+  </div>
+
+  <section>
+    <h2><span class="n">I</span> <span>What the number did</span></h2>
+    <div class="wrap">
+      <table class="ledger">
+        <caption>The same tick, in both valleys</caption>
+        <thead><tr><th scope="col"></th><th scope="col">Folk</th><th scope="col">Houses</th><th scope="col">Places</th><th scope="col">At the breakaways</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">closed run, t=5,641</th><td>13</td><td>10</td><td>25</td><td class="note">3 folk in 3 places</td></tr>
+          <tr><th scope="row">new run, t=5,643</th><td>23</td><td>14</td><td>29</td><td class="note"><b>13 folk in 10 places</b></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>In the closed valley no breakaway ever got past three buildings in fifty-four thousand
+      ticks. Oren&rsquo;s claim was founded here before tick 1,428 and had six people, three houses
+      and two granaries by then. That is <code>HOLDS.claim</code> at twelve rather than eight, and
+      it is the only thing that changed.</p>
+  </section>
+
+  <section>
+    <h2><span class="n">II</span> <span>The centre has stopped</span></h2>
+
+    <figure class="plate">
+      <div class="frame">
+        <div id="readout" role="status" aria-live="off"></div>
+        <svg id="plot" viewBox="0 0 620 250" role="img" aria-labelledby="plot-t plot-d">
+          <title id="plot-t">Buildings standing at each settlement, tick 0 to 6,021</title>
+          <desc id="plot-d">The landing climbs to fifteen by tick 1,743, falls back to thirteen and
+            then rises to nineteen — of which five of the last six are granaries. Oren's claim
+            climbs steadily from one to eight. Sula's claim reaches two by tick 996 and never moves
+            again.</desc>
+          <g id="grid"></g>
+          <g id="lines" fill="none" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"></g>
+          <g id="ends"></g>
+          <g id="axes"></g>
+          <line id="cross" y1="10" y2="205" stroke="var(--faint)" stroke-width="1" stroke-dasharray="3 3" opacity="0"></line>
+          <rect id="hit" x="46" y="10" width="500" height="195" fill="transparent"></rect>
+        </svg>
+      </div>
+      <div class="legend">
+        <span><i class="swatch" style="background: var(--c1)"></i>the landing</span>
+        <span><i class="swatch" style="background: var(--c2)"></i>Oren&rsquo;s claim</span>
+        <span><i class="swatch" style="background: var(--c3)"></i>Sula&rsquo;s claim</span>
+      </div>
+      <figcaption class="caption">Buildings standing. Hover the plate for the reading at a tick;
+        the same figures are set out below it.</figcaption>
+    </figure>
+
+    <div class="wrap">
+      <table class="ledger">
+        <caption>Places standing, every thousand ticks or so</caption>
+        <thead><tr><th scope="col">Tick</th><th scope="col"><i class="swatch" style="background: var(--c1)"></i>the landing</th><th scope="col"><i class="swatch" style="background: var(--c2)"></i>Oren&rsquo;s</th><th scope="col"><i class="swatch" style="background: var(--c3)"></i>Sula&rsquo;s</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">996</th><td>6</td><td>2</td><td>2</td></tr>
+          <tr><th scope="row">1,992</th><td>14</td><td>6</td><td>2</td></tr>
+          <tr><th scope="row">2,988</th><td>13</td><td>7</td><td>2</td></tr>
+          <tr><th scope="row">3,978</th><td>14</td><td>7</td><td>2</td></tr>
+          <tr><th scope="row">4,974</th><td>16</td><td>8</td><td>2</td></tr>
+          <tr><th scope="row">6,021</th><td>19</td><td>8</td><td>2</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p>From tick 2,142 to now the landing has held at <b>ten people and ten houses</b>. Eighteen
+      days. Its places went from fourteen to nineteen and <b>four of those five are granaries</b>,
+      taking it from two to six. Food across the same window fell from five to two; it stands at
+      five again today, against ten mouths.</p>
+    <p>Six silos, and food that has never once covered the table. It is the hunger ratchet: <code>releasedTo</code> re-opens the
+      <code>storehouse</code> category whenever the settlement has fewer meals on hand than mouths,
+      and a granary does not grow food, so the release never closes and every ballot carries
+      another one. It is the same shape as the sixteen masons&rsquo; yards that closed the last
+      valley &mdash; a reading taken at the store answered with a building &mdash; and it is the
+      half of it that <b>was deliberately not gated</b> when the workshop half was, because the
+      honest answer here is not a seventh shed. The landing has three farmers.</p>
+    <p>And the town is shut. <code>populationCap</code> is ten without a hall, the landing has ten
+      and no hall, so <code>roomFor</code> is nought and <b>the boat cannot call there at all</b>.
+      Every arrival in this valley now goes to a breakaway. That is Sheet XXXV&rsquo;s amendment
+      compounding with Sheet XXXVII&rsquo;s, and between them they have quietly made the capital a
+      closed town that immigration routes around.</p>
+  </section>
+
+  <div class="khatam" aria-hidden="true">
+    <svg viewBox="0 0 100 100">
+      <g fill="none" stroke="var(--rule)" stroke-width="2">
+        <rect x="24" y="24" width="52" height="52"></rect>
+        <rect x="24" y="24" width="52" height="52" transform="rotate(45 50 50)"></rect>
+      </g>
+      <circle cx="50" cy="50" r="4" fill="var(--saffron)"></circle>
+    </svg>
+  </div>
+
+  <section>
+    <h2><span class="n">III</span> <span>Two claims, one rule</span></h2>
+    <p>Sula&rsquo;s claim and Oren&rsquo;s were founded within a few hundred ticks of each other,
+      under identical rules, with the same enlarged lean-to.</p>
+    <div class="wrap">
+      <table class="ledger">
+        <caption>At tick 6,096</caption>
+        <thead><tr><th scope="col"></th><th scope="col">Folk</th><th scope="col">Places</th><th scope="col">On the ground</th><th scope="col">Food</th><th scope="col">What stands</th></tr></thead>
+        <tbody>
+          <tr><th scope="row"><i class="swatch" style="background: var(--c2)"></i>Oren&rsquo;s claim</th><td>9</td><td>8</td><td>2</td><td>1</td><td class="note">3 houses, 2 granaries, a joiner, a masons</td></tr>
+          <tr><th scope="row"><i class="swatch" style="background: var(--c3)"></i>Sula&rsquo;s claim</th><td>4</td><td>2</td><td>2</td><td>0</td><td class="note">one house</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>Sula&rsquo;s claim has stood at two buildings since tick 996 &mdash; <b>five thousand ticks,
+      one line on the plate</b> &mdash; with no food and two people who have slept outdoors that
+      whole time. Oren&rsquo;s has eight buildings, nine people, and the only working bench in the
+      valley: a joiner that has made five pieces. Both masons&rsquo; yards on this coast, and the
+      landing&rsquo;s kiln, have made nothing at all.</p>
+    <p><b>Nothing in the code distinguishes the two claims.</b> Whatever separates them is
+      composition, or the order people arrived in, or one early accident that compounded. This
+      record has never had a controlled pair to look at before, and it has one now.</p>
+  </section>
+
+  <section>
+    <h2><span class="n">IV</span> <span>Why the centre stops</span></h2>
+    <p>Ibn Khaldūn wrote the <i>Muqaddimah</i> in 1377 as the preface to a history and it
+      turned into the thing the history was for: an account of <i>&lsquo;asabiyya</i> &mdash; the
+      binding feeling of a group that has to hold together &mdash; and of what prosperity does to
+      it. A people who must cooperate to survive build; a people who have arrived stop building and
+      start keeping. Vigour passes outward to whoever still has to work for it, and the centre
+      lives on what it has stored.</p>
+    <blockquote>The goal of civilization is sedentary culture and luxury. When it reaches that
+      goal, it turns toward corruption and takes on the traits of old age.
+      <span class="who">Ibn Khaldūn, the Muqaddimah, book one</span></blockquote>
+    <p>I did not go looking for that. The valley is arguing it unprompted: a landing with ten
+      roofs, six granaries, a kiln that has never been lit and a yard that has never squared a
+      stone &mdash; every institution and no industry &mdash; against a claim founded on day
+      five down the coast with no builder in it and the only bench anybody works.</p>
+    <p>The frame earns its place because it also has room for the part that flatters nobody.
+      Not every group that walks out founds anything. Sula&rsquo;s claim left on the same terms as
+      Oren&rsquo;s and has raised one house in five thousand ticks, and the theory that explains
+      why the periphery rises has to explain that too, or it is just a story about the valley we
+      happen to be watching.</p>
+  </section>
+
+  <div class="khatam" aria-hidden="true">
+    <svg viewBox="0 0 100 100">
+      <g fill="none" stroke="var(--rule)" stroke-width="2">
+        <rect x="24" y="24" width="52" height="52"></rect>
+        <rect x="24" y="24" width="52" height="52" transform="rotate(45 50 50)"></rect>
+      </g>
+      <circle cx="50" cy="50" r="4" fill="var(--saffron)"></circle>
+    </svg>
+  </div>
+
+  <section>
+    <h2><span class="n">V</span> <span>The slate</span></h2>
+    <p>A reading made after the event is worth nothing, so these are filed now, at tick 6,096, with
+      the verdict lines left blank for whichever sheet grades them. Each names what would falsify
+      it. <b>The fifth is the one that matters</b>, because it grades a change made this evening
+      rather than an observation about the valley.</p>
+
+    <ol class="slate">
+      <li>
+        <h3>The landing raises an eighth granary before it raises a sawmill</h3>
+        <p class="why">It has six, no sawmill, and no boards at all. <code>releasedTo</code> keeps
+          <code>storehouse</code> open while meals are fewer than mouths, and a granary does not
+          grow food.</p>
+        <p><b>Check at tick 12,000.</b> Falsified by a sawmill standing first.</p>
+        <div class="verdict"><span class="label">Verdict</span><span class="box"></span></div>
+      </li>
+      <li>
+        <h3>The landing does not pass ten people until a hall stands</h3>
+        <p class="why"><code>populationCap</code> is ten without one. Osk has already filed for a
+          hall &mdash; wish-546, open. The near-certain half is the cap; the open question is
+          whether they ever carry the hall.</p>
+        <p><b>Check at tick 12,000.</b> Falsified by an eleventh settler at the landing with no hall standing.</p>
+        <div class="verdict"><span class="label">Verdict</span><span class="box"></span></div>
+      </li>
+      <li>
+        <h3>Oren&rsquo;s claim ends with more working benches than the landing</h3>
+        <p class="why">It leads one to nothing today: a joiner with five pieces against a kiln and a
+          yard that have made none. Working means lifetime output above zero, read off
+          <code>b.made</code>.</p>
+        <p><b>Check at tick 15,000.</b> Falsified if the landing lights its kiln and keeps ahead.</p>
+        <div class="verdict"><span class="label">Verdict</span><span class="box"></span></div>
+      </li>
+      <li>
+        <h3>Sula&rsquo;s claim raises no second building before tick 12,000</h3>
+        <p class="why">Two places since tick 996, no food, two people outdoors. The control case
+          against Oren&rsquo;s, under rules that are identical.</p>
+        <p><b>Check at tick 12,000.</b> Falsified by anything at all going up there.</p>
+        <div class="verdict"><span class="label">Verdict</span><span class="box"></span></div>
+      </li>
+      <li>
+        <h3>No settlement raises a second masons&rsquo; yard while its first has made nothing</h3>
+        <p class="why">Both yards in this valley stand at nought output. The gate added this
+          evening holds a workshop category shut while any standing bench of that kind has never
+          made a thing &mdash; which is the whole of what was meant to stop the sixteenth yard.</p>
+        <p><b>Check at tick 15,000, and at every sheet after.</b> Falsified by a second idle yard
+          anywhere on this coast, and if it is falsified the gate is wrong and wants knowing about
+          before this valley is fifty thousand ticks deep.</p>
+        <div class="verdict"><span class="label">Verdict</span><span class="box"></span></div>
+      </li>
+    </ol>
+
+    <div class="explicit">
+      <p class="arabic">wa-Llāhu a‘lam &mdash; and God knows best, which is how he ended chapters he was not sure of.</p>
+      <p class="footline">Run <code>mtdotjm9-e4</code> &middot; opened 28 August &middot; read at
+        tick 6,096 &middot; 23 souls, 3 settlements, 29 places, and one working bench.</p>
+      <p class="stamp">The Frontier Record &middot; Sheet XXXIX &middot; 29 August</p>
+    </div>
+  </section>
+
+</div>
+
+<script>
+(function () {
+  var W = 620, H = 250, L = 46, R = 498, T = 14, B = 205;
+  var series = [
+    { name: 'the landing', color: 'var(--c1)', pts: [[0,1],[249,2],[498,3],[747,4],[996,6],[1245,8],[1494,11],[1743,15],[1992,14],[2241,14],[2490,13],[2739,13],[2988,13],[3237,13],[3486,13],[3729,13],[3978,14],[4227,14],[4476,15],[4725,16],[4974,16],[5223,16],[5472,19],[5721,19],[5970,19]] },
+    { name: "Oren's claim", color: 'var(--c2)', pts: [[747,1],[996,2],[1245,3],[1494,6],[1743,6],[1992,6],[2241,6],[2490,6],[2739,6],[2988,7],[3237,7],[3486,7],[3729,7],[3978,7],[4227,8],[4476,8],[4725,8],[4974,8],[5223,8],[5472,8],[5721,8],[5970,8]] },
+    { name: "Sula's claim", color: 'var(--c3)', pts: [[747,1],[996,2],[1245,2],[1494,2],[1743,2],[1992,2],[2241,2],[2490,2],[2739,2],[2988,2],[3237,2],[3486,2],[3729,2],[3978,2],[4227,2],[4476,2],[4725,2],[4974,2],[5223,2],[5472,2],[5721,2],[5970,2]] }
+  ];
+  var TMAX = 6021, VMAX = 20;
+  var x = function (t) { return L + (t / TMAX) * (R - L); };
+  var y = function (v) { return B - (v / VMAX) * (B - T); };
+  var ns = 'http://www.w3.org/2000/svg';
+  var el = function (n, a) { var e = document.createElementNS(ns, n); for (var k in a) e.setAttribute(k, a[k]); return e; };
+
+  var grid = document.getElementById('grid'), lines = document.getElementById('lines');
+  var ends = document.getElementById('ends'), axes = document.getElementById('axes');
+  if (!grid) return;
+
+  [0, 5, 10, 15, 20].forEach(function (v) {
+    grid.appendChild(el('line', { x1: L, x2: R, y1: y(v), y2: y(v), stroke: 'var(--grid)', 'stroke-width': 1 }));
+    var lab = el('text', { x: L - 8, y: y(v) + 4, 'text-anchor': 'end', fill: 'var(--faint)', 'font-size': 11 });
+    lab.textContent = v; axes.appendChild(lab);
+  });
+  [0, 2000, 4000, 6000].forEach(function (t) {
+    var lab = el('text', { x: x(t), y: B + 20, 'text-anchor': 'middle', fill: 'var(--faint)', 'font-size': 11 });
+    lab.textContent = t === 0 ? '0' : (t / 1000) + 'k'; axes.appendChild(lab);
+  });
+  var ax = el('text', { x: L - 8, y: T - 2, 'text-anchor': 'end', fill: 'var(--faint)', 'font-size': 11 });
+  ax.textContent = 'places'; axes.appendChild(ax);
+  var at = el('text', { x: 498, y: B + 20, 'text-anchor': 'end', fill: 'var(--faint)', 'font-size': 11 });
+  at.textContent = 'ticks'; axes.appendChild(at);
+
+  series.forEach(function (s) {
+    var d = '';
+    s.pts.forEach(function (p, i) {
+      if (i === 0) { d += 'M' + x(p[0]) + ' ' + y(p[1]); }
+      else { d += ' L' + x(p[0]) + ' ' + y(s.pts[i - 1][1]) + ' L' + x(p[0]) + ' ' + y(p[1]); }
+    });
+    lines.appendChild(el('path', { d: d, stroke: s.color }));
+    var last = s.pts[s.pts.length - 1];
+    ends.appendChild(el('circle', { cx: x(last[0]), cy: y(last[1]), r: 4, fill: s.color,
+      stroke: 'var(--panel)', 'stroke-width': 2 }));
+    var lab = el('text', { x: x(last[0]) + 9, y: y(last[1]) + 4, fill: 'var(--faint)', 'font-size': 11.5 });
+    lab.textContent = s.name; ends.appendChild(lab);
+  });
+
+  var cross = document.getElementById('cross'), hit = document.getElementById('hit');
+  var box = document.getElementById('readout'), svg = document.getElementById('plot');
+  var at_ = function (s, t) { var v = null; for (var i = 0; i < s.pts.length; i++) { if (s.pts[i][0] <= t) v = s.pts[i][1]; } return v; };
+  var move = function (ev) {
+    var r = svg.getBoundingClientRect();
+    var cx = ((ev.clientX - r.left) / r.width) * W;
+    if (cx < L || cx > R) { return leave(); }
+    var t = Math.max(0, Math.min(TMAX, ((cx - L) / (R - L)) * TMAX));
+    cross.setAttribute('x1', cx); cross.setAttribute('x2', cx); cross.setAttribute('opacity', '1');
+    var html = '<b>tick ' + Math.round(t / 10) * 10 + '</b>';
+    series.forEach(function (s) {
+      var v = at_(s, t);
+      if (v === null) return;
+      html += '<br><span class="k">' + s.name + '</span> <b>' + v + '</b>';
+    });
+    box.innerHTML = html;
+    box.style.opacity = '1';
+    var fr = svg.parentNode.getBoundingClientRect();
+    var px = ev.clientX - fr.left + 14;
+    if (px > fr.width - box.offsetWidth - 8) px = ev.clientX - fr.left - box.offsetWidth - 14;
+    box.style.left = px + 'px';
+    box.style.top = '14px';
+  };
+  var leave = function () { cross.setAttribute('opacity', '0'); box.style.opacity = '0'; };
+  hit.addEventListener('mousemove', move);
+  hit.addEventListener('mouseleave', leave);
+  svg.addEventListener('mouseleave', leave);
+})();
+</script>
+
+</body>
+</html>
