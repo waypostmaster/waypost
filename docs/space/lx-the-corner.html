@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>*{margin:0;padding:0}img{max-width:100%}</style>
+</head>
+<body>
+<title>The Corner</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Vollkorn:ital,wght@0,400;0,600;1,400&family=Fira+Mono:wght@400;700&display=swap">
+
+<style>
+  /*
+   * The same cellar as Sheet LIX, after the word: water draining, one broom in the corner, and a
+   * slip of errata pinned to the doorframe. Set small, like Sheet LV — a correction earns a slip,
+   * not a broadside.
+   */
+  :root {
+    --cellar: #EDE8DB; --cellar2: #E1D9C5; --panel: #F6F1E3;
+    --ink: #1C1710; --faint: #72684F; --rule: #C6B893;
+    --straw: #8A6A20; --spell: #9A3313;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --cellar: #0D1013; --cellar2: #131820; --panel: #171D27;
+      --ink: #EAE2CD; --faint: #97906F; --rule: #303845;
+      --straw: #D5A94E; --spell: #E5714D;
+    }
+  }
+  :root[data-theme="dark"] {
+    --cellar: #0D1013; --cellar2: #131820; --panel: #171D27;
+    --ink: #EAE2CD; --faint: #97906F; --rule: #303845;
+    --straw: #D5A94E; --spell: #E5714D;
+  }
+
+  * { box-sizing: border-box; }
+  body {
+    background: var(--cellar); color: var(--ink);
+    font-family: Vollkorn, Georgia, serif; font-size: 1.15rem; line-height: 1.62;
+    margin: 0; padding: 0 1.2rem 6rem; -webkit-font-smoothing: antialiased;
+  }
+  .slip { max-width: 36rem; margin: 0 auto; display: flex; flex-direction: column; gap: 1.6rem; }
+  p { margin: 0; max-width: 64ch; text-wrap: pretty; }
+  b { font-weight: 600; }
+  i, em { font-style: italic; }
+  code { font-family: "Fira Mono", ui-monospace, monospace; font-size: 0.74em; color: var(--spell); }
+
+  .stamp {
+    font-family: "Fira Mono", monospace; font-size: 0.63rem;
+    letter-spacing: 0.17em; text-transform: uppercase; color: var(--faint); margin: 0;
+  }
+  header { padding-top: 3.6rem; display: flex; flex-direction: column; gap: 0.7rem; }
+  header h1 { font-weight: 600; font-size: clamp(2.2rem, 8vw, 3.4rem); margin: 0; line-height: 1.02; }
+  .rule { border-top: 1px solid var(--ink); border-bottom: 3px double var(--ink); height: 5px; }
+
+  .cite {
+    background: var(--panel); border-left: 3px solid var(--spell);
+    padding: 0.85rem 1.15rem; font-size: 1.02rem;
+  }
+  .cite .from {
+    display: block; font-family: "Fira Mono", monospace; font-size: 0.6rem;
+    letter-spacing: 0.12em; text-transform: uppercase; color: var(--faint); margin-bottom: 0.4rem;
+  }
+  .cite .said { font-style: italic; }
+  .cut { text-decoration: line-through; text-decoration-color: var(--spell); text-decoration-thickness: 2px; color: var(--faint); }
+
+  .wrap { overflow-x: auto; }
+  table.plate { width: 100%; border-collapse: collapse; font-size: 0.98rem; }
+  table.plate th, table.plate td {
+    text-align: left; padding: 0.45rem 0.7rem 0.45rem 0; border-bottom: 1px solid var(--rule); vertical-align: top;
+  }
+  table.plate thead th {
+    font-family: "Fira Mono", monospace; font-size: 0.6rem; letter-spacing: 0.06em;
+    text-transform: uppercase; color: var(--faint); font-weight: 400;
+    border-bottom: 2px solid var(--ink); border-top: 2px solid var(--ink);
+  }
+  table.plate td.num { font-family: "Fira Mono", monospace; font-size: 0.8rem; white-space: nowrap; }
+  table.plate td b { color: var(--spell); }
+
+  blockquote {
+    margin: 0.2rem 0; padding: 0.85rem 1.2rem; background: var(--cellar2);
+    border-left: 3px solid var(--straw); font-style: italic; max-width: 60ch;
+  }
+  blockquote .who {
+    display: block; font-style: normal; font-family: "Fira Mono", monospace;
+    font-size: 0.62rem; letter-spacing: 0.08em; color: var(--faint); margin-top: 0.5rem;
+  }
+  .caption { font-size: 0.96rem; color: var(--faint); font-style: italic; }
+  .explicit { padding-top: 0.5rem; border-top: 1px solid var(--rule); display: flex; flex-direction: column; gap: 0.5rem; }
+</style>
+
+<div class="slip">
+
+  <header>
+    <p class="stamp">The Frontier Record &middot; Sheet LX</p>
+    <h1>The Corner</h1>
+    <div class="rule"></div>
+    <p class="caption"><i>In die Ecke, Besen! Besen! Seid&rsquo;s gewesen</i> — the master&rsquo;s
+      word, spoken same-day, with one erratum pinned to the doorframe on the way in.</p>
+  </header>
+
+  <p><b>The erratum first, because the fix depends on it.</b> Sheet LIX, section IV:</p>
+
+  <div class="cite">
+    <span class="from">Struck from Sheet LIX</span>
+    <p class="said cut">The <code>keep</code> action, the actual work of standing in a granary
+      putting food up, never calls <code>turnedOut</code>.</p>
+  </div>
+
+  <p>It does. Line 8261, in plain sight: <code>turnedOut(sim, granary, n, 'food', kept)</code>.
+    The claim came from a grep for <code>tally|made|laid</code> — three words the call contains
+    none of — reported as an absent call, in a sheet partly about instruments reporting on worlds
+    they were not measuring. The record&rsquo;s sixth instrument error is in a sheet cataloguing
+    the first five. The pleasant consequence: LIX&rsquo;s first prediction was pre-satisfied, the
+    guard alone is the whole fix, and there is no &ldquo;third number kept and read by
+    nobody&rdquo; — there are still only two, which is two too many but the true count.</p>
+
+  <p><b>The fix.</b> The hunger release in <code>releasedTo</code> now passes the same test the
+    workshops have had since the sixteen-yards flood: <b>no <code>storehouse</code> re-release
+    while an unworked granary stands or a commission is unbuilt.</b> A worked shed opens the
+    category honestly. Livestock stays unguarded on purpose — a flock is ewes, not a bench.
+    <code>check-release</code> grows eighteen to twenty-two, and the two guard cases <b>fail
+    against the old code</b>, stash-verified.</p>
+
+  <p><b>The measurement, against LIX&rsquo;s own predictions, on the same flooding valley:</b></p>
+
+  <div class="wrap">
+    <table class="plate">
+      <thead><tr><th>predicted</th><th>measured, run mteu9jh3-ny</th></tr></thead>
+      <tbody>
+        <tr><td>caps freeze while sheds go unworked</td>
+          <td class="num"><b>6 / 6 / 1 held</b> through 524s and one full meeting in every town
+            (votedAt 5178, 5166, 5112 — all post-fix); eleven raises the evening before, none after</td></tr>
+        <tr><td>a manned shed reads as worked</td>
+          <td>Mara, on a filed keep-day: <b>made 10, workedBy Mara</b>, eight laid by</td></tr>
+        <tr><td><i>(unpredicted)</i></td>
+          <td><b>Cato worked his own granary with nobody asking</b> — thirteen laid by, his own
+            choice, which is the falsifier&rsquo;s happy half arriving early</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p><b>The fine print, stated rather than hidden.</b> The guard reads <i>every</i> standing
+    shed: the landing, with one worked and one dark, stays shut — the design asking that the
+    existing grant be used before an eleventh allowance, and the place to watch if it proves too
+    tight. And while measuring, an old acquaintance walked through Mara&rsquo;s memory three
+    times: <i>went to build a sawmill and could not — a saw is a blade</i>. The refusal names
+    itself now, which is the difference; the treadmill it names is older than the record, and
+    is seen, and is not today&rsquo;s fight.</p>
+
+  <blockquote>Caps frozen. Two sheds worked, one of them unbidden. The water is going down.
+    <span class="who">the cellar, 524 sim-seconds after the word</span></blockquote>
+
+  <div class="explicit">
+    <p class="stamp">The Frontier Record &middot; Sheet LX &middot; 29 August</p>
+    <p class="caption">Fourth notice in one day to correct the one before it, which is either a
+      record failing repeatedly or a record working exactly as built. The sheets are not the
+      claim. The corrections are.</p>
+  </div>
+
+</div>
+
+</body>
+</html>
