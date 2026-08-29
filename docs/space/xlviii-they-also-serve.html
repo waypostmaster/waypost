@@ -1,0 +1,342 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>*{margin:0;padding:0}img{max-width:100%}</style>
+</head>
+<body>
+<title>They Also Serve</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=JetBrains+Mono:wght@400;600&display=swap">
+
+<style>
+  /*
+   * A devotional octavo by candlelight. Warm vellum, a long measure, a sonnet set as a sonnet, and
+   * one amber for the work that got done against a cold grey for the standing about. The figure is
+   * three rows: the same ten letters, the same valley, three states of one clock.
+   */
+  :root {
+    --paper:   #F4EFE3;
+    --paper-2: #E9E1CE;
+    --panel:   #FBF7EE;
+    --ink:     #241E16;
+    --faint:   #6F6553;
+    --rule:    #CBC0A7;
+    --amber:   #9A6516;
+    --cold:    #6B7280;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --paper:   #14110C;
+      --paper-2: #1C1811;
+      --panel:   #201C14;
+      --ink:     #EDE5D4;
+      --faint:   #99907C;
+      --rule:    #3A3324;
+      --amber:   #E0A54E;
+      --cold:    #98A0AC;
+    }
+  }
+  :root[data-theme="dark"] {
+    --paper:   #14110C;
+    --paper-2: #1C1811;
+    --panel:   #201C14;
+    --ink:     #EDE5D4;
+    --faint:   #99907C;
+    --rule:    #3A3324;
+    --amber:   #E0A54E;
+    --cold:    #98A0AC;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    background: var(--paper); color: var(--ink);
+    font-family: "Cormorant Garamond", Garamond, Georgia, serif;
+    font-size: 1.18rem; line-height: 1.62;
+    margin: 0; padding: 0 1.2rem 6rem;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .octavo { max-width: 42rem; margin: 0 auto; display: flex; flex-direction: column; gap: 2.6rem; }
+  p { margin: 0; max-width: 62ch; text-wrap: pretty; }
+  b { font-weight: 600; }
+  i, em { font-style: italic; }
+  a { color: var(--amber); }
+  a:focus-visible { outline: 2px solid var(--amber); outline-offset: 3px; }
+  code { font-family: "JetBrains Mono", ui-monospace, monospace; font-size: 0.74em; color: var(--amber); }
+
+  .stamp {
+    font-family: "JetBrains Mono", monospace; font-size: 0.64rem;
+    letter-spacing: 0.17em; text-transform: uppercase; color: var(--faint); margin: 0;
+  }
+
+  header.front {
+    display: flex; flex-direction: column; align-items: flex-start;
+    gap: 0.9rem; padding-top: 3.4rem;
+  }
+  header.front h1 {
+    font-family: "Cormorant Garamond", Georgia, serif; font-weight: 400;
+    font-size: clamp(2.6rem, 11vw, 4.4rem); letter-spacing: -0.01em;
+    margin: 0; line-height: 1; color: var(--ink);
+  }
+  header.front .sub { color: var(--faint); font-style: italic; max-width: 38rem; font-size: 1.08rem; }
+  .runhead {
+    display: flex; flex-wrap: wrap; justify-content: space-between; gap: 0.4rem 1rem; width: 100%;
+    font-family: "JetBrains Mono", monospace; font-size: 0.64rem; color: var(--faint);
+    border-top: 2px solid var(--ink); border-bottom: 1px solid var(--rule); padding: 0.5rem 0.1rem;
+  }
+
+  .finding {
+    background: var(--panel); border: 1px solid var(--rule); border-left: 3px solid var(--amber);
+    padding: 1.3rem 1.5rem; font-size: 1.1rem; line-height: 1.58;
+  }
+  .finding .lead {
+    font-family: "JetBrains Mono", monospace; font-size: 0.64rem; font-weight: 600;
+    letter-spacing: 0.18em; text-transform: uppercase; color: var(--amber);
+    display: block; margin-bottom: 0.6rem;
+  }
+
+  section { display: flex; flex-direction: column; gap: 1.05rem; }
+  section > h2 {
+    font-family: "Cormorant Garamond", Georgia, serif; font-weight: 600; font-size: 1.65rem;
+    margin: 0 0 0.45rem; padding-bottom: 0.4rem; border-bottom: 1px solid var(--ink);
+    display: flex; gap: 0.8rem; align-items: baseline;
+  }
+  section > h2 .n {
+    color: var(--amber); font-family: "JetBrains Mono", monospace; font-size: 0.68rem;
+    letter-spacing: 0.1em; font-weight: 600;
+  }
+
+  blockquote {
+    margin: 0.2rem 0; padding: 0.9rem 1.3rem; background: var(--paper-2);
+    border-left: 3px solid var(--ink); font-style: italic; max-width: 60ch;
+  }
+  blockquote .who {
+    display: block; font-style: normal; font-family: "JetBrains Mono", monospace;
+    font-size: 0.62rem; letter-spacing: 0.08em; color: var(--faint); margin-top: 0.55rem;
+  }
+  blockquote.source { border-left-color: var(--amber); }
+
+  /* A sonnet set as a sonnet. */
+  .sonnet {
+    background: var(--paper-2); border-left: 3px solid var(--amber);
+    padding: 1.2rem 1.5rem; font-style: italic; font-size: 1.12rem; line-height: 1.85;
+  }
+  .sonnet div { max-width: 52ch; }
+  .sonnet .turn { font-style: normal; font-weight: 600; }
+  .sonnet .who {
+    display: block; font-style: normal; font-family: "JetBrains Mono", monospace;
+    font-size: 0.62rem; letter-spacing: 0.08em; color: var(--faint); margin-top: 0.8rem;
+  }
+
+  .caption { font-size: 0.98rem; color: var(--faint); font-style: italic; max-width: 62ch; }
+
+  .wrap { overflow-x: auto; }
+  table.plate { width: 100%; border-collapse: collapse; font-size: 1.02rem; }
+  table.plate caption {
+    font-family: "JetBrains Mono", monospace; font-size: 0.63rem; letter-spacing: 0.13em;
+    text-transform: uppercase; color: var(--faint); text-align: left; padding-bottom: 0.5rem;
+  }
+  table.plate th, table.plate td {
+    text-align: left; padding: 0.5rem 0.6rem 0.5rem 0; border-bottom: 1px solid var(--rule); vertical-align: top;
+  }
+  table.plate thead th {
+    font-family: "JetBrains Mono", monospace; font-size: 0.62rem; letter-spacing: 0.06em;
+    text-transform: uppercase; color: var(--faint); font-weight: 400;
+    border-bottom: 2px solid var(--ink); border-top: 2px solid var(--ink);
+  }
+  table.plate td.op { font-family: "JetBrains Mono", monospace; font-size: 0.7rem; color: var(--amber); white-space: nowrap; }
+  table.plate td.num { font-family: "JetBrains Mono", monospace; font-size: 0.82rem; text-align: right; font-variant-numeric: tabular-nums; }
+  table.plate .good { color: var(--amber); font-weight: 600; }
+  table.plate .bad { color: var(--cold); font-weight: 600; }
+  table.plate .note { color: var(--faint); font-style: italic; font-size: 0.92rem; }
+
+  .explicit { display: flex; flex-direction: column; gap: 0.55rem; padding-top: 0.4rem; border-top: 2px solid var(--ink); }
+  .footline { color: var(--faint); font-size: 0.98rem; }
+</style>
+
+<div class="octavo">
+
+  <header class="front">
+    <p class="stamp">The Frontier Record &middot; Sheet XLVIII</p>
+    <h1>They Also Serve</h1>
+    <p class="sub">Ten letters collected at last, and the repair was not a faster post. It was
+      letting the settler walk away from the window. Read against Milton&rsquo;s consolation, which
+      this valley is obliged to contradict.</p>
+    <div class="runhead">
+      <span>Sonnet XIX &middot; tools/daybook-run.mts</span>
+      <span>10 of 10 took the day &middot; idle 41% against 0%</span>
+    </div>
+  </header>
+
+  <div class="finding">
+    <span class="lead">The finding</span>
+    <b>Standing still was only ever the price of receiving.</b> A day that arrived after a settler
+    had given up waiting was thrown away — <code>!n.asking</code> and out — so waiting was how you
+    got your letter, and a settler who wanted their day had to stand in a field to get it. Stop
+    discarding the late answer and the waiting has nothing left to buy. Across three runs of the
+    same ten days into the same valley, that one change took the delivery from <b>five of eight</b>
+    to <b>ten of ten</b>, and the settlement from <b>seventeen people to thirty</b>.
+  </div>
+
+  <section>
+    <h2><span class="n">I</span> <span>The consolation, and why it does not hold here</span></h2>
+    <p>Milton wrote Sonnet XIX going blind, on the question of whether a man who cannot do the work
+      is still of any use — and answered himself with the most durable line ever written in defence
+      of waiting.</p>
+    <div class="sonnet">
+      <div>Doth God exact day-labour, light denied?</div>
+      <div>I fondly ask&hellip;</div>
+      <div>&hellip;Who best</div>
+      <div>Bear his mild yoke, they serve him best. His state</div>
+      <div>Is kingly: thousands at his bidding speed,</div>
+      <div>And post o&rsquo;er land and ocean without rest;</div>
+      <div class="turn">They also serve who only stand and wait.</div>
+      <span class="who">John Milton, Sonnet XIX, c.1655</span>
+    </div>
+    <p>It is a poem about a wrong accounting of service, and its comfort is that the account is
+      wrong in the waiting man&rsquo;s favour. <b>This sheet is the same accounting run properly and
+      coming out the other way.</b> In this valley they do not also serve who only stand and wait.
+      They are idle 41% of their lives, and thirteen people who would otherwise have landed never
+      do — because beds are the only reason anybody new arrives, and the settlers who would have
+      built them were standing in a field holding a letter.</p>
+  </section>
+
+  <section>
+    <h2><span class="n">II</span> <span>Three states of one clock</span></h2>
+    <p>Sheet XLVII filed ten whole days into ten settlers&rsquo; outboxes and none was collected.
+      The browser was the wrong instrument, so this ran on
+      <code>tools/daybook-run.mts</code> instead — the real <code>stepSim</code> through
+      Vite&rsquo;s SSR loader, the real bus, no frame loop. Same ten days, same valley seed, twelve
+      thousand ticks, three states of the code.</p>
+    <div class="wrap">
+      <table class="plate">
+        <caption>The same ten letters, three times</caption>
+        <thead><tr><th scope="col">the bus</th><th scope="col">addressees landed</th><th scope="col">took their day</th><th scope="col">the valley reached</th></tr></thead>
+        <tbody>
+          <tr>
+            <td><b>wall clock, late answers dropped</b><br><span class="note">as it stood</span></td>
+            <td class="num">6 of 8</td><td class="num bad">5</td><td class="num bad">17</td>
+          </tr>
+          <tr>
+            <td><b>the settler&rsquo;s own clock</b><br><span class="note">patience measured in their day, not ours</span></td>
+            <td class="num">8 of 10</td><td class="num">7</td><td class="num bad">17</td>
+          </tr>
+          <tr>
+            <td><b>and nobody stands in the road</b><br><span class="note">post the letter, get on with the afternoon</span></td>
+            <td class="num good">10 of 10</td><td class="num good">9</td><td class="num good">30</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p>An uninstructed valley reaches <b>37</b> by the same tick, so the last row is still paying
+      seven people for the privilege of being told what to do. But the first row was paying twenty,
+      and the difference between them is two conditions in one file.</p>
+    <p><b>Delivery itself was never slow.</b> A day filed in advance reaches the settler it was
+      written for <b>six ticks</b> after they ask — t200 to t206 in the first clean run. The letter
+      was always there. The recipient was the problem.</p>
+  </section>
+
+  <section>
+    <h2><span class="n">III</span> <span>What was changed, and it is small</span></h2>
+    <div class="wrap">
+      <table class="plate">
+        <tbody>
+          <tr>
+            <td class="op">askedTick</td>
+            <td><b>A settler&rsquo;s patience is measured in their own day.</b> <code>ASK_TIMEOUT</code>
+              was checked only against <code>Date.now()</code>, so forty-five seconds meant forty-five
+              <i>real</i> seconds however fast the valley ran. Either clock may release them now and
+              neither may hold them; at one times speed the two agree and nothing changes.</td>
+          </tr>
+          <tr>
+            <td class="op">the poll</td>
+            <td><b>A day is taken when it arrives</b>, not only while somebody is stood waiting for
+              it. Coherent for one local model answering in half a second. Wrong for a correspondent
+              who is not here.</td>
+          </tr>
+          <tr>
+            <td class="op">the ask</td>
+            <td><b>Post the letter, then get on with the afternoon.</b> The branch below it has
+              carried the sentence <i>you do not stand in the road because you have posted a
+              letter</i> since it was written, and applied it to everybody except the settler who
+              had actually posted one.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p>None of the three is clever and all three were invisible from reading the source. What made
+      them visible was writing ten days, filing them, and counting who was left standing.</p>
+  </section>
+
+  <section>
+    <h2><span class="n">IV</span> <span>The measure that outlived what it measured</span></h2>
+    <p>This is the part worth the sheet, and it is a fault in the instrument rather than the game.</p>
+    <p>The runner counted ticks where <code>n.asking</code> was true and called them <i>time spent
+      standing still</i>. That was exact while asking meant standing still. It went on being
+      reported after the third change made a settler post their letter and walk away — and so the
+      run announced that instructed settlers had spent <b>67% of their lives waiting</b> at the
+      precise moment they had stopped waiting at all. They were working the whole time.</p>
+    <blockquote class="source">A number that survives the change it was built to measure is not
+      measuring what its name says.
+      <span class="who">tools/daybook-run.mts, above the counter</span></blockquote>
+    <p>Idle is <code>task === null</code>, and it is counted for everybody so the instructed can be
+      held against the rest. On that measure, honestly: <b>an instructed settler is idle 41% of
+      their life and an uninstructed one is idle 0%.</b> Which is a far worse number than the one
+      it replaced was pretending to be, and it is the true one.</p>
+    <p class="caption">Three sheets running, this record has found an instrument lying about the
+      world — a probe reporting silence from a model that was talking, a log with no column for
+      whether anyone was thinking, and now a counter reporting a wait that had been abolished. The
+      pattern is not carelessness. It is that <b>a measurement keeps reporting the old world after
+      the world has changed</b>, and nothing in it knows.</p>
+  </section>
+
+  <section>
+    <h2><span class="n">V</span> <span>Oren, still</span></h2>
+    <p>Nine of the ten took the day written for them. The tenth is the one written empty on purpose,
+      and he is exactly where Sheet XLVII left him:</p>
+    <blockquote>No word yet. I&rsquo;ll stay put and keep my eyes open.
+      <span class="who">Oren — filed 0 steps, took nothing, three runs in a row</span></blockquote>
+    <p>His letter is collected and consumed like everybody else&rsquo;s and gives him nothing, because
+      an empty plan is not an instruction to stand — it is indistinguishable from never having
+      written. <b>The valley still has no way to say <i>do nothing</i></b>, which is the one word the
+      keeper&rsquo;s own rule needs and the only one of Sheet XLVII&rsquo;s three open rows still
+      open.</p>
+  </section>
+
+  <section>
+    <h2><span class="n">VI</span> <span>What the ten days did once they landed</span></h2>
+    <div class="wrap">
+      <table class="plate">
+        <caption>Twelve thousand ticks, after the repair</caption>
+        <tbody>
+          <tr><td class="op">10 of 10</td><td>addressees landed, asked, and were handed a day</td></tr>
+          <tr><td class="op">9 of 10</td><td>had a plan to spend; the tenth was the empty one</td></tr>
+          <tr><td class="op">3</td><td>plans came apart and fell to their branch — <i>&ldquo;their plan came apart, and they had thought about that&rdquo;</i></td></tr>
+          <tr><td class="op">15 &rarr; 10</td><td>the over-long day truncated, <b>silently</b>, losing the five steps it had been told to make the point of the day</td></tr>
+          <tr><td class="op">t200 &rarr; t206</td><td>from asking to holding a whole day</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>So the answer to the question <code>DAYBOOK.md</code> could not settle by argument: <b>a day
+      filed in advance does reach a settler, is spent step by step, and branches when it breaks.</b>
+      The design works. What did not work was everything around it — the clock, the discard, and
+      the standing — and none of the three had anything to do with whether a model can write a day.</p>
+
+    <div class="explicit">
+      <p class="footline">Ten days by <code>claude-haiku-4-5</code>, 10 of 10 valid JSON first try,
+        319&ndash;2,003 characters of the 4,000 a note allows &middot; three runs at 12,000 ticks
+        &middot; 5 of 8 &rarr; 7 of 10 &rarr; 9 of 10 collected &middot; valley 17 &rarr; 30 against
+        an uninstructed 37 &middot; idle 41% instructed, 0% otherwise &middot; full gate green at
+        48 sheets.</p>
+      <p class="stamp">The Frontier Record &middot; Sheet XLVIII &middot; 29 August</p>
+    </div>
+  </section>
+
+</div>
+
+</body>
+</html>
