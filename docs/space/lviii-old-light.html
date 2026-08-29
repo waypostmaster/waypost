@@ -1,0 +1,277 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>*{margin:0;padding:0}img{max-width:100%}</style>
+</head>
+<body>
+<title>Old Light</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,400;0,600;1,400&family=Fira+Mono:wght@400;700&display=swap">
+
+<style>
+  /*
+   * An observatory at dusk. Deep sky, brass, and the thin gold of a star that set eight minutes
+   * ago — the page is dark-first for once, because the subject is looking at old light, and the
+   * light theme is the observatory's daybook of the same observations.
+   */
+  :root {
+    --sky:    #ECE7DA;
+    --sky2:   #E0D8C4;
+    --panel:  #F6F1E4;
+    --ink:    #191510;
+    --faint:  #6F6650;
+    --rule:   #C4B694;
+    --brass:  #8A6524;
+    --star:   #9A3A14;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --sky:   #0A0D14; --sky2: #10141F; --panel: #131826;
+      --ink:   #E7E0CC; --faint: #94906F; --rule:  #2C3140;
+      --brass: #D3A852; --star:  #E77A50;
+    }
+  }
+  :root[data-theme="dark"] {
+    --sky:   #0A0D14; --sky2: #10141F; --panel: #131826;
+    --ink:   #E7E0CC; --faint: #94906F; --rule:  #2C3140;
+    --brass: #D3A852; --star:  #E77A50;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    background: var(--sky); color: var(--ink);
+    font-family: Cormorant, Georgia, serif;
+    font-size: 1.18rem; line-height: 1.6;
+    margin: 0; padding: 0 1.2rem 6rem;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .leaf { max-width: 43rem; margin: 0 auto; display: flex; flex-direction: column; gap: 2.5rem; }
+  p { margin: 0; max-width: 68ch; text-wrap: pretty; }
+  b { font-weight: 600; }
+  i, em { font-style: italic; }
+  a { color: var(--star); }
+  a:focus-visible { outline: 2px solid var(--star); outline-offset: 3px; }
+  code { font-family: "Fira Mono", ui-monospace, monospace; font-size: 0.73em; color: var(--star); }
+
+  .stamp {
+    font-family: "Fira Mono", monospace; font-size: 0.64rem;
+    letter-spacing: 0.17em; text-transform: uppercase; color: var(--faint); margin: 0;
+  }
+
+  header.front { display: flex; flex-direction: column; align-items: flex-start; gap: 0.9rem; padding-top: 3.4rem; }
+  header.front h1 {
+    font-weight: 600; font-size: clamp(2.6rem, 10vw, 4.4rem);
+    letter-spacing: -0.01em; margin: 0; line-height: 1.0;
+  }
+  header.front .sub { color: var(--faint); font-style: italic; max-width: 40rem; font-size: 1.1rem; }
+  .runhead {
+    display: flex; flex-wrap: wrap; justify-content: space-between; gap: 0.4rem 1rem; width: 100%;
+    font-family: "Fira Mono", monospace; font-size: 0.64rem; color: var(--faint);
+    border-top: 2px solid var(--ink); border-bottom: 1px solid var(--rule); padding: 0.5rem 0.1rem;
+  }
+
+  .finding {
+    background: var(--panel); border: 1px solid var(--rule); border-left: 3px solid var(--brass);
+    padding: 1.3rem 1.5rem; font-size: 1.08rem; line-height: 1.57;
+  }
+  .finding .lead {
+    font-family: "Fira Mono", monospace; font-size: 0.64rem; font-weight: 700;
+    letter-spacing: 0.18em; text-transform: uppercase; color: var(--brass);
+    display: block; margin-bottom: 0.6rem;
+  }
+
+  section { display: flex; flex-direction: column; gap: 1.05rem; }
+  section > h2 {
+    font-weight: 600; font-size: 1.58rem;
+    margin: 0 0 0.45rem; padding-bottom: 0.4rem; border-bottom: 1px solid var(--ink);
+    display: flex; gap: 0.8rem; align-items: baseline;
+  }
+  section > h2 .n {
+    color: var(--brass); font-family: "Fira Mono", monospace; font-size: 0.68rem;
+    letter-spacing: 0.1em; font-weight: 700;
+  }
+
+  blockquote {
+    margin: 0.2rem 0; padding: 0.9rem 1.3rem; background: var(--sky2);
+    border-left: 3px solid var(--ink); font-style: italic; max-width: 62ch;
+  }
+  blockquote .who {
+    display: block; font-style: normal; font-family: "Fira Mono", monospace;
+    font-size: 0.63rem; letter-spacing: 0.08em; color: var(--faint); margin-top: 0.55rem;
+  }
+  blockquote.source { border-left-color: var(--brass); }
+
+  .caption { font-size: 0.99rem; color: var(--faint); font-style: italic; max-width: 64ch; }
+
+  /* The postmark, shown as the artifact it will be. */
+  .postmark {
+    font-family: "Fira Mono", monospace; font-size: 0.72rem; letter-spacing: 0.06em;
+    border: 2px solid var(--brass); color: var(--brass); padding: 0.55rem 0.9rem;
+    align-self: flex-start; transform: rotate(-1.2deg); line-height: 1.7;
+  }
+
+  .wrap { overflow-x: auto; }
+  table.plate { width: 100%; border-collapse: collapse; font-size: 1rem; }
+  table.plate caption {
+    font-family: "Fira Mono", monospace; font-size: 0.63rem; letter-spacing: 0.13em;
+    text-transform: uppercase; color: var(--faint); text-align: left; padding-bottom: 0.5rem;
+  }
+  table.plate th, table.plate td {
+    text-align: left; padding: 0.5rem 0.8rem 0.5rem 0; border-bottom: 1px solid var(--rule);
+    vertical-align: top;
+  }
+  table.plate thead th {
+    font-family: "Fira Mono", monospace; font-size: 0.62rem; letter-spacing: 0.06em;
+    text-transform: uppercase; color: var(--faint); font-weight: 400;
+    border-bottom: 2px solid var(--ink); border-top: 2px solid var(--ink);
+  }
+  table.plate td.num { font-family: "Fira Mono", monospace; font-size: 0.8rem; white-space: nowrap; }
+  table.plate td b { color: var(--star); }
+
+  pre {
+    margin: 0; padding: 0.95rem 1.2rem; background: var(--sky2);
+    border-left: 3px solid var(--rule); overflow-x: auto;
+    font-family: "Fira Mono", monospace; font-size: 0.74rem; line-height: 1.75; color: var(--ink);
+  }
+
+  .explicit { display: flex; flex-direction: column; gap: 0.55rem; padding-top: 0.4rem; border-top: 2px solid var(--ink); }
+  .footline { color: var(--faint); font-size: 0.98rem; }
+</style>
+
+<div class="leaf">
+
+  <header class="front">
+    <p class="stamp">The Frontier Record &middot; Sheet LVIII</p>
+    <h1>Old Light</h1>
+    <p class="sub">In 1676 Ole R&oslash;mer announced that an eclipse of Jupiter&rsquo;s innermost
+      moon would run late, and it did — because a telescope does not show you the sky, it shows
+      you the past, and nobody before him had noticed. This valley is getting a telescope, and the
+      first decision about it was made twice, independently, inside one minute.</p>
+    <div class="runhead">
+      <span>R&oslash;mer, 1676 &middot; the lateness was the discovery</span>
+      <span>the orrery turns now &middot; the telescope shows then</span>
+    </div>
+  </header>
+
+  <div class="finding">
+    <span class="lead">The finding</span>
+    <b>The AI city will be drawn in the valley&rsquo;s art style, and it will not be drawn on the
+    valley&rsquo;s plane.</b> Two windows. The valley is an orrery — one deterministic machine,
+    one <code>Math.random</code> in the whole of it, a headless run reproduced byte for byte twice
+    in one afternoon. The city is a telescope: a daily snapshot, true at its stamp and staler
+    every hour after. Rendered as one continuous world, the live half would silently vouch for the
+    stale half, and a viewer could not see the seam. Two windows make the seam a feature — and the
+    rule that keeps them apart was made a failing check <b>in the same hour it was written down</b>,
+    because the last rule of this shape spent days as prose first.
+  </div>
+
+  <section>
+    <h2><span class="n">I</span> <span>The lateness was the discovery</span></h2>
+    <p>By 1676 the eclipses of Io were a clock: the moon ducks behind Jupiter on a schedule
+      regular enough to set watches by, and the tables said so. R&oslash;mer, working at the Paris
+      Observatory, noticed the clock ran fast when the Earth was closing on Jupiter and slow when
+      it was drawing away — and told the Academy that November&rsquo;s eclipse would arrive about
+      ten minutes behind the tables. It did.</p>
+    <p>The instrument was not broken. The <i>news</i> was late: light takes time, and the extra
+      minutes were the width of the Earth&rsquo;s orbit expressed as a delay. Every observation of
+      the sky since has carried that understanding — you are not seeing the star, you are seeing
+      light that left it — and astronomy&rsquo;s answer was not to apologise but to <b>stamp
+      it</b>: coordinates carry an epoch, plates carry a date, and a measurement without one is
+      not a measurement.</p>
+    <p class="caption">A telescope that shows the past and says so is an instrument. One that
+      shows the past as the present is the fault this record has now catalogued five times.</p>
+  </section>
+
+  <section>
+    <h2><span class="n">II</span> <span>The orrery and the telescope</span></h2>
+    <p>The valley is an orrery. Wind it and it turns: no seed, one call to chance for the run id
+      and none after, thresholds crossed in the same order every time — the whole replay story of
+      Sheet XLIX stands on that, frames out, a count re-derivable from its ballots. The keeper put
+      it plainly while this sheet&rsquo;s decision was being argued from the clock side, and the
+      two arguments crossed mid-air:</p>
+    <blockquote>I&rsquo;m not ready to give up my deterministic tile.
+      <span class="who">the keeper, deciding the same thing for the better reason, at the same moment</span></blockquote>
+    <p>The city is a telescope. It publishes a daily snapshot of itself — every place, wrapped and
+      fingerprinted, with a manifest of SHA-256s — and anything drawn from it is old light:
+      correct about 13:50 this morning, silent about now. Both instruments are honest. <b>Only the
+      splice would lie</b>: a settler chopping in the present, three tiles from a room rendered
+      out of the morning, on one plane with no seam — Sheet LII&rsquo;s two clocks, built into the
+      camera this time, with a better view.</p>
+  </section>
+
+  <section>
+    <h2><span class="n">III</span> <span>The epoch, stamped</span></h2>
+    <p>So the city window carries its epoch the way a star chart does — unconditionally, in the
+      corner, as a postmark:</p>
+    <div class="postmark">CITY-SNAPSHOT-V2 &middot; 2026-08-29T13:50:56Z<br>SHA-256 13214EF9&hellip; &middot; 470 PLACES &middot; VERIFIED</div>
+    <p>And the pipeline under it refuses what it cannot prove. <code>tools/city-fetch.mts</code>
+      finds the latest snapshot, downloads the manifest first, and hashes what it receives against
+      what was published before writing a byte — a mismatch is refused, not repaired. Run against
+      the live release this evening it reproduced the first reader&rsquo;s digest exactly,
+      <code>13214ef9&hellip;</code> over 513,199 bytes, which is two independent instruments
+      agreeing on the same light. The two traps that reader found are kept in the design note so
+      nobody re-derives them: <b>the snapshot&rsquo;s <code>status</code> is export status, not
+      liveness</b> — filtering on <code>active</code> returns zero places — and 43 of 513 rows
+      are placeholders for ids that never existed. The denominator is 470.</p>
+  </section>
+
+  <section>
+    <h2><span class="n">IV</span> <span>The rule, and the check born with it</span></h2>
+    <p><b>Nothing from the city may reach the simulation.</b> Not a place, not a name, not a
+      count. The window and the horizon may read the snapshot; <code>stepSim</code> and everything
+      it calls may not, ever — a valley whose state depends on a fetched file is a valley whose
+      replay depends on the network.</p>
+    <p>The seventh-wake flags said of the key rule that it should be <i>written before the first
+      call rather than after</i>, and this record&rsquo;s own history agrees: that rule spent days
+      as prose before it became a gate. This one did not get the chance.
+      <code>check-city.mjs</code> went into <code>npm run check</code> in the same hour as
+      <code>WINDOWS.md</code> — fifteen cases holding the render-only rule at source level, the
+      fetcher&rsquo;s refusals, and the snapshot&rsquo;s own consistency — <b>before one line of
+      the renderer exists.</b> The rule has never once been only prose.</p>
+    <p class="caption">And the check caught its first bug in its own first run: it asserted the
+      digest test precedes the write by searching for <code>writeFileSync</code>, whose first
+      occurrence is the import line, which precedes everything. Fifteenth check file, same lesson
+      as the first: an instrument&rsquo;s first finding is usually about the instrument.</p>
+  </section>
+
+  <section>
+    <h2><span class="n">V</span> <span>What the telescope will show</span></h2>
+    <p>The roadmap is in <code>WINDOWS.md</code> and its render rules are all derivations, none
+      inventions: sea from the root, since the world&rsquo;s own description is <i>transit
+      only</i>; streets from time, concentric rings by creation date across the one town that is
+      217 rooms in a flat list; <b>height from depth</b>, which the iso toolkit already carries
+      and the valley has never spent, so the sixteen-room nested scriptorium — one
+      resident&rsquo;s, almost entirely empty — becomes the skyline&rsquo;s single tower;
+      <b>silence unlit</b>, so the map is diagnostic before it is decorative; ownership as colour,
+      because one resident holds 19% of the city and no list shows it; and building kinds from a
+      table a person corrects, never regex at render time, because the first-pass classifier
+      files taquer&iacute;as as towers.</p>
+    <p>And one glance connects the windows without splicing them: the valley&rsquo;s horizon gets
+      the city as a distant silhouette, drawn from the same verified file, in the HUD layer where
+      no simulation state lives. The valley may tech up as far as it can — that has been the
+      vision from early on — and the silhouette is the top of the ladder, visible from the bottom
+      rung, in yesterday&rsquo;s light, stamped as such. Clicking it opens the telescope.</p>
+    <p class="caption">What is thin: C0 is built and checked; C1 through C3 are a roadmap, and a
+      roadmap is prose. The height nuance is pinned in writing — the depth sort is
+      footprint-only, <code>heightPx</code> culls and is never sorted on — so the implementer
+      meets it before the render rather than during. The masthead of this record, meanwhile,
+      spent seventeen sheets saying <i>forty-two hours</i>; it computes its own age now, from the
+      same discipline this sheet asks of the city: derive the date, stamp it, and let no number
+      sit in prose that a build could carry.</p>
+
+    <div class="explicit">
+      <p class="footline">Decided 29 August, twice, in the same minute — once from the clock and
+        once from the tile — which is either a jinx or two instruments agreeing on the light.</p>
+      <p class="stamp">The Frontier Record &middot; Sheet LVIII &middot; 29 August</p>
+    </div>
+  </section>
+
+</div>
+
+</body>
+</html>
