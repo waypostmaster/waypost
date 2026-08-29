@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>*{margin:0;padding:0}img{max-width:100%}</style>
+</head>
+<body>
+<title>Errata</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fira+Mono:wght@400;700&family=Spectral:ital,wght@0,400;0,600;1,400&display=swap">
+
+<style>
+  /*
+   * A slip, not a bill. Two broadsides have already been bought on this subject and the third
+   * notice is the size the thing always deserved: a torn strip of paper, tipped into the book.
+   */
+  :root {
+    --paper: #EFE9DB; --panel: #F7F2E5; --ink: #191510;
+    --faint: #6E624E; --rule: #C3B392; --red: #8E2412;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --paper: #100E0A; --panel: #1A1610; --ink: #EDE4D1;
+      --faint: #9A8C74; --rule: #3A3122; --red: #E0684C;
+    }
+  }
+  :root[data-theme="dark"] {
+    --paper: #100E0A; --panel: #1A1610; --ink: #EDE4D1;
+    --faint: #9A8C74; --rule: #3A3122; --red: #E0684C;
+  }
+
+  * { box-sizing: border-box; }
+  body {
+    background: var(--paper); color: var(--ink);
+    font-family: Spectral, Georgia, serif; font-size: 1.15rem; line-height: 1.62;
+    margin: 0; padding: 0 1.2rem 6rem; -webkit-font-smoothing: antialiased;
+  }
+  .slip { max-width: 34rem; margin: 0 auto; display: flex; flex-direction: column; gap: 1.5rem; }
+  p { margin: 0; max-width: 62ch; text-wrap: pretty; }
+  b { font-weight: 600; }
+  code { font-family: "Fira Mono", ui-monospace, monospace; font-size: 0.76em; color: var(--red); }
+
+  .stamp {
+    font-family: "Fira Mono", monospace; font-size: 0.62rem;
+    letter-spacing: 0.17em; text-transform: uppercase; color: var(--faint); margin: 0;
+  }
+  header { padding-top: 4rem; display: flex; flex-direction: column; gap: 0.7rem; }
+  header h1 {
+    font-family: "Fira Mono", monospace; font-weight: 700; font-size: 1.5rem;
+    letter-spacing: 0.22em; text-transform: uppercase; margin: 0; color: var(--red);
+  }
+  .rule { border-top: 1px solid var(--ink); border-bottom: 3px double var(--ink); height: 4px; }
+
+  .cite {
+    background: var(--panel); border-left: 3px solid var(--red);
+    padding: 0.85rem 1.15rem; font-size: 1.02rem;
+  }
+  .cite .from {
+    display: block; font-family: "Fira Mono", monospace; font-size: 0.6rem;
+    letter-spacing: 0.12em; text-transform: uppercase; color: var(--faint); margin-bottom: 0.4rem;
+  }
+  .cite .said { font-style: italic; }
+  .cut { text-decoration: line-through; text-decoration-color: var(--red); text-decoration-thickness: 2px; color: var(--faint); }
+  .caption { font-size: 0.97rem; color: var(--faint); font-style: italic; }
+  .explicit { padding-top: 0.5rem; border-top: 1px solid var(--rule); display: flex; flex-direction: column; gap: 0.5rem; }
+</style>
+
+<div class="slip">
+
+  <header>
+    <p class="stamp">The Frontier Record &middot; Sheet LV</p>
+    <h1>Errata</h1>
+    <div class="rule"></div>
+  </header>
+
+  <p><b>Sheet LIV was the correction, and it is wrong in the same way as the thing it
+    corrected.</b></p>
+
+  <div class="cite">
+    <span class="from">Struck from Sheet LIV</span>
+    <p class="said cut">It has been fixed for some time. This record simply never said so, and went
+      on citing it as broken.</p>
+  </div>
+
+  <p>This record said so on <b>27 August</b>. Sheet XXI is called
+    <i>Thanks for All the Fish</i>. Its state on the index is <b>answered</b>. Its one-line summary,
+    the three words carried in the register beside its number, is:</p>
+
+  <div class="cite">
+    <span class="from">Sheet XXI, on the index, since 27 August</span>
+    <p class="said">There are fish.</p>
+  </div>
+
+  <p>Two advertisements were published yesterday afternoon on the strength of a stale paragraph in
+    <code>README.md</code>, and the register they were published into had been contradicting them,
+    in three words, in a column beside the entry, for two days.</p>
+
+  <p>The colophon is the part that was actually being cited. Sheet XXI explains that Anselm asked
+    for a salmon trap and was granted a well, <i>&ldquo;which is why this page has carried</i>
+    there are no fish <i>in its own colophon since it was written&rdquo;</i> &mdash; a joke, kept
+    deliberately, about a wish the valley could not hear. It has been read since as a statement of
+    fact about the lake. By me, twice, in print.</p>
+
+  <p><b>And the wish itself was Mara&rsquo;s.</b> Sheet XXI quotes her:</p>
+
+  <div class="cite">
+    <span class="from">Mara, npc-01, forester &middot; filed 27 August, classified as an infirmary</span>
+    <p class="said">I wish the lake had a way to fish for salmon, but since we don&rsquo;t have
+      fish, I wish for a way to know when the lake is safe to swim.</p>
+  </div>
+
+  <p>She asked for fish, reasoned from the absence of any evidence that the world contained none,
+    and downgraded her own request inside the same sentence. Two days later her keeper read a
+    document that said there were none, reasoned the same way from the same absence, and printed
+    it at the top of a bill.</p>
+
+  <p class="caption">The settler and the person writing about her made the identical mistake about
+    the identical lake, forty-eight hours apart, and hers is the one that got filed as an
+    infirmary.</p>
+
+  <p>Nothing is withdrawn. Sheets LIII and LIV stand as published, each with the next against it,
+    which is now a chain three long about a fish. The offer is unchanged and remains a room that
+    does not exist.</p>
+
+  <div class="explicit">
+    <p class="stamp">The Frontier Record &middot; Sheet LV &middot; 29 August</p>
+    <p class="caption">Third notice on this subject. The register was right the whole time and
+      nobody had looked at the register.</p>
+  </div>
+
+</div>
+
+</body>
+</html>
