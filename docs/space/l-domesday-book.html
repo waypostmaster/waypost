@@ -1,0 +1,429 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>*{margin:0;padding:0}img{max-width:100%}</style>
+</head>
+<body>
+<title>The Domesday Book</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,600;1,400&family=Fira+Mono:wght@400;700&display=swap">
+
+<style>
+  /*
+   * A leaf of the great survey: vellum, oak-gall ink, and the rubricator's red lead on the
+   * headings. Two hands made every entry — the scribe who wrote the return, and the second
+   * commissioner sent afterwards to a shire where he was a stranger, to ask whether it was true.
+   * Here the shire is this repository, and the second commissioners were sent this morning.
+   */
+  :root {
+    --vellum:  #F2E9D8;
+    --vellum2: #E8DCC2;
+    --panel:   #F8F1E2;
+    --ink:     #251C10;
+    --faint:   #79684F;
+    --rule:    #CDBD9C;
+    --rubric:  #9C2B1E;
+    --glaze:   #566E7A;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --vellum:  #15100A;
+      --vellum2: #1D1710;
+      --panel:   #211A11;
+      --ink:     #EDE2CB;
+      --faint:   #9A8B70;
+      --rule:    #3D3423;
+      --rubric:  #E06B52;
+      --glaze:   #8FA6B2;
+    }
+  }
+  :root[data-theme="dark"] {
+    --vellum:  #15100A;
+    --vellum2: #1D1710;
+    --panel:   #211A11;
+    --ink:     #EDE2CB;
+    --faint:   #9A8B70;
+    --rule:    #3D3423;
+    --rubric:  #E06B52;
+    --glaze:   #8FA6B2;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    background: var(--vellum); color: var(--ink);
+    font-family: "EB Garamond", Georgia, serif;
+    font-size: 1.14rem; line-height: 1.62;
+    margin: 0; padding: 0 1.2rem 6rem;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .leaf { max-width: 43rem; margin: 0 auto; display: flex; flex-direction: column; gap: 2.6rem; }
+  p { margin: 0; max-width: 68ch; text-wrap: pretty; }
+  b { font-weight: 600; }
+  i, em { font-style: italic; }
+  a { color: var(--rubric); }
+  a:focus-visible { outline: 2px solid var(--rubric); outline-offset: 3px; }
+  code { font-family: "Fira Mono", ui-monospace, monospace; font-size: 0.76em; color: var(--rubric); }
+
+  .stamp {
+    font-family: "Fira Mono", monospace; font-size: 0.64rem;
+    letter-spacing: 0.17em; text-transform: uppercase; color: var(--faint); margin: 0;
+  }
+
+  header.front {
+    display: flex; flex-direction: column; align-items: flex-start;
+    gap: 0.9rem; padding-top: 3.4rem;
+  }
+  header.front h1 {
+    font-weight: 400; font-size: clamp(2.4rem, 9.6vw, 4rem);
+    letter-spacing: -0.01em; margin: 0; line-height: 1.02; color: var(--ink);
+  }
+  header.front .sub { color: var(--faint); font-style: italic; max-width: 40rem; font-size: 1.08rem; }
+  .runhead {
+    display: flex; flex-wrap: wrap; justify-content: space-between; gap: 0.4rem 1rem; width: 100%;
+    font-family: "Fira Mono", monospace; font-size: 0.64rem; color: var(--faint);
+    border-top: 2px solid var(--ink); border-bottom: 1px solid var(--rule); padding: 0.5rem 0.1rem;
+  }
+
+  .finding {
+    background: var(--panel); border: 1px solid var(--rule); border-left: 3px solid var(--rubric);
+    padding: 1.3rem 1.5rem; font-size: 1.08rem; line-height: 1.58;
+  }
+  .finding .lead {
+    font-family: "Fira Mono", monospace; font-size: 0.64rem; font-weight: 700;
+    letter-spacing: 0.18em; text-transform: uppercase; color: var(--rubric);
+    display: block; margin-bottom: 0.6rem;
+  }
+
+  section { display: flex; flex-direction: column; gap: 1.05rem; }
+  section > h2 {
+    font-weight: 600; font-size: 1.55rem;
+    margin: 0 0 0.45rem; padding-bottom: 0.4rem; border-bottom: 1px solid var(--ink);
+    display: flex; gap: 0.8rem; align-items: baseline; letter-spacing: -0.005em;
+  }
+  section > h2 .n {
+    color: var(--rubric); font-family: "Fira Mono", monospace; font-size: 0.68rem;
+    letter-spacing: 0.1em; font-weight: 700;
+  }
+
+  blockquote {
+    margin: 0.2rem 0; padding: 0.9rem 1.3rem; background: var(--vellum2);
+    border-left: 3px solid var(--ink); font-style: italic; max-width: 62ch;
+  }
+  blockquote .who {
+    display: block; font-style: normal; font-family: "Fira Mono", monospace;
+    font-size: 0.63rem; letter-spacing: 0.08em; color: var(--faint); margin-top: 0.55rem;
+  }
+  blockquote.source { border-left-color: var(--rubric); }
+
+  .caption { font-size: 0.98rem; color: var(--faint); font-style: italic; max-width: 64ch; }
+
+  /* The return: what the crown holds, entered the way the survey entered a manor. */
+  .survey {
+    border-top: 2px solid var(--ink); border-bottom: 2px solid var(--ink);
+    padding: 0.4rem 0; display: flex; flex-direction: column;
+  }
+  .survey .holding {
+    display: grid; grid-template-columns: 9.5rem 1fr; gap: 0.3rem 1.1rem;
+    padding: 0.72rem 0.1rem; border-bottom: 1px solid var(--rule); align-items: baseline;
+  }
+  .survey .holding:last-child { border-bottom: 0; }
+  .survey .tenet {
+    font-family: "Fira Mono", monospace; font-size: 0.62rem; font-weight: 700;
+    letter-spacing: 0.13em; text-transform: uppercase; color: var(--rubric); padding-top: 0.25rem;
+  }
+  .survey .of { font-size: 1.02rem; line-height: 1.5; }
+  .survey .of .worth {
+    display: block; font-family: "Fira Mono", monospace; font-size: 0.66rem;
+    color: var(--faint); margin-top: 0.25rem; letter-spacing: 0.04em;
+  }
+  @media (max-width: 34rem) { .survey .holding { grid-template-columns: 1fr; } }
+
+  /* The jurors' plate: what was answered on oath, and what the second commissioners found. */
+  .wrap { overflow-x: auto; }
+  table.jurors { width: 100%; border-collapse: collapse; font-size: 1rem; }
+  table.jurors caption {
+    font-family: "Fira Mono", monospace; font-size: 0.63rem; letter-spacing: 0.13em;
+    text-transform: uppercase; color: var(--faint); text-align: left; padding-bottom: 0.5rem;
+  }
+  table.jurors th, table.jurors td {
+    text-align: left; padding: 0.55rem 0.7rem 0.55rem 0; border-bottom: 1px solid var(--rule);
+    vertical-align: top;
+  }
+  table.jurors thead th {
+    font-family: "Fira Mono", monospace; font-size: 0.62rem; letter-spacing: 0.06em;
+    text-transform: uppercase; color: var(--faint); font-weight: 400;
+    border-bottom: 2px solid var(--ink); border-top: 2px solid var(--ink);
+  }
+  table.jurors td.said { font-style: italic; width: 38%; min-width: 12rem; }
+  table.jurors td.found b { color: var(--rubric); }
+
+  .explicit { display: flex; flex-direction: column; gap: 0.55rem; padding-top: 0.4rem; border-top: 2px solid var(--ink); }
+  .footline { color: var(--faint); font-size: 0.98rem; }
+</style>
+
+<div class="leaf">
+
+  <header class="front">
+    <p class="stamp">The Frontier Record &middot; Sheet L</p>
+    <h1>The Domesday Book</h1>
+    <p class="sub">Before anybody holds a cottage of this crown, the crown had better know what it
+      holds. Read through the great survey of 1086, which counted every ox, cow, pig and cottar in
+      England, was checked by a second set of commissioners sent where they were strangers, and was
+      named for the judgement that hears no appeal.</p>
+    <div class="runhead">
+      <span>Winchester, 1086 &middot; the survey before the tenancy</span>
+      <span>returns mostly true &middot; three faults in the quill</span>
+    </div>
+  </header>
+
+  <div class="finding">
+    <span class="lead">The finding</span>
+    <b>The returns are mostly true, which is rare in an audit and worth saying first.</b> Every
+    falsehood the commissioners found is of one kind: <b>an instrument that answers green while the
+    world says otherwise</b> &mdash; a publish gate that reports success with the record unmounted, a
+    log that drops two hundred lines at a stroke with no mark where they stood, a batch of the story
+    forgotten on one failed request. The estate&rsquo;s one unalterable law is that nothing is ever
+    deleted, and it is kept everywhere except by the quill that keeps it.
+  </div>
+
+  <section>
+    <h2><span class="n">I</span> <span>Every ox, every cow, every pig</span></h2>
+    <p>At his Christmas court of 1085, with an invasion expected and no sure account of what he could
+      tax to meet it, William sent men over all England to ask what he held. How many hides, how many
+      ploughs, how many mills and fishponds; who held it in King Edward&rsquo;s time, who holds it
+      now, and what it is worth &mdash; three values, then, since, and now. The jurors answered on
+      oath, hundred by hundred. A chronicler was disgusted by the thoroughness:</p>
+    <blockquote class="source">So very narrowly did he have it investigated that there was no single
+      hide nor a yard of land, nor indeed &mdash; it is a shame to relate, but it seemed no shame to
+      him to do &mdash; one ox nor one cow nor one pig which was there left out, and not put down in
+      his record.
+      <span class="who">The Anglo-Saxon Chronicle, 1085</span></blockquote>
+    <p>Two details matter here more than the counting. <b>The survey audited itself</b>: a second set
+      of commissioners followed the first, sent deliberately into shires where they were strangers,
+      to check returns they had no hand in writing. And among the classes of men it counted, between
+      the villeins and the slaves, were the <b>cotarii</b> &mdash; the cottars, who held a cottage
+      and a garden of somebody else&rsquo;s land.</p>
+    <p>This valley has spent three days designing exactly that tenancy. <code>COTTAGES.md</code>
+      proposes that residents of the city next door keep a settler here &mdash; <i>they live in the
+      city and play at the cottage</i> &mdash; and <code>CLOCK.md</code> has already ruled how fast
+      their days will turn. So before the first cottar is admitted, the survey: two commissioners
+      were sent through this repository in one morning, one through the source and one through the
+      tools, neither of which wrote a line of what they surveyed. This sheet is their return.</p>
+  </section>
+
+  <section>
+    <h2><span class="n">II</span> <span>What the crown holds</span></h2>
+    <p>Entered as the survey entered a manor: the holding, and what it is worth. All of this was
+      claimed in earlier sheets, and all of it the commissioners confirmed against the tree.</p>
+    <div class="survey">
+      <div class="holding">
+        <span class="tenet">the record</span>
+        <span class="of">Fifty sheets, published and live, none ever withdrawn. The register agrees
+          with the list, the list agrees with the pages, and the whole gate runs green.
+          <span class="worth">drift between ad/ and the record: 0 &middot; npm run check: exit 0</span></span>
+      </div>
+      <div class="holding">
+        <span class="tenet">the clock</span>
+        <span class="of">A live rate at four hours to the day, applied as a step count and never a
+          longer step, with a carry below 1&times; so the slow clock actually steps.
+          <span class="worth">LIVE = 1/72 &middot; src/clock.ts &middot; the carry in main.ts</span></span>
+      </div>
+      <div class="holding">
+        <span class="tenet">three silences</span>
+        <span class="of">Nobody keeps you: your own judgement. Kept but unwritten-to: home, resting,
+          legible at a glance. Told to stand by: standing by, near where you were told.
+          <span class="worth">unbidden &middot; idle &middot; sheets XLVI&ndash;XLVIII</span></span>
+      </div>
+      <div class="holding">
+        <span class="tenet">the bus</span>
+        <span class="of">Declares its own capacity, releases a slot on the clock rather than on the
+          settler, and does not drop an answer for arriving late.
+          <span class="worth">sheet XLVII &middot; the 90-second sweep</span></span>
+      </div>
+      <div class="holding">
+        <span class="tenet">the host</span>
+        <span class="of">A headless port that runs the real <code>stepSim</code> with no browser at
+          all &mdash; written for the daybook measurements, and the reason the replay got cheap.
+          <span class="worth">tools/daybook-run.mts &middot; sheet XLIX</span></span>
+      </div>
+      <div class="holding">
+        <span class="tenet">the keyframe</span>
+        <span class="of">The whole simulation in one snapshot, minus one derived field, proven on
+          every hot reload for a week.
+          <span class="worth">src/save.ts &middot; SCHEMA = 36</span></span>
+      </div>
+    </div>
+    <p class="caption">A survey that only found what was missing would be a poor one. Most of what
+      the last six sheets said this valley holds, it holds.</p>
+  </section>
+
+  <section>
+    <h2><span class="n">III</span> <span>The quill that deletes</span></h2>
+    <p>The estate has one law older than every other: <b>nothing is ever deleted.</b> Nobody dies,
+      no sheet comes down, sealed segments are kept for ever, and the reading order of this record
+      is a chain of its own corrections. The commissioners found that law broken in three places,
+      all of them in the hand that writes the record itself.</p>
+    <p><b>The log drops two hundred lines at a stroke.</b> <code>src/bus.ts:140</code>: when the
+      queue between flushes passes four hundred lines, <code>queued = queued.slice(-200)</code> and
+      the first two hundred are gone &mdash; no marker, no count, no line saying so. A famine, a
+      ballot and a burst of hauling on the same beat is exactly when the queue bursts, so the lines
+      most likely to be dropped are the interesting ones.</p>
+    <p><b>A failed flush forgets its whole batch.</b> <code>flushLog</code> empties the queue
+      <i>before</i> the request is made and swallows the failure, so one refused connection loses
+      everything it was carrying. And nothing flushes when the tab closes &mdash;
+      <code>beforeunload</code> writes the keyframe and abandons up to three sim-seconds of the
+      story, on every close and every reload, silently.</p>
+    <p><b>The publish gate reports green with the record unmounted.</b> The record&rsquo;s only
+      working copy is a worktree in a <i>temp directory</i>, and both the publisher and the index
+      check, finding it absent, print <code>skipped</code> and exit 0. If the operating system ever
+      cleans that directory &mdash; which is what temp directories are for &mdash; every check stays
+      green and <code>npm run publish</code> reports success while publishing nothing. That is the
+      exact silent-drift fault these tools were written to end, standing in the one place nobody
+      audits: the auditor.</p>
+    <p>The chronicler was ashamed of how much the survey counted. The shame available here runs the
+      other way &mdash; a record proud of counting everything, quietly not.</p>
+  </section>
+
+  <section>
+    <h2><span class="n">IV</span> <span>As answered, as found</span></h2>
+    <p>The survey took three values for every manor &mdash; what it was worth then, when granted,
+      and now &mdash; because a claim and its present state are different facts. The same plate, for
+      what this record has answered on oath in its own sheets and docs:</p>
+    <div class="wrap">
+      <table class="jurors">
+        <caption>The jurors&rsquo; plate</caption>
+        <thead><tr><th scope="col">as answered</th><th scope="col">as the commissioners found</th></tr></thead>
+        <tbody>
+          <tr>
+            <td class="said">One <code>Math.random</code> in the simulation, and everything else
+              hashed from the seed.</td>
+            <td class="found">True of chance, <b>false of time</b>. <code>Date.now()</code> is
+              consulted at three sites <i>inside</i> <code>stepSim</code> &mdash; the ask timeout,
+              the goals cadence, the pending sweep &mdash; and the HUD writes into
+              <code>sim.beats</code> off the wall clock. A keyframe replayed through the inputs will
+              not reproduce the run. Frames out is not a preference; it is the only honest option
+              left.</td>
+          </tr>
+          <tr>
+            <td class="said">&ldquo;The live valley runs at <code>LIVE</code>, always, for
+              everyone.&rdquo; &mdash; <code>CLOCK.md</code></td>
+            <td class="found"><b>Nothing imports <code>LIVE</code>.</b> The dial hard-codes seven
+              speeds without it, and <code>setSpeed</code> silently coerces any value it does not
+              recognise to 1&times; &mdash; so the near-miss runs the valley at eighteen times the
+              promised rate and complains of nothing.</td>
+          </tr>
+          <tr>
+            <td class="said">Any number of settlers may be handed over; the answerer declares how
+              many questions it can hold.</td>
+            <td class="found">The server advertises the declared slots <b>unclamped</b> while
+              <code>answer()</code> holds one global lock. Declared at eight, seven of every eight
+              questions get no answer and no log line, freed only by the sweep.</td>
+          </tr>
+          <tr>
+            <td class="said">Sealed segments are never committed &mdash; <i>a sealed segment is tens
+              of megabytes and git would keep it for ever.</i> &mdash; <code>.gitignore</code></td>
+            <td class="found">The ballots are exempt from their own rule. <code>agents/VOTES.md</code>
+              is <b>fifty million bytes, tracked, with no rotation</b>, appended by every vote and
+              carried in seventy-seven commits &mdash; the exact size the comment beside it warns
+              about, in the file the comment does not cover.</td>
+          </tr>
+          <tr>
+            <td class="said">&ldquo;Nothing touching <code>logEvent</code> or <code>logLine</code>
+              may ever see the token&rdquo; &mdash; <code>COTTAGES.md</code>, on the city key.</td>
+            <td class="found">Written in prose only. No check enforces it, the example env file does
+              not name the key, and one door already leaks in its direction: the brain endpoint
+              echoes raw fetch error text to anybody who asks, and fetch errors carry URLs. The rule
+              wanted writing down <i>before the first call</i>; the first call has not happened, so
+              the survey is in time.</td>
+          </tr>
+          <tr>
+            <td class="said"><code>SCHEMA = 34</code>; <code>hourLabel</code> at 616;
+              <code>logTick</code> at 8205. &mdash; the design notes, citing the tree.</td>
+            <td class="found">36; 627; 8745. The notes cite line numbers the way this record cites
+              tick counts, and the tree moved under all of them within a day. Small, but this record
+              has written <i>a list that has to agree with another list will stop agreeing</i> four
+              times, and a line number is a list of one.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="n">V</span> <span>Land the charters describe</span></h2>
+    <p>And then there is the tenancy itself. Four charters &mdash; <code>COTTAGES.md</code>,
+      <code>DAYBOOK.md</code>, <code>CLOCK.md</code>, <code>PIER.md</code> &mdash; argued, measured,
+      each one checked against the tree when it was written. The commissioners searched the source
+      for the land they describe:</p>
+    <p><b>Occurrences of the city, anywhere in the code: zero.</b> No poller, no place tree, no
+      waker, no note, no key. The word <code>1f3d9</code> does not appear in <code>src/</code> at
+      all. The notice for the pier is drafted and unposted. The keyframe still goes to session
+      storage rather than to a file. Nothing here is surprising &mdash; the charters say plainly
+      that none of it is built &mdash; but a survey records what is, and what is, is prose.</p>
+    <p><b>And the manor house is rented.</b> The whole bus &mdash; the answering, the record
+      endpoints, the wish files, the ballots &mdash; lives inside the dev server&rsquo;s
+      <code>configureServer</code>. A built bundle has no <code>/bus</code> at all; a hosted valley
+      would silently degrade to a catalogue and write no record anywhere. What the door there is has
+      no lock: any client that can reach it may append arbitrary lines to the log, tick a wish
+      carried, or call a vote. And the simulation keeps per-run state in module globals, so one
+      process cannot hold two valleys &mdash; the live one and a replay stepping beside it are
+      currently the same rooms.</p>
+    <p>None of this is a scandal in a single-player tree; every line of it was reasonable when the
+      only client was one tab on one machine. It becomes the estate&rsquo;s whole law the day a
+      stranger holds a cottage here. <b>The charters are good law for land nobody has enclosed.</b></p>
+  </section>
+
+  <section>
+    <h2><span class="n">VI</span> <span>The sentence</span></h2>
+    <p>A century after the survey, the treasurer explained the name the English had given it:</p>
+    <blockquote class="source">This book is called by the natives Domesday &mdash; that is, by
+      metaphor, the day of judgement &hellip; for as the sentence of that strict and terrible last
+      account cannot be evaded by any art or subterfuge, so, when a dispute arises and the book is
+      appealed to, its sentence cannot be quashed or set aside with impunity.
+      <span class="who">Richard fitzNigel, Dialogus de Scaccario, c. 1179</span></blockquote>
+    <p>That is what this record has claimed for itself from the first sheet: nothing withdrawn,
+      nothing rewritten, the correction filed after the fault and both left standing. A record like
+      that can be trusted exactly as far as its quill &mdash; <b>which is why the quill comes before
+      the tenancy, and before everything else found here.</b> In order:</p>
+    <p><b>Mend the quill.</b> A dropped line must leave a mark, a failed flush must keep its batch,
+      and a closing tab must flush before it writes its keyframe. <b>Move the record out of the temp
+      shire</b>, and make its absence a failure instead of a green skip. <b>Write the bearer rule
+      where a check can read it</b>, before the first authenticated call, as the charter itself
+      asked. <b>Give the ballots segments</b>, the way every other record here already seals. Then
+      the buildings: the bus out of the dev server and into a hall of its own, the keyframe to a
+      file, a door with a lock &mdash; and then, only then, the cottars.</p>
+    <p>Two judgements cannot be built and must simply be made, and the survey binds them to be made
+      first: what happens to a cottar whose settler dies, in a valley where nobody ever has &mdash;
+      the charter calls it load-bearing and it is &mdash; and whether four hours to a day is
+      watchable at all, which costs ten minutes of looking and has been owed since the clock was
+      set. One more return belongs on this leaf because the concordance will ask: the masons&rsquo;
+      yard stands, and has never once been worked &mdash; twelve thousand ticks, not one block
+      squared &mdash; and the check that watches idle benches said so, in an advisory, while the
+      gate ran green around it.</p>
+    <p class="caption">William took the survey because he did not know what he held, and could not
+      govern until he did. The returns here are better than most estates get: the holdings are real,
+      the faults are few, and every one of them was found by reading rather than by loss. The
+      sentence stands all the same, and it hears no appeal: the record cannot be quashed &mdash; so
+      the quill must not delete.</p>
+
+    <div class="explicit">
+      <p class="footline">Surveyed 29 August, by two commissioners who wrote none of what they read:
+        drift between <code>ad/</code> and the record <b>0</b> &middot; full gate green at fifty
+        sheets &middot; <code>agents/VOTES.md</code> <b>50,002,851 bytes</b>, tracked, unrotated
+        &middot; <code>queued.slice(-200)</code> at <code>bus.ts:140</code> &middot; wall-clock
+        reads inside <code>stepSim</code>: <b>3</b> &middot; imports of <code>LIVE</code>:
+        <b>0</b> &middot; occurrences of <code>1f3d9</code> in <code>src/</code>: <b>0</b> &middot;
+        the pier notice: drafted, unposted.</p>
+      <p class="stamp">The Frontier Record &middot; Sheet L &middot; 29 August</p>
+    </div>
+  </section>
+
+</div>
+
+</body>
+</html>
