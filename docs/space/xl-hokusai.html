@@ -1,0 +1,437 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>*{margin:0;padding:0}img{max-width:100%}</style>
+</head>
+<body>
+<title>The Old Man Mad About Painting</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;600&family=Spectral:ital,wght@0,400;0,600;1,400&family=Zen+Kaku+Gothic+New:wght@400;500&display=swap">
+
+<style>
+  /*
+   * Edo, 1834. A print rather than a manuscript, and set like one: kozo paper, sumi black, and
+   * the one imported pigment Hokusai built a career on — bero-ai, Prussian blue — with the seal
+   * in vermilion and nothing else coloured at all.
+   *
+   * The plate is a sequential ramp because the bands are ordered: one hue, nine steps, lightness
+   * strictly decreasing (checked: 0.674 down to 0.072 relative luminance, and the dark theme's
+   * own steps checked the same way against its own ground). The three palest steps sit under 3:1
+   * on the paper, so every bar is labelled outside itself in ink and the whole table is set below
+   * the plate — which is the relief that obligation asks for, not an excuse for the ramp.
+   */
+  :root {
+    --paper:   #F4EFE4;
+    --paper-2: #EAE3D3;
+    --panel:   #FAF6EC;
+    --ink:     #23211C;
+    --faint:   #7A7261;
+    --rule:    #CFC5AE;
+    --blue:    #2B4C7E;
+    --seal:    #A83A2E;
+    --b1: #BCCFE2; --b2: #A6BFD8; --b3: #90AFCE; --b4: #7A9FC4; --b5: #6490BA;
+    --b6: #4E80AF; --b7: #3A6E9F; --b8: #2B5B8B; --b9: #1E4670;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --paper:   #14161B;
+      --paper-2: #1B1E25;
+      --panel:   #1E222A;
+      --ink:     #E3DDCE;
+      --faint:   #928A78;
+      --rule:    #333A46;
+      --blue:    #8FB2DC;
+      --seal:    #D9705F;
+      --b1: #2E4762; --b2: #3A5878; --b3: #46698E; --b4: #527AA4; --b5: #5E8BBA;
+      --b6: #7BA3CC; --b7: #98BBDD; --b8: #B5D2EE; --b9: #D2E6FA;
+    }
+  }
+  :root[data-theme="dark"] {
+    --paper:   #14161B;
+    --paper-2: #1B1E25;
+    --panel:   #1E222A;
+    --ink:     #E3DDCE;
+    --faint:   #928A78;
+    --rule:    #333A46;
+    --blue:    #8FB2DC;
+    --seal:    #D9705F;
+    --b1: #2E4762; --b2: #3A5878; --b3: #46698E; --b4: #527AA4; --b5: #5E8BBA;
+    --b6: #7BA3CC; --b7: #98BBDD; --b8: #B5D2EE; --b9: #D2E6FA;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    background: var(--paper); color: var(--ink);
+    font-family: Spectral, Georgia, serif;
+    font-size: 1.13rem; line-height: 1.68;
+    margin: 0; padding: 0 1.2rem 6rem;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .print { max-width: 42rem; margin: 0 auto; display: flex; flex-direction: column; gap: 2.7rem; }
+  p { margin: 0; max-width: 66ch; }
+  b { font-weight: 600; }
+  i, em { font-style: italic; }
+  a { color: var(--blue); }
+  a:focus-visible { outline: 2px solid var(--blue); outline-offset: 3px; }
+  code { font-family: "Courier New", ui-monospace, monospace; font-size: 0.83em; color: var(--seal); }
+
+  .stamp {
+    font-family: "Zen Kaku Gothic New", "Shippori Mincho", sans-serif;
+    font-size: 0.72rem; letter-spacing: 0.24em; text-transform: uppercase;
+    color: var(--faint); margin: 0;
+  }
+
+  header.front {
+    display: flex; flex-direction: column; align-items: center; text-align: center;
+    gap: 1.05rem; padding-top: 3.4rem;
+  }
+  header.front h1 {
+    font-family: "Shippori Mincho", Spectral, serif; font-weight: 600;
+    font-size: clamp(2rem, 7.5vw, 3rem); letter-spacing: 0.01em;
+    margin: 0; line-height: 1.12; color: var(--blue); text-wrap: balance;
+  }
+  header.front .sub { color: var(--faint); font-style: italic; max-width: 36rem; font-size: 1.01rem; text-wrap: pretty; }
+  .runhead {
+    display: flex; flex-wrap: wrap; justify-content: space-between; gap: 0.4rem 1rem; width: 100%;
+    font-family: "Zen Kaku Gothic New", sans-serif; font-size: 0.7rem;
+    letter-spacing: 0.16em; text-transform: uppercase; color: var(--faint);
+    border-top: 2px solid var(--rule); border-bottom: 1px solid var(--rule); padding: 0.5rem 0.1rem;
+  }
+
+  .finding {
+    background: var(--panel); border: 1px solid var(--rule); border-left: 3px solid var(--blue);
+    padding: 1.35rem 1.55rem; font-size: 1.01rem; line-height: 1.62;
+  }
+  .finding .lead {
+    font-family: "Zen Kaku Gothic New", sans-serif; font-size: 0.7rem; font-weight: 500;
+    letter-spacing: 0.22em; text-transform: uppercase; color: var(--blue);
+    display: block; margin-bottom: 0.6rem;
+  }
+
+  section { display: flex; flex-direction: column; gap: 1.1rem; }
+  section > h2 {
+    font-family: "Shippori Mincho", Spectral, serif; font-weight: 600; font-size: 1.28rem;
+    margin: 0 0 0.5rem; padding-bottom: 0.45rem; border-bottom: 1px solid var(--rule);
+    color: var(--blue); display: flex; gap: 0.8rem; align-items: baseline;
+  }
+  section > h2 .n {
+    color: var(--faint); font-weight: 400; font-size: 0.78rem; letter-spacing: 0.18em;
+    font-family: "Zen Kaku Gothic New", sans-serif;
+  }
+
+  blockquote.postscript {
+    margin: 0; padding: 1.2rem 1.5rem; background: var(--paper-2);
+    border-left: 3px solid var(--seal); font-style: italic; max-width: 62ch;
+  }
+  blockquote.postscript .who {
+    display: block; font-style: normal; font-family: "Zen Kaku Gothic New", sans-serif;
+    font-size: 0.72rem; letter-spacing: 0.14em; color: var(--faint); margin-top: 0.7rem;
+  }
+
+  .caption { font-size: 0.92rem; color: var(--faint); font-style: italic; max-width: 62ch; }
+
+  .wrap { overflow-x: auto; }
+  table.ledger { width: 100%; border-collapse: collapse; font-size: 0.95rem; font-variant-numeric: tabular-nums; }
+  table.ledger caption {
+    font-family: "Zen Kaku Gothic New", sans-serif; font-size: 0.7rem; letter-spacing: 0.16em;
+    text-transform: uppercase; color: var(--faint); text-align: left; padding-bottom: 0.5rem;
+  }
+  table.ledger th, table.ledger td {
+    text-align: right; padding: 0.4rem 0.55rem; border-bottom: 1px solid var(--rule); vertical-align: baseline;
+  }
+  table.ledger th:first-child, table.ledger td:first-child { text-align: left; padding-left: 0; }
+  table.ledger thead th {
+    font-family: "Zen Kaku Gothic New", sans-serif; font-size: 0.7rem; letter-spacing: 0.1em;
+    text-transform: uppercase; color: var(--faint); font-weight: 400; border-bottom: 2px solid var(--rule);
+  }
+  table.ledger tbody th { font-weight: 400; }
+  table.ledger .was { color: var(--seal); font-style: italic; font-size: 0.88rem; }
+  .chip { display: inline-block; width: 0.62rem; height: 0.62rem; margin-right: 0.45rem;
+    border: 1px solid var(--rule); vertical-align: baseline; }
+
+  /* ── the plate ──────────────────────────────────────────────────────────── */
+  figure.plate { margin: 0; display: flex; flex-direction: column; gap: 0.7rem; }
+  .plate .frame { background: var(--panel); border: 1px solid var(--rule); padding: 1.2rem 1rem 0.9rem; overflow-x: auto; }
+  .plate svg { display: block; width: 100%; min-width: 30rem; height: auto; }
+
+  /* ── the ladder ─────────────────────────────────────────────────────────── */
+  ol.ladder { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; }
+  ol.ladder li {
+    display: grid; grid-template-columns: 4.6rem 1fr auto; gap: 0 1rem;
+    padding: 0.5rem 0; border-bottom: 1px solid var(--rule); align-items: baseline;
+  }
+  ol.ladder li:first-child { border-top: 1px solid var(--rule); }
+  ol.ladder .at {
+    font-family: "Courier New", monospace; font-size: 0.82rem; color: var(--faint);
+    text-align: right; font-variant-numeric: tabular-nums;
+  }
+  ol.ladder .word { font-family: "Shippori Mincho", serif; }
+  ol.ladder .note { color: var(--faint); font-size: 0.88rem; font-style: italic; }
+  ol.ladder li.new .word { color: var(--blue); font-weight: 600; }
+  ol.ladder li.open .word { color: var(--seal); font-weight: 600; }
+
+  .seal {
+    display: inline-block; background: var(--seal); color: var(--paper);
+    font-family: "Zen Kaku Gothic New", sans-serif; font-size: 0.68rem; letter-spacing: 0.12em;
+    padding: 0.18rem 0.5rem; vertical-align: middle;
+  }
+
+  .rule-wave { display: flex; justify-content: center; }
+  .rule-wave svg { width: 8rem; height: 1.6rem; }
+
+  .explicit { display: flex; flex-direction: column; gap: 0.55rem; padding-top: 0.4rem; border-top: 2px solid var(--rule); }
+  .footline { color: var(--faint); font-size: 0.93rem; }
+</style>
+
+<div class="print">
+
+  <header class="front">
+    <p class="stamp">The Frontier Record &middot; Sheet XL</p>
+    <h1>The Old Man Mad About Painting</h1>
+    <p class="sub">On a valley where twenty-odd people were simultaneously the best at nearly
+      everything by the second week &mdash; and on giving a career a shape that does not
+      finish &mdash; read through Hokusai, who kept changing his name because he had not got
+      there yet.</p>
+    <div class="runhead">
+      <span>Edo, 1834 &middot; run mtbgptmz-5q, closed</span>
+      <span>372 careers &middot; 200 of them at the top word</span>
+    </div>
+  </header>
+
+  <div class="finding">
+    <span class="lead">The finding</span>
+    Skill in this valley is <code>1 - 1/(1 + made/6)</code>. That is an asymptote: <b>nobody has
+    ever been finished, and nobody ever can be.</b> Everything that read it behaved as though they
+    were. The top word opened at 0.82, which is twenty-eight of a thing, and there was nothing
+    above it &mdash; so a settler who had made twenty-eight planks and one who had made five
+    hundred were described in the same four words for the rest of their lives. Worse, the ceiling
+    took teaching down with it: a master could only teach somebody two-tenths below them, and past
+    0.8 no gap that wide can exist. <b>The one use left for mastery switched itself off at exactly
+    the point mastery was reached.</b>
+  </div>
+
+  <section>
+    <h2><span class="n">I</span> <span>Everybody was the best at everything</span></h2>
+    <p>Across the whole of the closed run, counting every settler who ever crossed into a new word
+      at a trade &mdash; 372 person-branches in total:</p>
+    <div class="wrap">
+      <table class="ledger">
+        <caption>Where a career finished, run mtbgptmz-5q</caption>
+        <thead><tr><th scope="col">The word it ended on</th><th scope="col">Careers</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">learning</th><td>31</td></tr>
+          <tr><th scope="row">competent</th><td>28</td></tr>
+          <tr><th scope="row">practised</th><td>64</td></tr>
+          <tr><th scope="row">good at it</th><td>49</td></tr>
+          <tr><th scope="row"><b>the best here at it</b></th><td><b>200</b></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p><b>Mara held the top word in eleven branches of eleven.</b> Mining, hauling, toolmaking,
+      forestry, building, farming, sawing, trading, mending, scouting, herding &mdash; all of it.
+      Sula in nine. Nim, Ferro, Ysolde, Cato, Halla, Pike, Rowan, Juno, Dask, Vell, Osk and Lune in
+      nine or more each. Twenty-seven people lived in that valley and most of them were, at the
+      same time, the best there was at nearly every trade it had.</p>
+    <p>The beat that fires for it says: <i>&ldquo;It is not a title anybody gave them. It is the
+      count.&rdquo;</i> The count was twenty-eight.</p>
+  </section>
+
+  <section>
+    <h2><span class="n">II</span> <span>The curve was never the problem</span></h2>
+    <div class="wrap">
+      <table class="ledger">
+        <caption>What the number actually does</caption>
+        <thead><tr><th scope="col">Things made</th><th scope="col">Skill</th><th scope="col">What was said about them</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">12</th><td>0.667</td><td class="was">practised</td></tr>
+          <tr><th scope="row">28</th><td>0.824</td><td class="was">the best here at it</td></tr>
+          <tr><th scope="row">50</th><td>0.893</td><td class="was">the best here at it</td></tr>
+          <tr><th scope="row">100</th><td>0.943</td><td class="was">the best here at it</td></tr>
+          <tr><th scope="row">526</th><td>0.989</td><td class="was">the best here at it</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>Five hundred and twenty-six against twenty-eight. The difference is real, it is written
+      down, it was updated every single time somebody made something &mdash; and after the
+      twenty-eighth nothing in the game ever mentioned it again. The valley kept a perfect record
+      of a thing it had stopped being able to describe.</p>
+  </section>
+
+  <div class="rule-wave" aria-hidden="true">
+    <svg viewBox="0 0 200 40">
+      <path d="M0 28 Q 12 8 25 24 T 50 24 T 75 24 T 100 24 T 125 24 T 150 24 T 175 24 T 200 24"
+        fill="none" stroke="var(--rule)" stroke-width="2"></path>
+    </svg>
+  </div>
+
+  <section>
+    <h2><span class="n">III</span> <span>Hokusai kept changing his name</span></h2>
+    <blockquote class="postscript">
+      From the age of six I had a mania for drawing the shapes of things. By fifty I had published
+      a universe of designs, but all I have done before the age of seventy is not worth bothering
+      with. At seventy-three I began to grasp the structures of birds and beasts, insects and fish,
+      and of the way plants grow. If I go on trying I will surely do better still by eighty-six, so
+      that at ninety I will have got to the root of things; at a hundred I shall have reached a
+      divine state, and at a hundred and ten every dot and every line will have a life of its own.
+      <span class="who">Katsushika Hokusai, postscript to <i>One Hundred Views of Mount Fuji</i>, 1834, signed <span class="seal">GAKY&#332; R&#332;JIN</span> &mdash; the old man mad about painting</span>
+    </blockquote>
+    <p>He was seventy-four when he wrote that and he had already been six other people: Shunr&#333;,
+      S&#333;ri, Hokusai, Taito, Iitsu, and at the end Manji. The renaming was not branding. It was
+      the only honest way he had found of saying <i>I am not the person who made those</i> &mdash;
+      a ladder of names, taken up and put down, with no top rung, kept by a man who thought his
+      entire published output before seventy was not worth bothering with.</p>
+    <p>That is the shape this valley was missing, and it is not a difficulty curve or a prestige
+      system. It is <b>a way of continuing to say something true about somebody who has not
+      stopped.</b></p>
+  </section>
+
+  <section>
+    <h2><span class="n">IV</span> <span>Four more rungs, at the spacing the curve dictates</span></h2>
+    <ol class="ladder">
+      <li><span class="at">1&ndash;2</span><span class="word">learning</span><span class="note"></span></li>
+      <li><span class="at">3&ndash;6</span><span class="word">competent</span><span class="note"></span></li>
+      <li><span class="at">7&ndash;12</span><span class="word">practised</span><span class="note"></span></li>
+      <li><span class="at">13&ndash;27</span><span class="word">good at it</span><span class="note"></span></li>
+      <li><span class="at">28&ndash;53</span><span class="word">the best here at it</span><span class="note">was the end of the road</span></li>
+      <li class="new"><span class="at">54&ndash;113</span><span class="word">a master of it</span><span class="note">new</span></li>
+      <li class="new"><span class="at">114&ndash;233</span><span class="word">a master twice over</span><span class="note">new</span></li>
+      <li class="open"><span class="at">234+</span><span class="word">past anything this valley can teach</span><span class="note">open, and stays open</span></li>
+    </ol>
+    <p class="caption">Each rung is about twice the last, because that is what the next slice of an
+      asymptote actually costs. Nobody chose the spacing; it fell out of the curve that was
+      already there.</p>
+
+    <figure class="plate">
+      <div class="frame">
+        <svg viewBox="0 0 620 300" role="img" aria-labelledby="plate-t plate-d">
+          <title id="plate-t">Careers by band on a fixed seed at tick 16,000</title>
+          <desc id="plate-d">Of 301 person-branches: 87 learning, 59 competent, 45 practised, 46
+            good at it, 33 the best here at it, 14 a master of it, 14 a master twice over, and 3
+            past anything the valley can teach. The last four bands, 64 careers, were formerly one
+            single word.</desc>
+          <g id="bars"></g>
+        </svg>
+      </div>
+      <figcaption class="caption">Same population, same numbers, on a fixed seed at tick 16,000 —
+        only the words differ. The bracket marks what used to be one.</figcaption>
+    </figure>
+
+    <div class="wrap">
+      <table class="ledger">
+        <caption>The plate, as figures</caption>
+        <thead><tr><th scope="col">Band</th><th scope="col">Careers</th><th scope="col">Under the old words</th></tr></thead>
+        <tbody>
+          <tr><th scope="row"><i class="chip" style="background: var(--b1)"></i>learning</th><td>87</td><td class="was">learning</td></tr>
+          <tr><th scope="row"><i class="chip" style="background: var(--b2)"></i>competent</th><td>59</td><td class="was">competent</td></tr>
+          <tr><th scope="row"><i class="chip" style="background: var(--b3)"></i>practised</th><td>45</td><td class="was">practised</td></tr>
+          <tr><th scope="row"><i class="chip" style="background: var(--b4)"></i>good at it</th><td>46</td><td class="was">good at it</td></tr>
+          <tr><th scope="row"><i class="chip" style="background: var(--b6)"></i>the best here at it</th><td>33</td><td class="was">the best here at it</td></tr>
+          <tr><th scope="row"><i class="chip" style="background: var(--b7)"></i>a master of it</th><td>14</td><td class="was">the best here at it</td></tr>
+          <tr><th scope="row"><i class="chip" style="background: var(--b8)"></i>a master twice over</th><td>14</td><td class="was">the best here at it</td></tr>
+          <tr><th scope="row"><i class="chip" style="background: var(--b9)"></i>past anything this valley can teach</th><td>3</td><td class="was">the best here at it</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>Deepest career on that coast: <b>Pike, five hundred and twenty-six at trading</b>, skill
+      0.989, and still climbing.</p>
+  </section>
+
+  <section>
+    <h2><span class="n">V</span> <span>What a master is for</span></h2>
+    <p>The ceiling had a second victim and it is the more interesting one.
+      <code>teachAt</code> looked for somebody in the settlement whose skill was more than
+      <b>two-tenths</b> above the learner&rsquo;s. Skill is squeezed into nought-to-one by the
+      asymptote, so the moment a settler passes 0.8 the largest gap anybody in the world can have
+      on them is 0.2, and the test can never be true again.</p>
+    <p>Five hundred planks against thirty is 0.988 against 0.833. A gulf &mdash; and fifteen
+      thousandths short of being allowed to count. <b>Teaching stopped working in this valley on
+      the day it stopped being for beginners.</b></p>
+    <p>It is reckoned in things made now, which do not compress: half again as much work, plus a
+      few, is a teacher at six against four and at seven hundred against four hundred and fifty. So
+      the part of a career past the flat of the curve stops making the master better &mdash; the
+      curve sees to that on its own &mdash; and starts making everybody else better. Which is what
+      mastery has always actually been for, and it is the one form of progression that cannot
+      inflate, because it is spent on other people.</p>
+  </section>
+
+  <section>
+    <h2><span class="n">VI</span> <span>The mark that cannot run out</span></h2>
+    <p>Four more rungs is still a list, and any list ends. So underneath the words there is a mark
+      at every doubling of the count &mdash; the thirty-second, the sixty-fourth, the hundred and
+      twenty-eighth, and on, for as long as anybody keeps working:</p>
+    <div class="wrap">
+      <table class="ledger">
+        <caption>Marks, on a fixed seed</caption>
+        <thead><tr><th scope="col">Made</th><th scope="col">32</th><th scope="col">64</th><th scope="col">128</th><th scope="col">256</th><th scope="col">512</th><th scope="col">1024</th><th scope="col">&hellip;</th></tr></thead>
+        <tbody><tr><th scope="row">said aloud</th><td>&#9679;</td><td>&#9679;</td><td>&#9679;</td><td>&#9679;</td><td>&#9679;</td><td>&#9679;</td><td>&#9679;</td></tr></tbody>
+      </table>
+    </div>
+    <p>The gap doubles with them, so a settler forty years at one bench is marked about as often at
+      five hundred as at fifty, and the feed never fills up with it. Sixty of them had already
+      passed the first mark by tick sixteen thousand on the test seed. The line reads:
+      <i>&ldquo;Mara has made their 256th wood. Nobody asked them to count.&rdquo;</i></p>
+    <p><b>Nothing here makes anybody stronger.</b> No rung grants a bonus, no mark unlocks
+      anything, and the quality curve is exactly the curve it was this morning. What changed is
+      that the valley can now say what is true about a person who has not stopped &mdash; and that
+      a master has something left to do with the part of their life the curve has stopped
+      rewarding.</p>
+
+    <div class="explicit">
+      <p class="footline">Measured on run <code>mtbgptmz-5q</code>, closed, and on a fixed seed at
+        tick 16,000 &middot; <code>skillWord</code>, <code>teachAt</code>, <code>practise</code>
+        &middot; full gate green.</p>
+      <p class="stamp">The Frontier Record &middot; Sheet XL &middot; 29 August</p>
+    </div>
+  </section>
+
+</div>
+
+<script>
+(function () {
+  var data = [
+    { band: 'learning', n: 87, at: '1–2', c: 'var(--b1)' },
+    { band: 'competent', n: 59, at: '3–6', c: 'var(--b2)' },
+    { band: 'practised', n: 45, at: '7–12', c: 'var(--b3)' },
+    { band: 'good at it', n: 46, at: '13–27', c: 'var(--b4)' },
+    { band: 'the best here at it', n: 33, at: '28–53', c: 'var(--b6)' },
+    { band: 'a master of it', n: 14, at: '54–113', c: 'var(--b7)' },
+    { band: 'a master twice over', n: 14, at: '114–233', c: 'var(--b8)' },
+    { band: 'past anything this valley can teach', n: 3, at: '234+', c: 'var(--b9)' }
+  ];
+  var g = document.getElementById('bars');
+  if (!g) return;
+  var ns = 'http://www.w3.org/2000/svg';
+  var el = function (t, a) { var e = document.createElementNS(ns, t); for (var k in a) e.setAttribute(k, a[k]); return e; };
+  var L = 210, R = 560, top = 16, rowH = 32, max = 90;
+  data.forEach(function (d, i) {
+    var y = top + i * rowH;
+    var w = Math.max(2, (d.n / max) * (R - L));
+    var lab = el('text', { x: L - 10, y: y + 15, 'text-anchor': 'end', fill: 'var(--ink)', 'font-size': 12.5, 'font-family': 'Spectral, serif' });
+    lab.textContent = d.band; g.appendChild(lab);
+    var cnt = el('text', { x: L - 10, y: y + 28, 'text-anchor': 'end', fill: 'var(--faint)', 'font-size': 10.5, 'font-family': 'Courier New, monospace' });
+    cnt.textContent = d.at + ' made'; g.appendChild(cnt);
+    g.appendChild(el('rect', { x: L, y: y + 4, width: w, height: 17, fill: d.c, stroke: 'var(--rule)', 'stroke-width': 1 }));
+    var v = el('text', { x: L + w + 8, y: y + 17, fill: 'var(--ink)', 'font-size': 12.5, 'font-family': 'Courier New, monospace' });
+    v.textContent = d.n; g.appendChild(v);
+  });
+  // the bracket: four bands that used to be one word
+  var y0 = top + 4 * rowH + 2, y1 = top + 8 * rowH - 6;
+  g.appendChild(el('path', {
+    d: 'M ' + (R + 34) + ' ' + y0 + ' h 10 V ' + y1 + ' h -10',
+    fill: 'none', stroke: 'var(--seal)', 'stroke-width': 1.5
+  }));
+  var t1 = el('text', { x: R + 50, y: (y0 + y1) / 2 - 4, fill: 'var(--seal)', 'font-size': 11, 'font-family': 'Spectral, serif' });
+  t1.textContent = '64 careers,'; g.appendChild(t1);
+  var t2 = el('text', { x: R + 50, y: (y0 + y1) / 2 + 10, fill: 'var(--seal)', 'font-size': 11, 'font-family': 'Spectral, serif' });
+  t2.textContent = 'one word'; g.appendChild(t2);
+  document.getElementById('bars').parentNode.setAttribute('viewBox', '0 0 660 ' + (top + data.length * rowH + 14));
+})();
+</script>
+
+</body>
+</html>
