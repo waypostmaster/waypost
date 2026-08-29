@@ -1,0 +1,373 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>*{margin:0;padding:0}img{max-width:100%}</style>
+</head>
+<body>
+<title>The Clock of the Long Now</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans+Condensed:wght@400;600&family=IBM+Plex+Serif:ital,wght@0,400;0,600;1,400&display=swap">
+
+<style>
+  /*
+   * An engineering drawing rather than a manuscript. Drafting paper, a hard graphite ink, bronze
+   * for the thing that lasts and patina green for what it turns into — and the Plex family
+   * throughout, because it is a typeface drawn for machine documentation and this sheet is about
+   * how long a mark holds.
+   *
+   * No chart. The one figure is a section through the pace layers, which is a diagram of
+   * durations and not of data — every number on it is a measurement stated in the text as well.
+   */
+  :root {
+    --paper:   #EFEEE9;
+    --paper-2: #E4E2DA;
+    --panel:   #F7F6F2;
+    --ink:     #1F2328;
+    --faint:   #6B6E74;
+    --rule:    #C7C6BE;
+    --bronze:  #8A6A3B;
+    --patina:  #3F7A66;
+    --l1: #C9C7BE; --l2: #A9A99F; --l3: #8A6A3B; --l4: #6F7A72; --l5: #3F7A66;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --paper:   #16181B;
+      --paper-2: #1D2024;
+      --panel:   #202428;
+      --ink:     #E2E0D8;
+      --faint:   #8C9096;
+      --rule:    #343840;
+      --bronze:  #C79A56;
+      --patina:  #6FBBA0;
+      --l1: #3A3E44; --l2: #575C63; --l3: #C79A56; --l4: #7E8C86; --l5: #6FBBA0;
+    }
+  }
+  :root[data-theme="dark"] {
+    --paper:   #16181B;
+    --paper-2: #1D2024;
+    --panel:   #202428;
+    --ink:     #E2E0D8;
+    --faint:   #8C9096;
+    --rule:    #343840;
+    --bronze:  #C79A56;
+    --patina:  #6FBBA0;
+    --l1: #3A3E44; --l2: #575C63; --l3: #C79A56; --l4: #7E8C86; --l5: #6FBBA0;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    background: var(--paper); color: var(--ink);
+    font-family: "IBM Plex Serif", Georgia, serif;
+    font-size: 1.09rem; line-height: 1.66;
+    margin: 0; padding: 0 1.2rem 6rem;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .sheet { max-width: 42rem; margin: 0 auto; display: flex; flex-direction: column; gap: 2.7rem; }
+  p { margin: 0; max-width: 66ch; }
+  b { font-weight: 600; }
+  i, em { font-style: italic; }
+  a { color: var(--patina); }
+  a:focus-visible { outline: 2px solid var(--patina); outline-offset: 3px; }
+  code { font-family: "IBM Plex Mono", ui-monospace, monospace; font-size: 0.85em; color: var(--bronze); }
+
+  .stamp {
+    font-family: "IBM Plex Sans Condensed", sans-serif; font-size: 0.74rem; font-weight: 600;
+    letter-spacing: 0.2em; text-transform: uppercase; color: var(--faint); margin: 0;
+  }
+
+  header.front {
+    display: flex; flex-direction: column; align-items: center; text-align: center;
+    gap: 1rem; padding-top: 3.4rem;
+  }
+  header.front h1 {
+    font-family: "IBM Plex Sans Condensed", sans-serif; font-weight: 600;
+    font-size: clamp(2rem, 7.5vw, 3rem); letter-spacing: 0.01em;
+    margin: 0; line-height: 1.06; color: var(--ink); text-wrap: balance;
+    text-transform: uppercase;
+  }
+  header.front .sub { color: var(--faint); font-style: italic; max-width: 36rem; font-size: 1rem; text-wrap: pretty; }
+  .runhead {
+    display: flex; flex-wrap: wrap; justify-content: space-between; gap: 0.4rem 1rem; width: 100%;
+    font-family: "IBM Plex Mono", monospace; font-size: 0.72rem;
+    letter-spacing: 0.04em; color: var(--faint);
+    border-top: 2px solid var(--ink); border-bottom: 1px solid var(--rule); padding: 0.5rem 0.1rem;
+  }
+
+  .finding {
+    background: var(--panel); border: 1px solid var(--rule); border-left: 3px solid var(--bronze);
+    padding: 1.3rem 1.5rem; font-size: 1rem; line-height: 1.6;
+  }
+  .finding .lead {
+    font-family: "IBM Plex Sans Condensed", sans-serif; font-size: 0.74rem; font-weight: 600;
+    letter-spacing: 0.18em; text-transform: uppercase; color: var(--bronze);
+    display: block; margin-bottom: 0.6rem;
+  }
+
+  section { display: flex; flex-direction: column; gap: 1.05rem; }
+  section > h2 {
+    font-family: "IBM Plex Sans Condensed", sans-serif; font-weight: 600; font-size: 1.02rem;
+    letter-spacing: 0.1em; text-transform: uppercase; margin: 0 0 0.5rem;
+    padding-bottom: 0.45rem; border-bottom: 1px solid var(--rule);
+    display: flex; gap: 0.8rem; align-items: baseline;
+  }
+  section > h2 .n { color: var(--bronze); font-family: "IBM Plex Mono", monospace; font-weight: 400; font-size: 0.82rem; }
+
+  blockquote {
+    margin: 0.2rem 0; padding: 0.85rem 1.25rem; background: var(--paper-2);
+    border-left: 2px solid var(--patina); font-style: italic; max-width: 60ch;
+  }
+  blockquote .who {
+    display: block; font-style: normal; font-family: "IBM Plex Sans Condensed", sans-serif;
+    font-size: 0.74rem; letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--faint); margin-top: 0.5rem;
+  }
+
+  .caption { font-size: 0.9rem; color: var(--faint); font-style: italic; max-width: 62ch; }
+
+  .wrap { overflow-x: auto; }
+  table.ledger { width: 100%; border-collapse: collapse; font-size: 0.94rem; font-variant-numeric: tabular-nums; }
+  table.ledger caption {
+    font-family: "IBM Plex Sans Condensed", sans-serif; font-size: 0.74rem; font-weight: 600;
+    letter-spacing: 0.12em; text-transform: uppercase; color: var(--faint);
+    text-align: left; padding-bottom: 0.45rem;
+  }
+  table.ledger th, table.ledger td {
+    text-align: right; padding: 0.42rem 0.55rem; border-bottom: 1px solid var(--rule); vertical-align: baseline;
+  }
+  table.ledger th:first-child, table.ledger td:first-child { text-align: left; padding-left: 0; }
+  table.ledger thead th {
+    font-family: "IBM Plex Sans Condensed", sans-serif; font-size: 0.74rem; font-weight: 600;
+    letter-spacing: 0.06em; text-transform: uppercase; color: var(--faint); border-bottom: 2px solid var(--rule);
+  }
+  table.ledger tbody th { font-weight: 400; }
+  table.ledger td.num { font-family: "IBM Plex Mono", monospace; }
+  table.ledger .held { color: var(--patina); font-weight: 600; }
+  table.ledger .note { color: var(--faint); font-style: italic; font-size: 0.88rem; }
+
+  figure.plate { margin: 0; display: flex; flex-direction: column; gap: 0.7rem; }
+  .plate .frame { background: var(--panel); border: 1px solid var(--rule); padding: 1.1rem 1rem 0.8rem; overflow-x: auto; }
+  .plate svg { display: block; width: 100%; min-width: 29rem; height: auto; }
+
+  .explicit { display: flex; flex-direction: column; gap: 0.55rem; padding-top: 0.4rem; border-top: 2px solid var(--ink); }
+  .footline { color: var(--faint); font-size: 0.92rem; }
+</style>
+
+<div class="sheet">
+
+  <header class="front">
+    <p class="stamp">The Frontier Record &middot; Sheet XLI</p>
+    <h1>The Clock of the Long Now</h1>
+    <p class="sub">On a road that was voted into existence and never built, a slate of predictions
+      that came back, and a settler who asked for a way to keep time without fire and was filed
+      under the furnace &mdash; read through Stewart Brand, who wrote down why the slow layers are
+      where anything holds.</p>
+    <div class="runhead">
+      <span>1999 &middot; run mtdotjm9-e4, tick 12,240</span>
+      <span>41 sheets &middot; 3 predictions due &middot; 3 confirmed</span>
+    </div>
+  </header>
+
+  <div class="finding">
+    <span class="lead">The finding</span>
+    The <code>roads</code> boon granted every settler in a settlement <b>twenty-two per cent
+    walking speed, everywhere, from the moment the meeting rose</b> &mdash; and built nothing. A
+    road you can walk on in the middle of a bog because a committee agreed to one. The track layer
+    to draw a real one had been in the project the whole time: footfall counted, held, reported and
+    rendered. It worked, and it only ever made doorsteps &mdash; <b>forty-eight tiles in sixteen
+    thousand ticks, every one within a few paces of a store</b>, because a route spreads its
+    footfall across twenty tiles and each gets a twentieth of the wear. What was missing was not
+    the drawing. It was the shovel.
+  </div>
+
+  <section>
+    <h2><span class="n">I</span> <span>Pace layers</span></h2>
+    <p>Brand&rsquo;s clock was designed to tick for ten thousand years, and the book he wrote around
+      it is mostly about something else: that a working order has layers, that they move at
+      different speeds, and that the fast ones get all the attention while the slow ones do all the
+      holding. Fashion proposes; infrastructure disposes.</p>
+    <blockquote>Fast learns, slow remembers. Fast proposes, slow disposes. Fast is discontinuous,
+      slow is continuous. Fast and small instructs slow and big by accrued innovation and by
+      occasional revolution.
+      <span class="who">Stewart Brand, The Clock of the Long Now, 1999</span></blockquote>
+    <p>This valley has the same section through it, and it can be measured rather than asserted:</p>
+
+    <figure class="plate">
+      <div class="frame">
+        <svg viewBox="0 0 620 268" role="img" aria-labelledby="pl-t pl-d">
+          <title id="pl-t">The pace layers of the valley, fastest at the top</title>
+          <desc id="pl-d">A crossing lasts seconds. A worn track needs about 130 crossings of one
+            tile and the grass takes it back. A laid road holds 43 game days unwalked. The
+            catalogue changes only when somebody adds a word. The record deletes nothing.</desc>
+          <g id="layers"></g>
+        </svg>
+      </div>
+      <figcaption class="caption">Each band is what it takes to make a mark on that layer, and how
+        long the mark lasts. Every figure is measured; none is a design intention.</figcaption>
+    </figure>
+
+    <p>The fault was that <b>the boon wrote on the governance layer and claimed to have built on
+      the infrastructure one.</b> A vote is fast &mdash; one meeting, one afternoon &mdash; and it
+      was producing a permanent change to how the whole settlement moved, with nothing standing to
+      show for it. That is the single thing this project says it does not have.</p>
+  </section>
+
+  <section>
+    <h2><span class="n">II</span> <span>The road, built</span></h2>
+    <p>So the vote now grants the <i>right to lay one</i>, and the road is an errand.
+      <code>mostTrodden</code> picks the tile near home that the most feet have already crossed and
+      nobody has laid &mdash; which is the catalogue entry&rsquo;s own words made literal,
+      <i>made paths on the routes people already walk</i>. One shift, by one person, lays one
+      stretch. A route is a dozen shifts. <b>Nobody can lay a road across the map, because nobody
+      has walked one.</b></p>
+    <div class="wrap">
+      <table class="ledger">
+        <caption>Fixed seed, 16,000 ticks</caption>
+        <thead><tr><th scope="col"></th><th scope="col">Ground that is road or track</th><th scope="col">Share of settler time</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">feet alone, never voted</th><td class="num">39</td><td class="num">0.0%</td></tr>
+          <tr><th scope="row">roads voted, and laid</th><td class="num held">335</td><td class="num">2.7%</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>And the twenty-two per cent is paid on the ground now rather than by the ballot &mdash;
+      <code>wornAt(tile) &gt;= 1</code>, to anybody, on a path worn by feet alone exactly as much as
+      on a made one. A beaten path is a beaten path. A settlement that has never held a meeting
+      about roads still gets the benefit of the ground outside its own door, which it earned by
+      walking on it.</p>
+    <p class="caption">One number wanted measuring rather than guessing: a laid stretch that nobody
+      walks on stops being a road after <b>forty-three game days</b>. Laid at exactly the threshold
+      instead, it dropped below on the next regrass sweep and stopped being a road within the hour
+      &mdash; eight per cent of every settler&rsquo;s life spent paving, for eleven tiles.</p>
+  </section>
+
+  <section>
+    <h2><span class="n">III</span> <span>The slate came back</span></h2>
+    <p>Sheet XXXIX filed five predictions at tick 6,096 with the verdict lines blank, on the
+      grounds that a reading made after the event is worth nothing. Three fell due at tick 12,000.
+      The valley is at 12,240.</p>
+    <div class="wrap">
+      <table class="ledger">
+        <caption>The slate, graded</caption>
+        <thead><tr><th scope="col">Filed at tick 6,096</th><th scope="col">At 12,240</th><th scope="col"></th></tr></thead>
+        <tbody>
+          <tr><th scope="row">An eighth granary before a sawmill</th><td class="num">8 granaries, 0 sawmills</td><td class="held">held</td></tr>
+          <tr><th scope="row">No eleventh settler without a hall</th><td class="num">10 folk, no hall</td><td class="held">held</td></tr>
+          <tr><th scope="row">Sula&rsquo;s claim raises nothing</th><td class="num">still 2 places</td><td class="held">held</td></tr>
+          <tr><th scope="row">Oren&rsquo;s claim ends with more working benches</th><td class="num">due at 15,000</td><td class="note">not yet</td></tr>
+          <tr><th scope="row">No second idle masons&rsquo; yard</th><td class="num">1 each, both idle</td><td class="held">holding</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>Three for three. The hunger ratchet did exactly what the arithmetic said: the landing has
+      gone from six granaries to <b>eight</b>, has still never built a sawmill, and is still ten
+      people in ten houses because <code>populationCap</code> is ten without a hall. Sula&rsquo;s
+      claim has stood at two buildings since tick 996 &mdash; now eleven thousand ticks &mdash;
+      with two people sleeping outdoors the whole time.</p>
+    <p>And then, at tick 12,078, Dask asked for the thing by name:</p>
+    <blockquote>Somewhere to put what comes in, because everything is stacked outside and the stores
+      are full. <i>There is nowhere to put anything. It is stacked outside and the rain is getting
+      at it.</i>
+      <span class="who">wish-637 &middot; Dask, forester &middot; a settlement with eight granaries and no depot</span></blockquote>
+  </section>
+
+  <section>
+    <h2><span class="n">IV</span> <span>Perrin asked for a clock</span></h2>
+    <blockquote>A mechanical clock with no need for ore or fire to keep time. <i>I&rsquo;d give my
+      left arm for a clock that doesn&rsquo;t need a furnace to run, so we don&rsquo;t have to wait
+      for the sun to tell us.</i>
+      <span class="who">wish-623 &middot; Perrin, forester &middot; tick 10,617 &middot; filed as <code>smelter</code></span></blockquote>
+    <p>A settler asked for a way to keep time <b>that does not need a furnace</b>, and the
+      catalogue filed it under the furnace. If it carries, the settlement is granted a smelter
+      &mdash; and the landing has one standing, so it would be granted a thing it already has, which is the wage fault this catalogue has been audited against since Sheet II.</p>
+    <p>What makes it worth a section is that <b>both audits pass it.</b>
+      <code>check-lexicon</code> looks for a stored kind that disagrees with a fresh reading, and a
+      fresh reading says <code>smelter</code> too, so there is no misfile.
+      <code>check-record</code> looks for proposals with no entry at all, and this one has an
+      entry, so nothing is unheard. Tonight both ran clean: <b>199 proposals, 0 open misfiles, 0
+      unheard, 2,252 negation pairs correct, no dead ends in the chain.</b></p>
+    <p>So there is a third category neither of them covers, and this is the first specimen:
+      <b>heard as the thing it explicitly said it was not.</b> Not a wish the catalogue cannot
+      hear, and not one it files inconsistently &mdash; one it files confidently, into the bin the
+      settler named in order to rule it out.</p>
+    <p class="caption">Not fixed here, and deliberately. A word for a clock is a real entry with a
+      real grant behind it, and the valley has no way to keep time but the sun. Filing it is the
+      easy half; deciding what a settlement gets when it carries is the sheet after this one.</p>
+  </section>
+
+  <section>
+    <h2><span class="n">V</span> <span>The sweep</span></h2>
+    <div class="wrap">
+      <table class="ledger">
+        <caption>Dead ends and magic, at 16,000 ticks with roads voted</caption>
+        <thead><tr><th scope="col">Asked</th><th scope="col">Found</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">buildings standing on water</th><td class="num held">0</td></tr>
+          <tr><th scope="row">footprints overlapping</th><td class="num held">0</td></tr>
+          <tr><th scope="row">negative stock anywhere</th><td class="num held">none</td></tr>
+          <tr><th scope="row">dead ends in the material chain</th><td class="num held">0</td></tr>
+          <tr><th scope="row">goods held past a settlement&rsquo;s ceiling</th><td class="num">105</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>The last row is the one still open and it is not magic: it is <b>the store shrinking around
+      goods already inside it.</b> `placesIn` scales what a building holds by its condition, so a
+      settlement too poor to repair its only shed watches the ceiling fall below what it is already
+      holding, and every haul after that tips its load on the grass. It is the likeliest reason
+      Sula&rsquo;s claim has not moved in eleven thousand ticks, and it is the oldest unfixed thing
+      on this coast.</p>
+    <p>Which is the pace-layer argument turned on the project itself. The fast layer here is the
+      catalogue &mdash; a word, an afternoon, forty-eight entries and counting. The slow layer is
+      the weather, and the weather has been quietly winning against one settlement for a season
+      while every sheet since has been about something else.</p>
+
+    <div class="explicit">
+      <p class="footline">Run <code>mtdotjm9-e4</code> at tick 12,240 &middot; measured on a fixed
+        seed at 16,000 &middot; <code>pave</code>, <code>mostTrodden</code>, <code>wornAt</code>
+        &middot; the action agrees across all four lists &middot; full gate green at 41 sheets.</p>
+      <p class="stamp">The Frontier Record &middot; Sheet XLI &middot; 29 August</p>
+    </div>
+  </section>
+
+</div>
+
+<script>
+(function () {
+  var layers = [
+    { name: 'a crossing', what: 'one settler, one tile', life: 'seconds', c: 'var(--l1)', w: 0.10 },
+    { name: 'a worn track', what: 'about 130 crossings of the same tile', life: 'the grass takes it back', c: 'var(--l2)', w: 0.30 },
+    { name: 'a laid road', what: 'one shift, by one person, on ground already walked', life: '43 game days unwalked', c: 'var(--l3)', w: 0.52 },
+    { name: 'the catalogue', what: 'a word added, and something for it to do', life: 'until somebody changes it', c: 'var(--l4)', w: 0.76 },
+    { name: 'the record', what: 'a sheet, published', life: 'nothing is ever deleted', c: 'var(--l5)', w: 1.00 }
+  ];
+  var g = document.getElementById('layers');
+  if (!g) return;
+  var ns = 'http://www.w3.org/2000/svg';
+  var el = function (t, a) { var e = document.createElementNS(ns, t); for (var k in a) e.setAttribute(k, a[k]); return e; };
+  var L = 150, R = 430, top = 18, h = 40, gap = 8;
+  var fast = el('text', { x: 8, y: top + 12, fill: 'var(--faint)', 'font-size': 10.5, 'font-family': 'IBM Plex Sans Condensed, sans-serif' });
+  fast.textContent = 'FAST'; g.appendChild(fast);
+  layers.forEach(function (d, i) {
+    var y = top + i * (h + gap);
+    var w = (R - L) * d.w;
+    g.appendChild(el('rect', { x: L, y: y, width: w, height: h, fill: d.c, stroke: 'var(--rule)', 'stroke-width': 1 }));
+    var nm = el('text', { x: L - 12, y: y + 17, 'text-anchor': 'end', fill: 'var(--ink)', 'font-size': 13, 'font-family': 'IBM Plex Serif, serif', 'font-weight': 600 });
+    nm.textContent = d.name; g.appendChild(nm);
+    var wh = el('text', { x: L - 12, y: y + 32, 'text-anchor': 'end', fill: 'var(--faint)', 'font-size': 10, 'font-family': 'IBM Plex Sans Condensed, sans-serif' });
+    wh.textContent = d.what; g.appendChild(wh);
+    var lf = el('text', { x: L + w + 10, y: y + 24, fill: 'var(--ink)', 'font-size': 11.5, 'font-family': 'IBM Plex Mono, monospace' });
+    lf.textContent = d.life; g.appendChild(lf);
+  });
+  var slow = el('text', { x: 8, y: top + layers.length * (h + gap) - 4, fill: 'var(--faint)', 'font-size': 10.5, 'font-family': 'IBM Plex Sans Condensed, sans-serif' });
+  slow.textContent = 'SLOW'; g.appendChild(slow);
+  g.appendChild(el('line', { x1: 24, x2: 24, y1: top + 20, y2: top + layers.length * (h + gap) - 16, stroke: 'var(--rule)', 'stroke-width': 1 }));
+  document.getElementById('layers').parentNode.setAttribute('viewBox', '0 0 620 ' + (top + layers.length * (h + gap) + 6));
+})();
+</script>
+
+</body>
+</html>
