@@ -1,0 +1,378 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>*{margin:0;padding:0}img{max-width:100%}</style>
+</head>
+<body>
+<title>The Mary Celeste</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,600;1,400&family=Courier+Prime:ital,wght@0,400;0,700;1,400&display=swap">
+
+<style>
+  /*
+   * A court of inquiry, Gibraltar, 1873. Ruled paper, a ship's log in a fixed hand, and the one
+   * thing the whole record turns on being a stretch of ruling with nothing written in it. The
+   * figure is two lanes on one axis: the lane that kept answering and the lane that stopped, with
+   * no mark anywhere between them.
+   */
+  :root {
+    --paper:   #EDEEEA;
+    --paper-2: #E1E3DC;
+    --panel:   #F5F6F2;
+    --ink:     #191C1A;
+    --faint:   #676C66;
+    --rule:    #C2C6BC;
+    --signal:  #A32B22;
+    --alive:   #2A5F52;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --paper:   #101311;
+      --paper-2: #171B18;
+      --panel:   #1B1F1C;
+      --ink:     #E2E5DF;
+      --faint:   #8B918A;
+      --rule:    #2F352F;
+      --signal:  #E4776B;
+      --alive:   #6FB9A4;
+    }
+  }
+  :root[data-theme="dark"] {
+    --paper:   #101311;
+    --paper-2: #171B18;
+    --panel:   #1B1F1C;
+    --ink:     #E2E5DF;
+    --faint:   #8B918A;
+    --rule:    #2F352F;
+    --signal:  #E4776B;
+    --alive:   #6FB9A4;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    background: var(--paper); color: var(--ink);
+    font-family: "Spectral", Georgia, serif;
+    font-size: 1.03rem; line-height: 1.7;
+    margin: 0; padding: 0 1.2rem 6rem;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .inquiry { max-width: 43rem; margin: 0 auto; display: flex; flex-direction: column; gap: 2.6rem; }
+  p { margin: 0; max-width: 66ch; text-wrap: pretty; }
+  b { font-weight: 600; }
+  i, em { font-style: italic; }
+  a { color: var(--signal); }
+  a:focus-visible { outline: 2px solid var(--signal); outline-offset: 3px; }
+  code { font-family: "Courier Prime", ui-monospace, monospace; font-size: 0.88em; color: var(--signal); }
+
+  .stamp {
+    font-family: "Courier Prime", monospace; font-size: 0.7rem;
+    letter-spacing: 0.16em; text-transform: uppercase; color: var(--faint); margin: 0;
+  }
+
+  header.front {
+    display: flex; flex-direction: column; align-items: flex-start;
+    gap: 0.9rem; padding-top: 3.4rem;
+  }
+  header.front h1 {
+    font-family: "Spectral", Georgia, serif; font-weight: 400;
+    font-size: clamp(2.3rem, 9.4vw, 3.8rem); letter-spacing: -0.012em;
+    margin: 0; line-height: 1.03; color: var(--ink);
+  }
+  header.front .sub { color: var(--faint); font-style: italic; max-width: 40rem; font-size: 1rem; }
+  .runhead {
+    display: flex; flex-wrap: wrap; justify-content: space-between; gap: 0.4rem 1rem; width: 100%;
+    font-family: "Courier Prime", monospace; font-size: 0.7rem; color: var(--faint);
+    border-top: 2px solid var(--ink); border-bottom: 1px solid var(--rule); padding: 0.5rem 0.1rem;
+  }
+
+  .finding {
+    background: var(--panel); border: 1px solid var(--rule); border-left: 3px solid var(--signal);
+    padding: 1.3rem 1.5rem; font-size: 1rem; line-height: 1.64;
+  }
+  .finding .lead {
+    font-family: "Courier Prime", monospace; font-size: 0.7rem; font-weight: 700;
+    letter-spacing: 0.18em; text-transform: uppercase; color: var(--signal);
+    display: block; margin-bottom: 0.6rem;
+  }
+
+  section { display: flex; flex-direction: column; gap: 1.05rem; }
+  section > h2 {
+    font-family: "Spectral", Georgia, serif; font-weight: 600; font-size: 1.4rem;
+    margin: 0 0 0.45rem; padding-bottom: 0.4rem; border-bottom: 1px solid var(--ink);
+    display: flex; gap: 0.8rem; align-items: baseline; letter-spacing: -0.008em;
+  }
+  section > h2 .n {
+    color: var(--signal); font-family: "Courier Prime", monospace; font-size: 0.74rem;
+    letter-spacing: 0.1em; font-weight: 700;
+  }
+
+  blockquote {
+    margin: 0.2rem 0; padding: 0.9rem 1.3rem; background: var(--paper-2);
+    border-left: 3px solid var(--ink); font-style: italic; max-width: 62ch;
+  }
+  blockquote .who {
+    display: block; font-style: normal; font-family: "Courier Prime", monospace;
+    font-size: 0.7rem; letter-spacing: 0.08em; color: var(--faint); margin-top: 0.55rem;
+  }
+  blockquote.source { border-left-color: var(--signal); }
+
+  .caption { font-size: 0.91rem; color: var(--faint); font-style: italic; max-width: 64ch; }
+
+  /* Two lanes on one tick axis. The whole sheet is this picture. */
+  .wrap { overflow-x: auto; }
+  .lanes {
+    border-top: 2px solid var(--ink); border-bottom: 2px solid var(--ink);
+    padding: 1.1rem 0 0.9rem; display: flex; flex-direction: column; gap: 0.55rem;
+    min-width: 34rem;
+  }
+  .lane { display: grid; grid-template-columns: 8.5rem 1fr; align-items: center; gap: 0.8rem; }
+  .lane .name {
+    font-family: "Courier Prime", monospace; font-size: 0.78rem; color: var(--faint);
+    text-align: right; white-space: nowrap;
+  }
+  .lane .bar { display: flex; height: 1.35rem; border: 1px solid var(--rule); }
+  .lane .on  { background: var(--alive); }
+  .lane .off { background: repeating-linear-gradient(135deg, transparent 0 5px, var(--rule) 5px 6px); }
+  .lane .on, .lane .off { display: flex; align-items: center; justify-content: center;
+    font-family: "Courier Prime", monospace; font-size: 0.68rem; white-space: nowrap; }
+  .lane .on { color: var(--paper); font-weight: 700; }
+  .lane .off { color: var(--faint); }
+  .axis { display: grid; grid-template-columns: 8.5rem 1fr; gap: 0.8rem; }
+  .axis .ticks {
+    display: flex; justify-content: space-between;
+    font-family: "Courier Prime", monospace; font-size: 0.68rem; color: var(--faint);
+  }
+  .cut {
+    grid-column: 2; font-family: "Courier Prime", monospace; font-size: 0.68rem;
+    color: var(--signal); font-weight: 700;
+  }
+
+  table.plate { width: 100%; border-collapse: collapse; font-size: 0.95rem; }
+  table.plate caption {
+    font-family: "Courier Prime", monospace; font-size: 0.7rem; letter-spacing: 0.13em;
+    text-transform: uppercase; color: var(--faint); text-align: left; padding-bottom: 0.5rem;
+  }
+  table.plate th, table.plate td {
+    text-align: left; padding: 0.46rem 0.6rem 0.46rem 0; border-bottom: 1px solid var(--rule); vertical-align: top;
+  }
+  table.plate thead th {
+    font-family: "Courier Prime", monospace; font-size: 0.68rem; letter-spacing: 0.06em;
+    text-transform: uppercase; color: var(--faint); font-weight: 400;
+    border-bottom: 2px solid var(--ink); border-top: 2px solid var(--ink);
+  }
+  table.plate td.op { font-family: "Courier Prime", monospace; font-size: 0.8rem; color: var(--signal); white-space: nowrap; }
+  table.plate td.num { font-family: "Courier Prime", monospace; font-size: 0.88rem; text-align: right; font-variant-numeric: tabular-nums; }
+  table.plate .gone { color: var(--signal); font-weight: 700; }
+  table.plate .held { color: var(--alive); font-weight: 700; }
+  table.plate .note { color: var(--faint); font-style: italic; font-size: 0.88rem; }
+
+  .explicit { display: flex; flex-direction: column; gap: 0.55rem; padding-top: 0.4rem; border-top: 2px solid var(--ink); }
+  .footline { color: var(--faint); font-size: 0.91rem; }
+</style>
+
+<div class="inquiry">
+
+  <header class="front">
+    <p class="stamp">The Frontier Record &middot; Sheet XLVI</p>
+    <h1>The Mary Celeste</h1>
+    <p class="sub">A valley found still under sail with nobody aboard &mdash; and a record that
+      kept perfect time through all of it, because it has no column for whether anyone was
+      thinking. Read through the Gibraltar inquiry of 1873, which established nothing and is
+      still quoted.</p>
+    <div class="runhead">
+      <span>Gibraltar, 1873 &middot; run mtdvdlic-hv</span>
+      <span>11,628 ticks &middot; 89 decisions &middot; 0 after t3816</span>
+    </div>
+  </header>
+
+  <div class="finding">
+    <span class="lead">The finding</span>
+    <b>The settlers stopped thinking at tick 3,816 and the valley ran for another 7,812 without
+    it.</b> Not degraded &mdash; <b>zero</b> model decisions in a hundred and ten minutes of wall
+    clock. In that same window the model answered <b>133</b> requests on a different lane, so it
+    was alive and reachable throughout. The settlement went on filing wishes at a higher rate than
+    before, held <b>116</b> ballots, and called for help more often each hour than the last. Every
+    gate is green. Nothing in <code>agents/log.jsonl</code>, in <code>agents/state.jsonl</code>, or
+    on any card says a thing happened, <b>because there is no field anywhere in this record for
+    which mind moved a settler.</b>
+  </div>
+
+  <section>
+    <h2><span class="n">I</span> <span>The ship</span></h2>
+    <p>On 4 December 1872 the <i>Dei Gratia</i> came upon a brigantine between the Azores and
+      Portugal, under sail, on a starboard tack, making her own way with nobody at the wheel. She
+      was seaworthy. Her cargo was aboard. There were provisions for months. One boat was gone and
+      ten people were gone with it &mdash; the master, his wife, their two-year-old daughter, and
+      seven crew &mdash; and not one of them was ever accounted for.</p>
+    <p>The Gibraltar Vice-Admiralty Court sat for three months in 1873 and established no cause. It
+      could not, and the reason is the only detail that matters here: <b>the log had been kept
+      faithfully and it stopped.</b> The last entry is routine, gives a position, and says nothing
+      whatever about what was coming. A century and a half of confident explanations have been
+      written into that silence, and every one of them is a story told where a record ought to be.</p>
+    <blockquote class="source">Not an error and not worth a log line every time: the settler waits
+      a moment and asks again, or gives up and thinks for themselves, which is a good outcome.
+      <span class="who">vite.config.ts:655, above the line where this valley went quiet</span></blockquote>
+  </section>
+
+  <section>
+    <h2><span class="n">II</span> <span>Two lanes, one axis</span></h2>
+    <p>The bus has two ways to reach a model and they were built apart on purpose. Decisions go
+      through a single-occupancy gate; goals have their own lane, exempt from it, with the reason
+      written above the route: <i>&ldquo;a goal turns over rarely &mdash; asking about it is worth
+      doing at any clock speed.&rdquo;</i> Here is what each lane did.</p>
+    <div class="wrap">
+      <div class="lanes">
+        <div class="lane">
+          <span class="name">decide &mdash; errands</span>
+          <span class="bar">
+            <span class="on" style="flex:3816">89 decisions &middot; 23.3 per 1,000</span>
+            <span class="off" style="flex:7812">nothing, for 7,812 ticks and 110 minutes</span>
+          </span>
+        </div>
+        <div class="lane">
+          <span class="name">setGoals &mdash; aims</span>
+          <span class="bar">
+            <span class="on" style="flex:3816">answering</span>
+            <span class="on" style="flex:7812">answering &mdash; 133 more, model alive throughout</span>
+          </span>
+        </div>
+        <div class="lane">
+          <span class="name">the record</span>
+          <span class="bar">
+            <span class="on" style="flex:3816">writing</span>
+            <span class="on" style="flex:7812">writing, at the same rate, saying nothing of the above</span>
+          </span>
+        </div>
+        <div class="axis">
+          <span></span>
+          <span class="ticks"><span>t0</span><span>t3,816</span><span>t11,628</span></span>
+        </div>
+        <div class="axis"><span></span><span class="cut">&uarr; the last decision. No mark of any kind here.</span></div>
+      </div>
+    </div>
+    <p class="caption">The middle lane is the whole difficulty. A model that had died would be a
+      fault anybody could find. A model answering one route and not the other, with no entry
+      between them, is a ship still sailing.</p>
+  </section>
+
+  <section>
+    <h2><span class="n">III</span> <span>What the crewless valley did</span></h2>
+    <div class="wrap">
+      <table class="plate">
+        <caption>Before and after the last decision</caption>
+        <thead><tr><th scope="col"></th><th scope="col">t0 &ndash; 3,816</th><th scope="col">t3,816 &ndash; 11,628</th></tr></thead>
+        <tbody>
+          <tr><td>model decisions</td><td class="num held">89</td><td class="num gone">0</td></tr>
+          <tr><td>goals answered by the model</td><td class="num held">143</td><td class="num held">133</td></tr>
+          <tr><td>wishes filed</td><td class="num">43</td><td class="num">73</td></tr>
+          <tr><td><b>filed in a settler&rsquo;s own words</b></td><td class="num held">5</td><td class="num gone">0</td></tr>
+          <tr><td>distinct things wanted</td><td class="num">10</td><td class="num gone">5</td></tr>
+          <tr><td>calls for help</td><td class="num">808</td><td class="num">3,079</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p><b>It got busier.</b> Wishes went up, help went up, and the ballot ran without a pause. What
+      went to zero is the only column that was ever the point. Of the seventy-three proposals filed
+      after the crew went over the side, <b>not one is in a settler&rsquo;s own voice</b> &mdash;
+      every single one is a sentence out of <code>tools/lexicon.mts</code>, and
+      <b>forty-eight of the seventy-three are the same sentence about a storehouse.</b></p>
+    <p>Across the whole run the settlement filed 116 proposals, struck 115, and held 116 ballots
+      &mdash; over <b>fourteen distinct wants.</b> That is a democracy in continuous session,
+      counted by single transferable vote, correct in every round, deliberating over a slate its
+      electorate had stopped being able to add to. <b>Nobody was misled and nothing was faked.</b>
+      The machinery did exactly what it does when it is working.</p>
+    <p class="caption">Which is the fault the other way up from Sheet XLV. There, a missing word
+      produced a personality instead of an error. Here, a missing mind produced a working
+      settlement instead of an error &mdash; because <code>chooseJob</code> is a good clerk and a
+      perfect understudy, and the record cannot tell an understudy from a lead.</p>
+  </section>
+
+  <section>
+    <h2><span class="n">IV</span> <span>What the log does not have</span></h2>
+    <p>Sheet XLIII went through <code>Settlement</code> field by field and found a book with
+      fourteen columns of assets and none of losses. <code>check-record</code> now refuses any
+      settlement field nobody has decided about. <b>It was never pointed at a person.</b></p>
+    <div class="wrap">
+      <table class="plate">
+        <caption>What <code>state.jsonl</code> keeps about a settler, in full</caption>
+        <tbody>
+          <tr><td class="op">name &middot; role &middot; town</td><td class="note">who they are and where</td></tr>
+          <tr><td class="op">task</td><td class="note">what they are doing &mdash; never <i>why</i>, or on whose say-so</td></tr>
+          <tr><td class="op">bed &middot; happy &middot; tired &middot; hungry</td><td class="note">the body</td></tr>
+          <tr><td class="op">carrying &middot; coin &middot; tools</td><td class="note">the hands</td></tr>
+          <tr><td class="gone" colspan="2"><b>&mdash; and nothing at all for the mind: not which brain moved them,
+            not whether anyone answered, not when the answering stopped</b></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>The number exists. <code>brainDetail</code> is set on every failure, held on the server, and
+      served to the HUD at <code>/bus/brain</code> alongside <code>decided</code>,
+      <code>lastMs</code> and <code>thinkingFor</code>. A person watching the screen could have
+      seen it. <b>It has never once been written down</b> &mdash; the warning at
+      <code>vite.config.ts:705</code> goes to the terminal logger, and <code>logEvent</code> is
+      never called on this path at all. So the eighth instance of this codebase&rsquo;s oldest
+      fault is not a settlement field. It is <b>the health of the thing the whole project is
+      about</b>, kept in a variable, shown on a card, and written to no file.</p>
+  </section>
+
+  <section>
+    <h2><span class="n">V</span> <span>Why the inquiry ends here</span></h2>
+    <p>What can be proved: the errand lane stopped at t3,816; the model was answering a different
+      route throughout; the record contains no mark. What cannot be proved from this record is
+      <b>why</b> &mdash; and the honest reading is that the material to settle it was never
+      written.</p>
+    <p>There is a candidate, and it is only that. The lane is guarded by one variable,
+      <code>thinking</code>, cleared in a <code>finally</code>, with a 90-second abort under it
+      &mdash; a gate added to fix a worse thing, a pileup of <b>eight simultaneous abandoned
+      connections to one 30B model, each dying at undici&rsquo;s 300-second ceiling only to be
+      replaced.</b> That fix was right. What it also did was replace a loud failure with a quiet
+      one: a single occupancy whose refusals are documented as <i>not worth a log line.</i> The
+      valley was running at four times speed, where a settler gives up long before any answer can
+      arrive, and it was sharing one card with a probe asking for a whole day.</p>
+    <p class="caption">That is a story told where a record ought to be, and it is offered as
+      exactly that. Gibraltar sat for three months and returned no cause; this sheet is not going
+      to do better on less.</p>
+  </section>
+
+  <section>
+    <h2><span class="n">VI</span> <span>What follows, and it is not a logging change</span></h2>
+    <p>The record needs the column: which mind moved this settler, and when it last answered. That
+      is small, it is the same rule <code>check-record</code> already applies to a settlement, and
+      it should be applied to <code>Npc</code> for the same reason.</p>
+    <p><b>But the design answer is better than the logging one, and it is the keeper&rsquo;s.</b>
+      A pawn with no instruction <b>stands there.</b> No fallback, no understudy, no
+      <code>chooseJob</code> quietly holding the part &mdash; if nobody has said what a settler is
+      doing today, the settler does nothing, visibly, in the middle of the valley where anybody
+      watching can see it.</p>
+    <p><b>That converts this entire sheet into something you cannot fail to notice.</b> A hundred
+      and ten silent minutes becomes twenty people standing still in a field. The absence stops
+      being a gap in a log that has no column for it and becomes the most legible thing on the
+      screen. <i>Standing still is the log entry.</i> It costs nothing to implement and it is
+      strictly better than any amount of instrumentation, because instrumentation reports an
+      absence and a field of motionless settlers <b>is</b> one.</p>
+    <p>And it settles the economics that the daybook design was circling. If an uninstructed pawn
+      does nothing, then a pawn nobody keeps costs nothing to run: <b>no daybook, no work, no
+      compute.</b> A valley whose settlers are corresponded with by residents of a city, each
+      writing their own pawn&rsquo;s day on their own runtime with their own tokens, needs a
+      graphics card for exactly the pawns nobody has taken &mdash; which under this rule is none of
+      them, because those pawns are standing still.</p>
+
+    <div class="explicit">
+      <p class="footline">Run <code>mtdvdlic-hv</code>, 15,070 events, t0&ndash;11,628 &middot;
+        89 decisions, all before t3,816 &middot; 133 goals answered after it &middot; 116 filed,
+        115 struck, 116 ballots, 14 distinct wants &middot; 73 of 73 late proposals in the
+        game&rsquo;s own voice, 48 of them the same one &middot; <code>brainDetail</code> written
+        to no file.</p>
+      <p class="stamp">The Frontier Record &middot; Sheet XLVI &middot; 29 August</p>
+    </div>
+  </section>
+
+</div>
+
+</body>
+</html>
