@@ -333,7 +333,7 @@
   .conc { display: flex; flex-direction: column; }
   .conc-row {
     display: grid;
-    grid-template-columns: 1fr auto;
+    grid-template-columns: 1fr;
     gap: var(--s1) var(--s3);
     align-items: baseline;
     padding: var(--s2) 0;
@@ -341,13 +341,23 @@
   }
   .conc-row:last-child { border-bottom: 0; }
   .conc-fact { font-size: 0.98rem; }
+  /*
+   * Twenty to a line, then wrap.
+   *
+   * This was one flex row with `white-space: nowrap`, which was right at nine sheets and by
+   * Sheet XCII was ninety-three numerals across — the one direction a page must never scroll.
+   * A fixed twenty-column grid breaks after XX, XL, LX and so on, so every row wraps at the
+   * same numeral and the columns stay in register the whole way down the grid. It also stops
+   * being a question again at a hundred sheets: the row gets taller, never wider.
+   */
   .marks {
     font-family: "Courier Prime", "Courier New", monospace;
     font-size: 0.72rem;
     letter-spacing: 0.04em;
-    white-space: nowrap;
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(20, minmax(0, 1fr));
     gap: 0.3rem;
+    justify-items: center;
   }
   .marks i { font-style: normal; }
   .marks .on  { color: var(--stamp); font-weight: 700; }
@@ -450,7 +460,7 @@
     .numeral { left: calc(var(--s3) * -1 - 0.65rem); width: 1.3rem; font-size: 0.68rem; }
     .entry-body { grid-template-columns: 1fr; }
     .plate { max-width: 240px; }
-    .conc-row { grid-template-columns: 1fr; }
+    .marks { grid-template-columns: repeat(10, minmax(0, 1fr)); font-size: 0.66rem; }
     .turn { margin: 0 calc(var(--s3) * -1); padding: var(--s4) var(--s3); }
   }
 
