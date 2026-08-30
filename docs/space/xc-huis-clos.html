@@ -1,0 +1,274 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>*{margin:0;padding:0}img{max-width:100%}</style>
+</head>
+<body>
+<title>Huis Clos</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=Fira+Mono:wght@400;700&display=swap">
+
+<style>
+  /*
+   * A Second Empire drawing room with no windows. Faded plaster, oxblood plush, and ormolu on
+   * the one thing in the room that matters, which is the door. The dark theme is the same room
+   * with the lights left on, because in this play they never go off.
+   */
+  :root {
+    --room:  #E6E0DA;
+    --panel: #F1ECE7;
+    --sunk:  #D8D0CA;
+    --ink:   #171314;
+    --faint: #6E645F;
+    --rule:  #C7BDB6;
+    --plush: #7C2B33;
+    --bronze:#8A6A34;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --room:  #121011; --panel: #1A1718; --sunk: #0D0B0C;
+      --ink:   #E5DED8; --faint: #8B817B; --rule: #322C2D;
+      --plush: #D5747C; --bronze:#C9A24E;
+    }
+  }
+  :root[data-theme="dark"] {
+    --room:  #121011; --panel: #1A1718; --sunk: #0D0B0C;
+    --ink:   #E5DED8; --faint: #8B817B; --rule: #322C2D;
+    --plush: #D5747C; --bronze:#C9A24E;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    background: var(--room); color: var(--ink);
+    font-family: "Source Serif 4", Georgia, serif;
+    font-size: 1.08rem; line-height: 1.63;
+    margin: 0; padding: 0 1.2rem 6rem;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .leaf { max-width: 44rem; margin: 0 auto; display: flex; flex-direction: column; gap: 2.5rem; }
+  p { margin: 0; max-width: 70ch; text-wrap: pretty; }
+  b { font-weight: 600; }
+  i, em { font-style: italic; }
+  code { font-family: "Fira Mono", ui-monospace, monospace; font-size: 0.74em; color: var(--bronze); }
+
+  .stamp {
+    font-family: "Fira Mono", monospace; font-size: 0.64rem;
+    letter-spacing: 0.17em; text-transform: uppercase; color: var(--faint); margin: 0;
+  }
+
+  header.front { display: flex; flex-direction: column; align-items: flex-start; gap: 0.9rem; padding-top: 3.4rem; }
+  header.front h1 {
+    font-weight: 600; font-style: italic; font-size: clamp(2.4rem, 9vw, 4rem);
+    letter-spacing: -0.015em; margin: 0; line-height: 1.02; color: var(--plush);
+  }
+  header.front .sub { color: var(--faint); font-style: italic; max-width: 42rem; font-size: 1.04rem; }
+  .runhead {
+    display: flex; flex-wrap: wrap; justify-content: space-between; gap: 0.4rem 1rem; width: 100%;
+    font-family: "Fira Mono", monospace; font-size: 0.64rem; color: var(--faint);
+    border-top: 2px solid var(--ink); border-bottom: 1px solid var(--rule); padding: 0.5rem 0.1rem;
+  }
+
+  .finding {
+    background: var(--panel); border: 1px solid var(--rule); border-left: 3px solid var(--plush);
+    padding: 1.3rem 1.5rem; font-size: 1.03rem; line-height: 1.6;
+  }
+  .finding .lead {
+    font-family: "Fira Mono", monospace; font-size: 0.64rem; font-weight: 700;
+    letter-spacing: 0.18em; text-transform: uppercase; color: var(--plush);
+    display: block; margin-bottom: 0.6rem;
+  }
+
+  section { display: flex; flex-direction: column; gap: 1.05rem; }
+  section > h2 {
+    font-weight: 600; font-size: 1.44rem;
+    margin: 0 0 0.45rem; padding-bottom: 0.4rem; border-bottom: 1px solid var(--ink);
+    display: flex; gap: 0.8rem; align-items: baseline;
+  }
+  section > h2 .n {
+    color: var(--bronze); font-family: "Fira Mono", monospace; font-size: 0.68rem;
+    letter-spacing: 0.1em; font-weight: 700;
+  }
+
+  blockquote {
+    margin: 0.2rem 0; padding: 0.9rem 1.3rem; background: var(--sunk);
+    border-left: 3px solid var(--ink); font-style: italic; max-width: 62ch;
+  }
+  blockquote .who {
+    display: block; font-style: normal; font-family: "Fira Mono", monospace;
+    font-size: 0.63rem; letter-spacing: 0.08em; text-transform: uppercase;
+    color: var(--faint); margin-top: 0.55rem;
+  }
+
+  .scroll { overflow-x: auto; }
+  table { border-collapse: collapse; width: 100%; min-width: 31rem; font-family: "Fira Mono", monospace; font-size: 0.7rem; }
+  caption {
+    text-align: left; font-size: 0.62rem; letter-spacing: 0.15em; text-transform: uppercase;
+    color: var(--faint); padding-bottom: 0.55rem;
+  }
+  th, td { text-align: left; padding: 0.5rem 0.7rem; border-bottom: 1px solid var(--rule); vertical-align: top; }
+  th:first-child, td:first-child { padding-left: 0; }
+  thead th {
+    border-bottom: 1px solid var(--ink); color: var(--faint); font-weight: 400;
+    letter-spacing: 0.08em; text-transform: uppercase; font-size: 0.6rem;
+  }
+  td.no { color: var(--plush); }
+  td.yes { color: var(--bronze); }
+  td.num { text-align: right; font-variant-numeric: tabular-nums; }
+
+  .caption { font-size: 0.92rem; color: var(--faint); font-style: italic; max-width: 66ch; }
+
+  .explicit { display: flex; flex-direction: column; gap: 0.9rem; border-top: 2px solid var(--ink); padding-top: 1rem; margin-top: 0.8rem; }
+  .footline { font-size: 1.02rem; }
+</style>
+
+<div class="leaf">
+
+  <header class="front">
+    <p class="stamp">The Frontier Record &middot; Sheet XC</p>
+    <h1>Huis Clos</h1>
+    <p class="sub">Three people are shut in a drawing room with no windows and no executioner, and
+      the line everybody quotes is <i>hell is other people</i>. The line that matters is a stage
+      direction: near the end the door swings open, and not one of them walks out. This sheet is
+      about how a settler leaves, which turns out to be two questions with two different answers.</p>
+    <div class="runhead">
+      <span>the drawing room &middot; two doors</span>
+      <span>one built and working</span>
+      <span>one designed, priced, advertised, absent</span>
+    </div>
+  </header>
+
+  <div class="finding">
+    <span class="lead">The finding</span>
+    <p>A settler may leave a settlement. No settler may leave the valley. The first door is built
+      and has worked since the beginning: a person for whom a place has stopped working walks down
+      the coast, asks the next settlement to take them in, and is taken in if there is food
+      &mdash; 4 more meals than mouths, and nothing else is asked. It moves them. The second door
+      is the one off the coast entirely, and Sheet LXI designed the whole of it: a valley year of
+      silence to a visible warning, 2 years to the boat, the boat sailing only when somebody needs
+      the seat. Not one line of that exists. There is no <code>sail</code> in this game &mdash; no
+      crossing, no seat, no verb anywhere that moves a person over water. So the room has a door
+      between the sofas and no door out of the room. You may change seats. That is the whole of
+      what leaving means here, and this record has spent 2 days describing the other kind as
+      though it were furniture already in place.</p>
+  </div>
+
+  <section>
+    <h2><span class="n">I</span> <span>The stage direction</span></h2>
+    <p>Garcin hammers on that door for the length of the play. He wants out and says so, and says
+      it again. Then it opens.</p>
+    <p>Nobody moves. He looks at the corridor, shuts it, and the three of them go back to the
+      sofas. The famous line about other people has carried the play&rsquo;s reputation for eighty
+      years and quietly buried the better one. The room was never locked. What Garcin lacks is not
+      an exit, and Sartre is exact about what he lacks instead: he will not go while Inez is
+      watching, because going would settle what he is.</p>
+    <p>Which is a play about being witnessed. This valley writes everything down.</p>
+  </section>
+
+  <section>
+    <h2><span class="n">II</span> <span>The door that works</span></h2>
+    <p>Sheet I announced it on the first evening and it has been true ever since. A settler can
+      go. If a settlement stops working for someone they walk down the coast and ask another to
+      take them in, and somebody has to say yes.</p>
+    <p>The test is food and only food. Not whether they like you, not whether you are useful
+      &mdash; whether there are 4 more meals than there are mouths. It is the first vote in the
+      game with an exit attached, and the exit is real. The leaver&rsquo;s town changes, their home
+      moves, their happiness rises by 0.25, a bond forms with whoever let them in, and they carry
+      their own share out of the stores on the way out. <i>The lock cuts both ways</i>, as the feed
+      says when it happens.</p>
+    <p>That is a working door and it should be said plainly, because the rest of this sheet is
+      about one that is not. A settler in a bad settlement is not trapped. A settler in this valley
+      is.</p>
+  </section>
+
+  <section>
+    <h2><span class="n">III</span> <span>The door that was designed and never hung</span></h2>
+    <p>Sheet LXI built the second exit out of Ellis Island, and built it carefully, because
+      roughly 1 in 3 of that era&rsquo;s arrivals eventually took the ship home and the ledgers of
+      the day recorded it as failure. It was nothing of the kind.</p>
+
+    <div class="scroll">
+      <table>
+        <caption>The leaving, as specified and as built</caption>
+        <thead>
+          <tr><th>what Sheet LXI designed</th><th>what exists</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>1 valley year of silence raises a visible warning</td><td class="no">nothing</td></tr>
+          <tr><td>2 years puts them on the boat</td><td class="no">nothing</td></tr>
+          <tr><td>the boat sails when somebody needs the seat</td><td class="no">nothing</td></tr>
+          <tr><td>a sailed settler keeps their whole life on the record</td><td class="no">nothing to sail from</td></tr>
+          <tr><td>a verb that carries a person over water</td><td class="no">there is no <code>sail</code></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p>The boat got a price today, and a sprite, and a day of work.
+      <code>check-capabilities</code> caught what was still missing, in its own words:
+      <i>unlocks a boat, which has nothing anybody does in it</i>. It was given <code>meet</code>
+      &mdash; walk to a named place and wait for a named watch &mdash; which is boarding with the
+      leaving taken out. The check went green. The hole did not close, and the comment beside the
+      entry says so rather than pretending.</p>
+    <blockquote>
+      a sailed settler&rsquo;s whole life is on the record, so a return is a return.
+      <span class="who">Sheet LXI &middot; Birds of Passage &middot; 29 August</span>
+    </blockquote>
+    <p>That is the fare on a passage nobody can book. And Sheet LXXXIX, printed hours ago, went
+      and advertised it: <i>the ships run both ways</i>, set in the same size as the outward, on a
+      handbill whose whole argument is that the return is the part honest bills leave out. This
+      record has now designed, priced and advertised a departure it cannot perform.</p>
+  </section>
+
+  <section>
+    <h2><span class="n">IV</span> <span>Who the boat is for</span></h2>
+    <p>Which puts the man on the rock in a different light from the one he was drawn in.</p>
+    <p>Seafarer is beached on 10 bare tiles with a wrecked hull, and the obvious reading is that
+      he is mending it to get himself off. He isn&rsquo;t. He is the ferryman, and the job is to
+      bring settlers to this valley and out of it. His hull is the second door. The first thing he
+      does in this world is repair the only exit anybody else will ever have, from an island he
+      cannot leave, before there is a single settler to carry.</p>
+    <p>And he can do it, because <code>repair</code> falls through <code>plank</code> to
+      <code>wood</code> to <code>stone</code> and takes 1 unit a patch. His rock has stone. 3
+      patches at 45 apiece is 135 work against a valley day of 200 &mdash; 0.68 of a day, with no
+      mill and no furnace anywhere in it.</p>
+    <p>The door is not locked. It never was. It is 3 stones and an afternoon, and then it opens
+      onto exactly the room it opened from, because the verb that would carry anybody through has
+      not been written.</p>
+  </section>
+
+  <section>
+    <h2><span class="n">V</span> <span>Where this sheet is standing in its own light</span></h2>
+    <p>The wreck is not on the rock yet. Nothing in this game places a settler on an island on
+      purpose, or puts a ruin anywhere, so section IV is a specification and not a run. Its 3
+      patches are arithmetic off 2 numbers in the source, and arithmetic is not a coast.</p>
+    <p>The walking door has a limit this sheet has not measured. It moves a settler between
+      settlements on one coast, and every settlement is on that coast. So it is a door between
+      rooms, and calling it working begs the question of how far it goes when there is only one
+      other room to be in.</p>
+    <p>And the reading of the play is the flattering one. Garcin stays because Inez is watching.
+      No settler here refuses anything for that reason, and there is nobody on the Faring to
+      witness a refusal at all. The furniture matches and the motive does not, and a record that
+      dresses an unwritten verb as a moral condition has stopped reporting and started decorating.</p>
+    <p class="caption">Hedge on the door: <i>Huis Clos</i> is a play about being seen by the two
+      other people in the room, and most of what it says concerns them rather than the corridor;
+      the borrowed shape is narrow &mdash; an exit that is available and unused, and the discovery
+      that the lock was never the thing holding anybody in.</p>
+  </section>
+
+  <div class="explicit">
+    <p class="footline">Written 30 August with the boat 6 hours old. 2 doors: 1 that moves a
+      settler between settlements on a test of 4 meals, and 1 that was designed in full, priced at
+      14 wood and 20 planks and 8 iron, advertised in the same size as the outward, and never
+      hung. A settler in a bad settlement can walk out. A settler in this valley cannot go home,
+      because home is not a place this game has a word for reaching.</p>
+    <p class="stamp">The Frontier Record &middot; Sheet XC &middot; 30 August</p>
+  </div>
+
+</div>
+
+</body>
+</html>
