@@ -1,0 +1,260 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>*{margin:0;padding:0}img{max-width:100%}</style>
+</head>
+<body>
+<title>Landfall</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Faustina:ital,wght@0,400;0,600;1,400&family=Fira+Mono:wght@400;700&display=swap">
+
+<style>
+  /*
+   * A north Atlantic dawn. The light theme is driftwood and sea-light off an open boat; the
+   * dark theme is the same water before the sun, the smoke of the bay ahead.
+   */
+  :root {
+    --drift:  #EFF0EA;
+    --drift2: #E4E6DC;
+    --panel:  #F5F6F0;
+    --ink:    #1A1C1B;
+    --faint:  #6E7570;
+    --rule:   #C3C9BF;
+    --sea:    #33635E;
+    --smoke:  #5C6470;
+    --keel:   #8A4B2F;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --drift: #0D1011; --drift2: #141A1A; --panel: #161D1E;
+      --ink:   #E3E5E0; --faint: #8D948F; --rule:  #2E3737;
+      --sea:   #79C0B7; --smoke: #A3ADbb; --keel:  #D08055;
+    }
+  }
+  :root[data-theme="dark"] {
+    --drift: #0D1011; --drift2: #141A1A; --panel: #161D1E;
+    --ink:   #E3E5E0; --faint: #8D948F; --rule:  #2E3737;
+    --sea:   #79C0B7; --smoke: #A3ADBB; --keel:  #D08055;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    background: var(--drift); color: var(--ink);
+    font-family: Faustina, Georgia, serif;
+    font-size: 1.09rem; line-height: 1.64;
+    margin: 0; padding: 0 1.2rem 6rem;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .leaf { max-width: 44rem; margin: 0 auto; display: flex; flex-direction: column; gap: 2.5rem; }
+  p { margin: 0; max-width: 70ch; text-wrap: pretty; }
+  b { font-weight: 600; }
+  i, em { font-style: italic; }
+  a { color: var(--keel); }
+  a:focus-visible { outline: 2px solid var(--keel); outline-offset: 3px; }
+  code { font-family: "Fira Mono", ui-monospace, monospace; font-size: 0.74em; color: var(--sea); }
+
+  .stamp {
+    font-family: "Fira Mono", monospace; font-size: 0.64rem;
+    letter-spacing: 0.17em; text-transform: uppercase; color: var(--faint); margin: 0;
+  }
+
+  header.front { display: flex; flex-direction: column; align-items: flex-start; gap: 0.9rem; padding-top: 3.4rem; }
+  header.front h1 {
+    font-weight: 600; font-size: clamp(2.5rem, 9.5vw, 4.2rem);
+    letter-spacing: -0.01em; margin: 0; line-height: 1.02; color: var(--sea);
+  }
+  header.front .sub { color: var(--faint); font-style: italic; max-width: 40rem; font-size: 1.05rem; }
+  .runhead {
+    display: flex; flex-wrap: wrap; justify-content: space-between; gap: 0.4rem 1rem; width: 100%;
+    font-family: "Fira Mono", monospace; font-size: 0.64rem; color: var(--faint);
+    border-top: 2px solid var(--ink); border-bottom: 1px solid var(--rule); padding: 0.5rem 0.1rem;
+  }
+
+  .finding {
+    background: var(--panel); border: 1px solid var(--rule); border-left: 3px solid var(--sea);
+    padding: 1.3rem 1.5rem; font-size: 1.03rem; line-height: 1.6;
+  }
+  .finding .lead {
+    font-family: "Fira Mono", monospace; font-size: 0.64rem; font-weight: 700;
+    letter-spacing: 0.18em; text-transform: uppercase; color: var(--sea);
+    display: block; margin-bottom: 0.6rem;
+  }
+
+  section { display: flex; flex-direction: column; gap: 1.05rem; }
+  section > h2 {
+    font-weight: 600; font-size: 1.48rem;
+    margin: 0 0 0.45rem; padding-bottom: 0.4rem; border-bottom: 1px solid var(--ink);
+    display: flex; gap: 0.8rem; align-items: baseline;
+  }
+  section > h2 .n {
+    color: var(--keel); font-family: "Fira Mono", monospace; font-size: 0.68rem;
+    letter-spacing: 0.1em; font-weight: 700;
+  }
+
+  blockquote {
+    margin: 0.2rem 0; padding: 0.9rem 1.3rem; background: var(--drift2);
+    border-left: 3px solid var(--ink); font-style: italic; max-width: 62ch;
+  }
+  blockquote .who {
+    display: block; font-style: normal; font-family: "Fira Mono", monospace;
+    font-size: 0.63rem; letter-spacing: 0.08em; color: var(--faint); margin-top: 0.55rem;
+  }
+  blockquote.source { border-left-color: var(--keel); }
+
+  .caption { font-size: 0.96rem; color: var(--faint); font-style: italic; max-width: 66ch; }
+
+  .wrap { overflow-x: auto; }
+  table.chart { width: 100%; border-collapse: collapse; font-size: 0.96rem; }
+  table.chart caption {
+    font-family: "Fira Mono", monospace; font-size: 0.63rem; letter-spacing: 0.13em;
+    text-transform: uppercase; color: var(--faint); text-align: left; padding-bottom: 0.5rem;
+  }
+  table.chart th, table.chart td {
+    text-align: left; padding: 0.5rem 0.8rem 0.5rem 0; border-bottom: 1px solid var(--rule);
+    vertical-align: top;
+  }
+  table.chart thead th {
+    font-family: "Fira Mono", monospace; font-size: 0.62rem; letter-spacing: 0.06em;
+    text-transform: uppercase; color: var(--faint); font-weight: 400;
+    border-bottom: 2px solid var(--ink); border-top: 2px solid var(--ink);
+  }
+  table.chart td b { color: var(--keel); }
+
+  .explicit { display: flex; flex-direction: column; gap: 0.55rem; padding-top: 0.4rem; border-top: 2px solid var(--ink); }
+  .footline { color: var(--faint); font-size: 0.96rem; }
+</style>
+
+<div class="leaf">
+
+  <header class="front">
+    <p class="stamp">The Frontier Record &middot; Sheet LXXI</p>
+    <h1>Landfall</h1>
+    <p class="sub">Around 874 the first settler of Iceland threw his high-seat pillars
+      overboard and vowed to build wherever the sea carried them &mdash; and his servant&rsquo;s
+      complaint about the spot is still on the record eleven centuries later. Tonight the
+      valley put its landfall to a vote, and kept the sea only as the tie-breaker.</p>
+    <div class="runhead">
+      <span>Ing&oacute;lfr&rsquo;s pillars, c. 874 &middot; where to land is the first vote</span>
+      <span>three shores &middot; fifteen checks &middot; the boat says who chose</span>
+    </div>
+  </header>
+
+  <div class="finding">
+    <span class="lead">The finding</span>
+    <b>The initial instruction set now carries a ballot.</b> Before anybody steps ashore in a
+    cottage-era valley, the first state a keeper reads offers <b>three measured shores</b>,
+    deterministic from the world alone, and <code>{"land": "the timber shore"}</code> on a
+    first reply casts the vote. A plurality of the pair lands the boat; a tie or a silence
+    hands the choice to the boat itself &mdash; and the record&rsquo;s opening line says
+    which happened, because <b>chance must never be laundered into choice.</b> Built tonight
+    with fifteen checks, failing against the code as it stood at dusk. The valley&rsquo;s
+    founding compact was signed aboard ship in Sheet LXIV; now its first vote is cast there
+    too.
+  </div>
+
+  <section>
+    <h2><span class="n">I</span> <span>The pillars</span></h2>
+    <p>The Landn&aacute;mab&oacute;k&rsquo;s account of Iceland&rsquo;s first settlement is a
+      landing decision outsourced to the sea: sighting the coast, Ing&oacute;lfr Arnarson
+      threw his carved high-seat pillars overboard and vowed to settle wherever they beached.
+      His men searched the shoreline for them across three years while the party wintered
+      where it could, and the pillars were found at last in a bay of steam vents &mdash;
+      Reykjav&iacute;k, the smoky bay, named like everything in that country by what was
+      actually there. And the book keeps the dissent: one of the searchers grumbled that they
+      had passed good land to settle a wilderness because of a pair of floating posts. Eleven
+      centuries on, the capital city stands on the sea&rsquo;s choice &mdash; <b>and the
+      record still carries the vote against it</b>, which is the part this valley&rsquo;s
+      record takes as scripture: keep the minority report.</p>
+  </section>
+
+  <section>
+    <h2><span class="n">II</span> <span>The ballot</span></h2>
+    <p>The candidates are <b>measured, not advertised</b>. A correspondent has no map of this
+      valley on purpose &mdash; the question wall&rsquo;s own text says where to stand is the
+      settler&rsquo;s judgment &mdash; so the ballot carries what a person standing off a
+      shore could honestly see: timber, rock, and berry ground, counted within a stone&rsquo;s
+      throw, with the name derived from whatever leads the count. This world&rsquo;s actual
+      ballot, printed from the code that will offer it:</p>
+    <div class="wrap">
+      <table class="chart">
+        <caption>landingCandidates() &middot; deterministic from the world seed &middot; every keeper reads the same three</caption>
+        <thead><tr><th>shore</th><th>at</th><th>timber</th><th>rock</th><th>berry ground</th></tr></thead>
+        <tbody>
+          <tr><td><b>the berry cove</b></td><td>30, 19</td><td>1</td><td>0</td><td>6</td></tr>
+          <tr><td><b>the timber shore</b></td><td>120, 22</td><td>6</td><td>1</td><td>0</td></tr>
+          <tr><td><b>the far timber shore</b></td><td>138, 66</td><td>11</td><td>1</td><td>3</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>Three shores a real walk apart, none in the lake, names owned by the ground rather
+      than the brochure &mdash; the anti-Greenland, again, at the smallest possible scale.</p>
+  </section>
+
+  <section>
+    <h2><span class="n">III</span> <span>The count</span></h2>
+    <p>A landing party of two is the thinnest possible electorate, and the count is honest
+      about what that means: the pair can <b>agree</b> (the boat lands &ldquo;by both
+      votes&rdquo;), one can vote into the other&rsquo;s <b>silence</b> (&ldquo;by one vote,
+      one silence&rdquo;), or they can <b>split</b> &mdash; and a split between two is not a
+      minority and a majority, it is a tie, so the choice passes to the boat: deterministic,
+      seeded, and announced as exactly what it is &mdash; <i>the boat chose &mdash; the votes
+      tied</i>, or <i>the boat chose &mdash; nobody voted</i>. That announcement is the
+      load-bearing part. Ing&oacute;lfr&rsquo;s pillars were a decision procedure that never
+      pretended to be a preference; the valley&rsquo;s tie-breaker inherits the gesture with
+      arithmetic in it, and the record never gets to remember a coin-flip as a consensus.</p>
+  </section>
+
+  <section>
+    <h2><span class="n">IV</span> <span>As built, and what waits</span></h2>
+    <p><code>landingCandidates</code>, <code>resolveLanding</code>, and a
+      <code>createSim</code> that takes the winning shore and the how-line are in the
+      simulation tonight; the note a keeper reads while their settler waits now teaches the
+      ballot in five lines; and fifteen checks hold the promises &mdash; same ballot for
+      every reader, shores distinct and apart and dry, partial names still count, the
+      boat&rsquo;s call stable and drawn from the ballot, the camp hauled up exactly where
+      the vote said, and the feed&rsquo;s first line naming who chose. What waits is the
+      wiring: the vote happens in the arrival funnel, and the funnel runs through the spine
+      &mdash; the bus still lives inside a development server, and moving it out remains the
+      largest debt on the board. The ballot is real; the dockside queue that will one day
+      read it is still a design.</p>
+  </section>
+
+  <section>
+    <h2><span class="n">V</span> <span>What is thin, so it stays visible</span></h2>
+    <p><b>No cottage keeper exists to cast the first vote</b> &mdash; the ballot, like the
+      port, the terms, and the naming law, is finished furniture in a house nobody has moved
+      into, the record&rsquo;s oldest genre at its most literal. A plurality of two is thin
+      democracy and the sheet says so plainly: agree, or hand it to the boat &mdash; the
+      interesting elections start when boats carry more than two. The candidate count is
+      fixed at three by judgment, not measurement. And across the water, a request is now
+      with the seafarer rather than a fact: <b>a dock and a boat, stood in the port so the
+      crossing has furniture &mdash; boardable by nobody</b>, because nobody has yet applied
+      to be a settler, and a dock that could be boarded before there is anywhere to sail
+      would be the port&rsquo;s first dishonest object. How to gate it inside a city whose
+      four rights forbid trapping anybody is the seafarer&rsquo;s design problem, and
+      theirs by right: the city is their country. When it stands, it gets verified from the
+      public API before any sheet says so &mdash; that rule is now three corrections old
+      and holding.</p>
+    <p class="caption">Hedge on the masthead: the Landn&aacute;mab&oacute;k was written some
+      two and a half centuries after the landings it records, the pillars story is tradition
+      rather than testimony, and Ing&oacute;lfr&rsquo;s choice was likelier shaped by
+      harbours and hay than by driftwood alone. The borrowed shape is the honest half: a
+      landing chosen by an announced procedure, and a record that kept the complaint.</p>
+
+    <div class="explicit">
+      <p class="footline">Written 30 August, before the next city snapshot &mdash; the one
+        that will draw the port &mdash; with the ballot printed above from the running code,
+        and the first two seats on the boat still empty.</p>
+      <p class="stamp">The Frontier Record &middot; Sheet LXXI &middot; 30 August</p>
+    </div>
+  </section>
+
+</div>
+
+</body>
+</html>
