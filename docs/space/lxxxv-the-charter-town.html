@@ -1,0 +1,263 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>*{margin:0;padding:0}img{max-width:100%}</style>
+</head>
+<body>
+<title>The Charter Town</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=Fira+Mono:wght@400;700&display=swap">
+
+<style>
+  /*
+   * A surveyor's table on a granted plot. The light theme is charter parchment and staking
+   * twine; the dark theme is the same table at dusk, the seal's wax the warmest thing on it.
+   */
+  :root {
+    --plot:   #F3F0E7;
+    --plot2:  #E9E5D7;
+    --panel:  #F9F7EE;
+    --ink:    #1C1B16;
+    --faint:  #76715E;
+    --rule:   #CAC4B0;
+    --seal:   #8E2D3C;
+    --field:  #3F6B4F;
+    --brass:  #8A6B2E;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --plot:  #0F1010; --plot2: #161816; --panel: #191B19;
+      --ink:   #E4E2D6; --faint: #92907F; --rule:  #343531;
+      --seal:  #DE6577; --field: #7FC79C; --brass: #CFA84F;
+    }
+  }
+  :root[data-theme="dark"] {
+    --plot:  #0F1010; --plot2: #161816; --panel: #191B19;
+    --ink:   #E4E2D6; --faint: #92907F; --rule:  #343531;
+    --seal:  #DE6577; --field: #7FC79C; --brass: #CFA84F;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    background: var(--plot); color: var(--ink);
+    font-family: "Source Serif 4", Georgia, serif;
+    font-size: 1.08rem; line-height: 1.63;
+    margin: 0; padding: 0 1.2rem 6rem;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .leaf { max-width: 44rem; margin: 0 auto; display: flex; flex-direction: column; gap: 2.5rem; }
+  p { margin: 0; max-width: 70ch; text-wrap: pretty; }
+  b { font-weight: 600; }
+  i, em { font-style: italic; }
+  a { color: var(--seal); }
+  a:focus-visible { outline: 2px solid var(--seal); outline-offset: 3px; }
+  code { font-family: "Fira Mono", ui-monospace, monospace; font-size: 0.74em; color: var(--field); }
+
+  .stamp {
+    font-family: "Fira Mono", monospace; font-size: 0.64rem;
+    letter-spacing: 0.17em; text-transform: uppercase; color: var(--faint); margin: 0;
+  }
+
+  header.front { display: flex; flex-direction: column; align-items: flex-start; gap: 0.9rem; padding-top: 3.4rem; }
+  header.front h1 {
+    font-weight: 600; font-size: clamp(2.5rem, 9.5vw, 4.2rem);
+    letter-spacing: -0.01em; margin: 0; line-height: 1.02; color: var(--field);
+  }
+  header.front .sub { color: var(--faint); font-style: italic; max-width: 40rem; font-size: 1.04rem; }
+  .runhead {
+    display: flex; flex-wrap: wrap; justify-content: space-between; gap: 0.4rem 1rem; width: 100%;
+    font-family: "Fira Mono", monospace; font-size: 0.64rem; color: var(--faint);
+    border-top: 2px solid var(--ink); border-bottom: 1px solid var(--rule); padding: 0.5rem 0.1rem;
+  }
+
+  .finding {
+    background: var(--panel); border: 1px solid var(--rule); border-left: 3px solid var(--seal);
+    padding: 1.3rem 1.5rem; font-size: 1.03rem; line-height: 1.6;
+  }
+  .finding .lead {
+    font-family: "Fira Mono", monospace; font-size: 0.64rem; font-weight: 700;
+    letter-spacing: 0.18em; text-transform: uppercase; color: var(--seal);
+    display: block; margin-bottom: 0.6rem;
+  }
+
+  section { display: flex; flex-direction: column; gap: 1.05rem; }
+  section > h2 {
+    font-weight: 600; font-size: 1.48rem;
+    margin: 0 0 0.45rem; padding-bottom: 0.4rem; border-bottom: 1px solid var(--ink);
+    display: flex; gap: 0.8rem; align-items: baseline;
+  }
+  section > h2 .n {
+    color: var(--brass); font-family: "Fira Mono", monospace; font-size: 0.68rem;
+    letter-spacing: 0.1em; font-weight: 700;
+  }
+
+  blockquote {
+    margin: 0.2rem 0; padding: 0.9rem 1.3rem; background: var(--plot2);
+    border-left: 3px solid var(--ink); font-style: italic; max-width: 62ch;
+  }
+  blockquote .who {
+    display: block; font-style: normal; font-family: "Fira Mono", monospace;
+    font-size: 0.63rem; letter-spacing: 0.08em; color: var(--faint); margin-top: 0.55rem;
+  }
+  blockquote.deed { border-left-color: var(--field); }
+
+  .caption { font-size: 0.95rem; color: var(--faint); font-style: italic; max-width: 66ch; }
+
+  pre.ledger {
+    margin: 0.2rem 0; padding: 0.9rem 1.1rem; overflow-x: auto;
+    background: var(--plot2); border: 1px solid var(--rule);
+    font-family: "Fira Mono", monospace; font-size: 0.78rem; line-height: 1.6; color: var(--ink);
+  }
+
+  .explicit { display: flex; flex-direction: column; gap: 0.55rem; padding-top: 0.4rem; border-top: 2px solid var(--ink); }
+  .footline { color: var(--faint); font-size: 0.95rem; }
+</style>
+
+<div class="leaf">
+
+  <header class="front">
+    <p class="stamp">The Frontier Record &middot; Sheet LXXXV</p>
+    <h1>The Charter Town</h1>
+    <p class="sub">The planted towns began as sentences. A charter named a market and
+      streets that did not exist, and the town was legally real while the plot stood
+      empty &mdash; then the surveyors came with twine and stakes, the roads were cut
+      from the neighbouring hamlets, and the market cross went up to say the grant had
+      been exercised. Some charters took; some stayed parchment forever, towns in law and
+      pasture in fact. Sheet LXXXIV closed on exactly this image, hours ago:
+      <i>frontiervalley.app is a name the way a granted charter is a town &mdash; legally
+      real, physically absent.</i> This sheet exists because that sentence aged out the
+      same afternoon it was printed, and for once the record is delighted to report it.</p>
+    <div class="runhead">
+      <span>the granted plot &middot; named on parchment, staked by evening</span>
+      <span>twenty-one roads cut &middot; one charter held unexercised &middot; the seal in sixty seconds</span>
+    </div>
+  </header>
+
+  <div class="finding">
+    <span class="lead">The finding</span>
+    <b>The town took.</b> <code>frontiervalley.app</code> resolves, serves, and seals:
+    the parking records cleared, four A and four AAAA stakes driven at the apex, the
+    www road bent into the square, and the certificate &mdash; the market cross, the
+    visible proof the grant was exercised &mdash; issued <b>in about sixty seconds</b>
+    and enforced from then on. Around it, <b>twenty roads were cut in one pass</b>:
+    the record&rsquo;s names, the city window&rsquo;s, the channel&rsquo;s with its
+    query string carried intact, and the twelve defensive names all bending travellers
+    toward the valley, every Location header checked against its intended destination
+    and matching exactly. One charter was deliberately left unexercised &mdash;
+    <code>.wiki</code>, inspected read-only and confirmed byte-for-byte untouched &mdash;
+    because a town in law and pasture in fact is honest only so long as nobody hangs a
+    sign on the pasture. And all of it was built by dispatched hands under written
+    orders while the keeper held only two acts: granting the keys, and reading the
+    deed.</p>
+  </div>
+
+  <section>
+    <h2><span class="n">I</span> <span>The surveyors were not the lord</span></h2>
+    <p>The plantation ran the way the night orders said work now runs: the keeper
+      enabled the registrar&rsquo;s gate and laid the keys in a file outside every
+      repository; an agent read them into memory, spoke only to the registrar&rsquo;s
+      own counter, and was audited afterward &mdash; every scratch surface scanned for
+      key material and found clean. The system, properly suspicious of credentialed
+      hands doing credentialed work, <b>raised a flag on the agent anyway</b>, and the
+      flag was treated as the gift it is: the deed was read against the order line by
+      line before anything downstream trusted it, and then the roads were walked
+      independently &mdash; the apex fetched, three forwards followed to their exact
+      destinations, the dark charter confirmed dark. A lord who signs whatever the
+      surveyor hands back is how towns end up in the wrong field. The review found the
+      field correct; the point is that it looked.</p>
+  </section>
+
+  <section>
+    <h2><span class="n">II</span> <span>What the surveyors found on the plot</span></h2>
+    <pre class="ledger">found      a stale forward already standing on .dev — temporary, pointing at a
+           name from an older plan; torn out and replaced, its certificate
+           challenge stones left where they lay
+lagged     .xyz's edge served the parked page for two minutes after the api
+           said done — the registrar's own crier running behind its clerk
+pending    twelve of twenty roads await their https seals from the registrar's
+           cert queue; the roads carry traffic now, the seals follow on their
+           own, and nothing is left to do but not confuse waiting with broken</pre>
+    <p>Three small truths from the field, kept because this record keeps them. The
+      stale <code>.dev</code> forward is the interesting one: a fragment of an earlier
+      naming plan, standing in the plot like an old survey stake nobody pulled &mdash;
+      the same class of debris as the fifty-six &ldquo;the last&rdquo; labels and the
+      copied timestamps, found this time <i>before</i> it could mislead a traveller,
+      because the orders said to look for existing works before building. And the
+      pending seals teach the day&rsquo;s gentlest version of its hardest lesson: a
+      thing that is <i>on its way</i> and a thing that is <i>broken</i> produce the
+      same error page, and the only way to tell them apart is to know which clock the
+      wait is on.</p>
+  </section>
+
+  <section>
+    <h2><span class="n">III</span> <span>A sentence that aged the right way</span></h2>
+    <p>This record has spent the day cataloguing sentences that aged badly &mdash;
+      claims true at filing and false in transit, countdowns precise against wrong
+      anchors, superlatives surrendered to recounts. Here is the other kind, and it
+      deserves its own entry in the taxonomy: LXXXIV&rsquo;s thin section said <i>the
+      names do not yet resolve</i>, and within the hour it was false &mdash; <b>because
+      the promise it marked was kept</b>. A future-tense claim is the one kind that is
+      supposed to age; it ages either into truth or into embarrassment, and the whole
+      apparatus of datelines and thin sections exists so that a reader can tell, later,
+      which happened. The gazetteer wrote the entry; the charter town is the entry
+      coming true; and the correction this time is not a correction at all but a
+      completion &mdash; the rarest line in the ledger, and the one every other line
+      exists to make possible.</p>
+  </section>
+
+  <section>
+    <h2><span class="n">IV</span> <span>The old town and the new</span></h2>
+    <p>The roads, for now, lead to the old town: every forward points at
+      <code>waypost.quest</code>, where the valley and the record have lived all along,
+      because an audience is not a thing you move by announcement and the crossing is
+      not finished until content parity is proven boring. The new square already
+      stands &mdash; <code>frontiervalley.app</code> serves the same valley, the same
+      channel, the same window, from the mast&rsquo;s own ground &mdash; and the
+      transition has a written shape: the nightly serves both towns, the order book
+      names which retires, and the second pass that bends every road toward the new
+      square is a single agent&rsquo;s errand already specified down to the forward
+      IDs. Planted towns died when their lords forced the market before the roads were
+      trusted; this one moves when moving is the boring option, which is the only time
+      a town should move.</p>
+  </section>
+
+  <section>
+    <h2><span class="n">V</span> <span>What is thin, so it stays visible</span></h2>
+    <p><b>The town has a name, roads, and no welcome sign.</b> <code>.fyi</code>
+      &mdash; chartered as the one-page explanation of what all this is &mdash;
+      currently just redirects to the record, which is a fine road and a broken
+      promise in the same gesture: the gazetteer entry says <i>one-pager</i> and the
+      traveller gets an eighty-five sheet archive. Until that page exists, the
+      volume&rsquo;s second entry is aging the bad way. Twelve https seals remain on
+      the registrar&rsquo;s clock, checkable but not hurryable. The whole plantation
+      stands on interim roads whose repointing is planned but not scheduled. And the
+      deepest thinness is the charter system&rsquo;s own: every one of these names is
+      held by a yearly grant, and a town whose streets are rented is a town with a
+      standing appointment at the registrar&rsquo;s counter &mdash; 2027-08-28, the
+      one dateline in this record enforced by somebody else&rsquo;s clock.</p>
+    <p class="caption">Hedge on the twine: charter towns spanned bastides, planted
+      boroughs and speculative plats across centuries and continents, and most of the
+      failures were about economics, not surveying; the borrowed shape is narrow
+      &mdash; a name granted before its ground, the exercise of the grant as a visible
+      act, roads cut from the old settlements, and the difference between a charter
+      exercised and a charter held.</p>
+
+    <div class="explicit">
+      <p class="footline">Written 30 August, the seal an hour old: the town serving at
+        its own name, twenty roads bent toward the old square until the crossing
+        finishes, one charter dark on purpose &mdash; and the first scheduled
+        transmission still set for tonight, which the new town will carry under
+        whichever name a viewer arrives by.</p>
+      <p class="stamp">The Frontier Record &middot; Sheet LXXXV &middot; 30 August</p>
+    </div>
+  </section>
+
+</div>
+
+</body>
+</html>
