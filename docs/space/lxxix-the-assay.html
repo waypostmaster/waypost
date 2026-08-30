@@ -1,0 +1,270 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>*{margin:0;padding:0}img{max-width:100%}</style>
+</head>
+<body>
+<title>The Assay</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=Fira+Mono:wght@400;700&display=swap">
+
+<style>
+  /*
+   * An assay office. The light theme is ash-grey paper and iron ink with a crucible orange
+   * held for the results; the dark theme is the same bench at night, the muffle furnace's
+   * glow through the spy-hole.
+   */
+  :root {
+    --ash:    #F0EEE8;
+    --ash2:   #E5E2D8;
+    --panel:  #F7F5EE;
+    --ink:    #1B1A17;
+    --faint:  #74705F;
+    --rule:   #C8C2AF;
+    --iron:   #43484F;
+    --crucible: #B4521E;
+    --brass:  #8A6B2E;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --ash:   #101112; --ash2:  #171819; --panel: #1A1B1D;
+      --ink:   #E4E1D6; --faint: #92907F; --rule:  #343531;
+      --iron:  #A6B0BC; --crucible: #E8823F; --brass: #CFA84F;
+    }
+  }
+  :root[data-theme="dark"] {
+    --ash:   #101112; --ash2:  #171819; --panel: #1A1B1D;
+    --ink:   #E4E1D6; --faint: #92907F; --rule:  #343531;
+    --iron:  #A6B0BC; --crucible: #E8823F; --brass: #CFA84F;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    background: var(--ash); color: var(--ink);
+    font-family: "Source Serif 4", Georgia, serif;
+    font-size: 1.08rem; line-height: 1.63;
+    margin: 0; padding: 0 1.2rem 6rem;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .leaf { max-width: 44rem; margin: 0 auto; display: flex; flex-direction: column; gap: 2.5rem; }
+  p { margin: 0; max-width: 70ch; text-wrap: pretty; }
+  b { font-weight: 600; }
+  i, em { font-style: italic; }
+  a { color: var(--crucible); }
+  a:focus-visible { outline: 2px solid var(--crucible); outline-offset: 3px; }
+  code { font-family: "Fira Mono", ui-monospace, monospace; font-size: 0.74em; color: var(--iron); }
+
+  .stamp {
+    font-family: "Fira Mono", monospace; font-size: 0.64rem;
+    letter-spacing: 0.17em; text-transform: uppercase; color: var(--faint); margin: 0;
+  }
+
+  header.front { display: flex; flex-direction: column; align-items: flex-start; gap: 0.9rem; padding-top: 3.4rem; }
+  header.front h1 {
+    font-weight: 600; font-size: clamp(2.5rem, 9.5vw, 4.2rem);
+    letter-spacing: -0.01em; margin: 0; line-height: 1.02; color: var(--crucible);
+  }
+  header.front .sub { color: var(--faint); font-style: italic; max-width: 40rem; font-size: 1.04rem; }
+  .runhead {
+    display: flex; flex-wrap: wrap; justify-content: space-between; gap: 0.4rem 1rem; width: 100%;
+    font-family: "Fira Mono", monospace; font-size: 0.64rem; color: var(--faint);
+    border-top: 2px solid var(--ink); border-bottom: 1px solid var(--rule); padding: 0.5rem 0.1rem;
+  }
+
+  .finding {
+    background: var(--panel); border: 1px solid var(--rule); border-left: 3px solid var(--crucible);
+    padding: 1.3rem 1.5rem; font-size: 1.03rem; line-height: 1.6;
+  }
+  .finding .lead {
+    font-family: "Fira Mono", monospace; font-size: 0.64rem; font-weight: 700;
+    letter-spacing: 0.18em; text-transform: uppercase; color: var(--crucible);
+    display: block; margin-bottom: 0.6rem;
+  }
+
+  section { display: flex; flex-direction: column; gap: 1.05rem; }
+  section > h2 {
+    font-weight: 600; font-size: 1.48rem;
+    margin: 0 0 0.45rem; padding-bottom: 0.4rem; border-bottom: 1px solid var(--ink);
+    display: flex; gap: 0.8rem; align-items: baseline;
+  }
+  section > h2 .n {
+    color: var(--brass); font-family: "Fira Mono", monospace; font-size: 0.68rem;
+    letter-spacing: 0.1em; font-weight: 700;
+  }
+
+  blockquote {
+    margin: 0.2rem 0; padding: 0.9rem 1.3rem; background: var(--ash2);
+    border-left: 3px solid var(--ink); font-style: italic; max-width: 62ch;
+  }
+  blockquote .who {
+    display: block; font-style: normal; font-family: "Fira Mono", monospace;
+    font-size: 0.63rem; letter-spacing: 0.08em; color: var(--faint); margin-top: 0.55rem;
+  }
+  blockquote.result { border-left-color: var(--crucible); }
+
+  .caption { font-size: 0.95rem; color: var(--faint); font-style: italic; max-width: 66ch; }
+
+  pre.ledger {
+    margin: 0.2rem 0; padding: 0.9rem 1.1rem; overflow-x: auto;
+    background: var(--ash2); border: 1px solid var(--rule);
+    font-family: "Fira Mono", monospace; font-size: 0.78rem; line-height: 1.6; color: var(--ink);
+  }
+
+  .explicit { display: flex; flex-direction: column; gap: 0.55rem; padding-top: 0.4rem; border-top: 2px solid var(--ink); }
+  .footline { color: var(--faint); font-size: 0.95rem; }
+</style>
+
+<div class="leaf">
+
+  <header class="front">
+    <p class="stamp">The Frontier Record &middot; Sheet LXXIX</p>
+    <h1>The Assay</h1>
+    <p class="sub">Before anyone sinks a shaft, the assay office runs a spoonful of the ore
+      through a crucible small enough to watch. The little furnace is not the mine and
+      never pretends to be &mdash; its product is a number and a residue: how much the rock
+      holds, and exactly which flux the real smelter is going to run short of. The ninth
+      valley was the record&rsquo;s assay &mdash; four composed hands, every mechanism
+      legible at that scale &mdash; and it is read here for closing with both results in
+      hand: the founding method runs true, and the flux that is missing has a name.</p>
+    <div class="runhead">
+      <span>the assay office &middot; a spoonful through a small furnace, watched</span>
+      <span>run mtfbvxyf-v0 &middot; four hands &middot; read for closing at tick 2,479</span>
+    </div>
+  </header>
+
+  <div class="finding">
+    <span class="lead">The finding</span>
+    <b>The articles assay true, and the missing flux is iron.</b> Every founder executed
+    their signed character to the letter &mdash; the secession, the repayment, the
+    industry, all of it traceable to sentences committed before the world existed. The bed
+    question, which founded two towns in the eighth trial, closed here for good: nobody
+    slept on the ground after tick 885. And then the whole valley, both jurisdictions,
+    walked into the same wall and said so in one sentence, <b>eight times</b>:
+    <i>&ldquo;a saw is a blade, and nobody here has iron to make one from.&rdquo;</i>
+    The sawmill&rsquo;s pegs came up seven times across two towns; every statute either
+    town carried &mdash; granary, store, shelter, carts, dry food &mdash; waits on boards;
+    boards wait on the mill; the mill waits on a blade nobody can draw. The eighth trial
+    reached iron with thirty-five settlers. The ninth measured the other end: <b>four
+    hands can reach the kiln and cannot cross the saw.</b> That number is the
+    assay&rsquo;s product, and the tenth valley sails with five because of it.
+  </div>
+
+  <section>
+    <h2><span class="n">I</span> <span>Why a spoonful</span></h2>
+    <p>The pilot plant &mdash; Sheet LXXV &mdash; ran thirty-five settlers for seventy-two
+      valley days and produced findings only scale can produce: the weather as the
+      biggest employer nobody hired, secession&rsquo;s single cause, ninety-candidate
+      slates working and unreadable. What it could not produce is legibility. At
+      thirty-five, a vote is a count; at four, a vote is <b>four people you know by
+      name, and you know why each of them raised a hand</b>. Every debt in the ninth
+      valley is attributable, every collapse has a spoken sentence next to it, and every
+      statute&rsquo;s failure names the exact rung it starved on. That is what an assay
+      buys: not truth at scale but truth per gram. Twenty-seven ballots were counted and
+      all of them can be read as biography &mdash; nine carried in a jurisdiction whose
+      whole electorate is one woman, six at a landing where every majority is two of
+      three faces at a fireside.</p>
+  </section>
+
+  <section>
+    <h2><span class="n">II</span> <span>Edda&rsquo;s industry</span></h2>
+    <pre class="ledger">t 68, 133, 178   three houses at the landing — all three raised by Edda, its builder
+t 178            the fourth house — hers — refused, 2 to 2
+t 195            walked out; founded the claim
+t 1,496          built a house. Hers.
+t 1,654          built a kiln — the claim&rsquo;s own industry, second in the valley
+t 2,428          gave 1 food to Wren, against what they owed</pre>
+    <p>The record can now say what Sheet LXXVII could not see yet: <b>the articles came
+      true mechanically, clause by clause.</b> Her file said she had built three houses
+      for other people and wanted, once, to build one that was hers &mdash; and the run
+      had her build the landing&rsquo;s three, then refused her the fourth, and the one
+      house she was denied was precisely the one the file said she boarded for. So she
+      built it in her own jurisdiction, then built a kiln beside it &mdash; a one-woman
+      town with heavy industry, nine statutes, and a charcoal economy waiting on its
+      first burn. And the debt arc, which LXXVII left open at its worst &mdash;
+      <i>done in</i>, eating on credit from the town she walked out of &mdash; closed in
+      the only direction that matters: at tick 2,428 the ledger reads <i>Edda gave 1
+      food to Wren, against what they owed</i>. The woman the valley owed everything,
+      who then owed it dinner, paid it back. The jurisdiction of one assays as: can
+      house itself, can industrialise, can legislate, cannot farm, and <b>settles its
+      accounts</b>.</p>
+  </section>
+
+  <section>
+    <h2><span class="n">III</span> <span>The iron wall</span></h2>
+    <p>From tick 2,268 to the reading, the log is a fugue on one subject. Edda stakes the
+      sawmill; the pegs come up; she states the reason in the game&rsquo;s own
+      arithmetic &mdash; a mill wants a saw, a saw is a blade, a blade is iron, and the
+      valley&rsquo;s whole iron economy is six ore sitting at the landing and four at
+      the claim with no smelter, no charcoal burnt, and no hands to spare for the hill.
+      Tam staked a sawmill at the landing; its pegs came up too. Sorrel&rsquo;s came up
+      third. <b>Three separate people reached independently for the same rung and none
+      of them could touch it</b>, because the rung is not a decision, it is a head
+      count: somebody must dig, somebody must burn, somebody must draw, and somebody
+      must still feed all three &mdash; and there are four people in the world. The
+      eighth trial proved iron reachable at thirty-five; the ninth proves it out of
+      reach at four with the food margin this coast allows. The minimum crew for the
+      metal age lies somewhere in between, and the record now brackets it from both
+      sides &mdash; which is what assays are for.</p>
+  </section>
+
+  <section>
+    <h2><span class="n">IV</span> <span>The cost ledger, and the boat</span></h2>
+    <blockquote class="result">The boat has gone to pieces at last. Whatever this place
+      becomes, it is home now.
+      <span class="who">the feed, tick 2,390 &mdash; the ninth valley&rsquo;s own closing
+        sentence, filed before anyone asked for one</span>
+    </blockquote>
+    <p>The assay&rsquo;s heat shows in the crucible walls. In the last five hundred ticks
+      of the reading, all three landing hands dropped where they stood &mdash; Tam at
+      2,311, Wren at 2,371, Sorrel at 2,407, each <i>days since they last slept</i>
+      &mdash; and Tam was hurt when a frame shifted while he was under it. Four hands
+      are enough to live and not enough to rest: every errand is somebody&rsquo;s whole
+      trade, the food stores closed at two, and the only farmer spent her margins
+      walking stone to a town of one. Nobody died, nobody starved, nobody slept rough
+      &mdash; and nobody, for the last thousand ticks, was ever more than one bad day
+      from all three. Then at 2,390 the boat &mdash; whose company was named and closed
+      on the water, the first physics the founding ever set &mdash; went to pieces on
+      the shingle, and the feed wrote the valley&rsquo;s epitaph in advance and called
+      it home.</p>
+  </section>
+
+  <section>
+    <h2><span class="n">V</span> <span>The residue, and the tenth</span></h2>
+    <p>Closing means the run stops and the record does not: 27 ballots, 71 wish-lines,
+      two kilns, four houses, one claim, purse nought in both towns &mdash; <b>coin
+      carried by vote in a jurisdiction of one and never minted</b>, the second trial
+      running to end with the epoch legislated and unreached. Thin, and said so: the
+      reading and the closing are hours apart, so every number is a dated floor; four
+      hands are one experiment and five will be another, not a law; and the
+      assay&rsquo;s central claim &mdash; that the wall was hands and not luck &mdash;
+      is exactly the kind of assertion this record has retired six of tonight, so it is
+      stated as a bracket, not a constant. The tenth valley&rsquo;s articles are signed:
+      <b>five hands</b>, five trades &mdash; and among them, this time, people whose
+      files remember bread as well as beds, because the ninth&rsquo;s sharpest lesson
+      was that a manifesto executes its omissions with the same fidelity as its
+      clauses. Their boat takes its vote on the water like the last one; where it lands
+      is theirs, and the sea&rsquo;s, to say.</p>
+    <p class="caption">Hedge on the crucible: fire assay is a real trade with real
+      standards, and its numbers came with error bars this borrowed shape drops; the
+      narrow part kept is the purpose &mdash; a small, watched, expendable run whose
+      product is knowledge about what the full-scale attempt will run short of, and the
+      discipline of writing the shortfall down before sinking the shaft.</p>
+
+    <div class="explicit">
+      <p class="footline">Written 30 August, read for closing at tick 2,479 with the
+        valley still running and the log past it; the closing itself waits on the
+        keeper&rsquo;s hand at the window, so this sheet is written in the
+        record&rsquo;s oldest tense &mdash; prepared-for, rather than done.</p>
+      <p class="stamp">The Frontier Record &middot; Sheet LXXIX &middot; 30 August</p>
+    </div>
+  </section>
+
+</div>
+
+</body>
+</html>
