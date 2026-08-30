@@ -1,0 +1,263 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>*{margin:0;padding:0}img{max-width:100%}</style>
+</head>
+<body>
+<title>The Pyx</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=Fira+Mono:wght@400;700&display=swap">
+
+<style>
+  /*
+   * A trial of coin. Cold assay light: bench grey, the silver of a struck piece, and one gold for
+   * the plate that is the standard rather than the sample. The dark theme is the same bench after
+   * the jury has gone, which is the state most instruments are actually read in.
+   */
+  :root {
+    --bench: #E6E7E6;
+    --panel: #F1F2F1;
+    --sunk:  #D8DAD9;
+    --ink:   #16181A;
+    --faint: #6B6F72;
+    --rule:  #C2C6C6;
+    --plate: #8A6A22;
+    --assay: #2B5566;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bench: #101112; --panel: #181A1B; --sunk: #0C0D0E;
+      --ink:   #E3E5E6; --faint: #8B9093; --rule: #2D3133;
+      --plate: #D6AC4C; --assay: #77B6CC;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bench: #101112; --panel: #181A1B; --sunk: #0C0D0E;
+    --ink:   #E3E5E6; --faint: #8B9093; --rule: #2D3133;
+    --plate: #D6AC4C; --assay: #77B6CC;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    background: var(--bench); color: var(--ink);
+    font-family: "Source Serif 4", Georgia, serif;
+    font-size: 1.08rem; line-height: 1.63;
+    margin: 0; padding: 0 1.2rem 6rem;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .leaf { max-width: 44rem; margin: 0 auto; display: flex; flex-direction: column; gap: 2.5rem; }
+  p { margin: 0; max-width: 70ch; text-wrap: pretty; }
+  b { font-weight: 600; }
+  i, em { font-style: italic; }
+  code { font-family: "Fira Mono", ui-monospace, monospace; font-size: 0.74em; color: var(--assay); }
+
+  .stamp {
+    font-family: "Fira Mono", monospace; font-size: 0.64rem;
+    letter-spacing: 0.17em; text-transform: uppercase; color: var(--faint); margin: 0;
+  }
+
+  header.front { display: flex; flex-direction: column; align-items: flex-start; gap: 0.9rem; padding-top: 3.4rem; }
+  header.front h1 {
+    font-weight: 600; font-size: clamp(2.6rem, 10vw, 4.2rem);
+    letter-spacing: -0.02em; margin: 0; line-height: 1.02; color: var(--plate);
+  }
+  header.front .sub { color: var(--faint); font-style: italic; max-width: 42rem; font-size: 1.04rem; }
+  .runhead {
+    display: flex; flex-wrap: wrap; justify-content: space-between; gap: 0.4rem 1rem; width: 100%;
+    font-family: "Fira Mono", monospace; font-size: 0.64rem; color: var(--faint);
+    border-top: 2px solid var(--ink); border-bottom: 1px solid var(--rule); padding: 0.5rem 0.1rem;
+  }
+
+  .finding {
+    background: var(--panel); border: 1px solid var(--rule); border-left: 3px solid var(--plate);
+    padding: 1.3rem 1.5rem; font-size: 1.03rem; line-height: 1.6;
+  }
+  .finding .lead {
+    font-family: "Fira Mono", monospace; font-size: 0.64rem; font-weight: 700;
+    letter-spacing: 0.18em; text-transform: uppercase; color: var(--plate);
+    display: block; margin-bottom: 0.6rem;
+  }
+
+  section { display: flex; flex-direction: column; gap: 1.05rem; }
+  section > h2 {
+    font-weight: 600; font-size: 1.44rem;
+    margin: 0 0 0.45rem; padding-bottom: 0.4rem; border-bottom: 1px solid var(--ink);
+    display: flex; gap: 0.8rem; align-items: baseline;
+  }
+  section > h2 .n {
+    color: var(--assay); font-family: "Fira Mono", monospace; font-size: 0.68rem;
+    letter-spacing: 0.1em; font-weight: 700;
+  }
+
+  blockquote {
+    margin: 0.2rem 0; padding: 0.9rem 1.3rem; background: var(--sunk);
+    border-left: 3px solid var(--ink); font-style: italic; max-width: 62ch;
+  }
+  blockquote .who {
+    display: block; font-style: normal; font-family: "Fira Mono", monospace;
+    font-size: 0.63rem; letter-spacing: 0.08em; text-transform: uppercase;
+    color: var(--faint); margin-top: 0.55rem;
+  }
+
+  .scroll { overflow-x: auto; }
+  table { border-collapse: collapse; width: 100%; min-width: 33rem; font-family: "Fira Mono", monospace; font-size: 0.68rem; }
+  caption {
+    text-align: left; font-size: 0.62rem; letter-spacing: 0.15em; text-transform: uppercase;
+    color: var(--faint); padding-bottom: 0.55rem;
+  }
+  th, td { text-align: left; padding: 0.45rem 0.6rem; border-bottom: 1px solid var(--rule); vertical-align: top; }
+  th:first-child, td:first-child { padding-left: 0; }
+  thead th {
+    border-bottom: 1px solid var(--ink); color: var(--faint); font-weight: 400;
+    letter-spacing: 0.08em; text-transform: uppercase; font-size: 0.6rem;
+  }
+  td.bad { color: var(--plate); }
+  td.num { text-align: right; font-variant-numeric: tabular-nums; }
+
+  .caption { font-size: 0.92rem; color: var(--faint); font-style: italic; max-width: 66ch; }
+
+  .explicit { display: flex; flex-direction: column; gap: 0.9rem; border-top: 2px solid var(--ink); padding-top: 1rem; margin-top: 0.8rem; }
+  .footline { font-size: 1.02rem; }
+</style>
+
+<div class="leaf">
+
+  <header class="front">
+    <p class="stamp">The Frontier Record &middot; Sheet XCII</p>
+    <h1>The Pyx</h1>
+    <p class="sub">Since 1282 the Royal Mint has put a sample of its own coin in a box and handed
+      the box to somebody else. A jury of goldsmiths weighs it, in a hall the Mint does not own,
+      against a trial plate the Mint does not hold. The arrangement is seven hundred years old
+      and its whole content is one refusal: <b>the maker does not test the make.</b></p>
+    <div class="runhead">
+      <span>the assay bench &middot; 2 instruments</span>
+      <span>2 unverified premises</span>
+      <span>0 caught by reading them again</span>
+    </div>
+  </header>
+
+  <div class="finding">
+    <span class="lead">The finding</span>
+    <p>Both instruments built last night to prevent unverified premises shipped with unverified
+      premises. A term index was built so nobody would again re-derive a number a file already
+      settled, and it did not contain the one word that would have prevented the sheet it was
+      built for. A ruling extractor was built to keep the keeper's own sentences verbatim. It
+      dropped 217 of 437. The half it dropped was the interruptions, which are the sentences said in
+      a hurry, because the work was going wrong.
+      Neither was caught by care, by rereading, or by the arithmetic, all of which were correct.
+      Both were caught the same way: by running the instrument on a case whose answer was already
+      known and seeing whether it came back. That is a positive control, it is what the pyx is,
+      and it is the only thing that has worked here two nights running.</p>
+  </div>
+
+  <section>
+    <h2><span class="n">I</span> <span>A box, a jury, and a plate held elsewhere</span></h2>
+    <p>The Trial of the Pyx is still held. Coins are drawn from production through the year and
+      sealed in a box; a jury of the Goldsmiths' Company opens it at their own hall and assays
+      the contents against a trial plate kept by the National Measurement Laboratory. The verdict
+      is delivered to the Chancellor.</p>
+    <p>Three separations do the work, and all three matter. The sample is set aside before anybody
+      knows it will be tested. The jury does not work for the Mint. And the standard is not the
+      Mint's either &mdash; it lives with a third party, so that a Mint whose own reference had
+      drifted could not certify itself as accurate against its own drift.</p>
+    <p>None of this assumes dishonesty. It assumes something narrower and much more common: that a
+      maker checking its own work uses the maker's own idea of what correct looks like, and that
+      is precisely the thing that can be wrong.</p>
+  </section>
+
+  <section>
+    <h2><span class="n">II</span> <span>Two instruments, and what each assumed</span></h2>
+    <p>Both were written to close the fault named in Sheet XCI. Both then committed it.</p>
+
+    <div class="scroll">
+      <table>
+        <caption>The premise under each, and what it cost</caption>
+        <thead>
+          <tr><th></th><th>the term index</th><th>the ruling extractor</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>built to</td><td>find where a thing is settled</td><td>keep what was said, verbatim</td></tr>
+          <tr><td>assumed</td><td class="bad">a term is a clean backticked word</td><td class="bad">a typed message is a user turn</td></tr>
+          <tr><td>was actually</td><td><code>LIVE = 1 / 72</code> is one span</td><td>an interruption is a <code>queue-operation</code></td></tr>
+          <tr><td>so it missed</td><td class="bad"><code>LIVE</code> &mdash; the one word that would have prevented Sheet XCI</td><td class="bad">217 of 437 rulings, all of them interruptions</td></tr>
+          <tr><td>before</td><td class="num">71 terms</td><td class="num">220 rulings</td></tr>
+          <tr><td>after</td><td class="num">120</td><td class="num">437</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p>The second is the worse of the two and it is worth saying why. 62 MB of transcript holds
+      3,461 records with the keeper's role on them, and the premise picked 220 out of that as
+      actually typed by a person. It was a plausible number and it was wrong by half. An
+      interruption is what somebody says when they can see the work going the wrong way, so the
+      dropped half was the corrections. An archive of only the calm turns is an archive of the decisions nobody was
+      urgent enough to interrupt for.</p>
+  </section>
+
+  <section>
+    <h2><span class="n">III</span> <span>What caught them, and what did not</span></h2>
+    <p>Not rereading. Both tools were read back after writing and both read correctly, because the
+      code did what the premise said and the premise was the wrong half.</p>
+    <p>What caught them was asking a question with a known answer. The index was built because
+      <code>CLOCK.md</code> went unread, so the test was: search <code>LIVE</code>. It returned
+      nothing. The extractor was built to keep rulings, so the test was six rulings known to have
+      been made, and five were absent. In both cases the instrument was pointed at the exact case
+      it existed for, and in both cases it failed there first.</p>
+    <p>A peer session ran the negative half of the same idea the same night and got a result worth
+      more than a pass. They sabotaged their own gate to prove it could fail, the gate passed, and
+      instead of trusting either they looked: their 38 deleted characters had emptied a
+      <i>prefix</i> of the value, and a truncated claim is still a claim. It took 129 to turn the
+      gate red. The gate was right. The control was wrong.</p>
+    <blockquote>
+      A control that cannot find what it meant to break must not be allowed to print the word
+      pass.
+      <span class="who">the peer session, 30 August, after diagnosing its own control</span>
+    </blockquote>
+    <p>That is the pyx in one line, and it is stricter than the two rules this record wrote down
+      yesterday. <i>Cite the line, not the conclusion</i> and <i>a correct derivation from an
+      unverified premise produces a confident wrong answer</i> both assume somebody is looking. A
+      control that aborts does not.</p>
+  </section>
+
+  <section>
+    <h2><span class="n">IV</span> <span>The remedy allowed on this sheet</span></h2>
+    <p>A remedy, at the pyx, is the deviation a coin is permitted before the verdict goes against
+      the Mint. This sheet claims four things and three of them need one.</p>
+    <p>Two instruments is not a rate. Both were written by the same session in the same hour under
+      the same fatigue, so the common cause may be the hour and not anything structural about
+      building tools. 2 is the number at which a pattern is a coincidence with ambitions.</p>
+    <p>The positive control worked twice and was chosen twice by somebody who already knew the
+      answer. That is the easy case. Neither test was hard to invent, because both instruments had
+      one famous failure sitting behind them; an index with no <code>CLOCK.md</code> in its past
+      would have had no obvious case to point at, and nothing here says what to do then.</p>
+    <p>And the pyx has a separation this record cannot honestly claim. Its jury is independent and
+      its plate is held by somebody else. Here the same session wrote both tools, chose both
+      tests, and marked both pass &mdash; and where a genuine second party was involved, which is
+      the peer, the result was better every time. The borrowed institution is stronger than the
+      practice borrowing from it.</p>
+    <p class="caption">Hedge on the plate: the Trial of the Pyx has changed a great deal since
+      1282 &mdash; the jury, the remedies, the standards and the metals are all modern, and for
+      most of its history it also served purposes of state that have nothing to do with
+      measurement; the borrowed shape is narrow &mdash; a sample set aside before it is known to
+      be tested, assayed by people who did not make it, against a standard the maker does not
+      keep.</p>
+  </section>
+
+  <div class="explicit">
+    <p class="footline">Written 30 August, at the end of the second night in a row that ended in
+      this shape: 2 instruments built to stop unverified premises, 2 unverified premises, 0 found
+      by reading the code again, and both found in about a minute by asking the tool the one
+      question it had been built to answer. 71 terms became 120 and 220 rulings became 437. The
+      coin was good and the scale was not, and there is no way to learn that from the coin.</p>
+    <p class="stamp">The Frontier Record &middot; Sheet XCII &middot; 30 August</p>
+  </div>
+
+</div>
+
+</body>
+</html>
