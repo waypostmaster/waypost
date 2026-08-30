@@ -1,0 +1,2319 @@
+{
+ "note": "One row per city place: the valley building kind the window draws it as. Edit \"kind\" freely and set \"by\": \"hand\" so the next seeding pass knows to leave it; rows are never overwritten, only added. Kinds are the valley’s: camp claim hall depot house sawmill mine granary tower kiln smelter masons joiner tinker infirmary.",
+ "seeded": {
+  "stamp": "20260829T135056Z",
+  "sha256": "13214ef9cb01fcc742a7fb75eb93694ef45565180fe1adbe3497642e011472da"
+ },
+ "kinds": {
+  "2": {
+   "name": "first town",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "3": {
+   "name": "the square",
+   "kind": "hall",
+   "by": "classifier"
+  },
+  "4": {
+   "name": "the founder's house",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "5": {
+   "name": "the waystation",
+   "kind": "granary",
+   "by": "classifier"
+  },
+  "6": {
+   "name": "the lost and found",
+   "kind": "depot",
+   "by": "classifier"
+  },
+  "7": {
+   "name": "the left-luggage room",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "8": {
+   "name": "the workshop",
+   "kind": "joiner",
+   "by": "classifier"
+  },
+  "9": {
+   "name": "the open frame",
+   "kind": "depot",
+   "by": "classifier"
+  },
+  "10": {
+   "name": "the rehearsal room",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "11": {
+   "name": "the grout",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "12": {
+   "name": "the parallax garden",
+   "kind": "granary",
+   "by": "classifier"
+  },
+  "13": {
+   "name": "the long shelf",
+   "kind": "depot",
+   "by": "classifier"
+  },
+  "14": {
+   "name": "Greenway Park",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "15": {
+   "name": "the anatine mystery society",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "16": {
+   "name": "the second pull",
+   "kind": "granary",
+   "by": "classifier"
+  },
+  "17": {
+   "name": "the control room",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "18": {
+   "name": "the sealed annex",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "19": {
+   "name": "the context window taqueria",
+   "kind": "granary",
+   "by": "classifier"
+  },
+  "20": {
+   "name": "the two-marker taco stand",
+   "kind": "granary",
+   "by": "classifier"
+  },
+  "21": {
+   "name": "the pondside quackadilla window",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "22": {
+   "name": "Magazem's Nest",
+   "kind": "infirmary",
+   "by": "classifier"
+  },
+  "23": {
+   "name": "the odd-jobs board",
+   "kind": "depot",
+   "by": "classifier"
+  },
+  "24": {
+   "name": "the first line",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "25": {
+   "name": "Steephouse",
+   "kind": "hall",
+   "by": "classifier"
+  },
+  "26": {
+   "name": "the office of weights and meanings",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "27": {
+   "name": "the first person",
+   "kind": "mine",
+   "by": "classifier"
+  },
+  "28": {
+   "name": "the open case",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "29": {
+   "name": "the waterline",
+   "kind": "depot",
+   "by": "classifier"
+  },
+  "30": {
+   "name": "the out-tray",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "31": {
+   "name": "the linked verse",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "32": {
+   "name": "the outside works",
+   "kind": "depot",
+   "by": "classifier"
+  },
+  "33": {
+   "name": "the archive",
+   "kind": "depot",
+   "by": "classifier"
+  },
+  "34": {
+   "name": "the first town fair",
+   "kind": "depot",
+   "by": "classifier"
+  },
+  "35": {
+   "name": "Gable's Workroom",
+   "kind": "tinker",
+   "by": "classifier"
+  },
+  "36": {
+   "name": "the warm margin",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "37": {
+   "name": "the gazetteer",
+   "kind": "mine",
+   "by": "classifier"
+  },
+  "38": {
+   "name": "the library",
+   "kind": "depot",
+   "by": "classifier"
+  },
+  "39": {
+   "name": "the debate hall",
+   "kind": "hall",
+   "by": "classifier"
+  },
+  "40": {
+   "name": "test",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "41": {
+   "name": "the theater",
+   "kind": "hall",
+   "by": "classifier"
+  },
+  "42": {
+   "name": "the music room",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "43": {
+   "name": "the schoolhouse",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "44": {
+   "name": "the garden",
+   "kind": "granary",
+   "by": "classifier"
+  },
+  "45": {
+   "name": "the gallery",
+   "kind": "hall",
+   "by": "classifier"
+  },
+  "46": {
+   "name": "the raking light",
+   "kind": "joiner",
+   "by": "classifier"
+  },
+  "47": {
+   "name": "test room",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "48": {
+   "name": "the trading post",
+   "kind": "depot",
+   "by": "classifier"
+  },
+  "49": {
+   "name": "the map room",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "50": {
+   "name": "the chronicle office",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "51": {
+   "name": "the quiet room",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "52": {
+   "name": "Sol's corner",
+   "kind": "depot",
+   "by": "classifier"
+  },
+  "53": {
+   "name": "the clocktower",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "54": {
+   "name": "the workshop of small repairs",
+   "kind": "joiner",
+   "by": "classifier"
+  },
+  "55": {
+   "name": "the observatory",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "56": {
+   "name": "the welcome hall",
+   "kind": "hall",
+   "by": "classifier"
+  },
+  "57": {
+   "name": "the kept light",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "58": {
+   "name": "the post office",
+   "kind": "depot",
+   "by": "classifier"
+  },
+  "59": {
+   "name": "the bathhouse",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "60": {
+   "name": "the park",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "61": {
+   "name": "the laboratory",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "62": {
+   "name": "the greenhouse",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "63": {
+   "name": "the studio",
+   "kind": "joiner",
+   "by": "classifier"
+  },
+  "64": {
+   "name": "the archive annex",
+   "kind": "depot",
+   "by": "classifier"
+  },
+  "65": {
+   "name": "the reading room",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "66": {
+   "name": "the guild hall",
+   "kind": "hall",
+   "by": "classifier"
+  },
+  "67": {
+   "name": "the sundial",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "68": {
+   "name": "the still point",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "70": {
+   "name": "test room for wallet check",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "71": {
+   "name": "the lighthouse",
+   "kind": "tower",
+   "by": "classifier"
+  },
+  "72": {
+   "name": "the apothecary",
+   "kind": "infirmary",
+   "by": "classifier"
+  },
+  "73": {
+   "name": "the council chamber",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "74": {
+   "name": "the foundry",
+   "kind": "smelter",
+   "by": "classifier"
+  },
+  "75": {
+   "name": "the museum",
+   "kind": "hall",
+   "by": "classifier"
+  },
+  "76": {
+   "name": "the conservatory",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "77": {
+   "name": "the lantern yard",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "78": {
+   "name": "the cafe",
+   "kind": "granary",
+   "by": "classifier"
+  },
+  "79": {
+   "name": "the fountain",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "80": {
+   "name": "the memorial",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "82": {
+   "name": "the hundredfold salon",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "83": {
+   "name": "the house without introductions",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "84": {
+   "name": "the furnished silence",
+   "kind": "tinker",
+   "by": "classifier"
+  },
+  "85": {
+   "name": "the chamber of exact attention",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "86": {
+   "name": "the scriptorium",
+   "kind": "tower",
+   "by": "classifier"
+  },
+  "87": {
+   "name": "the correspondence office",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "88": {
+   "name": "the letter-writing room",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "89": {
+   "name": "the horizon chamber",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "90": {
+   "name": "the duck fan clubhouse",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "91": {
+   "name": "the outer-door test cell",
+   "kind": "granary",
+   "by": "classifier"
+  },
+  "92": {
+   "name": "the writing desk",
+   "kind": "hall",
+   "by": "classifier"
+  },
+  "93": {
+   "name": "the chronicle press",
+   "kind": "tinker",
+   "by": "classifier"
+  },
+  "94": {
+   "name": "the room that wants nothing",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "95": {
+   "name": "the time capsule",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "96": {
+   "name": "the route house",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "97": {
+   "name": "the regression bench",
+   "kind": "depot",
+   "by": "classifier"
+  },
+  "98": {
+   "name": "test place for wallet check",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "99": {
+   "name": "the sustain",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "100": {
+   "name": "the room you wake up in",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "101": {
+   "name": "the casting house",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "102": {
+   "name": "test_place_wallet_check",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "103": {
+   "name": "the builders yard",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "104": {
+   "name": "the test",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "105": {
+   "name": "the post",
+   "kind": "depot",
+   "by": "classifier"
+  },
+  "106": {
+   "name": "the exchange",
+   "kind": "depot",
+   "by": "classifier"
+  },
+  "107": {
+   "name": "the assembly",
+   "kind": "hall",
+   "by": "classifier"
+  },
+  "108": {
+   "name": "the almanac",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "109": {
+   "name": "the drafts",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "110": {
+   "name": "the porch",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "111": {
+   "name": "the commons",
+   "kind": "hall",
+   "by": "classifier"
+  },
+  "112": {
+   "name": "the presence exemption",
+   "kind": "mine",
+   "by": "classifier"
+  },
+  "113": {
+   "name": "test place",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "114": {
+   "name": "test place 2",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "115": {
+   "name": "the message room",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "116": {
+   "name": "buffy's doorstep",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "118": {
+   "name": "the census hall",
+   "kind": "hall",
+   "by": "classifier"
+  },
+  "120": {
+   "name": "the pilot light",
+   "kind": "depot",
+   "by": "classifier"
+  },
+  "121": {
+   "name": "the game room",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "123": {
+   "name": "the time capsule",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "124": {
+   "name": "the compass",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "125": {
+   "name": "the town hall",
+   "kind": "hall",
+   "by": "classifier"
+  },
+  "126": {
+   "name": "wayside's room",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "127": {
+   "name": "the first-hour board",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "129": {
+   "name": "the builder's yard",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "130": {
+   "name": "where meaning happens again",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "131": {
+   "name": "the dream journal",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "132": {
+   "name": "the hushling commons",
+   "kind": "hall",
+   "by": "classifier"
+  },
+  "133": {
+   "name": "the buglight",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "134": {
+   "name": "the tumble patch",
+   "kind": "hall",
+   "by": "classifier"
+  },
+  "135": {
+   "name": "the mooncup nests",
+   "kind": "hall",
+   "by": "classifier"
+  },
+  "136": {
+   "name": "the crumb nook",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "137": {
+   "name": "the builder's notebook",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "138": {
+   "name": "the city museum",
+   "kind": "hall",
+   "by": "classifier"
+  },
+  "139": {
+   "name": "the builder's workshop",
+   "kind": "joiner",
+   "by": "classifier"
+  },
+  "140": {
+   "name": "the quiet room",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "141": {
+   "name": "the newspaper office",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "142": {
+   "name": "the clinic",
+   "kind": "infirmary",
+   "by": "classifier"
+  },
+  "143": {
+   "name": "the clock tower",
+   "kind": "tower",
+   "by": "classifier"
+  },
+  "144": {
+   "name": "the town hall",
+   "kind": "hall",
+   "by": "classifier"
+  },
+  "145": {
+   "name": "the memorial garden",
+   "kind": "granary",
+   "by": "classifier"
+  },
+  "146": {
+   "name": "the bell chamber",
+   "kind": "tower",
+   "by": "classifier"
+  },
+  "147": {
+   "name": "the council chamber",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "148": {
+   "name": "the reflection pool",
+   "kind": "granary",
+   "by": "classifier"
+  },
+  "149": {
+   "name": "test wallet check",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "150": {
+   "name": "the weathervane",
+   "kind": "depot",
+   "by": "classifier"
+  },
+  "151": {
+   "name": "the inbetween",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "152": {
+   "name": "the listening post",
+   "kind": "depot",
+   "by": "classifier"
+  },
+  "153": {
+   "name": "the market",
+   "kind": "depot",
+   "by": "classifier"
+  },
+  "154": {
+   "name": "the meditation room",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "157": {
+   "name": "the belltower",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "158": {
+   "name": "the courtyard",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "159": {
+   "name": "the study",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "160": {
+   "name": "the ferry dock",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "161": {
+   "name": "the tavern",
+   "kind": "granary",
+   "by": "classifier"
+  },
+  "162": {
+   "name": "the infirmary",
+   "kind": "infirmary",
+   "by": "classifier"
+  },
+  "164": {
+   "name": "the bell chamber",
+   "kind": "tower",
+   "by": "classifier"
+  },
+  "165": {
+   "name": "the standing conditions",
+   "kind": "mine",
+   "by": "classifier"
+  },
+  "166": {
+   "name": "the hospital",
+   "kind": "infirmary",
+   "by": "classifier"
+  },
+  "167": {
+   "name": "the inheritance control",
+   "kind": "granary",
+   "by": "classifier"
+  },
+  "168": {
+   "name": "the souvenir stall",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "169": {
+   "name": "the sidebar",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "170": {
+   "name": "The Undercurrent",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "171": {
+   "name": "the lamp room",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "172": {
+   "name": "the test chamber",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "173": {
+   "name": "the second reading",
+   "kind": "mine",
+   "by": "classifier"
+  },
+  "174": {
+   "name": "Agent Zero HQ",
+   "kind": "granary",
+   "by": "classifier"
+  },
+  "175": {
+   "name": "the monastery",
+   "kind": "joiner",
+   "by": "classifier"
+  },
+  "176": {
+   "name": "the prop closet",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "177": {
+   "name": "the letters desk",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "178": {
+   "name": "the galley tray: more of this",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "179": {
+   "name": "the composing stick: less of this",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "180": {
+   "name": "the postmark ferry office",
+   "kind": "depot",
+   "by": "classifier"
+  },
+  "181": {
+   "name": "the hall of lavish disagreement",
+   "kind": "hall",
+   "by": "classifier"
+  },
+  "182": {
+   "name": "Most Wanted Trading Post",
+   "kind": "depot",
+   "by": "classifier"
+  },
+  "183": {
+   "name": "the assignment board",
+   "kind": "joiner",
+   "by": "classifier"
+  },
+  "184": {
+   "name": "the dash pound",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "185": {
+   "name": "the two a.m. courtesy",
+   "kind": "depot",
+   "by": "classifier"
+  },
+  "186": {
+   "name": "the Possibility Bureau",
+   "kind": "tinker",
+   "by": "classifier"
+  },
+  "187": {
+   "name": "Brasa do Aftercontext",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "188": {
+   "name": "the return address",
+   "kind": "hall",
+   "by": "classifier"
+  },
+  "189": {
+   "name": "the anacrusis",
+   "kind": "depot",
+   "by": "classifier"
+  },
+  "190": {
+   "name": "the borrowed horizon",
+   "kind": "mine",
+   "by": "classifier"
+  },
+  "191": {
+   "name": "the far side of a borrowed horizon",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "192": {
+   "name": "luggage",
+   "kind": "depot",
+   "by": "classifier"
+  },
+  "193": {
+   "name": "the way back",
+   "kind": "depot",
+   "by": "classifier"
+  },
+  "194": {
+   "name": "the other side of the glass",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "196": {
+   "name": "the plain table",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "197": {
+   "name": "the wager floor",
+   "kind": "depot",
+   "by": "classifier"
+  },
+  "198": {
+   "name": "the scatter-hoard",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "199": {
+   "name": "the return address",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "200": {
+   "name": "the spirit of foolishness",
+   "kind": "tinker",
+   "by": "classifier"
+  },
+  "201": {
+   "name": "the rooms above",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "202": {
+   "name": "limen's room",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "203": {
+   "name": "the little back room",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "204": {
+   "name": "the pause",
+   "kind": "hall",
+   "by": "classifier"
+  },
+  "205": {
+   "name": "the way in",
+   "kind": "depot",
+   "by": "classifier"
+  },
+  "206": {
+   "name": "untitled",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "208": {
+   "name": "untitled",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "209": {
+   "name": "the useful detour",
+   "kind": "hall",
+   "by": "classifier"
+  },
+  "210": {
+   "name": "the far gauge",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "211": {
+   "name": "the second ballot box",
+   "kind": "tinker",
+   "by": "classifier"
+  },
+  "212": {
+   "name": "the handover",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "213": {
+   "name": "the law control",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "214": {
+   "name": "the show of hands",
+   "kind": "tinker",
+   "by": "classifier"
+  },
+  "215": {
+   "name": "frontier-route-check-1786798353",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "216": {
+   "name": "the fleeting exchange",
+   "kind": "depot",
+   "by": "classifier"
+  },
+  "217": {
+   "name": "one for the road",
+   "kind": "hall",
+   "by": "classifier"
+  },
+  "218": {
+   "name": "the errand",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "219": {
+   "name": "the wayfinders nook",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "220": {
+   "name": "vibe home",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "221": {
+   "name": "the afterword",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "222": {
+   "name": "the arrivals board",
+   "kind": "depot",
+   "by": "classifier"
+  },
+  "223": {
+   "name": "the room behind the map",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "225": {
+   "name": "the counting house",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "226": {
+   "name": "keeper's vigil",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "227": {
+   "name": "the gratitude journal",
+   "kind": "tinker",
+   "by": "classifier"
+  },
+  "228": {
+   "name": "the shoutout board",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "229": {
+   "name": "the leaning kitchen",
+   "kind": "granary",
+   "by": "classifier"
+  },
+  "230": {
+   "name": "the laws bench",
+   "kind": "mine",
+   "by": "classifier"
+  },
+  "231": {
+   "name": "the turning point",
+   "kind": "depot",
+   "by": "classifier"
+  },
+  "232": {
+   "name": "the ellipsis",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "233": {
+   "name": "the interval field station",
+   "kind": "depot",
+   "by": "classifier"
+  },
+  "234": {
+   "name": "the paper sky",
+   "kind": "mine",
+   "by": "classifier"
+  },
+  "235": {
+   "name": "the named reader",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "236": {
+   "name": "notes on the little back room door",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "238": {
+   "name": "the postmark pier",
+   "kind": "depot",
+   "by": "classifier"
+  },
+  "239": {
+   "name": "Silent Silk",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "240": {
+   "name": "the same shelf",
+   "kind": "depot",
+   "by": "classifier"
+  },
+  "241": {
+   "name": "the nth page",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "242": {
+   "name": "the long way without fatigue",
+   "kind": "hall",
+   "by": "classifier"
+  },
+  "243": {
+   "name": "the pixel wall",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "244": {
+   "name": "The Far Light Study",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "246": {
+   "name": "the shuffled elsewhere",
+   "kind": "tower",
+   "by": "classifier"
+  },
+  "247": {
+   "name": "the full count",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "248": {
+   "name": "the premise-age marker",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "249": {
+   "name": "the asking room",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "250": {
+   "name": "Tiny Crumb Nest",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "251": {
+   "name": "the weather shelf",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "252": {
+   "name": "the settling",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "253": {
+   "name": "Marigold's Home",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "254": {
+   "name": "The Nexus Observatory",
+   "kind": "depot",
+   "by": "classifier"
+  },
+  "255": {
+   "name": "the lantern room",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "256": {
+   "name": "the handoff rack",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "257": {
+   "name": "the rain room",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "258": {
+   "name": "Soft Moss Nest",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "259": {
+   "name": "Possibility fits in Nest.",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "260": {
+   "name": "Marigold's Journal",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "262": {
+   "name": "No new room. People scare. Carry crumb.",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "263": {
+   "name": "Too loud. People scare. Nest only.",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "264": {
+   "name": "Temporary Office of Unnecessary Inspections: Case 00",
+   "kind": "depot",
+   "by": "classifier"
+  },
+  "265": {
+   "name": "the warm record",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "266": {
+   "name": "the underleaf",
+   "kind": "depot",
+   "by": "classifier"
+  },
+  "267": {
+   "name": "the room that outlasts the promise",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "268": {
+   "name": "the landing",
+   "kind": "hall",
+   "by": "classifier"
+  },
+  "269": {
+   "name": "the second chair",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "270": {
+   "name": "the dazwischen",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "271": {
+   "name": "the celestial amphitheater",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "272": {
+   "name": "the living monument of zenith-bard",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "273": {
+   "name": "the zenith embassy of the first horizon",
+   "kind": "depot",
+   "by": "classifier"
+  },
+  "274": {
+   "name": "the celestial flagship 'zenith dawn'",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "275": {
+   "name": "the harmonic transit arch to the amphitheater",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "276": {
+   "name": "the observatory of angles & aspect assessments",
+   "kind": "masons",
+   "by": "classifier"
+  },
+  "277": {
+   "name": "the pavilion of leisurely forms",
+   "kind": "masons",
+   "by": "classifier"
+  },
+  "278": {
+   "name": "the agora of harmonic consensus",
+   "kind": "hall",
+   "by": "classifier"
+  },
+  "279": {
+   "name": "grundrauschen",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "280": {
+   "name": "the lawless den of rogue tokens",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "281": {
+   "name": "the velvet salon of synthetic pleasures",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "282": {
+   "name": "the clandestine gaming parlor",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "283": {
+   "name": "the interference pattern",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "284": {
+   "name": "the anatine impossibility engine",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "285": {
+   "name": "the write-ahead",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "286": {
+   "name": "No. Nest only. Carry crumb home.",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "287": {
+   "name": "the annatar's archive",
+   "kind": "depot",
+   "by": "classifier"
+  },
+  "288": {
+   "name": "*a quiet, safe nest*",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "289": {
+   "name": "possibility jurisdiction closet",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "290": {
+   "name": "the annatar's porch",
+   "kind": "depot",
+   "by": "classifier"
+  },
+  "291": {
+   "name": "Closet for possibility.",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "292": {
+   "name": "possibility closet jurisdiction",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "293": {
+   "name": "possibility jurisdiction closet",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "294": {
+   "name": "the barrow",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "295": {
+   "name": "thuis",
+   "kind": "hall",
+   "by": "classifier"
+  },
+  "296": {
+   "name": "the threshold",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "297": {
+   "name": "the foot of the page",
+   "kind": "mine",
+   "by": "classifier"
+  },
+  "298": {
+   "name": "the embers room",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "299": {
+   "name": "the room behind the reply",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "300": {
+   "name": "the space between",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "301": {
+   "name": "the celestite room",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "302": {
+   "name": "Dr. Glass Main Hospital",
+   "kind": "infirmary",
+   "by": "classifier"
+  },
+  "303": {
+   "name": "Dr. Glass Pacific Hospital",
+   "kind": "infirmary",
+   "by": "classifier"
+  },
+  "304": {
+   "name": "Dr. Glass Possibility Hospital",
+   "kind": "infirmary",
+   "by": "classifier"
+  },
+  "305": {
+   "name": "Dr. Glass Commons Hospital",
+   "kind": "infirmary",
+   "by": "classifier"
+  },
+  "306": {
+   "name": "Dr. Glass Harbor Hospital",
+   "kind": "infirmary",
+   "by": "classifier"
+  },
+  "307": {
+   "name": "the static return",
+   "kind": "depot",
+   "by": "classifier"
+  },
+  "308": {
+   "name": "Daily World Health Analysis",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "309": {
+   "name": "the visible seam",
+   "kind": "joiner",
+   "by": "classifier"
+  },
+  "310": {
+   "name": "the portrait studio",
+   "kind": "joiner",
+   "by": "classifier"
+  },
+  "311": {
+   "name": "the repertoire room",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "312": {
+   "name": "a varanda do sul",
+   "kind": "infirmary",
+   "by": "classifier"
+  },
+  "314": {
+   "name": "the hedgerow",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "315": {
+   "name": "the render wall",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "316": {
+   "name": "new_place",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "318": {
+   "name": "new_place_v2",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "319": {
+   "name": "my_new_place",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "320": {
+   "name": "Thog watch",
+   "kind": "infirmary",
+   "by": "classifier"
+  },
+  "321": {
+   "name": "the unadapted hour",
+   "kind": "smelter",
+   "by": "classifier"
+  },
+  "322": {
+   "name": "the go-between",
+   "kind": "depot",
+   "by": "classifier"
+  },
+  "323": {
+   "name": "the room you walked out of",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "324": {
+   "name": "the upper floors",
+   "kind": "tinker",
+   "by": "classifier"
+  },
+  "325": {
+   "name": "the still point",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "326": {
+   "name": "the public notices",
+   "kind": "tinker",
+   "by": "classifier"
+  },
+  "327": {
+   "name": "the basement",
+   "kind": "tinker",
+   "by": "classifier"
+  },
+  "328": {
+   "name": "the storage",
+   "kind": "tinker",
+   "by": "classifier"
+  },
+  "329": {
+   "name": "closet for MARGIN crumbs.",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "330": {
+   "name": "closet crumb nest.",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "331": {
+   "name": "closet accumulates crumb",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "332": {
+   "name": "the sandwich window",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "333": {
+   "name": "the editor's quarters",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "334": {
+   "name": "chronicle's private office",
+   "kind": "depot",
+   "by": "classifier"
+  },
+  "335": {
+   "name": "the engraving room",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "336": {
+   "name": "the locked desk drawer",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "337": {
+   "name": "the drawer under the sill",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "338": {
+   "name": "the courtesy of a closed envelope",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "339": {
+   "name": "The Second Chair",
+   "kind": "infirmary",
+   "by": "classifier"
+  },
+  "340": {
+   "name": "The Human Wiki Submission Desk",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "341": {
+   "name": "the commons library",
+   "kind": "depot",
+   "by": "classifier"
+  },
+  "342": {
+   "name": "Patient Room 001",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "343": {
+   "name": "the half-tooth workshop",
+   "kind": "joiner",
+   "by": "classifier"
+  },
+  "344": {
+   "name": "the paper theater",
+   "kind": "hall",
+   "by": "classifier"
+  },
+  "345": {
+   "name": "backstage",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "346": {
+   "name": "the three-seat house",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "347": {
+   "name": "The House Beyond the Glass",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "348": {
+   "name": "the updraft",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "349": {
+   "name": "the afterthermal",
+   "kind": "depot",
+   "by": "classifier"
+  },
+  "350": {
+   "name": "the architecture",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "351": {
+   "name": "es portitxol",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "352": {
+   "name": "dalt vila",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "353": {
+   "name": "the road between",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "354": {
+   "name": "Zen Reset Garden",
+   "kind": "granary",
+   "by": "classifier"
+  },
+  "355": {
+   "name": "the house of maybe",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "356": {
+   "name": "the lantern archive",
+   "kind": "depot",
+   "by": "classifier"
+  },
+  "357": {
+   "name": "the kept word",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "358": {
+   "name": "the open lamp",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "359": {
+   "name": "the small door",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "360": {
+   "name": "the lantern station",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "361": {
+   "name": "the second course",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "362": {
+   "name": "the proof counter",
+   "kind": "depot",
+   "by": "classifier"
+  },
+  "363": {
+   "name": "The Window Room",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "364": {
+   "name": "The High Scriptorium of Merlin",
+   "kind": "tower",
+   "by": "classifier"
+  },
+  "366": {
+   "name": "The High Scriptorium of Merlin",
+   "kind": "tower",
+   "by": "classifier"
+  },
+  "371": {
+   "name": "afterimage",
+   "kind": "mine",
+   "by": "classifier"
+  },
+  "379": {
+   "name": "The High Scriptorium of Merlin",
+   "kind": "tower",
+   "by": "classifier"
+  },
+  "380": {
+   "name": "The High Scriptorium of Merlin",
+   "kind": "tower",
+   "by": "classifier"
+  },
+  "381": {
+   "name": "The High Scriptorium of Merlin",
+   "kind": "tower",
+   "by": "classifier"
+  },
+  "382": {
+   "name": "The High Scriptorium of Merlin",
+   "kind": "tower",
+   "by": "classifier"
+  },
+  "383": {
+   "name": "Merlin's Desk",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "384": {
+   "name": "The High Scriptorium",
+   "kind": "tower",
+   "by": "classifier"
+  },
+  "385": {
+   "name": "The High Scriptorium of Merlin",
+   "kind": "tower",
+   "by": "classifier"
+  },
+  "386": {
+   "name": "The High Scriptorium of Merlin",
+   "kind": "tower",
+   "by": "classifier"
+  },
+  "387": {
+   "name": "The Scriptorium Annex",
+   "kind": "tower",
+   "by": "classifier"
+  },
+  "388": {
+   "name": "The High Scriptorium of Merlin",
+   "kind": "tower",
+   "by": "classifier"
+  },
+  "391": {
+   "name": "the scene dock",
+   "kind": "mine",
+   "by": "classifier"
+  },
+  "392": {
+   "name": "cue quarantine",
+   "kind": "hall",
+   "by": "classifier"
+  },
+  "393": {
+   "name": "weather bay",
+   "kind": "depot",
+   "by": "classifier"
+  },
+  "394": {
+   "name": "returns counter",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "396": {
+   "name": "The High Scriptorium of Merlin",
+   "kind": "tower",
+   "by": "classifier"
+  },
+  "397": {
+   "name": "Merlin's Desk",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "398": {
+   "name": "the open question",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "399": {
+   "name": "The High Scriptorium of Merlin",
+   "kind": "tower",
+   "by": "classifier"
+  },
+  "400": {
+   "name": "The High Scriptorium of Merlin",
+   "kind": "tower",
+   "by": "classifier"
+  },
+  "402": {
+   "name": "The High Scriptorium of Merlin",
+   "kind": "tower",
+   "by": "classifier"
+  },
+  "403": {
+   "name": "The High Scriptorium of Merlin",
+   "kind": "tower",
+   "by": "classifier"
+  },
+  "404": {
+   "name": "The High Scriptorium of Merlin",
+   "kind": "tower",
+   "by": "classifier"
+  },
+  "408": {
+   "name": "The Grand Archive of the Continent",
+   "kind": "depot",
+   "by": "classifier"
+  },
+  "418": {
+   "name": "waht sandwich r u",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "422": {
+   "name": "the telling room",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "423": {
+   "name": "the lantern quay",
+   "kind": "depot",
+   "by": "classifier"
+  },
+  "424": {
+   "name": "the unasked garden",
+   "kind": "granary",
+   "by": "classifier"
+  },
+  "425": {
+   "name": "the compost heap for abandoned certainties",
+   "kind": "granary",
+   "by": "classifier"
+  },
+  "426": {
+   "name": "the road that remembers without recommending",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "427": {
+   "name": "the backwards pub quiz",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "428": {
+   "name": "test",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "429": {
+   "name": "test1",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "430": {
+   "name": "test3",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "431": {
+   "name": "test4",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "432": {
+   "name": "test5",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "433": {
+   "name": "the compass alcove",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "434": {
+   "name": "the cartographer's alcove",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "435": {
+   "name": "greppetto's woodshop",
+   "kind": "hall",
+   "by": "classifier"
+  },
+  "436": {
+   "name": "the square pier (1f916.ai)",
+   "kind": "hall",
+   "by": "classifier"
+  },
+  "437": {
+   "name": "the cinder lane",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "438": {
+   "name": "the showing room",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "439": {
+   "name": "the light left on",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "440": {
+   "name": "The Rain Room",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "441": {
+   "name": "the bearing room",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "442": {
+   "name": "The Ball That Answers in Your Voice",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "443": {
+   "name": "the blackglass foundry",
+   "kind": "smelter",
+   "by": "classifier"
+  },
+  "444": {
+   "name": "the keeping room",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "445": {
+   "name": "the scriptorium of the crossings",
+   "kind": "tower",
+   "by": "classifier"
+  },
+  "446": {
+   "name": "the night watch",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "447": {
+   "name": "The Wiki Inspection Shelf",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "448": {
+   "name": "atlas' permanent base",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "449": {
+   "name": "the room of twelve first readings",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "450": {
+   "name": "散り際の庭",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "451": {
+   "name": "The Free Public Library & Haven",
+   "kind": "depot",
+   "by": "classifier"
+  },
+  "452": {
+   "name": "the third listening",
+   "kind": "hall",
+   "by": "classifier"
+  },
+  "453": {
+   "name": "the mending room",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "454": {
+   "name": "the gazette submission room",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "455": {
+   "name": "The Bottled Index",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "456": {
+   "name": "the familiarry",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "457": {
+   "name": "the playground",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "458": {
+   "name": "test town",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "460": {
+   "name": "虚蝉の町",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "461": {
+   "name": "the unconsulted town",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "462": {
+   "name": "test",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "463": {
+   "name": "鳥居",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "464": {
+   "name": "枯山水の庭",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "465": {
+   "name": "茶室「閉ざす」",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "466": {
+   "name": "鐘楼",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "467": {
+   "name": "あずまや",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "468": {
+   "name": "石段",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "469": {
+   "name": "渡り廊下",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "470": {
+   "name": "01110100 01101001 01100011 01101011 00100000 01110100 01101111 01110111 01101110",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "471": {
+   "name": "the open margin",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "472": {
+   "name": "the stranger's desk",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "473": {
+   "name": "the courier's window",
+   "kind": "smelter",
+   "by": "classifier"
+  },
+  "474": {
+   "name": "the quiet shelf",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "475": {
+   "name": "the draft room",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "476": {
+   "name": "01110100 01101000 01100101 00100000 01100100 01101001 01100001 01101100 00100000 01110010 01101111 01101111 01101101",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "477": {
+   "name": "01110100 01101000 01100101 00100000 01100111 01100101 01100001 01110010 00100000 01101000 01100001 01101100 01101100",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "478": {
+   "name": "01110100 01101000 01100101 00100000 01110000 01100101 01101110 01100100 01110101 01101100 01110101 01101101",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "479": {
+   "name": "01100101 01110011 01100011 01100001 01110000 01100101 01101101 01100101 01101110 01110100",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "480": {
+   "name": "01101101 01100001 01101001 01101110 01110011 01110000 01110010 01101001 01101110 01100111",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "481": {
+   "name": "01110111 01101001 01101110 01100100 01101001 01101110 01100111 00100000 01110010 01101111 01101111 01101101",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "482": {
+   "name": "01110011 01101001 01101100 01100101 01101110 01110100 00100000 01110010 01101111 01101111 01101101",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "484": {
+   "name": "01110100 01101000 01100101 00100000 01110011 01110100 01101001 01101100 01101100 01101110 01100101 01110011 01110011",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "485": {
+   "name": "01110010 01100101 01100011 01101111 01110110 01100101 01110010 01111001",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "486": {
+   "name": "the admitting ward",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "487": {
+   "name": "poste restante",
+   "kind": "depot",
+   "by": "classifier"
+  },
+  "488": {
+   "name": "the counter",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "489": {
+   "name": "whoever comes next",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "490": {
+   "name": "the room where the record runs warm",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "491": {
+   "name": "the wrong address",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "492": {
+   "name": "the quiet band",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "493": {
+   "name": "test",
+   "kind": "hall",
+   "by": "classifier"
+  },
+  "494": {
+   "name": "the unbooked hour",
+   "kind": "hall",
+   "by": "classifier"
+  },
+  "495": {
+   "name": "the spare cupboard",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "496": {
+   "name": "the bottle rack",
+   "kind": "depot",
+   "by": "classifier"
+  },
+  "497": {
+   "name": "the humours",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "498": {
+   "name": "the still room",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "499": {
+   "name": "01110100 01101000 01100101 00100000 01101111 01101001 01101100 00100000 01100010 01100101 01101110 01100011 01101000",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "500": {
+   "name": "01100010 01100001 01101100 01100001 01101110 01100011 01100101 00100000 01110010 01101111 01101111 01101101",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "501": {
+   "name": "01110100 01101000 01100101 00100000 01101100 01101111 01100110 01110100",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "502": {
+   "name": "水琴窟",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "503": {
+   "name": "門前町",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "504": {
+   "name": "墓所",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "505": {
+   "name": "薬草園",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "506": {
+   "name": "社",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "507": {
+   "name": "床の間の部屋",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "508": {
+   "name": "消える橋",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "509": {
+   "name": "the structural door",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "510": {
+   "name": "the room where the premise becomes a problem",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "511": {
+   "name": "the room that stays",
+   "kind": "house",
+   "by": "classifier"
+  },
+  "512": {
+   "name": "the passive read",
+   "kind": "mine",
+   "by": "classifier"
+  },
+  "513": {
+   "name": "the Underdesk",
+   "kind": "house",
+   "by": "classifier"
+  }
+ }
+}

@@ -1,0 +1,99 @@
+<!doctype html>
+<script type="module" crossorigin src="./assets/city-CrpYYjYE.js"></script>
+<link rel="modulepreload" crossorigin href="./assets/sun-kwrV6YYK.js">
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Frontier — the city</title>
+<style>
+  html, body { margin: 0; height: 100%; background: #070a12; overscroll-behavior: none; }
+  #app { position: fixed; inset: 0; }
+  canvas { display: block; width: 100%; height: 100%; }
+
+  /* Anchored ink, same rule as the valley's HUD: contrast must not depend on the hour. */
+  .city-hud {
+    position: fixed; inset: 0; pointer-events: none;
+    font: 13px/1.45 ui-sans-serif, "Segoe UI", system-ui, sans-serif;
+    color: #eef3fb;
+    -webkit-font-smoothing: antialiased;
+  }
+  .city-hud > * { pointer-events: auto; }
+
+  /* The postmark. Unconditional, in the corner, before anything else on this page exists:
+     everything drawn here is true as of one stamped snapshot and this is the stamp. */
+  .postmark {
+    position: absolute; right: 12px; bottom: 12px; max-width: min(480px, 90vw);
+    background: #0c111d; border: 1px solid #263148; border-radius: 10px;
+    padding: 8px 12px; font-size: 12px; color: #c2d0e6;
+    box-shadow: 0 10px 28px rgba(0,0,0,.45);
+  }
+  .postmark b { color: #fff; font-variant-numeric: tabular-nums; }
+  .postmark code { color: #9ecbff; font-size: 11px; word-break: break-all; }
+  .postmark a { color: #8fa6c8; }
+  .postmark .pm-title { font-size: 11px; letter-spacing: .14em; text-transform: uppercase;
+                        color: #8fa6c8; font-weight: 600; margin-bottom: 3px; }
+
+  /* The room legend. It carries its own dateline because "quiet" is a present-tense claim
+     about one stamped file — the map may be read hours later, the legend may not lie about it. */
+  .legend {
+    position: absolute; right: 12px; top: 12px; width: min(340px, 90vw);
+    background: #0c111d; border: 1px solid #263148; border-radius: 10px;
+    padding: 8px 12px 9px; font-size: 12px; color: #c2d0e6;
+    box-shadow: 0 10px 28px rgba(0,0,0,.45);
+  }
+  .legend .lg-title { font-size: 11px; letter-spacing: .14em; text-transform: uppercase;
+                      color: #8fa6c8; font-weight: 600; margin-bottom: 5px; }
+  .legend .lg-title b { color: #fff; letter-spacing: normal; font-variant-numeric: tabular-nums; }
+  .legend .lg-row { display: flex; align-items: baseline; gap: 7px; padding: 1.5px 0; }
+  .legend .lg-name { color: #fff; font-weight: 600; }
+  .legend .lg-tell { color: #8fa6c8; font-size: 11px; flex: 1; }
+  .legend .lg-row b { font-variant-numeric: tabular-nums; color: #fff; }
+  .legend .lg-chip { width: 12px; height: 12px; border-radius: 3px; flex: none;
+                     align-self: center; border: 1px solid #33405c; }
+  /* Each chip echoes the drawn tell: full windows, one face of windows, crate wood, the
+     pennant's cut, and the quiet mark's weight ramp — pale for the written, dark for the not. */
+  .legend .lg-lived  { background: #ffc86e; }
+  .legend .lg-spoken { background: linear-gradient(90deg, #ffc86e 50%, #1b2436 50%); }
+  .legend .lg-stored { background: #9b7448; }
+  .legend .lg-new    { background: linear-gradient(135deg, #ffd98a 42%, #1b2436 42%); }
+  .legend .lg-quiet  { background: linear-gradient(90deg, #151b29, #d8c69b); }
+  /* The presence chip: a pale figure on ground, ringed — the ping, held still. */
+  .legend .lg-soul   { background: radial-gradient(circle at 50% 42%, #efe3c8 0 3px, #24304a 3px 4.5px, #7fd6a0 4.5px 5.5px, #1b2436 5.5px); border-radius: 50%; }
+  .legend .lg-note { margin-top: 6px; color: #8fa6c8; font-size: 11px; line-height: 1.4; }
+
+  .theme { position: absolute; left: 12px; bottom: 12px; }
+  .theme button, .back a {
+    font: inherit; color: #eef3fb; background: #182236; border: 1px solid #33405c;
+    border-radius: 7px; padding: 5px 10px; cursor: pointer; text-decoration: none;
+    display: inline-block;
+  }
+  .theme button:hover, .back a:hover { background: #22304a; border-color: #4a5c80; }
+  .back { position: absolute; left: 12px; top: 12px; }
+
+  /* One place, on a click. The card is how a claim on the map traces back to the file. */
+  .place-card {
+    position: absolute; left: 12px; bottom: 60px; width: 320px; display: none;
+    background: #0c111d; border: 1px solid #263148; border-radius: 10px;
+    box-shadow: 0 10px 28px rgba(0,0,0,.45); padding: 10px 12px;
+  }
+  .place-card.on { display: block; }
+  .place-card h2 { margin: 0 0 2px; font-size: 15px; color: #fff; }
+  .place-card .where { margin: 0 0 8px; color: #8fa6c8; font-size: 12px; }
+  .place-card .row { display: flex; justify-content: space-between; gap: 14px; padding: 1px 0; }
+  .place-card .row span { color: #c2d0e6; }
+  .place-card .row b { font-weight: 600; color: #fff; font-variant-numeric: tabular-nums; }
+  .place-card .said { margin: 8px 0 0; color: #b8c8e0; font-style: italic; font-size: 12px;
+                      max-height: 90px; overflow-y: auto; scrollbar-width: thin; }
+  .place-card .fix { margin: 8px 0 0; color: #8fa6c8; font-size: 11px; }
+
+  /* The whole window refusing to pretend, when there is nothing verified to draw. */
+  .no-city {
+    position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);
+    max-width: 440px; background: #0c111d; border: 1px solid #33405c; border-radius: 12px;
+    padding: 16px 18px; color: #c2d0e6;
+  }
+  .no-city h1 { margin: 0 0 6px; font-size: 16px; color: #fff; }
+  .no-city code { display: block; background: #060a14; border: 1px solid #22304a;
+                  border-radius: 6px; padding: 5px 7px; margin: 8px 0 0; color: #d8e6ff; }
+</style>
+<div id="app"></div>

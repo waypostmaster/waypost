@@ -1,0 +1,366 @@
+<!doctype html>
+<script type="module" crossorigin src="./assets/valley-BBR8EO1p.js"></script>
+<link rel="modulepreload" crossorigin href="./assets/sun-kwrV6YYK.js">
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Frontier</title>
+<style>
+  html, body { margin: 0; height: 100%; background: #070a12; overscroll-behavior: none; }
+  #app { position: fixed; inset: 0; }
+  canvas { display: block; width: 100%; height: 100%; }
+
+  /* The HUD's colours are anchored, not palette-derived: contrast must not depend on the hour. */
+  .hud {
+    position: fixed; inset: 0;
+    font: 13px/1.45 ui-sans-serif, "Segoe UI", system-ui, sans-serif;
+    color: #eef3fb;
+    -webkit-font-smoothing: antialiased;
+  }
+  .card {
+    position: absolute;
+    background: #0c111d;
+    border: 1px solid #263148;
+    border-radius: 10px;
+    box-shadow: 0 10px 28px rgba(0,0,0,.45);
+    padding: 10px 12px;
+  }
+  .stock { top: 12px; left: 12px; width: 268px; }
+  .stock h1 { margin: 0 0 6px; font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: #8fa6c8; font-weight: 600; }
+
+  /* The dashboard: one window, major tabs across the top, subtabs under the open one, every
+     card behind a tab. Drag its grip to move the whole thing; ⧉ breaks the open card off into
+     the floating window it always was; double-click a floating card's grip to put it back. */
+  .dash { position: absolute; top: 8px; right: 8px; width: 344px; max-height: calc(100vh - 16px);
+          display: flex; flex-direction: column;
+          background: #0c111d; border: 1px solid #263148; border-radius: 12px;
+          box-shadow: 0 10px 28px rgba(0,0,0,.45); }
+  .dash-head { border-radius: 12px 12px 0 0; }
+  .dash.is-dragging { box-shadow: 0 18px 44px rgba(0,0,0,.6); border-color: #4d7ac4; }
+  .dash.is-folded { width: auto; min-width: 190px; }
+  .dash.is-folded .dash-tabs, .dash.is-folded .dash-sub, .dash.is-folded .dash-body { display: none; }
+  .dash.is-folded .dash-head { border-bottom: none; }
+  .dash-tabs { display: flex; gap: 2px; padding: 2px 8px 0; border-bottom: 1px solid #1d2637;
+               flex: none; }
+  .dash-sub { display: flex; align-items: center; gap: 2px; padding: 1px 6px 0;
+              border-bottom: 1px solid #1d2637; flex: none; min-height: 27px; }
+  .dash-sub .tab { font-size: 11px; padding: 4px 7px 5px; }
+  .dash-sub .tab.is-off { opacity: .45; }
+  .dash-pop { margin-left: auto; flex: none; font: 13px/1 ui-monospace, monospace; color: #9db1cf;
+              background: transparent; border: none; border-radius: 5px; padding: 3px 7px 4px;
+              cursor: pointer; }
+  .dash-pop:hover { color: #fff; background: #1b2436; }
+  .dash-body { overflow-y: auto; overscroll-behavior: contain; scrollbar-width: thin;
+               scrollbar-color: #33405c transparent; }
+  .dash-pane { display: none; }
+  .dash-pane.on { display: block; }
+  .dash-note { display: none; margin: 0; padding: 14px 12px; color: #8fa6c8; font-size: 12px; }
+  .dash-pane.is-quiet .dash-note { display: block; }
+  /* Behind its tab, a card is content rather than a window: no chrome, no grip of its own. */
+  .card.is-docked { position: relative; inset: auto; width: auto; transform: none; flex: none;
+                    border: none; border-radius: 0; box-shadow: none; background: transparent; }
+  .card.is-docked > .card-head { display: none; }
+  /* The stream colours live on the card titles, which are hidden behind tabs — so the subtabs
+     carry them instead, and the four streams stay tellable at a glance. */
+  .dash-sub .sub-feed-help.on  { color: #9de8b6; }
+  .dash-sub .sub-feed-agent.on { color: #9ecbff; }
+  .dash-sub .sub-feed-wish.on  { color: #dcb8ff; }
+  .dash-sub .sub-feed-you.on   { color: #ffd08a; }
+
+  /* a card you can move and fold */
+  .card { padding: 0; }
+  .card-head { display: flex; align-items: center; justify-content: space-between; gap: 8px;
+               padding: 7px 8px 7px 12px; cursor: grab; touch-action: none;
+               border-bottom: 1px solid #1d2637; user-select: none; }
+  .card.is-dragging .card-head { cursor: grabbing; }
+  .card.is-dragging { box-shadow: 0 18px 44px rgba(0,0,0,.6); border-color: #4d7ac4; }
+  .card-title { font-size: 11px; letter-spacing: .14em; text-transform: uppercase;
+                color: #9db1cf; font-weight: 600; }
+  .card-fold { font: 15px/1 ui-monospace, monospace; color: #9db1cf; background: transparent;
+               border: 1px solid #2a3549; border-radius: 5px; padding: 1px 7px 3px; cursor: pointer; }
+  .card-fold:hover { color: #fff; background: #1b2436; }
+  .card-body { padding: 10px 12px 12px; }
+  .card.is-folded { width: auto; min-width: 168px; }
+  .card.is-folded .card-body { display: none; }
+  .card.is-folded .card-head { border-bottom: none; }
+  button.quiet { background: transparent; border-color: #263148; color: #9db1cf; }
+  .row { display: flex; justify-content: space-between; gap: 14px; padding: 1px 0; }
+  .row b { font-weight: 600; font-variant-numeric: tabular-nums; color: #ffffff; }
+  .row span { color: #c2d0e6; }
+  .sep { height: 1px; background: #263148; margin: 7px 0; }
+
+  /* paging between settlements */
+  .towns { display: flex; align-items: center; gap: 8px; margin: 9px 0 2px;
+           border-top: 1px solid #263148; padding-top: 9px; }
+  .towns .town-name { flex: 1 1 auto; color: #fff; font-weight: 600; }
+  .towns .town-count { font-style: normal; color: #8fa6c8; font-size: 11px; }
+  button.pager { padding: 1px 9px 3px; font: 15px/1 ui-monospace, monospace; color: #cbd8ec; }
+  .town-why { margin: 0 0 2px; color: #8fa6c8; font-size: 12px; line-height: 1.4; }
+
+  /* Three questions, one card. The tab strip itself is the settler card's — same `.tabs` and
+     `button.tab` rules further down, so the two cards look like the same product rather than
+     two people's idea of a tab. Only what is different about this one is here: three tabs
+     sharing a narrower card, and panes that are short lists rather than a long record, so they
+     size to their contents instead of scrolling inside 22vh. */
+  .stock .tabs button { flex: 1 1 0; padding-left: 2px; padding-right: 2px; }
+  .stock .pane { display: none; max-height: none; overflow: visible; }
+  .stock .pane.on { display: block; }
+
+  .market { top: 12px; left: 50%; transform: translateX(-50%); width: 224px; }
+  .market .row b { min-width: 34px; text-align: right; }
+  .market .no-coin { opacity: .4; }
+  .nocoin { margin: 8px 0 0; color: #8fa6c8; font-size: 12px; line-height: 1.4; }
+  .market .trend { font-style: normal; font-size: 10px; margin-left: auto; margin-right: 6px; }
+  .market .trend.up { color: #6fd39a; }
+  .market .trend.down { color: #ff8f7a; }
+
+  .feed { top: 12px; right: 12px; width: 320px; }
+  /* Five streams, five windows, laid out down the right so they do not open in a pile. Each is
+     draggable and remembers where it was put; these are only the first positions. */
+  .feed-help  { top: 12px;  right: 344px; width: 300px; }
+  .feed-you   { top: 240px; right: 344px; width: 300px; }
+  .feed-wish  { top: 240px; right: 12px;  width: 320px; }
+  .feed-agent { top: 468px; right: 344px; width: 300px; }
+  .feed-help .card-title  { color: #9de8b6; }
+  .feed-agent .card-title { color: #9ecbff; }
+  .feed-wish .card-title  { color: #dcb8ff; }
+  .feed-you .card-title   { color: #ffd08a; }
+  .feed p.you { color: #ffd08a; }
+  .feed p { margin: 0 0 4px; color: #d6e1f2; }
+  .feed p .who { color: #ffd08a; font-weight: 600; }
+  .feed p { position: relative; padding-left: 10px; }
+  .feed p.stale { opacity: .78; }
+  .feed p .heat { position: absolute; left: 0; top: 3px; bottom: 3px; width: 3px;
+                  border-radius: 2px; background: #3a4a68; }
+  .feed p .heat.h2 { background: #55719e; }
+  .feed p .heat.h3 { background: #7f9ed0; }
+  .feed p .heat.h4 { background: #ffd08a; }
+  .feed p .again { font-style: normal; color: #8fa6c8; font-size: 11px; margin-left: 6px;
+                   background: #1b2436; border-radius: 8px; padding: 1px 6px; }
+  .feed p.help { color: #9de8b6; }
+  .feed p.agent { color: #9ecbff; }
+  .feed p.wish { color: #dcb8ff; }
+
+  .who-card { left: 12px; bottom: 12px; width: 328px;
+              max-height: 44vh;
+              scrollbar-width: thin; scrollbar-color: #33405c #0c111d; }
+  .who-card .card-body { max-height: calc(44vh - 46px); overflow-y: auto; overscroll-behavior: contain;
+                          scrollbar-width: thin; scrollbar-color: #33405c #0c111d; }
+  .who-card h2 { margin: 0 0 2px; font-size: 15px; color: #ffffff; }
+  .who-card .role { margin: 0 0 8px; color: #9fb3d1; font-size: 12px; }
+  .who-card .doing { margin: 0 0 8px; color: #ffe1b0; }
+  .bars { display: grid; grid-template-columns: 62px 1fr; gap: 4px 8px; align-items: center; margin-bottom: 9px; }
+  .bars .barrow { display: contents; }
+  .clock { display: flex; gap: 3px; margin: 2px 0 6px; }
+  .clock .tick { flex: 1; padding: 3px 0; border-radius: 4px; border: 1px solid #263149;
+    background: #141b2a; color: #8fa4c4; font: inherit; font-size: 11px; cursor: pointer; }
+  .clock .tick:hover { border-color: #46628f; color: #cfe0fb; }
+  .clock .tick.on { border-color: #6ea8ff; background: #1d2a44; color: #cfe0fb; }
+  /* The column names. Quiet, because they are furniture rather than news. */
+  .market .mkhead { color: #7d90ad; font-size: 10px; text-transform: uppercase; letter-spacing: 0.06em;
+    border-bottom: 1px solid #263149; padding-bottom: 2px; margin-bottom: 2px; }
+  .market .mkhead em, .market .mkhead b { font: inherit; font-weight: normal; color: inherit; }
+  /* Which way demand is going, beside what it is worth. Same shape as the price arrow and a
+     shade quieter, because it is the reading the settlement takes rather than a price paid. */
+  .market .pull { font-style: normal; font-size: 10px; margin-left: 5px; margin-right: 2px; opacity: 0.85; }
+  .market .pull.up { color: #ffb54d; }
+  .market .pull.down { color: #7fa8d8; }
+  .worth { font-style: normal; font-size: 11px; color: #8fa4c4; text-align: right; }
+  .worth.short { color: #ffb54d; }
+  .worth.glut { color: #6f8098; }
+  /* Two columns. One per row wasted half the card's width and made a settlement of a dozen
+     into a list you had to scroll. */
+  .folk { display: grid; grid-template-columns: 1fr 1fr; gap: 3px; }
+  /* Fixed geometry. The task label changes every few seconds and the name does not, so the chip
+     is sized once and the label is clipped inside it — otherwise the row reflows and jumps about
+     under the cursor every time somebody switches errand. */
+  .folk .who { display: grid; grid-template-columns: 1fr 44px; gap: 5px; min-width: 0; align-items: baseline;
+    padding: 3px 6px; border-radius: 4px; text-align: left;
+    border: 1px solid #263149; background: #141b2a; color: #cfe0fb; font: inherit; font-size: 11px; cursor: pointer; }
+  .folk .who span, .folk .who em { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .folk .who:hover { border-color: #46628f; background: #1a2334; }
+  .folk .who.on { border-color: #6ea8ff; background: #1d2a44; }
+  .folk .who em { font-style: normal; color: #7d90ad; font-size: 10px; }
+    /* A letter from whoever keeps this settler, set apart from what they then did. */
+    .told { border-left: 2px solid currentColor; padding-left: .5em; opacity: .95; }
+  .quiet-note { color: #6f8098; font-size: 11px; margin: 4px 0 0; }
+  .craft { display: grid; gap: 6px; margin: 6px 0 8px; }
+  .craft-head { display: flex; justify-content: space-between; align-items: baseline; }
+  .craft-head i { font-style: normal; color: #cfe0fb; font-size: 12px; }
+  .craft-head em { font-style: normal; color: #8fa4c4; font-size: 11px; }
+  .craft-items { color: #7d90ad; font-size: 10px; }
+  .craft-row.is-trade .craft-head i { color: #6ea8ff; }
+  .bar.good u { background: #8ad48a; }
+  .rank { display: grid; grid-template-columns: 22px 1fr auto; gap: 8px; align-items: baseline;
+    padding: 3px 0; border-bottom: 1px solid #1b2436; }
+  .rank i { font-style: normal; color: #6ea8ff; text-align: right; font-size: 11px; }
+  .rank span { color: #cfe0fb; font-size: 12px; }
+  .rank em { font-style: normal; color: #7d90ad; font-size: 10px; white-space: nowrap; }
+  .ballot { display: grid; grid-template-columns: 70px 1fr; gap: 8px; padding: 2px 0; }
+  .ballot i { font-style: normal; color: #8fa4c4; font-size: 11px; }
+  .ballot span { color: #b8cbe8; font-size: 11px; }
+  button.wide.quiet.on { border-color: #6ea8ff; color: #cfe0fb; }
+  .bars i { font-style: normal; color: #a8b9d4; font-size: 12px; }
+  .bar { height: 7px; border-radius: 4px; background: #1b2436; overflow: hidden; }
+  .bar u { display: block; height: 100%; background: #6ea8ff; }
+  .bar.warm u { background: #ffb54d; }
+  .bar.good u { background: #6fd39a; }
+  .bar.cheer u { background: #ffd76a; }
+  .bar.cheer.low u { background: #ff8f7a; }
+  .acts { display: flex; flex-wrap: wrap; gap: 6px; }
+  button {
+    font: inherit; color: #eef3fb; background: #182236; border: 1px solid #33405c;
+    border-radius: 7px; padding: 5px 10px; cursor: pointer;
+  }
+  button:hover { background: #22304a; border-color: #4a5c80; }
+  button[disabled] { opacity: .45; cursor: default; }
+  button.hot { background: #24406e; border-color: #4d7ac4; color: #ffffff; }
+  button.wide { width: 100%; margin-top: 9px; }
+  .row b.lit { color: #9ecbff; }
+
+  .building-card { right: 12px; bottom: 210px; width: 300px; }
+  .building-card h2 { margin: 0 0 2px; font-size: 15px; color: #fff; text-transform: capitalize; }
+  .uses { margin: 8px 0 6px; }
+  /* The rung a settler is on, under the goal it serves. */
+  .goal em.first { display: block; font-style: normal; color: #ffb08a; font-size: 11px; margin: 1px 0 2px; }
+
+  .use { display: grid; grid-template-columns: 96px 1fr; gap: 6px; margin-bottom: 3px; }
+  .use i { font-style: normal; color: #8fa6c8; font-size: 12px; }
+  .use span { color: #dbe6f6; }
+  .bar.good.low u { background: #ff8f7a; }
+
+  /* Every building at once. A workshop that has never been used gets the warning ink, because
+     that is the row this list exists to make impossible to miss. */
+  /* It had a width and no corner to hang from, so it opened at 0,0 underneath the settlement
+     card and was, for the whole of its life, a window on top of which another window sat. */
+  .works { top: 468px; right: 12px; width: 320px; }
+  .works-list { display: flex; flex-direction: column; gap: 2px; max-height: 220px; overflow-y: auto;
+                overscroll-behavior: contain; scrollbar-width: thin; }
+  .work-row { display: grid; grid-template-columns: 74px 1fr auto; gap: 8px; align-items: baseline;
+              padding: 2px 0; border-bottom: 1px solid #1a2436; }
+  .work-row:last-child { border-bottom: 0; }
+  .work-row i { font-style: normal; color: #8fa6c8; font-size: 12px; }
+  .work-who { color: #dbe6f6; font-size: 12px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .work-made { font-style: normal; color: #7f93b2; font-size: 11px; white-space: nowrap; }
+  .work-row.is-quiet i { color: #ffb08a; }
+  .work-row.is-quiet .work-made { color: #ff8f7a; }
+
+  .waiting { right: 12px; bottom: 12px; width: 356px; border-color: #4d7ac4; }
+  .waiting h1 { margin: 0 0 5px; font-size: 12px; color: #9ecbff; font-weight: 600; }
+  .waiting code { display: block; background: #060a14; border: 1px solid #22304a; border-radius: 6px;
+                  padding: 5px 7px; margin: 5px 0; color: #d8e6ff; font-size: 12px; word-break: break-all; }
+  .waiting p { margin: 0; color: #c2d0e6; }
+
+  /* scrollable history, in the cards and in the panel */
+  .scroll { overflow-y: auto; overscroll-behavior: contain; scrollbar-width: thin;
+            scrollbar-color: #33405c #0c111d; max-height: 34vh; padding-right: 4px; }
+  .scroll.short { max-height: 118px; }
+  .scroll::-webkit-scrollbar { width: 8px; }
+  .scroll::-webkit-scrollbar-thumb { background: #33405c; border-radius: 4px; }
+  /* No clipping here any more: the card renders exactly what it shows, so every text node in
+     it is painted where it says it is. */
+  .feed .scroll { max-height: none; overflow: visible; padding-right: 0; }
+  .feed .scroll p { margin: 0 0 4px; }
+  .tabs { display: flex; gap: 4px; margin: 10px 0 8px; border-bottom: 1px solid #263148; }
+  button.tab { border: none; background: transparent; border-radius: 0; padding: 5px 8px 6px;
+               color: #8fa6c8; font-size: 12px; border-bottom: 2px solid transparent; }
+  button.tab:hover { color: #dbe6f6; background: transparent; }
+  button.tab.on { color: #fff; border-bottom-color: #4d7ac4; }
+  .pane { max-height: 22vh; overflow-y: auto; overscroll-behavior: contain;
+          scrollbar-width: thin; scrollbar-color: #33405c #0c111d; }
+  .pane h4 { margin: 8px 0 4px; font-size: 11px; letter-spacing: .12em; text-transform: uppercase;
+             color: #8fa6c8; font-weight: 600; }
+  .pane h4:first-child { margin-top: 0; }
+  .quiet-note { margin: 0; color: #8fa6c8; }
+  .bloc { margin: 0 0 3px; color: #c9d6ea; }
+  .bloc b { color: #fff; }
+  .bloc em { font-style: normal; color: #8fa6c8; font-size: 11px; }
+  .bloc.same b { color: #9de8b6; }
+  .bloc.other b { color: #ffb2a8; }
+  .vote { margin: 0 0 3px; color: #c9d6ea; }
+  .vote em { font-style: normal; color: #7f93b4; font-size: 11px; }
+  .vote q { display: block; color: #9fb3d1; font-style: italic; margin-left: 10px; }
+  .vote.against { color: #e8c4bd; }
+  .who-card h3 { margin: 10px 0 5px; font-size: 11px; letter-spacing: .12em; text-transform: uppercase;
+                 color: #8fa6c8; font-weight: 600; }
+  .who-card .scroll p { margin: 0 0 3px; color: #c9d6ea; }
+  .who-card .scroll em { color: #a3b7d4; font-style: normal; }
+  .goals { margin-bottom: 4px; }
+  .goal { display: grid; grid-template-columns: 62px 1fr; gap: 4px 8px; align-items: start; margin-bottom: 6px; }
+  .goal i { font-style: normal; color: #8fa6c8; font-size: 11px; letter-spacing: .06em; padding-top: 1px; }
+  .goal span { display: block; color: #dbe6f6; margin-bottom: 3px; }
+  .goal .bar { height: 5px; }
+  .goal.short u { background: #6fd39a; }
+  .goal.medium u { background: #ffb54d; }
+  .goal.long u { background: #b98cff; }
+  .bonds { margin: 0 0 6px; color: #9de8b6; font-size: 12px; }
+  .bonds.has-rival { color: #ffb2a8; }
+
+  /* the wishes panel */
+  .lattice-panel { position: fixed; left: 50%; top: 50%; transform: translate(-50%, -50%);
+                   width: min(760px, 92vw); max-height: 86vh; overflow: hidden;
+                   display: flex; flex-direction: column;
+                   background: #0c111d; border: 1px solid #33405c; border-radius: 12px;
+                   box-shadow: 0 24px 60px rgba(0,0,0,.6); padding: 16px 18px;
+                   font: 13px/1.5 ui-sans-serif, "Segoe UI", system-ui, sans-serif; color: #eef3fb; }
+  .lattice-panel h1 { margin: 0 0 4px; font-size: 16px; color: #fff; }
+  .lattice-panel h3 { margin: 14px 0 6px; font-size: 11px; letter-spacing: .12em;
+                      text-transform: uppercase; color: #8fa6c8; }
+  .lead { margin: 0 0 10px; color: #b8c8e0; }
+  .panel-body { overflow-y: auto; overscroll-behavior: contain; flex: 1 1 auto; min-height: 0;
+                 scrollbar-width: thin; scrollbar-color: #33405c #0c111d; padding-right: 4px; }
+  .panel-body::-webkit-scrollbar { width: 8px; }
+  .panel-body::-webkit-scrollbar-thumb { background: #33405c; border-radius: 4px; }
+  .wish { display: flex; gap: 10px; align-items: flex-start; padding: 8px 6px;
+          border-top: 1px solid #1d2637; cursor: pointer; }
+  .wish:hover { background: #111a2b; }
+  .wish.is-carried b { color: #9de8b6; }
+  .wish em.built { color: #7fd8ff; }
+  .wish input.tick { margin-top: 3px; width: 16px; height: 16px; accent-color: #4d7ac4; cursor: pointer; }
+  .wish b { display: block; color: #fff; font-weight: 600; }
+  .wish q { display: block; color: #c2d0e6; font-style: italic; margin: 2px 0; }
+  .wish i { color: #8fa6c8; font-style: normal; font-size: 12px; }
+  .wish em { display: inline-block; margin-left: 8px; font-style: normal; font-size: 12px; color: #ffd08a; }
+  .wish em.won { color: #9de8b6; }
+  .empty { color: #8fa6c8; padding: 10px 0; }
+  .vote { margin-top: 6px; }
+  .rounds, .ballots { margin: 0; padding-left: 18px; color: #c9d6ea; }
+  .rounds li, .ballots li { margin-bottom: 3px; }
+  .rounds em.won, .outcome b { color: #9de8b6; font-style: normal; }
+  .outcome b.struck { color: #ffb2a8; }
+  .ballots q { color: #b8c8e0; font-style: italic; margin-left: 6px; }
+  .panel-acts { margin-top: 14px; }
+
+  /* the whole story */
+  .story { max-height: 62vh; }
+  .story .chapter { border-left: 2px solid #4d7ac4; padding: 2px 0 2px 12px; margin: 0 0 14px; }
+  .story .chapter h3 { margin: 0; font-size: 14px; text-transform: none; letter-spacing: 0;
+                       color: #fff; }
+  .story .chapter em { font-style: normal; color: #7f93b4; font-size: 11px; }
+  .story .chapter p { margin: 6px 0 0; color: #d6e1f2; line-height: 1.5; }
+  .story .entries-head { margin-top: 18px; }
+  .story .entry { margin: 0 0 3px; color: #c2d0e6; }
+  .story .entry em { font-style: normal; color: #6f829f; font-size: 11px; }
+  .story .entry.help { color: #9de8b6; }
+  .story .entry.agent { color: #9ecbff; }
+  .story .entry.wish { color: #dcb8ff; }
+  .story .entry.you { color: #ffd08a; }
+  .story .entry .again { color: #8fa6c8; font-size: 11px; margin-left: 6px; }
+
+  /* the chronicle */
+  .beat { left: 50%; bottom: 76px; transform: translateX(-50%); width: min(520px, 90vw);
+          border-color: #4d7ac4; box-shadow: 0 20px 50px rgba(0,0,0,.6); padding: 16px 18px 14px;
+          animation: beat-in .45s ease-out both; }
+  @keyframes beat-in { from { opacity: 0; transform: translate(-50%, 14px); }
+                       to   { opacity: 1; transform: translate(-50%, 0); } }
+  .beat .beat-mark { width: 34px; height: 2px; background: #4d7ac4; margin-bottom: 10px; }
+  .beat h2 { margin: 0 0 8px; font-size: 17px; color: #fff; letter-spacing: .01em; }
+  .beat .beat-body p { margin: 0 0 8px; color: #d6e1f2; line-height: 1.55; }
+  .beat .acts { margin-top: 12px; align-items: center; }
+  .beat .beat-more { font-style: normal; color: #7f93b4; font-size: 12px; margin-left: auto; }
+
+  .hint { position: absolute; left: 50%; transform: translateX(-50%); bottom: 12px;
+          color: #c2d0e6; background: #0c111d; border: 1px solid #263148; border-radius: 8px; padding: 6px 12px; }
+
+</style>
+<div id="app"></div>
