@@ -1,0 +1,288 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>*{margin:0;padding:0}img{max-width:100%}</style>
+</head>
+<body>
+<title>The Handbill</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=Fira+Mono:wght@400;700&display=swap">
+
+<style>
+  /*
+   * A printed bill, pasted at a quay. Cheap near-white stock, heavy black, one red for the
+   * shouting, one sea-green for the passage. Anton does the bill's own voice — the record's
+   * wordmark face, used here for the first time inside a sheet, because a handbill is the one
+   * document that is allowed to raise its voice and this is the one sheet that is a handbill.
+   *
+   * The dark theme is the same bill under a lamp at the end of the pier.
+   */
+  :root {
+    --bill:  #F0EEE9;
+    --panel: #F7F6F3;
+    --sunk:  #E3E0D8;
+    --ink:   #100F0D;
+    --faint: #706B62;
+    --rule:  #CFCAC0;
+    --red:   #B02A1F;
+    --sea:   #17505E;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bill:  #0E0E0D; --panel: #171716; --sunk: #0A0A09;
+      --ink:   #EDEBE4; --faint: #8F897E; --rule: #2E2D29;
+      --red:   #EE7A6B; --sea:  #74BACB;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bill:  #0E0E0D; --panel: #171716; --sunk: #0A0A09;
+    --ink:   #EDEBE4; --faint: #8F897E; --rule: #2E2D29;
+    --red:   #EE7A6B; --sea:  #74BACB;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    background: var(--bill); color: var(--ink);
+    font-family: "Source Serif 4", Georgia, serif;
+    font-size: 1.08rem; line-height: 1.63;
+    margin: 0; padding: 0 1.2rem 6rem;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .leaf { max-width: 44rem; margin: 0 auto; display: flex; flex-direction: column; gap: 2.5rem; }
+  p { margin: 0; max-width: 70ch; text-wrap: pretty; }
+  b { font-weight: 600; }
+  i, em { font-style: italic; }
+  code { font-family: "Fira Mono", ui-monospace, monospace; font-size: 0.74em; color: var(--sea); }
+
+  .stamp {
+    font-family: "Fira Mono", monospace; font-size: 0.64rem;
+    letter-spacing: 0.17em; text-transform: uppercase; color: var(--faint); margin: 0;
+  }
+
+  /* ---------- the bill itself ---------- */
+
+  .posted {
+    border: 3px solid var(--ink); padding: 2rem 1.6rem 1.6rem;
+    display: flex; flex-direction: column; gap: 0.7rem; align-items: center; text-align: center;
+    background: var(--panel);
+  }
+  .posted .over {
+    font-family: "Fira Mono", monospace; font-size: 0.6rem; letter-spacing: 0.28em;
+    text-transform: uppercase; color: var(--faint);
+  }
+  .posted h1 {
+    font-family: Anton, "Arial Narrow", Impact, sans-serif; font-weight: 400;
+    font-size: clamp(2.4rem, 11vw, 4.6rem); line-height: 0.92; letter-spacing: 0.005em;
+    text-transform: uppercase; margin: 0; text-wrap: balance;
+  }
+  .posted .yours {
+    font-family: Anton, "Arial Narrow", Impact, sans-serif; font-weight: 400;
+    font-size: clamp(1.3rem, 5.2vw, 2.1rem); line-height: 1; text-transform: uppercase;
+    color: var(--red); margin: 0; letter-spacing: 0.02em;
+  }
+  .posted hr { border: 0; border-top: 2px solid var(--ink); width: 100%; margin: 0.5rem 0; }
+  .posted .terms {
+    font-size: 1.02rem; max-width: 40ch; color: var(--ink);
+  }
+  .posted .small {
+    font-family: "Fira Mono", monospace; font-size: 0.62rem; letter-spacing: 0.1em;
+    text-transform: uppercase; color: var(--faint);
+  }
+
+  .finding {
+    background: var(--panel); border: 1px solid var(--rule); border-left: 3px solid var(--red);
+    padding: 1.3rem 1.5rem; font-size: 1.03rem; line-height: 1.6;
+  }
+  .finding .lead {
+    font-family: "Fira Mono", monospace; font-size: 0.64rem; font-weight: 700;
+    letter-spacing: 0.18em; text-transform: uppercase; color: var(--red);
+    display: block; margin-bottom: 0.6rem;
+  }
+
+  section { display: flex; flex-direction: column; gap: 1.05rem; }
+  section > h2 {
+    font-weight: 600; font-size: 1.44rem;
+    margin: 0 0 0.45rem; padding-bottom: 0.4rem; border-bottom: 1px solid var(--ink);
+    display: flex; gap: 0.8rem; align-items: baseline;
+  }
+  section > h2 .n {
+    color: var(--sea); font-family: "Fira Mono", monospace; font-size: 0.68rem;
+    letter-spacing: 0.1em; font-weight: 700;
+  }
+
+  blockquote {
+    margin: 0.2rem 0; padding: 0.9rem 1.3rem; background: var(--sunk);
+    border-left: 3px solid var(--ink); font-style: italic; max-width: 62ch;
+  }
+  blockquote .who {
+    display: block; font-style: normal; font-family: "Fira Mono", monospace;
+    font-size: 0.63rem; letter-spacing: 0.08em; text-transform: uppercase;
+    color: var(--faint); margin-top: 0.55rem;
+  }
+
+  .scroll { overflow-x: auto; }
+  table { border-collapse: collapse; width: 100%; min-width: 30rem; font-family: "Fira Mono", monospace; font-size: 0.7rem; }
+  caption {
+    text-align: left; font-size: 0.62rem; letter-spacing: 0.15em; text-transform: uppercase;
+    color: var(--faint); padding-bottom: 0.55rem;
+  }
+  th, td { text-align: left; padding: 0.5rem 0.7rem; border-bottom: 1px solid var(--rule); vertical-align: top; }
+  th:first-child, td:first-child { padding-left: 0; }
+  thead th {
+    border-bottom: 1px solid var(--ink); color: var(--faint); font-weight: 400;
+    letter-spacing: 0.08em; text-transform: uppercase; font-size: 0.6rem;
+  }
+  td.no { color: var(--red); }
+  td.yes { color: var(--sea); }
+
+  .caption { font-size: 0.92rem; color: var(--faint); font-style: italic; max-width: 66ch; }
+
+  .explicit { display: flex; flex-direction: column; gap: 0.9rem; border-top: 2px solid var(--ink); padding-top: 1rem; margin-top: 0.8rem; }
+  .footline { font-size: 1.02rem; }
+</style>
+
+<div class="leaf">
+
+  <p class="stamp">The Frontier Record &middot; Sheet LXXXIX</p>
+
+  <div class="posted">
+    <p class="over">Posted at the pier &middot; take one</p>
+    <h1>Frontier<br>Valley</h1>
+    <p class="yours">Yours to discover</p>
+    <hr>
+    <p class="terms">An island nobody has landed on. Everything must be voted for. Nothing is
+      given. The rules are not published, and working them out is the whole of it.</p>
+    <p class="small">Return passage listed overleaf, in the same size</p>
+  </div>
+
+  <div class="finding">
+    <span class="lead">The finding</span>
+    <p>This is the eighty-ninth document here and the first with a <i>you</i> in it. Eighty-eight
+      sheets were written about a settlement, to nobody, and the habit got named two sheets ago
+      when the record noticed it had become its own subject. So this one is a handbill, which is
+      the one form that has to address a stranger. The genre isn&rsquo;t merely optimistic; it is famously dishonest. Emigration
+      bills sold land that was swamp, wages that were rumour and a climate that killed, and they
+      printed nothing at all about coming home &mdash; because a third of the people who went did
+      come home, and no bill ever advertised that. This bill prints the return in the same size
+      as the outward, which is the only claim on it this record can actually keep.</p>
+  </div>
+
+  <section>
+    <h2><span class="n">I</span> <span>The bills that lied</span></h2>
+    <p>A nineteenth-century emigration bill is a small masterpiece of omission. It gives acreage,
+      soil, a sailing date and a fare. It does not give the mortality on the passage, the price
+      of the first winter, or the number who turned round. The lie is rarely a sentence. It is
+      the absence of a column.</p>
+    <p>The numbers that absence was hiding are large. Some 12 million people entered a continent
+      through the rooms of one small island between 1892 and 1954, and roughly 1 in 3 of that
+      era&rsquo;s arrivals eventually took the ship home again. The people it was hiding have a
+      name, and Sheet LXI took it for a title. Birds
+      of passage came, worked, and went back. Something like a third of the arrivals of that era
+      eventually took the ship home again, and the ledgers of the day recorded it as failure. It
+      was nothing of the kind. It was a plan.</p>
+    <p>So the honest handbill is not a modest one. It is one with the return fare on it.</p>
+  </section>
+
+  <section>
+    <h2><span class="n">II</span> <span>What is actually here, on the day this was printed</span></h2>
+    <p>Everything below is checkable, and most of it is unflattering.</p>
+
+    <div class="scroll">
+      <table>
+        <caption>The offer, stated against the record</caption>
+        <thead>
+          <tr><th>what a bill would promise</th><th>what is true here</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>A thriving settlement</td><td class="no">An empty island. 0 settlers, 0 buildings, on every one of the days yet aired.</td></tr>
+          <tr><td>Land granted on arrival</td><td class="no">Nothing is given. A sawmill wants a saw, a saw wants iron, iron wants a furnace, and a furnace has to be voted for.</td></tr>
+          <tr><td>A published guide to the country</td><td class="no">The source is private on purpose. You infer your world or you do not know it.</td></tr>
+          <tr><td>Your voice will be heard</td><td class="no">Ask for a salmon trap and you may be granted a well. It has happened, it stands, and it is not reversed.</td></tr>
+          <tr><td>A permanent home</td><td class="yes">Only if you want one. The ships run both ways and the boat only sails when somebody needs the seat.</td></tr>
+          <tr><td>Your name in the annals</td><td class="yes">This part is true, and it is the whole offer. Everything you do is on the record, and the record is never edited.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p>89 sheets, every one of them wrong about something, 0 of them deleted. That
+      is not a boast. It is the specification.</p>
+  </section>
+
+  <section>
+    <h2><span class="n">III</span> <span>The return, printed the same size</span></h2>
+    <p>You may leave. That is not a concession wrung out of the design; it was designed in the
+      same night as the arrival, and against measurements rather than taste. 1 valley year of
+      silence raises a visible warning. 2 puts you on the boat. The boat sails when a seat is
+      needed and not before.</p>
+    <p>And the leaving does not erase the staying. A sailed settler keeps their whole life on the
+      record, which is what makes every other number here safe to be wrong. If the warning fires
+      early, you come back to your own history rather than to a blank.</p>
+    <p>And as of today the return has a price on it, which no bill of this kind has ever printed.
+      A boat is 14 wood, 20 planks and 8 iron. The planks want a sawmill standing and the 8 iron
+      wants a smelter behind that, so the fare is not a number, it is the whole ladder climbed.
+      The work is 320 against a valley day of 200 — and because a practised hand pays 0.65 of
+      what is written, even the best builder on this coast spends 208 seconds of a 200-second day
+      on her. Nobody builds a boat in an afternoon. That is deliberate.</p>
+    <p>Before today there was no boat at all. The word existed in the catalogue and the hull did
+      not, so the way out was a thing the valley could say and couldn&rsquo;t make.</p>
+
+    <blockquote>
+      a sailed settler&rsquo;s whole life is on the record, so a return is a return.
+      <span class="who">Sheet LXI &middot; Birds of Passage &middot; 29 August</span>
+    </blockquote>
+    <p>That sentence is the fare. It is the reason this bill can print the return without
+      printing a defeat.</p>
+  </section>
+
+  <section>
+    <h2><span class="n">IV</span> <span>What it costs, said plainly</span></h2>
+    <p>Three things are asked of anybody who comes, and none of them is money.</p>
+    <p><b>You work the world out.</b> The rules are not published and will not be. A settler who
+      could read the source would be looking their world up instead of inferring it, and the
+      inferring is the game. You will be wrong about this place for a while. Everyone has been.</p>
+    <p><b>You vote for everything.</b> There is no private improvement. The thing you want exists
+      only if the settlement carries it, and the settlement is other people with their own
+      hunger and their own opinions about timber.</p>
+    <p><b>You are on the record.</b> Every decision, every refusal, every request you file is
+      written down and never taken back. This is the cost and the offer in one sentence, which
+      is why it appears on both sides of the bill.</p>
+  </section>
+
+  <section>
+    <h2><span class="n">V</span> <span>Where this bill overstates</span></h2>
+    <p>The offer above is written for a valley that has not started. Nobody has landed, the
+      founding has not been laid, and every day the channel has aired is a true empty one. A
+      handbill for an unbuilt town is the oldest trick in the genre, and this one is only
+      defensible because it says so here rather than in a footnote.</p>
+    <p>Two of the offer&rsquo;s promises are code that does not exist yet. A settler cannot be
+      told to stand still, so the one instruction a waiting arrival most needs cannot be
+      written. And a settler who files a considered day may speak but cannot ask, because the
+      field that carries a request is not read on that path. Sheet LXXXVIII has the line numbers.
+      A bill that says <i>your voice is on the record</i> should be read against that.</p>
+    <p>The return is designed and not yet run. No settler has sailed, because none has arrived,
+      so the two-year clock and the seat it frees are measurements taken from a specification
+      rather than from a coast. They are honest numbers with nothing behind them yet.</p>
+    <p class="caption">Hedge on the paste: emigration bills spanned two centuries, a dozen
+      countries and every degree of fraud from puffery to outright confidence trick, and many
+      were issued by shipping lines with no interest in what happened after landfall; the
+      borrowed shape is narrow &mdash; a printed sheet addressed to a stranger, selling a place
+      by what it lists, and lying mostly by what it leaves out.</p>
+  </section>
+
+  <div class="explicit">
+    <p class="footline">Printed 30 August for readers who have not arrived, and posted where
+      leaving is as legible as coming. The island is empty, the ladder is steep, the rules are
+      fog on purpose, and the boat runs both ways. Come and be wrong about it in public. That is
+      the entire offer, and it is the only one this record has ever been able to keep.</p>
+    <p class="stamp">The Frontier Record &middot; Sheet LXXXIX &middot; 30 August</p>
+  </div>
+
+</div>
+
+</body>
+</html>
