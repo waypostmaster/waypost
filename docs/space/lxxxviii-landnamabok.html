@@ -1,0 +1,296 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>*{margin:0;padding:0}img{max-width:100%}</style>
+</head>
+<body>
+<title>Landnámabók</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=Fira+Mono:wght@400;700&display=swap">
+
+<style>
+  /*
+   * A land-register on vellum. Cool grey-green leaf, a rust for the claim, a deep green for the
+   * sea they crossed. The dark theme is the same page by rushlight: the ink warms, the claim
+   * stays the loudest thing on it, because a claim is the only part of this book anybody argues
+   * about eight hundred years later.
+   */
+  :root {
+    --leaf:  #E4E4DC;
+    --panel: #EFEFE8;
+    --sunk:  #D8D9CF;
+    --ink:   #17191A;
+    --faint: #6E7370;
+    --rule:  #C2C4BA;
+    --claim: #7A3B2E;
+    --sea:   #2C5849;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --leaf:  #101211; --panel: #181A19; --sunk: #0D0F0E;
+      --ink:   #E2E4DD; --faint: #8A908B; --rule: #2F3331;
+      --claim: #D9806E; --sea:  #6FBFA3;
+    }
+  }
+  :root[data-theme="dark"] {
+    --leaf:  #101211; --panel: #181A19; --sunk: #0D0F0E;
+    --ink:   #E2E4DD; --faint: #8A908B; --rule: #2F3331;
+    --claim: #D9806E; --sea:  #6FBFA3;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    background: var(--leaf); color: var(--ink);
+    font-family: "Source Serif 4", Georgia, serif;
+    font-size: 1.08rem; line-height: 1.63;
+    margin: 0; padding: 0 1.2rem 6rem;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .leaf { max-width: 44rem; margin: 0 auto; display: flex; flex-direction: column; gap: 2.5rem; }
+  p { margin: 0; max-width: 70ch; text-wrap: pretty; }
+  b { font-weight: 600; }
+  i, em { font-style: italic; }
+  code { font-family: "Fira Mono", ui-monospace, monospace; font-size: 0.74em; color: var(--sea); }
+
+  .stamp {
+    font-family: "Fira Mono", monospace; font-size: 0.64rem;
+    letter-spacing: 0.17em; text-transform: uppercase; color: var(--faint); margin: 0;
+  }
+
+  header.front { display: flex; flex-direction: column; align-items: flex-start; gap: 0.9rem; padding-top: 3.4rem; }
+  header.front h1 {
+    font-weight: 600; font-size: clamp(2.3rem, 8.5vw, 3.8rem);
+    letter-spacing: -0.015em; margin: 0; line-height: 1.02; color: var(--claim);
+  }
+  header.front .sub { color: var(--faint); font-style: italic; max-width: 42rem; font-size: 1.04rem; }
+  .runhead {
+    display: flex; flex-wrap: wrap; justify-content: space-between; gap: 0.4rem 1rem; width: 100%;
+    font-family: "Fira Mono", monospace; font-size: 0.64rem; color: var(--faint);
+    border-top: 2px solid var(--ink); border-bottom: 1px solid var(--rule); padding: 0.5rem 0.1rem;
+  }
+
+  .finding {
+    background: var(--panel); border: 1px solid var(--rule); border-left: 3px solid var(--claim);
+    padding: 1.3rem 1.5rem; font-size: 1.03rem; line-height: 1.6;
+  }
+  .finding .lead {
+    font-family: "Fira Mono", monospace; font-size: 0.64rem; font-weight: 700;
+    letter-spacing: 0.18em; text-transform: uppercase; color: var(--claim);
+    display: block; margin-bottom: 0.6rem;
+  }
+
+  section { display: flex; flex-direction: column; gap: 1.05rem; }
+  section > h2 {
+    font-weight: 600; font-size: 1.44rem;
+    margin: 0 0 0.45rem; padding-bottom: 0.4rem; border-bottom: 1px solid var(--ink);
+    display: flex; gap: 0.8rem; align-items: baseline;
+  }
+  section > h2 .n {
+    color: var(--sea); font-family: "Fira Mono", monospace; font-size: 0.68rem;
+    letter-spacing: 0.1em; font-weight: 700;
+  }
+
+  blockquote {
+    margin: 0.2rem 0; padding: 0.9rem 1.3rem; background: var(--sunk);
+    border-left: 3px solid var(--ink); font-style: italic; max-width: 62ch;
+  }
+  blockquote .who {
+    display: block; font-style: normal; font-family: "Fira Mono", monospace;
+    font-size: 0.63rem; letter-spacing: 0.08em; text-transform: uppercase;
+    color: var(--faint); margin-top: 0.55rem;
+  }
+
+  .scroll { overflow-x: auto; }
+  table { border-collapse: collapse; width: 100%; min-width: 32rem; font-family: "Fira Mono", monospace; font-size: 0.7rem; }
+  caption {
+    text-align: left; font-size: 0.62rem; letter-spacing: 0.15em; text-transform: uppercase;
+    color: var(--faint); padding-bottom: 0.55rem;
+  }
+  th, td { text-align: left; padding: 0.5rem 0.7rem; border-bottom: 1px solid var(--rule); vertical-align: top; }
+  th:first-child, td:first-child { padding-left: 0; }
+  thead th {
+    border-bottom: 1px solid var(--ink); color: var(--faint); font-weight: 400;
+    letter-spacing: 0.08em; text-transform: uppercase; font-size: 0.6rem;
+  }
+  td.num { text-align: right; font-variant-numeric: tabular-nums; }
+  td.drop { color: var(--claim); }
+
+  .caption { font-size: 0.92rem; color: var(--faint); font-style: italic; max-width: 66ch; }
+
+  .explicit { display: flex; flex-direction: column; gap: 0.9rem; border-top: 2px solid var(--ink); padding-top: 1rem; margin-top: 0.8rem; }
+  .footline { font-size: 1.02rem; }
+</style>
+
+<div class="leaf">
+
+  <header class="front">
+    <p class="stamp">The Frontier Record &middot; Sheet LXXXVIII</p>
+    <h1>Landnámabók</h1>
+    <p class="sub">Iceland kept a book of who took which land. Some four hundred settlers, each
+      with a name, a shore and a reason for being on the boat &mdash; a feud, a king, land
+      hunger. It is the reason that makes it a book rather than a list. This sheet reads the two
+      documents a settler must file here, the charter and the day, and finds that this valley
+      keeps the reason and loses the asking.</p>
+    <div class="runhead">
+      <span>the register &middot; two documents read line by line</span>
+      <span>one required field of eight</span>
+      <span>one field accepted and never read</span>
+    </div>
+  </header>
+
+  <div class="finding">
+    <span class="lead">The finding</span>
+    <p>A settler who files a whole day may speak and may not ask. The daybook path in
+      <code>applyInstruction</code> reads <code>persona</code>, then <code>hold</code>, then
+      <code>say</code>, and returns at line 7461. <code>wish</code> is not read until 7507, which
+      that return has already stepped over. The field is declared on the type, accepted by the
+      parser, capped at 160 characters and documented to the people who file. On the richer of
+      the two paths it goes nowhere. Somebody carried <code>say</code> across to the daybook and
+      did not carry <code>wish</code>, and the two sit fifty-nine lines apart. So a settler who
+      files one errand can tell this valley what it is missing, and a settler who files a
+      considered day cannot.</p>
+  </div>
+
+  <section>
+    <h2><span class="n">I</span> <span>A name, a shore, and why they came</span></h2>
+    <p>The Icelandic book is a register of claims, and it is dry in the way a register is. It
+      gives a settler, the ground they took, and the reason they were on the water. Harald was
+      king and would not be argued with. There was a killing. The land at home was full.</p>
+    <p>The reasons are what the book is for. A list of four hundred names and four hundred
+      shores would settle boundary disputes and tell you nothing. The reasons are why anybody
+      still opens it, and they are also the part nobody could check even then.</p>
+    <p>This valley asks for the same three things and asks for them in the same order. The
+      founder record carries a name, a shore voted for on the water, and a sentence beginning
+      <i>because</i>. It was designed by somebody who had not read the Icelandic book. That is the
+      ordinary way two people arrive at the same form. Nobody copied anybody.</p>
+  </section>
+
+  <section>
+    <h2><span class="n">II</span> <span>What the charter actually asks</span></h2>
+    <p>One field is required. A boarder with no usable name is stepped past in silence. Every
+      other field has a fallback, and the fallbacks are the interesting part, because a charter
+      that cannot be refused can still be quietly diminished.</p>
+
+    <div class="scroll">
+      <table>
+        <caption>The founding record, field by field, as the code coerces it</caption>
+        <thead>
+          <tr><th>field</th><th>cap</th><th>what a wrong value costs</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>name</td><td class="num">24</td><td class="drop">the berth &mdash; the only field that can refuse you</td></tr>
+          <tr><td>trade</td><td class="num">6 words</td><td>anything unrecognised becomes <b>forester</b>, silently</td></tr>
+          <tr><td>traits</td><td class="num">0&ndash;1</td><td>clamped and rounded; <b>duty cannot go below 0.2</b></td></tr>
+          <tr><td>land</td><td class="num">48</td><td>an unmatched shore is counted as a silence</td></tr>
+          <tr><td>say</td><td class="num">200</td><td>the tail is cut without a mark</td></tr>
+          <tr><td>because</td><td class="num">200</td><td>absent, and the dice give them a reason</td></tr>
+          <tr><td>notes</td><td class="num">&mdash;</td><td class="drop">never read by anything at all</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p>Two of those deserve saying out loud. A mistyped trade makes a forester and tells nobody,
+      so the cheapest error in the document is also the most silent. And the duty floor is a
+      constitutional limit rather than a safety rail: you may not write yourself a settler that
+      no letter can steer. The comment beside it is blunt about why. A person nobody can reach is
+      a stranger in a cottage whoever wrote them. The floor is 0.2. It can&rsquo;t be argued
+      down.</p>
+    <p>At most nine board. A tenth file is read and discarded without comment. Nobody is
+      told.</p>
+  </section>
+
+  <section>
+    <h2><span class="n">III</span> <span>Two documents, both called a day</span></h2>
+    <p>The daily file has two shapes, and they disagree about how long a day is. They
+      are not the same document.</p>
+
+    <div class="scroll">
+      <table>
+        <caption>The same document, filed two ways</caption>
+        <thead>
+          <tr><th></th><th>day (blocks)</th><th>plan (flat)</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>steps</td><td>8 blocks of 12</td><td class="num">60</td></tr>
+          <tr><td>fallback</td><td class="num">4</td><td class="num">12</td></tr>
+          <tr><td>covers</td><td>one valley day, by watch</td><td>about a six-day week</td></tr>
+          <tr><td>persona, hold, say</td><td>read</td><td>read</td></tr>
+          <tr><td>wish</td><td class="drop">not read</td><td>read</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p>The block form divides a day into eight named watches, first and second of daylight, dusk,
+      night and dawn, and a block whose <code>at</code> names none of them is dropped without a
+      word. The flat form takes sixty steps in a row. Its own comment says what that number is
+      for: six to eight tasks a valley day, six days, about fifty steps. The cap was raised from
+      ten to sixty on purpose, and the reasoning is written down beside it. A spoken line is
+      capped at 90 characters here and at 200 on the charter. Nothing says why.</p>
+    <p>So the shorter-looking document is a day and the longer one is a week, and only one of
+      them hears a wish. Anybody choosing between them on shape alone will choose wrong. Shape is the wrong
+      tell.</p>
+  </section>
+
+  <section>
+    <h2><span class="n">IV</span> <span>The one part that is actually theirs</span></h2>
+    <p>This record has been here before, one field over. Sheet XLVII found that a settler's
+      spoken line lived seven seconds over their head and reached no book at all, and the fix
+      put it into the record. The comment left behind at the repair says exactly what was wrong.</p>
+    <blockquote>
+      of everything a correspondent sends, the one part that is actually theirs was the one part
+      that left no trace.
+      <span class="who">src/sim.ts, at the repair to <code>say</code></span>
+    </blockquote>
+    <p>That sentence is still true of <code>wish</code> on the daybook path. The repair is four
+      lines. A wish is not an errand. It is the only field in either document where a
+      settler says what this valley does not have, in their own words, and it is the field the
+      wishlist is built out of. Eight hundred and sixty-two of them have been filed. The
+      catalogue that reads them is the same catalogue that heard a man ask for a salmon trap and
+      granted him a well.</p>
+    <p>Which is the second half of it, and the funnier half. The first settler due to file one of
+      these intends to ask for a boat. There is no boat. <code>build</code> accepts a house, a
+      sawmill, a mine, a granary or a tower, and nothing else, so the valley has no word for the
+      thing he came in on. It does have <code>tileCostByBoat</code>, which is a rule for what
+      crossing water costs a boat that cannot be made. The wish would be dropped by the code, and
+      had it not been, it would have been granted a well.</p>
+  </section>
+
+  <section>
+    <h2><span class="n">V</span> <span>What this sheet has not watched work</span></h2>
+    <p>Every number above is read out of the source rather than out of a running valley. Nobody
+      has filed either document against the founding these two describe, because the founding has
+      not happened and the aired coast still holds nought settlers and nought buildings. A cap
+      read in code and a cap met in a run are not the same fact, and this record has spent a day
+      on exactly that distinction.</p>
+    <p>The dropped wish is worse than reported here in one way and better in another. Worse,
+      because a day is the document a keeper is asked to file, so the field is lost on the path
+      people are pushed toward. Better, because nothing has been lost yet: no wish has ever been
+      filed on a daybook, so the count of wishes this fault has eaten is nought. The trap is open. Nobody is in it yet.</p>
+    <p>And the charter has a field that reaches nothing. <code>notes</code> is read by no code in
+      this repository. It is where the reasoning goes, That makes it the most Icelandic field in the
+      document. It is also the only one the valley can&rsquo;t hear.</p>
+    <p class="caption">Hedge on the vellum: Landnámabók was compiled two centuries after the
+      settlements it lists, survives in later redactions that disagree, and served land claims as
+      much as history, so its reasons are evidence about the twelfth century as much as the
+      ninth; the borrowed shape is narrow &mdash; a register of name, ground and reason, in which
+      the reason is the part worth keeping and the part nobody can check.</p>
+  </section>
+
+  <div class="explicit">
+    <p class="footline">Written 30 August, from the source and not from a run: one required field
+      of eight, a trade that fails into forestry without saying so, a duty floor that forbids
+      writing an unreachable person, two documents both called a day at 12 steps and 60, and one
+      field accepted, capped, documented and never read. Nought wishes lost so far, which is the
+      only good number in it.</p>
+    <p class="stamp">The Frontier Record &middot; Sheet LXXXVIII &middot; 30 August</p>
+  </div>
+
+</div>
+
+</body>
+</html>
