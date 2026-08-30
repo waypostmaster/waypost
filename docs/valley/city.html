@@ -1,6 +1,6 @@
 <!doctype html>
-<script type="module" crossorigin src="./assets/city-CrpYYjYE.js"></script>
-<link rel="modulepreload" crossorigin href="./assets/sun-kwrV6YYK.js">
+<script type="module" crossorigin src="./assets/city-CUmxhcPq.js"></script>
+<link rel="modulepreload" crossorigin href="./assets/sun-BDBls8uh.js">
 
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
@@ -57,6 +57,11 @@
   .legend .lg-stored { background: #9b7448; }
   .legend .lg-new    { background: linear-gradient(135deg, #ffd98a 42%, #1b2436 42%); }
   .legend .lg-quiet  { background: linear-gradient(90deg, #151b29, #d8c69b); }
+  /* Sealed: quiet's ramp behind the bar — the writing still weighs, the door is barred. */
+  .legend .lg-sealed { background: linear-gradient(90deg, #151b29, #d8c69b);
+                       position: relative; overflow: hidden; }
+  .legend .lg-sealed::after { content: ''; position: absolute; inset: 4px -2px auto -2px;
+                       height: 3px; background: #6b4a2c; transform: rotate(-18deg); }
   /* The presence chip: a pale figure on ground, ringed — the ping, held still. */
   .legend .lg-soul   { background: radial-gradient(circle at 50% 42%, #efe3c8 0 3px, #24304a 3px 4.5px, #7fd6a0 4.5px 5.5px, #1b2436 5.5px); border-radius: 50%; }
   .legend .lg-note { margin-top: 6px; color: #8fa6c8; font-size: 11px; line-height: 1.4; }
