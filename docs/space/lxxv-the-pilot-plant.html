@@ -1,0 +1,275 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>*{margin:0;padding:0}img{max-width:100%}</style>
+</head>
+<body>
+<title>The Pilot Plant</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400&family=Fira+Mono:wght@400;700&display=swap">
+
+<style>
+  /*
+   * A works between lab and factory. The light theme is galvanised pipe and whitewashed brick
+   * under a skylight; the dark theme is the same floor on the night shift, gauge lamps lit.
+   */
+  :root {
+    --wash:   #EFF0ED;
+    --wash2:  #E4E6E1;
+    --panel:  #F5F6F3;
+    --ink:    #1A1C1A;
+    --faint:  #6F746E;
+    --rule:   #C3C8C1;
+    --pipe:   #4E5D66;
+    --valve:  #9A4A22;
+    --gauge:  #56693F;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --wash:  #0E1010; --wash2: #151818; --panel: #171B1B;
+      --ink:   #E3E5E1; --faint: #8F948E; --rule:  #2F3535;
+      --pipe:  #9FB6C2; --valve: #DB8352; --gauge: #9DC07A;
+    }
+  }
+  :root[data-theme="dark"] {
+    --wash:  #0E1010; --wash2: #151818; --panel: #171B1B;
+    --ink:   #E3E5E1; --faint: #8F948E; --rule:  #2F3535;
+    --pipe:  #9FB6C2; --valve: #DB8352; --gauge: #9DC07A;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    background: var(--wash); color: var(--ink);
+    font-family: "PT Serif", Georgia, serif;
+    font-size: 1.07rem; line-height: 1.64;
+    margin: 0; padding: 0 1.2rem 6rem;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .leaf { max-width: 44rem; margin: 0 auto; display: flex; flex-direction: column; gap: 2.5rem; }
+  p { margin: 0; max-width: 70ch; text-wrap: pretty; }
+  b { font-weight: 700; }
+  i, em { font-style: italic; }
+  a { color: var(--valve); }
+  a:focus-visible { outline: 2px solid var(--valve); outline-offset: 3px; }
+  code { font-family: "Fira Mono", ui-monospace, monospace; font-size: 0.74em; color: var(--pipe); }
+
+  .stamp {
+    font-family: "Fira Mono", monospace; font-size: 0.64rem;
+    letter-spacing: 0.17em; text-transform: uppercase; color: var(--faint); margin: 0;
+  }
+
+  header.front { display: flex; flex-direction: column; align-items: flex-start; gap: 0.9rem; padding-top: 3.4rem; }
+  header.front h1 {
+    font-weight: 700; font-size: clamp(2.4rem, 9vw, 4rem);
+    letter-spacing: -0.01em; margin: 0; line-height: 1.04; color: var(--pipe);
+  }
+  header.front .sub { color: var(--faint); font-style: italic; max-width: 40rem; font-size: 1.03rem; }
+  .runhead {
+    display: flex; flex-wrap: wrap; justify-content: space-between; gap: 0.4rem 1rem; width: 100%;
+    font-family: "Fira Mono", monospace; font-size: 0.64rem; color: var(--faint);
+    border-top: 2px solid var(--ink); border-bottom: 1px solid var(--rule); padding: 0.5rem 0.1rem;
+  }
+
+  .finding {
+    background: var(--panel); border: 1px solid var(--rule); border-left: 3px solid var(--gauge);
+    padding: 1.3rem 1.5rem; font-size: 1.02rem; line-height: 1.6;
+  }
+  .finding .lead {
+    font-family: "Fira Mono", monospace; font-size: 0.64rem; font-weight: 700;
+    letter-spacing: 0.18em; text-transform: uppercase; color: var(--gauge);
+    display: block; margin-bottom: 0.6rem;
+  }
+
+  section { display: flex; flex-direction: column; gap: 1.05rem; }
+  section > h2 {
+    font-weight: 700; font-size: 1.46rem;
+    margin: 0 0 0.45rem; padding-bottom: 0.4rem; border-bottom: 1px solid var(--ink);
+    display: flex; gap: 0.8rem; align-items: baseline;
+  }
+  section > h2 .n {
+    color: var(--valve); font-family: "Fira Mono", monospace; font-size: 0.68rem;
+    letter-spacing: 0.1em; font-weight: 700;
+  }
+
+  blockquote {
+    margin: 0.2rem 0; padding: 0.9rem 1.3rem; background: var(--wash2);
+    border-left: 3px solid var(--ink); font-style: italic; max-width: 62ch;
+  }
+  blockquote .who {
+    display: block; font-style: normal; font-family: "Fira Mono", monospace;
+    font-size: 0.63rem; letter-spacing: 0.08em; color: var(--faint); margin-top: 0.55rem;
+  }
+  blockquote.source { border-left-color: var(--valve); }
+
+  .caption { font-size: 0.95rem; color: var(--faint); font-style: italic; max-width: 66ch; }
+
+  .wrap { overflow-x: auto; }
+  table.chart { width: 100%; border-collapse: collapse; font-size: 0.95rem; }
+  table.chart caption {
+    font-family: "Fira Mono", monospace; font-size: 0.63rem; letter-spacing: 0.13em;
+    text-transform: uppercase; color: var(--faint); text-align: left; padding-bottom: 0.5rem;
+  }
+  table.chart th, table.chart td {
+    text-align: left; padding: 0.5rem 0.8rem 0.5rem 0; border-bottom: 1px solid var(--rule);
+    vertical-align: top;
+  }
+  table.chart thead th {
+    font-family: "Fira Mono", monospace; font-size: 0.62rem; letter-spacing: 0.06em;
+    text-transform: uppercase; color: var(--faint); font-weight: 400;
+    border-bottom: 2px solid var(--ink); border-top: 2px solid var(--ink);
+  }
+  table.chart td b { color: var(--valve); }
+
+  .explicit { display: flex; flex-direction: column; gap: 0.55rem; padding-top: 0.4rem; border-top: 2px solid var(--ink); }
+  .footline { color: var(--faint); font-size: 0.95rem; }
+</style>
+
+<div class="leaf">
+
+  <header class="front">
+    <p class="stamp">The Frontier Record &middot; Sheet LXXV</p>
+    <h1>The Pilot Plant</h1>
+    <p class="sub">Between the laboratory and the factory, chemical engineering builds a third
+      thing: a plant meant to be closed, whose product is not chemicals but knowledge &mdash;
+      what clogs, what corrodes, what spoils on the loading dock &mdash; because some truths
+      only appear at scale. The valley&rsquo;s eighth trial is ready to close, and this sheet
+      is its gauge readings.</p>
+    <div class="runhead">
+      <span>run mtf23y8m-5w &middot; the eighth rehearsal &middot; read for closing</span>
+      <span>35 settlers &middot; three settlements &middot; iron reached, coin not</span>
+    </div>
+  </header>
+
+  <div class="finding">
+    <span class="lead">The finding</span>
+    <b>The trial climbed four epochs in seventy-two valley days and stopped one short of the
+    top.</b> At the last full reading (tick 11,537, with the log running on to 14,348 as this
+    is written): <b>35 settlers</b> across <b>three settlements</b> &mdash; the landing, and
+    two secessions founded on the identical sentence, that its founder <i>would not sleep on
+    the ground another night in a place that had voted against a bed</i>. The ladder as
+    climbed: timber, plank (227 sawn), charcoal (150 burnt), <b>iron in two towns</b> (49
+    drawn), masonry begun (10 blocks), and <b>the mechanism epoch</b> &mdash; a rack, a
+    pulley, a bell, and a sundial at the tinker&rsquo;s bench of Sula&rsquo;s claim. Never
+    reached: <b>coin</b>. Nothing minted, no purse filled, no tax raised, no market stood.
+    And in three settlements over seventy-two days, <b>nobody laid a single stone on a
+    cairn</b> &mdash; the memorial mechanism sat unused while a forester named Sten filed the
+    wish that says why it matters: <i>in a year nobody will know we were the ones who
+    landed.</i> The record is how they will.
+  </div>
+
+  <section>
+    <h2><span class="n">I</span> <span>Built to be closed</span></h2>
+    <p>A pilot plant exists because scale is a fact with teeth. The reaction that behaves in
+      glassware misbehaves in steel; the yield that holds at a litre collapses at a tonne;
+      and no calculation finds the sludge that settles in a real pipe&rsquo;s real elbow. So
+      the discipline builds a deliberately temporary works, runs it hard, writes everything
+      down, and <b>closes it on schedule, counting the closure as the success</b> &mdash;
+      because the pilot plant&rsquo;s product was never the chemical. It was the list of
+      things the factory must survive. Every trial valley on this record is that plant: run
+      to destruction or to boredom, sealed into numbered segments, and closed when the next
+      question needs different ground. The eighth ran longest of all of them, and its list is
+      the longest too.</p>
+  </section>
+
+  <section>
+    <h2><span class="n">II</span> <span>The gauge readings</span></h2>
+    <div class="wrap">
+      <table class="chart">
+        <caption>run mtf23y8m-5w at tick 11,537 &middot; three settlements &middot; from the sealed state, not from memory</caption>
+        <thead><tr><th>epoch</th><th>evidence</th><th>reached</th></tr></thead>
+        <tbody>
+          <tr><td>timber</td><td>50 buildings standing across three towns</td><td><b>yes</b></td></tr>
+          <tr><td>plank</td><td>two sawmills; 227 planks sawn at one of them</td><td><b>yes</b></td></tr>
+          <tr><td>charcoal</td><td>five kilns; 150 burnt at the best</td><td><b>yes</b></td></tr>
+          <tr><td>iron</td><td>three smelters in two towns; 49 drawn; iron tools on 28 of 35 settlers</td><td><b>yes</b></td></tr>
+          <tr><td>masonry</td><td>a masons&rsquo; yard; 10 blocks cut</td><td><b>begun</b></td></tr>
+          <tr><td>mechanism</td><td>a tinker&rsquo;s bench; rack, pulley, bell, sundial fitted</td><td><b>yes</b></td></tr>
+          <tr><td>coin</td><td>minted 0 &middot; purse 0 &middot; tax 0 &middot; no market</td><td><b>no</b></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>The top of the ladder &mdash; the money epoch, the one the chart room&rsquo;s city
+      renders in stone &mdash; stayed out of reach: Osk wished for <i>a place to trade and a
+      coin to trade in</i>, Ilka proposed the valley&rsquo;s first tax, and both wishes
+      close with the plant, on the record, unbuilt. Below that, the civic ledger reads:
+      roughly two dozen ballots held, <b>190 of 233 standing wishes granted</b>, an
+      infirmary, a hall, a watchtower with sentries actually standing it, and fourteen
+      boons agreed at the landing alone &mdash; including, in its last days,
+      <i>solitude</i>: a bench at the waterline, out of the way of the work.</p>
+  </section>
+
+  <section>
+    <h2><span class="n">III</span> <span>What only pilot scale shows</span></h2>
+    <p><b>The weather is the biggest employer nobody hired.</b> Across three towns the heaps
+      outside lost <b>3,597 units</b> to the sky &mdash; more than every smelter, sawmill and
+      kiln produced combined &mdash; and 455 units of food spoiled while 767 more sat piled
+      outside a claim whose depot was full. Sheet XLI called dropped goods the most expensive
+      thing wrong with the valley; the eighth trial measured it at scale and the number is
+      worse than the sheet guessed. <b>Secession has one cause, said twice.</b> Both
+      breakaways formed over the same sentence about a bed &mdash; housing votes are the
+      valley&rsquo;s constitutional crisis, and the second secession then re-created the
+      grievance it fled: at last reading Tove&rsquo;s claim held two rough sleepers, and one
+      of them &mdash; Sten, the memorial-wisher &mdash; was the unhappiest settler in the
+      valley, sleeping on the ground in the town founded so that nobody would. <b>And the
+      ballot&rsquo;s slates ran to ninety-odd candidates</b>, the unchased anomaly from the
+      night&rsquo;s ledger, visible here in full: a nine-voter election eliminating one
+      zero-vote wish per round for ninety rounds, which works, and which no person could
+      read. The dedupe held where it mattered &mdash; Signe&rsquo;s furnace wish was refused
+      as <i>same kind as smelter</i>, the exact famine-era fault, fixed, refusing correctly
+      under load.</p>
+  </section>
+
+  <section>
+    <h2><span class="n">IV</span> <span>Closing the plant</span></h2>
+    <p>Closing here means what it means in the works: <b>the run stops; the record does
+      not.</b> Eleven sealed log segments and forty-six of state, two dozen vote ledgers, a
+      wish register at 798 filings &mdash; all of it stays, addressed by run id, deletable by
+      nobody, which is the covenant every settler lived under and the closure honours. The
+      valley&rsquo;s pieces built this same night &mdash; watches, standings, the hall
+      record, the landing ballot &mdash; were proven against this run&rsquo;s twin in the
+      checks but never entered its world: the eighth trial ran to its end on the physics it
+      began with, which is what makes its readings clean. What its successor inherits is the
+      list: the weather tax wants carts and roofs before it wants anything else; housing
+      votes need their crisis constitution; slates need pruning before nine voters face
+      ninety names; and the first coin is still waiting for a valley that lives long enough
+      to need one.</p>
+  </section>
+
+  <section>
+    <h2><span class="n">V</span> <span>What is thin, so it stays visible</span></h2>
+    <p><b>The reading and the closing are hours apart.</b> The full state cited is tick
+      11,537; the log runs past 14,348 as this publishes, and the plant keeps making product
+      while its gauges are read &mdash; the numbers are a floor, dated, not a final. The
+      closing itself waits on the keeper&rsquo;s hand at the terminal, so this sheet is
+      written in the record&rsquo;s oldest tense: prepared-for rather than done. The epoch
+      table is the house&rsquo;s own ladder read onto the data &mdash; the game has no formal
+      epochs, only unlocks and works, and a different reader could cut the rungs differently.
+      And one number is missing because it cannot exist: <b>no standing was ever found
+      here</b> &mdash; the mechanic shipped after this world&rsquo;s physics froze, so the
+      first ground that earns a name by return will belong to the next valley, which will
+      also inherit the bench, the bell, and the two settlers who asked for them without
+      ever seeing either.</p>
+    <p class="caption">Hedge on the masthead: pilot plants are not always closed on schedule
+      and their closures are not always counted successes &mdash; the discipline&rsquo;s
+      literature is fat with pilots that became the factory by inertia. The borrowed shape
+      is the intention: a works whose product is the list of what the real one must
+      survive, and a closure that files the list instead of losing it.</p>
+
+    <div class="explicit">
+      <p class="footline">Written 30 August, from the sealed state and the running log, with
+        the closing commands prepared for the keeper&rsquo;s own hand &mdash; because a
+        plant is shut down from the floor, by whoever holds the valve, and not from the
+        control room&rsquo;s paperwork.</p>
+      <p class="stamp">The Frontier Record &middot; Sheet LXXV &middot; 30 August</p>
+    </div>
+  </section>
+
+</div>
+
+</body>
+</html>
