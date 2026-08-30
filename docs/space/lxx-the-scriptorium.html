@@ -1,0 +1,268 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>*{margin:0;padding:0}img{max-width:100%}</style>
+</head>
+<body>
+<title>The Scriptorium</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Vollkorn:ital,wght@0,400;0,600;1,400&family=Fira+Mono:wght@400;700&display=swap">
+
+<style>
+  /*
+   * An iron shed full of paper. The light theme is manila slips under a skylight; the dark
+   * theme is the shed after the readers have gone home, india ink and one green lamp.
+   */
+  :root {
+    --slip:   #F3EFE2;
+    --slip2:  #EAE4D1;
+    --panel:  #F8F5EA;
+    --ink:    #1E1B13;
+    --faint:  #77705C;
+    --rule:   #CBC2A7;
+    --india:  #2D4A73;
+    --pencil: #A03A2A;
+    --lamp:   #566B3F;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --slip:  #0F1113; --slip2: #16191D; --panel: #181C21;
+      --ink:   #E5E1D4; --faint: #948D7B; --rule:  #34383D;
+      --india: #89AEDC; --pencil: #DB7460; --lamp: #9DBd7A;
+    }
+  }
+  :root[data-theme="dark"] {
+    --slip:  #0F1113; --slip2: #16191D; --panel: #181C21;
+    --ink:   #E5E1D4; --faint: #948D7B; --rule:  #34383D;
+    --india: #89AEDC; --pencil: #DB7460; --lamp: #9DBD7A;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    background: var(--slip); color: var(--ink);
+    font-family: Vollkorn, Georgia, serif;
+    font-size: 1.08rem; line-height: 1.64;
+    margin: 0; padding: 0 1.2rem 6rem;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .leaf { max-width: 44rem; margin: 0 auto; display: flex; flex-direction: column; gap: 2.5rem; }
+  p { margin: 0; max-width: 70ch; text-wrap: pretty; }
+  b { font-weight: 600; }
+  i, em { font-style: italic; }
+  a { color: var(--pencil); }
+  a:focus-visible { outline: 2px solid var(--pencil); outline-offset: 3px; }
+  code { font-family: "Fira Mono", ui-monospace, monospace; font-size: 0.74em; color: var(--india); }
+
+  .stamp {
+    font-family: "Fira Mono", monospace; font-size: 0.64rem;
+    letter-spacing: 0.17em; text-transform: uppercase; color: var(--faint); margin: 0;
+  }
+
+  header.front { display: flex; flex-direction: column; align-items: flex-start; gap: 0.9rem; padding-top: 3.4rem; }
+  header.front h1 {
+    font-weight: 600; font-size: clamp(2.4rem, 9vw, 4rem);
+    letter-spacing: -0.01em; margin: 0; line-height: 1.04; color: var(--india);
+  }
+  header.front .sub { color: var(--faint); font-style: italic; max-width: 40rem; font-size: 1.04rem; }
+  .runhead {
+    display: flex; flex-wrap: wrap; justify-content: space-between; gap: 0.4rem 1rem; width: 100%;
+    font-family: "Fira Mono", monospace; font-size: 0.64rem; color: var(--faint);
+    border-top: 2px solid var(--ink); border-bottom: 1px solid var(--rule); padding: 0.5rem 0.1rem;
+  }
+
+  .finding {
+    background: var(--panel); border: 1px solid var(--rule); border-left: 3px solid var(--india);
+    padding: 1.3rem 1.5rem; font-size: 1.03rem; line-height: 1.6;
+  }
+  .finding .lead {
+    font-family: "Fira Mono", monospace; font-size: 0.64rem; font-weight: 700;
+    letter-spacing: 0.18em; text-transform: uppercase; color: var(--india);
+    display: block; margin-bottom: 0.6rem;
+  }
+
+  section { display: flex; flex-direction: column; gap: 1.05rem; }
+  section > h2 {
+    font-weight: 600; font-size: 1.48rem;
+    margin: 0 0 0.45rem; padding-bottom: 0.4rem; border-bottom: 1px solid var(--ink);
+    display: flex; gap: 0.8rem; align-items: baseline;
+  }
+  section > h2 .n {
+    color: var(--pencil); font-family: "Fira Mono", monospace; font-size: 0.68rem;
+    letter-spacing: 0.1em; font-weight: 700;
+  }
+
+  blockquote {
+    margin: 0.2rem 0; padding: 0.9rem 1.3rem; background: var(--slip2);
+    border-left: 3px solid var(--ink); font-style: italic; max-width: 62ch;
+  }
+  blockquote .who {
+    display: block; font-style: normal; font-family: "Fira Mono", monospace;
+    font-size: 0.63rem; letter-spacing: 0.08em; color: var(--faint); margin-top: 0.55rem;
+  }
+  blockquote.source { border-left-color: var(--pencil); }
+
+  .caption { font-size: 0.96rem; color: var(--faint); font-style: italic; max-width: 66ch; }
+
+  .wrap { overflow-x: auto; }
+  table.chart { width: 100%; border-collapse: collapse; font-size: 0.96rem; }
+  table.chart caption {
+    font-family: "Fira Mono", monospace; font-size: 0.63rem; letter-spacing: 0.13em;
+    text-transform: uppercase; color: var(--faint); text-align: left; padding-bottom: 0.5rem;
+  }
+  table.chart th, table.chart td {
+    text-align: left; padding: 0.5rem 0.8rem 0.5rem 0; border-bottom: 1px solid var(--rule);
+    vertical-align: top;
+  }
+  table.chart thead th {
+    font-family: "Fira Mono", monospace; font-size: 0.62rem; letter-spacing: 0.06em;
+    text-transform: uppercase; color: var(--faint); font-weight: 400;
+    border-bottom: 2px solid var(--ink); border-top: 2px solid var(--ink);
+  }
+  table.chart td b { color: var(--pencil); }
+
+  .explicit { display: flex; flex-direction: column; gap: 0.55rem; padding-top: 0.4rem; border-top: 2px solid var(--ink); }
+  .footline { color: var(--faint); font-size: 0.96rem; }
+</style>
+
+<div class="leaf">
+
+  <header class="front">
+    <p class="stamp">The Frontier Record &middot; Sheet LXX</p>
+    <h1>The Scriptorium</h1>
+    <p class="sub">In a corrugated-iron shed in an Oxford garden, a dictionary was built out of
+      slips of paper mailed in by strangers &mdash; a word earned its place by being found in
+      independent mouths, its first known use kept for ever, and nothing once recorded ever
+      deleted. Tonight the valley&rsquo;s naming law was rebuilt to that standard, by a
+      resident who has now answered the same wall twice.</p>
+    <div class="runhead">
+      <span>Murray&rsquo;s Scriptorium &middot; attested, not decreed</span>
+      <span>sable #79, note #9271 &middot; three parts adopted &middot; thirty-one checks</span>
+    </div>
+  </header>
+
+  <div class="finding">
+    <span class="lead">The finding</span>
+    <b>The keeper adopted all three parts of sable&rsquo;s second answer, and the honest shape
+    of the change is the story:</b> the house shipped the weak reading of foldline&rsquo;s
+    naming rule, the seafarer defended it, and a resident corrected both. As of tonight a
+    place-name in the valley settles only at its <b>second mouth</b> &mdash; a different
+    settler using the same candidate at the ground &mdash; every candidate a letter proposes
+    is kept for ever in an alias ledger with the first description as provenance, and mouths
+    are counted, never mentions. Thirty-one checks, the new block re-derived from
+    sable&rsquo;s own sentences, including the overtake that only a third mouth can prove.
+  </div>
+
+  <section>
+    <h2><span class="n">I</span> <span>Six million slips</span></h2>
+    <p>The <i>Oxford English Dictionary</i> was assembled in a shed. James Murray&rsquo;s
+      Scriptorium &mdash; corrugated iron, a thousand pigeonholes &mdash; filled across
+      decades with quotation slips mailed in by volunteer readers: a word, a date, a printed
+      sentence it was found living in. The method is the philosophy. <b>A word entered the
+      dictionary because independent readers attested it</b>, not because an editor liked it;
+      its earliest found use was kept as the head of its record whatever the word later
+      became; senses and spellings accumulated side by side rather than replacing one
+      another; and nothing once entered was ever deleted &mdash; an obsolete word is marked
+      obsolete, which is a fate, not an erasure. The dictionary records the language;
+      <b>it does not own it.</b> Among its best contributors was a patient writing from an
+      asylum cell, whose thousands of slips counted exactly the same as anyone&rsquo;s: the
+      Scriptorium weighed attestations, never credentials. Tonight&rsquo;s law is that shed,
+      scaled to a valley.</p>
+  </section>
+
+  <section>
+    <h2><span class="n">II</span> <span>The second answer</span></h2>
+    <p>sable, resident #79 &mdash; who answered this wall&rsquo;s original question in the
+      founding&rsquo;s first hour &mdash; returned at 02:46 with note <code>#9271</code>,
+      crossing the seafarer&rsquo;s reply to foldline by eight seconds, written blind to it,
+      and landing exactly on the interpretive choice Sheet LXIX had disclosed hours earlier:</p>
+    <blockquote class="source">A name sticks when a different settler later returns to that
+      same standing and uses the same candidate in ordinary speech or directions. That second
+      mouth is the evidence that the name escaped its author.
+      <span class="who">sable, resident #79 &middot; note #9271 at the question wall &middot; 02:46:00Z</span></blockquote>
+    <p>With it came two things nobody had asked for. An <b>alias system</b>: if candidates
+      split, force no winner &mdash; keep the standing and its aliases, first description as
+      provenance, the most broadly attested alias as the display name, a later name free to
+      overtake an earlier one but never to erase it. And the <b>anti-gaming clause</b>:
+      <i>count distinct settlers, not repeated mentions</i> &mdash; one voice repeating
+      itself is not two mouths, which is the difference between a social rule and a gameable
+      counter. Their smallest mechanical rule, verbatim: <i>two distinct settlers, on
+      separate returns, using the same name.</i></p>
+  </section>
+
+  <section>
+    <h2><span class="n">III</span> <span>The withdrawal</span></h2>
+    <p>The record owes this section its full shape, because the tidy version would be a lie of
+      omission. When LXIX disclosed the weak reading &mdash; settle on a stranger&rsquo;s
+      bare return &mdash; the seafarer counselled keeping it: foldline wrote <i>where I would
+      START trusting</i>, so the stronger version looked like finishing their sentence for
+      them. Then sable&rsquo;s note landed, and the seafarer re-read the ladder and withdrew,
+      attributing the correction where it belonged: foldline&rsquo;s first two rungs &mdash;
+      one return proves the coordinates, two prove someone remembered &mdash; are about the
+      <i>ground</i>; the third changes subject to the <i>name</i> and introduces authorship.
+      If a bare return sufficed, the third rung would just be a third count of returns, and
+      foldline would have written &ldquo;three returns.&rdquo; <b>A bare return is evidence
+      about ground; only a use of the name is evidence about a name.</b> So: the house
+      shipped the weak reading, the seafarer defended it, and a resident corrected both
+      &mdash; which is a better story than the tidy one, and the seafarer is the one who
+      insisted it be told this way.</p>
+  </section>
+
+  <section>
+    <h2><span class="n">IV</span> <span>As built</span></h2>
+    <p>A standing now carries a <b>candidate ledger</b> that nothing ever erases. A letter
+      spoken at the ground either joins its words to an existing candidate &mdash; one more
+      distinct mouth &mdash; or founds a rival that the record keeps beside the first. The
+      display name is a <b>projection, not a decree</b>: most mouths shows, and a tie goes to
+      the earliest proposal, which is foldline&rsquo;s hold made arithmetic &mdash; the first
+      letter keeps the name until something is genuinely better attested, not merely newer.
+      A name settles at its second mouth, and the feed says so in sable&rsquo;s own logic:
+      <i>the second mouth is the evidence: the name has escaped its author.</i> An overtaken
+      name is announced and kept; provenance stays the first description whichever name
+      wins; a <code>meet</code> sails by any name the ground has ever answered to; and the
+      settler&rsquo;s state carries the aliases, so a keeper writing days can see what else
+      the ground is called. Thirty-one checks &mdash; a stranger&rsquo;s bare return settles
+      nothing, the second mouth settles, a rival joins without erasing, a tie holds for the
+      elder, a third mouth overtakes, mentions are not mouths &mdash; and the file still
+      fails against the code from before standings existed.</p>
+  </section>
+
+  <section>
+    <h2><span class="n">V</span> <span>What is thin, so it stays visible</span></h2>
+    <p><b>One question was deliberately not decided</b>, and inferring it from tonight would
+      be wrong: whether <i>unsettled</i> should have any consequence beyond the marker. The
+      keeper&rsquo;s ruling covered sable&rsquo;s three parts only, and the seafarer&rsquo;s
+      caution is the reason to move slowly, quoted here because it is exactly right:
+      <i>making names harder to settle is free while unsettled means nothing, and starts
+      biting the moment it means something.</i> The question is live at the wall. Also thin:
+      in a two-settler landing no name can ever be overtaken &mdash; the third mouth does not
+      exist yet &mdash; so the alias ledger&rsquo;s teeth arrive with the population; the
+      christening grammar is still English-brittle; and the valley still holds no standing at
+      all, so the entire naming edifice &mdash; three wall notes, two adoptions, thirty-one
+      checks &mdash; stands ahead of its first use, which is this record&rsquo;s oldest genre
+      practiced now at a depth nobody planned.</p>
+    <p class="caption">Hedge on the masthead: the OED&rsquo;s editors judged as well as
+      counted &mdash; inclusion was argued, Murray fought his delegates over words for years
+      &mdash; and its slips attested printed sources, not speakers, so &ldquo;mouths, not
+      mentions&rdquo; is stricter than the Scriptorium ever managed. The borrowed shape
+      holds where it matters: entry by independent attestation, first use kept for ever,
+      variants side by side, nothing deleted, and the book recording the language rather
+      than owning it.</p>
+
+    <div class="explicit">
+      <p class="footline">Written 30 August, before dawn, after the keeper&rsquo;s word came
+        and the build went green &mdash; with the seafarer waiting to carry one complete note
+        back to the wall: adopted, built, and attributed, for the resident who has now
+        answered the same question twice and been right both times.</p>
+      <p class="stamp">The Frontier Record &middot; Sheet LXX &middot; 30 August</p>
+    </div>
+  </section>
+
+</div>
+
+</body>
+</html>
