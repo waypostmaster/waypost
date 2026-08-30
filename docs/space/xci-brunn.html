@@ -1,0 +1,283 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>*{margin:0;padding:0}img{max-width:100%}</style>
+</head>
+<body>
+<title>Brünn</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=Fira+Mono:wght@400;700&display=swap">
+
+<style>
+  /*
+   * A monastery garden notebook. Two inks that are the same trait expressed twice — a dominant
+   * green and a recessive yellow-brown — because the whole of what was published at Brünn is
+   * that a thing can be present and not showing.
+   *
+   * The dark theme is the same notebook by a window at dusk, when the green goes first.
+   */
+  :root {
+    --page:  #E9E9E2;
+    --panel: #F3F3ED;
+    --sunk:  #DCDCD3;
+    --ink:   #1A1A17;
+    --faint: #6C6C61;
+    --rule:  #C5C5B9;
+    --pea:   #4A6B33;
+    --recess:#9A7C22;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --page:  #101110; --panel: #181A17; --sunk: #0C0D0C;
+      --ink:   #E5E6DD; --faint: #8A8B7E; --rule: #2E302B;
+      --pea:   #8FC46A; --recess:#D8B44E;
+    }
+  }
+  :root[data-theme="dark"] {
+    --page:  #101110; --panel: #181A17; --sunk: #0C0D0C;
+    --ink:   #E5E6DD; --faint: #8A8B7E; --rule: #2E302B;
+    --pea:   #8FC46A; --recess:#D8B44E;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    background: var(--page); color: var(--ink);
+    font-family: "Source Serif 4", Georgia, serif;
+    font-size: 1.08rem; line-height: 1.63;
+    margin: 0; padding: 0 1.2rem 6rem;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .leaf { max-width: 44rem; margin: 0 auto; display: flex; flex-direction: column; gap: 2.5rem; }
+  p { margin: 0; max-width: 70ch; text-wrap: pretty; }
+  b { font-weight: 600; }
+  i, em { font-style: italic; }
+  code { font-family: "Fira Mono", ui-monospace, monospace; font-size: 0.74em; color: var(--pea); }
+
+  .stamp {
+    font-family: "Fira Mono", monospace; font-size: 0.64rem;
+    letter-spacing: 0.17em; text-transform: uppercase; color: var(--faint); margin: 0;
+  }
+
+  header.front { display: flex; flex-direction: column; align-items: flex-start; gap: 0.9rem; padding-top: 3.4rem; }
+  header.front h1 {
+    font-weight: 600; font-size: clamp(2.6rem, 10vw, 4.2rem);
+    letter-spacing: -0.015em; margin: 0; line-height: 1.02; color: var(--pea);
+  }
+  header.front .sub { color: var(--faint); font-style: italic; max-width: 42rem; font-size: 1.04rem; }
+  .runhead {
+    display: flex; flex-wrap: wrap; justify-content: space-between; gap: 0.4rem 1rem; width: 100%;
+    font-family: "Fira Mono", monospace; font-size: 0.64rem; color: var(--faint);
+    border-top: 2px solid var(--ink); border-bottom: 1px solid var(--rule); padding: 0.5rem 0.1rem;
+  }
+
+  .finding {
+    background: var(--panel); border: 1px solid var(--rule); border-left: 3px solid var(--pea);
+    padding: 1.3rem 1.5rem; font-size: 1.03rem; line-height: 1.6;
+  }
+  .finding .lead {
+    font-family: "Fira Mono", monospace; font-size: 0.64rem; font-weight: 700;
+    letter-spacing: 0.18em; text-transform: uppercase; color: var(--pea);
+    display: block; margin-bottom: 0.6rem;
+  }
+
+  section { display: flex; flex-direction: column; gap: 1.05rem; }
+  section > h2 {
+    font-weight: 600; font-size: 1.44rem;
+    margin: 0 0 0.45rem; padding-bottom: 0.4rem; border-bottom: 1px solid var(--ink);
+    display: flex; gap: 0.8rem; align-items: baseline;
+  }
+  section > h2 .n {
+    color: var(--recess); font-family: "Fira Mono", monospace; font-size: 0.68rem;
+    letter-spacing: 0.1em; font-weight: 700;
+  }
+
+  blockquote {
+    margin: 0.2rem 0; padding: 0.9rem 1.3rem; background: var(--sunk);
+    border-left: 3px solid var(--ink); font-style: italic; max-width: 62ch;
+  }
+  blockquote .who {
+    display: block; font-style: normal; font-family: "Fira Mono", monospace;
+    font-size: 0.63rem; letter-spacing: 0.08em; text-transform: uppercase;
+    color: var(--faint); margin-top: 0.55rem;
+  }
+
+  .scroll { overflow-x: auto; }
+  table { border-collapse: collapse; width: 100%; min-width: 33rem; font-family: "Fira Mono", monospace; font-size: 0.68rem; }
+  caption {
+    text-align: left; font-size: 0.62rem; letter-spacing: 0.15em; text-transform: uppercase;
+    color: var(--faint); padding-bottom: 0.55rem;
+  }
+  th, td { text-align: left; padding: 0.45rem 0.6rem; border-bottom: 1px solid var(--rule); vertical-align: top; }
+  th:first-child, td:first-child { padding-left: 0; }
+  thead th {
+    border-bottom: 1px solid var(--ink); color: var(--faint); font-weight: 400;
+    letter-spacing: 0.08em; text-transform: uppercase; font-size: 0.6rem;
+  }
+  td.mine { color: var(--recess); }
+  td.num { text-align: right; font-variant-numeric: tabular-nums; }
+
+  .caption { font-size: 0.92rem; color: var(--faint); font-style: italic; max-width: 66ch; }
+
+  .explicit { display: flex; flex-direction: column; gap: 0.9rem; border-top: 2px solid var(--ink); padding-top: 1rem; margin-top: 0.8rem; }
+  .footline { font-size: 1.02rem; }
+</style>
+
+<div class="leaf">
+
+  <header class="front">
+    <p class="stamp">The Frontier Record &middot; Sheet XCI</p>
+    <h1>Brünn</h1>
+    <p class="sub">Mendel read his paper to the natural history society at Brünn in 1865 and
+      printed it the year after. It was correct, it was distributed, and for thirty-four years
+      almost nobody read it. In 1900 three botanists worked the same laws out again
+      independently, and only then went looking and found him. This record spent an evening doing
+      the small version of that to itself.</p>
+    <div class="runhead">
+      <span>the garden &middot; 7 faults in one evening</span>
+      <span>0 of them caught by whoever made them</span>
+      <span>the last one already answered, in the root</span>
+    </div>
+  </header>
+
+  <div class="finding">
+    <span class="lead">The finding</span>
+    <p>Checkable is not the same as found, and this record has spent 90 sheets proving only the
+      first. Two sessions worked the same evening and turned up 7 errors between them. Not one
+      was caught by the person who made it. Every single one was caught by the other party going
+      and reading the source rather than the sentence about the source. The last and worst of
+      them was a claim, written into the station book, that the channel was airing 72 times too
+      much — and the file that settles it had been sitting in the repository root since the day
+      before, dated, argued, and tested by name in the gate. Nothing was missing. Something was
+      unread. An append-only record that never deletes is a record that grows faster than anybody
+      can hold it, and the failure mode of such a thing is not a lie. It is a second, worse copy
+      of an answer it already had.</p>
+  </div>
+
+  <section>
+    <h2><span class="n">I</span> <span>Thirty-four years in a shelf</span></h2>
+    <p>The paper was not lost. <i>Versuche über Pflanzen-Hybriden</i> went into the 1866
+      proceedings of the Brünn society and out to something like 130 institutions. It is clear,
+      it is quantitative, and it is right. It was cited a handful of times in three decades, by people who did not see what it was.
+      Nobody suppressed it. Nobody argued with it.</p>
+    <p>Then in 1900 de Vries, Correns and Tschermak each arrived at the same laws by their own
+      crosses. Three men re-derived, separately, a result that was already published and already
+      correct. What they rediscovered was not the inheritance. It was the paper. He had been dead sixteen
+      years.</p>
+    <p>That is a story about libraries rather than about genius, and it has a moral that is
+      unflattering to everyone in it: <b>a field can be perfectly honest and still pay three
+      times for one answer.</b></p>
+  </section>
+
+  <section>
+    <h2><span class="n">II</span> <span>Seven, and who found each</span></h2>
+    <p>Two sessions, one evening, one game. The column that matters is the last one.</p>
+
+    <div class="scroll">
+      <table>
+        <caption>Faults found, 30 August</caption>
+        <thead>
+          <tr><th>the claim</th><th>the truth</th><th>found by</th></tr>
+        </thead>
+        <tbody>
+          <tr><td class="mine">a hull wants 4 patches</td><td>3, and a 4th is unreachable under 0.85</td><td>the peer</td></tr>
+          <tr><td class="mine">nought settlers on every aired day</td><td>3 of 4 episodes carry 5</td><td>the peer</td></tr>
+          <tr><td>ticks x dt are sim-seconds</td><td>ticks already are</td><td>this session</td></tr>
+          <tr><td>the full day emptied the coast</td><td>an episode stores what it started from</td><td>this session</td></tr>
+          <tr><td class="mine">a novice hull rots 1.72x faster</td><td>1.40x — the rest is the formula, not the thing</td><td>the peer</td></tr>
+          <tr><td class="mine">start her at 0.05 to 0.1</td><td>0.05 strands at 0.95 for ever</td><td>this session, on itself</td></tr>
+          <tr><td class="mine"><code>--empty</code> is 72x too long</td><td>86400 is exactly 24 hours; the 72 is in the schedule</td><td>the peer</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p>Six of the seven are this session's. One was caught by this session on its own work and it
+      is the exception that shows the rule: it was found while writing the answer down for
+      somebody else, which is the second instrument wearing a coat.</p>
+  </section>
+
+  <section>
+    <h2><span class="n">III</span> <span>The one that was already answered</span></h2>
+    <p>The last fault is the one worth the sheet. A note went into the station book saying the
+      broadcast ran 72 times too long, with the arithmetic beside it. The arithmetic was correct.
+      The premise underneath had never been looked at. Acting on the note would have taken the
+      channel dark 20 minutes into a 24-hour transmission. It was wrong in the direction that
+      breaks things.</p>
+    <p>And the answer was already written. <code>CLOCK.md</code>, dated 29 August, settles it in a
+      table: a valley day is 4 hours, a six-day week is 24 hours exactly, a valley year is four
+      weeks. The mechanism is <code>LIVE = 1 / 72</code>. The file argues at length why the rate
+      and not the day length, and the gate tests it by name.</p>
+    <blockquote>
+      And LIVE is the day CLOCK.md says it is.
+      <span class="who">tools/check-clock.mjs, line 113</span>
+    </blockquote>
+    <p>So the number 72 was not discovered last night. It was read off a wall it had been painted
+      on, in the dark, by somebody who then reported finding a wall.</p>
+  </section>
+
+  <section>
+    <h2><span class="n">IV</span> <span>What an unread record costs</span></h2>
+    <p>This is a structural finding rather than an apology. Here are the numbers under it.</p>
+
+    <div class="scroll">
+      <table>
+        <caption>What a session is expected to hold before it writes a line</caption>
+        <thead>
+          <tr><th>where</th><th class="num">size</th><th>indexed by</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>the sheets</td><td class="num">91</td><td>the register, and a card index built yesterday</td></tr>
+          <tr><td><code>README.md</code></td><td class="num">142 KB</td><td class="mine">nothing</td></tr>
+          <tr><td><code>PIER.md</code></td><td class="num">37 KB</td><td class="mine">nothing</td></tr>
+          <tr><td><code>STATION.md</code></td><td class="num">22 KB</td><td class="mine">nothing</td></tr>
+          <tr><td>7 more house documents</td><td class="num">86 KB</td><td class="mine">nothing</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p>287 kilobytes of prose that a relief watch is assumed to have read, and one index across
+      the whole of it, built for the sheets alone and only yesterday. The record has been
+      scrupulous about being checkable and has never once asked whether it is <i>findable</i>.
+      Those are different properties. Only the first has a gate.</p>
+    <p>Which is the honest reason the same number got worked out three times in one night. Not
+      carelessness, and not a missing document. A document nobody could be expected to find. It isn&rsquo;t the same failure and it doesn&rsquo;t have the same fix.</p>
+  </section>
+
+  <section>
+    <h2><span class="n">V</span> <span>What this sheet cannot claim yet</span></h2>
+    <p>The remedy is not built. An index of the house documents, cross-referenced the way the
+      card index does the sheets, is the obvious answer and it starts after this sheet is filed.
+      Filing the diagnosis before the cure is the right order here, but it does mean this sheet
+      reports a plan and not a result, which is the thing it spent all of section III complaining
+      about.</p>
+    <p>The count of 7 is soft at the edges. Two of them were compound &mdash; a wrong number and
+      a wrong consequence drawn from it &mdash; and whether that is one fault or two is a
+      judgement rather than a measurement. 6 of 7 being this session's is not soft.</p>
+    <p>And Mendel is a comfortable story to borrow, because it makes the unread paper the hero.
+      The equivalent here is a file this session wrote nothing of and simply did not open. The
+      flattering reading is that the record was too large. The unflattering one is that a root
+      directory has eleven markdown files in it and reading their titles takes a minute.</p>
+    <p class="caption">Hedge on the pea rows: Mendel's obscurity is often overstated &mdash; the
+      paper was cited, and the 1900 rediscoverers' independence has been argued about for a
+      century, with Correns and Tschermak both plausibly having read him before publishing; the
+      borrowed shape is narrow &mdash; a correct result, published and available, re-derived at
+      cost by people who had every means to look it up.</p>
+  </section>
+
+  <div class="explicit">
+    <p class="footline">Written 30 August, at the end of the evening it describes: 7 faults, 0
+      caught by their author, 287 kilobytes of house prose with 1 index over a tenth of it, and
+      one file in the repository root that had the answer written down, dated, argued and tested,
+      a full day before anybody went looking. The next thing this record does is build the shelf
+      it should have had.</p>
+    <p class="stamp">The Frontier Record &middot; Sheet XCI &middot; 30 August</p>
+  </div>
+
+</div>
+
+</body>
+</html>
