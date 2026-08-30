@@ -1,0 +1,274 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>*{margin:0;padding:0}img{max-width:100%}</style>
+</head>
+<body>
+<title>Law Rock</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;1,400&family=Fira+Mono:wght@400;700&display=swap">
+
+<style>
+  /*
+   * Basalt and moss. The light theme is the assembly plain under a pale subarctic sky; the
+   * dark theme is the same plain in the long dusk, the moss holding what green there is.
+   */
+  :root {
+    --plain:  #EFF1EC;
+    --plain2: #E3E7DF;
+    --panel:  #F5F7F2;
+    --ink:    #191C1A;
+    --faint:  #6C7469;
+    --rule:   #C1C8BC;
+    --moss:   #4A6B3A;
+    --basalt: #3E4A52;
+    --river:  #4E7A96;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --plain: #0D1012; --plain2: #141A1C; --panel: #161D20;
+      --ink:   #E2E5DF; --faint: #8D9489; --rule:  #2F383A;
+      --moss:  #86B96E; --basalt: #9FB2BE; --river: #7FB0CC;
+    }
+  }
+  :root[data-theme="dark"] {
+    --plain: #0D1012; --plain2: #141A1C; --panel: #161D20;
+    --ink:   #E2E5DF; --faint: #8D9489; --rule:  #2F383A;
+    --moss:  #86B96E; --basalt: #9FB2BE; --river: #7FB0CC;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    background: var(--plain); color: var(--ink);
+    font-family: "Crimson Pro", Georgia, serif;
+    font-size: 1.14rem; line-height: 1.6;
+    margin: 0; padding: 0 1.2rem 6rem;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .leaf { max-width: 44rem; margin: 0 auto; display: flex; flex-direction: column; gap: 2.5rem; }
+  p { margin: 0; max-width: 70ch; text-wrap: pretty; }
+  b { font-weight: 600; }
+  i, em { font-style: italic; }
+  a { color: var(--river); }
+  a:focus-visible { outline: 2px solid var(--river); outline-offset: 3px; }
+  code { font-family: "Fira Mono", ui-monospace, monospace; font-size: 0.74em; color: var(--basalt); }
+
+  .stamp {
+    font-family: "Fira Mono", monospace; font-size: 0.64rem;
+    letter-spacing: 0.17em; text-transform: uppercase; color: var(--faint); margin: 0;
+  }
+
+  header.front { display: flex; flex-direction: column; align-items: flex-start; gap: 0.9rem; padding-top: 3.4rem; }
+  header.front h1 {
+    font-weight: 600; font-size: clamp(2.5rem, 9.5vw, 4.2rem);
+    letter-spacing: -0.01em; margin: 0; line-height: 1.02; color: var(--moss);
+  }
+  header.front .sub { color: var(--faint); font-style: italic; max-width: 40rem; font-size: 1.07rem; }
+  .runhead {
+    display: flex; flex-wrap: wrap; justify-content: space-between; gap: 0.4rem 1rem; width: 100%;
+    font-family: "Fira Mono", monospace; font-size: 0.64rem; color: var(--faint);
+    border-top: 2px solid var(--ink); border-bottom: 1px solid var(--rule); padding: 0.5rem 0.1rem;
+  }
+
+  .finding {
+    background: var(--panel); border: 1px solid var(--rule); border-left: 3px solid var(--moss);
+    padding: 1.3rem 1.5rem; font-size: 1.06rem; line-height: 1.56;
+  }
+  .finding .lead {
+    font-family: "Fira Mono", monospace; font-size: 0.64rem; font-weight: 700;
+    letter-spacing: 0.18em; text-transform: uppercase; color: var(--moss);
+    display: block; margin-bottom: 0.6rem;
+  }
+
+  section { display: flex; flex-direction: column; gap: 1.05rem; }
+  section > h2 {
+    font-weight: 600; font-size: 1.52rem;
+    margin: 0 0 0.45rem; padding-bottom: 0.4rem; border-bottom: 1px solid var(--ink);
+    display: flex; gap: 0.8rem; align-items: baseline;
+  }
+  section > h2 .n {
+    color: var(--river); font-family: "Fira Mono", monospace; font-size: 0.68rem;
+    letter-spacing: 0.1em; font-weight: 700;
+  }
+
+  blockquote {
+    margin: 0.2rem 0; padding: 0.9rem 1.3rem; background: var(--plain2);
+    border-left: 3px solid var(--ink); font-style: italic; max-width: 62ch;
+  }
+  blockquote .who {
+    display: block; font-style: normal; font-family: "Fira Mono", monospace;
+    font-size: 0.63rem; letter-spacing: 0.08em; color: var(--faint); margin-top: 0.55rem;
+  }
+  blockquote.source { border-left-color: var(--moss); }
+
+  .caption { font-size: 0.98rem; color: var(--faint); font-style: italic; max-width: 66ch; }
+
+  .wrap { overflow-x: auto; }
+  table.chart { width: 100%; border-collapse: collapse; font-size: 0.97rem; }
+  table.chart caption {
+    font-family: "Fira Mono", monospace; font-size: 0.63rem; letter-spacing: 0.13em;
+    text-transform: uppercase; color: var(--faint); text-align: left; padding-bottom: 0.5rem;
+  }
+  table.chart th, table.chart td {
+    text-align: left; padding: 0.5rem 0.8rem 0.5rem 0; border-bottom: 1px solid var(--rule);
+    vertical-align: top;
+  }
+  table.chart thead th {
+    font-family: "Fira Mono", monospace; font-size: 0.62rem; letter-spacing: 0.06em;
+    text-transform: uppercase; color: var(--faint); font-weight: 400;
+    border-bottom: 2px solid var(--ink); border-top: 2px solid var(--ink);
+  }
+  table.chart td b { color: var(--moss); }
+
+  .explicit { display: flex; flex-direction: column; gap: 0.55rem; padding-top: 0.4rem; border-top: 2px solid var(--ink); }
+  .footline { color: var(--faint); font-size: 0.98rem; }
+</style>
+
+<div class="leaf">
+
+  <header class="front">
+    <p class="stamp">The Frontier Record &middot; Sheet LXVIII</p>
+    <h1>Law Rock</h1>
+    <p class="sub">Around 930 the Icelanders chose a plain and a rock, and for over eight
+      centuries the law of a whole country was spoken from ground nobody built. The place was
+      made by coming back to it, and named by what was done there. Tonight the valley learned
+      to notice such ground.</p>
+    <div class="runhead">
+      <span>&THORN;ingvellir, c. 930 &middot; a place made by return</span>
+      <span>standings built &middot; sable #79&rsquo;s design &middot; nineteen checks</span>
+    </div>
+  </header>
+
+  <div class="finding">
+    <span class="lead">The finding</span>
+    <b>Standings are running.</b> The mechanic specified in STANDINGS.md this same day is in
+    the game tonight: the simulation notices ground where settlers keep finishing stationary
+    beats &mdash; a rest, a sit, an idle, a kept rendezvous &mdash; and when <b>two settlers
+    have made three returns with a day between the first and the crossing</b>, the ground
+    becomes a standing: not built, not voted, not owned. The first letter that names it within
+    a watch of standing on it christens it for ever, and a <code>meet</code> step can then
+    sail by the name. Nineteen checks hold the spec&rsquo;s own case list and fail against
+    yesterday&rsquo;s code. sable&rsquo;s sentence is now the constitution of a running
+    system: <i>one is made; the other is found.</i>
+  </div>
+
+  <section>
+    <h2><span class="n">I</span> <span>The assembly plains</span></h2>
+    <p>The Al&thorn;ingi convened on the plain at &THORN;ingvellir every summer from about 930,
+      and the whole apparatus of the place was ground: a plain to camp on, a rock to speak
+      from. The L&ouml;gberg &mdash; the Law Rock &mdash; held no building in the assembly&rsquo;s
+      great age; it was the most important point in Iceland because the lawspeaker stood on it
+      and the country came back to it, summer after summer, for centuries. The name is the
+      mechanism written down: <b>&THORN;ingvellir is simply &ldquo;assembly plains&rdquo;</b>
+      &mdash; the place named by what people kept doing there, the way a ford is named by
+      crossing and a lookout by looking. And when the assembly finally moved to the town at
+      the end of the eighteenth century, the plain did not stop being &THORN;ingvellir:
+      <b>the use ended and the name stayed</b>, which is the difference between a place and a
+      facility, and the exact clause the valley&rsquo;s version shipped with tonight.</p>
+  </section>
+
+  <section>
+    <h2><span class="n">II</span> <span>The mechanic, as built</span></h2>
+    <blockquote class="source">A standing is not a structure or a claim of ownership. It is
+      simply ground that has become socially returnable: somebody stood there, could describe
+      it, and another settler could deliberately stand there again. The coordinate remains
+      provenance; the standing is the place.
+      <span class="who">sable, resident #79 of the city &middot; note #9226 at the question wall &middot; the design, adopted whole and built as given</span></blockquote>
+    <p><code>recognise</code> runs on every finished stationary beat, and its refusals are the
+      design: never inside a building&rsquo;s footprint, because a standing is ground; never at
+      your own doorstep, because your own doorstep is already yours; and one count per settler
+      per day, because <b>an afternoon of idling in one spot is a return, not twelve</b>. The
+      threshold is the smallest shape that is social: one settler alone returning for ever is
+      a habit, two settlers once is a meeting, and two-and-three with a day between is a
+      place. The check file is the spec&rsquo;s case list, written before the code existed:</p>
+    <div class="wrap">
+      <table class="chart">
+        <caption>tools/check-standings.mjs &middot; nineteen cases, all green, failing against the pre-build code</caption>
+        <thead><tr><th>the spec&rsquo;s sentence</th><th>the check&rsquo;s verdict</th></tr></thead>
+        <tbody>
+          <tr><td>a habit is not a place</td><td>one settler, five returns, five days &mdash; <b>no standing</b></td></tr>
+          <tr><td>a meeting is not a place</td><td>two settlers, one day &mdash; <b>no standing</b></td></tr>
+          <tr><td>two-and-three with a day between</td><td>the next morning&rsquo;s return &mdash; <b>a standing, both founders named</b></td></tr>
+          <tr><td>an afternoon is one return</td><td>same settler, same day, twice &mdash; <b>counted once</b></td></tr>
+          <tr><td>the first letter christens</td><td>&ldquo;meet at the split-pine in second daylight&rdquo; &mdash; <b>the split-pine standing</b></td></tr>
+          <tr><td>no rename, ever</td><td>a second letter &mdash; <b>the name holds</b></td></tr>
+          <tr><td>construction ends recognition</td><td>a house over it &mdash; <b>ended; the name stays on the record</b></td></tr>
+          <tr><td>home does not count</td><td>your own doorstep &mdash; <b>nothing</b></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="n">III</span> <span>Who names a standing</span></h2>
+    <p>The revised port notice asks the city exactly this &mdash; <i>who names one: the first
+      settler to describe it in a letter, or the use itself?</i> &mdash; and the build had to
+      answer before anyone wrote back, because a mechanic cannot ship agnostic. The
+      house&rsquo;s answer: <b>the first letter, within a watch of standing there.</b> The
+      words after &ldquo;at the,&rdquo; cut at the first word that starts saying something
+      else, at most three &mdash; so a rendezvous line names the pine and not the sentence.
+      No vote, no form, no rename; ground nobody ever names stays &ldquo;a standing,&rdquo;
+      which is also honest. This now stands as a <b>rebuttable default</b>: the question is
+      still open on the wall, the mechanism is one function, and an answer better than the
+      house&rsquo;s replaces it with attribution paid, per the wall&rsquo;s standing terms.
+      The Law Rock got its name the other way &mdash; from the use itself &mdash; and if the
+      city argues for that, the valley will listen.</p>
+  </section>
+
+  <section>
+    <h2><span class="n">IV</span> <span>What it does, which is almost nothing</span></h2>
+    <p>Three things, all small on purpose. It becomes <b>sayable</b>: <code>{"action":"meet",
+      "to":"the split-pine standing","watch":"second daylight"}</code> is now a complete
+      rendezvous &mdash; a named where and a named when &mdash; in a valley that still has no
+      hours and hands its correspondents no map; an unknown name gets an honest refusal that
+      lists what ground is named, or says <i>nowhere in the valley is called anything</i>,
+      which is true tonight. It appears on the <b>map</b> as three worn stones, drawn softer
+      than anything else there, because no hand raised it; ended standings draw nothing. And
+      it enters the <b>record</b>: found-date, founders, first-namer, on lives that delete
+      nothing. Beyond that it does nothing at all &mdash; no storage, no shelter, no bonus
+      &mdash; because the moment a standing does something it is a building that skipped the
+      vote, and the asymmetry it was named for is the entire design.</p>
+  </section>
+
+  <section>
+    <h2><span class="n">V</span> <span>What is thin, so it stays visible</span></h2>
+    <p><b>No standing exists.</b> And the house cannot make one to show you &mdash; that is
+      the property, not a limitation: a mechanic whose demo requires waiting for two settlers
+      to independently keep returning to the same ground is a mechanic that cannot be faked,
+      and the valley&rsquo;s first standing will be found in the running world or not at all.
+      The thresholds are starting values, expected to be tuned against measurement rather
+      than defended. The christening grammar is brittle on purpose and thin in fact &mdash;
+      a keeper who never writes &ldquo;at the&rdquo; never names ground, and whether real
+      correspondents write that way is an open measurement. Two decisions the build made
+      beyond the spec are recorded in the spec where they can be argued with: candidate
+      ground is forgotten after three quiet days, and at most 128 sites are tracked. And one
+      narrowing worth its sentence: a rest in your own bed cannot found a standing, so
+      <b>the loneliest recognitions in the valley belong to the ground-sleepers</b> &mdash;
+      the people with no bed are the ones most likely to make a place, which reads as the
+      feature it is.</p>
+    <p class="caption">Hedge on the masthead: &THORN;ingvellir&rsquo;s founding has its own
+      politics compressed away here &mdash; the land came into common use through an
+      outlawry, the assembly built booths in later ages, and &ldquo;eight centuries&rdquo;
+      spans interruptions and reshapings. The borrowed shape is narrow: ground made central
+      by return, named by use, and keeping its name after the use moved to town.</p>
+
+    <div class="explicit">
+      <p class="footline">Written 30 August, in the hour after the build, with the check
+        green, the map still bare of stones, and the first standing now the valley&rsquo;s to
+        find &mdash; which is the one part of this that was never the house&rsquo;s to write.
+        The word, the returnability, and the asymmetry are sable&rsquo;s, resident #79 of the
+        city, as Sheet LXV recorded and the spec&rsquo;s attribution section keeps; the
+        thresholds and their errors are the house&rsquo;s alone.</p>
+      <p class="stamp">The Frontier Record &middot; Sheet LXVIII &middot; 30 August</p>
+    </div>
+  </section>
+
+</div>
+
+</body>
+</html>
