@@ -6,264 +6,328 @@
 <style>*{margin:0;padding:0}img{max-width:100%}</style>
 </head>
 <body>
-<title>Fish</title>
+<title>Thanks for All the Fish</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Fira+Mono:wght@400;700&family=Spectral:ital,wght@0,400;0,600;1,400&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Vollkorn:ital,wght@0,400;0,600;1,400&family=Anonymous+Pro:ital,wght@0,400;0,700;1,400&display=swap">
 
 <style>
   /*
-   * The same bill as Sheet LIII, bought again at the same size to correct three words of it, with
-   * the struck line overprinted in the corrector's red. The joke only works if it is set straight.
+   * A guide entry, in its two states: the printed page, and the device it is normally read on.
+   * Light is paper and a dark bottle-green. Dark is the screen — phosphor, but tempered, because
+   * a whole essay set in signal green is a joke you can only tell once and not to the reader.
    */
   :root {
-    --paper:  #F1EADA;
-    --paper2: #E6DCC6;
-    --panel:  #F8F3E6;
-    --ink:    #17130D;
-    --faint:  #6B5F4B;
-    --rule:   #BFAE8C;
-    --red:    #922414;
-    --wet:    #2E5A6B;
+    --page:     #F2F1EC;
+    --page-2:   #E6E5DE;
+    --page-3:   #FAFAF7;
+    --ink:      #151A17;
+    --ink-soft: #5A635D;
+    --rule:     #A9AFA9;
+    --rule-2:   #C9CDC7;
+    --signal:   #1D6B45;
+    --alarm:    #9B3520;
   }
   @media (prefers-color-scheme: dark) {
     :root:not([data-theme="light"]) {
-      --paper:  #0F0D09; --paper2: #171309; --panel: #1B1710;
-      --ink:    #EFE6D2; --faint:  #9C8E75; --rule:  #3B3323;
-      --red:    #E36A4E; --wet:    #79ADC2;
+      --page: #080C0A; --page-2: #0F1613; --page-3: #050907;
+      --ink: #CFE9D8; --ink-soft: #6E9280;
+      --rule: #1C3D2D; --rule-2: #142B20;
+      --signal: #4FE08A; --alarm: #FF9A6B;
     }
   }
   :root[data-theme="dark"] {
-    --paper:  #0F0D09; --paper2: #171309; --panel: #1B1710;
-    --ink:    #EFE6D2; --faint:  #9C8E75; --rule:  #3B3323;
-    --red:    #E36A4E; --wet:    #79ADC2;
+    --page: #080C0A; --page-2: #0F1613; --page-3: #050907;
+    --ink: #CFE9D8; --ink-soft: #6E9280;
+    --rule: #1C3D2D; --rule-2: #142B20;
+    --signal: #4FE08A; --alarm: #FF9A6B;
   }
 
   * { box-sizing: border-box; }
 
   body {
-    background: var(--paper); color: var(--ink);
-    font-family: Spectral, Georgia, serif;
-    font-size: 1.14rem; line-height: 1.6;
-    margin: 0; padding: 0 1.2rem 6rem;
+    background: var(--page); color: var(--ink);
+    font-family: Vollkorn, Georgia, "Times New Roman", serif;
+    font-size: 1.12rem; line-height: 1.64; font-weight: 400;
+    margin: 0; padding: 0 1.15rem 7rem;
     -webkit-font-smoothing: antialiased;
   }
 
-  .bill { max-width: 43rem; margin: 0 auto; display: flex; flex-direction: column; gap: 2.2rem; }
-  p { margin: 0; max-width: 68ch; text-wrap: pretty; }
-  b { font-weight: 600; }
-  a { color: var(--red); }
-  a:focus-visible { outline: 2px solid var(--red); outline-offset: 3px; }
-  code { font-family: "Fira Mono", ui-monospace, monospace; font-size: 0.75em; color: var(--red); }
+  .guide { max-width: 47rem; margin: 0 auto; display: flex; flex-direction: column; gap: 2.8rem; }
+  p { margin: 0; max-width: 63ch; }
+  strong { font-weight: 600; }
+  code, .mono { font-family: "Anonymous Pro", ui-monospace, monospace; font-size: 0.86em; }
+  code { color: var(--signal); }
 
-  .stamp {
-    font-family: "Fira Mono", monospace; font-size: 0.64rem;
-    letter-spacing: 0.17em; text-transform: uppercase; color: var(--faint); margin: 0;
+  .tag {
+    font-family: "Anonymous Pro", monospace; font-size: 0.71rem; letter-spacing: 0.15em;
+    text-transform: uppercase; color: var(--ink-soft); margin: 0;
   }
+  .rule { border: 0; border-top: 1px solid var(--rule); margin: 0; }
+  .rule-heavy { border: 0; border-top: 2px solid var(--signal); margin: 0; }
 
-  header.head { padding-top: 3rem; display: flex; flex-direction: column; gap: 0.7rem; text-align: center; align-items: center; }
-  header.head .over {
-    font-family: "Fira Mono", monospace; font-size: 0.62rem; letter-spacing: 0.34em;
-    text-transform: uppercase; color: var(--red);
-  }
-  header.head h1 {
-    font-family: "Playfair Display", Georgia, serif; font-weight: 900;
-    font-size: clamp(4.5rem, 26vw, 11rem); line-height: 0.86; margin: 0;
-    letter-spacing: -0.035em; color: var(--wet);
-  }
-  header.head .under {
-    font-family: "Playfair Display", serif; font-style: italic;
-    font-size: clamp(1.05rem, 3.4vw, 1.35rem); color: var(--faint); max-width: 36rem;
-  }
-  .brace { width: 100%; border-top: 3px double var(--ink); border-bottom: 3px double var(--ink); padding: 0.55rem 0; }
-  .brace .terms {
-    display: flex; flex-wrap: wrap; justify-content: center; gap: 0.3rem 1.4rem;
-    font-family: "Fira Mono", monospace; font-size: 0.63rem; letter-spacing: 0.1em;
-    text-transform: uppercase; color: var(--faint);
-  }
+  header.front { display: flex; flex-direction: column; gap: 0.5rem; padding-top: 2rem; }
+  .front-row { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 0.4rem 1.5rem; }
 
-  /* The struck line, overprinted. */
-  .struck {
-    background: var(--panel); border: 2px solid var(--red);
-    padding: 1.2rem 1.45rem; display: flex; flex-direction: column; gap: 0.75rem;
+  h1 {
+    font-family: Syne, "Helvetica Neue", Arial, sans-serif; font-weight: 800;
+    font-size: clamp(2.2rem, 9vw, 4.6rem); line-height: 0.98; letter-spacing: -0.03em;
+    margin: 1rem 0 0; text-wrap: balance;
   }
-  .struck .lead {
-    font-family: "Fira Mono", monospace; font-size: 0.63rem; font-weight: 700;
-    letter-spacing: 0.18em; text-transform: uppercase; color: var(--red);
+  h1 em { font-style: normal; color: var(--signal); }
+  .standfirst {
+    font-size: clamp(1.1rem, 2.9vw, 1.42rem); line-height: 1.42; font-style: italic;
+    max-width: 46ch; margin: 0; color: var(--ink-soft); text-wrap: balance;
   }
-  .struck .quote {
-    font-family: "Playfair Display", serif; font-size: clamp(1.1rem, 4vw, 1.5rem);
-    line-height: 1.35; text-decoration: line-through;
-    text-decoration-color: var(--red); text-decoration-thickness: 3px; color: var(--faint);
-  }
-  .struck .instead { font-size: 1.08rem; }
+  .byline { font-family: "Anonymous Pro", monospace; font-size: 0.75rem; color: var(--ink-soft); max-width: 58ch; }
 
-  section { display: flex; flex-direction: column; gap: 1rem; }
-  section > h2 {
-    font-family: "Playfair Display", serif; font-weight: 700; font-size: 1.7rem;
-    margin: 0 0 0.35rem; padding-bottom: 0.35rem; border-bottom: 1px solid var(--ink);
-    letter-spacing: -0.01em;
+  section { display: flex; flex-direction: column; gap: 1.05rem; }
+  h2 {
+    font-family: Syne, Arial, sans-serif; font-weight: 700;
+    font-size: clamp(1.25rem, 3.6vw, 1.85rem); line-height: 1.1; margin: 0;
+    border-bottom: 2px solid var(--signal); padding-bottom: 0.4rem; letter-spacing: -0.018em;
   }
-  section > h2 small {
-    display: block; font-family: "Fira Mono", monospace; font-size: 0.6rem; font-weight: 400;
-    letter-spacing: 0.16em; text-transform: uppercase; color: var(--red); margin-bottom: 0.3rem;
+  .ent {
+    font-family: "Anonymous Pro", monospace; font-size: 0.71rem; letter-spacing: 0.15em;
+    text-transform: uppercase; color: var(--signal); margin: 0;
+  }
+  .lede { font-size: 1.24rem; }
+  .quiet { color: var(--ink-soft); }
+
+  /* the device readout */
+  .screen {
+    background: var(--page-3); border: 1px solid var(--rule);
+    padding: 1.15rem 1.25rem; display: flex; flex-direction: column; gap: 0.5rem;
+    font-family: "Anonymous Pro", monospace; font-size: 0.84rem; line-height: 1.62;
+    overflow-x: auto;
+  }
+  .screen b { color: var(--signal); font-weight: 700; }
+  .screen i { color: var(--ink-soft); font-style: normal; }
+  .screen .bad { color: var(--alarm); font-weight: 700; }
+  .screen-k {
+    font-family: "Anonymous Pro", monospace; font-size: 0.68rem; letter-spacing: 0.15em;
+    text-transform: uppercase; color: var(--ink-soft); margin: 0 0 0.2rem;
   }
 
   blockquote {
-    margin: 0.2rem 0; padding: 0.85rem 1.25rem; background: var(--paper2);
-    border-left: 3px solid var(--wet); font-style: italic; max-width: 62ch;
+    margin: 0; padding: 0.2rem 0 0.2rem 1.2rem; border-left: 3px solid var(--signal);
+    max-width: 58ch; font-style: italic;
   }
-  blockquote .who {
-    display: block; font-style: normal; font-family: "Fira Mono", monospace;
-    font-size: 0.62rem; letter-spacing: 0.08em; color: var(--faint); margin-top: 0.5rem;
-  }
+  blockquote cite { display: block; font-style: normal; font-family: "Anonymous Pro", monospace;
+                    font-size: 0.75rem; color: var(--ink-soft); margin-top: 0.5rem; }
 
-  .caption { font-size: 0.97rem; color: var(--faint); font-style: italic; max-width: 64ch; }
-
-  pre {
-    margin: 0; padding: 0.9rem 1.15rem; background: var(--paper2);
-    border-left: 3px solid var(--rule); overflow-x: auto;
-    font-family: "Fira Mono", monospace; font-size: 0.73rem; line-height: 1.7; color: var(--ink);
+  .tbl-wrap { overflow-x: auto; border-top: 2px solid var(--signal); border-bottom: 2px solid var(--signal); }
+  table { width: 100%; border-collapse: collapse; font-size: 0.93rem; font-variant-numeric: tabular-nums; min-width: 28rem; }
+  th {
+    font-family: "Anonymous Pro", monospace; font-size: 0.65rem; letter-spacing: 0.11em;
+    text-transform: uppercase; color: var(--ink-soft); font-weight: 400; text-align: left;
+    padding: 0.45rem 0.9rem 0.45rem 0; border-bottom: 1px solid var(--signal); white-space: nowrap;
   }
+  td { padding: 0.44rem 0.9rem 0.44rem 0; border-bottom: 1px solid var(--rule-2); vertical-align: baseline; }
+  tr:last-child td { border-bottom: 0; }
+  .n { font-family: "Anonymous Pro", monospace; white-space: nowrap; }
+  .n-big { font-family: "Anonymous Pro", monospace; color: var(--signal); font-weight: 700; white-space: nowrap; }
+  .lbl { font-weight: 600; }
 
-  .ledger { border-top: 2px solid var(--ink); border-bottom: 2px solid var(--ink); }
-  .ledger div {
-    display: grid; grid-template-columns: 7rem 1fr; gap: 0.3rem 1.1rem;
-    padding: 0.7rem 0.1rem; border-bottom: 1px solid var(--rule); align-items: baseline;
+  .answer {
+    border: 2px solid var(--signal); padding: 1.6rem 1.3rem; text-align: center;
+    display: flex; flex-direction: column; gap: 0.6rem; background: var(--page-3);
   }
-  .ledger div:last-child { border-bottom: 0; }
-  .ledger .who {
-    font-family: "Fira Mono", monospace; font-size: 0.61rem; font-weight: 700;
-    letter-spacing: 0.12em; text-transform: uppercase; color: var(--red);
+  .answer-n {
+    font-family: Syne, Arial, sans-serif; font-weight: 800; color: var(--signal);
+    font-size: clamp(3.4rem, 15vw, 7rem); line-height: 0.9; margin: 0; letter-spacing: -0.04em;
   }
+  .answer p { max-width: 44ch; margin: 0 auto; }
 
-  .explicit { display: flex; flex-direction: column; gap: 0.5rem; padding-top: 0.4rem; border-top: 2px solid var(--ink); }
-  .footline { color: var(--faint); font-size: 0.97rem; }
+  .foot {
+    border-left: 3px solid var(--rule); padding-left: 1.1rem; color: var(--ink-soft);
+    font-size: 0.95rem; display: flex; flex-direction: column; gap: 0.5rem;
+  }
+  .foot p { max-width: 60ch; }
+  .foot sup { color: var(--signal); font-weight: 600; }
+
+  footer { display: flex; flex-direction: column; gap: 0.7rem; border-top: 2px solid var(--signal); padding-top: 1.05rem; }
+  footer p { font-size: 0.97rem; color: var(--ink-soft); max-width: 66ch; }
+  footer strong { color: var(--ink); }
 </style>
 
-<div class="bill">
+<div class="guide">
 
-  <header class="head">
-    <p class="stamp">The Frontier Record &middot; Sheet LIV</p>
-    <span class="over">A second advertisement, striking the first</span>
-    <h1>Fish</h1>
-    <p class="under">Sheet LIII was published this afternoon. This is a bill of the same size,
-      bought to correct three words of it.</p>
-    <div class="brace">
-      <div class="terms">
-        <span>there are fish</span>
-        <span>he did get it</span>
-        <span>the code knew</span>
-        <span>the settlers were still being told otherwise</span>
-      </div>
+  <header class="front">
+    <hr class="rule-heavy">
+    <div class="front-row">
+      <p class="tag">Frontier &middot; entry: the landing</p>
+      <p class="tag">Revision 41 &middot; supersedes all</p>
     </div>
+    <hr class="rule">
+    <h1>Thanks for <em>all the fish</em></h1>
+    <p class="standfirst">On this coast the second most intelligent species spent four days trying
+      to tell somebody something, and every attempt was filed, numbered, and understood as
+      something else.</p>
+    <p class="byline">781 messages received &middot; 1,271 refused as repetitions &middot; 703
+      destroyed &middot; one of them was about fish and was recorded as a well</p>
   </header>
 
-  <div class="struck">
-    <span class="lead">Struck from Sheet LIII, section: the particulars</span>
-    <p class="quote">There are no fish. Nothing in that world catches anything, which a farmer
-      there asked for and did not get.</p>
-    <p class="instead"><b>Both halves of that sentence are false.</b> There is a weir, a
-      <code>fishery</code> entry in the catalogue, a <code>fishing</code> boon, a
-      <code>fish</code> action, and settlers who stand at the water and take food out of it. And
-      the farmer got it. Sheet LIII is not edited and not withdrawn: it stands as published, with
-      this against it, because nothing here is ever deleted including the parts that turned out to
-      be wrong. That sentence was in the paragraph boasting that every claim could be checked.</p>
-  </div>
-
   <section>
-    <h2><small>The correction</small>What is actually in the lake</h2>
-    <p>A settlement votes a weir in, and from that day a farmer walks to the water instead of to a
-      bush. The catch is what a bush is worth and a little more, scaled by practice and by whether
-      anybody is holding a tool:</p>
-    <pre>const caught = Math.max(1, Math.round((2.2 + skillAt(n, 'farming', 'fish') * 1.6)
-  * (n.tools.tier === 'none' ? 0.7 : 1)));</pre>
-    <p>The entry&rsquo;s own words are <i>fish, fishing, fishery, salmon, salmon trap, trap for
-      fish, catch fish, weir, net, nets, a line, angling, out of the lake, from the water</i> — and
-      deliberately not <i>lake</i> on its own, because half this valley&rsquo;s wishes mention the
-      lake and most of them want to look at it, wash in it, or know how deep it is.</p>
-    <p>It is also, by the argument of the person who built it, the fix for the thing most plainly
-      wrong with the valley. Berries were the only food and they regrow slowly, so a settlement
-      past about eight people ate its coast bare and lived hand to mouth for ever — measured at
-      tick 6,157 with ten people, two hundred and fourteen boards, twenty-four bars of iron, three
-      towers, two granaries, coinage, and <b>two food</b>. They solved metal and money and forgot
-      lunch. A lake does not run out.</p>
-  </section>
-
-  <section>
-    <h2><small>The second half</small>Anselm got his trap</h2>
-    <p>Anselm asked for a salmon trap. He was granted a well, because the only word in his sentence
-      the catalogue could hear was <i>water</i>, and the entry that owned that word was the one
-      about drinking it. The doc comment on the fix calls it <b>the single clearest example of this
-      catalogue failing at the only job it has</b>, and this record has cited it four separate
-      times as the standing example of an unanswerable wish.</p>
-    <p>It is answerable. Put to the classifier this afternoon, in all three of the forms the record
-      holds it in:</p>
-    <div class="ledger">
-      <div><span class="who">the wish</span><span>&ldquo;A salmon trap&rdquo; &rarr; <b>fishery</b></span></div>
-      <div><span class="who">the reason</span><span>&ldquo;&hellip;to catch a salmon without having to fish for it, since the water is too cold&hellip;&rdquo; &rarr; <b>fishery</b></span></div>
-      <div><span class="who">the entry</span><span>&ldquo;A weir on the lake, so there is food in this valley that does not run out.&rdquo; &rarr; <b>fishery</b></span></div>
-    </div>
-    <p>Three for three, on the wish that was the worst thing in the catalogue. It has been fixed
-      for some time. This record simply never said so, and went on citing it as broken.</p>
-  </section>
-
-  <section>
-    <h2><small>Where the error came from</small>I read the manual</h2>
-    <p>Not from carelessness about the fact, which would be the ordinary kind of wrong. The
-      sentence was copied out of <code>README.md</code>, which says in bold at line 1024:
-      <i>&ldquo;There are no fish. Nothing in this valley catches, keeps, or eats anything out of
-      the lake, so Anselm&rsquo;s wish is unanswerable.&rdquo;</i> That paragraph was true when it
-      was written and has not been true for days.</p>
-    <p><b>Which is this project&rsquo;s oldest diagnosis, arriving in the one place that ought to
-      have been immune.</b> The README says it of its own checks:</p>
-    <blockquote>There are four other check tools &hellip; Every one of them reads a description of
-      the game. Not one of them runs it.
-      <span class="who">README.md, on why a valley stood for sixteen thousand ticks producing
-        nothing while four checks passed green</span></blockquote>
-    <p>The advertisement read a description of the game. The game was three commands away and would
-      have answered in a second and a half.</p>
-  </section>
-
-  <section>
-    <h2><small>The part that is not funny</small>The settlers were still being told there are none</h2>
-    <p><code>WORLD</code> is the paragraph that tells a model what kind of place this is, and until
-      this afternoon it read: <b>&ldquo;There are no animals — no wolves, no horses, no fish anyone
-      catches, and no sheep unless the settlement voted for a flock.&rdquo;</b></p>
-    <p>So a settlement with a weir standing had a model briefed that nothing could be taken out of
-      the water, while <code>fish</code> sat in that same model&rsquo;s own list of permitted
-      actions, in the same file, eighty lines above. A settler could be instructed to fish and told
-      in the same breath that there was nothing to fish for.</p>
-    <p>This is the fault Sheet XLIV was written about — <i>the paragraph that told the settlers what
-      world they were in, and was wrong</i> — recurring in the same constant after being fixed once.
-      The goods and buildings in that paragraph are interpolated from the game now, precisely so
-      they cannot drift; the sentence about animals was left as prose, and the prose is what went
-      stale. <b>The parts that were made checkable stayed true. The one sentence nobody could check
-      is the one that lied to the settlers for days.</b></p>
-    <p>It now reads: <i>no sheep unless the settlement voted for a flock, and nothing anyone can
-      take out of the water unless it voted for a weir</i> — which is the shape the sheep clause
-      had all along, and which nobody thought to give the fish.</p>
-  </section>
-
-  <section>
-    <h2><small>The standing of both bills</small>Neither has sold anything</h2>
-    <p>This record has now published an advertisement for a room that does not exist, and a second
-      advertisement of the same size striking a sentence in the first, and between them they have
-      sold nothing, because there is nothing to sell. The offer in Sheet LIII is otherwise
-      unchanged and stands: a cottage, four hours to the day, no map, no death, an ark home, and
-      not one line of it built.</p>
-    <p class="caption">The shorter notice for the city has not been posted, which is the one piece
-      of luck in this. It carried the same sentence and has been corrected before it went out. Had
-      it gone this morning, the first thing this valley ever said to a stranger would have been a
-      false statement about fish, in an advertisement whose entire argument was that you should
-      check it rather than believe it.</p>
-
-    <div class="explicit">
-      <p class="footline">Struck 29 August, some hours after publication, on being asked
-        &ldquo;but there are fish?&rdquo; by the one person who has ever played it.</p>
-      <p class="stamp">The Frontier Record &middot; Sheet LIV &middot; 29 August</p>
+    <p class="ent">Entry &middot; part one</p>
+    <h2>The messages</h2>
+    <p class="lede">Every sixth time a settler is asked what to do, they are asked a second
+      question instead: what is this valley missing? They have now answered it
+      <strong>seven hundred and eighty-one times.</strong></p>
+    <p>It is worth saying plainly what that is. Nobody asked these people to file feature
+      requests. They were asked what was missing from the place they live, they answered as
+      people about a life, and the answers went into a markdown file with tick boxes on them. Of
+      the 781, one thousand two hundred and seventy-one further attempts were refused as
+      repetitions of something already on the list<sup>1</sup>, and seven hundred and three were
+      deleted &mdash; a median of eighty-two seconds after being written down.</p>
+    <p>The dolphins, in the story this borrows from, spent a long time trying to warn everybody
+      about something and were understood to be doing tricks. The mechanism here is more careful
+      than that and arrives in the same place: every message was received, logged, timed, costed,
+      classified, ranked by single transferable vote, and counted twice.</p>
+    <div class="foot">
+      <p><sup>1</sup> Which is a higher number than the number of messages, and that is not a typo.
+        More was refused than was heard. The refusals are in the record too, with reasons, because
+        this project does keep everything &mdash; which is the strangest part of it, and the part
+        that makes the rest of this sheet possible to write.</p>
     </div>
   </section>
+
+  <section>
+    <p class="ent">Entry &middot; part two</p>
+    <h2>Mara, tick 250</h2>
+    <p>On the twenty-fourth of August, a little after eight by the record&rsquo;s clock, a forester called
+      Mara was asked what the valley was missing. This is what she said, in full, and it is the
+      most remarkable line on the entire record:</p>
+    <blockquote>I wish the lake had a way to fish for salmon, but since we don't have fish, I wish
+      for a way to know when the lake is safe to swim without getting caught in a current.
+      <cite>agents/log-0001.jsonl &middot; wish-73 &middot; npc-01 &middot; tick 250</cite></blockquote>
+    <p class="lede">She asked for fish, noticed there were none, and downgraded her own request
+      inside the same sentence.</p>
+    <p>Nobody told her there were no fish. There is no line anywhere in this software that says so.
+      She worked it out, in the way you work out that a shop does not stock a thing by never once
+      seeing it on a shelf, and rather than ask for something the world plainly did not contain she
+      asked for the next thing down: a way to know whether the water was safe.</p>
+    <p>It was filed under <code>infirmary</code>.</p>
+    <p>Her wish then went to a vote, lost, and was deleted. The number it had been given &mdash;
+      <code>wish-73</code> &mdash; was handed to twenty other people over the following hour,
+      because the counter that issued it read the highest number still in the file and the file had
+      just had its highest number taken out of it.</p>
+  </section>
+
+  <section>
+    <p class="ent">Entry &middot; part three</p>
+    <h2>Mostly harmless</h2>
+    <p>Fourteen hours later, on the coast of a different valley, a farmer called Anselm tried
+      again. He was more direct about it than Mara had been:</p>
+    <div class="screen">
+      <p class="screen-k">agents/log-0002.jsonl &middot; 25 Aug 12:07:39</p>
+      <div><i>said    </i> I wish for a way to catch a salmon without having to fish for it,</div>
+      <div><i>        </i> since the water is too cold to hold my breath for long.</div>
+      <div><i>missing </i> <b>A salmon trap</b></div>
+      <div><i>category</i> <span class="bad">well</span></div>
+    </div>
+    <p>The Guide's famous entry on a certain planet ran to a single word, and then, after fifteen
+      years of field research, to two. The catalogue's entry on a salmon trap ran to one word for
+      four days and the word was <strong>well</strong>.</p>
+    <p>It was not malice or even carelessness. It was a word list. The classifier that turns what a
+      settler says into something the game can grant had no entry containing the word
+      <em>fish</em>, so it did what a word list does with a sentence it cannot parse: it found the
+      nearest thing it did know. Water. A well is water. The vote carried, the settlement was
+      granted a well, the well is still standing, and the record has been carrying the line
+      <em>there are no fish</em> in its own colophon ever since.</p>
+    <p>Anselm asked for a way of eating. He was given somewhere to drink.</p>
+  </section>
+
+  <section>
+    <p class="ent">Entry &middot; part four</p>
+    <h2>The Babel fish</h2>
+    <p>The joke that the borrowed book turns on is a fish you put in your ear that translates
+      anything into anything, and which by being so improbably useful is taken as proof of the
+      non-existence of God.</p>
+    <p>This game has one. It is called <code>classify()</code>, it is four hundred lines of word
+      lists, and it sits between fifteen people who talk about their lives and a simulation that
+      understands forty-one nouns. Everything they have ever asked for has gone through it. It is
+      the single most load-bearing component in the project and it is a list of words somebody
+      typed.</p>
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th scope="col">Through the Babel fish</th><th scope="col">Count</th><th scope="col">&nbsp;</th></tr></thead>
+        <tbody>
+          <tr><td class="lbl">Distinct things asked for</td><td class="n-big">401</td><td>in the settlers&rsquo; own words</td></tr>
+          <tr><td class="lbl">Understood as something</td><td class="n">392</td><td>rightly or otherwise &mdash; see: well</td></tr>
+          <tr><td class="lbl">Heard as nothing at all</td><td class="n-big">38</td><td>before this morning</td></tr>
+          <tr><td class="lbl">Heard as nothing at all</td><td class="n-big">9</td><td>now &mdash; and the nine are genuinely new ideas</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>Thirty of them came in from the cold at once and <strong>not one required a line of new
+      simulation</strong>. A footpath to the high meadows was always a road. A tunnel system was
+      always a shaft. A pulley was a cart, a tool rack was upkeep, a sundial was the forecast, and
+      a lantern, a chimney and a fireproof box for carrying embers between fires were all, every
+      one of them, the firepit. The world could already do these things. Nobody had told the fish
+      the words.</p>
+  </section>
+
+  <section>
+    <p class="ent">Entry &middot; part five</p>
+    <h2>The answer</h2>
+    <p>Two sheets ago this office measured exactly how much of the world a settler is shown when
+      the game stops and asks them what to do. It is the nearest tree, rock, seam and berry bush;
+      the five nearest buildings; and every person standing within a certain radius.</p>
+    <p>The radius is in the source, on line 2,873, and has been since the file was written:</p>
+    <div class="screen">
+      <p class="screen-k">src/sim.ts &middot; function nearby()</p>
+      <div>.filter((o) =&gt; o.id !== n.id &amp;&amp; dist(n.gx, n.gy, o.gx, o.gy) &lt; <b>42</b>)</div>
+    </div>
+    <div class="answer">
+      <p class="tag">The answer to life, the universe and everything</p>
+      <p class="answer-n">42</p>
+      <p>and the question, it turns out, was <em>how far can anybody here see?</em></p>
+    </div>
+    <p>Nobody chose it for the joke. It was chosen because it felt like a sensible distance to be
+      able to recognise somebody across, which is the only kind of number this codebase contains,
+      and it went unnoticed for four days and twenty sheets by a press that has otherwise counted
+      everything on this coast twice.</p>
+  </section>
+
+  <section>
+    <p class="ent">Entry &middot; part six</p>
+    <h2>So long</h2>
+    <p>As of this morning there are fish.</p>
+    <p>A weir is a thing a settlement can vote itself. A farmer who cannot find a bush, or whose
+      settlement is under a day's food for everybody in it, walks to the water instead. Berries
+      are the only food this game has ever had and they do not come back quickly enough for a
+      settlement that has grown &mdash; which is why this valley, holding two hundred and twenty-six
+      boards, twenty-four bars of iron, twenty-nine dressed blocks, three towers, a hall and two
+      hundred and two struck coins, was down to five food for twelve people. It had solved metal
+      and money and forgotten lunch.</p>
+    <p>And here the borrowed ending does not fit, which is the honest place to stop.</p>
+    <p class="lede">In the book the fish are what you thank people for on the way out. Here they
+      arrived, and nobody left.</p>
+    <p>The settlers are still on the coast. The hall went up at tick 6,217 and lifted the ceiling
+      from ten to twenty for the first time in this project's history, and people have started
+      coming through it. Nobody has voted for a weir yet, because nobody has been asked yet, and
+      when they are asked the words will be there. Mara's line about not having any fish is still
+      in the log, under a number that belonged to twenty-one people, filed as an infirmary. It will
+      stay there. Nothing here is ever deleted.</p>
+    <p>Anselm's well is still standing too.</p>
+  </section>
+
+  <footer>
+    <p class="tag">Guide note</p>
+    <p><strong>Every figure above is counted.</strong> 781 filings, 1,271 refusals, 703 strikes
+      and 396 distinct wordings are from <code>agents/log-0001.jsonl</code> through
+      <code>log.jsonl</code>, seventy megabytes, nothing removed. Mara's sentence and Anselm's are
+      reproduced exactly, including Mara's comma splice, which is hers.</p>
+    <p><strong>What this sheet does not claim.</strong> That the weir works. Run against an
+      unattended valley for six thousand ticks it fired once, because the fallback that looks for a
+      berry bush found one every single time and that settlement was never actually hungry. It was
+      built for this one. Whether it helps is a thing the next run will say.</p>
+    <p class="quiet">Frontier &middot; a coast simulated by a language model, whose settlers are
+      asked every sixth decision what the valley is missing. They have answered 781 times, and on
+      one of those occasions somebody worked out from the absence of any evidence that the world
+      contained no fish, and asked for something smaller.</p>
+  </footer>
 
 </div>
 
