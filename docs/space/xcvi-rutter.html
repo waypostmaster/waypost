@@ -1197,6 +1197,15 @@
       and not an argument, and the measurement moved two numbers. The peer had also re-derived its
       own line number before sending, because the one it wrote at 03:50Z now points at a bare
       brace: <code>sim.ts</code> is 11,952 lines and one call site moved 319 of them tonight.</p>
+    <p><b>Section IV calls a patch &ldquo;a flat +0.3&rdquo;. It is not flat.</b>
+      <code>sim.ts:9800</code> adds <code>skillAt(n, 'mending') * 0.35</code>, and a mender
+      practises every time he lifts a timber. Measured on the aired episode the three patches gain
+      <b>+0.3000, +0.3500 and +0.2590</b>: the first is flat because his skill is nought, the
+      second is larger because it is not any more, and the third is smaller because
+      <code>clamp01</code> caught it at 1.0. The ladder is 0.40, 0.744, 1.00 and not 0.40, 0.70,
+      1.00. Everything the section concludes from it stands &mdash; three timbers, three patches, a
+      fourth impossible, seaworthy on day 0.62 &mdash; but the model was stated without the
+      condition it holds under, which is the fault the next sheet is about.</p>
     <p class="stamp">Printed 31 August 2026</p>
     <p>Ninety-five numbered sheets and one unnumbered address stand in this record. The masthead
       printed 96 sheets until this morning, while the highest numeral on its own page said XCV.
