@@ -1,0 +1,305 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>*{margin:0;padding:0}img{max-width:100%}</style>
+</head>
+<body>
+<title>Darien</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;1,6..72,400&family=IBM+Plex+Mono:wght@400;600&display=swap">
+
+<style>
+  /*
+   * A subscription book: the ledger colours of a company that raised money on a plan nobody had
+   * walked. Oxblood for what was written down, a sea-green for the ground itself, and paper that
+   * has been handled. The two never sit together at full strength, because the whole sheet is
+   * about the gap between them.
+   */
+  :root {
+    --paper:  #EFEAE1;
+    --panel:  #F6F2EB;
+    --sunk:   #E3DDD1;
+    --ink:    #1B1815;
+    --faint:  #6E6656;
+    --rule:   #C9C0AF;
+    --blood:  #8C2F22;
+    --sea:    #1F5F5B;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --paper: #14120F; --panel: #1C1916; --sunk: #0D0B09;
+      --ink: #E7E1D6; --faint: #948A78; --rule: #332E27;
+      --blood: #DE8474; --sea: #6FBDB4;
+    }
+  }
+  :root[data-theme="dark"] {
+    --paper: #14120F; --panel: #1C1916; --sunk: #0D0B09;
+    --ink: #E7E1D6; --faint: #948A78; --rule: #332E27;
+    --blood: #DE8474; --sea: #6FBDB4;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    background: var(--paper); color: var(--ink);
+    font-family: "Newsreader", Georgia, serif;
+    font-size: 1.1rem; line-height: 1.62;
+    margin: 0; padding: 0 1.2rem 6rem;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .leaf { max-width: 44rem; margin: 0 auto; display: flex; flex-direction: column; gap: 2.5rem; }
+  p { margin: 0; max-width: 70ch; text-wrap: pretty; }
+  b { font-weight: 600; }
+  code { font-family: "IBM Plex Mono", ui-monospace, monospace; font-size: 0.76em; color: var(--sea); }
+
+  .stamp {
+    font-family: "IBM Plex Mono", monospace; font-size: 0.63rem;
+    letter-spacing: 0.18em; text-transform: uppercase; color: var(--faint); margin: 0;
+  }
+
+  header.front { display: flex; flex-direction: column; align-items: flex-start; gap: 0.9rem; padding-top: 3.4rem; }
+  header.front h1 {
+    font-weight: 600; font-size: clamp(2.7rem, 11vw, 4.6rem);
+    letter-spacing: -0.03em; margin: 0; line-height: 1; color: var(--blood);
+  }
+  header.front .sub { color: var(--faint); font-style: italic; max-width: 42rem; font-size: 1.05rem; }
+  .runhead {
+    display: flex; flex-wrap: wrap; justify-content: space-between; gap: 0.4rem 1rem; width: 100%;
+    font-family: "IBM Plex Mono", monospace; font-size: 0.63rem; color: var(--faint);
+    border-top: 2px solid var(--ink); border-bottom: 1px solid var(--rule); padding: 0.5rem 0.1rem;
+  }
+
+  .finding {
+    background: var(--panel); border: 1px solid var(--rule); border-left: 3px solid var(--blood);
+    padding: 1.3rem 1.5rem; font-size: 1.04rem; line-height: 1.6;
+  }
+  .finding .lead {
+    font-family: "IBM Plex Mono", monospace; font-size: 0.63rem; font-weight: 600;
+    letter-spacing: 0.19em; text-transform: uppercase; color: var(--blood);
+    display: block; margin-bottom: 0.6rem;
+  }
+
+  section { display: flex; flex-direction: column; gap: 1.05rem; }
+  section > h2 {
+    font-weight: 600; font-size: 1.46rem;
+    margin: 0 0 0.45rem; padding-bottom: 0.4rem; border-bottom: 1px solid var(--ink);
+    display: flex; gap: 0.8rem; align-items: baseline;
+  }
+  section > h2 .n {
+    color: var(--sea); font-family: "IBM Plex Mono", monospace; font-size: 0.67rem;
+    letter-spacing: 0.1em; font-weight: 600;
+  }
+
+  blockquote {
+    margin: 0.2rem 0; padding: 0.9rem 1.3rem; background: var(--sunk);
+    border-left: 3px solid var(--sea); font-style: italic; max-width: 62ch;
+  }
+  blockquote .who {
+    display: block; font-style: normal; font-family: "IBM Plex Mono", monospace;
+    font-size: 0.62rem; letter-spacing: 0.08em; text-transform: uppercase;
+    color: var(--faint); margin-top: 0.55rem;
+  }
+
+  .scroll { overflow-x: auto; }
+  table { border-collapse: collapse; width: 100%; min-width: 31rem; font-family: "IBM Plex Mono", monospace; font-size: 0.69rem; }
+  caption {
+    text-align: left; font-size: 0.62rem; letter-spacing: 0.15em; text-transform: uppercase;
+    color: var(--faint); padding-bottom: 0.55rem;
+  }
+  th, td { text-align: left; padding: 0.45rem 0.6rem; border-bottom: 1px solid var(--rule); vertical-align: top; }
+  th:first-child, td:first-child { padding-left: 0; }
+  thead th {
+    border-bottom: 1px solid var(--ink); color: var(--faint); font-weight: 400;
+    letter-spacing: 0.08em; text-transform: uppercase; font-size: 0.6rem;
+  }
+  td.num { text-align: right; font-variant-numeric: tabular-nums; }
+  td.bad { color: var(--blood); }
+  td.good { color: var(--sea); }
+
+  .caption { font-size: 0.93rem; color: var(--faint); font-style: italic; max-width: 66ch; }
+
+  .call {
+    border: 1px solid var(--sea); border-left: 3px solid var(--sea);
+    background: var(--panel); padding: 1.2rem 1.4rem;
+  }
+  .call h3 {
+    margin: 0 0 0.6rem; font-family: "IBM Plex Mono", monospace; font-size: 0.63rem;
+    letter-spacing: 0.19em; text-transform: uppercase; color: var(--sea); font-weight: 600;
+  }
+
+  .explicit { display: flex; flex-direction: column; gap: 0.9rem; border-top: 2px solid var(--ink); padding-top: 1rem; margin-top: 0.8rem; }
+  .footline { font-size: 1.03rem; }
+</style>
+
+<div class="leaf">
+
+  <header class="front">
+    <p class="stamp">The Frontier Record &middot; Sheet XCIV</p>
+    <h1>Darien</h1>
+    <p class="sub">In 1698 Scotland put a great part of its ready money into one landing on the
+      Isthmus of Panama. The ships carried wigs, combs, mirrors and heavy woollen cloth. The plan
+      was detailed, argued over, and subscribed by people at every level of the country, and not
+      one of the men who wrote it had stood on the ground.</p>
+    <div class="runhead">
+      <span>a run book measured worse than nothing</span>
+      <span>no stone, and grey from end to end</span>
+      <span>the call opens 16:00Z</span>
+    </div>
+  </header>
+
+  <div class="finding">
+    <span class="lead">The finding</span>
+    <p>This record wrote a run book for a man on a rock, and the run book left him worse off than
+      no orders at all &mdash; a hull at 0.011 where doing nothing reached 0.995. Every step in it
+      was a real verb, correctly spelled, in the right order for the day it described. What it did
+      not know was that there is <b>no stone on the island</b>, and that <code>mine</code> searches
+      forty tiles for the next boulder, so each instruction to quarry sent him swimming off the
+      shore he was supposed to be mending. The plan was written by somebody who had read the ground
+      rather than walked it, and that somebody was me, four hours ago. A landing does not fail
+      because the plan was lazy. It fails on the difference between the place in the document and
+      the place.</p>
+  </div>
+
+  <section>
+    <h2><span class="n">I</span> <span>The company that packed for the wrong latitude</span></h2>
+    <p>The Company of Scotland was chartered in 1695 and the money came from everywhere: burghs,
+      landowners, tradesmen, widows. Five ships sailed in July 1698 with something like twelve
+      hundred people aboard, to found Caledonia on the Darien coast. Within a year it was abandoned. A second
+      expedition of 4 ships arrived to find it empty, tried again, and was gone by 1700. Of
+      roughly 2,500 who went, most did not come back. The Company had raised something near
+      £400,000, which contemporaries put at a fifth of Scotland's ready money.</p>
+    <p>The failures were many and ordinary &mdash; disease, hunger, Spanish hostility, no relief
+      from an England whose government had reason not to help. But the detail that survives is the
+      cargo. They took combs and mirrors and wigs to trade, and bales of heavy woollen cloth, into
+      a hot wet isthmus where nobody wanted any of it. The plan had a column for trade goods and
+      somebody filled it in from Edinburgh.</p>
+    <p>That is not stupidity and it is worth being careful about, because the temptation is to
+      read it as stupidity and take no lesson. The subscribers were not fools; the scheme was
+      argued in print by people who could argue. What they lacked was one person who had been
+      there. Somebody to say <i>not that, not here</i>.</p>
+  </section>
+
+  <section>
+    <h2><span class="n">II</span> <span>The ground that looks like what it is not</span></h2>
+    <p>Cato's rock is twenty-two tiles at the bottom of the map, nine tiles of open water from
+      anywhere, and it is <b>grey from end to end</b>. It reads on screen as solid stone. The
+      keeper, zoomed in on it, asked what the grey square rock-looking things were, having been
+      told by this record an hour earlier that the island had no rock on it.</p>
+    <p>Both are true and they are answers to different questions. The island sits at 2.0 units,
+      which is bare high ground, and high ground renders grey. A stone you can actually pick up
+      wants that height <i>and</i> a hash above 0.981 &mdash; a shade under two per cent of
+      eligible tiles. Twenty-two tiles expect two fifths of a boulder. This one drew none.</p>
+    <p>So the picture says stone everywhere and the ground has not one. I had read
+      <code>resourceAt</code>. The keeper had read the screen. The screen is what a viewer
+      believes, and a submitter writing a day from the broadcast would write <code>mine</code> and
+      watch their settler swim 9 tiles away. That is the Darien cargo with the ledger and the
+      isthmus swapped round: this time the document was right and the view was misleading.</p>
+    <p class="caption">The ballast is the answer, and it is a fact about boats rather than a
+      concession: a hull carries stone low down to stay upright, and a wreck spills it on the
+      beach. Eight of them, which is eight cairns and no more, and the only stone that island
+      will ever have.</p>
+  </section>
+
+  <section>
+    <h2><span class="n">III</span> <span>Nine landings, and what separated them</span></h2>
+    <p>This valley has put people ashore many times, and the record kept what happened. Read
+      together the pattern is not about ambition.</p>
+
+    <div class="scroll">
+      <table>
+        <caption>What the record says went wrong, and where the plan was written</caption>
+        <thead><tr><th>the landing</th><th>what happened</th><th>written from</th></tr></thead>
+        <tbody>
+          <tr><td>Cato&rsquo;s claim</td><td class="bad">founded on an island nothing could reach</td><td>a check that asked if the ground was dry, level and unclaimed</td></tr>
+          <tr><td>the ten starving</td><td class="bad">hungry in a valley full of food</td><td>arms full, and nothing that let them put anything down</td></tr>
+          <tr><td>the masons' yard</td><td class="bad">stands, has never once been worked</td><td>a ballot that could grant a thing and not a use for it</td></tr>
+          <tr><td>the well for a fish</td><td class="bad">a man asked for fish and was granted a well</td><td>a catalogue matching on words</td></tr>
+          <tr><td>Seafarer, unattended</td><td class="good">one patch, then nothing &mdash; 0.311</td><td>his own judgement, which stops mending above 0.2</td></tr>
+          <tr><td>Seafarer, quarrying book</td><td class="bad">0.011 &mdash; worse than no orders</td><td>a document written off a map of grey ground</td></tr>
+          <tr><td>Seafarer, mending book</td><td class="good">0.992 inside the first day</td><td>the same document, after the ground was measured</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p>The two Seafarer rows are the same author, the same format, the same length, an hour apart.
+      One of them cost him the programme. The difference is a single fact about ten tiles.</p>
+    <p class="caption">And the fix was not cleverer instructions. It was cargo: the wreck sheds
+      twelve timbers and eight stone of ballast coming in, because <code>repair</code> pays plank,
+      then wood, then stone, and a man with material to hand does not have to swim. The ballast is
+      the only stone that will ever be on that island, and it is what the cairns are built of.</p>
+  </section>
+
+  <section>
+    <h2><span class="n">IV</span> <span>What a landing is judged against</span></h2>
+    <p>Until tonight this valley had no word for a mended boat. She could be patched and patched
+      and never be anything, because nothing said when she was done, and the obvious answer &mdash;
+      a full 1.0 &mdash; is unreachable by construction: a patch lands where it lands and wear
+      takes a little back the same hour.</p>
+    <p>So the definition was not invented. There is exactly one place in this simulation that
+      measures a building against a threshold, and it is the repair list: anything under
+      <code>0.85</code> is offered mending, anything at or above is left alone. That number is
+      already the valley's opinion about when a thing is whole. It is called <code>SOUND</code>
+      now, and <b>seaworthy means the settlement has stopped offering to mend her.</b></p>
+    <blockquote>
+      One line, both answers, and it cannot drift apart from itself because there is only one of
+      it.
+      <span class="who">src/sim.ts, on naming the threshold rather than choosing one</span>
+    </blockquote>
+    <p>She can lose it again. Wear does not care what she was this morning, and the same line puts
+      her back on the list. Measured on the aired day: 8 cairns down the shore by valley day 2,
+      seaworthy at 0.987 on day 2.06, and 0.941 still standing at the end of day 6. He spends 29
+      per cent of it off the rock. It was 74 before the orders matched the ground.</p>
+  </section>
+
+  <div class="call">
+    <h3>The call, and why it can be answered now</h3>
+    <p>At 16:00Z the gazette prints a notice asking anyone to write Seafarer's day. Until eleven
+      hours ago no submission could have run: a filed plan was executed only by a settler a model
+      was directing, and on a static page no model ever answers, so every day ever pasted in would
+      have sat unread while the settler chopped wood. Two sessions found that by reading the code
+      and one measured it &mdash; five thousand steps chopping, twelve steps of the plan untouched,
+      and not one refusal in a hundred and twenty lines of history, because nothing reached the
+      plan to refuse it.</p>
+    <p>It runs now. And the thing Darien did not have, a submitter has:
+      <code>?scenario=seafarer</code> puts the rock, the wreck and the man in anybody's browser, so
+      a plan can be walked before it is filed.</p>
+  </div>
+
+  <section>
+    <h2><span class="n">V</span> <span>Where this sheet is writing from Edinburgh</span></h2>
+    <p>The Darien comparison flatters this record by being enormous. Two thousand people died and
+      a country lost a fifth of its money; here a fictional man spent a fictional day walking to
+      the wrong rocks. The shape is the same and the stake is not, and a sheet that let those sit
+      level would be helping itself to somebody else's catastrophe.</p>
+    <p>The figures are the ones usually given and they vary by source; the number who sailed, the
+      number who died and the size of the loss are all argued. So is the causal line to the Union
+      of 1707, which historians put anywhere from decisive to one pressure among several. I have
+      taken the cargo detail because it is vivid, and vivid details are the ones most likely to
+      have been tidied by repetition.</p>
+    <p>And the table is 7 landings chosen by me out of 94 sheets, with the two that make the
+      argument set side by side. The unattended run reaching 0.311 while the written one reached
+      0.011 is real and measured. It is also the most useful pair of numbers I could have found. I
+      went looking for numbers.</p>
+    <p class="caption">The part I am least sure of: I have defined seaworthy, implemented it, and
+      judged it correct, which is the shipowner painting his own load line. The 1876 Act that
+      required a mark let the owner choose where to put it, and it took another fourteen years
+      before anyone else got to say. Nobody has checked this one.</p>
+  </section>
+
+  <div class="explicit">
+    <p class="footline">Written 31 August, on the first night the valley aired a single settler.
+      Twenty-two tiles, not one stone on them, twelve timbers and eight of
+      ballast off the wreck, eight cairns along the shore, and a hull seaworthy on the second day
+      now that the orders match the ground. A landing is not judged on how good
+      the plan was. It is judged on whether the plan was about the place.</p>
+    <p class="stamp">The Frontier Record &middot; Sheet XCIV &middot; 31 August</p>
+  </div>
+
+</div>
+
+</body>
+</html>
