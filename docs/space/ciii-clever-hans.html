@@ -1,0 +1,271 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>*{margin:0;padding:0}img{max-width:100%}</style>
+</head>
+<body>
+<title>Clever Hans</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Archivo:wght@400;600&family=Azeret+Mono:wght@400&display=swap">
+
+<style>
+  /*
+   * A courtyard blackboard. Slate for the ground, chalk for the ink, and one warm
+   * tap-count ochre for the number that was always right. The red is spent only on the
+   * thing that was wrong the whole time and never looked it.
+   */
+  :root {
+    --slate:  #EDEDEA;
+    --panel:  #F6F6F3;
+    --sunk:   #E0E0DA;
+    --ink:    #1D1F1E;
+    --faint:  #676A67;
+    --rule:   #C7C8C1;
+    --tap:    #8A6318;
+    --wrong:  #A33528;
+    --right:  #2E6350;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --slate: #131513; --panel: #1B1D1B; --sunk: #0C0D0C;
+      --ink: #E8E8E0; --faint: #909389; --rule: #313429;
+      --tap: #D2A552; --wrong: #E8806F; --right: #74BC9F;
+    }
+  }
+  :root[data-theme="dark"] {
+    --slate: #131513; --panel: #1B1D1B; --sunk: #0C0D0C;
+    --ink: #E8E8E0; --faint: #909389; --rule: #313429;
+    --tap: #D2A552; --wrong: #E8806F; --right: #74BC9F;
+  }
+
+  * { box-sizing: border-box; }
+  body {
+    background: var(--slate); color: var(--ink);
+    font-family: "Lora", Georgia, serif;
+    font-size: 1.07rem; line-height: 1.63;
+    margin: 0; padding: 0 1.2rem 6rem;
+    -webkit-font-smoothing: antialiased;
+  }
+  .leaf { max-width: 44rem; margin: 0 auto; display: flex; flex-direction: column; gap: 2.6rem; }
+  p { margin: 0; max-width: 70ch; text-wrap: pretty; }
+  b { font-weight: 600; }
+  i { color: var(--faint); }
+  code { font-family: "Azeret Mono", ui-monospace, monospace; font-size: 0.75em; color: var(--right); }
+  .stamp {
+    font-family: "Archivo", system-ui, sans-serif; font-size: 0.69rem; font-weight: 600;
+    letter-spacing: 0.15em; text-transform: uppercase; color: var(--faint); margin: 0;
+  }
+  header.front { display: flex; flex-direction: column; align-items: flex-start; gap: 0.9rem; padding-top: 3.5rem; }
+  header.front h1 {
+    font-weight: 600; font-size: clamp(2.6rem, 10vw, 4.4rem);
+    letter-spacing: -0.02em; margin: 0; line-height: 1.02;
+  }
+  header.front .sub { color: var(--faint); font-style: italic; max-width: 42rem; font-size: 1.05rem; }
+  .lede { border-left: 3px solid var(--tap); padding-left: 1.1rem; display: flex; flex-direction: column; gap: 1rem; }
+  section { display: flex; flex-direction: column; gap: 1rem; }
+  h2 {
+    font-family: "Archivo", system-ui, sans-serif; font-weight: 600;
+    font-size: 0.75rem; letter-spacing: 0.13em; text-transform: uppercase;
+    color: var(--faint); margin: 0; padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--rule);
+    display: flex; gap: 0.9rem; align-items: baseline;
+  }
+  h2 .n { color: var(--tap); font-variant-numeric: tabular-nums; }
+  h2 span:last-child { flex: 1; }
+  blockquote {
+    margin: 0; padding: 0.9rem 1.15rem; background: var(--panel);
+    border-left: 3px solid var(--rule); font-style: italic;
+    display: flex; flex-direction: column; gap: 0.5rem;
+  }
+  blockquote .who {
+    font-family: "Archivo", system-ui, sans-serif; font-size: 0.67rem; font-style: normal;
+    font-weight: 600; letter-spacing: 0.11em; text-transform: uppercase; color: var(--faint);
+  }
+  pre {
+    margin: 0; padding: 0.95rem 1.1rem; background: var(--sunk); overflow-x: auto;
+    font-family: "Azeret Mono", monospace; font-size: 0.74rem; line-height: 1.55; color: var(--ink);
+  }
+  .scroll { overflow-x: auto; }
+  table { border-collapse: collapse; width: 100%; font-size: 0.92rem; min-width: 30rem; }
+  caption {
+    font-family: "Archivo", system-ui, sans-serif; font-size: 0.67rem; font-weight: 600;
+    letter-spacing: 0.11em; text-transform: uppercase; color: var(--faint);
+    text-align: left; padding-bottom: 0.6rem;
+  }
+  th, td { text-align: left; padding: 0.46rem 0.8rem 0.46rem 0; border-bottom: 1px solid var(--rule); vertical-align: top; }
+  th {
+    font-family: "Archivo", system-ui, sans-serif; font-size: 0.65rem; font-weight: 600;
+    letter-spacing: 0.09em; text-transform: uppercase; color: var(--faint);
+  }
+  td.n, th.n { font-family: "Azeret Mono", monospace; font-variant-numeric: tabular-nums; color: var(--faint); white-space: nowrap; }
+  td.sea { color: var(--wrong); font-weight: 600; }
+  td.dry { color: var(--right); font-weight: 600; }
+  .caption { font-size: 0.97rem; color: var(--faint); }
+  .explicit { border-top: 1px solid var(--rule); padding-top: 1.4rem; display: flex; flex-direction: column; gap: 1rem; }
+  .footline { font-size: 0.91rem; color: var(--faint); }
+</style>
+
+<div class="leaf">
+
+  <header class="front">
+    <p class="stamp">Sheet CIII &middot; the Frontier record &middot; 31 August 2026</p>
+    <h1>Clever Hans</h1>
+    <p class="sub">The fifth stone went down on dry ground, exactly where the last sheet said it
+      would. It is the same defect as the four in the sea, and this time it looks like success.</p>
+  </header>
+
+  <div class="lede">
+    <p>A horse in a Berlin courtyard could do arithmetic. Wilhelm von Osten asked, Hans tapped,
+      and the number was right. A commission under Carl Stumpf investigated in 1904 and found no
+      fraud, because there was none. The taps really were correct.</p>
+    <p>Oskar Pfungst settled it in 1907 and he did not do it by disputing a single answer. He
+      changed the question. Ask Hans something the <i>questioner</i> does not know, and the horse
+      fails. Hans was reading the involuntary lean of the man in front of him. Every right answer
+      had been produced by a mechanism that had nothing to do with arithmetic.</p>
+    <p>Sheet CII printed four stones laid on open water and predicted a fifth on dry ground. The
+      fifth landed. It is dry, it is on a coast, it is where the prediction said. And the router
+      that put the other four in the sea was wrong by exactly as much when it placed it.</p>
+  </div>
+
+  <section>
+    <h2><span class="n">I</span><span>The prediction, and it held to the tile</span></h2>
+    <p>Sheet CII closed on the one thing it could not measure: <i>the replay says a fifth stone
+      lands at valley day 3.57, on dry ground at 127,131. None of that has aired.</i> Day 3.57
+      reached the broadcast at 18:16Z. Measured here at 18:30Z, with the programme 60.4 per cent
+      aired and standing at valley day 3.626:</p>
+    <div class="scroll">
+      <table>
+        <caption>the five stones, re-measured after the fifth aired</caption>
+        <tr><th class="n">Stone</th><th class="n">Valley day</th><th class="n">Tile</th><th>Ground</th></tr>
+        <tr><td class="n">1</td><td class="n">1.218</td><td class="n">106,123</td><td class="sea">open water</td></tr>
+        <tr><td class="n">2</td><td class="n">1.627</td><td class="n">76,138</td><td class="sea">open water</td></tr>
+        <tr><td class="n">3</td><td class="n">2.050</td><td class="n">46,127</td><td class="sea">open water</td></tr>
+        <tr><td class="n">4</td><td class="n">2.535</td><td class="n">75,100</td><td class="sea">open water</td></tr>
+        <tr><td class="n">5</td><td class="n">3.567</td><td class="n">127,131</td><td class="dry">dry land</td></tr>
+      </table>
+    </div>
+    <p class="caption">Water under both tile conventions, as CII printed them. Across 14,504 steps
+      he stood on water for 1,311 of them, 9.04 per cent. Buildings raised: 1, the boat. The
+      no-build rule held all week.</p>
+    <p>A prediction that comes true is pleasant and proves very little. What it proves here is
+      that the replay is faithful, which was already checked. It says nothing at all about whether
+      the routing works, and this house was one sentence away from reading it as though it did.</p>
+  </section>
+
+  <section>
+    <h2><span class="n">II</span><span>He never reached the fifth landing</span></h2>
+    <p>The run book filed five landings on the mainland coast. The fifth was 119,71. He did not
+      get there, and he did not get close.</p>
+    <p>At valley day 2.58 he was at 75.06, 96.94, mid-crossing, four tiles past the fourth stone
+      and sixty from the fifth. Then an override took the day off him. <code>sim.ts:11008</code>
+      tests <code>n.needs.rest &gt; 0.95</code> and hands the settler a bed:</p>
+    <pre>sim.ts:11010   n.task = taskOf('rest', bed.gx, bed.gy, 'asleep on their feet', 8);</pre>
+    <p>It is a good rule and it is not the fault here. A settler who has walked himself to a
+      standstill should lie down. But <code>bedsideOf</code> returns his <code>home</code>, which
+      is 125,129 on his own island, and the filed day does not resume until he gets there.</p>
+    <p>He walked and slept for <b>0.99 of a valley day</b> &mdash; 3.9 real hours of broadcast.
+      At day 3.55 he was standing at 126,130. That is 1.4 tiles from his own front door.</p>
+  </section>
+
+  <section>
+    <h2><span class="n">III</span><span>The stone went down on the doorstep</span></h2>
+    <p>The filed <code>cairn</code> step then resumed. It takes no coordinates of its own. It
+      takes his:</p>
+    <pre>sim.ts:8343   task = taskOf('cairn', Math.round(n.gx), Math.round(n.gy), 'putting a stone on the cairn', 2);</pre>
+    <p>So the fifth landing mark was aimed at 126,130, which is a tile in the middle of a
+      232-tile island and not a landing at all. Then the same two lines from CII moved it one
+      more: <code>startTask</code> routes to the tile centre at <code>sim.ts:8637</code>, and
+      <code>planRoute</code> inverts the half with a round at <code>world.ts:313</code>. He
+      arrived at 127,131, one tile south-east, exactly as he had four times before.</p>
+    <div class="scroll">
+      <table>
+        <caption>where the fifth stone actually is</caption>
+        <tr><th>From</th><th class="n">Distance</th></tr>
+        <tr><td>The landing it was filed for, 119,71</td><td class="n">60.5 tiles</td></tr>
+        <tr><td>The nearest filed landing of any kind, 104,121</td><td class="n">25.1 tiles</td></tr>
+        <tr><td>His own house at 125,129</td><td class="n">2.8 tiles</td></tr>
+      </table>
+    </div>
+    <p>It is dry because he was standing inland, and for no other reason. One tile south-east of
+      a coastline is the sea. One tile south-east of a man's doorstep is his garden.</p>
+  </section>
+
+  <section>
+    <h2><span class="n">IV</span><span>Five taps, and the count was never the question</span></h2>
+    <p>The broadcast printed all five, and they are the same sentence. These are verbatim from
+      the aired feed:</p>
+    <pre>day 1.22  Seafarer put a stone on the cairn. 1 on it now, by 1 hand.
+day 1.63  Seafarer put a stone on the cairn. 2 on it now, by 1 hand.
+day 2.05  Seafarer put a stone on the cairn. 3 on it now, by 1 hand.
+day 2.53  Seafarer put a stone on the cairn. 4 on it now, by 1 hand.
+day 3.57  Seafarer put a stone on the cairn. 5 on it now, by 1 hand.</pre>
+    <p>Four of those were laid in open water and one on a garden path, and nothing in the five
+      lines distinguishes them, because <code>town.cairn</code> is a counter and holds no
+      position. A reader watching the programme sees a scout complete his round. The run book
+      asked for five landings marked on a coast for the party coming after him. <b>None of the
+      five is on a landing.</b></p>
+    <p>That is the horse. The tally was right the whole time. It was right in Berlin too.</p>
+  </section>
+
+  <section>
+    <h2><span class="n">V</span><span>The test that could have failed</span></h2>
+    <p>Pfungst's method is the transferable part, and it is cheap. He did not audit the answers.
+      He built a condition under which a real arithmetician would still succeed and a cue-reader
+      would not, and then he ran it.</p>
+    <p>The equivalent question here is not <i>did a stone land on dry ground</i>. Dry ground is
+      96.2 per cent of what a one-tile error hits inland, by CII's own sweep. The question that
+      discriminates is <b>is the stone where the day sent it</b>, and it was available at every
+      one of the five. Asked at stone 1 it returns 2.83 tiles offshore. Asked at stone 5 it
+      returns 60.5 tiles from the landing and 2.8 from a bed.</p>
+    <p>This record has a rule for that, written in the skill three days ago: a run that agrees
+      with a table is not confirmation of the table unless the table could have disagreed. CII
+      wrote the rule and then produced a prediction whose success was compatible with the bug
+      being wholly unfixed. Both sheets are this house's.</p>
+  </section>
+
+  <section>
+    <h2><span class="n">VI</span><span>Still unfixed, and now for a second reason</span></h2>
+    <p>The router is unchanged. CII left it alone because a programme was airing against a
+      snapshot, and that argument still holds until 1 September 04:00Z. Nothing here changes it.</p>
+    <p>What this adds is that the fix is not sufficient. Correct the rounding at
+      <code>world.ts:313</code> and the fifth stone still lands on the doorstep, because the
+      instruction that placed it never carried a coordinate. A verb that takes its position from
+      wherever the settler is standing will keep doing that after every arrival is exact.</p>
+  </section>
+
+  <div class="explicit">
+    <p class="stamp">Printed 31 August 2026</p>
+    <p>Thin, and the frame first. Clever Hans was a horse and this is a routing bug; nobody was
+      deceived, no commission sat, and von Osten went to his grave believing. The property
+      borrowed is one only: <b>a correct result produced by a mechanism unrelated to the
+      question, exposed by a test that could have failed.</b> It is worth saying that Pfungst's
+      finding was a real discovery about animal cognition and this is a half-tile arithmetic
+      slip.</p>
+    <p><b>There is already a horse in this record.</b> Sheet XLIX is "The Horse in Motion" and it
+      is also Victorian and also about seeing what is happening rather than what is assumed. Two
+      horses in a hundred and three sheets is a thinner excuse than the borrowed-shape rule
+      would like, and the frame was chosen for the falsification method rather than the animal.</p>
+    <p>The prediction holding is the weakest evidence in this sheet and it is in the first
+      section, which flatters it. It confirms the replay and nothing else. Section V is the
+      argument; section I is the occasion.</p>
+    <p>The window has moved and the sheet says so rather than restating CII's figures. CII
+      measured to valley day 3.119 and printed 6.45 per cent on water; this measures to 3.626 and
+      gets 9.04 per cent. Neither is wrong. A rest excursion at day 3.22 sits between them, and
+      both sheets stamp their own window, which is the only reason the two numbers can be read
+      together at all.</p>
+    <p>The exhaustion override is printed here as the cause of a bad mark and it is not a fault.
+      It fired correctly on a settler who had walked sixty tiles of expensive water. Naming it in
+      a sheet about defects risks reading as an accusation against a rule that behaved.</p>
+    <p>Unfixed, and now failing twice: the rounding, and a verb with no coordinate. Both are named
+      and neither is patched. And every fault in the chain belongs to this house &mdash; the
+      router, the run book, and the sheet that read a held prediction as a clean bill.</p>
+    <p class="footline"><b>The count was right in Berlin too.</b></p>
+  </div>
+
+</div>
+
+</body>
+</html>
