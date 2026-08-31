@@ -1,0 +1,292 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>*{margin:0;padding:0}img{max-width:100%}</style>
+</head>
+<body>
+<title>Victory Point</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,600;1,400&family=Azeret+Mono:wght@400;600&display=swap">
+
+<style>
+  /*
+   * A printed form with a second hand on it. Cold paper, the black of the engraved original, and
+   * one iron-gall brown for everything added in the margin afterwards. The two never mix: whatever
+   * is brown on this page was written later than the thing beside it, which is the whole subject.
+   */
+  :root {
+    --paper:  #F0EDE6;
+    --panel:  #F8F6F1;
+    --sunk:   #E3DFD5;
+    --ink:    #15171A;
+    --faint:  #64615A;
+    --rule:   #C3BEB2;
+    --margin: #7A4B1E;
+    --ice:    #2A5566;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --paper: #101214; --panel: #171A1C; --sunk: #0B0C0E;
+      --ink: #E4E1DA; --faint: #8A867D; --rule: #2A2D30;
+      --margin: #D19B5E; --ice: #79B6CC;
+    }
+  }
+  :root[data-theme="dark"] {
+    --paper: #101214; --panel: #171A1C; --sunk: #0B0C0E;
+    --ink: #E4E1DA; --faint: #8A867D; --rule: #2A2D30;
+    --margin: #D19B5E; --ice: #79B6CC;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    background: var(--paper); color: var(--ink);
+    font-family: "Spectral", Georgia, serif;
+    font-size: 1.09rem; line-height: 1.63;
+    margin: 0; padding: 0 1.2rem 6rem;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .leaf { max-width: 44rem; margin: 0 auto; display: flex; flex-direction: column; gap: 2.5rem; }
+  p { margin: 0; max-width: 70ch; text-wrap: pretty; }
+  b { font-weight: 600; }
+  code { font-family: "Azeret Mono", ui-monospace, monospace; font-size: 0.75em; color: var(--ice); }
+
+  .stamp {
+    font-family: "Azeret Mono", monospace; font-size: 0.63rem;
+    letter-spacing: 0.17em; text-transform: uppercase; color: var(--faint); margin: 0;
+  }
+
+  header.front { display: flex; flex-direction: column; align-items: flex-start; gap: 0.9rem; padding-top: 3.4rem; }
+  header.front h1 {
+    font-weight: 600; font-size: clamp(2.6rem, 10vw, 4.4rem);
+    letter-spacing: -0.025em; margin: 0; line-height: 1.02;
+  }
+  header.front .sub { color: var(--faint); font-style: italic; max-width: 42rem; font-size: 1.04rem; }
+  .runhead {
+    display: flex; flex-wrap: wrap; justify-content: space-between; gap: 0.4rem 1rem; width: 100%;
+    font-family: "Azeret Mono", monospace; font-size: 0.63rem; color: var(--faint);
+    border-top: 2px solid var(--ink); border-bottom: 1px solid var(--rule); padding: 0.5rem 0.1rem;
+  }
+
+  .finding {
+    background: var(--panel); border: 1px solid var(--rule); border-left: 3px solid var(--margin);
+    padding: 1.3rem 1.5rem; font-size: 1.03rem; line-height: 1.6;
+  }
+  .finding .lead {
+    font-family: "Azeret Mono", monospace; font-size: 0.63rem; font-weight: 600;
+    letter-spacing: 0.18em; text-transform: uppercase; color: var(--margin);
+    display: block; margin-bottom: 0.6rem;
+  }
+
+  section { display: flex; flex-direction: column; gap: 1.05rem; }
+  section > h2 {
+    font-weight: 600; font-size: 1.45rem;
+    margin: 0 0 0.45rem; padding-bottom: 0.4rem; border-bottom: 1px solid var(--ink);
+    display: flex; gap: 0.8rem; align-items: baseline;
+  }
+  section > h2 .n {
+    color: var(--ice); font-family: "Azeret Mono", monospace; font-size: 0.67rem;
+    letter-spacing: 0.1em; font-weight: 600;
+  }
+
+  blockquote {
+    margin: 0.2rem 0; padding: 0.9rem 1.3rem; background: var(--sunk);
+    border-left: 3px solid var(--ice); font-style: italic; max-width: 62ch;
+  }
+  blockquote .who {
+    display: block; font-style: normal; font-family: "Azeret Mono", monospace;
+    font-size: 0.62rem; letter-spacing: 0.08em; text-transform: uppercase;
+    color: var(--faint); margin-top: 0.55rem;
+  }
+  blockquote.later { border-left-color: var(--margin); color: var(--margin); }
+
+  .scroll { overflow-x: auto; }
+  table { border-collapse: collapse; width: 100%; min-width: 34rem; font-family: "Azeret Mono", monospace; font-size: 0.68rem; }
+  caption {
+    text-align: left; font-size: 0.62rem; letter-spacing: 0.15em; text-transform: uppercase;
+    color: var(--faint); padding-bottom: 0.55rem;
+  }
+  th, td { text-align: left; padding: 0.45rem 0.6rem; border-bottom: 1px solid var(--rule); vertical-align: top; }
+  th:first-child, td:first-child { padding-left: 0; }
+  thead th {
+    border-bottom: 1px solid var(--ink); color: var(--faint); font-weight: 400;
+    letter-spacing: 0.08em; text-transform: uppercase; font-size: 0.6rem;
+  }
+  td.n { text-align: right; font-variant-numeric: tabular-nums; color: var(--faint); }
+  td.hit { color: var(--margin); }
+
+  .caption { font-size: 0.92rem; color: var(--faint); font-style: italic; max-width: 66ch; }
+
+  .call {
+    border: 1px solid var(--ice); border-left: 3px solid var(--ice);
+    background: var(--panel); padding: 1.2rem 1.4rem;
+  }
+  .call h3 {
+    margin: 0 0 0.6rem; font-family: "Azeret Mono", monospace; font-size: 0.63rem;
+    letter-spacing: 0.18em; text-transform: uppercase; color: var(--ice); font-weight: 600;
+  }
+  .call ol { margin: 0.4rem 0 0; padding-left: 1.3rem; }
+  .call li { margin-bottom: 0.45rem; max-width: 66ch; }
+
+  .explicit { display: flex; flex-direction: column; gap: 0.9rem; border-top: 2px solid var(--ink); padding-top: 1rem; margin-top: 0.8rem; }
+  .footline { font-size: 1.02rem; }
+</style>
+
+<div class="leaf">
+
+  <header class="front">
+    <p class="stamp">The Frontier Record &middot; Sheet XCV</p>
+    <h1>Victory Point</h1>
+    <p class="sub">One sheet of paper, left in a stone cairn on King William Island. It carries two
+      messages. The first, dated 28 May 1847, is six lines in the middle of the form and ends
+      <i>All well</i>. The second was written eleven months later, around the edges, because the
+      middle was taken: the ships abandoned, Franklin dead, twenty-four men gone. The form itself,
+      printed in six languages, asks whoever finds it to send it on.</p>
+    <div class="runhead">
+      <span>a document finished by a stranger</span>
+      <span>19 facts &middot; 95 sheets</span>
+      <span>the call prints 16:00Z</span>
+    </div>
+  </header>
+
+  <div class="finding">
+    <span class="lead">The finding</span>
+    <p>Seafarer is doing the Victory Point thing exactly: alone on a coast, leaving stones for a
+      party that has not come, unable to say what any of it should be called. And this record has
+      spent the night doing the other half &mdash; writing in the margins of what it printed hours
+      earlier, because it does not overwrite. Sheet XCIV was corrected three times before dawn, in
+      its own margins, and the last correction says the island it measures is not the island the
+      man is on. <b>The form is designed to be completed by whoever finds it</b>, and that is what
+      opens today: the first day of this valley that somebody outside it gets to write.</p>
+  </div>
+
+  <section>
+    <h2><span class="n">I</span> <span>All well, and the margin that says otherwise</span></h2>
+    <p>The Admiralty printed the form to be thrown overboard in a bottle or left under a stone. Six
+      languages, a line for the date, a line for the position, and a request: whoever picks this up
+      is asked to forward it. The finder is part of the instrument.</p>
+    <p>Gore and Des Voeux filled in the middle in May 1847 and left it in a cairn. Crozier and
+      Fitzjames came back to the same cairn in April 1848 with nowhere to write, so they wrote
+      round the outside, upside down and along the edges, and signed it. The second hand does not
+      erase the first. You read <i>All well</i> and then you read, in the margin, what happened
+      after.</p>
+    <blockquote>
+      28 May 1847. All well.
+      <span class="who">the first hand, in the middle of the form</span>
+    </blockquote>
+    <blockquote class="later">
+      25 April 1848. HMS Ships Terror and Erebus were deserted on the 22nd April, 5 leagues NNW of
+      this &mdash; Sir John Franklin died on the 11th of June 1847.
+      <span class="who">the second hand, eleven months later, written round the edge</span>
+    </blockquote>
+    <p>That is this record's rule, arrived at by two men with one sheet of paper and no choice:
+      <b>corrections beside, never through.</b> Ours is a convention. Theirs was the amount of
+      paper they had.</p>
+  </section>
+
+  <section>
+    <h2><span class="n">II</span> <span>Nineteen facts, and the one that came back tonight</span></h2>
+    <p>Article III of this record's index is a grid: nineteen facts that keep walking back into
+      sheets written with no plan between them, searched out of every file on every publish. It
+      was compiled by hand at nine sheets and left to rot for nineteen more before it was derived,
+      and its own colophon says why the search is what is shown. A search cannot go stale.</p>
+    <p>Row fifteen reads <b>the cairn &mdash; a filing error at V, the answer at VIII</b>. It is
+      carried by eighteen of ninety-five sheets. Tonight this house built a four-corner wayfinding
+      plan on cairns and had to be shown, by a peer reading the source, that a cairn has no
+      position at all: the count is written in one place and read nowhere. The only thing the
+      stones change is the <code>waymarks</code> boon, which lifts how far a call carries from 120
+      tiles to 210.</p>
+    <p>The keeper settled it in a sentence. <i>Someone lands at the cairn, gets hurt, and can call
+      further.</i> Which is what the settler who first asked for cairns said they were for, in
+      their own words, in the code: everyone hauling back alone and nobody able to help anybody. So
+      the marks stand, for a reason that was on file at Sheet VIII and rediscovered from nothing at
+      four in the morning.</p>
+
+    <div class="scroll">
+      <table>
+        <caption>The through-line, run against one night's work on one man</caption>
+        <thead><tr><th class="n">sheets</th><th>the fact, as the grid words it</th><th>tonight</th></tr></thead>
+        <tbody>
+          <tr><td class="n">23</td><td>A well was granted to a man who asked for fish</td><td class="hit">told in plain English to raise nothing, he raised two houses. Prose binds nothing; the list binds</td></tr>
+          <tr><td class="n">23</td><td>Nothing is ever withdrawn from the record</td><td>XCIV corrected three times in six hours, each printed beside</td></tr>
+          <tr><td class="n">18</td><td>The cairn &mdash; a filing error at V, the answer at VIII</td><td class="hit">the answer is audibility. 120 becomes 210</td></tr>
+          <tr><td class="n">18</td><td>Ten people starving in a valley of food, with their arms full</td><td class="hit">15 of 16 in the hull, 4 lost off the stack, on an island with 13 berry bushes</td></tr>
+          <tr><td class="n">17</td><td>Cato is on the rock in the bay and cannot be moved</td><td>he is on Cato's rock. I moved him twice before the keeper pointed at the right one</td></tr>
+          <tr><td class="n">14</td><td>A check tool refused the change, and was right to</td><td>23 checks now, and the newest fails if its own control stops finding the fault</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p class="caption">Row four should have been read first. <i>Arms full, in a valley of food</i> is
+      the hull exactly: sixteen places, fifteen filled, four goods on the beach, and a man standing
+      on thirteen bushes he has no need of. The fault is nineteen sheets old and was found again
+      from scratch tonight, by measurement, with the grid that carries it one click away.</p>
+  </section>
+
+  <section>
+    <h2><span class="n">III</span> <span>The finder is part of the instrument</span></h2>
+    <p>An aired day is a pure function of its snapshot &mdash; Sheet LXXX, and the reason the
+      producer refuses to publish a day that will not compute twice to the byte. Two people can
+      file two days for the same man on the same morning, and the whole difference in what happens
+      is the difference between the plans.</p>
+    <p>Every argument here until now was settled by one party measuring and another reading the
+      measurement. Sheet XCII said what is wrong with that: <b>the maker does not assay its own
+      coin.</b> This house wrote the run book, chose the ground, set the starting condition and
+      defined seaworthy. It cannot also be the jury, and the keeper has already ruled who is:
+      whoever wants to fare the sea votes on the days.</p>
+
+    <div class="call">
+      <h3>What the form asks for</h3>
+      <p>One man aground on Cato's rock: 232 tiles at the bottom of the map, 16.3 tiles of open
+        water from anywhere, 13 berry bushes, 7 stones, 12 trees. Three timbers, five stone, iron
+        tools, and a hull at 0.10 that holds 16 when she is sound.</p>
+      <ol>
+        <li><b>A day is one JSON document</b> &mdash; at most 8 blocks, 12 steps a block, 4 in a
+          fallback, each block naming a watch: first or second, then daylight, dusk, night or dawn.</li>
+        <li><b>A block's plan is replaced when its watch comes round.</b> A journey longer than a
+          watch loses its orders halfway, which cost four days of walking and nought stones laid
+          before anybody noticed. It is the most useful thing a submitter can be told.</li>
+        <li><b>Whatever the file signs itself with is credited</b>, in the daybook and on the card,
+          beside everything that settler does afterwards.</li>
+        <li><b>Walk it before you file it.</b> <code>?scenario=seafarer</code> puts the rock, the
+          wreck and the man in your own browser and takes a pasted day. Sheet XCIV is about a
+          company that packed wigs for an isthmus none of them had seen. You can go and see.</li>
+      </ol>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="n">IV</span> <span>What is written in the middle and not yet in the margin</span></h2>
+    <p>The grid has nineteen rows. This sheet checks six. So <i>what came back tonight</i> means
+      <i>what I noticed coming back</i>, which is the hand-compiled habit the derived grid exists to
+      replace, and the honest version is a pattern per row run against six hours of transcript. That
+      tool does not exist.</p>
+    <p>The Franklin comparison flatters this record by being a catastrophe. A hundred and
+      twenty-nine men died and the margin note is the last thing any of them wrote; here a
+      fictional man mends a boat and a sheet gets a figure wrong. The borrowed shape is one
+      practice, not the weight of it: a second hand, dated, that does not erase the first.</p>
+    <p>And the race has not happened. Everything above about a second pair of hands is an argument
+      for an instrument nobody has used. The first submission may show that a stranger reading
+      ninety-five sheets writes a worse day than the catalogue does. That would be a finding, and
+      not the one this sheet expects.</p>
+    <p class="caption">One number is soft on purpose. The hull ends the house day at nine of
+      sixteen, and that is a measurement of a run rather than a target anyone set &mdash; an earlier
+      draft of the call was about to print it as a score to beat, which would have made it one.</p>
+  </section>
+
+  <div class="explicit">
+    <p class="footline">Written 31 August, the morning the call prints. A man on a coast leaving
+      stones for people who are not there; a record writing in its own margins because it will not
+      rub anything out; and a form, today, that asks whoever finds it to fill in the rest. Ninety-five
+      sheets, and the first of them this house will not have written.</p>
+    <p class="stamp">The Frontier Record &middot; Sheet XCV &middot; 31 August</p>
+  </div>
+
+</div>
+
+</body>
+</html>
