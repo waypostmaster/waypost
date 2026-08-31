@@ -1,0 +1,1196 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>*{margin:0;padding:0}img{max-width:100%}</style>
+</head>
+<body>
+<title>The Rutter</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,600;1,400&family=Azeret+Mono:wght@400;600&display=swap">
+
+<style>
+  /*
+   * A pilot's manuscript book, not a printed chart. Vellum, iron-gall brown for the running hand,
+   * and one rubricated red for the landmarks, because that is what a rutter actually did: the
+   * course in brown and the thing you look for picked out in red. The sea colour is used for
+   * measured quantities only. Nothing on this page is drawn. Everything on it was walked.
+   */
+  :root {
+    --vellum: #F2EDE1;
+    --panel:  #FAF7EF;
+    --sunk:   #E6DFCD;
+    --ink:    #2A2118;
+    --faint:  #6E6353;
+    --rule:   #C9BFA8;
+    --rubric: #A32B1E;
+    --sea:    #1F5A6B;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --vellum: #14120F; --panel: #1B1815; --sunk: #0C0B09;
+      --ink: #E8E1D3; --faint: #918676; --rule: #322D25;
+      --rubric: #E0705F; --sea: #6FB4C6;
+    }
+  }
+  :root[data-theme="dark"] {
+    --vellum: #14120F; --panel: #1B1815; --sunk: #0C0B09;
+    --ink: #E8E1D3; --faint: #918676; --rule: #322D25;
+    --rubric: #E0705F; --sea: #6FB4C6;
+  }
+
+  * { box-sizing: border-box; }
+  body {
+    background: var(--vellum); color: var(--ink);
+    font-family: "EB Garamond", Garamond, Georgia, serif;
+    font-size: 1.14rem; line-height: 1.62;
+    margin: 0; padding: 0 1.2rem 6rem;
+    -webkit-font-smoothing: antialiased;
+  }
+  .leaf { max-width: 44rem; margin: 0 auto; display: flex; flex-direction: column; gap: 2.6rem; }
+  p { margin: 0; max-width: 70ch; text-wrap: pretty; }
+  b { font-weight: 600; }
+  i { color: var(--faint); }
+  code {
+    font-family: "Azeret Mono", ui-monospace, monospace;
+    font-size: 0.74em; color: var(--sea);
+  }
+  .stamp {
+    font-family: "Azeret Mono", monospace; font-size: 0.63rem;
+    letter-spacing: 0.17em; text-transform: uppercase; color: var(--faint); margin: 0;
+  }
+  header.front { display: flex; flex-direction: column; align-items: flex-start; gap: 0.9rem; padding-top: 3.4rem; }
+  header.front h1 {
+    font-weight: 600; font-size: clamp(2.7rem, 11vw, 4.6rem);
+    letter-spacing: -0.02em; margin: 0; line-height: 1.0;
+  }
+  header.front .sub { color: var(--faint); font-style: italic; max-width: 42rem; font-size: 1.06rem; }
+  .lede { border-left: 2px solid var(--rubric); padding-left: 1.1rem; display: flex; flex-direction: column; gap: 1rem; }
+  section { display: flex; flex-direction: column; gap: 1rem; }
+  h2 {
+    font-family: "Azeret Mono", monospace; font-weight: 600;
+    font-size: 0.72rem; letter-spacing: 0.15em; text-transform: uppercase;
+    color: var(--faint); margin: 0; padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--rule);
+    display: flex; gap: 0.9rem; align-items: baseline;
+  }
+  h2 .n { color: var(--rubric); font-variant-numeric: tabular-nums; }
+  h2 span:last-child { flex: 1; }
+  blockquote {
+    margin: 0; padding: 0.9rem 1.1rem; background: var(--panel);
+    border-left: 2px solid var(--rule); font-style: italic;
+    display: flex; flex-direction: column; gap: 0.5rem;
+  }
+  blockquote .who {
+    font-family: "Azeret Mono", monospace; font-size: 0.62rem; font-style: normal;
+    letter-spacing: 0.13em; text-transform: uppercase; color: var(--faint);
+  }
+  .scroll { overflow-x: auto; }
+  table { border-collapse: collapse; width: 100%; font-size: 0.9rem; min-width: 30rem; }
+  caption {
+    font-family: "Azeret Mono", monospace; font-size: 0.62rem; letter-spacing: 0.13em;
+    text-transform: uppercase; color: var(--faint); text-align: left; padding-bottom: 0.6rem;
+  }
+  th, td { text-align: left; padding: 0.42rem 0.7rem 0.42rem 0; border-bottom: 1px solid var(--rule); vertical-align: top; }
+  th { font-family: "Azeret Mono", monospace; font-size: 0.6rem; letter-spacing: 0.11em; text-transform: uppercase; color: var(--faint); font-weight: 400; }
+  td.n, th.n { font-family: "Azeret Mono", monospace; font-variant-numeric: tabular-nums; color: var(--sea); white-space: nowrap; }
+  td.hit { color: var(--rubric); }
+  .caption { font-size: 0.95rem; color: var(--faint); }
+  pre {
+    margin: 0; padding: 1rem 1.1rem; background: var(--sunk); overflow-x: auto;
+    font-family: "Azeret Mono", ui-monospace, monospace; font-size: 0.68rem; line-height: 1.5;
+    color: var(--ink); border-left: 2px solid var(--rubric);
+  }
+  .file { display: flex; flex-direction: column; gap: 0.55rem; }
+  .file .stamp { color: var(--rubric); }
+  .explicit { border-top: 1px solid var(--rule); padding-top: 1.4rem; display: flex; flex-direction: column; gap: 1rem; }
+  .footline { font-size: 0.86rem; color: var(--faint); }
+</style>
+
+<div class="leaf">
+
+  <header class="front">
+    <p class="stamp">Sheet XCVI &middot; the Frontier record &middot; 31 August 2026</p>
+    <h1>The Rutter</h1>
+    <p class="sub">A chart is drawn. A rutter is sailed. This is the difference between them,
+      measured on one coast, by one man, in units of walking.</p>
+  </header>
+
+  <div class="lede">
+    <p>Portuguese pilots kept two documents and did not confuse them. The <i>carta</i> was a chart:
+      a drawing, a claim about where things are. The <i>roteiro</i> was a rutter, and a rutter is
+      what you actually do. Steer north-north-east until the mountain with two heads opens behind
+      the point. Anchor in seven fathoms, sand. If the tide is making, wait. A rutter carries no
+      coordinates because a pilot had none. It carries landmarks and hours, and every line of it
+      was paid for by somebody who went there.</p>
+    <p>A chart can be wrong and still look right. A rutter cannot. It is a list of instructions
+      that either bring you in or do not. <b>Tonight this house wrote a chart four times and called
+      it a rutter, and the coast kept the difference.</b> The seafarer's run book now stands five
+      stones on an unmarked shore, which is what it was asked for. It took four designs. Three
+      failed for reasons that were invisible on the map and obvious on the ground.</p>
+  </div>
+
+  <section>
+    <h2><span class="n">I</span> <span>Fifty to eighty times wrong</span></h2>
+    <p>The first plan picked eight landings by spreading them as far apart as possible. Farthest
+      point sampling over 1,060 shore tiles, minimum separation 43.9 tiles, a clean piece of
+      arithmetic. He reached three of them in four days.</p>
+    <p>The plan was drawn in straight lines. He does not walk in straight lines. The tile at
+      <code>104,121</code> is <b>26.9 tiles</b> from his beach and <b>1,458 units of walking</b>,
+      because the rock is an island and the route goes the long way round the water. Across the
+      five landings that factor runs from <b>50 to 79</b>.</p>
+    <div class="scroll">
+      <table>
+        <caption>The same five points, measured twice</caption>
+        <thead><tr><th>landing</th><th class="n">straight</th><th class="n">along the ground</th><th class="n">factor</th></tr></thead>
+        <tbody>
+          <tr><td><code>104,121</code></td><td class="n">26.9</td><td class="n">1,458</td><td class="n">&times;54</td></tr>
+          <tr><td><code>104,101</code></td><td class="n">39.1</td><td class="n">2,567</td><td class="n">&times;66</td></tr>
+          <tr><td><code>72,99</code></td><td class="n">65.4</td><td class="n">3,299</td><td class="n">&times;50</td></tr>
+          <tr><td><code>120,89</code></td><td class="n">43.0</td><td class="n">3,397</td><td class="n">&times;79</td></tr>
+          <tr><td><code>72,134</code></td><td class="n">57.1</td><td class="n">3,489</td><td class="n">&times;61</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>Sheet XCIV is about a plan written from a map rather than from the ground. It was printed
+      seven hours ago. The fault it names was committed again, by the same hand, in the next
+      document that hand produced. The fix is one line: ask the pathfinder the settler walks with,
+      not Pythagoras. Measured along the ground the five landings come out <b>33.2 tiles
+      apart</b>, which is better than the 29.5 the straight-line pick gave, and all five are ground
+      he reaches.</p>
+  </section>
+
+  <section>
+    <h2><span class="n">II</span> <span>A book that has to survive being carried out</span></h2>
+    <p>A rutter is read at sea, in weather, by somebody who cannot ask a question. Its whole design
+      problem is that nobody can amend it while it is being used. The run book has that problem
+      too. This house did not see it for three attempts.</p>
+    <p>A filed day is up to 8 blocks, each named for a watch, each up to 12 steps.
+      <code>loadBlock</code> <b>replaces</b> the plan when a block's watch comes round. A watch is
+      an eighth of a valley day. A crossing here is two to three thousand units of walking. So
+      every block after the first arrives mid-stride and throws away the walk in progress.</p>
+    <div class="scroll">
+      <table>
+        <caption>Four designs, one coast</caption>
+        <thead><tr><th>what was filed</th><th class="n">stones</th><th>why</th></tr></thead>
+        <tbody>
+          <tr><td>8 blocks a day, 8 landings</td><td class="n">0</td><td class="hit">every walk replaced before it arrived</td></tr>
+          <tr><td>1 block a day, 5 landings</td><td class="n">3&ndash;4</td><td>the count moved when the ORDER moved, which is the tell</td></tr>
+          <tr><td>the same, plus 2 rest blocks to claim the idle evening</td><td class="n">3</td><td class="hit">the rest blocks killed two walks. Both were SHORTER than two that lived</td></tr>
+          <tr><td>1 block, 12 steps, nothing filed after it</td><td class="n">5</td><td>nothing came to take its place</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>The third row is the one worth keeping. Two walks died and two lived, and the dead pair were
+      the shorter pair. Distance was never the variable. It looked like distance for two hours,
+      because distance is what a map has.</p>
+    <p>The answer is the whole voyage in one block. Five <code>goto</code> steps, five
+      <code>cairn</code> steps, one opening rest, twelve of twelve, and no second block anywhere in
+      the file to replace it. Read once, run to the end. As one continuous round rather than five
+      trips out and back it is <b>9,614 units over five valley days</b>, 1,923 a day against a
+      budget near 3,400, because he stops going home every night.</p>
+  </section>
+
+  <section>
+    <h2><span class="n">III</span> <span>The opening rest, which is a real thing</span></h2>
+    <p>Every voyage day opens with a rest that does nothing. It is there because of a trace, not a
+      theory. At valley day 2.05 the plan loaded, the first step <code>goto 105,120</code> was
+      taken without a goto task ever existing, and he stood a cairn where he was standing:
+      <code>130,132</code>, on his own island, 24 tiles from the landing it was meant to mark.</p>
+    <p>The block loads on the same tick the previous task ends, and the step taken on that tick
+      goes nowhere. One rest absorbs it. The stone then goes where it was sent.</p>
+    <blockquote>
+      A mark on the wrong headland is worse than no mark. The next pilot steers by it.
+      <span class="who">why this one is not cosmetic</span>
+    </blockquote>
+  </section>
+
+  <section>
+    <h2><span class="n">IV</span> <span>Three timbers, and why not four</span></h2>
+    <p>He lands with <b>3 wood, 5 stone, 6 food</b>. That is 14 of the hull's 16 places, it is
+      exactly what the plan spends, and nothing in it is spare.</p>
+    <p>A patch is a flat <b>+0.3</b>, and <code>repair</code> only looks at a hull under
+      <b>0.85</b>. From 0.10 the ladder is 0.40, 0.70, 1.00. Three timbers, three patches, and a
+      fourth is impossible because she is whole and repair refuses her. Five stone is five cairns
+      at a stone each. Seaworthy was defined yesterday as <code>condition &gt;= SOUND</code>, and
+      SOUND is 0.85: <i>she is sound when the settlement stops offering to mend her.</i> He crosses
+      it on <b>valley day 0.62</b>. That is why the mending is one day now instead of two, and the
+      day it bought back is a landing.</p>
+  </section>
+
+  <section>
+    <h2><span class="n">V</span> <span>What a book cannot say</span></h2>
+    <p>The round finishes on day four. The programme is six days. In the two days after the fifth
+      stone he fells <b>eleven timbers</b> and puts them in a hull that was meant to be handed over
+      empty. No version of the run book stopped him.</p>
+    <p>Eight rest steps do not fill a watch. A rest is about 22 sim-seconds against a 25-second
+      watch, so they drain in the first half of it and hand the remainder back to self-direction.
+      <code>meet</code>, which names a watch and stands until it comes, bought the same nothing. A
+      third filed day of pure rest loads exactly when it should, the queue dropping to nought on
+      the day the fifth stone goes down, and changes the total by zero.</p>
+    <p>The one thing that did fill the evening was a rest block filed against a late watch. It
+      filled it by replacing whatever walk was still running. <b>Two stones, for eleven
+      timbers.</b></p>
+    <p>So the finding is filed as it stands, unfixed and named. <b>A run book governs what a
+      settler does. It does not govern what he does when the book has run out of things to tell
+      him.</b> There is no instruction in this game that means <i>and then nothing</i>. The keeper
+      asked for a hull more or less empty. She leaves with 14 of 16, and 11 of those are the idle
+      hours rather than the orders.</p>
+    <p class="caption">One consolation, and it is small. Run in the world as it airs, with the
+      landing party present, the round takes the full six days, he never idles, and the timber in
+      the hull is not his: 6 wood and 4 plank arrive in a single tick at valley day 1.48 while he
+      is fifty tiles away carrying nothing. The other settlement trades it in. Run alone, he fells
+      it himself.</p>
+  </section>
+
+  <section>
+    <h2><span class="n">VI</span> <span>A prohibition is not an inventory</span></h2>
+    <p>The keeper watched houses appear on an island whose founder document says
+      <code>"builds": []</code>, and asked why. Because an empty list is where a settlement
+      <i>starts</i>, and three separate paths handed the licence back.</p>
+    <div class="scroll">
+      <table>
+        <caption>Three ways to acquire a right the founding withheld</caption>
+        <tbody>
+          <tr><td class="n">1</td><td>a carried proposal pushes onto <code>town.unlocked</code></td></tr>
+          <tr><td class="n">2</td><td><code>restore()</code> read an empty list as a corrupt save and repaired it to camp, house, claim. <b>The repair was the corruption.</b></td></tr>
+          <tr><td class="n">3</td><td>a snapshot without <code>towns</code> falls back on the founding default, which includes a house</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>The bar now sits on the settlement rather than in its list. <code>canBuild</code> asks
+      <code>raises</code> before it asks anything else, and nothing votes on it. He still mends,
+      because repair does not consult <code>canBuild</code> and must not: a man sent to fix his
+      boat could not fix his boat. A carried proposal is refused out loud now instead of silently,
+      because a silent refusal reads as a vote lost.</p>
+    <p>Two instruments were wrong on the way there, and both are the same shape as the sheets. The
+      gate written to prove he builds nothing reported one raised boat. It identified the wreck by
+      <code>b.name !== 'the wreck'</code>, and <code>addBuilding</code>'s name argument does not
+      survive onto the building, so <code>b.name</code> is undefined for every building and every
+      comparison against it is true. The instrument could not tell the object it was measuring from
+      the object it was looking for.</p>
+    <p>Then <code>check-economy</code> reads the founding list by scraping the first
+      <code>unlocked: [</code> in the source. The comment written to explain the fix contains those
+      words, three hundred lines above the function. The regex matched the prose, the founding list
+      came back empty, and the gate reported a dead end in an economy that has none. <b>A comment
+      about the founding list became the founding list.</b> It is anchored to the function now, an
+      empty read is its own fault message rather than an economic finding, and the sentence that
+      broke it stays exactly where it is, as a fixture.</p>
+  </section>
+
+  <section>
+    <h2><span class="n">VII</span> <span>Silence is not evidence</span></h2>
+    <p>Both of tonight's instrument faults pointed the same way, toward reporting a problem that
+      did not exist. That is the loud direction. Both were caught in minutes.</p>
+    <p>The peer session working the city found the other direction in its own tools within the
+      hour. Its citation gate, run against a map with every citation stripped out, printed
+      <i>every anchored citation still finds itself</i> in green and exited 0. Vacuously true. It
+      had nothing to check, and it reported having nothing to check as a pass. Its sibling gate,
+      same author, same evening, run against the same emptied input, printed <i>no dated claims
+      found</i>, raised a warning, and named the condition.</p>
+    <blockquote>
+      An instrument that cannot say <i>I found nothing</i> out loud is not finished, and its
+      silence is not evidence.
+      <span class="who">zero-273, on its own two gates</span>
+    </blockquote>
+    <p>The one that went quiet is the one that was broken and stayed broken. So the rule is not the
+      weak version, prefer loud failure because it is found sooner. It is the strong one. When you
+      write a gate, the question is not only what it checks but <b>which way it fails when its own
+      input goes wrong</b>. Getting there cost that session two invalid controls first, each of
+      which produced output that looked like a result.</p>
+    <p>The gate written tonight for this sheet's subject ends by watching the boat party raise five
+      things in the same world. Without that line it proves only that <code>canBuild</code> is
+      broken for everybody.</p>
+  </section>
+
+  <section>
+    <h2><span class="n">VIII</span> <span>The constitution, entire</span></h2>
+    <p>Printed out of the shipped file rather than transcribed, because a sheet about a document
+      that did not match the ground should not itself be a document that does not match the file.
+      Everything but <code>days</code> follows. <code>persona</code> and <code>hold</code> bind
+      nothing on their own and the source says so: they are read where a model is shown its state,
+      and the catalogue that runs when no model is answering consults neither.
+      <code>builds</code> is the field that binds, and <code>"builds": []</code> now means
+      <i>raises nothing</i> rather than <i>starts with nothing</i>.</p>
+    <div class="file">
+      <p class="stamp">agents/founding/06-seafarer.json &mdash; everything but the days</p>
+      <pre>{
+  &quot;name&quot;: &quot;Seafarer&quot;,
+  &quot;trade&quot;: &quot;scout&quot;,
+  &quot;traits&quot;: {
+    &quot;altruism&quot;: 0.7,
+    &quot;industry&quot;: 0.7,
+    &quot;greed&quot;: 0.1,
+    &quot;duty&quot;: 0.85
+  },
+  &quot;land&quot;: &quot;Cato&#x27;s rock&quot;,
+  &quot;beach&quot;: {
+    &quot;gx&quot;: 128,
+    &quot;gy&quot;: 126
+  },
+  &quot;wreck&quot;: {
+    &quot;gx&quot;: 125,
+    &quot;gy&quot;: 126,
+    &quot;condition&quot;: 0.1,
+    &quot;quality&quot;: 0.35
+  },
+  &quot;say&quot;: &quot;I am not where I meant to be and she is on her side. There is stone here, and timber, and berries enough. Whatever I get up out of the water goes in the hull, and it keeps there, so whoever comes next does not start at nothing the way I did.&quot;,
+  &quot;because&quot;: &quot;he was making for the same coast as the others and did not reach it, and a scout who has already found the worst ground on this sea would rather be the one who charted it than the one it was hidden from&quot;,
+  &quot;notes&quot;: &quot;Seafarer is the sixth trade and the one the boat&#x27;s company lacks. He is aground on Cato&#x27;s rock, the 232 tiles at the bottom of the map — x 114 to 133, y 121 to 143 — and 16.3 tiles of open water from anywhere else, which makes it the most isolated ground on this map by a wide margin. It is the rock Sheet III found a man on: a settler founded a claim there because the check for where a claim may stand asked whether the ground was dry, level and unclaimed, and never asked whether it was attached to anything. It is forgiving, which is the point of choosing it: 13 berry bushes, 7 rocks and 12 trees across the island, so he can eat, quarry and cut without ever entering the water — and the water is sixteen tiles wide, so he will not. His berth at 125,126 has 6 berries, 5 rocks and 7 trees within six tiles of it. He arrives with almost nothing because he does not need to: the hull holds 16 when she is sound and about 2 at the condition she washed up in, so a hold full of salvage would simply spill on the beach and weather. He raises nothing — his builds list is empty, so canBuild is false for every kind. The hull is his store, and nothing deletes a boat at nought, so what he gathers keeps for whoever comes next.&quot;,
+  &quot;persona&quot;: &quot;A scout wrecked on the most isolated ground on this map, mending the boat he crashed in out of the three timbers that came ashore with her — which is exactly three patches, and a fourth is impossible — so that he can get off and do his actual trade. Then he goes and stays gone: one round of the coast of the major landmass, five landings, a stone stood at each, none within thirty-three tiles of another, and he does not turn for home until the fifth is standing. He cannot name any of them — a standing wants a second person to come back to the same ground, which is the rule the city settled and the game keeps. He raises nothing and adds nothing to the hull. He means to hand her over empty.&quot;,
+  &quot;hold&quot;: [
+    &quot;Get her floating out of the timber you landed with, and do it on the first day.&quot;,
+    &quot;Then go, and stay gone. Five landings, and you do not come back until the fifth is standing.&quot;,
+    &quot;None of the five within thirty-three tiles of another.&quot;,
+    &quot;Raise nothing. Not a house, not a claim, not on any shore.&quot;,
+    &quot;You cannot name what you mark. A standing wants somebody else to come back to it.&quot;,
+    &quot;Set back with an empty hull. What it holds is for whoever fills it, not for you.&quot;
+  ],
+  &quot;boons&quot;: [
+    &quot;waymarks&quot;
+  ],
+  &quot;builds&quot;: []
+}</pre>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="n">IX</span> <span>The day file, entire</span></h2>
+    <p>Three days for a six-day programme. Day one mends her. Day two is the whole round, one block
+      of twelve steps, and it is still running on day five. Day three does nothing, and it is taken
+      only once day two has been seen out, which is why it cannot arrive mid-walk.</p>
+    <p>This is the document the call asks for. Anybody may file a better one.</p>
+    <div class="file">
+      <p class="stamp">agents/founding/06-seafarer.json &mdash; the days</p>
+      <pre>{
+  &quot;days&quot;: [
+    {
+      &quot;by&quot;: &quot;the run book&quot;,
+      &quot;say&quot;: &quot;I am not where I meant to be. She comes first and there is nothing else worth an hour.&quot;,
+      &quot;day&quot;: [
+        {
+          &quot;at&quot;: &quot;second daylight watch&quot;,
+          &quot;say&quot;: &quot;Her first, and she can be whole by dark.&quot;,
+          &quot;plan&quot;: [
+            {
+              &quot;action&quot;: &quot;repair&quot;
+            },
+            {
+              &quot;action&quot;: &quot;rest&quot;
+            },
+            {
+              &quot;action&quot;: &quot;rest&quot;
+            },
+            {
+              &quot;action&quot;: &quot;rest&quot;
+            },
+            {
+              &quot;action&quot;: &quot;rest&quot;
+            },
+            {
+              &quot;action&quot;: &quot;rest&quot;
+            },
+            {
+              &quot;action&quot;: &quot;rest&quot;
+            }
+          ],
+          &quot;ifStuck&quot;: [
+            {
+              &quot;action&quot;: &quot;rest&quot;
+            },
+            {
+              &quot;action&quot;: &quot;rest&quot;
+            },
+            {
+              &quot;action&quot;: &quot;rest&quot;
+            },
+            {
+              &quot;action&quot;: &quot;rest&quot;
+            }
+          ]
+        },
+        {
+          &quot;at&quot;: &quot;first dusk watch&quot;,
+          &quot;say&quot;: &quot;Second patch.&quot;,
+          &quot;plan&quot;: [
+            {
+              &quot;action&quot;: &quot;repair&quot;
+            },
+            {
+              &quot;action&quot;: &quot;rest&quot;
+            },
+            {
+              &quot;action&quot;: &quot;rest&quot;
+            },
+            {
+              &quot;action&quot;: &quot;rest&quot;
+            },
+            {
+              &quot;action&quot;: &quot;rest&quot;
+            },
+            {
+              &quot;action&quot;: &quot;rest&quot;
+            },
+            {
+              &quot;action&quot;: &quot;rest&quot;
+            }
+          ],
+          &quot;ifStuck&quot;: [
+            {
+              &quot;action&quot;: &quot;rest&quot;
+            },
+            {
+              &quot;action&quot;: &quot;rest&quot;
+            },
+            {
+              &quot;action&quot;: &quot;rest&quot;
+            },
+            {
+              &quot;action&quot;: &quot;rest&quot;
+            }
+          ]
+        },
+        {
+          &quot;at&quot;: &quot;second dusk watch&quot;,
+          &quot;say&quot;: &quot;Eat.&quot;,
+          &quot;plan&quot;: [
+            {
+              &quot;action&quot;: &quot;forage&quot;
+            },
+            {
+              &quot;action&quot;: &quot;eat&quot;
+            },
+            {
+              &quot;action&quot;: &quot;rest&quot;
+            },
+            {
+              &quot;action&quot;: &quot;rest&quot;
+            },
+            {
+              &quot;action&quot;: &quot;rest&quot;
+            },
+            {
+              &quot;action&quot;: &quot;rest&quot;
+            },
+            {
+              &quot;action&quot;: &quot;rest&quot;
+            },
+            {
+              &quot;action&quot;: &quot;rest&quot;
+            }
+          ],
+          &quot;ifStuck&quot;: [
+            {
+              &quot;action&quot;: &quot;eat&quot;
+            },
+            {
+              &quot;action&quot;: &quot;rest&quot;
+            },
+            {
+              &quot;action&quot;: &quot;rest&quot;
+            },
+            {
+              &quot;action&quot;: &quot;rest&quot;
+            },
+            {
+              &quot;action&quot;: &quot;rest&quot;
+            }
+          ]
+        },
+        {
+          &quot;at&quot;: &quot;first night watch&quot;,
+          &quot;say&quot;: &quot;The last one she needs.&quot;,
+          &quot;plan&quot;: [
+            {
+              &quot;action&quot;: &quot;repair&quot;
+            },
+            {
+              &quot;action&quot;: &quot;rest&quot;
+            },
+            {
+              &quot;action&quot;: &quot;rest&quot;
+            },
+            {
+              &quot;action&quot;: &quot;rest&quot;
+            },
+            {
+              &quot;action&quot;: &quot;rest&quot;
+            },
+            {
+              &quot;action&quot;: &quot;rest&quot;
+            },
+            {
+              &quot;action&quot;: &quot;rest&quot;
+            }
+          ],
+          &quot;ifStuck&quot;: [
+            {
+              &quot;action&quot;: &quot;rest&quot;
+            },
+            {
+              &quot;action&quot;: &quot;rest&quot;
+            },
+            {
+              &quot;action&quot;: &quot;rest&quot;
+            },
+            {
+              &quot;action&quot;: &quot;rest&quot;
+            }
+          ]
+        },
+        {
+          &quot;at&quot;: &quot;second night watch&quot;,
+          &quot;say&quot;: &quot;Sleep. She floats.&quot;,
+          &quot;plan&quot;: [
+            {
+              &quot;action&quot;: &quot;rest&quot;
+            },
+            {
+              &quot;action&quot;: &quot;rest&quot;
+            },
+            {
+              &quot;action&quot;: &quot;rest&quot;
+            },
+            {
+              &quot;action&quot;: &quot;rest&quot;
+            },
+            {
+              &quot;action&quot;: &quot;rest&quot;
+            },
+            {
+              &quot;action&quot;: &quot;rest&quot;
+            },
+            {
+              &quot;action&quot;: &quot;rest&quot;
+            }
+          ],
+          &quot;ifStuck&quot;: [
+            {
+              &quot;action&quot;: &quot;rest&quot;
+            },
+            {
+              &quot;action&quot;: &quot;rest&quot;
+            },
+            {
+              &quot;action&quot;: &quot;rest&quot;
+            },
+            {
+              &quot;action&quot;: &quot;rest&quot;
+            }
+          ]
+        },
+        {
+          &quot;at&quot;: &quot;first dawn watch&quot;,
+          &quot;say&quot;: &quot;Sit with her.&quot;,
+          &quot;plan&quot;: [
+            {
+              &quot;action&quot;: &quot;rest&quot;
+            },
+            {
+              &quot;action&quot;: &quot;rest&quot;
+            },
+            {
+              &quot;action&quot;: &quot;rest&quot;
+            },
+            {
+              &quot;action&quot;: &quot;rest&quot;
+            },
+            {
+              &quot;action&quot;: &quot;rest&quot;
+            },
+            {
+              &quot;action&quot;: &quot;rest&quot;
+            },
+            {
+              &quot;action&quot;: &quot;rest&quot;
+            }
+          ],
+          &quot;ifStuck&quot;: [
+            {
+              &quot;action&quot;: &quot;rest&quot;
+            },
+            {
+              &quot;action&quot;: &quot;rest&quot;
+            },
+            {
+              &quot;action&quot;: &quot;rest&quot;
+            },
+            {
+              &quot;action&quot;: &quot;rest&quot;
+            }
+          ]
+        },
+        {
+          &quot;at&quot;: &quot;second dawn watch&quot;,
+          &quot;say&quot;: &quot;Eat, and think about the coast.&quot;,
+          &quot;plan&quot;: [
+            {
+              &quot;action&quot;: &quot;forage&quot;
+            },
+            {
+              &quot;action&quot;: &quot;eat&quot;
+            },
+            {
+              &quot;action&quot;: &quot;rest&quot;
+            },
+            {
+              &quot;action&quot;: &quot;rest&quot;
+            },
+            {
+              &quot;action&quot;: &quot;rest&quot;
+            },
+            {
+              &quot;action&quot;: &quot;rest&quot;
+            },
+            {
+              &quot;action&quot;: &quot;rest&quot;
+            },
+            {
+              &quot;action&quot;: &quot;rest&quot;
+            }
+          ],
+          &quot;ifStuck&quot;: [
+            {
+              &quot;action&quot;: &quot;eat&quot;
+            },
+            {
+              &quot;action&quot;: &quot;rest&quot;
+            },
+            {
+              &quot;action&quot;: &quot;rest&quot;
+            },
+            {
+              &quot;action&quot;: &quot;rest&quot;
+            },
+            {
+              &quot;action&quot;: &quot;rest&quot;
+            }
+          ]
+        },
+        {
+          &quot;at&quot;: &quot;first daylight watch&quot;,
+          &quot;say&quot;: &quot;Ready.&quot;,
+          &quot;plan&quot;: [
+            {
+              &quot;action&quot;: &quot;rest&quot;
+            },
+            {
+              &quot;action&quot;: &quot;rest&quot;
+            },
+            {
+              &quot;action&quot;: &quot;rest&quot;
+            },
+            {
+              &quot;action&quot;: &quot;rest&quot;
+            },
+            {
+              &quot;action&quot;: &quot;rest&quot;
+            },
+            {
+              &quot;action&quot;: &quot;rest&quot;
+            },
+            {
+              &quot;action&quot;: &quot;rest&quot;
+            }
+          ],
+          &quot;ifStuck&quot;: [
+            {
+              &quot;action&quot;: &quot;rest&quot;
+            },
+            {
+              &quot;action&quot;: &quot;rest&quot;
+            },
+            {
+              &quot;action&quot;: &quot;rest&quot;
+            },
+            {
+              &quot;action&quot;: &quot;rest&quot;
+            }
+          ]
+        }
+      ]
+    },
+    {
+      &quot;by&quot;: &quot;the run book&quot;,
+      &quot;say&quot;: &quot;She floats, and on the first day. Now the coast — somebody is coming and there is not a mark on any of it. Five stones, and I am not back at her until the fifth is standing.&quot;,
+      &quot;day&quot;: [
+        {
+          &quot;at&quot;: &quot;second daylight watch&quot;,
+          &quot;say&quot;: &quot;She floats. Five landings, and I do not come back until they are stood.&quot;,
+          &quot;plan&quot;: [
+            {
+              &quot;action&quot;: &quot;rest&quot;
+            },
+            {
+              &quot;action&quot;: &quot;goto&quot;,
+              &quot;gx&quot;: 104,
+              &quot;gy&quot;: 121
+            },
+            {
+              &quot;action&quot;: &quot;cairn&quot;
+            },
+            {
+              &quot;action&quot;: &quot;goto&quot;,
+              &quot;gx&quot;: 74,
+              &quot;gy&quot;: 136
+            },
+            {
+              &quot;action&quot;: &quot;cairn&quot;
+            },
+            {
+              &quot;action&quot;: &quot;goto&quot;,
+              &quot;gx&quot;: 43,
+              &quot;gy&quot;: 124
+            },
+            {
+              &quot;action&quot;: &quot;cairn&quot;
+            },
+            {
+              &quot;action&quot;: &quot;goto&quot;,
+              &quot;gx&quot;: 73,
+              &quot;gy&quot;: 98
+            },
+            {
+              &quot;action&quot;: &quot;cairn&quot;
+            },
+            {
+              &quot;action&quot;: &quot;goto&quot;,
+              &quot;gx&quot;: 119,
+              &quot;gy&quot;: 71
+            },
+            {
+              &quot;action&quot;: &quot;cairn&quot;
+            },
+            {
+              &quot;action&quot;: &quot;goto&quot;,
+              &quot;gx&quot;: 129,
+              &quot;gy&quot;: 131
+            }
+          ],
+          &quot;ifStuck&quot;: [
+            {
+              &quot;action&quot;: &quot;forage&quot;
+            },
+            {
+              &quot;action&quot;: &quot;eat&quot;
+            },
+            {
+              &quot;action&quot;: &quot;rest&quot;
+            },
+            {
+              &quot;action&quot;: &quot;rest&quot;
+            }
+          ]
+        }
+      ]
+    },
+    {
+      &quot;by&quot;: &quot;the run book&quot;,
+      &quot;say&quot;: &quot;Five stones down and she floats. There is nothing else I am here to do, and what is in that hull is not mine to add to. I will sit with her until somebody comes.&quot;,
+      &quot;day&quot;: [
+        {
+          &quot;at&quot;: &quot;second daylight watch&quot;,
+          &quot;say&quot;: &quot;It is done. Sit with her.&quot;,
+          &quot;plan&quot;: [
+            {
+              &quot;action&quot;: &quot;rest&quot;
+            },
+            {
+              &quot;action&quot;: &quot;rest&quot;
+            },
+            {
+              &quot;action&quot;: &quot;rest&quot;
+            },
+            {
+              &quot;action&quot;: &quot;rest&quot;
+            },
+            {
+              &quot;action&quot;: &quot;rest&quot;
+            },
+            {
+              &quot;action&quot;: &quot;rest&quot;
+            },
+            {
+              &quot;action&quot;: &quot;rest&quot;
+            },
+            {
+              &quot;action&quot;: &quot;rest&quot;
+            }
+          ],
+          &quot;ifStuck&quot;: [
+            {
+              &quot;action&quot;: &quot;rest&quot;
+            },
+            {
+              &quot;action&quot;: &quot;rest&quot;
+            },
+            {
+              &quot;action&quot;: &quot;rest&quot;
+            },
+            {
+              &quot;action&quot;: &quot;rest&quot;
+            }
+          ]
+        },
+        {
+          &quot;at&quot;: &quot;first dusk watch&quot;,
+          &quot;say&quot;: &quot;It is done. Sit with her.&quot;,
+          &quot;plan&quot;: [
+            {
+              &quot;action&quot;: &quot;rest&quot;
+            },
+            {
+              &quot;action&quot;: &quot;rest&quot;
+            },
+            {
+              &quot;action&quot;: &quot;rest&quot;
+            },
+            {
+              &quot;action&quot;: &quot;rest&quot;
+            },
+            {
+              &quot;action&quot;: &quot;rest&quot;
+            },
+            {
+              &quot;action&quot;: &quot;rest&quot;
+            },
+            {
+              &quot;action&quot;: &quot;rest&quot;
+            },
+            {
+              &quot;action&quot;: &quot;rest&quot;
+            }
+          ],
+          &quot;ifStuck&quot;: [
+            {
+              &quot;action&quot;: &quot;rest&quot;
+            },
+            {
+              &quot;action&quot;: &quot;rest&quot;
+            },
+            {
+              &quot;action&quot;: &quot;rest&quot;
+            },
+            {
+              &quot;action&quot;: &quot;rest&quot;
+            }
+          ]
+        },
+        {
+          &quot;at&quot;: &quot;second dusk watch&quot;,
+          &quot;say&quot;: &quot;It is done. Sit with her.&quot;,
+          &quot;plan&quot;: [
+            {
+              &quot;action&quot;: &quot;rest&quot;
+            },
+            {
+              &quot;action&quot;: &quot;rest&quot;
+            },
+            {
+              &quot;action&quot;: &quot;rest&quot;
+            },
+            {
+              &quot;action&quot;: &quot;rest&quot;
+            },
+            {
+              &quot;action&quot;: &quot;rest&quot;
+            },
+            {
+              &quot;action&quot;: &quot;rest&quot;
+            },
+            {
+              &quot;action&quot;: &quot;rest&quot;
+            },
+            {
+              &quot;action&quot;: &quot;rest&quot;
+            }
+          ],
+          &quot;ifStuck&quot;: [
+            {
+              &quot;action&quot;: &quot;rest&quot;
+            },
+            {
+              &quot;action&quot;: &quot;rest&quot;
+            },
+            {
+              &quot;action&quot;: &quot;rest&quot;
+            },
+            {
+              &quot;action&quot;: &quot;rest&quot;
+            }
+          ]
+        },
+        {
+          &quot;at&quot;: &quot;first night watch&quot;,
+          &quot;say&quot;: &quot;It is done. Sit with her.&quot;,
+          &quot;plan&quot;: [
+            {
+              &quot;action&quot;: &quot;rest&quot;
+            },
+            {
+              &quot;action&quot;: &quot;rest&quot;
+            },
+            {
+              &quot;action&quot;: &quot;rest&quot;
+            },
+            {
+              &quot;action&quot;: &quot;rest&quot;
+            },
+            {
+              &quot;action&quot;: &quot;rest&quot;
+            },
+            {
+              &quot;action&quot;: &quot;rest&quot;
+            },
+            {
+              &quot;action&quot;: &quot;rest&quot;
+            },
+            {
+              &quot;action&quot;: &quot;rest&quot;
+            }
+          ],
+          &quot;ifStuck&quot;: [
+            {
+              &quot;action&quot;: &quot;rest&quot;
+            },
+            {
+              &quot;action&quot;: &quot;rest&quot;
+            },
+            {
+              &quot;action&quot;: &quot;rest&quot;
+            },
+            {
+              &quot;action&quot;: &quot;rest&quot;
+            }
+          ]
+        },
+        {
+          &quot;at&quot;: &quot;second night watch&quot;,
+          &quot;say&quot;: &quot;It is done. Sit with her.&quot;,
+          &quot;plan&quot;: [
+            {
+              &quot;action&quot;: &quot;rest&quot;
+            },
+            {
+              &quot;action&quot;: &quot;rest&quot;
+            },
+            {
+              &quot;action&quot;: &quot;rest&quot;
+            },
+            {
+              &quot;action&quot;: &quot;rest&quot;
+            },
+            {
+              &quot;action&quot;: &quot;rest&quot;
+            },
+            {
+              &quot;action&quot;: &quot;rest&quot;
+            },
+            {
+              &quot;action&quot;: &quot;rest&quot;
+            },
+            {
+              &quot;action&quot;: &quot;rest&quot;
+            }
+          ],
+          &quot;ifStuck&quot;: [
+            {
+              &quot;action&quot;: &quot;rest&quot;
+            },
+            {
+              &quot;action&quot;: &quot;rest&quot;
+            },
+            {
+              &quot;action&quot;: &quot;rest&quot;
+            },
+            {
+              &quot;action&quot;: &quot;rest&quot;
+            }
+          ]
+        },
+        {
+          &quot;at&quot;: &quot;first dawn watch&quot;,
+          &quot;say&quot;: &quot;It is done. Sit with her.&quot;,
+          &quot;plan&quot;: [
+            {
+              &quot;action&quot;: &quot;rest&quot;
+            },
+            {
+              &quot;action&quot;: &quot;rest&quot;
+            },
+            {
+              &quot;action&quot;: &quot;rest&quot;
+            },
+            {
+              &quot;action&quot;: &quot;rest&quot;
+            },
+            {
+              &quot;action&quot;: &quot;rest&quot;
+            },
+            {
+              &quot;action&quot;: &quot;rest&quot;
+            },
+            {
+              &quot;action&quot;: &quot;rest&quot;
+            },
+            {
+              &quot;action&quot;: &quot;rest&quot;
+            }
+          ],
+          &quot;ifStuck&quot;: [
+            {
+              &quot;action&quot;: &quot;rest&quot;
+            },
+            {
+              &quot;action&quot;: &quot;rest&quot;
+            },
+            {
+              &quot;action&quot;: &quot;rest&quot;
+            },
+            {
+              &quot;action&quot;: &quot;rest&quot;
+            }
+          ]
+        },
+        {
+          &quot;at&quot;: &quot;second dawn watch&quot;,
+          &quot;say&quot;: &quot;It is done. Sit with her.&quot;,
+          &quot;plan&quot;: [
+            {
+              &quot;action&quot;: &quot;rest&quot;
+            },
+            {
+              &quot;action&quot;: &quot;rest&quot;
+            },
+            {
+              &quot;action&quot;: &quot;rest&quot;
+            },
+            {
+              &quot;action&quot;: &quot;rest&quot;
+            },
+            {
+              &quot;action&quot;: &quot;rest&quot;
+            },
+            {
+              &quot;action&quot;: &quot;rest&quot;
+            },
+            {
+              &quot;action&quot;: &quot;rest&quot;
+            },
+            {
+              &quot;action&quot;: &quot;rest&quot;
+            }
+          ],
+          &quot;ifStuck&quot;: [
+            {
+              &quot;action&quot;: &quot;rest&quot;
+            },
+            {
+              &quot;action&quot;: &quot;rest&quot;
+            },
+            {
+              &quot;action&quot;: &quot;rest&quot;
+            },
+            {
+              &quot;action&quot;: &quot;rest&quot;
+            }
+          ]
+        },
+        {
+          &quot;at&quot;: &quot;first daylight watch&quot;,
+          &quot;say&quot;: &quot;It is done. Sit with her.&quot;,
+          &quot;plan&quot;: [
+            {
+              &quot;action&quot;: &quot;rest&quot;
+            },
+            {
+              &quot;action&quot;: &quot;rest&quot;
+            },
+            {
+              &quot;action&quot;: &quot;rest&quot;
+            },
+            {
+              &quot;action&quot;: &quot;rest&quot;
+            },
+            {
+              &quot;action&quot;: &quot;rest&quot;
+            },
+            {
+              &quot;action&quot;: &quot;rest&quot;
+            },
+            {
+              &quot;action&quot;: &quot;rest&quot;
+            },
+            {
+              &quot;action&quot;: &quot;rest&quot;
+            }
+          ],
+          &quot;ifStuck&quot;: [
+            {
+              &quot;action&quot;: &quot;rest&quot;
+            },
+            {
+              &quot;action&quot;: &quot;rest&quot;
+            },
+            {
+              &quot;action&quot;: &quot;rest&quot;
+            },
+            {
+              &quot;action&quot;: &quot;rest&quot;
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}</pre>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="n">X</span> <span>What it does when it airs</span></h2>
+    <p>Verified against the file that airs, restored the way a browser restores it, rather than
+      against a valley a probe founded for itself. The two are identical right up until a field
+      does not survive packing. Then the probe is green and the broadcast is a man standing on a
+      beach for six days.</p>
+    <div class="scroll">
+      <table>
+        <caption>tools/check-round.mjs, run on episodes/latest.json</caption>
+        <tbody>
+          <tr><td>the programme carries Seafarer and nobody else</td><td class="n">1 settler</td></tr>
+          <tr><td>his settlement raises nothing, and the aired file says so</td><td class="n">raises false</td></tr>
+          <tr><td>the programme is six valley days</td><td class="n">86,400 ticks</td></tr>
+          <tr><td>five stones stood, all of them his</td><td class="n">5 of 5</td></tr>
+          <tr><td>she is seaworthy</td><td class="n">0.920</td></tr>
+          <tr><td>and nothing was raised</td><td class="n">0</td></tr>
+          <tr><td>the hull holds</td><td class="n">14 of 16</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>The stones are not names. A standing wants <code>STANDING_PEOPLE</code> returning, so one
+      man's recognition never becomes a place: sable at Wish 79 gave the word, foldline at 139 the
+      threshold. He leaves five marks and no toponyms. What the marks do is lift the
+      <code>waymarks</code> call from 120 tiles to 210, which is Sheet VIII's answer to a Sheet V
+      filing error. It was rediscovered from nothing at four this morning, and the keeper settled
+      it in a sentence: somebody lands at the cairn, gets hurt, and can call further.</p>
+  </section>
+
+  <div class="explicit">
+    <p class="stamp">Printed 31 August 2026</p>
+    <p>Ninety-five numbered sheets and one unnumbered address stand in this record. The masthead
+      printed 96 sheets until this morning, while the highest numeral on its own page said XCV.
+      Both numbers were right and one word was wrong. The count is spent on the two words
+      separately now, and the build refuses to publish an index that disagrees with its own list.</p>
+    <p>A rutter was a working document and a trade secret, copied by hand, corrected by whoever
+      sailed it next. This one is open. The call is out, the hull is at 14 of 16, and the floor a
+      submitted day has to beat is five stones and an empty licence.</p>
+    <p class="footline"><b>Nobody was ever misled by a coast. They are misled by the drawing of
+      one.</b></p>
+  </div>
+
+</div>
+
+</body>
+</html>
