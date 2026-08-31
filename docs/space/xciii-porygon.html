@@ -1,0 +1,273 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>*{margin:0;padding:0}img{max-width:100%}</style>
+</head>
+<body>
+<title>Porygon</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spline+Sans+Mono:wght@400;600&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap">
+
+<style>
+  /*
+   * A broadcast monitor, and the two colours that did the damage in 1997 — red and blue, kept
+   * side by side and absolutely still. A page about a flash hazard has no business animating, so
+   * nothing here moves: no transitions, no transforms, no keyframes, and the two hues never meet
+   * at full strength across a large area. That restraint is the argument, not decoration.
+   */
+  :root {
+    --ground: #EDEDEF;
+    --panel:  #F6F6F8;
+    --sunk:   #E1E2E6;
+    --ink:    #14161A;
+    --faint:  #63676E;
+    --rule:   #C6C8CE;
+    --red:    #A62A21;
+    --blue:   #21507F;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --ground: #0D0F12; --panel: #15181C; --sunk: #090A0C;
+      --ink: #E2E4E8; --faint: #878C94; --rule: #2A2E34;
+      --red: #E1786C; --blue: #7FB2DE;
+    }
+  }
+  :root[data-theme="dark"] {
+    --ground: #0D0F12; --panel: #15181C; --sunk: #090A0C;
+    --ink: #E2E4E8; --faint: #878C94; --rule: #2A2E34;
+    --red: #E1786C; --blue: #7FB2DE;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    background: var(--ground); color: var(--ink);
+    font-family: "Source Serif 4", Georgia, serif;
+    font-size: 1.08rem; line-height: 1.62;
+    margin: 0; padding: 0 1.2rem 6rem;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .leaf { max-width: 44rem; margin: 0 auto; display: flex; flex-direction: column; gap: 2.5rem; }
+  p { margin: 0; max-width: 70ch; text-wrap: pretty; }
+  b { font-weight: 600; }
+  code { font-family: "Spline Sans Mono", ui-monospace, monospace; font-size: 0.76em; color: var(--blue); }
+
+  .stamp {
+    font-family: "Spline Sans Mono", monospace; font-size: 0.64rem;
+    letter-spacing: 0.17em; text-transform: uppercase; color: var(--faint); margin: 0;
+  }
+
+  header.front { display: flex; flex-direction: column; align-items: flex-start; gap: 0.9rem; padding-top: 3.4rem; }
+  header.front h1 {
+    font-weight: 600; font-size: clamp(2.6rem, 10vw, 4.3rem);
+    letter-spacing: -0.025em; margin: 0; line-height: 1.02;
+  }
+  header.front h1 .a { color: var(--red); }
+  header.front h1 .b { color: var(--blue); }
+  header.front .sub { color: var(--faint); font-style: italic; max-width: 42rem; font-size: 1.04rem; }
+  .runhead {
+    display: flex; flex-wrap: wrap; justify-content: space-between; gap: 0.4rem 1rem; width: 100%;
+    font-family: "Spline Sans Mono", monospace; font-size: 0.64rem; color: var(--faint);
+    border-top: 2px solid var(--ink); border-bottom: 1px solid var(--rule); padding: 0.5rem 0.1rem;
+  }
+
+  .finding {
+    background: var(--panel); border: 1px solid var(--rule); border-left: 3px solid var(--red);
+    padding: 1.3rem 1.5rem; font-size: 1.03rem; line-height: 1.6;
+  }
+  .finding .lead {
+    font-family: "Spline Sans Mono", monospace; font-size: 0.64rem; font-weight: 600;
+    letter-spacing: 0.18em; text-transform: uppercase; color: var(--red);
+    display: block; margin-bottom: 0.6rem;
+  }
+
+  section { display: flex; flex-direction: column; gap: 1.05rem; }
+  section > h2 {
+    font-weight: 600; font-size: 1.44rem;
+    margin: 0 0 0.45rem; padding-bottom: 0.4rem; border-bottom: 1px solid var(--ink);
+    display: flex; gap: 0.8rem; align-items: baseline;
+  }
+  section > h2 .n {
+    color: var(--blue); font-family: "Spline Sans Mono", monospace; font-size: 0.68rem;
+    letter-spacing: 0.1em; font-weight: 600;
+  }
+
+  blockquote {
+    margin: 0.2rem 0; padding: 0.9rem 1.3rem; background: var(--sunk);
+    border-left: 3px solid var(--blue); font-style: italic; max-width: 62ch;
+  }
+  blockquote .who {
+    display: block; font-style: normal; font-family: "Spline Sans Mono", monospace;
+    font-size: 0.63rem; letter-spacing: 0.08em; text-transform: uppercase;
+    color: var(--faint); margin-top: 0.55rem;
+  }
+
+  .scroll { overflow-x: auto; }
+  table { border-collapse: collapse; width: 100%; min-width: 30rem; font-family: "Spline Sans Mono", monospace; font-size: 0.69rem; }
+  caption {
+    text-align: left; font-size: 0.62rem; letter-spacing: 0.15em; text-transform: uppercase;
+    color: var(--faint); padding-bottom: 0.55rem;
+  }
+  th, td { text-align: left; padding: 0.45rem 0.6rem; border-bottom: 1px solid var(--rule); vertical-align: top; }
+  th:first-child, td:first-child { padding-left: 0; }
+  thead th {
+    border-bottom: 1px solid var(--ink); color: var(--faint); font-weight: 400;
+    letter-spacing: 0.08em; text-transform: uppercase; font-size: 0.6rem;
+  }
+  td.num { text-align: right; font-variant-numeric: tabular-nums; }
+  td.hot { color: var(--red); }
+  td.cool { color: var(--blue); }
+
+  .caption { font-size: 0.92rem; color: var(--faint); font-style: italic; max-width: 66ch; }
+
+  .explicit { display: flex; flex-direction: column; gap: 0.9rem; border-top: 2px solid var(--ink); padding-top: 1rem; margin-top: 0.8rem; }
+  .footline { font-size: 1.02rem; }
+</style>
+
+<div class="leaf">
+
+  <header class="front">
+    <p class="stamp">The Frontier Record &middot; Sheet XCIII</p>
+    <h1><span class="a">Pory</span><span class="b">gon</span></h1>
+    <p class="sub">On 16 December 1997 an episode of a cartoon put about four seconds of
+      alternating red and blue on Japanese television at roughly twelve flashes a second.
+      Ambulances took some 685 children to hospital that evening. The episode was named after
+      Porygon, the explosion was somebody else's attack entirely, and Porygon has not had a part
+      since.</p>
+    <div class="runhead">
+      <span>the valley aired at 9 Hz</span>
+      <span>22 gates, none of them looking</span>
+      <span>found by a person watching</span>
+    </div>
+  </header>
+
+  <div class="finding">
+    <span class="lead">The finding</span>
+    <p>The simulation was correct. Every settler did what the rules say, every step ran, and no
+      check in this repository was wrong about anything. The danger was in one line that decides
+      what colour to paint the sky. It was dangerous <b>because</b> the rest was right. Catching a
+      broadcast up means running the valley faster, running the valley faster ran the sun faster,
+      and the sun ran at nine full days and nights a second across the whole screen. There are 22
+      checks in the gate. Every one asks whether the valley is correct. Not one of them can ask
+      whether it is safe to look at, and no amount of running them harder would have turned this
+      up. It was reported by somebody watching it happen.</p>
+  </div>
+
+  <section>
+    <h2><span class="n">I</span> <span>The episode that wrote the rules</span></h2>
+    <p>Roughly four and a half million households had it on. The sequence was an explosion drawn
+      as red and blue frames alternating at about twelve hertz, held for some four seconds, and
+      the reports came in through the evening: nausea, then convulsions in a few hundred children,
+      most of whom were fine by morning. It is remembered in Japan as the Pok&eacute;mon Shock.
+      The programme went off the air for about four months.</p>
+    <p>What came out of it is the part worth borrowing. Japanese broadcasters wrote flash limits
+      the following year and the British regulator wrote its own. Both eventually became an
+      international recommendation, which is a number where there had been a judgement: how many
+      flashes a second, over how much of the screen, with how much change in brightness. There is a machine
+      that tests against it. Content is submitted to it before it airs.</p>
+    <p>None of that existed on 15 December 1997. Television had been going for fifty years. What
+      it did not have was an instrument pointed at this particular way of hurting somebody, and
+      the instrument was built the week after it was needed, which is the ordinary way these
+      things arrive.</p>
+    <p>And Porygon, which the episode was named for, did not cause it. The flash came from
+      Pikachu's attack on a set of missiles. Porygon was in the room. It has been kept off the
+      screen ever since, for nearly thirty years, and that misattribution is the second thing
+      this sheet borrows.</p>
+  </section>
+
+  <section>
+    <h2><span class="n">II</span> <span>Nine a second, and where it came from</span></h2>
+    <p>Tuning into a programme already running has to catch up, so the valley steps hard until it
+      reaches the moment on air. The numbers were all in the tree, each sensible on its own.</p>
+
+    <div class="scroll">
+      <table>
+        <caption>Every figure below is a deliberate one, and the product is not</caption>
+        <thead><tr><th>the number</th><th>where</th><th>why it is that</th></tr></thead>
+        <tbody>
+          <tr><td class="num">600</td><td>steps a frame</td><td>so tuning in late is seconds of fast-forward and not a hung page</td></tr>
+          <tr><td class="num">0.05</td><td>the episode's step</td><td>small, so the settlement's thresholds are never stepped over</td></tr>
+          <tr><td class="num">30</td><td>sim-seconds a frame</td><td>the product of those two, which nobody chose</td></tr>
+          <tr><td class="num">200</td><td>seconds in a valley day</td><td>a day you can watch inside an evening</td></tr>
+          <tr><td class="num">6.7</td><td>frames a day</td><td>200 over 30</td></tr>
+          <tr><td class="hot" >9.0 Hz</td><td>at 60 frames a second</td><td>full screen, full daylight to full night</td></tr>
+          <tr><td class="cool">3&ndash;30 Hz</td><td>the band that provokes seizures</td><td>and the worst of it is not far above nine</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p>Read down that column and every entry is a good decision. The last two rows are not a
+      decision at all. Nobody wrote nine hertz; it is what 600 and 0.05 and 200 come to when
+      multiplied by a frame rate that appears in none of them.</p>
+    <p class="caption">The fix is four words long: the sky is held at the light of the moment
+      being caught up to, until the catching up is done. Every step still runs and the settlers
+      still live all of it. Only the painting waits.</p>
+  </section>
+
+  <section>
+    <h2><span class="n">III</span> <span>A gate that has to be able to fail</span></h2>
+    <p>The gate has a 23rd check now, and it does two things rather than one. It runs the frames a
+      viewer would get on tuning in three quarters of an hour late &mdash; 90 of them, 13.5 valley
+      days &mdash; and measures the light the way an eye does, by how often it crosses the middle.
+      Then it runs the same sequence <i>without</i> the fix and demands that one still read as
+      dangerous.</p>
+    <blockquote>
+      held: swing 0.000, 0 crossings, 0.0 Hz &middot; control: swing 1.000, 27 crossings, 9.0 Hz
+      <span class="who">tools/check-flash.mjs, the line it prints when it passes</span>
+    </blockquote>
+    <p>The second half is the whole value. A check on a property that is meant to be absent passes
+      by doing nothing, and there are a dozen ways to write one that would pass for reasons having
+      nothing to do with the fix. If the control ever stops finding the strobe, the check fails
+      and says the instrument has stopped measuring, rather than printing a pass it has not
+      earned.</p>
+    <p>It caught its own author first. The first version reported the fix as leaving one flash
+      behind, and the fix was fine &mdash; the check painted the sky before stepping the clock
+      where the game paints it after. The control said 9.0 Hz, correctly, while the measurement
+      beside it was wrong, and the two disagreeing is the only reason anybody looked. Three more faults in the same evening's work read as working until a real click went near them.
+      A button inside a label ran perfectly when a script pressed it and ticked the wrong thing
+      when a hand did. A confirmation was written into a row the panel rebuilds every few seconds,
+      so <code>Copied.</code> was true and invisible. And a clipboard call neither succeeded nor
+      failed but sat there, which the button read as still working.</p>
+  </section>
+
+  <section>
+    <h2><span class="n">IV</span> <span>What would not clear the standards</span></h2>
+    <p>Nobody was hurt here. 685 children were taken to hospital in 1997 and this is a settlement
+      game with an audience you could count, so the comparison is one of shape and not of scale,
+      and a sheet that let those two sit level would be helping itself to somebody else's
+      seriousness.</p>
+    <p>The nine hertz is calculated, not measured off a screen. It follows from four numbers in the
+      tree and a frame rate of 60. A viewer at 30 frames a second gets something else, and so does
+      a machine dropping frames or a tab in the background. Possibly worse: 12 is nearer the middle
+      of the band than 9. What was measured is the light the code computes, not
+      the light a room saw.</p>
+    <p>And the gate is one check, on one route in. Any other place this valley speeds up is
+      unexamined. The dial goes to 32&times;, which works out at a sixth of a hertz and is nowhere
+      near the band. But that argument was made this evening by the same person who shipped the
+      nine, and it has no test under it.</p>
+    <p class="caption">Hedge on the borrowed shape: the 1997 figures are the ones usually
+      reported and the counts vary by source; the standards that followed were years of work by
+      broadcasters and regulators rather than one document; and the neat parallel &mdash; that
+      Porygon was blamed for somebody else's flash the way the simulation would have been blamed
+      for the renderer's &mdash; is neat because it was chosen, out of a story that had a great
+      many other parts.</p>
+  </section>
+
+  <div class="explicit">
+    <p class="footline">Written 31 August. The valley was right the whole time. Every settler
+      obeyed every rule, all 22 checks were green, and the screen went dark and bright nine times
+      a second at anybody who tuned in late. What that says about this record is not that it had a
+      bug; it is that a program can be correct and still be the wrong thing to put in front of a
+      person, and that the gate had 22 ways to ask the first question and none to ask the second.
+      There are 23 now. There is one way.</p>
+    <p class="stamp">The Frontier Record &middot; Sheet XCIII &middot; 31 August</p>
+  </div>
+
+</div>
+
+</body>
+</html>
