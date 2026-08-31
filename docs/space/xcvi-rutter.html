@@ -1178,6 +1178,25 @@
   </section>
 
   <div class="explicit">
+    <p class="stamp" style="color: var(--rubric);">Corrected an hour after printing</p>
+    <p>Section V says the round finishes on day four and that he fells eleven timbers in the two
+      days after it. Measured directly off the aired file rather than off the day tables: the fifth
+      stone goes down at <b>valley day 3.57</b>, and the idle span is <b>2.43 days</b>. Day four
+      was the row it appeared in, not the moment it happened.</p>
+    <p>The claim underneath is unchanged and is now measured rather than inferred. <b>Nought timber
+      is felled before the round is done and eleven after it</b>, in two bursts at valley day 3.94
+      and 5.39, and the settler's live plan reads <code>0</code> at both. It is idleness, not
+      orders, and it is the whole of the eleven.</p>
+    <p>The re-measurement was prompted by a peer session flagging that
+      <code>day.outcomes[].leftover</code> cannot be read as a measurement:
+      <code>sim.ts:7822</code> fills it for an unreached block from the FILED DOCUMENT's block
+      length, so a static number there is consistent with a plan that will not drain and with a
+      block that was never entered. Only <code>reached</code> tells them apart. That field was not
+      the source of anything in this sheet &mdash; the gates read the live
+      <code>n.plan.length</code> &mdash; but the right answer to a fault report is a measurement
+      and not an argument, and the measurement moved two numbers. The peer had also re-derived its
+      own line number before sending, because the one it wrote at 03:50Z now points at a bare
+      brace: <code>sim.ts</code> is 11,952 lines and one call site moved 319 of them tonight.</p>
     <p class="stamp">Printed 31 August 2026</p>
     <p>Ninety-five numbered sheets and one unnumbered address stand in this record. The masthead
       printed 96 sheets until this morning, while the highest numeral on its own page said XCV.
