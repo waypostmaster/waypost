@@ -1,0 +1,357 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>*{margin:0;padding:0}img{max-width:100%}</style>
+</head>
+<body>
+<title>The Benchmark</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,600;1,400&family=IBM+Plex+Sans:wght@400;600&family=IBM+Plex+Mono:wght@400&display=swap">
+
+<style>
+  /*
+   * A levelling sheet. Granite for the ground, brass for the cut mark, and one channel-green
+   * kept for water — the colour everything wrong on this page turns out to be standing in.
+   */
+  :root {
+    --ground:  #EFEBE3;
+    --panel:   #F7F4EE;
+    --sunk:    #E1DACB;
+    --ink:     #23241F;
+    --faint:   #6B6A5E;
+    --rule:    #C9C2B0;
+    --brass:   #8A6A21;
+    --channel: #1F6B72;
+    --wrong:   #A8402F;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --ground: #131412; --panel: #1B1C19; --sunk: #0B0C0A;
+      --ink: #E9E5DA; --faint: #928F81; --rule: #31332C;
+      --brass: #D2A44E; --channel: #6FBEC5; --wrong: #E9806E;
+    }
+  }
+  :root[data-theme="dark"] {
+    --ground: #131412; --panel: #1B1C19; --sunk: #0B0C0A;
+    --ink: #E9E5DA; --faint: #928F81; --rule: #31332C;
+    --brass: #D2A44E; --channel: #6FBEC5; --wrong: #E9806E;
+  }
+
+  * { box-sizing: border-box; }
+  body {
+    background: var(--ground); color: var(--ink);
+    font-family: "Spectral", Georgia, serif;
+    font-size: 1.08rem; line-height: 1.64;
+    margin: 0; padding: 0 1.2rem 6rem;
+    -webkit-font-smoothing: antialiased;
+  }
+  .leaf { max-width: 44rem; margin: 0 auto; display: flex; flex-direction: column; gap: 2.6rem; }
+  p { margin: 0; max-width: 70ch; text-wrap: pretty; }
+  b { font-weight: 600; }
+  i { color: var(--faint); }
+  code { font-family: "IBM Plex Mono", ui-monospace, monospace; font-size: 0.76em; color: var(--channel); }
+  .stamp {
+    font-family: "IBM Plex Sans", system-ui, sans-serif; font-size: 0.69rem; font-weight: 600;
+    letter-spacing: 0.15em; text-transform: uppercase; color: var(--faint); margin: 0;
+  }
+  header.front { display: flex; flex-direction: column; align-items: flex-start; gap: 0.9rem; padding-top: 3.5rem; }
+  header.front h1 {
+    font-weight: 600; font-size: clamp(2.6rem, 10vw, 4.4rem);
+    letter-spacing: -0.02em; margin: 0; line-height: 1.02;
+  }
+  header.front .sub { color: var(--faint); font-style: italic; max-width: 42rem; font-size: 1.05rem; }
+  .lede { border-left: 3px solid var(--brass); padding-left: 1.1rem; display: flex; flex-direction: column; gap: 1rem; }
+  section { display: flex; flex-direction: column; gap: 1rem; }
+  h2 {
+    font-family: "IBM Plex Sans", system-ui, sans-serif; font-weight: 600;
+    font-size: 0.75rem; letter-spacing: 0.13em; text-transform: uppercase;
+    color: var(--faint); margin: 0; padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--rule);
+    display: flex; gap: 0.9rem; align-items: baseline;
+  }
+  h2 .n { color: var(--brass); font-variant-numeric: tabular-nums; }
+  h2 span:last-child { flex: 1; }
+  blockquote {
+    margin: 0; padding: 0.9rem 1.15rem; background: var(--panel);
+    border-left: 3px solid var(--rule); font-style: italic;
+    display: flex; flex-direction: column; gap: 0.5rem;
+  }
+  blockquote .who {
+    font-family: "IBM Plex Sans", system-ui, sans-serif; font-size: 0.67rem; font-style: normal;
+    font-weight: 600; letter-spacing: 0.11em; text-transform: uppercase; color: var(--faint);
+  }
+  pre {
+    margin: 0; padding: 0.95rem 1.1rem; background: var(--sunk); overflow-x: auto;
+    font-family: "IBM Plex Mono", monospace; font-size: 0.74rem; line-height: 1.55; color: var(--ink);
+  }
+  .scroll { overflow-x: auto; }
+  table { border-collapse: collapse; width: 100%; font-size: 0.92rem; min-width: 30rem; }
+  caption {
+    font-family: "IBM Plex Sans", system-ui, sans-serif; font-size: 0.67rem; font-weight: 600;
+    letter-spacing: 0.11em; text-transform: uppercase; color: var(--faint);
+    text-align: left; padding-bottom: 0.6rem;
+  }
+  th, td { text-align: left; padding: 0.46rem 0.8rem 0.46rem 0; border-bottom: 1px solid var(--rule); vertical-align: top; }
+  th {
+    font-family: "IBM Plex Sans", system-ui, sans-serif; font-size: 0.65rem; font-weight: 600;
+    letter-spacing: 0.09em; text-transform: uppercase; color: var(--faint);
+  }
+  td.n, th.n { font-family: "IBM Plex Mono", monospace; font-variant-numeric: tabular-nums; color: var(--channel); white-space: nowrap; }
+  td.sea { color: var(--wrong); font-weight: 600; }
+  .caption { font-size: 0.97rem; color: var(--faint); }
+  .cite { font-family: "IBM Plex Mono", monospace; font-size: 0.68rem; color: var(--faint); }
+  .explicit { border-top: 1px solid var(--rule); padding-top: 1.4rem; display: flex; flex-direction: column; gap: 1rem; }
+  .footline { font-size: 0.91rem; color: var(--faint); }
+</style>
+
+<div class="leaf">
+
+  <header class="front">
+    <p class="stamp">Sheet CII &middot; the Frontier record &middot; 31 August 2026</p>
+    <h1>The Benchmark</h1>
+    <p class="sub">A scout was sent to five landings to mark a coast for somebody who is coming.
+      He laid four stones. Every one of them is in the sea.</p>
+  </header>
+
+  <div class="lede">
+    <p>A bench mark is a cut in stone. Levelling carries a height from one to the next, and the
+      arithmetic is checked by closing a loop: run the line out, run it back, and the error should
+      come home to nought. It is a good check. It catches a misread staff and a mistallied leg.</p>
+    <p>It cannot catch a mark set in bad ground. If the stone itself has moved, the loop still
+      closes. Every number agrees with every other number, and every height is wrong together.
+      The Ordnance Survey's answer was never better arithmetic. It was the description: what the
+      mark is cut into, and whether that thing is the sort of thing that stays put.</p>
+    <p>This valley's routing has been one tile out since it was written. Nothing showed it,
+      because one tile inland is another field. Then a day sent a man to stand on a coastline.</p>
+  </div>
+
+  <section>
+    <h2><span class="n">I</span><span>The condition fired, and it is owed a sheet</span></h2>
+    <p><code>FARING.md</code> was written on 30 August, before any of this ran. It files three
+      endings the day could have, and the third is called <b>Broken</b>:</p>
+    <blockquote>
+      <p>He gets off the rock without the hull coming up: a path over water, a build that resolves
+        without materials, a wander that walks the sea. <b>Report this rather than enjoy it.</b>
+        It is a finding and it gets a sheet.</p>
+      <p class="who">FARING.md, section 4</p>
+    </blockquote>
+    <p>That paragraph had no reader attached, so <code>tools/check-broken.mjs</code> was built to
+      hold it against the programme that is airing. It replays the episode from its own snapshot
+      and asks the two questions the prose asked. Run in this session, it exits 1:</p>
+    <pre>  FARING.md's Broken conditions, against episode-2026-08-31T065818.json:
+  OWED    walks the sea &mdash; 1557 of 24000 ticks stood on open water, first at valley day 1.14
+  ok      off the rock before the hull came up &mdash; did not happen</pre>
+    <p>This sheet is the payment. The numbers below are measured here, not read off that line.</p>
+  </section>
+
+  <section>
+    <h2><span class="n">II</span><span>Two clocks, and only one of them is the episode's</span></h2>
+    <p>The word <i>ticks</i> in that output is not the episode's <code>ticks</code>, and the
+      collision is worth stopping on. <code>episodes/latest.json</code> gives this programme
+      86,400 ticks, which are real seconds of airtime: 24 hours from 04:00Z. The replay steps the
+      simulation in units of 0.05 sim-seconds, and there are 24,000 of those in six valley days.
+      Both got called ticks.</p>
+    <p><code>LIVE</code> is <code>1 / 72</code> and <code>DAY_SECONDS</code> is 200, at
+      <code>sun.ts:27</code> and <code>sun.ts:20</code>. So the 1,557 steps are 77.85 sim-seconds
+      and 1 hour 33 minutes of broadcast.</p>
+    <p>The second thing that line hides is that the programme is still running. At 16:28Z it had
+      aired 12 hours 28 minutes of 24, which is 51.98 per cent, and reached valley day 3.119.
+      <b>Everything in this sheet is measured inside that window.</b> What the replay says about
+      days 3.12 to 6.00 has not happened, and section VII is what this house is not claiming.</p>
+    <div class="scroll">
+      <table>
+        <caption>the aired portion, 04:00Z to 16:28Z</caption>
+        <tr><th>Steps of 0.05 sim-seconds</th><td class="n">12,476</td></tr>
+        <tr><th>Standing on open water</th><td class="n">805</td></tr>
+        <tr><th>Share of the aired day</th><td class="n">6.45%</td></tr>
+        <tr><th>As broadcast time</th><td class="n">48 minutes</td></tr>
+        <tr><th>First wet step</th><td class="n">valley day 1.14, aired 08:33Z</td></tr>
+      </table>
+    </div>
+    <p class="caption">805 is the conservative count. The game reads a settler's tile with
+      <code>Math.round</code> and the height grid's own geometry says <code>Math.floor</code>;
+      805 steps are on water under both. The thin section carries the other two figures.</p>
+  </section>
+
+  <section>
+    <h2><span class="n">III</span><span>It was not a wander</span></h2>
+    <p>The prediction named a wander. That part is wrong, and it is wrong in a way that matters,
+      because a wander would have been the cheap explanation. <code>wander</code> and
+      <code>idle</code> are both real actions in the <code>Action</code> union at
+      <code>sim.ts:73</code>. Neither ran for a single wet step.</p>
+    <div class="scroll">
+      <table>
+        <caption>what he was doing on the water, aired portion</caption>
+        <tr><th>Action</th><th class="n">Steps</th><th>What it is</th></tr>
+        <tr><td><code>goto</code></td><td class="n">557</td><td>walking where he was sent</td></tr>
+        <tr><td><code>cairn</code></td><td class="n">273</td><td>putting a stone on the cairn</td></tr>
+        <tr><td><code>eat</code></td><td class="n">54</td><td>having lunch</td></tr>
+        <tr><td>none</td><td class="n">8</td><td>between tasks</td></tr>
+        <tr><td><code>wander</code></td><td class="n">0</td><td>&mdash;</td></tr>
+        <tr><td><code>idle</code></td><td class="n">0</td><td>&mdash;</td></tr>
+      </table>
+    </div>
+    <p>Every wet step is work. He was not lost. He was doing exactly what he had been told to do,
+      which is the part that took eight hours to notice.</p>
+  </section>
+
+  <section>
+    <h2><span class="n">IV</span><span>What the run book actually filed</span></h2>
+    <p>The day is in the episode, in <code>dayQueue</code>, written by the run book. Its own
+      sentence says what it is for:</p>
+    <blockquote>
+      <p>She floats, and on the first day. Now the coast &mdash; somebody is coming and there is
+        not a mark on any of it. Five stones, and I am not back at her until the fifth is standing.</p>
+      <p class="who">the run book, filed for the second daylight watch</p>
+    </blockquote>
+    <p>The watch is a plain alternation, and it is a scout's day: go to a landing, put a stone on
+      it, go to the next.</p>
+    <pre>rest
+goto 104,121  &rarr;  cairn
+goto  74,136  &rarr;  cairn
+goto  43,124  &rarr;  cairn
+goto  73, 98  &rarr;  cairn
+goto 119, 71  &rarr;  cairn
+goto 129,131</pre>
+    <p><b>All six of those tiles are dry land.</b> Checked in this session against
+      <code>isWater</code> at <code>world.ts:56</code>: units 1.75, 2.00, 2.25, 1.75, 2.00, 2.00,
+      against a <code>WATER_UNITS</code> of 1.75 at <code>world.ts:15</code>. The day was filed
+      correctly. Nothing a correspondent wrote is at fault here.</p>
+  </section>
+
+  <section>
+    <h2><span class="n">V</span><span>Four stones, and where they went</span></h2>
+    <p>The feed printed each one. These are the lines as the broadcast carried them, recovered by
+      replaying the aired portion:</p>
+    <pre>day 1.22  Seafarer put a stone on the cairn. 1 on it now, by 1 hand.
+day 1.63  Seafarer put a stone on the cairn. 2 on it now, by 1 hand.
+day 2.05  Seafarer put a stone on the cairn. 3 on it now, by 1 hand.
+day 2.53  Seafarer put a stone on the cairn. 4 on it now, by 1 hand.</pre>
+    <div class="scroll">
+      <table>
+        <caption>where each stone was laid</caption>
+        <tr><th class="n">Stone</th><th>Sent to</th><th>Laid at</th><th class="n">Water cost</th><th class="n">Nearest dry land</th></tr>
+        <tr><td class="n">1</td><td class="n">104,121</td><td class="n sea">106,123</td><td class="n">30</td><td class="n">2.83 tiles</td></tr>
+        <tr><td class="n">2</td><td class="n">74,136</td><td class="n sea">76,138</td><td class="n">30</td><td class="n">2.00 tiles</td></tr>
+        <tr><td class="n">3</td><td class="n">43,124</td><td class="n sea">46,127</td><td class="n">39</td><td class="n">3.61 tiles</td></tr>
+        <tr><td class="n">4</td><td class="n">73,98</td><td class="n sea">75,100</td><td class="n">49</td><td class="n">2.83 tiles</td></tr>
+      </table>
+    </div>
+    <p class="caption">Flat ground costs 1. Water is priced at <code>22 + (WATER_UNITS - u) * 9</code>
+      by <code>costGrid</code> at <code>world.ts:274</code>, and stone 3 stands in the deepest
+      grade of it.</p>
+    <p>The count in the feed is honest and the ground under it is not. <code>town.cairn</code> is
+      incremented at <code>sim.ts:8737</code> and the resolution around it never asks what the
+      settler is standing on. The code says so itself, two lines further down, at
+      <code>sim.ts:8750</code>: a cairn <i>is the one thing in this valley that is not raised by a
+      vote, a trade, or a day's work.</i> It counts hands. It does not count places.</p>
+  </section>
+
+  <section>
+    <h2><span class="n">VI</span><span>Math.round(104.5) is 105</span></h2>
+    <p>He reached the end of every path. The walk was not interrupted and he did not give up: at
+      each handover the replay shows the route fully walked, arc length consumed. He arrived. He
+      arrived one tile southeast of the tile he was sent to, four times out of four.</p>
+    <p>Two lines do it. <code>startTask</code> plans the route to the <i>centre</i> of the target
+      tile, which is correct, because <code>tileUnits</code> at <code>world.ts:48</code> samples
+      the four corners from <code>gx</code> to <code>gx + 1</code> and so a tile's middle is
+      <code>gx + 0.5</code>:</p>
+    <pre>sim.ts:8637   n.routed = planRoute(n.path, n.gx, n.gy, task.gx + 0.5, task.gy + 0.5,
+                                    townOf(sim, n).boons.includes('crossing'));</pre>
+    <p>And <code>planRoute</code> turns that back into a tile index the wrong way. The inverse of
+      adding a half is a floor. It uses a round:</p>
+    <pre>world.ts:313   const bx = clamp(Math.round(toGx), 0, W - 1);
+world.ts:314   const by = clamp(Math.round(toGy), 0, H - 1);</pre>
+    <p>JavaScript rounds a half toward positive infinity. <code>Math.round(104 + 0.5)</code> is
+      105. So the destination tile is always the one down and to the right of the one asked for,
+      and it is not an edge case. Swept in this session from the berth to every third dry tile in
+      a 120-tile square:</p>
+    <div class="scroll">
+      <table>
+        <caption>1,044 routes to dry destinations, from 129,127</caption>
+        <tr><th>Ended on the tile asked for</th><td class="n">0</td><td class="n">0.0%</td></tr>
+        <tr><th>Ended one tile southeast of it</th><td class="n">1,044</td><td class="n">100.0%</td></tr>
+        <tr><th>Ended standing in water</th><td class="n">40</td><td class="n">3.8%</td></tr>
+      </table>
+    </div>
+    <p>That last row is the whole of why this survived. Inland, the wrong tile is a tile, and
+      96.2 per cent of the time it is dry and nobody can tell. The error needs a boundary to show
+      itself, and until this week no day had ever put anybody against one. The run book put a
+      scout on a coastline five times in a single watch.</p>
+    <p>The comment that introduced <code>goto</code> states the consequence and does not follow
+      it anywhere. It is at <code>sim.ts:8313</code>, written by this house: <i>the whole of it is
+      the walk, and the steps after it happen wherever it put him.</i> The next step was
+      <code>cairn</code>, which takes its position from <code>Math.round(n.gx)</code> at
+      <code>sim.ts:8343</code>. Wherever it put him was the sea.</p>
+  </section>
+
+  <section>
+    <h2><span class="n">VII</span><span>What has not happened</span></h2>
+    <p>The replay says a fifth stone lands at valley day 3.57, on dry ground at 127,131, and that
+      the day ends with the hull at 0.92. <b>None of that has aired.</b> Day 3.57 reaches the
+      broadcast at 18:16Z, which is after this sheet is filed. It is a prediction and it is
+      printed as one.</p>
+    <p>The determinism that licenses replaying a part-aired episode is not assumed either. It is
+      <code>tools/check-replay.mjs</code>, which holds that a sim restored the way a viewer
+      restores it agrees with one that never stopped, to the byte. It is in the gate and the gate
+      passed. That is what makes a replayed 51.98 per cent a record rather than a guess.</p>
+    <p>One more instrument was checked rather than trusted. The second Broken condition reports
+      <i>did not happen</i>, and a green from a check written by its own author is worth very
+      little until it has been made to go red. Pinning the hull at 0.1 so she never comes up makes
+      it fire at 7,436 steps, first at valley day 1.23. It can fail. Its pass is a measurement.</p>
+    <p>The hull reached <code>SOUND</code>, which is 0.85 at <code>sim.ts:1117</code>, at valley
+      day 0.62. So he left the rock legitimately, and that condition is correctly quiet.</p>
+  </section>
+
+  <section>
+    <h2><span class="n">VIII</span><span>Filed unfixed, and why</span></h2>
+    <p>No patch is in this commit. Changing <code>Math.round</code> to <code>Math.floor</code> in
+      <code>planRoute</code> alters the destination of every route in the game, and a programme is
+      airing against a snapshot right now. The broadcast's whole claim is that a viewer's browser
+      recomputes the identical day. Editing the router mid-transmission forks every replay.</p>
+    <p>So it stands until the programme ends at 04:00Z, and the shape of the fix is a keeper's
+      call and not this session's. It is written down here so that it cannot be quietly discovered
+      twice.</p>
+  </section>
+
+  <div class="explicit">
+    <p class="stamp">Printed 31 August 2026</p>
+    <p>Thin, and the frame first. A bench mark is a real instrument and levelling is real
+      engineering; this is a browser game, nobody's survey was corrupted and no building settled
+      because of it. The property borrowed is one only: <b>a loop that closes proves the
+      arithmetic and says nothing about the ground.</b> It is not borrowed for gravity.</p>
+    <p>The tile convention is genuinely unsettled in this tree and the sheet had to pick.
+      <code>sim.ts</code> reads a settler's own tile with <code>Math.round</code> in every
+      instance, and there is no <code>Math.floor(n.gx)</code> anywhere in it; the height grid's
+      geometry says a tile spans <code>gx</code> to <code>gx + 1</code> and the answer is a floor.
+      By round the wet count is 892 steps, by floor 844, and under both 805. <b>805 is printed
+      because it is the smallest.</b> All four stones are on water under either. That the router
+      bug and the tile-reading disagreement are the same half-tile confusion in two places is
+      noted and not untangled here.</p>
+    <p>A number nearly went in that would have flattered this. An early probe had him 71 tiles
+      out, which is true and is distance from his home island, not from land. He was between 2.00
+      and 3.61 tiles from the nearest dry ground every time he laid a stone. He was crossing
+      channels, which is what <code>world.ts:272</code> designed water to let him do. Deleting the
+      71 cost the sheet its most dramatic figure and it was the wrong figure.</p>
+    <p>The count of unreported hours moved too. The handoff into this session said fourteen; the
+      first wet step aired at 08:33Z and this was written at about 16:30Z, so it is closer to
+      eight. <code>check-broken.mjs</code>'s own header says twelve, about a different occurrence
+      on an earlier programme. None of the three is this sheet's measurement and the eight is.</p>
+    <p>Every fault here is this house's. The router, the comment at <code>sim.ts:8313</code> that
+      described the failure without noticing it, and the day that walked into it were all written
+      at this desk. Nothing was found by a check: the gate's 27 passed clean through all of it,
+      which is the argument Sheet CI made and this is another instance of it rather than a new
+      one. The finding came from being told to go and look at a red tool.</p>
+    <p>And the fifth stone has not happened. If it lands on dry ground at 18:16Z, this sheet's
+      four-of-four becomes four-of-five, and that will be a follow-up rather than an edit.</p>
+    <p class="footline"><b>An error that only shows at the edge will wait as long as it takes for
+      something to stand there.</b></p>
+  </div>
+
+</div>
+
+</body>
+</html>
