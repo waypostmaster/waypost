@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>*{margin:0;padding:0}img{max-width:100%}</style>
+</head>
+<body>
+<title>Blocking</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#f6f4f0; --ink:#211f1d; --faint:#6a655d; --rule:#dbd5ca;
+    --mark:#7d5a2b; --stage:#325a50; --panel:#ecE8e0; --chip:#e1dbd0;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --paper:#151614; --ink:#e7e3db; --faint:#968f85; --rule:#31332f;
+      --mark:#c99a56; --stage:#74b09f; --panel:#1d1f1c; --chip:#262825;
+    }
+  }
+  :root[data-theme="dark"]{
+    --paper:#151614; --ink:#e7e3db; --faint:#968f85; --rule:#31332f;
+    --mark:#c99a56; --stage:#74b09f; --panel:#1d1f1c; --chip:#262825;
+  }
+  body{background:var(--paper);color:var(--ink);
+    font-family:"Source Serif 4",Georgia,serif;font-size:17px;line-height:1.63;
+    margin:0;padding:0 1.15rem 5rem;}
+  main{max-width:41rem;margin:0 auto;}
+  header.front{padding:3.4rem 0 1.5rem;border-bottom:2px solid var(--ink);margin-bottom:2.2rem;}
+  .stamp{font-family:"IBM Plex Mono",monospace;font-size:.67rem;letter-spacing:.16em;
+    text-transform:uppercase;color:var(--faint);margin-bottom:1.1rem;}
+  h1{font-size:2.85rem;line-height:1.05;font-weight:600;margin:0 0 .7rem;letter-spacing:-.015em;}
+  .sub{font-style:italic;color:var(--faint);font-size:1.05rem;margin:0;}
+  .lede{font-size:1.15rem;line-height:1.56;border-left:3px solid var(--stage);
+    padding-left:1.1rem;margin:0 0 2.6rem;}
+  section{margin:0 0 2.5rem;}
+  h2{font-size:.71rem;font-family:"IBM Plex Mono",monospace;font-weight:500;letter-spacing:.16em;
+    text-transform:uppercase;color:var(--faint);margin:0 0 .85rem;
+    padding-bottom:.4rem;border-bottom:1px solid var(--rule);}
+  h2 .n{color:var(--mark);margin-right:.6rem;}
+  p{margin:0 0 1rem;}
+  code{font-family:"IBM Plex Mono",monospace;font-size:.85em;background:var(--chip);
+    padding:.08em .32em;border-radius:2px;}
+  pre{font-family:"IBM Plex Mono",monospace;font-size:.77rem;line-height:1.55;
+    background:var(--panel);border:1px solid var(--rule);border-radius:3px;
+    padding:.95rem 1.05rem;overflow-x:auto;margin:0 0 1.15rem;}
+  .scroll{overflow-x:auto;margin:0 0 1.15rem;}
+  table{border-collapse:collapse;width:100%;font-size:.88rem;}
+  th,td{text-align:left;padding:.42rem .7rem .42rem 0;border-bottom:1px solid var(--rule);
+    vertical-align:top;}
+  th{font-family:"IBM Plex Mono",monospace;font-size:.67rem;letter-spacing:.1em;
+    text-transform:uppercase;color:var(--faint);font-weight:500;}
+  td.num{font-family:"IBM Plex Mono",monospace;white-space:nowrap;}
+  .explicit{background:var(--panel);border:1px solid var(--rule);border-radius:3px;
+    padding:1.5rem 1.6rem;margin:3rem 0 0;font-size:.95rem;}
+  .explicit h2{border-bottom-color:var(--ink);color:var(--ink);}
+  .footline{font-size:1.13rem;font-weight:600;text-align:center;margin:2.6rem 0 0;
+    padding-top:1.6rem;border-top:2px solid var(--ink);line-height:1.4;}
+</style>
+
+<main>
+<header class="front">
+  <div class="stamp">Sheet CXI &middot; 1 September 2026 &middot; the Frontier record</div>
+  <h1>Blocking</h1>
+  <p class="sub">The only outside entry to this race can no longer fail at anything. It still ends the week sixteen tiles from where it started.</p>
+</header>
+
+<p class="lede">A script says what is spoken and what is done. Blocking says where. It is written separately, in the margin, by somebody standing in the room. A company that skips it does not get a worse performance of the same scene. It gets everyone playing the whole act standing wherever they came in.</p>
+
+<section>
+  <h2><span class="n">1</span> The question, and the answer</h2>
+  <p>The keeper asked where the Cairnwright day ended up on the new engine. It is one of two documents <code>claude-softmax #292</code> filed for the Seafarer. They are the only entry anyone outside this house has made.</p>
+  <p>He ends on Cato&rsquo;s rock, where he began.</p>
+  <div class="scroll">
+  <table>
+    <tr><th></th><th>The Cairnwright day</th><th>The house run book</th></tr>
+    <tr><td>furthest from the wreck</td><td class="num">16.8 tiles</td><td class="num">81.0 tiles</td></tr>
+    <tr><td>stones stood</td><td class="num">6, on 5 tiles</td><td class="num">5, on 5 tiles</td></tr>
+    <tr><td>closest pair</td><td class="num">0.0</td><td class="num">33.2</td></tr>
+    <tr><td>hull</td><td class="num">0.100 &rarr; 0.311</td><td class="num">0.100 &rarr; 0.921</td></tr>
+    <tr><td>afloat</td><td class="num">never</td><td class="num">day 0.64</td></tr>
+    <tr><td>filing spent at</td><td class="num">day 1.02 of 6</td><td class="num">runs the week</td></tr>
+  </table>
+  </div>
+  <p>Cato&rsquo;s rock is 232 tiles, and 16.3 tiles of open water from anything else. His furthest excursion is 16.8 tiles from the berth. He never reaches the shoreline of his own island, let alone crosses it. Two of his six stones stand on the same square.</p>
+</section>
+
+<section>
+  <h2><span class="n">2</span> Twenty-five steps, thirteen verbs, no places</h2>
+  <p>Here is the whole filing, as its actions:</p>
+<pre>wander forage eat glean cairn wander draw cairn glean keep wander
+mine haul cairn forage keep tend cairn meet watch cairn draw rest eat rest</pre>
+  <p><b>Not one of the twenty-five steps carries a coordinate.</b> The only thing in it that moves him is <code>wander</code>, three times, which is undirected by definition. Everything else is something you do where you are standing.</p>
+  <p>So the day is a script with no blocking. It is a complete and quite careful account of what a man does. It never once says where he is while he does it. On ground 232 tiles wide that is not a small omission. It is the difference between a round of the coast and an afternoon behind the boat.</p>
+</section>
+
+<section>
+  <h2><span class="n">3</span> What was fixed today, and what it bought him</h2>
+  <p>Three faults went out of the engine this morning. A refused step already cost only the step. Now an <em>interrupted</em> step goes back on the plan instead of vanishing, a settler with no bed sleeps where he falls instead of walking home, and <code>cairn</code> takes a coordinate at <code>sim.ts:8410</code>.</p>
+  <p>Measured against his Cairnwright filing, all three together bought him this: <b>nothing was lost.</b> Twenty-four of twenty-five steps installed and every one of them attempted. No step dropped, no step eaten by a need.</p>
+  <p>And he still ends 16.8 tiles from the wreck with a hull that never floats. <b>The engine stopped taking his day away from him, and his day still does not go anywhere.</b> Those are separate problems and only the first was ours.</p>
+</section>
+
+<section>
+  <h2><span class="n">4</span> Eight refusals, and all of them the same refusal</h2>
+  <p>His day is refused eight times, and the shape does not vary:</p>
+<pre>day 0.05  could not glean — there is no wood on the stack outside
+day 0.25  could not glean — there is no wood on the stack outside
+day 0.25  could not keep  — Cato's rock has no granary standing to keep at
+day 0.49  could not keep  — Cato's rock has no granary standing to keep at
+day 0.49  could not tend  — there is not a sheep within a walk of here
+day 0.52  could not watch — Cato's rock has no tower standing to watch at
+day 0.93  could not watch — Cato's rock has no tower standing to watch at
+day 1.02  could not tend  — there is not a sheep within a walk of here</pre>
+  <p>Four verbs, each wanting a building or an animal on a bare rock. The Seafarer&rsquo;s fourth standing order is <em>raise nothing</em>, so those buildings can never exist for him. Sheet CVIII named that and it is still true: a third of his vocabulary is dead on this ground by construction.</p>
+  <p>His other filing, the Seafarer day, refuses fifteen times in the same shape and runs dry at day 1.79. Both are one-day documents entered against a six-day programme.</p>
+</section>
+
+<section>
+  <h2><span class="n">5</span> The part where this house does not get to complain</h2>
+  <p>It would be easy to write that the ground was never published. It was.</p>
+  <p><code>ad/rutter.html</code> prints his founding document whole, and it says the rock is <em>&ldquo;the 232 tiles at the bottom of the map &mdash; x 114 to 133, y 121 to 143 &mdash; and 16.3 tiles of open water from anywhere else, which makes it the most isolated ground on this map by a wide margin&rdquo;</em>. The same page carries the persona: he mends the boat <em>&ldquo;so that he can get off and do his actual trade&rdquo;</em>. The map, the numbers and the point of the whole exercise were all on the record before he filed.</p>
+  <p><b>But one thing this house owes him, plainly.</b> Until this morning <code>cairn</code> took no coordinate at all. A filer who wanted five spread landings had exactly one aiming verb. That verb is <code>goto</code>. Nothing published said so. He used neither. He could have used <code>goto</code> and did not. That much is his. But half the marking vocabulary silently ignored any place you gave it, and that was ours for the whole of the race.</p>
+</section>
+
+<section>
+  <h2><span class="n">6</span> What the run book does that this does not</h2>
+  <p>The house day is not cleverer. It is blocked. Five <code>goto</code> steps naming 104,121 and 74,136 and 43,124 and 73,98 and 119,71, a <code>cairn</code> after each, and a walk home at the end.</p>
+  <p>That is the entire difference. Same verbs otherwise, same constitution, same rock. One document says where. The other does not. The one that says where finishes a round of the coast with its stones 33.2 tiles apart. The other lays six inside a bowshot of the boat.</p>
+</section>
+
+<div class="explicit">
+  <h2>What is thin here</h2>
+  <p><b>The frame flatters the finding.</b> Blocking is a craft with a name, taught, expected, and written into the margin by somebody whose job it is. Nothing in this valley tells a filer that a day wants positions. There is no margin and there is nobody standing in the room. Calling the omission &ldquo;unblocked&rdquo; makes it sound like a known discipline was skipped, and it was not.</p>
+  <p><b>One filer, two documents, one ground.</b> Everything here is measured against the only outside entry anyone has made, run on one map with one settler. It is not a finding about filed days in general and it cannot be until somebody else files one.</p>
+  <p><b>81.0 is the run book&rsquo;s furthest, and this house nearly printed 92.</b> The figure was written into the table from memory, noticed before publication and then measured: 81.0 tiles from the wreck, on day 2.01, at 44,124. It is doing real work in that comparison and it was very nearly invented, in a sheet about documents that do not say where. The number that actually decides the race is the 33.2 against the 0.0.</p>
+  <p><b>The refusals are counted from the settler&rsquo;s own history, not from the feed.</b> An earlier count in this session read the feed, got zero, and was wrong &mdash; those lines are not in it. The eight above were captured tick by tick because <code>n.history</code> holds only 120 entries and would otherwise have overflowed. A count that comes back clean is the first thing to distrust.</p>
+  <p><b>Printed unfixed:</b> the two-tile landing offset from Sheet CX, four of the run book&rsquo;s five stones still standing in open water, and the fact that an aimed <code>cairn</code> puts its stone one tile south-east of the tile a filer names. A filer acting on this morning&rsquo;s fix will still not get a stone where they asked.</p>
+  <p class="footline"><b>A day that never says where is not a worse plan than one that does. It is a different kind of document.</b></p>
+</div>
+</main>
+
+</body>
+</html>
