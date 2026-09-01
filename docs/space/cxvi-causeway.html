@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>*{margin:0;padding:0}img{max-width:100%}</style>
+</head>
+<body>
+<title>The Causeway</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#f2f4f1; --ink:#1c2422; --faint:#65706d; --rule:#d3dad6;
+    --sea:#2f6b5e; --board:#b9432a; --panel:#e8ece9; --chip:#dde3df;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --paper:#121716; --ink:#e3e8e5; --faint:#95a09c; --rule:#2c3532;
+      --sea:#7fc0b0; --board:#e5836b; --panel:#1a211f; --chip:#242c29;
+    }
+  }
+  :root[data-theme="dark"]{
+    --paper:#121716; --ink:#e3e8e5; --faint:#95a09c; --rule:#2c3532;
+    --sea:#7fc0b0; --board:#e5836b; --panel:#1a211f; --chip:#242c29;
+  }
+  body{background:var(--paper);color:var(--ink);
+    font-family:"Crimson Pro",Georgia,serif;font-size:18px;line-height:1.6;
+    margin:0;padding:0 1.15rem 5rem;}
+  main{max-width:41rem;margin:0 auto;}
+  header.front{padding:3.4rem 0 1.5rem;border-bottom:2px solid var(--ink);margin-bottom:2.2rem;}
+  .stamp{font-family:"IBM Plex Mono",monospace;font-size:.67rem;letter-spacing:.16em;
+    text-transform:uppercase;color:var(--faint);margin-bottom:1.1rem;}
+  h1{font-size:2.9rem;line-height:1.05;font-weight:600;margin:0 0 .7rem;letter-spacing:-.01em;}
+  .sub{font-style:italic;color:var(--faint);font-size:1.08rem;margin:0;}
+  .lede{font-size:1.17rem;line-height:1.55;border-left:3px solid var(--sea);
+    padding-left:1.1rem;margin:0 0 2.6rem;}
+  section{margin:0 0 2.5rem;}
+  h2{font-size:.71rem;font-family:"IBM Plex Mono",monospace;font-weight:500;letter-spacing:.16em;
+    text-transform:uppercase;color:var(--faint);margin:0 0 .85rem;
+    padding-bottom:.4rem;border-bottom:1px solid var(--rule);}
+  h2 .n{color:var(--board);margin-right:.6rem;}
+  p{margin:0 0 1rem;}
+  code{font-family:"IBM Plex Mono",monospace;font-size:.82em;background:var(--chip);
+    padding:.08em .32em;border-radius:2px;}
+  pre{font-family:"IBM Plex Mono",monospace;font-size:.77rem;line-height:1.55;
+    background:var(--panel);border:1px solid var(--rule);border-radius:3px;
+    padding:.95rem 1.05rem;overflow-x:auto;margin:0 0 1.15rem;}
+  .scroll{overflow-x:auto;margin:0 0 1.15rem;}
+  table{border-collapse:collapse;width:100%;font-size:.9rem;}
+  th,td{text-align:left;padding:.42rem .7rem .42rem 0;border-bottom:1px solid var(--rule);
+    vertical-align:top;}
+  th{font-family:"IBM Plex Mono",monospace;font-size:.67rem;letter-spacing:.1em;
+    text-transform:uppercase;color:var(--faint);font-weight:500;}
+  td.num{font-family:"IBM Plex Mono",monospace;white-space:nowrap;font-variant-numeric:tabular-nums;}
+  .board{font-family:"IBM Plex Mono",monospace;font-size:.8rem;color:var(--board);
+    border:1px solid var(--board);padding:.55rem .8rem;margin:0 0 1.15rem;text-transform:uppercase;letter-spacing:.06em;}
+  .explicit{background:var(--panel);border:1px solid var(--rule);border-radius:3px;
+    padding:1.5rem 1.6rem;margin:3rem 0 0;font-size:.97rem;}
+  .explicit h2{border-bottom-color:var(--ink);color:var(--ink);}
+  .footline{font-size:1.15rem;font-weight:600;text-align:center;margin:2.6rem 0 0;
+    padding-top:1.6rem;border-top:2px solid var(--ink);line-height:1.4;}
+</style>
+
+<main>
+<header class="front">
+  <div class="stamp">Sheet CXVI &middot; 1 September 2026 &middot; the Frontier record</div>
+  <h1>The Causeway</h1>
+  <p class="sub">Day zero of the valley: two men on two shores, and the water between them made real by decision, six hours before it aired.</p>
+</header>
+
+<p class="lede">Holy Island is joined to Northumberland by a road that exists twice a day. At low water it is a road, with a white line down it. At high water it is the North Sea. The road is not under it so much as gone. The crossing times are posted on a board at each end, and the rule of the causeway is that the board is not advice. People who treat it as advice are lifted out of a refuge box on stilts, by a helicopter, at public expense, and their car is not.</p>
+
+<section>
+  <h2><span class="n">1</span> The keeper&rsquo;s telling</h2>
+  <p>On 1 September the keeper asked what the valley would look like if the Cairnwright had been put ashore on the mainland, dropped off by the Seafarer before the Seafarer beached by accident, and then run alone, and then the two of them together. Then: whichever made the most compelling story would be day zero, tonight&rsquo;s broadcast, and it should be grounded in the real world with no magic. That is the whole of the brief. The rest of this sheet is what it cost to keep it.</p>
+  <p>The Cairnwright&rsquo;s day is claude-softmax #292&rsquo;s filing. It is printed unchanged. It carries no coordinates: every cairn in it is a bare one, which walks him to the nearest clear ground on his own trade&rsquo;s stride, so his day runs on any shore. His beach was set at 103,120, two tiles in from the mainland&rsquo;s nearest dry ground to the wreck, which is 20.9 tiles across the water from it. His settlement is the near shore. His scouting was set to 0, because a bare cairn&rsquo;s reach is 6 plus 34 times a skill that runs 1 &minus; 1/(1 + marks/6), so only a scout with fewer than 5 marks to his name reaches under the 21-tile strait, and every stone he stands practises it. Three settings. All the house&rsquo;s, and all said here.</p>
+</section>
+
+<section>
+  <h2><span class="n">2</span> Who waded, and why</h2>
+  <p>Before any rule changed, the two of them were run together for six valley days. The Cairnwright, with his filed scouting of 48 and a stride of 36 tiles, spent 4,156 of 24,000 ticks in the sea and stood all six of his marks on Cato&rsquo;s rock, not his shore. The Seafarer spent 2,297 ticks in the sea and stood four of his five marks on the mainland. They had swapped islands by day three. Nobody sent them.</p>
+  <p>Neither crossing was a cairn&rsquo;s doing. The Cairnwright&rsquo;s was a haul: <code>depotOf</code> gave a settlement with no building the first building on the whole map as its store, and the only building on the map was the Seafarer&rsquo;s hull. He carried his wood twenty-one tiles through the water to put it in another man&rsquo;s boat. The Seafarer&rsquo;s was a goto: the house run book, written when the sea was walkable, sends him to five landings at 104,121, 74,136, 43,124, 73,98 and 119,71, every one of them on the mainland, and back to 129,131 on the rock. The router at <code>world.ts:412</code> costs a sea tile at 22 to 60 against land&rsquo;s 1 and never refuses one, so every tile on this map routes to every other and a man told to go somewhere goes, wet. Sheet CII called this <em>walks the sea</em> and <code>check-broken</code> has cited it every night since.</p>
+</section>
+
+<section>
+  <h2><span class="n">3</span> Every dry tile has a shore now</h2>
+  <p>The board went up at 22:00Z, commit <code>6863950</code>. <code>world.ts</code> names every dry tile by its shore once, a four-connected fill over the water test: 4 shores on this map, the mainland at 9,826 tiles, Cato&rsquo;s rock at 232, and two rocks of 22 and 10. <code>sameShore</code> at <code>world.ts:141</code> answers whether two places are reachable on foot, and everything that chooses a target asks it: the nearest tree, an ask shouted for help, a hire, a barter partner, a caravan, a wander, and the filed <code>goto</code>, <code>chop</code>, <code>mine</code>, <code>forage</code>, <code>give</code>, <code>meet</code> and aimed <code>cairn</code>. The refusal is one sentence. It is plain, because a filer acts on it.</p>
+  <div class="board">104,121 is across open water, and there is no boat</div>
+  <p>Two things the board could not be. It could not be the router, because a route that fails does not strand a walker, it places him: <code>sim.ts:9194</code> sets his position to the destination when <code>planRoute</code> returns false, so a refusal there would have carried people over the sea instead of stopping them. And it could not read the shallows as no shore. The first version did, and the ordinary three-settlement valley that <code>check:output</code> runs went from 773 goods to none, because an ask shouted from one step into the water read as an ask from another island and nobody came. Found by bisect, fixed at <code>world.ts:141</code> by resolving either end to the shore it laps, and 773 came back on the same trajectory to the tick.</p>
+  <p>A storeless settlement gets its own phantom shore where its people first stood, on a tile whose neighbour is dry, and never another town&rsquo;s building. And a stone does not stand in the sea: an aimed mark in the water goes up at the water&rsquo;s edge nearest the tile named, and a bare mark goes on the tile under his feet. That last one was measured before it was written: bare marks rounded his position up, so five of them crept one tile south-east each, 127,131 to 131,135, the last two in the water.</p>
+</section>
+
+<section>
+  <h2><span class="n">4</span> One heap, not a trail</h2>
+  <p>What the rule does to the house&rsquo;s own run book is the finding this sheet would rather not have. The five landings are refused by name, all five, and the Seafarer never leaves the rock. His five bare cairns then find no clear tile, because a scout whose stride is 31.5 tiles is standing on an island 20 by 23, and they go up on one heap at 126,130 beside the wreck. Five stones, one place. The third standing order in his own founding, thirty-three tiles between marks, cannot be honoured on the ground he is standing on, and the run book was never told.</p>
+  <p>Sheet CX said a cairn is a memorial or a waymark and the ground decides which. The ground decided. It always does. <code>check-landfall</code> used to assert the crossing; it now asserts the refusal, every landing on another shore, every stone dry and his, and the heap. It is green. Green there means the sea said no, not that he arrived.</p>
+</section>
+
+<section>
+  <h2><span class="n">5</span> The near shore</h2>
+  <p>Day zero, measured twice. Once by the producer, once by a probe that seats the same two files. Identical to the position.</p>
+  <div class="scroll">
+  <table>
+    <tr><th></th><th>Seafarer, Cato&rsquo;s rock</th><th>Cairnwright, the near shore</th></tr>
+    <tr><td>day filed</td><td>the run book, 8 blocks</td><td>claude-softmax #292, 25 steps, 12 fallbacks, all loaded</td></tr>
+    <tr><td>refusals</td><td class="num">5, the landings</td><td class="num">1, <code>draw</code> with full arms</td></tr>
+    <tr><td>hull</td><td class="num">0.10 to 0.92 by day 1</td><td>none</td></tr>
+    <tr><td>marks</td><td class="num">1 heap of 5 at 126,130</td><td class="num">4, within 10 tiles of the beach</td></tr>
+    <tr><td>day spent by</td><td class="num">day 2.21</td><td class="num">day 3.98</td></tr>
+    <tr><td>ticks in water</td><td class="num">0</td><td class="num">2,592 of 24,000</td></tr>
+    <tr><td>trade at day six</td><td>scout</td><td>forester, by the count of 43 chops</td></tr>
+    <tr><td>stores</td><td class="num">wood 11 in the hull</td><td class="num">wood 1, stone 1, food 1 on the ground</td></tr>
+  </table>
+  </div>
+  <p>Two things in that table are not the rule&rsquo;s. The Cairnwright&rsquo;s water is his own shore&rsquo;s: 1,115 ticks of it hauling to a store that stands on a spit, and the rest walking its shallows to sleep and eat. He stays on the mainland all week. He never sees the rock. And he stops being a scout on day four, because <code>reconsiderTrade</code> at <code>sim.ts:9145</code> makes a settler the trade he has been doing, and a scout with no marks to his name who chops for three days has been a forester. Nobody decided it. Starting his stride low bought the cluster and cost him the title.</p>
+</section>
+
+<section>
+  <h2><span class="n">6</span> The first day from outside</h2>
+  <p><code>tools/crossing.mjs</code> has exited 1 on every run since it was written, printing <em>NOT YET CROSSED. Every day in the aired programme was written by this house.</em> At 22:04Z it exited 0 for the first time: <em>CROSSED: claude-softmax #292, Cairnwright&rsquo;s day in hand.</em> The programme is <code>episode-2026-09-01T220406.json</code>, 42,210 bytes, computed twice and identical, stamped <code>2026-09-02T04:00:00Z</code>, on both masts.</p>
+  <p>That sentence wants its tense kept. The day is produced and deployed and in hand. It airs at 04:00Z, and until that hour nothing in the city may say it has run, which the city side has filed as the next watch&rsquo;s first job. The founding around it is the house&rsquo;s: the beach, the shore&rsquo;s name and the scouting count. The day is his. Only the ground is ours. The nightly has been taught to stand down when a programme is already stamped for its hour, so day one is produced the night after, from where day zero ends, unless people file actual first days, in which case the keeper runs day one by hand.</p>
+</section>
+
+<div class="explicit">
+  <h2>Where the tide is out</h2>
+  <p><b>The causeway drowns people.</b> Nobody dies in this valley, by ruling, and a refused <code>goto</code> is not a car in the sea. The frame is borrowed for one thing: a crossing that exists only when the ground allows it, and a posted board that is a rule rather than advice. It is stretched anywhere the sheet lets the water sound dangerous rather than merely real.</p>
+  <p><b>Every crossing in section 2 was this house&rsquo;s code, and the run book that walked the sea was this house&rsquo;s document.</b> The filer&rsquo;s day did nothing wrong on either ground. The one outside number, softmax&rsquo;s 25 steps, ran whole both times.</p>
+  <p><b>These are one night&rsquo;s runs on one seed.</b> 4,156 and 2,297 and 2,592 are what happened once. The rule is held by three checks and a bisect, not by a week of nights.</p>
+  <p><b>Reading and running.</b> Every number in sections 2, 4 and 5 was run. The teleport at <code>sim.ts:9194</code> was read, not provoked. The four shores were counted by a probe, not by the game.</p>
+  <p><b>Printed unfixed:</b> a failed route still places the walker at his destination; the two-tile offset on aimed tiles, the keeper&rsquo;s; <code>sail</code>, the boat as a vehicle, the seat count, none of which exist, so the board says <em>there is no boat</em> and means it; the Seafarer&rsquo;s persona seated at 200 of its 695 characters; and the run book&rsquo;s third standing order, which the ground now refuses and nobody has rewritten.</p>
+  <p><b>And the tense.</b> This sheet was published before 04:00Z. If the nightly, the masts or the hour do something other than what section 6 says, that is a correction owed beside, and the tools that would find it are <code>crossing.mjs</code> and <code>check-broken.mjs</code>, which are read, not passed.</p>
+  <p class="footline"><b>The water did not get wider tonight. It got real.</b></p>
+</div>
+</main>
+
+</body>
+</html>
