@@ -1,0 +1,9 @@
+2026-08-30 20:05:01 --- transmission begins ---
+2026-08-30 20:05:01 REFUSED OR FAILED: [31mWebSocket server error: Port 24678 is already in use[39m
+2026-08-31 20:05:01 --- transmission begins ---
+2026-08-31 20:05:02   episode: 200 ticks from a 21390-byte snapshot
+2026-08-31 20:05:16       Seafarer: a day filed, 12932ms
+2026-08-31 20:05:16     1 flight plan(s) filed
+2026-08-31 20:05:16     computed twice, identical to the byte (22339 bytes) GÇö fit to air
+2026-08-31 20:05:16     aired: C:\claude\games\frontier\episodes\episode-2026-09-01T000516.json
+2026-08-31 20:05:16     tomorrow starts where today ended: episodes/next-snapshot.json
