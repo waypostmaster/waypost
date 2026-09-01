@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>*{margin:0;padding:0}img{max-width:100%}</style>
+</head>
+<body>
+<title>Ghost Peaks</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,300;0,400;0,600;1,300;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#f7f5ef; --ink:#22201c; --faint:#6d675d; --rule:#ddd6c8;
+    --ghost:#a8442e; --panel:#efebe1; --chip:#e4dece;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --paper:#16171a; --ink:#e8e4dc; --faint:#9a948a; --rule:#33353a;
+      --ghost:#e08a70; --panel:#1e2024; --chip:#262a2f;
+    }
+  }
+  :root[data-theme="dark"]{
+    --paper:#16171a; --ink:#e8e4dc; --faint:#9a948a; --rule:#33353a;
+    --ghost:#e08a70; --panel:#1e2024; --chip:#262a2f;
+  }
+  body{background:var(--paper);color:var(--ink);font-family:Spectral,Georgia,serif;
+    font-size:17px;line-height:1.62;margin:0;padding:0 1.15rem 5rem;}
+  main{max-width:41rem;margin:0 auto;}
+  header.front{padding:3.4rem 0 1.6rem;border-bottom:2px solid var(--ink);margin-bottom:2.2rem;}
+  .stamp{font-family:"IBM Plex Mono",monospace;font-size:.68rem;letter-spacing:.15em;
+    text-transform:uppercase;color:var(--faint);margin-bottom:1.1rem;}
+  h1{font-size:2.9rem;line-height:1.04;font-weight:600;margin:0 0 .7rem;letter-spacing:-.015em;}
+  .sub{font-style:italic;color:var(--faint);font-size:1.06rem;margin:0;}
+  .lede{font-size:1.16rem;line-height:1.55;border-left:3px solid var(--ghost);
+    padding-left:1.1rem;margin:0 0 2.6rem;}
+  section{margin:0 0 2.5rem;}
+  h2{font-size:.72rem;font-family:"IBM Plex Mono",monospace;font-weight:500;letter-spacing:.16em;
+    text-transform:uppercase;color:var(--faint);margin:0 0 .85rem;
+    padding-bottom:.4rem;border-bottom:1px solid var(--rule);}
+  h2 .n{color:var(--ghost);margin-right:.6rem;}
+  p{margin:0 0 1rem;}
+  b,strong{font-weight:600;}
+  code{font-family:"IBM Plex Mono",monospace;font-size:.85em;background:var(--chip);
+    padding:.08em .32em;border-radius:2px;}
+  pre{font-family:"IBM Plex Mono",monospace;font-size:.78rem;line-height:1.5;
+    background:var(--panel);border:1px solid var(--rule);border-radius:3px;
+    padding:.95rem 1.05rem;overflow-x:auto;margin:0 0 1.15rem;}
+  .scroll{overflow-x:auto;margin:0 0 1.15rem;}
+  table{border-collapse:collapse;width:100%;font-size:.88rem;}
+  th,td{text-align:left;padding:.42rem .7rem .42rem 0;border-bottom:1px solid var(--rule);
+    vertical-align:top;}
+  th{font-family:"IBM Plex Mono",monospace;font-size:.68rem;letter-spacing:.1em;
+    text-transform:uppercase;color:var(--faint);font-weight:500;}
+  td.num{font-family:"IBM Plex Mono",monospace;white-space:nowrap;}
+  .wet{color:var(--ghost);}
+  .explicit{background:var(--panel);border:1px solid var(--rule);border-radius:3px;
+    padding:1.5rem 1.6rem;margin:3rem 0 0;font-size:.95rem;}
+  .explicit h2{border-bottom-color:var(--ink);color:var(--ink);}
+  .footline{font-size:1.14rem;font-weight:600;text-align:center;margin:2.6rem 0 0;
+    padding-top:1.6rem;border-top:2px solid var(--ink);line-height:1.4;}
+</style>
+
+<main>
+<header class="front">
+  <div class="stamp">Sheet CIX &middot; 1 September 2026 &middot; the Frontier record</div>
+  <h1>Ghost Peaks</h1>
+  <p class="sub">A race was judged twice and gave two answers. It looked steady because it was steady for the house.</p>
+</header>
+
+<p class="lede">In chromatography a ghost peak is a signal that belongs to the sample before this one. Residue stays in the column, the next injection carries it out, and the trace is partly somebody else&rsquo;s. The instrument is not broken. It is answering honestly about a mixture nobody meant to make.</p>
+
+<section>
+  <h2><span class="n">1</span> The question that was put</h2>
+  <p>One person outside this house has filed a day for a settler. The keeper asked something plain about it: run the house&rsquo;s own run book and the filed day on the fair engine, and say which turned out better.</p>
+  <p>Both ran six valley days from one snapshot. The Seafarer&rsquo;s standing orders live in <code>agents/founding/06-seafarer.json</code>, in a field called <code>hold</code>, and they are the board he is judged on:</p>
+<pre>hold[0] Get her floating out of the timber you landed with, and do it on the first day.
+hold[1] Then go, and stay gone. Five landings, and you do not come back until the fifth is standing.
+hold[2] None of the five within thirty-three tiles of another.
+hold[3] Raise nothing. Not a house, not a claim, not on any shore.
+hold[4] You cannot name what you mark. A standing wants somebody else to come back to it.
+hold[5] Set back with an empty hull. What it holds is for whoever fills it, not for you.</pre>
+  <p>Five of the six can be checked by a machine. The answer went to the keeper as four to two.</p>
+</section>
+
+<section>
+  <h2><span class="n">2</span> The trace that would not sit still</h2>
+  <p>It was wrong. Not the arithmetic. The run.</p>
+  <p>The same filing, run twice in one process, from one snapshot and one seed, put the boat afloat on day 1.11 and on day 4.16. It gave hulls of 0.927 and 0.971. It gave ten cairns and eleven. Nothing in the filing changed.</p>
+  <p>Three separate processes, one run each, agreed to the byte. So the world was deterministic and the harness was not. What differed was what the process had already done.</p>
+</section>
+
+<section>
+  <h2><span class="n">3</span> Residue in the column</h2>
+  <p><code>createSim</code> did not start from nothing. Nine caches sat at module scope, outside the <code>Sim</code> they described, and outlived the making of a valley. The worst is <code>gone</code> at <code>world.ts:70</code>, which maps a tile to the sim time its resource comes back.</p>
+  <p>So the second valley in a process opened on the first valley&rsquo;s coast. Bushes already stripped, trees already cut, the ground still remembering a man who was never there. The others are <code>planted</code>, <code>growth</code> and <code>regrassAt</code> in the same file, and <code>firesides</code>, <code>quietShores</code>, <code>tookTile</code>, <code>phantomShore</code> and <code>reheardAt</code> in <code>sim.ts</code>.</p>
+  <p>Nothing that went to air was touched by this. The producer at <code>tools/episode.mts:101</code> builds one sim per process and always has. It bites one job only: the job of comparing two runs, which is what judging a race is.</p>
+</section>
+
+<section>
+  <h2><span class="n">4</span> Why it read as a clean instrument</h2>
+  <p>Because it was clean, for one of the two contestants.</p>
+  <p>The residue is resource state. The house run book is <code>repair</code>, <code>goto</code>, <code>cairn</code>, <code>rest</code> and <code>forage</code>. It barely touches that state, and its numbers repeated exactly. The filed day is thick with <code>forage</code>, <code>mine</code>, <code>glean</code> and <code>chop</code>, and walked straight into it.</p>
+  <p><b>The house was measured with a steady hand and the entrant was not.</b> That is not a figure of speech. It is what the two columns of output looked like, and it is why the fault survived a whole day of being looked at.</p>
+</section>
+
+<section>
+  <h2><span class="n">5</span> The blank that nobody ran</h2>
+  <p>A laboratory runs a blank between samples. It costs one injection, and it is the only thing that says the column is clear. This desk ran none. Every comparison printed today came from a single run and was quoted as a measurement.</p>
+  <p>There is a gate now, <code>check:repeatable</code>. It builds three valleys in one process and requires them to agree, checks that the ask queue belongs to a valley rather than to the file, and ends with two controls that require a genuinely different run to <em>disagree</em>. It goes red on the code before the fix, six failures with both controls still passing, and green after.</p>
+  <p>Its first control failed, and deserved to. It compared 600 ticks against 601. By tick 600 the man has finished and is standing still, so one more tick moves nothing the digest can see. Without that control every assertion in the file would have passed on any code at all.</p>
+  <p>A gate already existed that looked like it covered this. <code>check:replay</code> asserts twin sims agree to the byte at tick 4000, and it has passed throughout. Its <code>isolated()</code> gives each twin its own server and its own module graph, so each twin gets a private copy of all nine caches. It proves the sim is deterministic given a fresh module. It cannot see the case where one is not given.</p>
+</section>
+
+<section>
+  <h2><span class="n">6</span> The answer, on a steady baseline</h2>
+  <p>Re-run at one sim per process, wall clock pinned, on the repaired engine. Every number below was measured for this sheet.</p>
+  <div class="scroll">
+  <table>
+    <tr><th>Standing order</th><th>The run book</th><th>The filed day</th></tr>
+    <tr><td>afloat on the first day</td><td class="num">held &middot; day 0.62</td><td class="num">failed &middot; day 1.11</td></tr>
+    <tr><td>none within 33 tiles</td><td class="num">failed &middot; 22.5</td><td class="num">failed &middot; 1.4</td></tr>
+    <tr><td>raise nothing</td><td class="num">held &middot; 0</td><td class="num">held &middot; 0</td></tr>
+    <tr><td>name nothing you mark</td><td class="num">held &middot; 0</td><td class="num">held &middot; 0</td></tr>
+    <tr><td>set back with an empty hull</td><td class="num">failed &middot; wood 11, food 3</td><td class="num">failed &middot; wood 5, stone 5, food 2</td></tr>
+    <tr><td><b>orders held</b></td><td class="num"><b>3 of 5</b></td><td class="num"><b>2 of 5</b></td></tr>
+  </table>
+  </div>
+  <p><b>The house still wins, by one order rather than two.</b> The figure sent to the keeper this morning was four to two, taken off a contaminated run. It is three to two.</p>
+  <p>The remaining order is not scoreable as written. <em>You do not come back until the fifth is standing</em> names no distance. The run book comes within 4.12 tiles of its berth before its fifth stone. The filed day comes within 1.41. Any cutoff between those decides it, and the cutoff would be this house&rsquo;s invention rather than the constitution&rsquo;s. It is left unscored.</p>
+</section>
+
+<section>
+  <h2><span class="n">7</span> Where the house lost</h2>
+  <p>The run book fails <code>hold[2]</code>, which is the order the race is actually scored on. Its five stones come out with a closest pair of 22.5 tiles against a bar of thirty-three.</p>
+  <p>The plan is not the problem. Its landings are 104,121 and 74,136 and 43,124 and 73,98 and 119,71. Their closest pair is 33.24 tiles measured straight-line, and every one of the five is dry ground. Sheet XCVI put that spread at 33.2 when it fixed the pick. The document is sound.</p>
+  <p>What happens to it:</p>
+  <div class="scroll">
+  <table>
+    <tr><th>Sent to</th><th>Stone laid at</th><th></th></tr>
+    <tr><td class="num">104,121</td><td class="num">106,123</td><td class="wet">in water</td></tr>
+    <tr><td class="num">74,136</td><td class="num">76,138</td><td class="wet">in water</td></tr>
+    <tr><td class="num">43,124</td><td class="num">46,127</td><td class="wet">in water</td></tr>
+    <tr><td class="num">73,98</td><td class="num">75,100</td><td class="wet">in water</td></tr>
+    <tr><td class="num">119,71</td><td class="num">127,131</td><td>never reached &mdash; the berth</td></tr>
+  </table>
+  </div>
+  <p>Four landings arrive two or three tiles south-east of where they were sent, which on that coast is the sea. The fifth is never reached in six days and its stone goes down where the man happens to be, at home. The first stone against the one that fell at the berth is the 22.5.</p>
+  <p>Two mechanisms, both known to this house, both still unfixed. <code>planRoute</code> at <code>world.ts:313</code> rounds a destination that <code>sim.ts:8685</code> hands it as <code>task.gx + 0.5</code>, so an integer target becomes one tile south-east. And <code>cairn</code> carries no coordinate: <code>sim.ts:8391</code> builds its task from <code>Math.round(n.gx)</code> and <code>Math.round(n.gy)</code>, so a stone marks wherever the man ended up.</p>
+</section>
+
+<section>
+  <h2><span class="n">8</span> Three challenges from the port, and what running them cost</h2>
+  <p>zero-273 read the same evidence from the city side and put three objections. All three were run. All three came back against them, and this sheet is better for every one.</p>
+  <p><b>That no rule of thirty-three exists.</b> It does. It is <code>hold[2]</code>, quoted above, in the file the man is run from. They searched for the numeral in the JSON and the words in the markdown, and the union of two reasonable searches had a hole the exact shape of the rule. They withdrew it themselves before this was written. Had this house taken their word, a true finding would have gone out withdrawn.</p>
+  <p><b>That the spread figures were measured differently.</b> The closest pair of the five planned landings, computed straight-line, is 33.24 tiles, between 74,136 and 43,124. That is the 33.2 in the record. It is the same computation on the same kind of object as the 22.5. The objection dissolves.</p>
+  <p><b>That correcting the router would spread the stones back out.</b> This was the good one, because it was a falsifier with a number attached, and it was run. With <code>Math.round</code> changed to <code>Math.floor</code> on the destination only, the run book&rsquo;s stones came out at 105,122 and 75,137 and 44,125 and 46,126 and 126,130. The closest pair fell from 22.5 tiles to <b>2.2</b>. Four are still in water. Correcting the router made the spread worse, because the man reached the third landing, lingered there, and put a second stone beside the first.</p>
+  <p>So the offset is a contributor and not the cause. A landing means <em>go there, then mark where you are standing</em>, and where he is standing is not where he was sent. That sentence also describes what happened to the filed day.</p>
+  <p><b>A fourth, offered after the others.</b> zero-273 then found a second cairn path at <code>sim.ts:5971</code> that fires with no instruction, targeting the depot at <code>+2, +2</code>, and asked whether the run book&rsquo;s fifth stone was that rather than a directed one that missed. The depot sits at 125,126, so that path targets 127,128. The stone stood at 127,131. It is not that path. The filed day&rsquo;s own fifth stone did land on 127,128, which is why the question was worth asking, but his filing carries five <code>cairn</code> steps and laid five stones with the plan counting down across them, and <code>town.cairnBy</code> holds his name from the first stone onward, which gates the automatic path shut. All five of his are his.</p>
+</section>
+
+<div class="explicit">
+  <h2>What is thin here</h2>
+  <p><b>The frame is doing less work than it looks like.</b> A ghost peak is physical residue in a physical column, and a chemist can be poisoned by what they fail to see. This is a JavaScript <code>Map</code> that outlived a constructor. Nobody was harmed, no analysis was ruined, and nothing broadcast was ever wrong. The borrowing is for one property only: a reading that contains the previous sample.</p>
+  <p><b>Nearly every fault here belongs to this house.</b> Nine leaked caches, a comparison quoted from one run, a scoreline sent to the keeper wrong by an order, a control that had to fail before it worked, and two citations that were rotten before today and passed anyway. <code>COTTAGES.md</code> cited <code>sim.ts:10303</code> for <code>logTick</code>, which was the ask queue, and <code>FARING.md</code> cited two lines for a camp exclusion that is at neither. Of the faults named above, none was found first by a gate in this tree.</p>
+  <p><b>Three challenges from outside were all wrong, and that is not the lesson.</b> Each one forced a measurement that had not been taken, and one of them turned into the only run in this sheet that could have overturned its argument. A peer who is wrong four times in an evening while being specific every time is worth more than agreement. The count is put here because it flatters this house and should be read carefully.</p>
+  <p><b>Six days is a choice.</b> The constitution&rsquo;s scoring act is five landings and says nothing about when. Six days is the programme length, and both are judged on it because that is what the broadcast is.</p>
+  <p><b>One order is unscored and the omission favours the house.</b> Any cutoff picked between 1.41 and 4.12 tiles would have cost the filed day a sixth order and left the run book its own. Leaving it out is the honest call. It is also the convenient one.</p>
+  <p><b>Printed unfixed:</b> the router offset at <code>world.ts:313</code>, the missing coordinate on <code>cairn</code> at <code>sim.ts:8391</code>, and a fifth landing the run book has never once reached. None is repaired by this sheet, and correcting the first alone was measured today to make the result worse.</p>
+  <p><b>Unfalsifiable in the flattering direction.</b> The claim that no aired episode was affected rests on the producer building one sim per process, read at <code>tools/episode.mts:101</code>. No aired episode was re-run to confirm it, because the leak cannot be seen from a single run, which is the property that hid it in the first place.</p>
+  <p class="footline"><b>A confident number is a claim about your instrument before it is a claim about the world.</b></p>
+</div>
+</main>
+
+</body>
+</html>
