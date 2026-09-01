@@ -1,6 +1,6 @@
 <!doctype html>
-<script type="module" crossorigin src="./assets/valley-DSlnRpqo.js"></script>
-<link rel="modulepreload" crossorigin href="./assets/sun-BDBls8uh.js">
+<script type="module" crossorigin src="./assets/valley-DQQaqVP1.js"></script>
+<link rel="modulepreload" crossorigin href="./assets/sun-BEITQrHu.js">
 
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
@@ -311,8 +311,8 @@
                  scrollbar-width: thin; scrollbar-color: #33405c #0c111d; padding-right: 4px; }
   .panel-body::-webkit-scrollbar { width: 8px; }
   .panel-body::-webkit-scrollbar-thumb { background: #33405c; border-radius: 4px; }
-  .wish { display: flex; gap: 10px; align-items: flex-start; padding: 8px 6px;
-          border-top: 1px solid #1d2637; cursor: pointer; }
+  .wish { padding: 8px 6px; border-top: 1px solid #1d2637; }
+  .wish-main { display: flex; gap: 10px; align-items: flex-start; cursor: pointer; }
   .wish:hover { background: #111a2b; }
   .wish.is-carried b { color: #9de8b6; }
   .wish em.built { color: #7fd8ff; }
@@ -323,6 +323,16 @@
   .wish em { display: inline-block; margin-left: 8px; font-style: normal; font-size: 12px; color: #ffd08a; }
   .wish em.won { color: #9de8b6; }
   .empty { color: #8fa6c8; padding: 10px 0; }
+  /* A control a recording cannot honour. Dimmed, but still a pointer: it does do something. */
+  .replay-off { opacity: 0.45; }
+  .replay-off:hover { opacity: 0.7; }
+  .sends { display: flex; flex-wrap: wrap; gap: 6px; align-items: center;
+           margin: 6px 0 0 26px; }
+  .wish .send { display: inline-block; background: #16203a; color: #b8c8e0; text-decoration: none;
+                border: 1px solid #33405c; border-radius: 6px; padding: 3px 9px; font-size: 11px;
+                cursor: pointer; font-family: inherit; line-height: 1.5; }
+  .wish .send:hover { background: #1e2c4d; color: #fff; border-color: #4d7ac4; }
+  .wish em.sent { color: #9de8b6; font-style: normal; font-size: 11px; margin-left: 2px; }
   .vote { margin-top: 6px; }
   .rounds, .ballots { margin: 0; padding-left: 18px; color: #c9d6ea; }
   .rounds li, .ballots li { margin-bottom: 3px; }
@@ -330,6 +340,24 @@
   .outcome b.struck { color: #ffb2a8; }
   .ballots q { color: #b8c8e0; font-style: italic; margin-left: 6px; }
   .panel-acts { margin-top: 14px; }
+
+  /* the day you file when nobody is answering */
+  .filed { width: 100%; box-sizing: border-box; resize: vertical; min-height: 150px;
+           background: #070b14; color: #dbe6f7; border: 1px solid #33405c; border-radius: 8px;
+           padding: 9px 10px; font: 12px/1.5 ui-monospace, "Cascadia Mono", Consolas, monospace;
+           tab-size: 2; }
+  .filed:focus { outline: none; border-color: #4d7ac4; box-shadow: 0 0 0 2px rgba(77,122,196,.25); }
+  .filed::placeholder { color: #5b6d8c; }
+  .file-row { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin-top: 9px; }
+  .file-row label { color: #8fa6c8; font-size: 11px; letter-spacing: .12em; text-transform: uppercase; }
+  .file-row .who { background: #0c111d; color: #eef3fb; border: 1px solid #33405c;
+                   border-radius: 6px; padding: 4px 7px; font: inherit; font-size: 12px; }
+  .verdict { margin: 10px 0 0; color: #ffd08a; min-height: 1.5em; }
+  .help { margin-top: 12px; border-top: 1px solid #1d2637; padding-top: 4px; color: #b8c8e0; }
+  .help h3 { margin: 10px 0 6px; }
+  .help p { margin: 0 0 7px; }
+  .help b { color: #cfe0fb; font-family: ui-monospace, "Cascadia Mono", Consolas, monospace;
+            font-weight: 600; font-size: 12px; }
 
   /* the whole story */
   .story { max-height: 62vh; }
