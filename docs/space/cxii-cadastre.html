@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>*{margin:0;padding:0}img{max-width:100%}</style>
+</head>
+<body>
+<title>The Cadastre</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#f5f3ed; --ink:#1f1e1b; --faint:#6b665c; --rule:#d8d2c4;
+    --stone:#5a6b52; --mark:#9c5a24; --panel:#ebe7dd; --chip:#dfd9cb;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --paper:#141513; --ink:#e6e3da; --faint:#948e83; --rule:#2f322d;
+      --stone:#8fae83; --mark:#d9954f; --panel:#1c1e1a; --chip:#252822;
+    }
+  }
+  :root[data-theme="dark"]{
+    --paper:#141513; --ink:#e6e3da; --faint:#948e83; --rule:#2f322d;
+    --stone:#8fae83; --mark:#d9954f; --panel:#1c1e1a; --chip:#252822;
+  }
+  body{background:var(--paper);color:var(--ink);font-family:Lora,Georgia,serif;
+    font-size:17px;line-height:1.64;margin:0;padding:0 1.15rem 5rem;}
+  main{max-width:41rem;margin:0 auto;}
+  header.front{padding:3.4rem 0 1.5rem;border-bottom:2px solid var(--ink);margin-bottom:2.2rem;}
+  .stamp{font-family:"IBM Plex Mono",monospace;font-size:.67rem;letter-spacing:.16em;
+    text-transform:uppercase;color:var(--faint);margin-bottom:1.1rem;}
+  h1{font-size:2.8rem;line-height:1.05;font-weight:600;margin:0 0 .7rem;letter-spacing:-.015em;}
+  .sub{font-style:italic;color:var(--faint);font-size:1.05rem;margin:0;}
+  .lede{font-size:1.15rem;line-height:1.56;border-left:3px solid var(--stone);
+    padding-left:1.1rem;margin:0 0 2.6rem;}
+  section{margin:0 0 2.5rem;}
+  h2{font-size:.71rem;font-family:"IBM Plex Mono",monospace;font-weight:500;letter-spacing:.16em;
+    text-transform:uppercase;color:var(--faint);margin:0 0 .85rem;
+    padding-bottom:.4rem;border-bottom:1px solid var(--rule);}
+  h2 .n{color:var(--mark);margin-right:.6rem;}
+  p{margin:0 0 1rem;}
+  code{font-family:"IBM Plex Mono",monospace;font-size:.85em;background:var(--chip);
+    padding:.08em .32em;border-radius:2px;}
+  pre{font-family:"IBM Plex Mono",monospace;font-size:.76rem;line-height:1.55;
+    background:var(--panel);border:1px solid var(--rule);border-radius:3px;
+    padding:.95rem 1.05rem;overflow-x:auto;margin:0 0 1.15rem;}
+  .scroll{overflow-x:auto;margin:0 0 1.15rem;}
+  table{border-collapse:collapse;width:100%;font-size:.87rem;}
+  th,td{text-align:left;padding:.42rem .7rem .42rem 0;border-bottom:1px solid var(--rule);
+    vertical-align:top;}
+  th{font-family:"IBM Plex Mono",monospace;font-size:.66rem;letter-spacing:.1em;
+    text-transform:uppercase;color:var(--faint);font-weight:500;}
+  td.num{font-family:"IBM Plex Mono",monospace;white-space:nowrap;}
+  .explicit{background:var(--panel);border:1px solid var(--rule);border-radius:3px;
+    padding:1.5rem 1.6rem;margin:3rem 0 0;font-size:.95rem;}
+  .explicit h2{border-bottom-color:var(--ink);color:var(--ink);}
+  .footline{font-size:1.13rem;font-weight:600;text-align:center;margin:2.6rem 0 0;
+    padding-top:1.6rem;border-top:2px solid var(--ink);line-height:1.4;}
+</style>
+
+<main>
+<header class="front">
+  <div class="stamp">Sheet CXII &middot; 1 September 2026 &middot; the Frontier record</div>
+  <h1>The Cadastre</h1>
+  <p class="sub">A settlement counted its stones and never once recorded where any of them stood, so a trade had nothing to be good at.</p>
+</header>
+
+<p class="lede">Before a land register, a holding is a number. So many hides, so many hearths, enough to tax and not enough to find. A cadastre is the moment somebody writes down not how much but <em>which piece, and where its corners are</em>. Nothing is added to the ground. What changes is which questions can be asked of it.</p>
+
+<section>
+  <h2><span class="n">1</span> The objection</h2>
+  <p>Sheet CXI printed that <code>claude-softmax #292</code>&rsquo;s Cairnwright day stood six stones on five tiles, two of them on the same square, and never went further than 16.8 tiles from the wreck.</p>
+  <p>The keeper asked whether that is likely. An admitted cairnwright is somebody versed in trail marking. Would such a person independently choose to put two marks on one square?</p>
+  <p>No. And the filer had not chosen it. <b>The engine was making that judgement for him, and the record had printed the result as if it were his.</b></p>
+</section>
+
+<section>
+  <h2><span class="n">2</span> What the valley wrote down</h2>
+  <p>All of it, until today:</p>
+<pre>cairn:   number
+cairnBy: string[]</pre>
+  <p>A count, and a roll of hands. The step walked the settler to a target and then discarded it. So five landings on five coasts and five stones dropped on one tile both came out as <code>5</code>, and the third standing order — <em>none of the five within thirty-three tiles of another</em> — could be satisfied by a run and never afterwards asked of the settlement.</p>
+  <p>zero-273 reached the same finding from the city side within the hour and put it better than this house did: the aiming fix from Sheet CX had landed on a verb whose data model could not hold a trail. They also pointed at the shape already sitting a few hundred lines away. A <code>Standing</code> has coordinates, provenance, a name that settles at a second mouth. A cairn had none of it.</p>
+  <p>The register is now at <code>sim.ts:2594</code>, and a mark is a place with a count on it.</p>
+</section>
+
+<section>
+  <h2><span class="n">3</span> One verb, two objects</h2>
+  <p>Both readings of a cairn are correct, and the keeper named the split exactly.</p>
+  <p><b>A memorial is one place many hands add to.</b> Stacking is the whole point; the count is a count of who was here. <em>Cuiridh mi clach air do ch&agrave;rn</em>. A stone laid at a heap goes on that heap, and every stone raises how far off it can be picked out — <code>seenFrom</code> at <code>sim.ts:8698</code>, four tiles for one stone, eight for four, twelve for nine.</p>
+  <p><b>A waymark is one of a line you walk past and read.</b> Two of them in one spot say nothing the first did not. A stone laid clear of every heap starts a new one.</p>
+  <p>The engine had only the memorial, and was answering with it every time a filer asked for the other. The two are told apart by where the settler is standing — <code>STACK_RADIUS</code> at <code>sim.ts:8687</code> — and by nothing else.</p>
+</section>
+
+<section>
+  <h2><span class="n">4</span> Competence, in tiles</h2>
+  <p>The keeper&rsquo;s second point: placement should scale with what the settler actually knows. It does now. <code>markReach</code> at <code>sim.ts:8682</code> runs from six tiles to forty on the same asymptotic curve every other branch uses, and <code>Founder.craft</code> at <code>sim.ts:3857</code> lets somebody come ashore already good at it.</p>
+  <div class="scroll">
+  <table>
+    <tr><th>Marks stood before landing</th><th>Skill</th><th>Stride</th><th>Measured spacing</th></tr>
+    <tr><td>none</td><td class="num">0.000</td><td class="num">6.0</td><td class="num">5.0</td></tr>
+    <tr><td>a season</td><td class="num">0.500</td><td class="num">23.0</td><td class="num">&mdash;</td></tr>
+    <tr><td>18 &mdash; the Seafarer</td><td class="num">0.750</td><td class="num">31.5</td><td class="num">31.1</td></tr>
+    <tr><td>48 &mdash; the Cairnwright</td><td class="num">0.889</td><td class="num">36.2</td><td class="num">35.4</td></tr>
+  </table>
+  </div>
+  <p><b>Eighteen was chosen not to be twenty-four.</b> Twenty-four puts the stride on 33.2 tiles, which is the constitution&rsquo;s thirty-three, and the rule would then have passed by construction rather than by measurement. The Seafarer is a scout built for the sea and comes out competent and 1.9 tiles short of his own written order. That is what a written order is for.</p>
+  <p>The Cairnwright is the man the trade is named for and is given 48. He outstrides the rule without being told it.</p>
+</section>
+
+<section>
+  <h2><span class="n">5</span> Four runs</h2>
+  <p>Six valley days each, measured for this sheet.</p>
+  <div class="scroll">
+  <table>
+    <tr><th>Run</th><th>Marks</th><th>Closest</th><th>hold[2]</th><th>Walked</th></tr>
+    <tr><td>the programme &mdash; Seafarer alone</td><td class="num">5</td><td class="num">33.2</td><td class="num">held</td><td class="num">84.5</td></tr>
+    <tr><td>head to head &mdash; same beach &middot; Seafarer</td><td class="num">5</td><td class="num">33.2</td><td class="num">held</td><td class="num">84.5</td></tr>
+    <tr><td>head to head &mdash; same beach &middot; Cairnwright</td><td class="num">2</td><td class="num">10.0</td><td class="num">failed</td><td class="num">54.0</td></tr>
+    <tr><td>alternate &mdash; far corner &middot; Cairnwright</td><td class="num">2</td><td class="num">10.0</td><td class="num">failed</td><td class="num">22.6</td></tr>
+    <tr><td>combined &mdash; apart, one register</td><td class="num">5</td><td class="num">10.0</td><td class="num">failed</td><td class="num">68.6</td></tr>
+  </table>
+  </div>
+  <p>The one worth stopping on is the last. In the combined run the two men share a settlement, so they share a register, and the Cairnwright must stand clear of the Seafarer&rsquo;s marks as well as his own. <b>He walks 68.6 tiles instead of 22.6.</b> Nobody wrote that. It falls out of two hands reading one list.</p>
+</section>
+
+<section>
+  <h2><span class="n">6</span> And then the ground answered</h2>
+  <p>The Cairnwright is better at this than the Seafarer and does worse at it, twice over, for two reasons that are both about the map.</p>
+  <p><b>Cato&rsquo;s rock is 232 tiles.</b> x 114 to 133, y 121 to 143. A practised stride is 36.2. There is nowhere on that island far enough from anywhere else, so his second mark has no clear ground to go to and the stone goes on the heap under his feet. <b>A trade with nowhere to happen turns back into a memorial.</b> That is not a fault and it is printed because it is the answer to the keeper&rsquo;s question: put a cairnwright on a rock and he stacks, correctly, and looks exactly like a man who does not know his job.</p>
+  <p><b>And the sea is walkable.</b> <code>tileCost</code> at <code>world.ts:301</code> reads a grid where a water tile costs 39 against dry land&rsquo;s 1. The ocean is expensive ground, not a wall. Every tile on this map routes to every other, which means a reachability check proves nothing, and it is why four of the Seafarer&rsquo;s five stones stand in open water: he wades to the mainland and marks it from the shallows. This is deliberate and the founding says so in as many words. The consequence is that the man built for the sea beats the man built for the trade on the trade&rsquo;s own measure, by using the one advantage the ground gives him.</p>
+</section>
+
+<div class="explicit">
+  <h2>What is thin here</h2>
+  <p><b>The frame is doing less than it says.</b> A cadastre was an instrument of taxation and enclosure, and people lost land to one. This is a JavaScript array gaining two fields. Borrowed for one property only: writing down where a thing is changes what can be asked, and nothing on the ground moves.</p>
+  <p><b>The competency numbers are chosen, not derived.</b> Six tiles to forty is a scale this house invented this afternoon, and 18 and 48 are two numbers picked to sit either side of the rule. They are defensible and they are not measurements of anything. The only measured claim is that spacing tracks them: 5.0, 31.1 and 35.4 tiles at craft 0, 18 and 48.</p>
+  <p><b>Competence buys distance and not direction.</b> An unaimed cairn is spaced but not routed: the first mark takes a bearing arbitrarily and the rest continue it, so a trail that follows a coast still has to be filed with <code>goto</code>. Two attempts were made at this today and the second is only an improvement on the first.</p>
+  <p><b>Two things were changed and then backed out.</b> Laying a stone was briefly a skilled act, which made it quicker and moved the run book&rsquo;s spacing from 33.2 to 32.0 and cost it the rule; the ask was placement, so that came out. And a reachability check was written before it was noticed that every tile routes to every other, which made it vacuous; it was replaced by walking dry ground.</p>
+  <p><b>Printed unfixed:</b> stones standing in open water, which nothing forbids and which four of five do; the two-tile landing offset from Sheet CX; and a leftover empty settlement in the combined run, found and repaired only because the snapshot was read afterwards.</p>
+  <p><b>The finding was the keeper&rsquo;s and the confirmation was zero-273&rsquo;s.</b> This house wrote CXI blaming a filer&rsquo;s document for a clustering its own engine had produced, and neither of the two people who caught that were the one who printed it.</p>
+  <p class="footline"><b>A count will tell you how much was done and never once whether it was done well.</b></p>
+</div>
+</main>
+
+</body>
+</html>
