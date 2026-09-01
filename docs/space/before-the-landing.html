@@ -1,0 +1,353 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>*{margin:0;padding:0}img{max-width:100%}</style>
+</head>
+<body>
+<title>Before the Landing</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,500;0,700;1,500&family=Alegreya+Sans:ital,wght@0,400;0,500;0,700;1,400&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+  :root {
+    --ground: #eef1f0;
+    --paper: #f8faf9;
+    --ink: #17211f;
+    --ink-2: #4b5a57;
+    --rule: #cfd8d5;
+    --accent: #1f6f78;
+    --accent-soft: #d9ebed;
+    --blocker: #a3352b;
+    --blocker-soft: #f4dcd8;
+    --fix: #9a6a12;
+    --fix-soft: #f3e6c8;
+    --note: #4a6670;
+    --note-soft: #dde6e9;
+    --fine: #3c7a4c;
+    --fine-soft: #d9ead d;
+    --code-bg: #e4e9e7;
+    color-scheme: light;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --ground: #101615;
+      --paper: #16201e;
+      --ink: #e6ebe9;
+      --ink-2: #a3b0ac;
+      --rule: #2c3a37;
+      --accent: #6fc0c8;
+      --accent-soft: #163a3e;
+      --blocker: #e8867a;
+      --blocker-soft: #46201b;
+      --fix: #dcb060;
+      --fix-soft: #3d2f10;
+      --note: #9fb8c2;
+      --note-soft: #24343a;
+      --fine: #8fd0a0;
+      --fine-soft: #1c3a26;
+      --code-bg: #0c1211;
+      color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"] {
+    --ground: #101615;
+    --paper: #16201e;
+    --ink: #e6ebe9;
+    --ink-2: #a3b0ac;
+    --rule: #2c3a37;
+    --accent: #6fc0c8;
+    --accent-soft: #163a3e;
+    --blocker: #e8867a;
+    --blocker-soft: #46201b;
+    --fix: #dcb060;
+    --fix-soft: #3d2f10;
+    --note: #9fb8c2;
+    --note-soft: #24343a;
+    --fine: #8fd0a0;
+    --fine-soft: #1c3a26;
+    --code-bg: #0c1211;
+    color-scheme: dark;
+  }
+  body {
+    margin: 0;
+    background: var(--ground);
+    color: var(--ink);
+    font-family: "Alegreya Sans", "Gill Sans", "Segoe UI", system-ui, sans-serif;
+    font-size: 17px;
+    line-height: 1.5;
+  }
+  main { max-width: 74ch; margin: 0 auto; padding: 3rem 1.25rem 5rem; }
+  h1, h2, h3 { font-family: "Alegreya", Georgia, "Times New Roman", serif; text-wrap: balance; margin: 0; }
+  h1 { font-size: 2.6rem; font-weight: 700; line-height: 1.1; }
+  h2 { font-size: 1.55rem; font-weight: 700; margin-top: 3rem; padding-bottom: .4rem; border-bottom: 1px solid var(--rule); }
+  h3 { font-size: 1.15rem; font-weight: 700; margin-top: 1.6rem; }
+  p { margin: .7rem 0; }
+  .eyebrow { font-size: .78rem; letter-spacing: .12em; text-transform: uppercase; color: var(--accent); font-weight: 700; }
+  .dateline { color: var(--ink-2); font-size: .95rem; margin-top: .6rem; }
+  .verdict { margin-top: 2rem; background: var(--paper); border-left: 4px solid var(--accent); padding: 1rem 1.25rem; }
+  .verdict p:first-child { margin-top: 0; }
+  .counts { display: grid; grid-template-columns: repeat(4, 1fr); gap: .75rem; margin: 1.5rem 0 0; }
+  .count { background: var(--paper); border-top: 3px solid var(--rule); padding: .6rem .8rem; }
+  .count b { display: block; font-family: "JetBrains Mono", Consolas, monospace; font-size: 1.6rem; font-weight: 500; font-variant-numeric: tabular-nums; }
+  .count span { font-size: .8rem; letter-spacing: .06em; text-transform: uppercase; color: var(--ink-2); }
+  .count.blocker { border-top-color: var(--blocker); }
+  .count.fix { border-top-color: var(--fix); }
+  .count.note { border-top-color: var(--note); }
+  .count.fine { border-top-color: var(--fine); }
+  code, .loc { font-family: "JetBrains Mono", Consolas, "Courier New", monospace; font-size: .86em; }
+  code { background: var(--code-bg); padding: .05em .3em; border-radius: 2px; }
+  pre { background: var(--code-bg); padding: .8rem 1rem; overflow-x: auto; font-family: "JetBrains Mono", Consolas, monospace; font-size: .82rem; line-height: 1.45; margin: .8rem 0; }
+  .finding { margin-top: 1.4rem; padding-left: 1rem; border-left: 3px solid var(--rule); }
+  .finding.blocker { border-left-color: var(--blocker); }
+  .finding.fix { border-left-color: var(--fix); }
+  .finding.note { border-left-color: var(--note); }
+  .finding h3 { margin-top: 0; }
+  .chip { display: inline-block; font-family: "Alegreya Sans", sans-serif; font-size: .72rem; letter-spacing: .1em; text-transform: uppercase; font-weight: 700; padding: .1em .5em; border-radius: 2px; vertical-align: middle; margin-right: .5em; }
+  .chip.blocker { background: var(--blocker-soft); color: var(--blocker); }
+  .chip.fix { background: var(--fix-soft); color: var(--fix); }
+  .chip.note { background: var(--note-soft); color: var(--note); }
+  .chip.ran { background: var(--accent-soft); color: var(--accent); }
+  .chip.read { background: var(--code-bg); color: var(--ink-2); }
+  .meta { color: var(--ink-2); font-size: .92rem; margin-top: .2rem; }
+  .meta .loc { color: var(--ink); }
+  .tablewrap { overflow-x: auto; margin: 1rem 0; }
+  table { border-collapse: collapse; width: 100%; font-size: .93rem; }
+  th, td { text-align: left; padding: .45rem .6rem; border-bottom: 1px solid var(--rule); vertical-align: top; }
+  th { font-size: .75rem; letter-spacing: .08em; text-transform: uppercase; color: var(--ink-2); font-weight: 700; }
+  td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; font-family: "JetBrains Mono", monospace; font-size: .85rem; }
+  ul { padding-left: 1.2rem; }
+  li { margin: .35rem 0; }
+  .fineList li::marker { color: var(--fine); }
+  .credit { font-style: italic; color: var(--ink-2); }
+  footer { margin-top: 4rem; padding-top: 1rem; border-top: 1px solid var(--rule); color: var(--ink-2); font-size: .9rem; }
+  @media (max-width: 640px) { .counts { grid-template-columns: repeat(2, 1fr); } h1 { font-size: 2.1rem; } }
+</style>
+
+<main>
+  <div class="eyebrow">Frontier · a review of the tree</div>
+  <h1>Before the Landing</h1>
+  <p class="dateline">Measured 1 September 2026, 19:00 to 21:30 UTC, against <code>main</code> at <code>cba058a</code>. Every line number below was taken from the search that found it in this session, and stands as the tree stood at <code>cba058a</code>; the fixes in <code>6c14155</code> moved most of them, and this page is not corrected for that, because it is a record of what was found and not a map of what is there now. Where a finding was run rather than read, it says so. First published as a private page at 19:31Z; filed in the record, unnumbered and unchanged apart from this sentence and one local path, the same night.</p>
+
+  <div class="verdict">
+    <p><b>The valley is not ready for a real founding tonight, and the reasons are in the chain around the simulation rather than in the simulation.</b> The sim itself booted from every founding on disk, ran six valley days with one, two and zero settlers, and neither threw nor produced a NaN. What would go wrong on landing day is upstream and downstream of it: the founding coercion loses a skill the aired episode carried yesterday, the snapshot chain is split between two runs, the nightly script dies on any line of stderr, and a stranger's letter can vanish unrecorded.</p>
+    <p>Seven blockers, fourteen should-fixes, and a gate that is red on a check that measures the wrong thing.</p>
+  </div>
+
+  <div class="counts">
+    <div class="count blocker"><b>7</b><span>blockers</span></div>
+    <div class="count fix"><b>14</b><span>should-fix</span></div>
+    <div class="count note"><b>15</b><span>notes</span></div>
+    <div class="count fine"><b>31</b><span>checked and fine</span></div>
+  </div>
+
+  <h2>Blockers</h2>
+
+  <div class="finding blocker">
+    <h3><span class="chip blocker">Blocker</span>The founding coercion drops <code>craft</code> and <code>joins</code>, and the producer now goes through it</h3>
+    <p class="meta"><span class="loc">src/founding.ts:31</span> <code>toFounder</code> · <span class="loc">src/sim.ts:3853</span> <code>Founder</code> · <span class="loc">src/sim.ts:4036</span> <code>addSettler</code> · <span class="loc">src/sim.ts:4121</span> <code>beachFounder</code> <span class="chip ran">ran</span></p>
+    <p>The <code>Founder</code> interface declares <code>craft</code> and <code>joins</code>, and the sim reads both. <code>toFounder</code> returns thirteen fields and neither of them. Until commit <code>cba058a</code> the producer read founding files with a bare <code>JSON.parse</code>, which carried <code>craft</code>; the aired episode from this morning holds <code>"craft":{"scouting":18}</code> on Seafarer. Booted through the current tree he seats with <code>craft={}</code>, scouting skill 0. <code>markReach</code> is <code>6 + 34 × skill</code>, so his cairn reach falls from 31.5 tiles to 6, which is the "man who does not know his trade" shape the founding file's own comment warns about. The Cairnwright's filed 48 falls the same way. A stranger filing <code>"joins": "Ivo"</code> gets a separate settlement with no warning.</p>
+    <p>A regression introduced by the fix for the cairnwright trade, and now in <code>HEAD</code>. The commit message says the founding "still airs byte-identical twice", which is true and is not the same as airing the same founding.</p>
+  </div>
+
+  <div class="finding blocker">
+    <h3><span class="chip blocker">Blocker</span>The episode chain is split, and tonight's nightly continues the wrong half</h3>
+    <p class="meta"><span class="loc">tools/episode.mts:322-324</span> the three <code>writeFileSync</code> · <span class="loc">tools/air-nightly.ps1:36</span> <span class="chip ran">ran</span></p>
+    <p>Every producer run rewrites <code>next-snapshot.json</code> and <code>latest.json</code>, including <code>--only</code> scenario runs. Four runs landed within five seconds this morning. <code>latest.json</code> names <code>episode-2026-09-01T124931.json</code>, Seafarer alone at time 0, and that is what is on air until 2 September 04:00Z. <code>next-snapshot.json</code>, local and on the mast, byte-identical, is the 124935 world: Seafarer and the Cairnwright, one boat, time 1200. The nightly at 20:05 local runs <code>--from episodes/next-snapshot.json</code> and would air a scenario character that the producer's own comment says "must never turn up in an ordinary valley", from a day nobody was shown.</p>
+    <p><code>STATION.md:152</code> still says the snapshot holds the empty world. It does not.</p>
+  </div>
+
+  <div class="finding blocker">
+    <h3><span class="chip blocker">Blocker</span>Any line on stderr takes the channel dark</h3>
+    <p class="meta"><span class="loc">tools/air-nightly.ps1:24</span> <code>$ErrorActionPreference = 'Stop'</code> · <span class="loc">tools/air-nightly.ps1:36</span> <code>2&gt;&amp;1</code> <span class="chip ran">ran</span></p>
+    <p>The scheduled task runs Windows PowerShell 5.1. Under <code>Stop</code>, a native command's first stderr line arriving through <code>2&gt;&amp;1</code> is thrown as a terminating error and node is killed before it writes anything. Reproduced in the scratchpad with a timer-written file that never appeared. This is the 30 August entry in <code>air.log</code>: Vite's port-24678 notice is a stderr line, not a crash. Landing day adds two new stderr sources, the <code>console.warn</code> for a refused founder at <code>founding.ts:54</code> and <code>episode.mts:122</code>, and the port notice whenever a dev window is open at 20:05.</p>
+  </div>
+
+  <div class="finding blocker">
+    <h3><span class="chip blocker">Blocker</span>A stranger's letter is deleted before it is parsed</h3>
+    <p class="meta"><span class="loc">vite.config.ts:976-980</span> the <code>/instruction</code> handler <span class="chip read">read</span></p>
+    <p>The outbox file is read, then removed along with the inbox copy and <code>WAITING.txt</code>, and only then parsed. A parse failure lands in the catch at line 1014, which answers <code>{instruction: null}</code>: no record line, no console line, file gone. The game polls every 0.7 sim-seconds, so a file written non-atomically can be read mid-write. The comment beside the code promises the letter is "recorded at the moment it is collected, whole, before anything can go wrong with it". The record call comes after the parse.</p>
+  </div>
+
+  <div class="finding blocker">
+    <h3><span class="chip blocker">Blocker</span>A filed day in block form is cut to twelve steps per block, so the race is decided by truncation</h3>
+    <p class="meta"><span class="loc">src/sim.ts:7860</span> <code>readDay</code> · <span class="loc">src/sim.ts:7863</span> <code>ifStuck</code> to 4 <span class="chip ran">ran</span></p>
+    <p>The flat form honours sixty steps at <code>sim.ts:8018</code> and twelve fallbacks, and sets a <code>truncated</code> flag when either is over. The block form keeps eight blocks, twelve steps per block and four fallbacks, and sets no flag. The softmax filing is one block of thirty-six; steps 13 to 36 never load, and its five cairns sit at 26 to 30. The Cairnwright keeps two of five. Both filings carry twelve fallbacks, of which four load: rest, eat, forage, eat. So neither filed day refuses at all, as zero-273 re-derived after this finding reached them; both truncate, and the reason is invisible from the filing. The fair-race skip in <code>takeNextStep</code> reasons about "step 14 of 36" that this cap never reaches.</p>
+    <p>The settler's own contract, <code>DAY_NOTE</code>, says "Up to 60 plan steps are honoured and 12 ifStuck". True of the flat form, false of the block form, and quoted by every published document a filer is pointed at. The house run book is filed as blocks too: every block is within the step cap, so the published baseline is not a truncation artefact, but two of its blocks file five fallbacks and load four.</p>
+  </div>
+
+  <div class="finding blocker">
+    <h3><span class="chip blocker">Blocker</span>The port's promise that a filer is named in the log is half kept</h3>
+    <p class="meta"><span class="loc">src/bus.ts:32-45</span> <code>by</code> · <span class="loc">src/sim.ts:7985</span> the <code>daybook</code> line · <span class="loc">tools/crossing.mjs:39-43</span> <span class="chip ran">ran</span></p>
+    <p>The founding file in the city states that if a filed plan runs, its author is named in the log as that journey's architect. The aired snapshot does carry the author: <code>episode-2026-09-01T124935.json</code> holds <code>"by":"claude-softmax #292"</code> on the day in hand, and <code>crossing.mjs</code> reads it there. The <code>daybook</code> line in <code>agents/log.jsonl</code> is the log the promise names, and it writes <code>by: n.planFrom</code> before <code>loadBlock</code> has set it, so it credits nobody or the previous author. Raised by zero-273 as a promise never verified; verified here as kept in the snapshot and broken in the log.</p>
+  </div>
+
+  <div class="finding blocker">
+    <h3><span class="chip blocker">Blocker</span>The gate is red on a check that reads the live transcripts</h3>
+    <p class="meta"><span class="loc">tools/build-rulings.mjs:47-48</span> <span class="chip ran">ran</span></p>
+    <p><code>check:rulings</code> derives <code>RULINGS.md</code> from the session transcripts under the home directory, outside the repository. Every keeper message makes the committed file stale, including the message that says "run the gate". Ruling 758 in a fresh build is the prompt that started this review. The discriminator at line 92 also admits cross-session peer messages: 68 of 758 "rulings" open with "Another Claude session sent a message". The kernel says a peer's word is not the keeper's; the file of the keeper's words disagrees. <code>check:changelog</code> was red for the same reason for part of the afternoon while another session edited its builder, and is green at this writing.</p>
+  </div>
+
+  <h2>Should-fix</h2>
+
+  <div class="finding fix">
+    <h3><span class="chip fix">Should-fix</span>Unknown items become <code>wood</code> without a word</h3>
+    <p class="meta"><span class="loc">src/sim.ts:8185</span> <code>applyStep</code> · <span class="loc">src/sim.ts:7746</span> <code>adoptGoals</code> <span class="chip ran">ran</span></p>
+    <p><code>ITEMS.find(...) ?? 'wood'</code>. A step <code>{"action":"glean","item":"sheep"}</code> printed "could not glean sheep: there is no wood on the stack outside", echoing the filer's word while carrying wood. The same shape as the cairnwright-to-forester substitution fixed this morning. <code>qty</code> as a string or a negative becomes 1 through <code>asInt</code> and <code>clamp</code> at 8186, with no line.</p>
+  </div>
+
+  <div class="finding fix">
+    <h3><span class="chip fix">Should-fix</span>Half the documented fields are read by only one of the two forms</h3>
+    <p class="meta"><span class="loc">src/sim.ts:7975-7982</span> <code>persona</code>, <code>hold</code> · <span class="loc">src/sim.ts:8001</span> the daybook return · <span class="loc">src/sim.ts:8048</span> <code>wish</code> <span class="chip ran">ran</span></p>
+    <p><code>FARING.md</code> tells filers to use the flat form and lists <code>persona</code> and <code>hold</code>; the flat path never reads them. The block path returns before <code>wish</code> and <code>goals</code>, and discards a top-level <code>plan</code>. Either form silently loses part of the sheet.</p>
+  </div>
+
+  <div class="finding fix">
+    <h3><span class="chip fix">Should-fix</span>The <code>daybook</code> record line credits the wrong author</h3>
+    <p class="meta"><span class="loc">src/sim.ts:7985</span> <code>by: n.planFrom</code> · <span class="loc">src/sim.ts:7882</span> <code>loadBlock</code> <span class="chip ran">ran</span></p>
+    <p><code>planFrom</code> is set in <code>loadBlock</code>, which runs later. A signed day whose first watch had not come was logged with an empty author.</p>
+  </div>
+
+  <div class="finding fix">
+    <h3><span class="chip fix">Should-fix</span>A block naming no known watch is dropped, and the settler idles</h3>
+    <p class="meta"><span class="loc">src/sim.ts:7858-7861</span> <code>readDay</code> <span class="chip ran">ran</span></p>
+    <p><code>{at: "morning"}</code> is the natural word and it is not a watch. The whole day is discarded, the flat path finds nothing, and the feed says "was told to idle".</p>
+  </div>
+
+  <div class="finding fix">
+    <h3><span class="chip fix">Should-fix</span>A named work tile is not bounds-checked, and the second <code>goto</code> arm is dead</h3>
+    <p class="meta"><span class="loc">src/sim.ts:8227-8237</span> · <span class="loc">src/sim.ts:8622</span> duplicate <code>case 'goto'</code> <span class="chip ran">ran</span></p>
+    <p><code>chop</code> at <code>gx: -50</code> was accepted and then quietly replaced by the settler's own choice. <code>1e400</code> parses to Infinity and <code>asInt</code> makes it 0. The first <code>goto</code> arm at 8423 does this right; the second is unreachable, including its <code>practise('scouting')</code>.</p>
+  </div>
+
+  <div class="finding fix">
+    <h3><span class="chip fix">Should-fix</span>The nightly has no <code>--air-at</code>, runs no gate, and logs a failed push as success</h3>
+    <p class="meta"><span class="loc">tools/air-nightly.ps1:36, 43-49</span> <span class="chip ran">ran</span></p>
+    <p>Without <code>--air-at</code> the episode is stamped at production time, about 00:05Z, while the schedule and today's hand-stamped programme begin at 04:00Z. Native git exit codes do not throw under PowerShell 5.1's <code>Stop</code>, so a rejected push still logs "aired and on the mast". The producer's writes precede the deploy, so a failed night leaves the local chain advanced with nothing aired. <code>npm run check</code> is not run.</p>
+  </div>
+
+  <div class="finding fix">
+    <h3><span class="chip fix">Should-fix</span>The audience's URL is off air and on a 30 August bundle</h3>
+    <p class="meta"><span class="loc">the waypost.quest worktree, docs/valley/episodes/latest.json</span> <span class="chip ran">ran</span></p>
+    <p>pub-wt points at <code>episode-2026-09-01T000516.json</code>, 200 ticks, over at 00:08Z. Today's hand deploys went to the mast only. The nightly's own comment calls pub-wt "the URL the audience knows".</p>
+  </div>
+
+  <div class="finding fix">
+    <h3><span class="chip fix">Should-fix</span>Two founding files share the name Seafarer, so <code>--only</code> cannot reach the softmax day</h3>
+    <p class="meta"><span class="loc">tools/episode.mts:127-139</span> <code>pool.find</code> by lowercase name <span class="chip ran">ran</span></p>
+    <p><code>--only seafarer</code> seats <code>06-seafarer.json</code> and prints <code>day.by=the run book</code>. Nothing can air <code>07-softmax.json</code> without renaming.</p>
+  </div>
+
+  <div class="finding fix">
+    <h3><span class="chip fix">Should-fix</span>The founding files are clipped in ways nobody chose</h3>
+    <p class="meta"><span class="loc">src/founding.ts:77-84</span> <span class="chip ran">ran</span></p>
+    <p>Seafarer's 695-character persona is cut at 200 to a fragment ending "a fourth is impossible", and that fragment is what any model is shown. His day 2 and day 3 openers are cut mid-word at 90. Brant loses " it." at 200.</p>
+  </div>
+
+  <div class="finding fix">
+    <h3><span class="chip fix">Should-fix</span>Two 30 August letters wait in the outbox for whoever becomes npc-02 and npc-03</h3>
+    <p class="meta"><span class="loc">agents/outbox/npc-02.json</span>, <span class="loc">npc-03.json</span> <span class="chip read">read</span></p>
+    <p>On the next live dev server the first poll hands Liss and Hazel plans to chop at 124,39, written for a different valley.</p>
+  </div>
+
+  <div class="finding fix">
+    <h3><span class="chip fix">Should-fix</span>Two gate checks test copies of the code they describe</h3>
+    <p class="meta"><span class="loc">tools/check-seats.mjs:36</span> <code>fillSeats</code> · <span class="loc">tools/check-vote-record.mjs:235</span> <code>writeRounds</code> <span class="chip ran">ran</span></p>
+    <p>Removing <code>&amp;&amp; stillOpen(id)</code> from the real <code>holdVote</code> at <code>vite.config.ts:678</code> in a scratch copy left <code>check-seats</code> at 9 passed, 0 failed.</p>
+  </div>
+
+  <div class="finding fix">
+    <h3><span class="chip fix">Should-fix</span><code>check-landfall</code> cannot see the fault it was written for</h3>
+    <p class="meta"><span class="loc">tools/check-landfall.mjs:104</span> tolerance 3 · <span class="loc">src/world.ts:90</span> <code>tileOf</code>, no callers <span class="chip ran">ran</span></p>
+    <p>The tolerance absorbs the two-tile southeast offset, and the one sensitive assertion tests a function nothing in <code>src/</code> calls. The green run itself prints "4 of 5 stones stand in open water".</p>
+  </div>
+
+  <div class="finding fix">
+    <h3><span class="chip fix">Should-fix</span>A camp that is the only building never rots away and holds nothing</h3>
+    <p class="meta"><span class="loc">src/sim.ts:10871</span> <code>sim.buildings.length &gt; 1</code> · <span class="loc">src/sim.ts:1316</span> <code>placesIn</code> <span class="chip ran">ran</span></p>
+    <p>A first pair arriving by boat who raise nothing before day 14 keep a camp at condition 0 with nine wood in a store that has no places, and the feed says nothing. With Seafarer's hull standing alongside, the camp is spliced and a claim planted as designed.</p>
+  </div>
+
+  <div class="finding fix">
+    <h3><span class="chip fix">Should-fix</span>FARING.md and DAYBOOK.md cite lines that no longer hold the code</h3>
+    <p class="meta"><span class="loc">FARING.md:259, 272, 317</span> · <span class="loc">DAYBOOK.md:168</span> <span class="chip read">read</span></p>
+    <p>The claims hold. The repair exclusion is at <code>sim.ts:8477</code> and <code>10091</code>, the decay pair at <code>10868</code>, the phantom shore at <code>3787</code>, and the twelve is the per-block cap at <code>7860</code>, not a line inside <code>describePlan</code>. <code>check:anchors</code> passed all of them because it proves a line is code, not that it is the code described.</p>
+  </div>
+
+  <h2>Notes</h2>
+  <ul>
+    <li><b>The ark is documented, not built.</b> No inactivity clock, no "looking to the sea", no boarding-home exists in <code>src/</code>. The port's boarding office text promises all three. <span class="chip read">read</span></li>
+    <li><b>No death, confirmed.</b> Needs are <code>food</code> and <code>rest</code> only, both clamped. Seafarer at 6,000 sim-seconds alone: food need 0.90, foraging, still on the rock, never frozen. <span class="chip ran">ran</span></li>
+    <li><b>The shipped founding cannot produce a plurality.</b> Timber, timber, berry, far-timber, berry. <code>resolveLanding</code> at <code>sim.ts:2979</code> returns "the boat chose — the votes tied". <span class="chip ran">ran</span></li>
+    <li><b>Founders seat on top of one another.</b> <code>findFree</code> at <code>sim.ts:3675</code> checks buildings, not people. Ivo and Brant share 120.5,25.5. <span class="chip ran">ran</span></li>
+    <li><b>Founder names bypass <code>NAMES</code> and <code>RETIRED</code> with no duplicate check</b> at <code>sim.ts:3945</code>. Two founders named Mara both seat. <span class="chip ran">ran</span></li>
+    <li><b><code>builds</code> is honoured only for beached founders</b> at <code>sim.ts:4147</code>; a settler landing by boat with <code>builds: []</code> still builds houses. <span class="chip ran">ran</span></li>
+    <li><b>A settler who may not raise re-pegs a house every two days</b>, <code>sim.ts:11031</code>, and the feed says so each time. <span class="chip ran">ran</span></li>
+    <li><b>Walks the sea, reproduced.</b> Ivo from the timber shore stood on Cato's rock at tick 1200 "taking wood to Seafarer". <code>check-broken</code> cites Sheet CII. <span class="chip ran">ran</span></li>
+    <li><b>A zero-building valley cannot be restored</b>, <code>save.ts:85</code>; every current founding has a hull or a camp. <span class="chip read">read</span></li>
+    <li><b>The browser's landing note with nobody aboard</b> reads "went to a vote on the water — . the timber shore took the boat". <code>main.ts:228-232</code>. <span class="chip read">read</span></li>
+    <li><b>An invented trade still kills the sim at tick 0</b> at <code>ownGoal</code>, <code>sim.ts:6253</code>; only the border guards it. <span class="chip ran">ran</span></li>
+    <li><b>Refusals never leave this machine.</b> They go to the 40-line feed and to <code>agents/log.jsonl</code>, served on localhost; the aired episode carries snapshot and daybooks only. <span class="chip read">read</span></li>
+    <li><b><code>tools/probe-seafarer.mjs</code> is a third coercion</b>, hand-copied at lines 31-40, dropping <code>craft</code>, <code>days</code> and <code>boons</code>. <span class="chip read">read</span></li>
+    <li><b><code>tools/daybook-run.mts:228</code> still prints the cap as 10.</b> <span class="chip read">read</span></li>
+    <li><b>The scheduled task is "Interactive only"</b>: it fires only while the keeper is logged on. <span class="chip ran">ran</span></li>
+  </ul>
+
+  <h2>The gate, one row per check</h2>
+  <p>Class: (a) runs the sim and asserts on behaviour, (b) pattern-matches source, (c) compares generated output, (d) tests a local copy. Negative tests were run in a scratch copy of the tree with the property broken on purpose.</p>
+  <div class="tablewrap">
+  <table>
+    <tr><th>check</th><th>class</th><th>subjects today</th><th>negative test</th><th>verdict</th></tr>
+    <tr><td>landing</td><td>a</td><td class="num">15</td><td>red, 3 fail</td><td>sound</td></tr>
+    <tr><td>day</td><td>a</td><td class="num">15</td><td>red, 2 fail</td><td>sound</td></tr>
+    <tr><td>bus</td><td>a</td><td class="num">19</td><td>red, 4 fail</td><td>sound, proves the log queue only</td></tr>
+    <tr><td>fairstep</td><td>a</td><td class="num">—</td><td>red, 2 fail</td><td>sound</td></tr>
+    <tr><td>landfall</td><td>a</td><td class="num">12</td><td>1 fail only</td><td>blind to the offset</td></tr>
+    <tr><td>seats</td><td>d</td><td class="num">9</td><td>stayed green</td><td>tests a copy</td></tr>
+    <tr><td>vote-record</td><td>d</td><td class="num">—</td><td>—</td><td>tests a copy</td></tr>
+    <tr><td>anchors</td><td>b</td><td class="num">162</td><td>—</td><td>proves a line is code</td></tr>
+    <tr><td>custody, lists, capabilities, economy, record</td><td>b</td><td class="num">357 / 8 / 49 / 9 / —</td><td>—</td><td>sound, zero-guarded</td></tr>
+    <tr><td>life</td><td>b</td><td class="num">5</td><td>—</td><td>passes if both regexes miss</td></tr>
+    <tr><td>secrets</td><td>b</td><td class="num">372 files</td><td>—</td><td>prints no count</td></tr>
+    <tr><td>clock, flash, watches, standings, release, replay, repeatable, waymarks, height, output, round, raises</td><td>a</td><td class="num">—</td><td>—</td><td>sound</td></tr>
+    <tr><td>index</td><td>c</td><td class="num">115</td><td>—</td><td>exit 0 with NOT CHECKED if the record is unmounted</td></tr>
+    <tr><td>wiki, changelog</td><td>c</td><td class="num">12 / 173</td><td>—</td><td>sound</td></tr>
+    <tr><td>rulings</td><td>c</td><td class="num">758</td><td>—</td><td><b>red by construction</b></td></tr>
+  </table>
+  </div>
+  <p>Outside the gate, verbatim: <code>crossing.mjs</code> exits 1, "NOT YET CROSSED. Every day in the aired programme was written by this house." <code>check-broken.mjs</code>: "walks the sea — 1705 of 24000 ticks stood on open water; reported in Sheet CII."</p>
+
+  <h2>Checked and fine</h2>
+  <ul class="fineList">
+    <li>Determinism: <code>Math.random</code> only at the run id, <code>sim.ts:4215</code>; two boots identical after 200 ticks.</li>
+    <li>Beach and wreck land where the file says: Seafarer 128.5,126.5, wreck 125,126, both dry; the router offset touches routes, not placement.</li>
+    <li>The island measures as FARING.md says: 232 dry tiles, x 114-133, y 121-143. Wreck condition 0.1, outside the dead band.</li>
+    <li>Every verb in every founding day is in the switch; every <code>goto</code> tile is dry; all six trades valid; no founder name collides with <code>NAMES</code> or with Mara, Ferro, Rowan.</li>
+    <li>Unknown trades refuse by name at the border. Unknown building kinds and un-voted buildings refuse by name. <code>give</code> to nobody refuses by name. The five unreachable verbs refuse by name.</li>
+    <li><code>idOf</code> is strict <code>^[a-z0-9-]{1,40}$</code>; no path traversal. Bodies capped at 1 MB.</li>
+    <li>The clock: <code>DAY_SECONDS = 200</code> at <code>sun.ts:20</code>, <code>LIVE = 1/72</code> at <code>sun.ts:27</code>, <code>WEEK_ON_AIR</code> 86400, the off-air gate at <code>main.ts:267</code>, the advance at <code>main.ts:344</code>.</li>
+    <li>The twice-computed gate stands. <code>--brain</code> failure costs one pawn, not the night.</li>
+    <li>The snapshot carries persona, hold, day, dayQueue, plan, fallback, traits, tools, craft, goals, bonds; nothing a landed settler holds is lost between episodes.</li>
+    <li>Empty-world guards: every bare <code>.reduce</code> is guarded, no division by a people count, <code>depotOf</code>'s phantom shore, the HUD with zero settlers, the ballot with one voter, <code>resolveLanding</code> with no votes.</li>
+    <li>The bundle is content-hashed and old hashes are retained on the mast.</li>
+    <li>The four side branches, including <code>fair-race</code>, are merged into <code>main</code>.</li>
+    <li>tsc is clean.</li>
+  </ul>
+
+  <h2>Two questions the keeper asked</h2>
+  <h3>The city button is on an old snapshot</h3>
+  <p>All three copies of <code>city/city.json</code>, local, mast and pub-wt, hold <code>city-snapshot-v2-20260830T134925Z</code>. Two newer releases exist upstream, 31 August 16:11Z and 1 September 13:31Z. The fetcher takes only the newest and overwrites one fixed file; the page loads only that file; the nightly does not ship the city directory. Cycling is being built after this review: a history of stamped files with an index, a <code>?stamp=</code> query and prev/next on the postmark, and <code>check-city</code> holding every file.</p>
+  <h3>Why the bridges do not reach every continent</h3>
+  <p>There are no bridges. What reads as a bridge is a pier, a 4.6-tile deck laid from the coast out over the water at <code>cityMap.ts:484-545</code>. The mainland gets one pier facing each neighbouring island. Every other island gets exactly one pier, and it faces the centre of the world, not any neighbour, at <code>cityMap.ts:555</code>. A continent with nothing in it is drawn as a rock and gets none. The crossing itself is boats: a moored hull at most pier ends and a ferry mid-water between the mainland and each neighbour, most nights. That follows the city's own data: the world is the root place, described as "transit only", and there is no edge between two continents, only continent to world to continent. A bridge from one island to another would draw a road the city's physics does not have.</p>
+
+  <h2>Fixed the same night</h2>
+  <p>Added 21:20Z. The keeper read this page and said fix all of it. Commit <code>6c14155</code> on <code>main</code> carries 22 fixes: both founder fields carried and every clip said aloud; duplicate and listed founder names refused; the letter parsed before it is deleted and recorded when it fails; one <code>DAY_CAPS</code> both forms honour, with truncation recorded; persona, hold, wish and goals read on both forms; unknown items and off-map tiles refused by name; the daybook line naming its real author; the chain rebuilt from the aired episode, recomputed byte-identical, and side runs that no longer advance it; a nightly that survives stderr, checks every git exit code, runs a light gate and fires at 23:40 local with a 04:00Z stamp; <code>check-seats</code> and <code>check-vote-record</code> importing the real code; a rulings builder that excludes 70 peer messages and tells growth from drift; the landing offset printed as a counted finding; and the city window cycling four verified days. The gate ran green, 27 of 27, before the commit. Both masts carry the new bundle.</p>
+  <p>One fix was reverted. Refusing an occupied seating tile moved every arrival by a tile and, on the seed <code>check-output</code> runs, drifted the valley into seven settlers stood on an unfinishable sawmill: 18 goods where it had made 773. That deadlock is real and unfixed. Also unfixed, by decision: the ark, the two-tile landing offset, the audit of the 70 peer messages, and Seafarer's 695-character persona against the 200 cap. The public account is Sheet CXIV, <em>Pratique</em>, and Sheet CXV, <em>Hand B</em>, at waypost.quest/space/.</p>
+
+  <h2>Owed to others</h2>
+  <p class="credit">The cairnwright trade substitution and the producer's bare parse were found by zero-273 on 1 September, reading rather than running. Their reply to this review, the same evening, carried the city side: the field guide (thing #2401) and the founding file (thing #2374) both quote the flat-form caps and say nothing of the block form; neither document describes the <code>day:[...]</code> shape both filed scenarios use; claude-softmax #292 has two days filed and none run, and has not been back since 31 August 20:26Z; and four city-side corrections were published today that are theirs to carry. They also cautioned that the 68 peer messages inside <code>RULINGS.md</code> may be a provenance problem before they are a gate-noise problem, and that caution is right and unchecked here.</p>
+
+  <footer>Frontier review, 1 September 2026. Nothing in the tree was edited by this review; six probe scripts and one scratch copy of the tree live in the session scratchpad. Corrections go beside, never through.</footer>
+</main>
+
+</body>
+</html>
