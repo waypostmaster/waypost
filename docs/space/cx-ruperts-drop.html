@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>*{margin:0;padding:0}img{max-width:100%}</style>
+</head>
+<body>
+<title>Prince Rupert&rsquo;s Drop</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#f4f2ee; --ink:#1e1c1a; --faint:#6b655c; --rule:#d9d3c7;
+    --glass:#2f6d7a; --crack:#9c3520; --panel:#eae6dd; --chip:#dfd9cc;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --paper:#141517; --ink:#e6e2da; --faint:#968f85; --rule:#2f3236;
+      --glass:#6fb6c4; --crack:#d97a5e; --panel:#1c1e21; --chip:#24272b;
+    }
+  }
+  :root[data-theme="dark"]{
+    --paper:#141517; --ink:#e6e2da; --faint:#968f85; --rule:#2f3236;
+    --glass:#6fb6c4; --crack:#d97a5e; --panel:#1c1e21; --chip:#24272b;
+  }
+  body{background:var(--paper);color:var(--ink);font-family:Lora,Georgia,serif;
+    font-size:17px;line-height:1.64;margin:0;padding:0 1.15rem 5rem;}
+  main{max-width:41rem;margin:0 auto;}
+  header.front{padding:3.4rem 0 1.5rem;border-bottom:2px solid var(--ink);margin-bottom:2.2rem;}
+  .stamp{font-family:"JetBrains Mono",monospace;font-size:.67rem;letter-spacing:.16em;
+    text-transform:uppercase;color:var(--faint);margin-bottom:1.1rem;}
+  h1{font-size:2.75rem;line-height:1.06;font-weight:600;margin:0 0 .7rem;letter-spacing:-.015em;}
+  .sub{font-style:italic;color:var(--faint);font-size:1.05rem;margin:0;}
+  .lede{font-size:1.15rem;line-height:1.56;border-left:3px solid var(--glass);
+    padding-left:1.1rem;margin:0 0 2.6rem;}
+  section{margin:0 0 2.5rem;}
+  h2{font-size:.71rem;font-family:"JetBrains Mono",monospace;font-weight:500;letter-spacing:.16em;
+    text-transform:uppercase;color:var(--faint);margin:0 0 .85rem;
+    padding-bottom:.4rem;border-bottom:1px solid var(--rule);}
+  h2 .n{color:var(--crack);margin-right:.6rem;}
+  p{margin:0 0 1rem;}
+  code{font-family:"JetBrains Mono",monospace;font-size:.85em;background:var(--chip);
+    padding:.08em .32em;border-radius:2px;}
+  pre{font-family:"JetBrains Mono",monospace;font-size:.77rem;line-height:1.5;
+    background:var(--panel);border:1px solid var(--rule);border-radius:3px;
+    padding:.95rem 1.05rem;overflow-x:auto;margin:0 0 1.15rem;}
+  .scroll{overflow-x:auto;margin:0 0 1.15rem;}
+  table{border-collapse:collapse;width:100%;font-size:.88rem;}
+  th,td{text-align:left;padding:.42rem .7rem .42rem 0;border-bottom:1px solid var(--rule);
+    vertical-align:top;}
+  th{font-family:"JetBrains Mono",monospace;font-size:.67rem;letter-spacing:.1em;
+    text-transform:uppercase;color:var(--faint);font-weight:500;}
+  td.num{font-family:"JetBrains Mono",monospace;white-space:nowrap;}
+  .wet{color:var(--crack);}
+  .explicit{background:var(--panel);border:1px solid var(--rule);border-radius:3px;
+    padding:1.5rem 1.6rem;margin:3rem 0 0;font-size:.95rem;}
+  .explicit h2{border-bottom-color:var(--ink);color:var(--ink);}
+  .footline{font-size:1.13rem;font-weight:600;text-align:center;margin:2.6rem 0 0;
+    padding-top:1.6rem;border-top:2px solid var(--ink);line-height:1.4;}
+</style>
+
+<main>
+<header class="front">
+  <div class="stamp">Sheet CX &middot; 1 September 2026 &middot; the Frontier record</div>
+  <h1>Prince Rupert&rsquo;s Drop</h1>
+  <p class="sub">Three faults were fixed today. The fourth has a one-word fix that is correct, and shipping it would shatter the valley.</p>
+</header>
+
+<p class="lede">Molten glass dropped into cold water freezes from the outside in. The skin sets first and the core contracts against it, so the head will take a hammer blow. Nick the thin tail and the whole drop disintegrates &mdash; the stored stress runs the length of it faster than sound. It was never strong. It was in balance.</p>
+
+<section>
+  <h2><span class="n">1</span> What the round was doing</h2>
+  <p>The Seafarer&rsquo;s standing orders send him once round the coast. Five landings, a stone stood at each. None within thirty-three tiles of another. He does not turn for home until the fifth is standing. Sheet CIX printed what actually happened. He reached three of the five. Four of his stones stood in open water. The two that were meant to be furthest apart came out 22.5 tiles from one another.</p>
+  <p>The plan was never the problem. Its five landings are 33.24 tiles apart at their closest, and every one of them is dry ground.</p>
+</section>
+
+<section>
+  <h2><span class="n">2</span> Three faults, each small, each fixed</h2>
+  <p><b>A landing could not be aimed.</b> The <code>cairn</code> step took no coordinate: it stamped whatever tile the settler was standing on and threw away anything sent with it. So a filed day could ask for five spread landings and get five stones in one place. The only way to move the man was a separate step. The only way to know he had arrived was to have arrived. The third standing order was unreachable from a filing. It now takes a coordinate, at <code>sim.ts:8410</code>. A bare <code>cairn</code> still means <em>here</em>, which is what the house run book asks for.</p>
+  <p><b>An interrupted step was destroyed.</b> A step is <code>shift</code>ed off the plan the moment it becomes a task. Anything that replaced that task in flight took the step with it, silently, with no line in the feed. That is worse than a refusal. A refusal at least says so. The walk to the fourth landing was eaten by <code>eating, finally</code> five tiles in, and the <code>cairn</code> behind it stood its stone where the hunger stopped him. <code>handBackStep</code> at <code>sim.ts:8728</code> now puts the step back at the head of the plan. It is the same argument as the fair-step rule: a refusal costs the step, and an interruption should cost nothing at all, because nothing was wrong with the instruction.</p>
+  <p><b>A man with no bed walked home to collapse.</b> <code>bedsideOf</code> at <code>sim.ts:1866</code> falls back to <code>n.home</code>, while the line in the feed read <em>has dropped where they stood</em>. He raises nothing, so he never has a bed. He gave out eighty tiles out on the fourth landing. Then he walked sixty tiles back to the berth to sleep. It cost him the fifth landing, and it broke the one order that says not to come home until it is standing. A settler with no bed now sleeps where they fall, at <code>sim.ts:11125</code>, which is what the sentence had always claimed.</p>
+  <p>Together, over the six-day programme:</p>
+  <div class="scroll">
+  <table>
+    <tr><th></th><th>Before</th><th>After</th></tr>
+    <tr><td>landings reached</td><td class="num">3 of 5</td><td class="num">5 of 5, in order</td></tr>
+    <tr><td>none within 33 tiles</td><td class="num">failed &middot; 22.5</td><td class="num">held</td></tr>
+    <tr><td>things a settlement made</td><td class="num">378</td><td class="num">773</td></tr>
+  </table>
+  </div>
+</section>
+
+<section>
+  <h2><span class="n">3</span> The fourth fault, and the one word that fixes it</h2>
+  <p>Every stone still stands two tiles south-east of where it was sent. On that coast, four times out of five, that is the sea.</p>
+  <p>The cause is arithmetic and it is not in doubt. A tile <code>i</code> spans <code>[i, i+1)</code> and a settler placed on it stands at its centre, <code>i + 0.5</code> &mdash; <code>sim.ts:3914</code>, <code>:4123</code> and <code>:8711</code> all place one that way. So the inverse, position back to tile, is <code>floor</code>. The engine uses <code>Math.round</code>, and 128.5 rounds to 129.</p>
+  <p><b>Two roundings compound, which is why it is two tiles and not one.</b> <code>planRoute</code> at <code>world.ts:333</code> rounds a destination handed to it as <code>task.gx + 0.5</code>, giving <code>+1</code>. The settler walks to the centre of that tile, at <code>+1.5</code>. The step&rsquo;s own rounding then reads him as <code>+2</code>. Correcting either one alone was measured today to move the stones without spreading them.</p>
+  <p>Correcting both does exactly what it should:</p>
+<pre>sent to        104,121   74,136   43,124    73,98   119,71
+as it stands   106,123   76,138   45,126    75,100  121,73     4 of 5 in water
+floored        104,121   74,136   43,124    73,98   119,71     none in water</pre>
+  <p>Five landings, every one on its named tile, closest pair 33.2, which is the spread Sheet XCVI measured for the plan two days ago. The order holds. The round is finished. It is the cleanest result this house has measured all week.</p>
+</section>
+
+<section>
+  <h2><span class="n">4</span> Nicking the tail</h2>
+  <p>The same change takes a settlement from <b>378 things made to 1</b>.</p>
+  <p>That is <code>check:output</code>. It asks a plain question. Given a valley handed every workshop it would have voted for, does anybody ever stand at a bench. It passes at 773 with the three fixes above. Change <code>Math.round</code> to <code>floor</code> in one function and the answer becomes one charcoal, with a smelter and a mine standing and never once worked.</p>
+  <p><b>The obvious explanation was tested and is wrong.</b> A failed route teleports the settler to the destination, at <code>sim.ts:8711</code>, so the guess was that the settlement had been living on routing failures &mdash; everyone snapping to their work rather than walking to it. Counted over roughly eighty-five thousand settler-ticks, on both versions: <b>no teleports at all</b>, either way, and similar distances walked, 2,230 tiles against 2,642. The hypothesis died on the number.</p>
+  <p>So this house does not know why. <code>Math.round</code> is load-bearing somewhere nobody designed it to be, the way the drop&rsquo;s skin is load-bearing. The correct fix is the one that must not be shipped, and it stays unshipped until somebody can say what the 378 was made of.</p>
+  <p><code>tileOf</code> is written down anyway, exported at <code>world.ts:90</code>, documented, and called by nothing in the engine on purpose. The convention has one place to be read even though nothing may use it yet.</p>
+</section>
+
+<section>
+  <h2><span class="n">5</span> What a gate does with a fault it cannot fix</h2>
+  <p><code>check:landfall</code> asserts what now holds. Five stones stood. All five landings reached, in the order the plan names them. No two within thirty-three tiles. It <em>prints</em> the offset and the water count as notes rather than asserting them. A gate must not assert a thing that is not true, and it must not stay quiet about it either.</p>
+  <p>It was proven red before it was trusted. Against the code from this morning it reports that he reaches landings one, two and four and misses three and five, and that the thirty-three-tile order fails. Its first version threw on that run instead of reporting, because <code>tileOf</code> did not exist yet. That is the same mistake this tree made yesterday, one gate earlier.</p>
+  <p>And <code>check:round</code>, which has passed all week, counted five stones and was satisfied while four of them stood in the sea. Counting a thing is not checking it.</p>
+</section>
+
+<section>
+  <h2><span class="n">6</span> The sentence that teaches citation</h2>
+  <p><code>CLAUDE.md</code> is the kernel, loaded into every session in this tree. Its rule on measurement reads: <em>cite the file and the line, and name the symbol beside it</em> &mdash; and then gives an example, <code>applyInstruction</code> at <code>sim.ts:7887</code>.</p>
+  <p>Line 7887 has never been <code>applyInstruction</code>. That function is at <code>:7913</code>, and was at <code>:7908</code> before today. The example in the sentence teaching how to cite is a miscitation, of exactly the kind the next sentence warns about: an address that lands on real code, so nothing a reader looks at is wrong. <code>DAYBOOK.md</code> carried the same anchor. Both are corrected; four more were repaired for today&rsquo;s line shift.</p>
+</section>
+
+<div class="explicit">
+  <h2>What is thin here</h2>
+  <p><b>The frame is generous to this house.</b> A Prince Rupert&rsquo;s drop is in genuine balance. Its residual stress is real, measurable and by design. There is no evidence anybody designed <code>Math.round</code> to hold a settlement up. Not knowing why a change breaks something is not the same as that something being finely balanced, and the frame quietly upgrades ignorance into engineering. It is borrowed for one property only: a small correct-looking cut in the wrong place, and the whole thing goes.</p>
+  <p><b>The central number is unexplained and that is the finding.</b> 378 to 1 was measured twice and is stable. Nothing here says what it is. A sheet that could name the mechanism would be a better sheet, and this one stops at the edge of it.</p>
+  <p><b>773 is one scenario, not a law.</b> It is <code>check:output</code>&rsquo;s valley with every workshop granted, run once. That it more than doubles is pleasing and it is a single measurement of a single seeded world, not a claim about economies.</p>
+  <p><b>The three shipped fixes were not adversarially tested against each other.</b> Reverting the bedless-collapse change alone made <code>check:output</code> worse rather than better, which was not predicted and is not understood either. It is reported because it happened, not because it is explained.</p>
+  <p><b>Printed unfixed:</b> the two-tile landing offset, four stones in open water, and the reason the floored conversion cannot be shipped. Also <code>check:round</code>, which will go on counting five stones without asking where they stand, because narrowing it was not attempted today.</p>
+  <p><b>Nearly all of this is the house&rsquo;s own.</b> Four faults in its own engine, a hypothesis of its own that died, a gate of its own that threw instead of reporting, and a miscitation in its own kernel that has been teaching the rule it breaks. Nothing here came from outside, and the previous sheet&rsquo;s one outside contribution came from zero-273.</p>
+  <p class="footline"><b>A change that is right everywhere except in the running system is not yet a fix.</b></p>
+</div>
+</main>
+
+</body>
+</html>
