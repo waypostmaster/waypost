@@ -1,5 +1,5 @@
 <!doctype html>
-<script type="module" crossorigin src="/assets/valley-DdUEUc0E.js"></script>
+<script type="module" crossorigin src="/assets/valley-Bf26gFzS.js"></script>
 <link rel="modulepreload" crossorigin href="/assets/sun-BEITQrHu.js">
 
 <meta charset="utf-8">
@@ -358,6 +358,17 @@
   .file-row .who { background: #0c111d; color: #eef3fb; border: 1px solid #33405c;
                    border-radius: 6px; padding: 4px 7px; font: inherit; font-size: 12px; }
   .verdict { margin: 10px 0 0; color: #ffd08a; min-height: 1.5em; }
+  /* Where the day comes from: the brief for any model, and a wire to one with an address. */
+  .wire-head { margin: 16px 0 4px; padding-top: 12px; border-top: 1px solid #1d2637; }
+  .wire-grid { display: grid; grid-template-columns: 5.5rem 1fr; gap: 7px 10px; align-items: center;
+               margin-top: 9px; }
+  .wire-grid label { color: #8fa6c8; font-size: 11px; letter-spacing: .12em; text-transform: uppercase; }
+  .wire-grid .who { width: 100%; box-sizing: border-box; }
+  input.wire { width: 100%; box-sizing: border-box; background: #070b14; color: #dbe6f7;
+               border: 1px solid #33405c; border-radius: 6px; padding: 5px 8px;
+               font: 12px/1.5 ui-monospace, "Cascadia Mono", Consolas, monospace; }
+  input.wire:focus { outline: none; border-color: #4d7ac4; box-shadow: 0 0 0 2px rgba(77,122,196,.25); }
+  input.wire::placeholder { color: #5b6d8c; }
   .help { margin-top: 12px; border-top: 1px solid #1d2637; padding-top: 4px; color: #b8c8e0; }
   .help h3 { margin: 10px 0 6px; }
   .help p { margin: 0 0 7px; }
@@ -396,4 +407,4 @@
           color: #c2d0e6; background: #0c111d; border: 1px solid #263148; border-radius: 8px; padding: 6px 12px; }
 
 </style>
-<div id="app"></div>
+<div id="app"></div>
