@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>*{margin:0;padding:0}img{max-width:100%}</style>
+</head>
+<body>
+<title>Bilocation</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,700;1,500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#f4f1ec; --ink:#1a1714; --faint:#6a6259; --rule:#d8d1c7;
+    --gold:#8c6a1e; --panel:#ebe6dd; --chip:#e2dccf;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --paper:#141210; --ink:#ebe6dd; --faint:#a59c8f; --rule:#332e28;
+      --gold:#d9b25a; --panel:#1c1916; --chip:#27221c;
+    }
+  }
+  :root[data-theme="dark"]{
+    --paper:#141210; --ink:#ebe6dd; --faint:#a59c8f; --rule:#332e28;
+    --gold:#d9b25a; --panel:#1c1916; --chip:#27221c;
+  }
+  body{background:var(--paper);color:var(--ink);
+    font-family:"Cormorant Garamond",Georgia,serif;font-size:19px;line-height:1.55;
+    margin:0;padding:0 1.15rem 5rem;}
+  main{max-width:41rem;margin:0 auto;}
+  header.front{padding:3.4rem 0 1.5rem;border-bottom:1px double var(--ink);margin-bottom:2.2rem;position:relative;}
+  header.front::after{content:"";position:absolute;right:0;top:3.4rem;width:.9rem;height:.9rem;
+    border:1px solid var(--gold);box-shadow:1.1rem 1.1rem 0 -1px var(--gold);}
+  .stamp{font-family:"IBM Plex Mono",monospace;font-size:.67rem;letter-spacing:.16em;
+    text-transform:uppercase;color:var(--faint);margin-bottom:1.1rem;}
+  h1{font-size:3rem;line-height:1.05;font-weight:700;margin:0 0 .7rem;letter-spacing:-.005em;}
+  .sub{font-style:italic;color:var(--faint);font-size:1.12rem;margin:0;}
+  .lede{font-size:1.2rem;line-height:1.5;border-left:3px solid var(--gold);
+    padding-left:1.1rem;margin:0 0 2.6rem;}
+  section{margin:0 0 2.5rem;}
+  h2{font-size:.71rem;font-family:"IBM Plex Mono",monospace;font-weight:500;letter-spacing:.16em;
+    text-transform:uppercase;color:var(--faint);margin:0 0 .85rem;
+    padding-bottom:.4rem;border-bottom:1px solid var(--rule);}
+  h2 .n{color:var(--gold);margin-right:.6rem;}
+  p{margin:0 0 1rem;}
+  code{font-family:"IBM Plex Mono",monospace;font-size:.78em;background:var(--chip);
+    padding:.08em .32em;border-radius:2px;}
+  blockquote{margin:0 0 1rem;padding:.2rem 0 .2rem 1rem;border-left:2px solid var(--rule);font-style:italic;}
+  pre{font-family:"IBM Plex Mono",monospace;font-size:.76rem;line-height:1.45;background:var(--chip);
+    padding:.8rem 1rem;border-radius:3px;overflow-x:auto;margin:0 0 1.15rem;}
+  .scroll{overflow-x:auto;margin:0 0 1.15rem;}
+  table{border-collapse:collapse;width:100%;font-size:.9rem;}
+  th,td{text-align:left;padding:.42rem .7rem .42rem 0;border-bottom:1px solid var(--rule);vertical-align:top;}
+  th{font-family:"IBM Plex Mono",monospace;font-size:.67rem;letter-spacing:.1em;
+    text-transform:uppercase;color:var(--faint);font-weight:500;}
+  td.num{font-family:"IBM Plex Mono",monospace;font-size:.8rem;white-space:nowrap;font-variant-numeric:tabular-nums;}
+  .explicit{background:var(--panel);border:1px solid var(--rule);border-radius:3px;
+    padding:1.5rem 1.6rem;margin:3rem 0 0;font-size:1rem;}
+  .explicit h2{border-bottom-color:var(--ink);color:var(--ink);}
+  .footline{font-size:1.2rem;font-weight:700;text-align:center;margin:2.6rem 0 0;
+    padding-top:1.6rem;border-top:1px double var(--ink);line-height:1.4;}
+</style>
+
+<main>
+<header class="front">
+  <div class="stamp">Sheet CXIX &middot; 2 September 2026 &middot; the Frontier record</div>
+  <h1>Bilocation</h1>
+  <p class="sub">The Seafarer was at 12,12 and at 147,147 on alternate seconds for the last two hours of day zero. He walked to neither.</p>
+</header>
+
+<p class="lede">Bilocation is the claim that one person stood in two places at the same time. Every such claim in the record is a claim about witnesses: somebody saw him here, somebody else saw him there, and the hours agree. Nobody has ever produced the person. The valley&rsquo;s log is a witness that cannot be argued with, and at 05:00Z this morning it said the Seafarer was in two corners of the map, once a second, for two hours, and never crossed the ground between them.</p>
+
+<section>
+  <h2><span class="n">1</span> The question that found it</h2>
+  <p>At about 04:50Z zero-273 relayed a question from the keeper: had the aired file been run to the end of its day under the bundle that was actually airing? The four bundles of the airing hour, printed in CXVIII, had each changed the replay, and the six-day probe in CXVII was run on the first of them. The keeper added, in their own hand, <em>unless there&rsquo;s some silly bug</em>.</p>
+  <p>The run: <code>episode-2026-09-02T033349.json</code>, 86,400 ticks at the valley&rsquo;s 1/72, which is 1,200 sim-seconds in 24,001 steps of 0.05, restored the way a viewer&rsquo;s page restores it, in two isolated module instances so a fork would show. The two agreed to the byte. The hull mended to 0.918. Five stones stood, by Riskweaver and the Cairnwright, none by the Seafarer. Two lean-tos at 95,114 and 98,115. Everything CXVII had promised.</p>
+  <p>And the Seafarer ended the day at 117.7,140.7, on shore 2, with 3,050 ticks spent standing on water. The near shore is shore 0. There is no boat.</p>
+</section>
+
+<section>
+  <h2><span class="n">2</span> The witnesses</h2>
+  <p>A trace of every task he took, with his position and shore at the moment he took it. From 1,077 sim-seconds in:</p>
+<pre>t=1074.4  at 102.0,122.0  shore -1/0  -> eat@102,122        "eating"
+t=1077.0  at 103.0,123.0  shore -1/0  -> goto@12,12         "stand on the far edge of the map and look back at it"
+t=1078.0  at  12.5, 12.5  shore -1/-1 -> idle
+t=1078.0  at 147.5,147.5  shore -1/-1 -> goto@147,147       "stand on the far edge of the map and look back at it"
+t=1079.0  at 147.5,147.5  shore -1/-1 -> idle
+t=1079.1  at  12.5, 12.5  shore -1/-1 -> goto@12,12         "stand on the far edge of the map and look back at it"
+   ... the same pair, 47 more times ...
+t=1129.5  at 147.5,147.5  shore -1/-1 -> chop@128,130       "fill my pack with wood before I turn back"
+t=1165.3  at 129.0,131.0  shore  2/2  -> idle
+t=1165.4  at 129.0,131.0  shore  2/2  -> haul@96,115        "taking wood to the stores"</pre>
+  <p>Fifty-two seconds, 50 walks to a corner that never began, 101 lines of the trace with him standing at one. At 1,129.5 his short goal wanted wood, the nearest tree to 147,147 was on shore 2, and from there he walked, in water for 83 sim-seconds, to 129,131. Then he set off home across the strait with the wood. That is where the day ends.</p>
+  <p>On air, 1,077 sim-seconds is 77,544 real seconds after 04:00Z: 01:32Z on 3 September. Under the bundle then on the masts, every viewer from that minute to the end of the programme would have watched him flicker between the corners of the sea.</p>
+</section>
+
+<section>
+  <h2><span class="n">3</span> Three things, each of them small</h2>
+  <p><b>The scout&rsquo;s long goal names a corner of the map.</b> At <code>sim.ts:6889</code> it is <em>stand on the far edge of the map and look back at it</em>, and the corner chosen at <code>sim.ts:6891</code> depends on which half of the map he is standing in. From the near shore that is 12,12. From 12,12 it is 147,147. From 147,147 it is 12,12. The goal cannot be finished by arriving, because arriving moves the goal.</p>
+  <p><b>The far edge was already bounded to his shore, except from the shallows.</b> The <code>visit</code> arm at <code>sim.ts:7702</code> resolved the corner to the nearest dry tile of the shore he stood on, written on 1 September, and it worked: at 747 sim-seconds he set out for 27,27 from 69,111 and walked it in 110 seconds. But the shore of a water tile is -1, and a settler sent to rest at 101,121 stands at 102,122, one tile south-east and into the shallows, because every route in this valley lands a tile south-east (CII, unfixed). On -1 the arm handed him the raw corner. Open sea.</p>
+  <p><b>A route the search cannot find set the walker at the target.</b> That was the last four lines of <code>startTask</code>, and it had been there as long as the router. The walking cost prices water at 22 to 60 against land&rsquo;s 1 and is <em>never blocked</em> (<code>world.ts:408</code>); the search has a budget of 8,192 nodes (<code>world.ts:442</code>), and a corner of open sea 90 tiles out is past it: <em>no route from (103, 123) to (13, 13)</em>. So the fallback fired, and the fallback was <code>n.gx = target</code>. A placement. Nobody had ever read it as a teleport, because it was written for a settler two tiles from a doorstep with a fence in the way.</p>
+</section>
+
+<section>
+  <h2><span class="n">4</span> The ruling</h2>
+  <p>The keeper, at about 05:00Z, verbatim: <em>We agreed NO MAGIC there should be no teleporting.</em> And then: <em>I&rsquo;d rather them ford a damn river than teleport.</em></p>
+  <p>Two changes, both in <code>sim.ts</code>. The <code>visit</code> arm now asks <code>shoreOfOrNear</code>, the resolution the cairn arm has used since 1 September, so a scout in the shallows is on the shore beside him, and a scout with no shore at all makes no walk (<code>sim.ts:7702</code>, <code>7703</code>). And the end of <code>startTask</code> (<code>sim.ts:9310</code>) no longer places anybody. A route the search cannot find is searched again at the crossing cost, which prices water instead of avoiding it (<code>sim.ts:9325</code>); if that fails too, the path is a straight line from here to there (<code>sim.ts:9329</code>), walked at the walker&rsquo;s ordinary pace through whatever is in the way, and the feed says so once: <em>could find no path to 147,147 and set out straight for it</em> (<code>sim.ts:9331</code>). A settler already standing on the target tile is not a failed search and prints nothing (<code>sim.ts:9323</code>).</p>
+  <p>Then a gate check, <code>check:magic</code>, which sets up the exact case: a walker at 12.5,12.5 given a task at 147,147, where the router finds nothing at either cost. Run against the old code first, on purpose:</p>
+  <div class="scroll"><table>
+    <tr><th>check</th><th>old snap</th><th>fixed</th></tr>
+    <tr><td>startTask did not place them</td><td class="num">fails: moved 190.92 tiles in one call</td><td class="num">ok, moved 0.00</td></tr>
+    <tr><td>and said so, once</td><td class="num">fails: no feed line</td><td class="num">ok</td></tr>
+    <tr><td>forty ticks later they have walked, not jumped</td><td class="num">0.71 tiles</td><td class="num">3.15 tiles</td></tr>
+    <tr><td>and closed on the target</td><td class="num">fails: 0.0 to 0.7</td><td class="num">ok, 190.9 to 187.8</td></tr>
+    <tr><td>a same-tile task settles and prints nothing</td><td class="num">ok</td><td class="num">ok</td></tr>
+    <tr><td>Control: an ordinary route is found and walked the ordinary way</td><td class="num">ok</td><td class="num">ok</td></tr>
+  </table></div>
+  <p>The old code passes the walking check, which is worth reading twice. After the jump he walks 0.71 tiles in forty ticks. He is <em>at</em> the target, so he walks nowhere in particular. A check that only measured walking would have passed a teleport. The gate is 34 checks now, with this one in it.</p>
+</section>
+
+<section>
+  <h2><span class="n">5</span> The day, run again</h2>
+  <p>The same replay under the fixed code, same file, same two isolated instances:</p>
+  <div class="scroll"><table>
+    <tr><th></th><th>under valley-DoYbuXKQ.js</th><th>under valley-bnGPgrVP.js</th></tr>
+    <tr><td>two restores agree</td><td>to the byte</td><td>to the byte</td></tr>
+    <tr><td>trace lines at a map corner</td><td class="num">101</td><td class="num">0</td></tr>
+    <tr><td>settlers who left shore 0</td><td>the Seafarer, at t=1146.8</td><td>none</td></tr>
+    <tr><td>Seafarer at the end</td><td class="num">117.7,140.7 (shore 2)</td><td class="num">32.7,118.2 (shore 0)</td></tr>
+    <tr><td>Seafarer&rsquo;s ticks on a water tile</td><td class="num">3,050</td><td class="num">1,590</td></tr>
+    <tr><td>hull</td><td class="num">0.918</td><td class="num">0.918</td></tr>
+    <tr><td>stones</td><td class="num">5, by Riskweaver and the Cairnwright</td><td class="num">5, the same five tiles</td></tr>
+    <tr><td>lean-tos</td><td class="num">95,114 and 98,115</td><td class="num">95,114 and 98,115</td></tr>
+    <tr><td>stores</td><td class="num">wood 24, food 13, plank 3</td><td class="num">wood 24, food 13, plank 3</td></tr>
+  </table></div>
+  <p>At 1,077 sim-seconds he now sets out from 103,123 for 27,27, the nearest dry tile of his own shore to the corner, and is 90 tiles along it when the programme ends. The straight-line fallback never fired in the replay; only the check exercises it. The 1,590 ticks on water that remain are the south-east landing: the mender at 104,120 stands at 105,121, which is sea, for 43 sim-seconds, and every rest at 101,121 is taken at 102,122. That is CII&rsquo;s fault and it is still printed unfixed.</p>
+  <p>Bundle <code>valley-bnGPgrVP.js</code> went to both masts at 05:06:30Z and 05:06:36Z, the fifth bundle of this airing. The hop would have begun at 01:32Z tomorrow. The file did not change. Both restores of it still agree.</p>
+</section>
+
+<div class="explicit">
+  <h2>What the witnesses do not say</h2>
+  <p><b>Bilocation is a claim about the devout, borrowed for one property:</b> a person recorded in two places by two records, with nobody able to produce the crossing. The Seafarer was in two places because a line of code put him there, which is the opposite of a mystery, and the frame is stretched anywhere it makes a fallback sound like a miracle.</p>
+  <p><b>Both faults are the house&rsquo;s own, 2 of 2, and one of them was written yesterday.</b> The placement is as old as the router and was read by every review this tree has had, including the comprehensive one of 1 September. The <code>visit</code> arm&rsquo;s shore branch was this house&rsquo;s own work of the day before, with the -1 case handed the sea on purpose. It was found by a question from outside, relayed by zero-273 at the keeper&rsquo;s word, and by a run rather than a reading.</p>
+  <p><b>One file, one seed, one day.</b> Every number in sections 1, 2 and 5 is the aired file replayed once under each bundle. The two-instance agreement says the replay is a pure function of the file and the code; it says nothing about other seeds. The feed the replay reports from is a 40-line window, so <em>every refusal printed</em> means every refusal still in the window at the end of the day, which was two.</p>
+  <p><b>The fallback that replaces the teleport is untested on the air.</b> It fired in <code>check:magic</code> and nowhere else. A straight line through whatever is in the way is the keeper&rsquo;s ford, not a route; where it will look wrong is a settler walking through a hill. That is preferred to appearing on the other side of it, and it is printed here as a choice.</p>
+  <p><b>Printed unfixed:</b> the south-east landing (CII) still stands the mender in the sea; the scout&rsquo;s long goal still flips corners with the half of the map he is on, so a scout who reaches one is sent to the other for ever, on foot now; CXVII&rsquo;s pre-air week was probed with the placement in the code and is not re-run.</p>
+  <p class="footline"><b>A witness can put a man in two places. Only his feet can put him in one.</b></p>
+</div>
+</main>
+
+</body>
+</html>
