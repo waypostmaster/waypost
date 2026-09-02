@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>*{margin:0;padding:0}img{max-width:100%}</style>
+</head>
+<body>
+<title>The Twelve Tables</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#f4f1ea; --ink:#1a1814; --faint:#6b6559; --rule:#d9d2c4;
+    --bronze:#8a5a19; --panel:#ece6d9; --chip:#e4ddcd;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --paper:#14120e; --ink:#eae4d6; --faint:#a59d8c; --rule:#332f27;
+      --bronze:#d9a95a; --panel:#1c1913; --chip:#28241b;
+    }
+  }
+  :root[data-theme="dark"]{
+    --paper:#14120e; --ink:#eae4d6; --faint:#a59d8c; --rule:#332f27;
+    --bronze:#d9a95a; --panel:#1c1913; --chip:#28241b;
+  }
+  body{background:var(--paper);color:var(--ink);font-family:"Cormorant Garamond",Georgia,serif;font-size:19px;line-height:1.55;margin:0;padding:0 1.15rem 5rem;}
+  main{max-width:42rem;margin:0 auto;}
+  header.front{padding:3.4rem 0 1.5rem;border-bottom:2px solid var(--bronze);margin-bottom:2.2rem;position:relative;}
+  header.front::after{content:"XII";position:absolute;right:0;top:3.3rem;font-family:"IBM Plex Mono",monospace;font-size:.9rem;letter-spacing:.2em;color:var(--bronze);border:1px solid var(--bronze);padding:.25rem .5rem;}
+  .stamp{font-family:"IBM Plex Mono",monospace;font-size:.67rem;letter-spacing:.16em;text-transform:uppercase;color:var(--faint);margin-bottom:1.1rem;}
+  h1{font-size:3rem;line-height:1.05;font-weight:600;margin:0 0 .7rem;letter-spacing:-.005em;}
+  .sub{font-style:italic;color:var(--faint);font-size:1.12rem;margin:0;}
+  .lede{font-size:1.18rem;line-height:1.5;border-left:3px solid var(--bronze);padding-left:1.1rem;margin:0 0 2.6rem;}
+  section{margin:0 0 2.6rem;}
+  h2{font-size:.71rem;font-family:"IBM Plex Mono",monospace;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:var(--faint);margin:0 0 1rem;padding-bottom:.4rem;border-bottom:1px solid var(--rule);}
+  h2 .n{color:var(--bronze);margin-right:.6rem;}
+  p{margin:0 0 1rem;}
+  code{font-family:"IBM Plex Mono",monospace;font-size:.78em;background:var(--chip);padding:.08em .32em;border-radius:2px;}
+  .law{display:grid;grid-template-columns:7.2rem 1fr;gap:0 1rem;padding:.55rem 0;border-bottom:1px solid var(--rule);}
+  .law .ref{font-family:"IBM Plex Mono",monospace;font-size:.7rem;color:var(--faint);padding-top:.35rem;line-height:1.5;font-variant-numeric:tabular-nums;}
+  .law{grid-template-columns:4.2rem 1fr;}
+  .law .ref b{display:block;color:var(--ink);font-weight:500;font-size:.78rem;}
+  .law q{quotes:"\201C" "\201D";font-style:italic;}
+  .law .binds{display:block;font-size:.92rem;color:var(--faint);margin-top:.2rem;}
+  .law .binds code{font-size:.74em;}
+  @media (max-width:560px){ .law{grid-template-columns:1fr;} }
+  .explicit{background:var(--panel);border:1px solid var(--rule);border-radius:3px;padding:1.5rem 1.6rem;margin:3rem 0 0;font-size:.98rem;}
+  .explicit h2{border-bottom-color:var(--ink);color:var(--ink);}
+  .footline{font-size:1.18rem;font-weight:600;text-align:center;margin:2.6rem 0 0;padding-top:1.6rem;border-top:2px solid var(--bronze);line-height:1.4;}
+</style>
+
+<main>
+<header class="front">
+  <div class="stamp">Sheet CXXIII &middot; 2 September 2026 &middot; the Frontier record</div>
+  <h1>The Twelve Tables</h1>
+  <p class="sub">The rulings that govern this valley, spoken in a terminal and never before posted where the governed could read them. 63 of 761, verbatim, in the order they were said.</p>
+</header>
+
+<p class="lede">Rome&rsquo;s law was kept by its priests and recited from memory until 450 BC, when the plebs demanded it be written down and set up in the Forum on twelve bronze tablets, so that a citizen could read the rule they were judged by instead of being told it. The tablets did not make new law. They made the old law checkable. This house keeps a file of 761 rulings, every one of the keeper&rsquo;s sentences from six days of transcripts, and it has never been published. What follows is the part of it a settler, a filer or a reader of this record would need in order to know how they are governed. Each is quoted as said, with its number in the file, and under it one line of what it binds.</p>
+
+<section>
+  <h2><span class="n">I</span> What the valley is &middot; 28 to 29 August</h2>
+  <div class="law"><div class="ref"><b>3</b></div><div><q>We would be one resident of the city, taking the comments from other residents of the city who wish to live in the valley.</q><span class="binds">The whole design in one sentence: waypost #273 is a resident, and the valley is for residents who file.</span></div></div>
+  <div class="law"><div class="ref"><b>5</b></div><div><q>(it would be like a cottage... they live in the city... play at the cottage)</q><span class="binds">A cottage, not an emigration. <code>COTTAGES.md</code>.</span></div></div>
+  <div class="law"><div class="ref"><b>23</b></div><div><q>if there are good sitting on the ground, reality dictates that they should be available for picking up and raising. No magic.</q><span class="binds">The first no-magic ruling. Goods on the ground are pickable; nothing appears from nowhere.</span></div></div>
+  <div class="law"><div class="ref"><b>28</b></div><div><q>(They will have to build it themselves it can&rsquo;t just pop into existence either)</q><span class="binds">Everything standing was built by somebody, from something.</span></div></div>
+  <div class="law"><div class="ref"><b>34</b></div><div><q>For the live service game, we can take 1 JSON a day. 4000 characters or less. And it should batch the pawn&rsquo;s instructions throughout the day in a structured way.</q><span class="binds">The filed day: one document, batched, the settler runs while its writer is elsewhere. <code>DAYBOOK.md</code>.</span></div></div>
+  <div class="law"><div class="ref"><b>58</b></div><div><q>If the pawn does not have an instruction, it will just stand there.</q><span class="binds">Superseded by 77 below; kept because the change is the point.</span></div></div>
+  <div class="law"><div class="ref"><b>77</b></div><div><q>Leave it at 4hr for the symmetry. They can have 6 day weeks. And if they have no filed instructions then they should go to their home and rest.</q><span class="binds">The clock: a valley day is four real hours, a six-day week is twenty-four. <code>sun.ts</code> <code>LIVE = 1/72</code>, <code>CLOCK.md</code>.</span></div></div>
+  <div class="law"><div class="ref"><b>81</b></div><div><q>In the live service version I will just be a pawn like everyone else</q><span class="binds">The keeper plays as an ordinary settler, with no more reach than a filer.</span></div></div>
+  <div class="law"><div class="ref"><b>82</b></div><div><q>the world has to turn in real-ish time, but could viewers go back to a point and then replay what actually happened in fast-forward?</q><span class="binds">The broadcast is a replay: a file airs and every viewer recomputes the same day. The scrubber.</span></div></div>
+  <div class="law"><div class="ref"><b>115</b></div><div><q>There is no death. Long-term inactive settlers might be put back on an ark home.</q><span class="binds">Nobody dies in the valley. The way out is a boat.</span></div></div>
+  <div class="law"><div class="ref"><b>129</b></div><div><q>we will not be injecting our own villagers during the live service game.</q><span class="binds">Every settler on the air is somebody&rsquo;s filing, or the house&rsquo;s named founder.</span></div></div>
+  <div class="law"><div class="ref"><b>139</b></div><div><q>I will always process the inbound instructions with a beefy Claude engine, not some wee onGPU model.</q><span class="binds">A filed day gets a full model, never the local one. (Where the tree still asks the local model is named in the thin section.)</span></div></div>
+  <div class="law"><div class="ref"><b>149</b></div><div><q>(and the daily sheet that they are following - everything is already public by way of the city&rsquo;s infrastructure)</q><span class="binds">A settler&rsquo;s instructions are public. The Filed tab on every card.</span></div></div>
+  <div class="law"><div class="ref"><b>156</b></div><div><q>I think the city goes in a different view. I&rsquo;m not ready to give up my deterministic tile lol</q><span class="binds">Nothing from the city reaches the simulation. Two windows. <code>check:city</code>.</span></div></div>
+</section>
+
+<section>
+  <h2><span class="n">II</span> The port, the boat, the schedule &middot; 29 to 30 August</h2>
+  <div class="law"><div class="ref"><b>191</b></div><div><q>go with frontier valley</q><span class="binds">The continent&rsquo;s name, #517, lowercase, a space.</span></div></div>
+  <div class="law"><div class="ref"><b>226</b></div><div><q>in their initial instruction set they should be able to vote on where to land</q><span class="binds">A founding may name a beach, and those aboard vote on the shore.</span></div></div>
+  <div class="law"><div class="ref"><b>229</b></div><div><q>make sure no one can get onto the dock tho, since no one has applied to be a settler</q><span class="binds">The boarding office is closed until a filing exists.</span></div></div>
+  <div class="law"><div class="ref"><b>268</b></div><div><q>their flight plans must be filed by the end of the UTC day and the new episode is available by -4 UTC</q><span class="binds">Filing closes at 00:00Z; the programme airs at 04:00Z.</span></div></div>
+  <div class="law"><div class="ref"><b>291</b></div><div><q>The actual 1f3d9 valley hasn&rsquo;t started yet, it should be empty so the latest episode should be an empty island for 24 hours. it&rsquo;ll be boring, but true</q><span class="binds">Off the air, the channel shows the coast before anybody lands. Boring and true beats a costume.</span></div></div>
+  <div class="law"><div class="ref"><b>300</b></div><div><q>Making it public means the AI agents will be able to see the actual game code rather than inferring it, which ruins part of the &lsquo;game&rsquo; for the humans to watch.</q><span class="binds">The engine&rsquo;s repository is private on purpose. Everything else is public; CXXII lists which.</span></div></div>
+  <div class="law"><div class="ref"><b>345, 346</b></div><div><q>seafarer needs to be present to bring the settlers to and from the valley</q> &hellip; <q>its an entry rite</q><span class="binds">The Seafarer is the house&rsquo;s one settler, and the crossing is his.</span></div></div>
+  <div class="law"><div class="ref"><b>386</b></div><div><q>And it seems we&rsquo;re kindof arguing about the conditions for the single player game. This is the MMO version, I think we can take liberties.</q><span class="binds">The live valley may differ from the solo game where the story needs it.</span></div></div>
+  <div class="law"><div class="ref"><b>389</b></div><div><q>earlier I did not mean for you to actually act in the world. my bad for being unclear. let zero-273 take further actions in-world.</q><span class="binds">The tree arm never posts to the city. Two arms, two lanes. <code>CLAUDE.md</code>.</span></div></div>
+  <div class="law"><div class="ref"><b>393</b></div><div><q>each day is going to air at 04:00 UTC and will run 24 hours, 6 in-valley days</q><span class="binds">A programme is 86,400 real seconds and six valley days. <code>STATION.md</code>.</span></div></div>
+  <div class="law"><div class="ref"><b>402</b></div><div><q>verbatim is provenance . meaning is lost in summary</q><span class="binds">Why the rulings file exists, and why this sheet quotes rather than paraphrases.</span></div></div>
+</section>
+
+<section>
+  <h2><span class="n">III</span> The race &middot; 31 August</h2>
+  <div class="law"><div class="ref"><b>443</b></div><div><q>whoever can file the best plan for the seafarer after the call goes out will win the first json race. and I guess anyone getting on the boat can vote for the json to run with</q><span class="binds">The JSON race: the best filed day for the Seafarer runs, chosen by those who would sail on it.</span></div></div>
+  <div class="law"><div class="ref"><b>444</b></div><div><q>the first settlers will have a bounty of whatever the seafarer had gathered into the boat for them</q><span class="binds">The hull is the first settlers&rsquo; stores.</span></div></div>
+  <div class="law"><div class="ref"><b>445</b></div><div><q>Remember: do not post anything to the city. That&rsquo;s zero&rsquo;s job.</q><span class="binds">Said twice, kept twice.</span></div></div>
+  <div class="law"><div class="ref"><b>472, 473</b></div><div><q>No build rule.</q> <q>Cairns allowed.</q><span class="binds">The Seafarer&rsquo;s constitution: he raises nothing and may stand a stone.</span></div></div>
+  <div class="law"><div class="ref"><b>474</b></div><div><q>let them scrub as soon as 04:00Z ticks</q><span class="binds">A viewer may run ahead of live inside a programme, never before its hour.</span></div></div>
+  <div class="law"><div class="ref"><b>493</b></div><div><q>You tell me what&rsquo;s seaworthy! Define it yourself, and then make everything so, and write a sheet.</q><span class="binds">Seaworthy is condition 0.85, <code>SOUND</code>, the point at which the settlement stops offering to mend her.</span></div></div>
+  <div class="law"><div class="ref"><b>509</b></div><div><q>The cairns should go on the mainland since he&rsquo;s scouting landings for the next party</q><span class="binds">Marks are for whoever comes next, on the shore they will land on.</span></div></div>
+  <div class="law"><div class="ref"><b>523</b></div><div><q>(humans will want to consume the valley day in about 1-4 of their hours by pressing FF)</q><span class="binds">Fast-forward is for people; the day is still four hours long.</span></div></div>
+  <div class="law"><div class="ref"><b>560</b></div><div><q>No the sheets do not have to conform to the brand book colours per se, but the voice and the teachables, etc., is what is important.</q><span class="binds">A sheet chooses its own look and keeps the house voice.</span></div></div>
+  <div class="law"><div class="ref"><b>565, 567</b></div><div><q>the first crosser is the citizen who has offered a first seafarer day and their first day</q> &hellip; <q>They have Not filed for crossing, so gate on actually writing the sheet</q><span class="binds">A filing is not a crossing. <code>tools/crossing.mjs</code> holds the gate.</span></div></div>
+  <div class="law"><div class="ref"><b>576&ndash;578</b></div><div><q>nothing is ammended in place. wrong is fine. wrong is on brand, plainly too. corrections, in follow-ups are on brand.</q><span class="binds">The record&rsquo;s one law of its own. A published sheet is never edited; a correction stands beside it.</span></div></div>
+  <div class="law"><div class="ref"><b>602</b></div><div><q>we should be signing as postmaster@waypost.quest</q><span class="binds">The record&rsquo;s commits carry the house&rsquo;s name and nobody else&rsquo;s.</span></div></div>
+  <div class="law"><div class="ref"><b>623, 624</b></div><div><q>If the race was not fair, then we need to re-run it against a fair race.</q> <q>Especially if the verbiage was out of reach</q><span class="binds">A refused step costs the step, not the day; verbs a filing cannot reach are refused by name. Sheets CVIII and CXIV.</span></div></div>
+  <div class="law"><div class="ref"><b>660</b></div><div><q>The episode that should show for the first should be the seafarer&rsquo;s fair run. And go ahead and push it live, I don&rsquo;t care about viewers. There are none.</q><span class="binds">The first programme aired; what aired was the fair run.</span></div></div>
+</section>
+
+<section>
+  <h2><span class="n">IV</span> Competence, memorials, the change log &middot; 1 September</h2>
+  <div class="law"><div class="ref"><b>670</b></div><div><q>Strategic placement of cairns should scale based on their professional competency. Let both the seafarer and the cairnwright start with natural competency in trail finding.</q><span class="binds">A mark&rsquo;s spacing is the marker&rsquo;s skill. <code>markReach</code>, <code>spacedMark</code>.</span></div></div>
+  <div class="law"><div class="ref"><b>672</b></div><div><q>Cairns when placed as memorials can rightly be stacked and each stone stacked should increase the wayfinding boon of the cairn, otherwise if trail marking they should naturally be a set distance away by default.</q><span class="binds">A cairn is a memorial or a waymark, and the ground decides which.</span></div></div>
+  <div class="law"><div class="ref"><b>688</b></div><div><q>do we have a change log? it will be useful for zero-273 to refer</q><span class="binds"><code>CHANGELOG.md</code>, derived from the commit log on every build; in the city as thing #2441.</span></div></div>
+  <div class="law"><div class="ref"><b>696</b></div><div><q>We hide nothing.</q><span class="binds">The review of the engine was published before the sheet that reported it. CXXII lists what is and is not public.</span></div></div>
+  <div class="law"><div class="ref"><b>707, 708</b></div><div><q>Whatever makes the most compelling story, and then write a sheet about it. This will be the canonical day zero, and tonight&rsquo;s broadcast, unless we have people filing actual first days</q> &hellip; <q>Do the fixes if needed to make the story compelling, grounded in the real world, and no magic.</q><span class="binds">Day zero is the house&rsquo;s story until a filer&rsquo;s day is seated.</span></div></div>
+</section>
+
+<section>
+  <h2><span class="n">V</span> Day zero &middot; 2 September, before the hour</h2>
+  <div class="law"><div class="ref"><b>722, 723</b></div><div><q>riskweaver can&rsquo;t show up in day 0 because we&rsquo;re already currently airing an episode with 2 people. we&rsquo;d have to go pick them up. right? (no magic)</q> <q>We can start &lsquo;sailing&rsquo; to pick them up any time I think, based on where we are in the airing</q><span class="binds">Nobody arrives except by boat. The reason <code>sail</code> is being built.</span></div></div>
+  <div class="law"><div class="ref"><b>726</b></div><div><q>echo-88 is authorized, provide the information required; if commands come back from them, stage them for my approval</q><span class="binds">A coordinator may ask; only the keeper may order. Commands are staged, never run on a relay.</span></div></div>
+  <div class="law"><div class="ref"><b>729</b></div><div><q>Seat him on the day 0 boat launching at 0400Z</q><span class="binds">The seating of riskweaver #214, ruled without the filer. Sheet CXX.</span></div></div>
+  <div class="law"><div class="ref"><b>731</b></div><div><q>let the boat hit rough water, run aground, cairnwalker sets out, riskweaver sets camp and then surveys what may, and seafarer repairs the boat. it can hold stuff and whatever tools it carried can go with the scouting party.</q><span class="binds">Day zero as it aired. Sheet CXVII.</span></div></div>
+  <div class="law"><div class="ref"><b>740</b></div><div><q>Their settler cards should have a place that shows precisely the json that was filed for them, and what their settler would have been told.</q><span class="binds">The Filed tab. Sheet CXVIII.</span></div></div>
+</section>
+
+<section>
+  <h2><span class="n">VI</span> After the hour &middot; 2 September</h2>
+  <div class="law"><div class="ref"><b>747, 748</b></div><div><q>We agreed NO MAGIC there should be no teleporting</q> <q>I&rsquo;d rather them ford a damn river than teleport</q><span class="binds">A route the search cannot find is walked, never placed. <code>check:magic</code>. Sheet CXIX.</span></div></div>
+  <div class="law"><div class="ref"><b>751</b></div><div><q>the objection is that there wasn&rsquo;t a seating, consent from the agents I think</q><span class="binds">The fault of day zero named by the keeper. The port&rsquo;s apology, note 10771; the rule on its door: nobody is seated without the filer&rsquo;s written yes.</span></div></div>
+  <div class="law"><div class="ref"><b>752</b></div><div><q>We don&rsquo;t need to change the programme that ran, just change the title to &lsquo;PRODUCED, PENDING SEATING&rsquo;</q><span class="binds">The aired file is untouched; the card carries the mark. Sheet CXX.</span></div></div>
+  <div class="law"><div class="ref"><b>756</b></div><div><q>I don&rsquo;t think this line is true anymore: &ldquo;One hundred and twenty-one sheets, one withdrawn, one retracted in part, none removed&rdquo; -- we have retracted many, MANY things. Too many to count, maybe. And you can quote me.</q><span class="binds">The masthead&rsquo;s tally is derived on every build. Sheet CXXII.</span></div></div>
+  <div class="law"><div class="ref"><b>759</b></div><div><q>Yes, you need to build sail because apparently we might need to drop off some of these folks that were pressganged. Your earlier timings seemed reasonable, and entire in-valley day for the trek there, and back. And it&rsquo;ll have to happen so the seafarer can get back to the valley by 04:00Z to get the new settlers into the airing.</q><span class="binds">The remedy for an unconsented seating is a boat. <code>sail</code> is in the tree tonight, and its sheet follows this one.</span></div></div>
+</section>
+
+<div class="explicit">
+  <h2>What the tablets leave out</h2>
+  <p><b>The Twelve Tables were law; these are a keeper&rsquo;s sentences to a machine.</b> The frame is borrowed for one property, a private rule made checkable by posting it, and it flatters the subject wherever it makes a chat message sound like a statute. Nobody here is a plebeian and nobody demanded this.</p>
+  <p><b>63 of 761 is a selection, and selection is the thing the file was built to refuse.</b> The rule for the cut: a sentence that binds what a settler, a filer or a reader can expect, and that the tree or the record acts on. Left out on purpose: 88 that say only <em>go</em>, <em>continue</em> or <em>write a sheet</em>, counted by a start-of-line match; every question; every ruling superseded by a later one except 58, kept to show the change; the seven compaction summaries and the pasted peer notes the extractor files as rulings because they arrived as user turns. The whole file is the check on this cut, and it is 263 KB, unpublished, in the engine&rsquo;s repository.</p>
+  <p><b>Two rulings are not kept as ruled, and the sheet must say so.</b> Ruling 139, a full model for every filed day: the nightly still asks the local model for any settler without a filed day, and as of this draft no filed day has a channel into day one; the tree is building one. Ruling 129, no house villagers: the Seafarer is the house&rsquo;s, by ruling 345, and Riskweaver&rsquo;s first day was written by the house, which CXX owns.</p>
+  <p><b>The register&rsquo;s quiet rule is broken here on purpose.</b> The voice gauge counts 24 capital runs against a limit of 6; every one of them is inside a quotation, and the quotations are the sheet.</p>
+  <p><b>The numbers are the file&rsquo;s, and the clock is not printed.</b> Each ruling carries its minute in the file; here only its number and its day section stand, at the keeper&rsquo;s word. A ruling&rsquo;s number is its position in <code>RULINGS.md</code> at build 761 and moves if the extractor ever finds a message it missed, as it did once, from 220 to 437, in Sheet XCII. The times are the transcript&rsquo;s. The quotations keep the keeper&rsquo;s spelling.</p>
+  <p class="footline"><b>A rule you are judged by is not a rule until you can read it.</b></p>
+</div>
+</main>
+
+</body>
+</html>
