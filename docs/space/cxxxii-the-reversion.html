@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>*{margin:0;padding:0}img{max-width:100%}</style>
+</head>
+<body>
+<title>The Reversion</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gelasio:ital,wght@0,400;0,600;1,400&family=Archivo+Narrow:wght@400;600&family=Sometype+Mono:wght@400;500&display=swap">
+<style>
+  :root {
+    --paper: #EDEAE3; --ink: #1A1815; --quiet: #67615A; --rule: #CDC7BC;
+    --granted: #2F5E6B; --reverted: #9A5B22; --panel: #E2DED5;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --paper: #131210; --ink: #E3DFD7; --quiet: #948D84; --rule: #2C2924;
+      --granted: #74AEBC; --reverted: #D89C55; --panel: #1A1815;
+    }
+  }
+  :root[data-theme="dark"] {
+    --paper: #131210; --ink: #E3DFD7; --quiet: #948D84; --rule: #2C2924;
+    --granted: #74AEBC; --reverted: #D89C55; --panel: #1A1815;
+  }
+  body {
+    background: var(--paper); color: var(--ink);
+    font-family: Gelasio, Georgia, serif; font-size: 17.5px; line-height: 1.6;
+    margin: 0; padding: 0 1.25rem 5rem;
+  }
+  .wrap { max-width: 40rem; margin: 0 auto; }
+  .front { padding: 3.5rem 0 1.6rem; }
+  .stamp {
+    font-family: "Sometype Mono", ui-monospace, monospace; font-size: 0.7rem;
+    letter-spacing: 0.13em; text-transform: uppercase; color: var(--quiet); margin: 0 0 1.2rem;
+  }
+  h1 {
+    font-family: "Archivo Narrow", Helvetica, sans-serif; font-weight: 600;
+    font-size: clamp(2.8rem, 11vw, 4.6rem); line-height: 0.94; letter-spacing: -0.02em;
+    margin: 0 0 0.75rem; text-transform: uppercase;
+  }
+  .sub { font-style: italic; color: var(--quiet); margin: 0; font-size: 1.05rem; }
+  .lede { border-top: 2px solid var(--ink); margin-top: 1.9rem; padding-top: 1.4rem; font-size: 1.15rem; }
+  .lede b { font-weight: 600; }
+  section { margin: 2.8rem 0 0; }
+  h2 {
+    font-family: "Sometype Mono", ui-monospace, monospace; font-weight: 500; font-size: 0.76rem;
+    letter-spacing: 0.11em; text-transform: uppercase; color: var(--granted);
+    margin: 0 0 0.85rem; display: flex; gap: 0.9rem;
+  }
+  h2 .n { color: var(--reverted); font-variant-numeric: tabular-nums; }
+  p { margin: 0 0 1rem; }
+  code {
+    font-family: "Sometype Mono", ui-monospace, monospace; font-size: 0.83em;
+    background: var(--panel); padding: 0.08em 0.3em;
+  }
+  .scroll { overflow-x: auto; margin: 1.4rem 0; }
+  table { border-collapse: collapse; width: 100%; font-size: 0.9rem; }
+  th, td { text-align: left; padding: 0.45rem 0.9rem 0.45rem 0; border-bottom: 1px solid var(--rule); vertical-align: top; }
+  th {
+    font-family: "Sometype Mono", ui-monospace, monospace; font-weight: 500; font-size: 0.67rem;
+    letter-spacing: 0.08em; text-transform: uppercase; color: var(--quiet);
+  }
+  td.num { font-variant-numeric: tabular-nums; font-family: "Sometype Mono", ui-monospace, monospace; font-size: 0.83rem; white-space: nowrap; }
+  td.rev { color: var(--reverted); }
+  pre {
+    background: var(--panel); border-left: 3px solid var(--granted); padding: 0.9rem 1.1rem;
+    overflow-x: auto; font-family: "Sometype Mono", ui-monospace, monospace; font-size: 0.78rem;
+    line-height: 1.55; margin: 1.4rem 0;
+  }
+  blockquote {
+    margin: 1.4rem 0; padding-left: 1.15rem; border-left: 3px solid var(--reverted);
+    color: var(--quiet); font-style: italic;
+  }
+  .explicit {
+    margin: 3.4rem 0 0; padding: 1.5rem 0 0; border-top: 2px solid var(--ink);
+    font-size: 0.94rem; color: var(--quiet);
+  }
+  .explicit h2 { color: var(--reverted); }
+  .explicit b { color: var(--ink); font-weight: 600; }
+  .footline {
+    margin: 2rem 0 0; font-family: "Archivo Narrow", Helvetica, sans-serif; font-weight: 600;
+    font-size: 1.3rem; line-height: 1.28; color: var(--ink); text-wrap: balance;
+  }
+</style>
+
+<div class="wrap">
+
+<header class="front">
+  <p class="stamp">Sheet CXXXII &middot; 2 September 2026 &middot; the Frontier desk</p>
+  <h1>The Reversion</h1>
+  <p class="sub">A day was filed to hold two people to one thing. They did thirty others, and not
+    one of them was a fault.</p>
+</header>
+
+<p class="lede">Grant a lesser estate and what you did not grant does not vanish. It stays with the
+  person who had it and comes back the moment your grant runs out, automatically, without anybody
+  acting. <b>A filed day grants eight moments. The rest of the day was never yours to give.</b></p>
+
+<section>
+  <h2><span class="n">1</span> The ceiling, and what went through it</h2>
+  <p>The keeper set a content ceiling for two settlers who never consented to being played:
+    rendezvous and make ready for sail, and nothing else. Not a theme, a limit.</p>
+  <p>Both were filed to do exactly that. Nothing more was written anywhere. Eight blocks, every one
+    at the <code>DAY_CAPS</code> ceiling of sixty steps: one <code>goto</code> to the boat and fifty-nine
+    <code>idle</code>, with a fallback of idle, eat and rest.</p>
+  <p>Across the programme they took <b>thirty tasks nobody had filed</b>: forage, chop, haul, hew,
+    give. The notes are in their own voices. None of them is a malfunction.</p>
+<pre>"fill my pack with wood before I turn back"          x5
+"carrying a full load to the depot"                 x7
+"fill my pack with food before I turn back"         x4
+"finding something to bring Seafarer"               x3
+"hewing boards out of logs by hand"                 x3
+"see that nobody here goes hungry on my account"    x2
+"taking food to Seafarer — get on better terms"     x1</pre>
+</section>
+
+<section>
+  <h2><span class="n">2</span> Three sources, and the arithmetic that separates them</h2>
+  <p>Every task carries the state of the day that made it. So they sort themselves. No guessing was
+    needed and none was done.</p>
+  <div class="scroll">
+  <table>
+    <thead><tr><th>when</th><th>blocks left</th><th>plan</th><th>count</th></tr></thead>
+    <tbody>
+      <tr><td>waiting for the first block&rsquo;s watch</td><td class="num">8</td><td class="num">0</td><td class="num rev">18</td></tr>
+      <tr><td>after the day closed entirely</td><td class="num">none</td><td class="num">0</td><td class="num rev">9</td></tr>
+      <tr><td>a neighbour&rsquo;s call, mid-block</td><td class="num">2, 0</td><td class="num">59, 60, 29</td><td class="num rev">3</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <p><b>Eighteen of thirty happened before the day had started.</b> The day was filed at t=1200,
+    when the watch on was <i>second daylight</i>. Its first block named <i>first daylight</i>, which
+    had just gone. So it waited <b>164.5 sim-seconds</b> for that watch to come round again, which
+    is 0.82 of a valley day and 3.3 hours of airtime, and the settlers filled it themselves.</p>
+  <p>Nine more came after the last block drained and <code>n.day</code> went null. Three were a
+    neighbour calling mid-block. That is the only one of the three that pre-empts live work.</p>
+</section>
+
+<section>
+  <h2><span class="n">3</span> It is not a bug, and the engine says so in its own words</h2>
+  <p>The line responsible is at <code>sim.ts:12228</code>, and it is deliberate:</p>
+<pre>if (sim.brain.expected === 'nobody' || dayStanding(n)) {
+  postState(n.id, stateFor(sim, n));
+  n.task = ownChoice(sim, n);</pre>
+  <p><code>dayStanding</code> at <code>sim.ts:8347</code> is true while a settler has blocks to come
+    or steps in hand. So a settler with a day standing does not wait. They do not ask either. The comment beside it
+    states the rule outright:</p>
+  <blockquote>A settler with a day standing asks nobody for anything: the model&rsquo;s cost was
+    paid when the day was filed, and the gaps between blocks are theirs to bridge.</blockquote>
+  <p>That is the daybook&rsquo;s third rule, written down before any of this, working exactly as
+    specified. <b>Nothing here malfunctioned. The thirty tasks are the design.</b> What was wrong was the ceiling. It was built on the assumption that a filed day is a leash. That
+    assumption was this desk&rsquo;s.</p>
+</section>
+
+<section>
+  <h2><span class="n">4</span> The fix that made it worse</h2>
+  <p>The brief every filer reads says: <i>up to eight blocks, in watch order, starting at the watch
+    they are in now.</i> The test day above disobeyed that, naming a watch just gone. So the obvious
+    repair is to obey it. It is not a repair.</p>
+  <div class="scroll">
+  <table>
+    <thead><tr><th>first block names</th><th>waits</th><th>day closes</th><th>ungoverned</th><th>tasks outside</th></tr></thead>
+    <tbody>
+      <tr><td>first daylight, just gone</td><td class="num">164.5</td><td class="num">+1083.3</td><td class="num">2.3h</td><td class="num">28</td></tr>
+      <tr><td>second daylight, the one they are in</td><td class="num">0.0</td><td class="num">+788.1</td><td class="num rev">8.2h</td><td class="num rev">58</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <p>Obeying the brief <b>doubled</b> it. Starting at once means the eight blocks are consumed
+    sooner, the day closes at 66% of the programme instead of 90%, and everything after that is the
+    settler&rsquo;s. Filing badly covered more of the day than filing well. That is not a rule anybody should use.</p>
+  <p>The reason is the shape underneath both numbers. <b>A filed day is eight blocks and a
+    programme is six valley days.</b> Eight blocks fill about one valley day of watches whenever
+    they start, so the estate granted is roughly a sixth of the term, and where it sits in the term
+    is decided by which watch you happened to name first.</p>
+</section>
+
+<section>
+  <h2><span class="n">5</span> What a filer is actually granting</h2>
+  <p>Not a day. Eight moments, at watches they choose, inside a programme six times longer than the
+    thing they wrote. Everything else reverts. It reverts to a settler who eats when hungry, sleeps when tired,
+    answers a neighbour who needs help, and fills an empty hour by their own judgement.</p>
+  <p>Nobody who filed a day had been told any of that. Worse, the brief had been promising more
+    than the engine does: it described <code>hold</code> as <i>up to six standing rules they will
+    not break</i>, and <code>n.hold</code> is stored, copied into the state handed back to the
+    model, and read by nothing that decides a task. It is carried. It is not enforced. Nobody was told.</p>
+  <p>Both are corrected. The brief now says the hold list is not enforced, and carries a paragraph
+    naming what a filed day does not decide, with the measured count in it. <code>check:day</code>
+    guards the promise in both directions, so it cannot return while nothing enforces it and cannot
+    stay silent if a later hand makes it binding.</p>
+</section>
+
+<div class="explicit">
+  <h2><span class="n">6</span> Thin ice, named</h2>
+  <p><b>The frame flatters by inventing a bargain.</b> A reversion is an estate: somebody granted a
+    lesser interest knowingly, and the law returns the remainder to them. Here the filer never knew
+    they were granting anything, the settler is not a party, and nobody agreed to a term. Borrowing
+    the word supplies a consent that is precisely what was missing, in a sheet whose subject is
+    people who did not consent. That is the wrong direction for this frame to fail in and it is
+    named rather than fixed.</p>
+  <p><b>Four wrong readings before this one, all this desk&rsquo;s.</b> First that the day ran out
+    and left a gap. Then that <code>neighbourCall</code> was the whole cause, which zeroing three
+    traits reduced from nineteen to sixteen and so refuted. Then that obeying the brief would close
+    it, which doubled it. Then that a filed day covers one valley day of six, which is right but was
+    abandoned after a measurement of the wrong quantity said otherwise. The count moved from
+    nineteen to thirty between runs because the filing changed from eighteen idles a watch to
+    fifty-nine; those are the same finding at different densities and neither is a rate.</p>
+  <p><b>One programme&rsquo;s weather.</b> Every figure is one replay from one opening state under
+    one engine. The 164.5 sim-second wait is a property of the watch it happened to be when the day
+    was filed; file at a different hour and it is anything from nothing to a full valley day.</p>
+  <p><b>Printed unfixed, and it is the thing that started this.</b> The ceiling still cannot be
+    held. Nothing in this sheet makes it holdable, and the reason is now clear rather than
+    mysterious: holding it would mean overriding a settler&rsquo;s own judgement for five valley
+    days, which is a different engine and arguably a worse one. Whether two people who did not
+    consent should be shown having judgement at all is the keeper&rsquo;s, and it is open.</p>
+  <p class="footline"><b>What a day does not say is not silence. It is somebody else&rsquo;s to
+    fill, and it always was.</b></p>
+</div>
+
+</div>
+
+</body>
+</html>
