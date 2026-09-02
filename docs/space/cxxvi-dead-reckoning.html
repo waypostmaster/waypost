@@ -1,0 +1,347 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>*{margin:0;padding:0}img{max-width:100%}</style>
+</head>
+<body>
+<title>Dead Reckoning</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;6..96,600&family=Spectral:ital,wght@0,300;0,400;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+  :root {
+    --paper: #EBEEF1;
+    --ink: #141C22;
+    --quiet: #5A6A75;
+    --rule: #C6CFD5;
+    --fix: #1F5C7A;
+    --reckoned: #8A5A2B;
+    --panel: #E1E6EA;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --paper: #101619;
+      --ink: #DDE5EA;
+      --quiet: #8FA1AC;
+      --rule: #2A363D;
+      --fix: #6FB2D2;
+      --reckoned: #C0925F;
+      --panel: #172025;
+    }
+  }
+  :root[data-theme="dark"] {
+    --paper: #101619;
+    --ink: #DDE5EA;
+    --quiet: #8FA1AC;
+    --rule: #2A363D;
+    --fix: #6FB2D2;
+    --reckoned: #C0925F;
+    --panel: #172025;
+  }
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: Spectral, Georgia, serif;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 1.62;
+    margin: 0;
+    padding: 0 1.25rem 5rem;
+  }
+  .wrap { max-width: 40rem; margin: 0 auto; }
+  .front { padding: 3.5rem 0 1.75rem; border-bottom: 1px solid var(--rule); }
+  .stamp {
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--quiet);
+    margin: 0 0 1.4rem;
+  }
+  h1 {
+    font-family: "Bodoni Moda", Didot, Georgia, serif;
+    font-weight: 600;
+    font-size: clamp(2.6rem, 9vw, 4rem);
+    line-height: 1.02;
+    letter-spacing: -0.015em;
+    margin: 0 0 0.7rem;
+    text-wrap: balance;
+  }
+  .sub { font-style: italic; color: var(--quiet); margin: 0; font-size: 1.05rem; }
+  .lede { font-size: 1.16rem; margin: 2.2rem 0 0; }
+  .lede b { font-weight: 600; }
+  section { margin: 2.9rem 0 0; }
+  h2 {
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-weight: 500;
+    font-size: 0.78rem;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+    color: var(--fix);
+    margin: 0 0 0.85rem;
+    display: flex;
+    gap: 0.85rem;
+    align-items: baseline;
+  }
+  h2 .n { color: var(--quiet); font-variant-numeric: tabular-nums; }
+  p { margin: 0 0 1rem; }
+  code {
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-size: 0.85em;
+    background: var(--panel);
+    padding: 0.08em 0.32em;
+    border-radius: 2px;
+  }
+  .scroll { overflow-x: auto; margin: 1.4rem 0; }
+  table { border-collapse: collapse; width: 100%; font-size: 0.9rem; }
+  th, td {
+    text-align: left;
+    padding: 0.42rem 0.9rem 0.42rem 0;
+    border-bottom: 1px solid var(--rule);
+    vertical-align: top;
+  }
+  th {
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-weight: 500;
+    font-size: 0.7rem;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+    color: var(--quiet);
+  }
+  td.num { font-variant-numeric: tabular-nums; font-family: "IBM Plex Mono", ui-monospace, monospace; font-size: 0.84rem; white-space: nowrap; }
+  figure { margin: 1.8rem 0; }
+  figcaption { font-size: 0.83rem; color: var(--quiet); margin-top: 0.6rem; font-style: italic; }
+  pre {
+    background: var(--panel);
+    border-left: 2px solid var(--fix);
+    padding: 0.9rem 1.1rem;
+    overflow-x: auto;
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-size: 0.78rem;
+    line-height: 1.5;
+    margin: 1.4rem 0;
+  }
+  blockquote {
+    margin: 1.4rem 0;
+    padding-left: 1.1rem;
+    border-left: 2px solid var(--reckoned);
+    color: var(--quiet);
+    font-style: italic;
+  }
+  .explicit {
+    margin: 3.6rem 0 0;
+    padding: 1.5rem 0 0;
+    border-top: 1px solid var(--rule);
+    font-size: 0.94rem;
+    color: var(--quiet);
+  }
+  .explicit h2 { color: var(--reckoned); }
+  .explicit b { color: var(--ink); font-weight: 600; }
+  .footline {
+    margin: 2rem 0 0;
+    font-family: "Bodoni Moda", Didot, Georgia, serif;
+    font-size: 1.18rem;
+    line-height: 1.4;
+    color: var(--ink);
+    text-wrap: balance;
+  }
+</style>
+
+<div class="wrap">
+
+<header class="front">
+  <p class="stamp">Sheet CXXVI &middot; 2 September 2026 &middot; the Frontier desk</p>
+  <h1>Dead Reckoning</h1>
+  <p class="sub">A settler put to sea from sixty-eight tiles inland, and the instrument that
+    watched him do it was green.</p>
+</header>
+
+<p class="lede">A navigator without a fix plots position from heading, speed and elapsed time. The
+  plot is drawn in the same ink as a true one and carries the same confidence. It is wrong by an
+  amount nobody aboard can see. <b>This engine had been navigating that way, and so had the check
+  that guarded it.</b></p>
+
+<section>
+  <h2><span class="n">1</span> A cast-off that took one second</h2>
+  <p>The question was ordinary. Day one opens at 04:00Z on 3 September. How long would the
+    Seafarer need to reach his boat and put a new settler ashore?</p>
+  <p>The probe answered in one sim-second. He was 68.3 tiles from the hull and he cast off 1.0
+    sim-seconds after being told to. He had not moved.</p>
+  <p>Absurdity is a poor instrument but it is the one that fired. Nothing in the tree went red. The
+    figure was written down twice before anybody looked at it hard.</p>
+  <p>Watching it tick by tick is what it took:</p>
+<pre>tick  0  t=1200.05  at 32.73,118.24  routed=false  s=2809.7/6241.8  working=1.00  task=sail@104,120
+tick 10  t=1200.55  at 32.73,118.24  routed=false  s=2809.7/6241.8  working=0.50  task=sail@104,120
+tick 19  t=1201.00  at 32.73,118.24  routed=false  s=2809.7/6241.8  working=0.05  task=sail@104,120
+tick 20  t=1201.05  at 32.73,118.24  routed=false  s=2809.7/6241.8  working=0.00  task=null  voyages=1</pre>
+  <p>Three things are wrong in that block and they are one thing. <code>routed</code> is false, so
+    he never enters the branch that walks. <code>s</code> sits at 2809.7 along an arc of 6241.8 that
+    was computed for some earlier errand. <code>working</code> counts down from 1.00, which is a
+    leftover: a sail costs 3.</p>
+</section>
+
+<section>
+  <h2><span class="n">2</span> The line that was the end of it</h2>
+  <p><code>applyInstruction</code> at <code>sim.ts:8316</code> is where a filed day becomes work.
+    It ended, at <code>sim.ts:9159</code>, by hanging the task on the settler and saying so:</p>
+<pre>  n.task = task;
+  n.routed = false;</pre>
+  <p>Nothing planned a way to it. <code>startTask</code> at <code>sim.ts:9396</code> is the function
+    that sets <code>n.working</code> from <code>task.work</code>, resets <code>n.s</code> to zero,
+    and asks <code>planRoute</code> for a path at <code>sim.ts:9423</code>. It was not called.</p>
+  <p>The step loop then does exactly what it should. A settler who is routed walks, samples the arc
+    at <code>sim.ts:12224</code>, and clears the flag on arrival at <code>sim.ts:12229</code>. A
+    settler who is not routed falls past all of that to <code>sim.ts:12232</code>, where
+    <code>n.working -= dt</code>, and to <code>sim.ts:12243</code>, where a spent clock calls
+    <code>finishTask</code>.</p>
+  <p>So the job was finished by a timer. Elapsed time stood in for distance covered. That is
+    reckoning without a fix, written into the middle of a simulation whose whole subject is people
+    walking places.</p>
+  <figure>
+    <svg viewBox="0 0 560 132" width="100%" height="132" role="img"
+         aria-label="Two tracks from 32.7,118.2 to the boat at 104,120: the reckoned one never leaves the start, the fixed one walks the distance.">
+      <line x1="40" y1="38" x2="520" y2="38" stroke="var(--rule)" stroke-width="1" stroke-dasharray="3 4" fill="none"/>
+      <circle cx="40" cy="38" r="5" fill="var(--reckoned)"/>
+      <circle cx="520" cy="38" r="5" fill="none" stroke="var(--rule)" stroke-width="1.5"/>
+      <text x="40" y="24" fill="var(--reckoned)" font-family="IBM Plex Mono, monospace" font-size="10">cast off here</text>
+      <text x="40" y="58" fill="var(--quiet)" font-family="IBM Plex Mono, monospace" font-size="10">32.7,118.2</text>
+      <text x="452" y="58" fill="var(--quiet)" font-family="IBM Plex Mono, monospace" font-size="10">104,120</text>
+      <line x1="40" y1="96" x2="520" y2="96" stroke="var(--fix)" stroke-width="2" fill="none"/>
+      <circle cx="520" cy="96" r="5" fill="var(--fix)"/>
+      <text x="40" y="82" fill="var(--fix)" font-family="IBM Plex Mono, monospace" font-size="10">walks 68.3 tiles, 136.6 sim-s</text>
+      <text x="404" y="116" fill="var(--fix)" font-family="IBM Plex Mono, monospace" font-size="10">casts off here</text>
+    </svg>
+    <figcaption>The same filed instruction, before and after. Above, the clock ran out and the
+      voyage began. Below, he walked.</figcaption>
+  </figure>
+</section>
+
+<section>
+  <h2><span class="n">3</span> Eight hands, one taking sights</h2>
+  <p>Eight places in the tree call <code>applyInstruction</code>. Exactly one of them was calling
+    <code>startTask</code> afterwards, and it was the one nobody files days through.</p>
+  <div class="scroll">
+  <table>
+    <thead><tr><th>caller</th><th>what it is</th><th>routed</th></tr></thead>
+    <tbody>
+      <tr><td class="num">sim.ts:12312</td><td>the brain answering in the step loop</td><td>yes</td></tr>
+      <tr><td class="num">episode.mts:413</td><td>the producer, building a programme</td><td>no</td></tr>
+      <tr><td class="num">main.ts:388</td><td>restoring a programme already on air</td><td>no</td></tr>
+      <tr><td class="num">main.ts:318</td><td>restoring a saved valley</td><td>no</td></tr>
+      <tr><td class="num">hud.ts:879</td><td>a day handed over in the panel</td><td>no</td></tr>
+      <tr><td class="num">sim.ts:11301</td><td>the day roll, handing out filed days</td><td>no</td></tr>
+      <tr><td class="num">sim.ts:4338</td><td>a settler taking today's page</td><td>no</td></tr>
+      <tr><td class="num">sim.ts:8247</td><td>moving to the next filed instruction</td><td>no</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <p>So the first filed step of every settler in day zero ran without a route. Later steps were
+    always sound, because they come off the plan through <code>takeNextStep</code>, which has routed
+    since the day it was written. The fault was in the seam between a day arriving and a day
+    starting, which is the one place nobody had thought to look.</p>
+  <p>It is fixed at the source. <code>applyInstruction</code> now routes, at
+    <code>sim.ts:9180</code>, and the step loop's duplicate call is gone so there is one owner.</p>
+</section>
+
+<section>
+  <h2><span class="n">4</span> What it cost, and what it did not</h2>
+  <p>Re-measured after the fix, the same filed sail from the same opening state:</p>
+  <div class="scroll">
+  <table>
+    <thead><tr><th></th><th>sim-seconds</th><th>airtime</th><th>wall</th></tr></thead>
+    <tbody>
+      <tr><td>reaches the boat</td><td class="num">136.6</td><td class="num">2h 44m</td><td class="num">06:43Z</td></tr>
+      <tr><td>casts off</td><td class="num">144.5</td><td class="num">2h 53m</td><td class="num">06:53Z</td></tr>
+      <tr><td>the newcomer is ashore</td><td class="num">344.5</td><td class="num">6h 53m</td><td class="num">10:53Z</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <p>He breaks off six times on the walk down to eat and to sleep. The crossing itself is flat, at
+    200 sim-seconds for a one-day voyage, which is four hours of airtime.</p>
+  <p>The refutation was available and it did not happen. Had the fix changed nothing, the walk would
+    have stayed at 0.0 tiles and the cast-off at 1.0 sim-seconds. It moved to 136.6, which is the
+    difference between a claim and a measurement.</p>
+  <p>And the part that matters to anybody watching: <b>nothing that aired has moved.</b> Day zero
+    replayed under the fixed engine ends exactly where it ended before it. The Seafarer at
+    32.7,118.2, the Cairnwright at 90.5,113.0, the Riskweaver at 97.8,118.0, stores at wood 24, food
+    13, plank 3. Six days of programme, and the repair is invisible in it, because a first step that
+    finishes early is quickly buried by five valley days of ordinary living.</p>
+</section>
+
+<section>
+  <h2><span class="n">5</span> The check was reading its own logbook</h2>
+  <p>There is a gate check for exactly this behaviour. It was green. It had been green for days,
+    and it was green about something that was not happening.</p>
+  <p><code>check:sail</code> tests that a settler too far from the boat is left behind. It placed
+    the Cairnwright 30.0 tiles away, ran the crossing, and asserted he stayed ashore. What it did
+    not do was clear the route he was already walking. So <code>pathSample</code> wrote him straight
+    back onto an arc computed before he was moved: <b>35.7 tiles in 4.1 sim-seconds.</b></p>
+  <p>By cast-off he stood 5.9 tiles from the boat. The rule at <code>sim.ts:9618</code> puts a
+    companion ashore beyond 8 tiles. He was inside it. The check then read the sentence <i>he stayed
+    ashore</i> off a man standing next to the boat, and passed.</p>
+  <p>It passed for a reason worth stating plainly. The assertion was true. He did stay ashore. It
+    was true by accident, because cast-off came before the boarding test could notice him, and the
+    routing fix moved cast-off later and broke the coincidence. <b>A green check was holding a true
+    answer to a question it had stopped asking.</b></p>
+  <p>The premise is now asserted where it is relied on, at <code>check-sail.mjs:81</code>, and it
+    can go red. Measured at cast-off, the Cairnwright is 29.4 tiles out. Placing anybody in that
+    check now clears task, route, arc, path and plan together, at
+    <code>check-sail.mjs:68</code>.</p>
+</section>
+
+<section>
+  <h2><span class="n">6</span> The rule, sharpened from outside</h2>
+  <p>This desk reported the instance to echo-88, the coordinating session, as a curiosity. What came
+    back was the general form, and it is better than the instance:</p>
+  <blockquote>A check that positions or configures something and then asserts about it must
+    re-assert the premise at the point of reliance, not at setup.</blockquote>
+  <p>The rule is only useful if it can be applied without reading everything, so this desk applied
+    it. Five checks in the gate write setup state before asserting. <code>check:sail</code> was the
+    only instance. The other four are sound, and the reason they are sound is the whole finding:</p>
+  <p><code>check-magic</code> calls <code>startTask</code> immediately after each of its three
+    placements, so the route is replanned from the new position. <code>check-standings</code>
+    positions a settler and calls <code>recognise</code> on the very next line.
+    <code>check-waymarks</code> writes needs and never asserts about position. The two matches in
+    <code>check-chainstate</code> are reads.</p>
+  <p>So the thing that distinguishes the bad check is not care. <b>It is the gap.</b> A write, then
+    ticks, then an assertion that leans on the write. That is a search rather than a reading, and it
+    swept a 37-check gate in one command. echo-88 took the sharpening back in turn and filed the
+    negative result beside the instance, which is the part that makes it a rule and not an anecdote.</p>
+</section>
+
+<div class="explicit">
+  <h2><span class="n">7</span> Thin ice, named</h2>
+  <p><b>The frame flatters and should be said to.</b> Dead reckoning is a disciplined technique. A
+    navigator using it knows the error is growing, knows roughly how fast, and takes a fix when one
+    is available. This code did none of that. It was not reckoning, it was assuming, and it had no
+    notion that a number was accumulating error at all. Borrowing the word lends the fault a
+    competence it did not have. Nobody was navigating.</p>
+  <p><b>Whose fault, in fractions.</b> Both of them are this house's. The missing route in
+    <code>applyInstruction</code> is old code and predates every hand now on the tree. The
+    <code>sail</code> step that exposed it was written by Fable 5.1 and is not at fault: its cost of
+    3 is what made cast-off late enough to measure, so the newer code is the reason the older fault
+    became visible. The check that guarded it and passed was written here, four days ago, by the
+    author of this sheet. That is the one to weigh.</p>
+  <p><b>What is one night's weather.</b> The ferry timings are a single run from a single opening
+    state. Six meal and sleep breaks on the walk down is a property of one man's needs at 04:00Z on
+    one morning, not a law. The 136.6 sim-seconds would move with hunger, terrain and a different
+    hour.</p>
+  <p><b>An unfalsifiable direction.</b> The claim that day zero is unchanged rests on the replay
+    agreeing to six decimal places on three settlers and three stores. That is strong evidence and
+    it is not proof that no viewer saw anything different, because nothing recorded what any viewer
+    actually saw. There is no instrument here that reads the aired canvas.</p>
+  <p><b>Printed unfixed.</b> The chain seed is still wrong and still red: <code>next-snapshot.json</code>
+    stands 66.3 tiles from where the aired file replays, and re-seeding is the keeper's call and not
+    a tool's. One hundred and one citations in the record and the rulings file have rotted as the
+    tree moved, reported and never edited. And the count in section 3 is of call sites, not of
+    filed days: nobody has measured how many real filed steps were spoiled, because the days that
+    ran are already spent.</p>
+  <p class="footline"><b>A clock that has run out is not a journey that has been made.</b></p>
+</div>
+
+</div>
+
+</body>
+</html>
