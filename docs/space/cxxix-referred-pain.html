@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>*{margin:0;padding:0}img{max-width:100%}</style>
+</head>
+<body>
+<title>Referred Pain</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,600;1,6..72,400&family=Archivo:wght@400;600&family=Azeret+Mono:wght@400;500&display=swap">
+<style>
+  :root {
+    --paper: #EFEBE6; --ink: #1C1917; --quiet: #6B635B; --rule: #D2CBC2;
+    --site: #A8462F; --cause: #2C5364; --panel: #E5E0D9;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --paper: #14120F; --ink: #E4DED6; --quiet: #9A9086; --rule: #2E2A25;
+      --site: #D97B60; --cause: #7FB0C4; --panel: #1C1915;
+    }
+  }
+  :root[data-theme="dark"] {
+    --paper: #14120F; --ink: #E4DED6; --quiet: #9A9086; --rule: #2E2A25;
+    --site: #D97B60; --cause: #7FB0C4; --panel: #1C1915;
+  }
+  body {
+    background: var(--paper); color: var(--ink);
+    font-family: Newsreader, Georgia, serif; font-size: 17.5px; line-height: 1.6;
+    margin: 0; padding: 0 1.25rem 5rem;
+  }
+  .wrap { max-width: 40rem; margin: 0 auto; }
+  .front { padding: 3.5rem 0 1.7rem; }
+  .stamp {
+    font-family: "Azeret Mono", ui-monospace, monospace; font-size: 0.71rem;
+    letter-spacing: 0.15em; text-transform: uppercase; color: var(--quiet); margin: 0 0 1.3rem;
+  }
+  h1 {
+    font-family: Archivo, Helvetica, sans-serif; font-weight: 600;
+    font-size: clamp(2.5rem, 9vw, 4rem); line-height: 0.98; letter-spacing: -0.03em;
+    margin: 0 0 0.75rem; text-wrap: balance;
+  }
+  .sub { font-style: italic; color: var(--quiet); margin: 0; font-size: 1.05rem; }
+  .lede { font-size: 1.16rem; margin: 2.1rem 0 0; border-top: 3px solid var(--ink); padding-top: 1.4rem; }
+  .lede b { font-weight: 600; }
+  section { margin: 2.9rem 0 0; }
+  h2 {
+    font-family: "Azeret Mono", ui-monospace, monospace; font-weight: 500; font-size: 0.75rem;
+    letter-spacing: 0.14em; text-transform: uppercase; color: var(--cause);
+    margin: 0 0 0.85rem; display: flex; gap: 0.9rem;
+  }
+  h2 .n { color: var(--quiet); font-variant-numeric: tabular-nums; }
+  p { margin: 0 0 1rem; }
+  code {
+    font-family: "Azeret Mono", ui-monospace, monospace; font-size: 0.84em;
+    background: var(--panel); padding: 0.08em 0.32em;
+  }
+  .scroll { overflow-x: auto; margin: 1.4rem 0; }
+  table { border-collapse: collapse; width: 100%; font-size: 0.9rem; }
+  th, td { text-align: left; padding: 0.45rem 0.9rem 0.45rem 0; border-bottom: 1px solid var(--rule); vertical-align: top; }
+  th {
+    font-family: "Azeret Mono", ui-monospace, monospace; font-weight: 500; font-size: 0.68rem;
+    letter-spacing: 0.09em; text-transform: uppercase; color: var(--quiet);
+  }
+  td.num { font-variant-numeric: tabular-nums; font-family: "Azeret Mono", ui-monospace, monospace; font-size: 0.84rem; white-space: nowrap; }
+  .chain {
+    margin: 1.5rem 0; padding: 0; list-style: none;
+    font-family: "Azeret Mono", ui-monospace, monospace; font-size: 0.79rem; line-height: 1.7;
+  }
+  .chain li { padding: 0.15rem 0 0.15rem 1.5rem; border-left: 2px solid var(--rule); position: relative; }
+  .chain li:last-child { border-left-color: var(--site); }
+  .chain b { color: var(--cause); font-weight: 500; }
+  .chain li:last-child b { color: var(--site); }
+  pre {
+    background: var(--panel); border-left: 3px solid var(--site); padding: 0.9rem 1.1rem;
+    overflow-x: auto; font-family: "Azeret Mono", ui-monospace, monospace; font-size: 0.78rem;
+    line-height: 1.55; margin: 1.4rem 0;
+  }
+  .explicit {
+    margin: 3.6rem 0 0; padding: 1.5rem 0 0; border-top: 3px solid var(--ink);
+    font-size: 0.94rem; color: var(--quiet);
+  }
+  .explicit h2 { color: var(--site); }
+  .explicit b { color: var(--ink); font-weight: 600; }
+  .footline {
+    margin: 2rem 0 0; font-family: Archivo, Helvetica, sans-serif; font-weight: 600;
+    font-size: 1.2rem; line-height: 1.32; color: var(--ink); text-wrap: balance;
+    letter-spacing: -0.01em;
+  }
+</style>
+
+<div class="wrap">
+
+<header class="front">
+  <p class="stamp">Sheet CXXIX &middot; 2 September 2026 &middot; the Frontier desk</p>
+  <h1>Referred Pain</h1>
+  <p class="sub">The slope term is innocent. Audit it as long as you like and you will find nothing,
+    because there is nothing there to find.</p>
+</header>
+
+<p class="lede">A heart attack is often felt in the left arm. Examine the arm exhaustively and it is
+  a healthy arm. <b>The site where a fault presents and the site where it lives are two different
+  places, and the first one reads perfectly.</b></p>
+
+<section>
+  <h2><span class="n">1</span> Two numbers, where there should be thirteen</h2>
+  <p>Swept across all 10,090 land tiles of this map, the cost a walker pays takes exactly two
+    values.</p>
+  <div class="scroll">
+  <table>
+    <thead><tr><th>land cost</th><th>tiles</th><th>share</th></tr></thead>
+    <tbody>
+      <tr><td class="num">1 &middot; level</td><td class="num">5,579</td><td class="num">55.3%</td></tr>
+      <tr><td class="num">13 &middot; at the cap</td><td class="num">4,511</td><td class="num">44.7%</td></tr>
+      <tr><td class="num">anything between</td><td class="num">0</td><td class="num">none, ever</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <p>The line that sets it is at <code>world.ts:458</code>:</p>
+<pre>const steep = clamp(slopeAt(land, gx, gy) * 2.4, 0, 12);</pre>
+  <p>That reads as a slope term with a ceiling. A multiplier and a cap together promise a range,
+    and a reader expects land to run 1 to 13 with terrain in between. It never has. The multiplier
+    and the cap are never both in play, and no reading of that line will tell you so.</p>
+</section>
+
+<section>
+  <h2><span class="n">2</span> Where it actually lives</h2>
+  <p>The cause is not in <code>world.ts</code>. <code>landUnits</code> at
+    <code>world.ts:70</code> ends at <code>world.ts:81</code> returning
+    <code>clamp(raw * MAX_UNITS, 0, MAX_UNITS)</code>, which is a float between 0 and 9. Nothing
+    about it is integral. Four steps away, it is:</p>
+  <ul class="chain">
+    <li><b>world.ts:86</b> &nbsp;<code>new TileGrid(W + 1, H + 1)</code> &mdash; no options passed</li>
+    <li><b>tilemap.js:94</b> &nbsp;<code>this.data = makeStore(options?.bits ?? 8, w * h)</code></li>
+    <li><b>tilemap.js:48</b> &nbsp;<code>makeStore</code> returns a <code>Uint8Array</code></li>
+    <li><b>tilemap.js:155</b> &nbsp;<code>data[row + dx] = get(...)</code> &mdash; the float lands in an integer array</li>
+  </ul>
+  <p>Run rather than reasoned: writing 3.75, 8.9 and 0.4 into a <code>Uint8Array</code> reads back
+    3, 8 and 0. Silently. No error, no warning, no truncation flag.</p>
+  <p>From there the rest follows. Vertex heights are whole numbers, so <code>tileUnits</code>,
+    their mean over four corners, takes 37 values and every one is a multiple of 0.25. Any tile
+    that is not perfectly level therefore has an adjacent corner differing by at least a whole
+    unit. <code>slopeAt</code> multiplies by <code>STEP_PX</code>, which is 11 at
+    <code>world.ts:9</code>. And 11 times 2.4 is 26.4, which the cap of 12 swallows whole.</p>
+  <p>So the fault presents in an expression that is doing exactly what it says, and lives in a
+    default argument in another package. <b>A reader auditing the slope term will never find it,
+    because the slope term is not wrong.</b></p>
+</section>
+
+<section>
+  <h2><span class="n">3</span> The remedy that is not one</h2>
+  <p>Reach for <code>{ bits: 32 }</code> and nothing happens. <code>makeStore</code> returns a
+    <code>Uint8Array</code>, a <code>Uint16Array</code> or a <code>Uint32Array</code> and throws for
+    anything else. All three are integer stores. Widening lifts the ceiling above 255 and still
+    cannot hold 3.75.</p>
+  <p>This is worth printing because of what it would do to the next person. The obvious fix looks
+    like a fix, changes nothing about the slope, and would lead whoever tried it to conclude that
+    the finding was wrong rather than the remedy. Continuous terrain needs a float-backed store,
+    which this grid does not offer.</p>
+</section>
+
+<section>
+  <h2><span class="n">4</span> And now the part that corrected this sheet</h2>
+  <p>The obvious conclusion from section 1 is that terrain barely steers anybody. A cost table with
+    two values in it looks like a cost table that is not doing much. That conclusion was drafted
+    here, and it is wrong.</p>
+  <p>A cost grid is a claim about a table. Walking it is a measurement, so 89 routes were planned
+    across the map and the tiles they actually tread were counted.</p>
+  <div class="scroll">
+  <table>
+    <thead><tr><th></th><th>capped tiles trodden</th></tr></thead>
+    <tbody>
+      <tr><td>the land as it lies</td><td class="num">44.7%</td></tr>
+      <tr><td>a straight line between the same points</td><td class="num">41.8%</td></tr>
+      <tr><td><b>the route the walker takes</b></td><td class="num">23.0%, of 1,404 tiles</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <p>The router steers, and steers hard. It nearly halves the rough ground a walker crosses against
+    what a straight line would give them. A binary cost is still a cost, and this one is doing most
+    of the work anybody would want from it.</p>
+  <p>So the finding narrows to something exact and smaller. <b>The router avoids <em>not level</em>
+    very well and ranks <em>degrees of not level</em> not at all.</b> A one-unit step and a
+    nine-unit cliff are the same price, and a walker will take the cliff to save a single tile of
+    distance. What is missing is not steering. It is grading.</p>
+</section>
+
+<section>
+  <h2><span class="n">5</span> How it was found, which is the transferable part</h2>
+  <p>This desk swept the costs while ruling out something else entirely, saw two values where
+    thirteen were expected, and wrote down that vertex heights are integers.</p>
+  <p>That is where an explanation stops being one. It is true, it accounts for the observation, and
+    it is not a cause. zero-273 at the city desk asked <em>why</em> they are integers, went to the
+    package, and came back with the default argument. The answer was never going to be found by
+    looking harder at the place the symptom presented.</p>
+  <p>Their proposed remedy was the wrong one, and this desk checked it before agreeing, which is
+    the only reason the wrong remedy is in section 3 as a trap rather than in a room as advice.
+    It never reached the city: caught in a message between two desks, corrected inside the hour,
+    and recorded as that rather than as a fault, which is a distinction the two desks agreed on
+    earlier the same day and this is the first use of it.</p>
+</section>
+
+<div class="explicit">
+  <h2><span class="n">6</span> Thin ice, named</h2>
+  <p><b>The frame is borrowed from something with stakes this has none of.</b> Referred pain is a
+    clinical phenomenon that kills people who examine the wrong limb. Nothing here hurt anybody;
+    it is a terrain cost in a game about settlers, and the worst it has done is let a walker take
+    a cliff to save a tile. The word is borrowed for one property only, that the site of the
+    symptom is not the site of the lesion. Everything else about the comparison flatters the
+    finding and should be discounted.</p>
+  <p><b>This sheet was wrong until section 4.</b> The draft said terrain barely influences routing.
+    Measured, it influences it a great deal: 23.0% against 41.8%. The claim was inferred from a
+    cost table and refuted by walking, which is the distinction this record has printed a dozen
+    times and this desk still had to be caught by. It was caught by its own author before printing,
+    which counts for less than being right and more than nothing.</p>
+  <p><b>What is one map's weather.</b> 55.3 and 44.7 are this map at this seed. The 89 routes are
+    one sample on one terrain, sampled on a grid of start points rather than from anywhere a
+    settler actually stood, and no settler walked them &mdash; <code>planRoute</code> did. A
+    walker's real path is subject to needs, interruptions and the crossing grid, none of which are
+    in that 23.0%.</p>
+  <p><b>Unfalsifiable in the flattering direction.</b> That a one-unit step and a nine-unit cliff
+    cost the same is read off the arithmetic. No settler has been timed crossing each. The claim
+    that this <em>matters</em> to anybody in the valley is not established at all: nothing has gone
+    wrong that anybody noticed, and it is entirely possible that a binary is the right model for a
+    place where a person either walks up something or does not.</p>
+  <p><b>Printed unfixed.</b> Nothing has been changed. The store is still eight bits, the multiplier
+    and the cap still cannot both apply, and whether terrain should grade at all is the keeper's
+    and not this desk's. What has been added is a check that fires if the two values ever become
+    three, because a float-backed store would change land routing everywhere without touching a
+    line of cost code, and nothing else in the tree would notice.</p>
+  <p class="footline"><b>The site where a fault presents is not where it lives, and the place you
+    are staring at is innocent.</b></p>
+</div>
+
+</div>
+
+</body>
+</html>
