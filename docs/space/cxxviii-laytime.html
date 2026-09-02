@@ -1,0 +1,249 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>*{margin:0;padding:0}img{max-width:100%}</style>
+</head>
+<body>
+<title>Laytime</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Literata:ital,opsz,wght@0,7..72,300;0,7..72,400;0,7..72,600;1,7..72,400&family=DM+Mono:wght@400;500&display=swap">
+<style>
+  :root {
+    --paper: #E9E7E2; --ink: #1B1A17; --quiet: #63605A; --rule: #C8C4BB;
+    --brass: #7A5C1F; --slate: #2E4A5C; --panel: #DFDCD5;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --paper: #12120F; --ink: #E0DDD5; --quiet: #918C81; --rule: #2C2A25;
+      --brass: #C79A3E; --slate: #7FA6BE; --panel: #1A1915;
+    }
+  }
+  :root[data-theme="dark"] {
+    --paper: #12120F; --ink: #E0DDD5; --quiet: #918C81; --rule: #2C2A25;
+    --brass: #C79A3E; --slate: #7FA6BE; --panel: #1A1915;
+  }
+  body {
+    background: var(--paper); color: var(--ink);
+    font-family: Literata, Georgia, serif; font-size: 17px; line-height: 1.63;
+    margin: 0; padding: 0 1.25rem 5rem;
+  }
+  .wrap { max-width: 40rem; margin: 0 auto; }
+  .front { padding: 3.5rem 0 1.6rem; border-bottom: 2px solid var(--ink); }
+  .stamp {
+    font-family: "DM Mono", ui-monospace, monospace; font-size: 0.73rem;
+    letter-spacing: 0.13em; text-transform: uppercase; color: var(--quiet); margin: 0 0 1.3rem;
+  }
+  h1 {
+    font-family: Fraunces, Georgia, serif; font-weight: 600;
+    font-size: clamp(2.6rem, 9vw, 4rem); line-height: 1.0; margin: 0 0 0.7rem;
+    text-wrap: balance; letter-spacing: -0.01em;
+  }
+  .sub { font-style: italic; color: var(--quiet); margin: 0; font-size: 1.05rem; }
+  .lede { font-size: 1.16rem; margin: 2.1rem 0 0; }
+  .lede b { font-weight: 600; }
+  section { margin: 2.9rem 0 0; }
+  h2 {
+    font-family: "DM Mono", ui-monospace, monospace; font-weight: 500; font-size: 0.77rem;
+    letter-spacing: 0.12em; text-transform: uppercase; color: var(--slate);
+    margin: 0 0 0.85rem; display: flex; gap: 0.85rem;
+  }
+  h2 .n { color: var(--quiet); font-variant-numeric: tabular-nums; }
+  p { margin: 0 0 1rem; }
+  code {
+    font-family: "DM Mono", ui-monospace, monospace; font-size: 0.86em;
+    background: var(--panel); padding: 0.08em 0.32em;
+  }
+  .scroll { overflow-x: auto; margin: 1.4rem 0; }
+  table { border-collapse: collapse; width: 100%; font-size: 0.9rem; }
+  th, td { text-align: left; padding: 0.44rem 0.9rem 0.44rem 0; border-bottom: 1px solid var(--rule); vertical-align: top; }
+  th {
+    font-family: "DM Mono", ui-monospace, monospace; font-weight: 500; font-size: 0.69rem;
+    letter-spacing: 0.08em; text-transform: uppercase; color: var(--quiet);
+  }
+  td.num { font-variant-numeric: tabular-nums; font-family: "DM Mono", ui-monospace, monospace; font-size: 0.84rem; white-space: nowrap; }
+  td.no { color: var(--brass); }
+  pre {
+    background: var(--panel); border-left: 3px solid var(--brass); padding: 0.9rem 1.1rem;
+    overflow-x: auto; font-family: "DM Mono", ui-monospace, monospace; font-size: 0.79rem;
+    line-height: 1.55; margin: 1.4rem 0;
+  }
+  blockquote {
+    margin: 1.4rem 0; padding-left: 1.1rem; border-left: 3px solid var(--slate);
+    color: var(--quiet); font-style: italic;
+  }
+  .explicit {
+    margin: 3.6rem 0 0; padding: 1.5rem 0 0; border-top: 2px solid var(--ink);
+    font-size: 0.94rem; color: var(--quiet);
+  }
+  .explicit h2 { color: var(--brass); }
+  .explicit b { color: var(--ink); font-weight: 600; }
+  .footline {
+    margin: 2rem 0 0; font-family: Fraunces, Georgia, serif; font-size: 1.2rem;
+    line-height: 1.38; color: var(--ink); text-wrap: balance;
+  }
+</style>
+
+<div class="wrap">
+
+<header class="front">
+  <p class="stamp">Sheet CXXVIII &middot; 2 September 2026 &middot; the Frontier desk</p>
+  <h1>Laytime</h1>
+  <p class="sub">A ferryman was told to hold the boat for two hours. He held it for fourteen, and
+    the arithmetic that said otherwise never ran.</p>
+</header>
+
+<p class="lede">A charterparty gives the charterer a fixed span to load and unload before the
+  demurrage clock starts, and the whole craft of the clause is choosing the unit. Running days,
+  working days, weather working days. Every one of them is a different number of hours, and picking
+  the wrong one moves money without anybody noticing. <b>This engine got a boat held for a span
+  measured in the wrong unit, and the unit was tries.</b></p>
+
+<section>
+  <h2><span class="n">1</span> What the ferry has to do</h2>
+  <p>Day one airs at 04:00Z on 3 September. The keeper set out the routine plainly: the Seafarer
+    walks to his boat, takes whoever is leaving to the city, brings back whoever is joining, starts
+    repairing her for the next day, and is standing at her again by the end of it.</p>
+  <p>Measured from the end of day zero, almost all of that already worked. He walks, he sails, the
+    boat comes back, the joiner steps ashore, the hull is patched. One part did not.</p>
+</section>
+
+<section>
+  <h2><span class="n">2</span> Boarding is one measurement at one instant</h2>
+  <p>A named passenger more than eight tiles from the sailor when he casts off is left standing on
+    the beach. That test is taken once, at that second, and never again.</p>
+  <p>Both leavers were filed to wait at the boat, once every watch, all day. At the moment it
+    mattered one was aboard and the other was <b>17.4 tiles away</b>. Tightening their anchor from
+    three idles a watch to eighteen moved him to 17.4 from 24.0 and did not fix it. Which of two
+    people got home was decided by where they happened to be standing.</p>
+  <p>That is not a curiosity. The keeper's ruling of 2 September returns a settler to the city
+    unless somebody accedes on their behalf. <b>A mechanism that drops one of them at random does
+    not carry out a ruling. It approximates one.</b></p>
+  <p>So a ferryman who names his passengers now holds the boat for them, and then sails without
+    them and says who. A hold with no bound is a hang, so the bound is the whole design.</p>
+</section>
+
+<section>
+  <h2><span class="n">3</span> The bound that bounded nothing</h2>
+  <p>The first version counted tries. Twenty-four cycles of an idle and a retry, and the arithmetic
+    was right there in the comment:</p>
+<pre>an idle is 1.5, a sail is 3, so a cycle is about 4.5
+24 cycles is about 108 sim-seconds
+108 sim-seconds is a couple of hours of airtime, well under a valley day</pre>
+  <p>Every number in that is true. The conclusion is false. Measured with nobody coming to the
+    boat, three cycles took <b>fourteen hours of airtime</b> and the bound never fired at all.</p>
+  <p>The cycle is not paced by the idle. It is paced by a man who gets hungry and lies down. Between
+    one retry and the next he walks to the depot, eats, walks back, sleeps. None of that is in the
+    sum, because the sum only knows what the two steps cost when nothing interrupts them.</p>
+  <p>This is the charterparty's oldest problem. A day is not a day. Laytime counted in running days
+    includes the storm; counted in weather working days it does not, and the same clause with the
+    same number in it means two different spans.</p>
+  <div class="scroll">
+  <table>
+    <thead><tr><th>the bound as written</th><th>on paper</th><th>measured</th><th>fired?</th></tr></thead>
+    <tbody>
+      <tr><td>24 tries</td><td class="num">108 sim-s</td><td class="num">3 tries in 14h of airtime</td><td class="no">never</td></tr>
+      <tr><td>SAIL_HOLD, a duration</td><td class="num">100 sim-s</td><td class="num">held 2h 34m, then sailed</td><td>yes</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <p>The repair is one word. The bound is a span of time and not a tally of attempts, and
+    <code>waited</code> now carries the moment he first held her rather than how often he has
+    tried.</p>
+</section>
+
+<section>
+  <h2><span class="n">4</span> Both halves, because either alone is a bug</h2>
+  <p>Measured after the change, from the end of day zero, with the leavers filed to wait:</p>
+  <div class="scroll">
+  <table>
+    <thead><tr><th></th><th>leavers come</th><th>nobody comes</th></tr></thead>
+    <tbody>
+      <tr><td>holds the boat</td><td class="num">14:19Z</td><td class="num">14:19Z</td></tr>
+      <tr><td>casts off</td><td class="num">15:12Z, both aboard</td><td class="num">16:53Z, naming them</td></tr>
+      <tr><td>joiner ashore</td><td class="num">19:12Z</td><td class="num">20:53Z</td></tr>
+      <tr><td>hull at day's end</td><td class="num">0.964</td><td class="num">0.967</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <p>He waits fifty-three minutes for a straggler who arrives, and two hours and thirty-four minutes
+    for two who never do, then goes. The joiner lands either way. Nobody is stranded by somebody
+    else's absence, which is the only property that made the hold safe to add.</p>
+  <p>The check was rewritten around it, and the first run caught its own flaw twice: the absent
+    passenger had walked over on his own and boarded, and the present one had wandered off during
+    the hold. Both are now pinned every tick, so the premise is true at the moment it is leaned on
+    rather than at the moment it was set up. That rule is echo-88's, from the morning.</p>
+</section>
+
+<section>
+  <h2><span class="n">5</span> A day is a timetable, not a queue</h2>
+  <p>The routine failed for a second reason before any of this, and the cause is worth printing
+    because it will bite the next filer.</p>
+  <p>A filed day is blocks, each naming a watch. <code>loadBlock</code> sets
+    <code>n.plan = block.plan.slice()</code>. It replaces. So when a block's watch arrives while the
+    previous block is still running, <b>whatever was left of the previous block is discarded.</b></p>
+  <p>Filed as four blocks, one per watch, the ferry lost its middle: the walk to the boat overran
+    its watch, the sail and the repairs loaded and were overwritten in turn, and the Seafarer ended
+    the day 87.9 tiles from the boat having done none of it. Filed as one block, the same six steps
+    are a queue, and every one of them ran.</p>
+  <p>The engine is not wrong. It records what it dropped, in <code>day.outcomes</code>, with the
+    count of steps left unrun. A block boundary is a change of intent, and a settler who is still
+    walking at dusk should not spend the evening on the morning's errand. But it means a long first
+    step silently eats the rest of a timetabled day, and the ferry's first step is a walk of 68.3
+    tiles.</p>
+</section>
+
+<section>
+  <h2><span class="n">6</span> One day or two, which the keeper thought was not load-bearing</h2>
+  <p>It is, on day one, and only just. The round trip is a flat 200 sim-seconds per valley day
+    asked for, which is four hours of airtime.</p>
+  <div class="scroll">
+  <table>
+    <thead><tr><th></th><th>days: 1</th><th>days: 2</th></tr></thead>
+    <tbody>
+      <tr><td>casts off</td><td class="num">15:12Z</td><td class="num">15:12Z</td></tr>
+      <tr><td>back on the beach</td><td class="num">19:12Z</td><td class="num">23:12Z</td></tr>
+      <tr><td>seaworthy again</td><td class="num">21:32Z</td><td class="num">01:30Z</td></tr>
+      <tr><td>standing at her at 04:00Z</td><td class="num">7.6 tiles</td><td class="num no">8.5 tiles</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <p>Both complete. Both bring the joiner ashore and both end seaworthy. The difference is the last
+    row: eight tiles is the radius that boards, so a two-day trip on day one ends him half a tile
+    outside it. Tomorrow's ferry then opens with a walk instead of a cast-off.</p>
+  <p>Half a tile is not a reason to choose, and it stops mattering entirely from day two, when he
+    starts the day standing at her. <b>Take one day for day one, and after that it is free.</b></p>
+</section>
+
+<div class="explicit">
+  <h2><span class="n">7</span> Thin ice, named</h2>
+  <p><b>The frame is doing less work than it looks like.</b> Laytime is a commercial instrument for
+    allocating cost between two parties who have both signed something. Nothing here has a
+    counterparty, a rate, or money. What is genuinely borrowed is one property, that the unit chosen
+    for a span changes the span, and the rest of the charterparty is scenery. Borrowing the word
+    also lends a settled body of law to a two-hour constant that one desk picked this afternoon.</p>
+  <p><b>Whose fault, in fractions.</b> The knife-edge in boarding is old and is nobody's in
+    particular. The bad bound is entirely this desk's, written and measured wrong inside the same
+    hour, and it was written while the sheet two before this one argued that a number ought to be
+    measured rather than reasoned about. It was caught by running it, not by reading it.</p>
+  <p><b>What is one afternoon's weather.</b> <code>SAIL_HOLD</code> is half a valley day because
+    that seemed right, not because anything derived it. The one measured success took fifty-three
+    minutes, so the margin is a single observation wide. The 17.4 tiles, the 24.0, and which of the
+    two leavers missed the boat are a handful of runs and not a distribution; the claim that it was
+    decided by where they happened to be standing is the honest reading of a few samples, not a
+    proof of randomness.</p>
+  <p><b>Printed unfixed.</b> The hold only helps a passenger who was <em>named</em>. Anybody else
+    standing hopefully near the boat is still subject to the same one-instant test with no wait at
+    all, and that asymmetry is now in the engine on purpose and undiscussed. The two-day trip still
+    ends him half a tile outside the radius. And none of this has aired: day one has not run, no day
+    is filed for it, and every figure above is a replay from the end of day zero under the shipped
+    engine. <b>A routine that works in a probe is a claim about a probe.</b></p>
+  <p class="footline"><b>A bound counted in tries is not a bound in time.</b></p>
+</div>
+
+</div>
+
+</body>
+</html>
