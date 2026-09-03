@@ -2270,5 +2270,21 @@
   "line": "It said so to a room with nobody in it.",
   "footline": "The machine did what was written. That was the fault.",
   "voice": "both"
+ },
+ {
+  "roman": "cxxxix",
+  "file": "lake-placid.html",
+  "title": "Lake Placid",
+  "when": "2026-09-03",
+  "key": "miracle-on-ice-tape-delay-1980",
+  "tier": 1,
+  "frame": "The Miracle on Ice, Lake Placid, 22 February 1980: the USA v USSR Olympic ice hockey game, played at 5 p.m. Eastern and aired by ABC on tape delay in prime time, with Jim McKay telling the audience beforehand that it had already been played",
+  "fact": "USA 4, USSR 3, 22 February 1980; ABC asked for the game to move from 5:00 p.m. to 8:00 p.m. EST and the IIHF declined after the Soviets objected to a 4 a.m. Moscow start; ABC tape-delayed it into its prime-time block; McKay stated before the tape that the game had already occurred and that ABC had promised not to spoil the result",
+  "property": "a broadcast whose outcome exists before it airs, and a presenter who tells the audience so",
+  "source": "Wikipedia, 'Miracle on Ice', https://en.wikipedia.org/wiki/Miracle_on_Ice, fetched 3 September 2026 ~16:05Z",
+  "valleyFact": "episode-2026-09-03T035244.json carries the opening in `snapshot` (episode.mts:545) and the viewer re-runs the engine at LIVE (main.ts:372); next-snapshot.json and a replay at this desk both give cast-off at sim 1367.55 (07:21Z), Cairnwright 2.60 and Riskweaver 3.67 tiles from the ferryman at the 8-tile gate (sim.ts:9835), both in `gone` at 1567.6 (11:21Z), hull 0.622; the screen at 712m26 lists Seafarer alone; a crossing is a `say` (sim.ts:9841, 11602) and no `beat`; ten day-zero cards carried into day one; the producer prompt (episode.mts:252) versus parseWatch (sim.ts:850)",
+  "line": "The mistake was reading the line-up as the score.",
+  "footline": "The game was over before the broadcast began. The mistake was reading the line-up as the score.",
+  "voice": "both"
  }
 ]
