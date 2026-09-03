@@ -2254,5 +2254,21 @@
   "line": "It looked like a town. It was a heap. The pin passed.",
   "footline": "A ring is what a decree leaves. A lane is what everybody who walked it leaves.",
   "voice": "both"
+ },
+ {
+  "roman": "cxxxviii",
+  "file": "mariner.html",
+  "title": "Mariner 1",
+  "when": "2026-09-03",
+  "key": "mariner-1-overbar-1962",
+  "tier": 1,
+  "frame": "Mariner 1, Cape Canaveral, 22 July 1962 - the first American Venus probe, destroyed by range safety 293 seconds after launch because a hand-transcribed guidance equation lacked one overbar",
+  "fact": "Launched 09:21:23 GMT on 22 July 1962; destruct ordered at 09:26:16, six seconds before Agena separation; cost $18.5 million; the cause a missing overline in 'R-dot-bar sub n', so an unsmoothed value was used; the New York Times reported a hyphen and Arthur C. Clarke called it 'the most expensive hyphen in history'",
+  "property": "a single mark dropped in transcription, and a reader that executes exactly what it reads",
+  "source": "Wikipedia, 'Mariner 1', https://en.wikipedia.org/wiki/Mariner_1, fetched 3 September 2026 ~04:20Z",
+  "valleyFact": "the model qwen3.6:27b wrote 16 watch blocks and parseWatch (sim.ts:848) read 6: 'night watch', 'dawn watch', 'dusk watch' carry no ordinal; the ten set-asides were said at tick 0 (sim.ts:8300); no sail step, returning (sim.ts:9057) unconsumed; re-produced from three run-book days, cast-off +3h21m, home +7h21m, hull 0.62 at the end",
+  "line": "It said so to a room with nobody in it.",
+  "footline": "The machine did what was written. That was the fault.",
+  "voice": "both"
  }
 ]
