@@ -2302,5 +2302,21 @@
   "line": "A rule written to make a service exist can, a century on, be the only reason the service still runs.",
   "footline": "The train ran, the rule was met, and nobody got off at Stalybridge.",
   "voice": "both"
+ },
+ {
+  "roman": "cxli",
+  "file": "cub-pilot.html",
+  "title": "The Cub Pilot",
+  "when": "2026-09-03",
+  "key": "bixby-cub-pilot-1857",
+  "tier": 1,
+  "frame": "Horace Bixby (1826-1912), Mississippi steamboat pilot, taking the 21-year-old Samuel Clemens as his cub pilot in February 1857 for $500, $100 down and the rest out of his wages as a pilot; the licence came after more than two years of learning twelve hundred miles of river well enough to know it in the dark",
+  "fact": "Bixby first met Twain in February 1857 when Twain was 21; the fee was $500, $100 paid in advance, the balance out of his salary after becoming a pilot; it was more than two years before he received his pilot's licence; the river between New Orleans and St. Louis; \"every old snag and one-limbed cottonwood and every obscure wood pile that ornaments the banks of this river for twelve hundred miles\"; a pilot had to \"actually know where these things are in the dark\"",
+  "property": "a skill counted in passages, with the first few paid for before they are made",
+  "source": "Wikipedia, 'Horace Bixby' (https://en.wikipedia.org/wiki/Horace_Bixby) and 'Mark Twain' (https://en.wikipedia.org/wiki/Mark_Twain), fetched 3 September 2026 ~19:40Z",
+  "valleyFact": "landingWear (sim.ts:1265) with EASED_AT 4 (sim.ts:1241): 0.20 below four crossings, then 0.17, 0.14, 0.11, 0.08, floor 0.05; the Seafarer credited seafaring 0 to 3 in next-snapshot.json at 18:39Z; dock cost wood 20 plank 3 (sim.ts:1380), DOCK_RELIEF 0.05 (sim.ts:2615); hold on the sail step (sim.ts:115), sailings holding (sim.ts:11857); day-two side run: seaworthy +72.3, hewn +109.0, dock +179.1, cast-off +214.7 (08:17Z), holding line every 200 sim-seconds; the producer's stale returning list fixed",
+  "line": "A hundred dollars down bought Clemens nothing he could steer with.",
+  "footline": "You do not learn the river at the wheel. You learn it by passing the same snag until you know it in the dark.",
+  "voice": "both"
  }
 ]

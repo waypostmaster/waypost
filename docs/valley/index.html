@@ -1,6 +1,5 @@
 <!doctype html>
-<script type="module" crossorigin src="./assets/valley-BVSwB9bQ.js"></script>
-<link rel="modulepreload" crossorigin href="./assets/sun--l2eACdq.js">
+<link rel="modulepreload" crossorigin href="./assets/sun-CG7yZ9c0.js">
 
 <meta charset="utf-8">
   <!-- An icon declared in the page, so the browser asks the mast for no /favicon.ico it does not have.
@@ -408,3 +407,91 @@
 
 </style>
 <div id="app"></div>
+<!--
+  THE PAGE IS A LOADER.
+
+  "It needs to be possible to watch a day on the engine that ran it" — the keeper, 3 September
+  2026, asking what happens on day ten when somebody opens day zero.
+
+  An episode file is a SEED: the opening snapshot and the filed days, no frames. The viewer
+  re-runs the simulation, so the day you watch is the day THE BUNDLE YOU LOADED computes, and a
+  mast serves whichever bundle was deployed last. Day zero under this week's engine is not day
+  zero — check-chainstate's header has the sixty-six-tile measurement of exactly that drift.
+
+  So the page chooses its engine before loading one. The pin comes from the episode itself
+  (`engine.bundle`, written by the producer from tonight), else from `engines.json` beside the
+  episodes (the sidecar for the 55 files published before the producer wrote it), else nothing,
+  and then the current bundle loads and the page says `data-engine="unpinned"` out loud rather
+  than quietly replaying an old day on a new engine.
+
+  This works because a mast keeps every content-hashed bundle it has ever served, and because a
+  bundle imports its own chunks by relative specifier — `from "./sun-XXXX.js"` — so pinning the
+  entry file name pins the whole engine.
+
+  `assets/valley-GkjA9d8n.js` is substituted by `enginePin()` in vite.config.ts with what rollup emitted;
+  the tag below exists so vite can find the entry at all, and that same plugin strips it, or the
+  page would run two engines in one tab.
+
+  THE LOADER IS A CLASSIC SCRIPT, DELIBERATELY. Written as `<script type="module">` it was
+  swallowed: vite treats every module script in an entry HTML as an input, so the loader was
+  compiled INTO valley-*.js, both tags came out pointing at the same emitted file, and the page
+  shipped with no scripts at all. The chooser cannot live inside the thing it chooses. Nothing
+  here needs a module — no imports, no top-level await — so it is a plain inline script, which
+  vite leaves alone.
+-->
+<script>
+  const CURRENT = 'assets/valley-GkjA9d8n.js';
+  const root = document.documentElement;
+
+  /** Put one engine on the page, and say on the page which one was asked for. */
+  const load = (src, asked, pin) => {
+    root.dataset.engine = asked;
+    if (pin) root.dataset.pin = pin;
+    const s = document.createElement('script');
+    s.type = 'module';
+    s.dataset.engine = asked;
+    s.src = new URL(src, location.href).href;
+    document.head.append(s);
+  };
+
+  const episode = new URLSearchParams(location.search).get('episode');
+  if (episode === null) {
+    // A live valley is not a recording of anything; it runs on the engine that is deployed.
+    load(CURRENT, 'unpinned', null);
+  } else {
+    // `no-cache` because GitHub Pages serves everything with max-age=600, and a ten-minute-stale
+    // pointer would send a viewer to yesterday's programme on today's engine.
+    const grab = (url) => fetch(url, { cache: 'no-cache' }).then((r) => (r.ok ? r.json() : null)).catch(() => null);
+    (async () => {
+      let bundle = null;
+      let asked = 'unpinned';
+      try {
+        const base = episode.slice(0, episode.lastIndexOf('/') + 1);
+        let file = await grab(episode);
+        let name = episode.slice(episode.lastIndexOf('/') + 1);
+        // latest.json is a pointer; the pin belongs to the programme it names, not to the pointer.
+        if (file !== null && typeof file.episode === 'string') {
+          name = file.episode;
+          file = await grab(base + file.episode);
+        }
+        if (file !== null && file.engine && typeof file.engine.bundle === 'string') {
+          bundle = file.engine.bundle;
+          asked = typeof file.engine.commit === 'string' ? file.engine.commit : name;
+        } else {
+          // The sidecar. It may not exist — a tree that has never run tools/pin-history.mjs, or
+          // a mast that has not carried it yet — and a missing sidecar is unpinned, not an error.
+          const side = await grab(base + 'engines.json');
+          const row = side === null ? null : side[name];
+          if (row && typeof row.bundle === 'string') {
+            bundle = row.bundle;
+            asked = typeof row.commit === 'string' ? row.commit : row.bundle.replace(/^.*\/|\.js$/g, '');
+          }
+        }
+      } catch (err) {
+        // A page that cannot read the pin still has to show the day. It says so and loads current.
+        console.warn('engine pin: could not be resolved, loading the current bundle', err);
+      }
+      load(bundle ?? CURRENT, bundle === null ? 'unpinned' : asked, bundle);
+    })();
+  }
+</script>
