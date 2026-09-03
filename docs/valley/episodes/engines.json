@@ -1,4 +1,84 @@
 {
+  "episode-2026-08-31T031101.json": {
+    "bundle": "assets/valley-DDlnWq6N.js",
+    "how": "the mast served it at 2026-08-31T03:11:01.785Z (index.html at 6b1fc0bf73d5)"
+  },
+  "episode-2026-08-31T031150.json": {
+    "bundle": "assets/valley-DDlnWq6N.js",
+    "how": "the mast served it at 2026-08-31T03:11:50.631Z (index.html at 6b1fc0bf73d5)"
+  },
+  "episode-2026-08-31T032703.json": {
+    "bundle": "assets/valley-CqZPvwxo.js",
+    "how": "the mast served it at 2026-08-31T04:00:00.000Z (index.html at 63a436ba9ab9)"
+  },
+  "episode-2026-08-31T033416.json": {
+    "bundle": "assets/valley-CqZPvwxo.js",
+    "how": "the mast served it at 2026-08-31T04:00:00.000Z (index.html at 63a436ba9ab9)"
+  },
+  "episode-2026-08-31T033824.json": {
+    "bundle": "assets/valley-CqZPvwxo.js",
+    "how": "the mast served it at 2026-08-31T04:00:00.000Z (index.html at 63a436ba9ab9)"
+  },
+  "episode-2026-08-31T040218.json": {
+    "bundle": "assets/valley-CqZPvwxo.js",
+    "how": "the mast served it at 2026-08-31T04:00:00.000Z (index.html at 63a436ba9ab9)"
+  },
+  "episode-2026-08-31T040626.json": {
+    "bundle": "assets/valley-CqZPvwxo.js",
+    "how": "the mast served it at 2026-08-31T04:00:00.000Z (index.html at 63a436ba9ab9)"
+  },
+  "episode-2026-08-31T041001.json": {
+    "bundle": "assets/valley-CqZPvwxo.js",
+    "how": "the mast served it at 2026-08-31T04:00:00.000Z (index.html at 63a436ba9ab9)"
+  },
+  "episode-2026-08-31T042908.json": {
+    "bundle": "assets/valley-CqZPvwxo.js",
+    "how": "the mast served it at 2026-08-31T04:00:00.000Z (index.html at 63a436ba9ab9)"
+  },
+  "episode-2026-08-31T043700.json": {
+    "bundle": "assets/valley-CqZPvwxo.js",
+    "how": "the mast served it at 2026-08-31T04:00:00.000Z (index.html at 63a436ba9ab9)"
+  },
+  "episode-2026-08-31T044416.json": {
+    "bundle": "assets/valley-CqZPvwxo.js",
+    "how": "the mast served it at 2026-08-31T04:00:00.000Z (index.html at 63a436ba9ab9)"
+  },
+  "episode-2026-08-31T044736.json": {
+    "bundle": "assets/valley-CqZPvwxo.js",
+    "how": "the mast served it at 2026-08-31T04:00:00.000Z (index.html at 63a436ba9ab9)"
+  },
+  "episode-2026-08-31T045810.json": {
+    "bundle": "assets/valley-CqZPvwxo.js",
+    "how": "the mast served it at 2026-08-31T04:00:00.000Z (index.html at 63a436ba9ab9)"
+  },
+  "episode-2026-08-31T050432.json": {
+    "bundle": "assets/valley-CqZPvwxo.js",
+    "how": "the mast served it at 2026-08-31T04:00:00.000Z (index.html at 63a436ba9ab9)"
+  },
+  "episode-2026-08-31T050703.json": {
+    "bundle": "assets/valley-CqZPvwxo.js",
+    "how": "the mast served it at 2026-08-31T04:00:00.000Z (index.html at 63a436ba9ab9)"
+  },
+  "episode-2026-08-31T065453.json": {
+    "bundle": "assets/valley-CqZPvwxo.js",
+    "how": "the mast served it at 2026-08-31T04:00:00.000Z (index.html at 63a436ba9ab9)"
+  },
+  "episode-2026-08-31T065529.json": {
+    "bundle": "assets/valley-CqZPvwxo.js",
+    "how": "the mast served it at 2026-08-31T04:00:00.000Z (index.html at 63a436ba9ab9)"
+  },
+  "episode-2026-08-31T065642.json": {
+    "bundle": "assets/valley-CqZPvwxo.js",
+    "how": "the mast served it at 2026-08-31T04:00:00.000Z (index.html at 63a436ba9ab9)"
+  },
+  "episode-2026-08-31T065746.json": {
+    "bundle": "assets/valley-CqZPvwxo.js",
+    "how": "the mast served it at 2026-08-31T04:00:00.000Z (index.html at 63a436ba9ab9)"
+  },
+  "episode-2026-08-31T065818.json": {
+    "bundle": "assets/valley-CqZPvwxo.js",
+    "how": "the mast served it at 2026-08-31T04:00:00.000Z (index.html at 63a436ba9ab9)"
+  },
   "episode-2026-09-01T000516.json": {
     "bundle": "assets/valley-CFQIC7pE.js",
     "how": "the mast served it at 2026-09-01T00:05:16.633Z (index.html at 95d6f63c7afa)"
@@ -18,6 +98,10 @@
   "episode-2026-09-01T022538.json": {
     "bundle": "assets/valley-CFQIC7pE.js",
     "how": "the mast served it at 2026-09-01T02:25:38.438Z (index.html at 95d6f63c7afa)"
+  },
+  "episode-2026-09-01T022654.json": {
+    "bundle": "assets/valley-CqZPvwxo.js",
+    "how": "the mast served it at 2026-08-31T04:00:00.000Z (index.html at 63a436ba9ab9)"
   },
   "episode-2026-09-01T113927.json": {
     "bundle": "assets/valley-BqKs2XK1.js",
