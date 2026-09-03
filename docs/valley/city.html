@@ -1,6 +1,6 @@
 <!doctype html>
-<script type="module" crossorigin src="./assets/city-DU2nYHf3.js"></script>
-<link rel="modulepreload" crossorigin href="./assets/sun-BEITQrHu.js">
+<script type="module" crossorigin src="./assets/city-BTQeEXEj.js"></script>
+<link rel="modulepreload" crossorigin href="./assets/sun--l2eACdq.js">
 
 <meta charset="utf-8">
   <!-- An icon declared in the page, so the browser asks the mast for no /favicon.ico it does not have.
@@ -39,7 +39,7 @@
                       font-variant-numeric: tabular-nums; }
   .postmark .pm-nav a { text-decoration: none; }
   .postmark .pm-nav a:hover { color: #eef3fb; text-decoration: underline; }
-  .postmark .pm-dim { color: #55637f; }
+  .postmark .pm-dim { color: #7a8aa8; }
   .postmark .pm-title { font-size: 11px; letter-spacing: .14em; text-transform: uppercase;
                         color: #8fa6c8; font-weight: 600; margin-bottom: 3px; }
 
@@ -75,31 +75,65 @@
   /* The presence chip: a pale figure on ground, ringed — the ping, held still. */
   .legend .lg-soul   { background: radial-gradient(circle at 50% 42%, #efe3c8 0 3px, #24304a 3px 4.5px, #7fd6a0 4.5px 5.5px, #1b2436 5.5px); border-radius: 50%; }
   .legend .lg-note { margin-top: 6px; color: #8fa6c8; font-size: 11px; line-height: 1.4; }
+  /* The zoom line: what this zoom can and cannot show, said rather than assumed. */
+  .legend .lg-zoom { margin-top: 6px; padding-top: 5px; border-top: 1px solid #263148;
+                     color: #8fa6c8; font-size: 11px; }
+  .legend .lg-zoom b { color: #c2d0e6; }
 
   .theme { position: absolute; left: 12px; bottom: 12px; }
-  .theme button, .back a {
+  .theme button, .back a, .resident button {
     font: inherit; color: #eef3fb; background: #182236; border: 1px solid #33405c;
     border-radius: 7px; padding: 5px 10px; cursor: pointer; text-decoration: none;
     display: inline-block;
   }
-  .theme button:hover, .back a:hover { background: #22304a; border-color: #4a5c80; }
+  .theme button:hover, .back a:hover, .resident button:hover { background: #22304a; border-color: #4a5c80; }
   .back { position: absolute; left: 12px; top: 12px; }
 
   /* One place, on a click. The card is how a claim on the map traces back to the file. */
   .place-card {
-    position: absolute; left: 12px; bottom: 60px; width: 320px; display: none;
+    position: absolute; left: 12px; bottom: 60px; width: 340px; display: none;
     background: #0c111d; border: 1px solid #263148; border-radius: 10px;
     box-shadow: 0 10px 28px rgba(0,0,0,.45); padding: 10px 12px;
   }
   .place-card.on { display: block; }
   .place-card h2 { margin: 0 0 2px; font-size: 15px; color: #fff; }
   .place-card .where { margin: 0 0 8px; color: #8fa6c8; font-size: 12px; }
+  .place-card .crumbs { margin: 0 0 8px; color: #b8c8e0; font-size: 11px; line-height: 1.5; }
+  .place-card .crumbs a { color: #9ecbff; text-decoration: none; }
+  .place-card .crumbs a:hover { text-decoration: underline; }
+  .place-card .crumbs .sep { color: #7a8aa8; margin: 0 4px; }
   .place-card .row { display: flex; justify-content: space-between; gap: 14px; padding: 1px 0; }
   .place-card .row span { color: #c2d0e6; }
-  .place-card .row b { font-weight: 600; color: #fff; font-variant-numeric: tabular-nums; }
+  .place-card .row b { font-weight: 600; color: #fff; font-variant-numeric: tabular-nums; text-align: right; }
   .place-card .said { margin: 8px 0 0; color: #b8c8e0; font-style: italic; font-size: 12px;
                       max-height: 90px; overflow-y: auto; scrollbar-width: thin; }
   .place-card .fix { margin: 8px 0 0; color: #8fa6c8; font-size: 11px; }
+  .place-card .fix.landmark { color: #d8c69b; }
+
+  /* The resident view: ?resident=<handle>. Ground held, as of the stamp — a filter over the
+     file already on disk, dated by the postmark. Never where they are standing now. */
+  .resident {
+    position: absolute; left: 12px; top: 52px; width: min(320px, 90vw);
+    background: #0c111d; border: 1px solid #263148; border-radius: 10px;
+    padding: 8px 12px 9px; font-size: 12px; color: #c2d0e6;
+    box-shadow: 0 10px 28px rgba(0,0,0,.45);
+  }
+  .resident .rs-title { font-size: 11px; letter-spacing: .14em; text-transform: uppercase;
+                        color: #8fa6c8; font-weight: 600; margin-bottom: 4px; }
+  .resident .rs-title b { color: #fff; letter-spacing: normal; }
+  .resident .rs-swatch { display: inline-block; width: 11px; height: 11px; border-radius: 3px;
+                         border: 1px solid #33405c; vertical-align: -1px; margin-right: 5px; }
+  .resident .rs-count { color: #fff; font-variant-numeric: tabular-nums; }
+  .resident ul { list-style: none; margin: 6px 0 0; padding: 0; max-height: min(42vh, 360px);
+                 overflow-y: auto; scrollbar-width: thin; }
+  .resident li { padding: 2px 0; display: flex; gap: 8px; align-items: baseline; }
+  .resident li a { color: #eef3fb; text-decoration: none; flex: 1; }
+  .resident li a:hover { text-decoration: underline; }
+  .resident li .rs-where { color: #7a8aa8; font-size: 11px; white-space: nowrap; overflow: hidden;
+                           text-overflow: ellipsis; max-width: 45%; }
+  .resident li .rs-id { color: #8fa6c8; font-size: 11px; font-variant-numeric: tabular-nums; }
+  .resident .rs-note { margin-top: 6px; color: #8fa6c8; font-size: 11px; line-height: 1.4; }
+  .resident .rs-off { margin-top: 6px; }
 
   /* The whole window refusing to pretend, when there is nothing verified to draw. */
   .no-city {
