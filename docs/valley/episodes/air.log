@@ -9,3 +9,39 @@
 2026-08-31 20:05:16     tomorrow starts where today ended: episodes/next-snapshot.json
 2026-08-31 20:05:19 aired and on the mast (waypost.quest/valley/)
 2026-08-31 20:05:22 and on the new mast (frontier-valley/mast)
+2026-09-01 23:40:02 --- transmission begins ---
+2026-09-01 23:40:02   episode-2026-09-02T033349.json is already stamped for 2026-09-02T04:00:00Z, produced by hand; the chain stands and nothing is produced tonight
+2026-09-02 23:40:02 --- transmission begins ---
+2026-09-02 23:40:03   gate: npx tsc --noEmit passed
+2026-09-02 23:41:02   gate: npm run check:replay passed
+2026-09-02 23:41:03   gate: npm run check:landing passed
+2026-09-02 23:41:05   gate: npm run check:day passed
+2026-09-02 23:41:05   producing for 2026-09-03T04:00:00Z
+2026-09-02 23:41:05   founding: Seafarer G현 "persona" clipped from 267 to 200
+2026-09-02 23:41:05   founding: Seafarer G현 "days[].say" clipped from 104 to 90
+2026-09-02 23:41:05   founding: Cairnwright G현 "persona" clipped from 268 to 200
+2026-09-02 23:41:05   founding: Riskweaver G현 "constitution" clipped from 245 to 200
+2026-09-02 23:41:05       accedence: Seafarer G현 chartered
+2026-09-02 23:41:05       accedence: Cairnwright G현 silent
+2026-09-02 23:41:05       accedence: Riskweaver G현 silent
+2026-09-02 23:41:05       returning to the city on the next crossing that names nobody: Cairnwright, Riskweaver
+2026-09-02 23:41:05   episode: 86400 ticks from a 54167-byte snapshot
+2026-09-02 23:41:06   founding: Seafarer G현 "persona" clipped from 267 to 200
+2026-09-02 23:41:06   founding: Seafarer G현 "days[].say" clipped from 104 to 90
+2026-09-02 23:41:06   founding: Cairnwright G현 "persona" clipped from 268 to 200
+2026-09-02 23:41:06   founding: Riskweaver G현 "constitution" clipped from 245 to 200
+2026-09-02 23:41:33       Seafarer: a day filed, 27276ms
+2026-09-02 23:41:51       Cairnwright: a day filed, 17561ms
+2026-09-02 23:42:13       Riskweaver: a day filed, 22691ms
+2026-09-02 23:42:13     3 flight plan(s) filed
+2026-09-02 23:42:14   founding: Seafarer G현 "persona" clipped from 267 to 200
+2026-09-02 23:42:14   founding: Seafarer G현 "days[].say" clipped from 104 to 90
+2026-09-02 23:42:14   founding: Cairnwright G현 "persona" clipped from 268 to 200
+2026-09-02 23:42:14   founding: Riskweaver G현 "constitution" clipped from 245 to 200
+2026-09-02 23:42:14   founding: Seafarer G현 "persona" clipped from 267 to 200
+2026-09-02 23:42:14   founding: Seafarer G현 "days[].say" clipped from 104 to 90
+2026-09-02 23:42:14   founding: Cairnwright G현 "persona" clipped from 268 to 200
+2026-09-02 23:42:14   founding: Riskweaver G현 "constitution" clipped from 245 to 200
+2026-09-02 23:42:15     computed twice, identical to the byte (58006 bytes) G현 fit to air
+2026-09-02 23:42:15     aired: C:\claude\games\frontier\episodes\episode-2026-09-03T034215.json
+2026-09-02 23:42:15     tomorrow starts where today ended: episodes/next-snapshot.json
