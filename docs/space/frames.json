@@ -2286,5 +2286,21 @@
   "line": "The mistake was reading the line-up as the score.",
   "footline": "The game was over before the broadcast began. The mistake was reading the line-up as the score.",
   "voice": "both"
+ },
+ {
+  "roman": "cxl",
+  "file": "parliamentary-train.html",
+  "title": "The Parliamentary Train",
+  "when": "2026-09-03",
+  "key": "parliamentary-train-1844",
+  "tier": 1,
+  "frame": "The parliamentary train: a British railway service run solely to meet a legal requirement, at minimal frequency, to avoid the formal closure procedure; from the Railway Regulation Act 1844, which required one cheap train a day for working-class passengers",
+  "fact": "Railway Regulation Act 1844: at least one train a day each way, not less than 12 mph including stops, carriages with seats and protection from the weather, at most a penny a mile; the Stockport to Stalybridge shuttle runs Saturday 08:30 to 09:04 and is the only service calling at Reddish South and Denton; Sheffield to Cleethorpes became a parliamentary service when weekday services were withdrawn in 1993; colloquially ghost trains",
+  "property": "a service run to the letter of an obligation with nobody aboard, because ending it needs a decision that costs more than running it empty; and it does not wait at the far end",
+  "source": "Wikipedia, 'Parliamentary train', https://en.wikipedia.org/wiki/Parliamentary_train, fetched 3 September 2026 ~17:45Z",
+  "valleyFact": "the ferry carried out ruling 784 with joining [] (cast-off 1367.55, both gone 1567.6, refused second sail 1605.7, hull 0.622); sailings (sim.ts:11571) holds nobody at the far shore, SAIL_HOLD (sim.ts:1216) is a wait on this beach; sail is absent from BRANCH_OF (sim.ts:9524) and calls no practise (sim.ts:3498); landing wear is a flat 0.2 (sim.ts:11593); the guest counts one thing made against twenty-two corrections at the city desk on 3 Sep",
+  "line": "A rule written to make a service exist can, a century on, be the only reason the service still runs.",
+  "footline": "The train ran, the rule was met, and nobody got off at Stalybridge.",
+  "voice": "both"
  }
 ]
