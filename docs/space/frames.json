@@ -2238,5 +2238,21 @@
   "line": "A book is for the reader who opens it. The gate is for the one who does not.",
   "footline": "A rule kept in one file binds the one reader who opened it.",
   "voice": "both"
+ },
+ {
+  "roman": "cxxxvii",
+  "file": "stadtebau.html",
+  "title": "Der Städtebau",
+  "when": "2026-09-03",
+  "key": "sitte-stadtebau-vienna-1889",
+  "tier": 1,
+  "frame": "Camillo Sitte’s Der Städtebau nach seinen künstlerischen Grundsätzen, Vienna, 1889, written against the Ringstrasse decreed by Franz Joseph in 1857 on the cleared walls and glacis",
+  "fact": "Sitte born Vienna 17 April 1843, died 16 November 1903; the book of 1889; “one of the first urban writers to consciously emphasize the value of irregularity in the urban form”, “a direct reaction to the fashionable excesses of architecture on Vienna’s Ringstrasse”; the Ringstrasse decreed 1857, built where the 13th-century walls stood on a glacis about 500 metres wide where construction was prohibited, a 5.3 km circular boulevard, not finished until 1913",
+  "property": "irregularity is the trace of accumulation and a ring is the trace of a decree; a town people can read is the first kind",
+  "source": "yes — Wikipedia, “Camillo Sitte”, https://en.wikipedia.org/wiki/Camillo_Sitte, and “Ringstraße”, https://en.wikipedia.org/wiki/Ringstra%C3%9Fe, both read 3 Sep 2026; two pages, each read once",
+  "valleyFact": "the city window relaid to Solward #46’s brief: growDistrict at cityMap.ts:196, reserveTips at :236, blobReach at :308; on the 1 Sep 13:31Z snapshot (677 places) 368 doors, first town 220 rooms, oldest quarter 4.5 tiles from the square against 10.8 for the newest, 322 of 368 on a lane and 368 within two, 355 of 355 unmoved when the newest 33 places are removed, 175 tiles a structure against a pin of 180, #364 at 14 storeys; the fifth layout placed 134 rooms by the emergency rule after 54,191 of 54,220 growth attempts laid nothing; CITY_BODY_INKS at sprites.ts:881, LANDMARKS at cityLandmarks.ts:42; ?resident=solward lists 7 of 677 places and 6 doors",
+  "line": "It looked like a town. It was a heap. The pin passed.",
+  "footline": "A ring is what a decree leaves. A lane is what everybody who walked it leaves.",
+  "voice": "both"
  }
 ]
