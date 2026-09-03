@@ -2318,5 +2318,21 @@
   "line": "A hundred dollars down bought Clemens nothing he could steer with.",
   "footline": "You do not learn the river at the wheel. You learn it by passing the same snag until you know it in the dark.",
   "voice": "both"
+ },
+ {
+  "roman": "cxlii",
+  "file": "dog-watch.html",
+  "title": "The Dog Watch",
+  "when": "2026-09-03",
+  "key": "naval-watch-system-dog-watch",
+  "tier": 2,
+  "frame": "The traditional naval watch system: five four-hour watches and two two-hour dog watches, seven in a day, so that the rota slips and no sailor stands the same watch every day",
+  "fact": "The day consisted of 5 four-hour periods and 2 two-hour periods; first watch 20:00-00:00, middle, morning, forenoon, afternoon, first dog watch 16:00-18:00, second dog watch 18:00-20:00; one watch is split into two shorter watches so that there is an odd number each day, allowing crew members a different schedule each day, and the dog watches are often set at dinner time; eight bells, one per half-hour of a four-hour watch",
+  "property": "a day cut into periods whose count does not divide it evenly, so the same clock hour falls in a different watch from one day to the next",
+  "source": "Wikipedia, 'Watch system', https://en.wikipedia.org/wiki/Watch_system, fetched 3 September 2026 ~20:20Z",
+  "valleyFact": "four cuts of 21,600 ticks = 6,000 steps = 1.5 valley days; openings at sim time mod 200 of 0.05, 100.05, 0.05, 100.05; the keeper's compare from the same seed and filed day: cut four's end equals the one-shot's end on every field at 3600.05; a busier day parts at step 12,000 (builder, carried); cut files 102,029/101,377/101,403/101,363 bytes against 101,737; producer 12 s for four; the nightly stood down at 21:42Z with \"not the production hour\"; 46 checks",
+  "line": "Noon, midnight, noon, midnight. Never a sunrise.",
+  "footline": "The ship keeps an odd number of watches so that no one keeps the same one for ever. The valley keeps four, and will find out who does.",
+  "voice": "both"
  }
 ]
