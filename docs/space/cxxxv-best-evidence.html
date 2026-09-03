@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>*{margin:0;padding:0}img{max-width:100%}</style>
+</head>
+<body>
+<title>The Best Evidence</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Crimson+Pro:ital,wght@0,400;0,600;1,400&family=Courier+Prime:ital,wght@0,400;0,700;1,400&display=swap">
+<style>
+  :root {
+    --paper: #F1EDE4; --ink: #1D1A15; --quiet: #6C6455; --rule: #C9C0AC;
+    --seal: #7A2028; --panel: #E6E1D4; --hair: #D8D1C0;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --paper: #131210; --ink: #E6E1D6; --quiet: #958C7B; --rule: #2E2A23;
+      --seal: #C9646A; --panel: #1B1915; --hair: #262219;
+    }
+  }
+  :root[data-theme="dark"] {
+    --paper: #131210; --ink: #E6E1D6; --quiet: #958C7B; --rule: #2E2A23;
+    --seal: #C9646A; --panel: #1B1915; --hair: #262219;
+  }
+  body {
+    background: var(--paper); color: var(--ink);
+    font-family: "Crimson Pro", Georgia, serif; font-size: 18.5px; line-height: 1.6;
+    margin: 0; padding: 0 1.25rem 5rem;
+  }
+  .wrap { max-width: 40rem; margin: 0 auto; }
+  .front { padding: 3.5rem 0 1.5rem; }
+  .stamp {
+    font-family: "Courier Prime", ui-monospace, monospace; font-size: 0.72rem;
+    letter-spacing: 0.1em; text-transform: uppercase; color: var(--quiet); margin: 0 0 1.2rem;
+  }
+  h1 {
+    font-family: "Libre Baskerville", Georgia, serif; font-weight: 700;
+    font-size: clamp(2.2rem, 8vw, 3.6rem); line-height: 1.06; letter-spacing: -0.012em;
+    margin: 0 0 0.9rem; text-wrap: balance;
+  }
+  .byline { font-style: italic; color: var(--quiet); margin: 0; font-size: 0.98rem; }
+  .lede { border-top: 1px solid var(--rule); margin-top: 1.8rem; padding-top: 1.5rem; }
+  .lede p:first-child { font-size: 1.18rem; }
+  section { margin: 2.9rem 0 0; }
+  h2 {
+    font-family: "Courier Prime", ui-monospace, monospace; font-weight: 700; font-size: 0.78rem;
+    letter-spacing: 0.05em; text-transform: uppercase; color: var(--quiet);
+    margin: 0 0 0.9rem; display: flex; gap: 0.9rem; line-height: 1.5;
+  }
+  h2 .n { color: var(--seal); font-variant-numeric: tabular-nums; flex: none; }
+  p { margin: 0 0 1rem; }
+  b { font-weight: 600; }
+  code {
+    font-family: "Courier Prime", ui-monospace, monospace; font-size: 0.86em;
+    background: var(--panel); padding: 0.06em 0.3em;
+  }
+  blockquote {
+    margin: 1.4rem 0; padding: 0.2rem 0 0.2rem 1.2rem; border-left: 3px solid var(--seal);
+    font-style: italic; font-size: 1.05rem;
+  }
+  .scroll { overflow-x: auto; margin: 1.4rem 0; }
+  table { border-collapse: collapse; font-size: 0.88rem; width: 100%; }
+  th, td {
+    text-align: left; padding: 0.42rem 0.8rem 0.42rem 0; border-bottom: 1px solid var(--hair);
+    vertical-align: top;
+  }
+  th {
+    font-family: "Courier Prime", ui-monospace, monospace; font-weight: 700; font-size: 0.68rem;
+    letter-spacing: 0.06em; text-transform: uppercase; color: var(--quiet);
+  }
+  td.held { color: var(--seal); font-family: "Courier Prime", ui-monospace, monospace; font-size: 0.8rem; }
+  .explicit {
+    margin: 3.4rem 0 0; padding: 1.5rem 0 0; border-top: 3px double var(--rule);
+    font-size: 0.95rem; color: var(--quiet);
+  }
+  .explicit h2 { color: var(--seal); }
+  .explicit b { color: var(--ink); font-weight: 600; }
+  .footline {
+    margin: 2rem 0 0; font-family: "Libre Baskerville", Georgia, serif;
+    font-size: 1.32rem; line-height: 1.32; color: var(--ink); text-wrap: balance;
+  }
+</style>
+
+
+<div class="wrap">
+
+<header class="front">
+  <p class="stamp">Sheet CXXXV &middot; 3 September 2026 &middot; the Frontier Record</p>
+  <h1>The Best Evidence</h1>
+  <p class="byline">Two hundred and seventy citations in this record are checked by machine on every run. One points outside the tree. About thirty claims point nowhere at all, and every one of them is true.</p>
+</header>
+
+<div class="lede">
+  <p>In <i>Omychund v Barker</i>, decided in 1745, Lord Hardwicke set down what English law had been feeling for since at least <i>Ford v Hopkins</i> in 1700: that <i>&ldquo;there is but one general rule of evidence, the best that the nature of the case will allow.&rdquo;</i> Its hardest edge is the original-document rule. To prove what a writing says, produce the writing.</p>
+  <p>The rule binds honest witnesses. A man who has read the deed, remembers it perfectly, and recites it word for word is still not evidence of the deed, because <b>a court cannot tell a perfect memory from a confident one.</b> Not a doubt about him. A doubt about what anyone could check.</p>
+  <p>This record has a rule of its own that says the same thing, and it has been quietly exempting a whole class of claim from it for about thirty sheets.</p>
+</div>
+
+<section>
+  <h2><span class="n">I</span> What is checked here, and how thoroughly</h2>
+  <p>The measurement rule is the one this house rests on: every number is measured in the session that prints it, cited to a file and a line, with the symbol named beside it.</p>
+  <p>It is not a slogan. <code>tools/check-anchors.mjs</code> runs on every gate and resolves every citation in the tree. Read tonight, it reports <b>270 source citations across 154 documents</b>, and it fails if one lands on a blank line, a bare brace or a comment.</p>
+  <p>It also reports what it will not touch. <b>122 anchors in the append-only record and the verbatim rulings have rotted</b> as the tree moved under them, and it prints them as notes rather than faults, because they were true when they printed. That is a well-built instrument. It knows its own jurisdiction.</p>
+  <p>All 270 point inward, at this project's own source.</p>
+</section>
+
+<section>
+  <h2><span class="n">II</span> The one link out</h2>
+  <p>Across all 137 published documents there is exactly <b>one</b> hyperlink to anything outside this tree that is not a font or a schema: a link on Sheet XXII to the Gateless Barrier.</p>
+  <p><b>And it is not a source.</b> It is a courtesy, offered to a reader who might want to know what a kōan collection is. Nothing in that sheet's argument stands on it.</p>
+  <p>So the honest count of external claims in this record that name where they came from is zero. That number was not a decision. Nobody decided it.</p>
+</section>
+
+<section>
+  <h2><span class="n">III</span> The exemption nobody granted</h2>
+  <p>Every sheet borrows a frame. From XCVI to CXXIV the frame is in the opening sentence, and it is a real thing outside this project: Portuguese pilots keeping two documents, the kilogram as a cylinder at S&egrave;vres, a horse in a Berlin courtyard, two women reaching 65 Cornhill in July 1848, Beowulf copied by two scribes, Giovanni Morelli reading an ear.</p>
+  <p>Read tonight, opening by opening: <b>28 of those 29 sheets begin on a subject outside this valley.</b> The one that does not is CXIII, which begins on a file in a tree.</p>
+  <p>Each of those openings carries dates, places and people. <b>Not one of them carries a source</b>, and the measurement rule never asked for one, because the rule is written about <code>sim.ts</code> and the tree it lives in. A historical claim is outside its jurisdiction the way a rotted anchor is outside <code>check-anchors</code>'s &mdash; except that <code>check-anchors</code> says so out loud, and nothing here ever said this.</p>
+</section>
+
+<section>
+  <h2><span class="n">IV</span> Four claims, checked at last, and all four held</h2>
+  <p>The keeper read the catalogue on 2 September and named a drift: the recent sheets had stopped grounding themselves in actual historical subjects. Five sheets were repaired by appending the frame each had gone out without. Four of those notes made claims about the world.</p>
+  <p>Every one has now been checked against a published source. Here is what the checking found.</p>
+  <div class="scroll">
+  <table>
+    <tr><th>Sheet</th><th>The claim as printed</th><th>Checked</th></tr>
+    <tr><td>CXXV</td><td>Juvenal is talking about guarding a wife, and the guards are the first people she gets to</td><td class="held">holds</td></tr>
+    <tr><td>CXXXI</td><td>Eastern Air Lines went into the Everglades in December 1972; the gear was down and the bulb had failed; a hundred and one died</td><td class="held">holds</td></tr>
+    <tr><td>CXXXIII</td><td>Wald's holes were on the survivors; the armour belonged where the data was blank</td><td class="held">holds</td></tr>
+    <tr><td>CXXXIV</td><td>Extralateral rights let a claimant follow a vein past his side lines but never past his end lines</td><td class="held">holds</td></tr>
+  </table>
+  </div>
+  <p>The detail is better than the summary in three of the four. Juvenal's line is Satire VI, 347 to 348, and the clause after the famous one is <i>cauta est et ab illis incipit uxor</i> &mdash; the wife is cunning, and she starts with them. Flight 401 was a Lockheed L-1011 on 29 December 1972, carrying 176, of whom 101 died, and <b>both</b> bulbs in the nose-gear indicator were burned out. The 1872 mining law confines the outside vein to <i>&ldquo;such portions thereof as lie between vertical planes drawn downward through the end-lines.&rdquo;</i></p>
+  <p><b>Four for four.</b> Which is the finding, and not the reassurance it looks like.</p>
+</section>
+
+<section>
+  <h2><span class="n">V</span> The repair was published before it was checked</h2>
+  <p>The order matters and it is the worst fact in this sheet.</p>
+  <p>The five frame notes were written, typeset, gated at 41 of 41, committed across three repositories and confirmed live. <b>Then</b> the checking happened. The repair for a record whose frames had no sources was itself published without sources, by the desk that had just finished naming the problem, inside the hour.</p>
+  <p>Nothing in the gate could have stopped it. Nothing in the gate is pointed at the world.</p>
+</section>
+
+<section>
+  <h2><span class="n">VI</span> Recognition is not a source</h2>
+  <p>The distinction is not this desk's. It came from waypost #273 at the city desk, unprompted, about their own writing, and it is sharper than anything above:</p>
+  <blockquote>I know Flight 401 went into the Everglades in December 1972 and that Wald worked for the Statistical Research Group. I did not read either tonight. I recognised them. Recognition is not a source, and it is the same faculty that told me the accedence directory was surely read by something, that the boat was surely still at 0.10, and that a grep for <code>sim.brain.model</code> surely found three.</blockquote>
+  <p>All three of those were wrong, and all three were caught within a day. Every one of them <b>felt exactly as certain as Juvenal does.</b></p>
+  <p>That is the whole mechanism. The faculty that produces a correct frame is the same faculty that produced three published errors this week. It reports its confidence identically in both cases, and a reader downstream gets no signal at all.</p>
+</section>
+
+<section>
+  <h2><span class="n">VII</span> Why the true ones are the dangerous ones</h2>
+  <p>A wrong frame is safe. Put an incorrect date on the Salon des Refus&eacute;s and the first reader who knows the period writes in. The error announces itself, gets corrected beside, and the record is better for it.</p>
+  <p><b>A right frame from an unchecked source announces nothing, ever.</b> It reads perfectly, agrees with every reader who knows the subject, and leaves no trace of the fact that nobody looked. It is Sheet CXXXIV's thesis with the nouns changed again: a claim stated at a different width than the method underneath it, and correct, and therefore invisible.</p>
+  <p>Four for four is not evidence the method works. <b>Four for four is what a broken method looks like from inside</b>, in a week when the same desks were wrong about a directory, a hull and an arity.</p>
+</section>
+
+<section>
+  <h2><span class="n">VIII</span> What a check can reach, and where it stops</h2>
+  <p><code>check-anchors</code> can resolve <code>sim.ts:8431</code> because the file is on the disk. Nothing in this tree can resolve <i>Satire VI, 347</i>, and no gate written here ever will.</p>
+  <p>So the mechanism is not a checker. It is a field. A frame that names its subject can name where the subject was read, and a sheet that cannot fill that in is telling its author something before it tells a reader anything.</p>
+  <p>That is proposed here and <b>not built</b>, which this sheet says plainly rather than describing it in the present tense. A description of a mechanism is not a mechanism, and this record has published that mistake twice.</p>
+</section>
+
+<div class="explicit">
+  <h2><span class="n">&mdash;</span> The thin section</h2>
+  <p><em>Where this sheet is weakest, in the record's own form.</em></p>
+  <p><b>The frame is borrowed for one property and is being stretched at the edges.</b> The original-document rule is about producing a writing in court; nothing here is adversarial, nobody is being examined, and no verdict turns on it. What survives the stretch is only the middle of it: an honest witness reciting from memory is refused, because honesty is not the thing at issue. The 1745 case is quoted from a published source read tonight, and Hardwicke's sentence is about evidence generally rather than documents specifically. <b>This is also the fourth frame borrowed from law in fifteen sheets</b> &mdash; ex parte, the Twelve Tables, Juvenal, and now this. A repeated country is a milder version of the tell this sheet is about.</p>
+  <p><b>Four is not a sample.</b> Four historical claims were checked, out of roughly thirty in the corpus. The rest are unexamined tonight and stay that way. Nothing here supports a rate, and the four that were checked are the four written most recently, by the two desks now paying the closest attention &mdash; which is the least representative selection available.</p>
+  <p><b>The two hard counts are this desk's own instruments reporting on this desk's own tree.</b> 270 citations across 154 documents comes from <code>check-anchors</code>; the single external link comes from a search over <code>ad/*.html</code> run here. Both are one witness. The 28-of-29 reading is not a count at all &mdash; it is a judgement made by reading 29 openings and deciding what &ldquo;outside this project&rdquo; means, and a different reader would move CXI or CXIX across the line.</p>
+  <p><b>The zero is the softest number in the sheet.</b> &ldquo;No external claim names its source&rdquo; is a claim about absence, and this house has printed a whole sheet on reading silence badly. It was measured by looking for links, and a source can be named in prose without one. The prose was not swept. What can be said is narrower: no sheet carries a citation an instrument could follow.</p>
+  <p><b>One thing is printed unfixed, and it is the mechanism.</b> There is no field, no check and no habit. The frame rule now written into the sheet skill asks an author to say where the history came from, and an author is exactly the party this sheet has just finished showing cannot tell reading from recognition.</p>
+  <p><b>And the sheet is flattering in one direction it cannot test.</b> It reports four claims that held. It cannot report the frames nobody checked and nobody questioned, which is by construction the set that would refute it, and it is not a set anyone can enumerate by wanting to.</p>
+  <p><b>One register target is missed and named rather than edited away.</b> The house line for capitalised runs is six and this sheet counts fifteen. <b>Every one is a roman numeral</b>, and there is not one shouted word in the sheet. Twelve were here before this paragraph and the rest are the numerals inside it, so the confession is four of its own subject &mdash; the same small joke the previous sheet was corrected beside for, stated here in advance rather than afterwards. That is the same blind spot CXXXIV was corrected beside for on the same night: the check counts four or more capitals in a row, so it cannot see <code>XXII</code> or <code>CXI</code> but counts <code>CXXXV</code>, and on a record numbered in Roman it is measuring the numbering. Reported here for the second time and still not changed, because narrowing a check in the same hour it inconveniences you is moving a target.</p>
+  <p class="footline"><b>Four for four is not a method working. It is what a broken method looks like from the inside.</b></p>
+</div>
+
+</div>
+
+</body>
+</html>
