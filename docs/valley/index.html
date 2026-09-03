@@ -428,7 +428,7 @@
   bundle imports its own chunks by relative specifier — `from "./sun-XXXX.js"` — so pinning the
   entry file name pins the whole engine.
 
-  `assets/valley-GkjA9d8n.js` is substituted by `enginePin()` in vite.config.ts with what rollup emitted;
+  `assets/valley-DlEmVcHi.js` is substituted by `enginePin()` in vite.config.ts with what rollup emitted;
   the tag below exists so vite can find the entry at all, and that same plugin strips it, or the
   page would run two engines in one tab.
 
@@ -440,7 +440,7 @@
   vite leaves alone.
 -->
 <script>
-  const CURRENT = 'assets/valley-GkjA9d8n.js';
+  const CURRENT = 'assets/valley-DlEmVcHi.js';
   const root = document.documentElement;
 
   /** Put one engine on the page, and say on the page which one was asked for. */
@@ -452,6 +452,24 @@
     s.dataset.engine = asked;
     s.src = new URL(src, location.href).href;
     document.head.append(s);
+  };
+
+  /*
+   * WHICH CUT IS ON AIR — the last one whose airtime has come, and null before the first.
+   *
+   * THIS FUNCTION IS DUPLICATED, ON PURPOSE, IN TWO OTHER PLACES: `pickCut` in `src/main.ts` and
+   * `pickCut` in `tools/cuts.mjs`. It has to be here and it cannot be imported: this loader is a
+   * classic script (see the note above — written as a module it is compiled INTO the bundle it is
+   * choosing), so it cannot reach anything in `src/`. And it has to agree with `main.ts` exactly,
+   * because this half injects a cut's PINNED ENGINE and that half loads the cut's FILE — picking
+   * differently would run one cut on another cut's engine, which is the whole fault the pin
+   * exists to close. Three copies of eight lines, each naming the other two. Change one and
+   * change all three.
+   */
+  const pickCut = (cuts, now) => {
+    let found = null;
+    for (const c of cuts) if (Date.parse(c.aired_at) <= now) found = c;
+    return found;
   };
 
   const episode = new URLSearchParams(location.search).get('episode');
@@ -470,7 +488,15 @@
         let file = await grab(episode);
         let name = episode.slice(episode.lastIndexOf('/') + 1);
         // latest.json is a pointer; the pin belongs to the programme it names, not to the pointer.
-        if (file !== null && typeof file.episode === 'string') {
+        // With four cuts a day the programme it names is the CUT WHOSE WINDOW CONTAINS NOW, and
+        // never a neighbour: a cut that was not produced leaves the page unpinned on the current
+        // bundle, showing the OFF AIR line main.ts writes, rather than loading the engine of a
+        // programme the viewer is not watching.
+        if (file !== null && Array.isArray(file.cuts) && file.cuts.length > 0) {
+          const want = pickCut(file.cuts, Date.now()) ?? file.cuts[0];
+          name = want.episode;
+          file = await grab(base + want.episode);
+        } else if (file !== null && typeof file.episode === 'string') {
           name = file.episode;
           file = await grab(base + file.episode);
         }
