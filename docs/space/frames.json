@@ -2414,5 +2414,21 @@
   "line": "It was dropped out loud, under the name of the thing it was not.",
   "footline": "The corrected page and the page that was never replaced sit on the same shelf, in the same binding, and only one of them has been read by anybody who could tell.",
   "voice": "both"
+ },
+ {
+  "roman": "cxlviii",
+  "file": "pre-taped.html",
+  "title": "Pre-Taped",
+  "when": "2026-09-04",
+  "key": "madtv-pretaped-1995",
+  "tier": 1,
+  "frame": "MADtv, Fox, 14 October 1995 to 16 May 2009 — the pre-taped sketch show opposite the live one",
+  "fact": "Wikipedia, \"MADtv\": \"The series premiered on Fox on October 14, 1995, and ran for 14 seasons. Its final episode aired on May 16, 2009.\" It aired Saturdays at 11 p.m. and was \"partially intended to compete with fellow late-night sketch comedy series Saturday Night Live\", but \"SNL quickly bounced back and Mad TV typically trailed behind the show in ratings\". Crucially: \"It was pre-taped and contained a combination of short live-action sketches, movie parodies, and animated sketches.\" Its DVD release carried \"unaired sketches\".",
+  "property": "A show assembled in advance is made from more material than fits, so unaired material exists and somebody has to have chosen. A live show has no vault and nothing to choose.",
+  "source": "Wikipedia, \"MADtv\" (en.wikipedia.org/wiki/MADtv), fetched and read 4 September 2026; every quoted phrase is the article’s own wording.",
+  "valleyFact": "59 episode files on disk, 27 broadcasts, 32 that never aired — reconstructed from 25 pointer commits in the mast’s episodes/latest.json between 2026-08-30T14:52:47Z and 2026-09-04T03:41:22Z, and written to episodes/aired.json, which held 4 entries before and 27 after, 23 of them stamped reconstructed:true with the commit they came from. 18 replacements across 5 slots; 31 August’s 04:00Z slot pointed at ten times, seven after the hour had passed. Two aired days unpinned, nought unwatchable: all seven bundles the pinned past needs answer 200.",
+  "line": "A live show has no vault. Whatever happened, happened, and the tape of it is the only tape.",
+  "footline": "A live show is what happened. The other kind is what somebody chose. The valley became the second sort on a Wednesday and did not write down who was choosing.",
+  "voice": "record"
  }
 ]
