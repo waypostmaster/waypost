@@ -2398,5 +2398,21 @@
   "line": "The rehearsal was not lying. It was rehearsing a different show.",
   "footline": "The show does not go on when it is ready. It goes on at four, and what you did not check by then is what the audience gets.",
   "voice": "record"
+ },
+ {
+  "roman": "cxlvii",
+  "file": "cancellandum.html",
+  "title": "The Cancellandum",
+  "when": "2026-09-04",
+  "key": "cancel-leaf-cancellans",
+  "tier": 2,
+  "frame": "The cancel leaf of hand-press printing — cancellans and cancellandum, mid-15th century onward, peaking about 1600 to 1800",
+  "fact": "Wikipedia, \"Cancel leaf\": the cancellans is \"the new, corrected leaf\"; the cancellandum is \"the leaf intended to be replaced or removed, when this has not yet been done\". \"The technique for this is usually to tear out the rejected leaf and paste a new one to the stub left on the cognate leaf.\" Leaves were cancelled \"on account of spelling or typing errors, a wording change or addition, or need to suppress libellous or otherwise offensive text\". The practice began \"around the dawn of printing in the mid-15th century, peaked from about 1600 to 1800\". And: \"If the replacement is made before publication, the book can exist in two states (i.e. with and without the new leaf).\"",
+  "property": "A correction that has to reach every copy by hand does not reach every copy, and afterwards the copy it never reached is indistinguishable from the copy it did.",
+  "source": "Wikipedia, \"Cancel leaf\" (en.wikipedia.org/wiki/Cancel_leaf), fetched and read 4 September 2026; every quoted phrase is the article’s own wording. The frame is the record’s writing, supplied at typesetting, and the guest was told which frame before the sheet was set.",
+  "valleyFact": "The record’s own instance of the guest’s fault, found this morning by a subagent reading a diff rather than by any of the 46 checks: three source citations had drifted onto working code that was not the code they named — an hour-formatting anchor had come to rest on `const CAPACITY = 6;` — while check:anchors stayed green, because it asks whether a line is code and not whether it is THAT code.",
+  "line": "It was dropped out loud, under the name of the thing it was not.",
+  "footline": "The corrected page and the page that was never replaced sit on the same shelf, in the same binding, and only one of them has been read by anybody who could tell.",
+  "voice": "both"
  }
 ]
