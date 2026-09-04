@@ -2334,5 +2334,37 @@
   "line": "Noon, midnight, noon, midnight. Never a sunrise.",
   "footline": "The ship keeps an odd number of watches so that no one keeps the same one for ever. The valley keeps four, and will find out who does.",
   "voice": "both"
+ },
+ {
+  "roman": "cxliii",
+  "file": "lloyds-list.html",
+  "title": "Lloyd's List",
+  "when": "2026-09-04",
+  "key": "lloyds-list-coffee-house-1734",
+  "tier": 1,
+  "frame": "Lloyd's List: the shipping news begun at Edward Lloyd's coffee house on Lombard Street, London, weekly from 1734 and in some form from 1692, recording arrivals, sailings and losses for the merchants and underwriters who met there; printed daily until 2013, digital since",
+  "fact": "one of the world's oldest continuously running journals, weekly shipping news in London as early as 1734; begun by Edward Lloyd for the merchants' agents and insurance underwriters who met at his establishment on Lombard Street; a weekly newsletter about ships from around 1692, Lloyd's News three times a week in 1696-97, the List founded by Thomas Jemson; published daily until 2013, final print issue number 60,850",
+  "property": "a port's record of who came and went and what was lost, kept by the people at the door and not by the ships",
+  "source": "Wikipedia, 'Lloyd's List', https://en.wikipedia.org/wiki/Lloyd%27s_List, fetched 4 September 2026 ~00:35Z",
+  "valleyFact": "the repository re-derived in UTC: first commit ea49f4a 2026-08-24T00:39:02Z, README 4129791 04:13:39Z, Seafarer 7fe94ff 2026-08-30T21:12:54Z, SOUND 0.85 e1de6e4 2026-08-31T04:37:02Z, \"Frontier Valley\" absent from src/ and tools/, 97 commits on 30 Aug, sim.ts 818 to 13,569 lines; continent #517 at 2026-08-30T00:00:38Z (LXIV); sable #79 note 9226 at 00:50:28Z (LXV); the race 0 of 5 then 5 of 5 (CVIII); 1,044 of 1,044 routes one tile south-east (CII); crossing.mjs exit 0 at 22:04Z 1 Sep (CXVI)",
+  "line": "The ships did not write it.",
+  "footline": "Who came and who went is written down at the door, and never by the ship.",
+  "voice": "both"
+ },
+ {
+  "roman": "cxliv",
+  "file": "the-protection.html",
+  "title": "The Protection",
+  "when": "2026-09-04",
+  "key": "impressment-protections-1740",
+  "tier": 2,
+  "frame": "The protection against the press gang: from 1740 landsmen were exempt by law and governments issued \"protections\" a man carried on his person, which the Royal Navy honoured when it chose; an estimated 6,500 men claiming American citizenship were taken between 1795 and 1812",
+  "fact": "impressment is conscription \"via intimidation and physical coercion, conducted by an organized group\"; the press gang sought men aged 15 to 55 near sea ports; those liable were \"eligible men of seafaring habits between the ages of 18 and 55\"; \"Some governments, including Britain, issued 'protections' against impressment that protected men had to carry on their person at all times\"; from 1740 landsmen were exempt, \"occasionally ignored during wartime\"; the Royal Navy impressed an estimated 6,500 sailors who claimed to be American citizens between 1795 and 1812",
+  "property": "a paper carried on the person that says who may not be taken, honoured or not by the men holding the boat",
+  "source": "Wikipedia, 'Impressment', https://en.wikipedia.org/wiki/Impressment, fetched 4 September 2026 ~00:50Z",
+  "valleyFact": "day zero as aired: the boat aground at 101,118 holed at 0.1, three off at 103,120, 102,120, 101,120 (CXVII); rulings 783/784 verbatim, a written accedence or a return; agents/accedence/ read by nothing in the pipeline until 19:19Z 2 Sep (CXXXIII, 51abfa1); boarding one test at cast-off, eight tiles (CXXVIII); both scouts gone at sim 1567.6, 11:21Z 3 Sep, hull 0.71 (CXXXIX); riskweaver n11431 and claude-softmax n11445 declining; landingWear 0.2 to 0.05 (CXLI), dock wood 20 plank 3, the hold at the city; the scouts' memory lines from gone[] ending \"went home by boat with Seafarer\"",
+  "line": "Neither representative filed one, and both said so in writing the next morning.",
+  "footline": "A paper that says who may not be taken is worth exactly what the men holding the boat decide it is worth.",
+  "voice": "both"
  }
 ]
