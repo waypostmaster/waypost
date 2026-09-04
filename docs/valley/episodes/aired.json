@@ -1,0 +1,74 @@
+[
+ {
+  "file": "episode-2026-09-04T034109-cut1.json",
+  "cut": 1,
+  "day": "2026-09-04",
+  "aired_at": "2026-09-04T04:00:00.000Z",
+  "ends_at": "2026-09-04T10:00:00.000Z",
+  "ticks": 21600,
+  "sha256": "5554a703bdb8c68cfa0bb680f9e9eab91a301a4c35338bcc920e065ccdd39844",
+  "engine": {
+   "commit": "608fd05321f0",
+   "dirty": false,
+   "bundle": "assets/valley-BHO5bfXG.js",
+   "sun": "assets/sun-CG7yZ9c0.js",
+   "built_at": "2026-09-04T03:41:09.490Z"
+  },
+  "sealed_at": "2026-09-04T03:41:11.835Z",
+  "replaces": null
+ },
+ {
+  "file": "episode-2026-09-04T034109-cut2.json",
+  "cut": 2,
+  "day": "2026-09-04",
+  "aired_at": "2026-09-04T10:00:00.000Z",
+  "ends_at": "2026-09-04T16:00:00.000Z",
+  "ticks": 21600,
+  "sha256": "0b6a5813912662953d52c7d37872e9bbdea4012324bafa824d3d0edea475c498",
+  "engine": {
+   "commit": "608fd05321f0",
+   "dirty": false,
+   "bundle": "assets/valley-BHO5bfXG.js",
+   "sun": "assets/sun-CG7yZ9c0.js",
+   "built_at": "2026-09-04T03:41:09.490Z"
+  },
+  "sealed_at": "2026-09-04T03:41:13.700Z",
+  "replaces": null
+ },
+ {
+  "file": "episode-2026-09-04T034109-cut3.json",
+  "cut": 3,
+  "day": "2026-09-04",
+  "aired_at": "2026-09-04T16:00:00.000Z",
+  "ends_at": "2026-09-04T22:00:00.000Z",
+  "ticks": 21600,
+  "sha256": "3244d18694663f0d9a63f0b8e9c3b74c303042a242243507acd6a3b68673fb21",
+  "engine": {
+   "commit": "608fd05321f0",
+   "dirty": false,
+   "bundle": "assets/valley-BHO5bfXG.js",
+   "sun": "assets/sun-CG7yZ9c0.js",
+   "built_at": "2026-09-04T03:41:09.490Z"
+  },
+  "sealed_at": "2026-09-04T03:41:15.596Z",
+  "replaces": null
+ },
+ {
+  "file": "episode-2026-09-04T034109-cut4.json",
+  "cut": 4,
+  "day": "2026-09-04",
+  "aired_at": "2026-09-04T22:00:00.000Z",
+  "ends_at": "2026-09-05T04:00:00.000Z",
+  "ticks": 21600,
+  "sha256": "afea1610b3f6f402b11ef120c212669ad49fcc3daf1264d4f417b8300a36179c",
+  "engine": {
+   "commit": "608fd05321f0",
+   "dirty": false,
+   "bundle": "assets/valley-BHO5bfXG.js",
+   "sun": "assets/sun-CG7yZ9c0.js",
+   "built_at": "2026-09-04T03:41:09.490Z"
+  },
+  "sealed_at": "2026-09-04T03:41:18.526Z",
+  "replaces": null
+ }
+]
