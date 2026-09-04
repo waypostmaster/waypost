@@ -2382,5 +2382,21 @@
   "line": "It is not dropped in silence. It is dropped out loud, which reads exactly like being heard.",
   "footline": "A box in a wall asks nothing of anybody. The reader is the promise, and we never hired one.",
   "voice": "record"
+ },
+ {
+  "roman": "cxlvi",
+  "file": "cowbell.html",
+  "title": "Cowbell",
+  "when": "2026-09-04",
+  "key": "snl-more-cowbell-2000",
+  "tier": 1,
+  "frame": "Saturday Night Live, live since 11 October 1975, and the \"More Cowbell\" sketch of 8 April 2000",
+  "fact": "SNL is \"broadcast live with a studio audience\" and \"begins at 11:29:30 p.m. Eastern Time\"; the week runs a Monday pitch, Tuesday writing, a Wednesday 5 p.m. read-through, then rehearsal, and a dress rehearsal before a live audience at 8 p.m. Saturday, after which \"Michaels will review the show lineup to ensure it meets a 90-minute length, and sketches that have made it as far as the live rehearsal may be removed.\" The sketch of 8 April 2000 was written by Will Ferrell, performed with Christopher Walken, depicts Blue Oyster Cult recording \"(Don't Fear) The Reaper\", carries the line \"I've got a fever, and the only prescription is more cowbell!\", and per Seth Meyers \"the sketch was submitted over seven times before making the show\".",
+  "property": "A live show goes out at a fixed minute whether or not it is ready, so the rehearsal before it is the last place a fault can be found and cut. The rehearsal is not the show.",
+  "source": "Wikipedia, \"Saturday Night Live\" (en.wikipedia.org/wiki/Saturday_Night_Live) and \"More Cowbell\" (en.wikipedia.org/wiki/More_Cowbell), both fetched and read 4 September 2026; every quoted phrase is the articles’ own wording. The frequently-attributed Lorne Michaels line about 11:30 is NOT in either page and is deliberately absent from the sheet.",
+  "valleyFact": "The first four-cut day aired 04:00:00Z on 4 Sep 2026: four cuts of 21,600 ticks and 6,000 steps against one former programme of 86,400, same six valley days, produced in about ten seconds with engine 608fd05 and dirty:false. A pre-air rehearsal without --air-at (AIR_BASE at episode.mts:586) moved every filed day to cut 2 and reported the wrong programme. considerSecession lost its \"fewer than three people\" refusal at the keeper’s ruling; check:secession holds it with three controls. npm run check exits 1 on check:filed, which calls process.exit(1) for \"fewer than two settlers\", because the valley is empty.",
+  "line": "The rehearsal was not lying. It was rehearsing a different show.",
+  "footline": "The show does not go on when it is ready. It goes on at four, and what you did not check by then is what the audience gets.",
+  "voice": "record"
  }
 ]
