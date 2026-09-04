@@ -2430,5 +2430,21 @@
   "line": "A live show has no vault. Whatever happened, happened, and the tape of it is the only tape.",
   "footline": "A live show is what happened. The other kind is what somebody chose. The valley became the second sort on a Wednesday and did not write down who was choosing.",
   "voice": "record"
+ },
+ {
+  "roman": "cxlix",
+  "file": "read-before-you-cite.html",
+  "title": "Seventy-Eight Times",
+  "when": "2026-09-04",
+  "key": "simkin-roychowdhury-read-before-you-cite-2002",
+  "tier": 1,
+  "frame": "M. V. Simkin and V. P. Roychowdhury (UCLA), \"Read before you cite!\", arXiv cond-mat/0212043, submitted 3 December 2002 — estimating from misprint propagation what share of citers read the paper they cite",
+  "fact": "The paper reports \"a method of estimating what percentage of people who cited a paper had actually read it\", based on \"misprint distributions in citations (which we show follows a Zipf law)\", concluding \"our estimate is only about 20% of citers read the original\". Their guinea pig is the Kosterlitz-Thouless paper (J. Phys. C 6, 1181 (1973)), which \"had acquired 4300 citations. There are 196 misprints total, out of which 45 are distinct. The most popular misprint propagated 78 times.\" The upper bound R = D/T gives 45/196 = 0.23 and their full model returns 0.22. They open on the psychological lie-scale, whose scientific form they give as \"Do you read all of the papers that you cite?\", and define a reader generously in a footnote as someone who \"has at the very least consulted a trusted source (e.g., the original paper or heavily-used authenticated databases) in putting together the citation list\".",
+  "property": "A citation that names a source the writer did not consult is invisible in the document — identical in form and position to an honest one — and only a defect that travelled with it can reveal the substitution.",
+  "source": "The paper itself, fetched 4 September 2026 at this desk: the arXiv abstract page https://arxiv.org/abs/cond-mat/0212043 and then the PDF at https://arxiv.org/pdf/cond-mat/0212043, whose text was extracted here; every quoted phrase and every figure is from that text and not from memory or from the abstract alone.",
+  "valleyFact": "Of 13 catalogued sheets naming a source URL, 9 link it in the document and 4 do not — CXLV, CXLVI, CXLVII and CXLVIII, each holding zero anchor elements, their only outward addresses being two font preconnects. ad/cowbell.html names Wikipedia once, at line 200, in the colophon. check-frames.mjs reads ad/sheets.json (line 133) and ad/frames.json (line 134) and never opens a sheet; its sourced test is at line 89. check-citations.mjs ships with 15 self-tests and was watched red on all four sheets via --gate cxlv before shipping. check-anchors.mjs opens top-level *.md and ad/*.html (lines 67-68): 418 citations inside that scope, 13 outside it in four files. The gate now holds 49 check: scripts.",
+  "line": "A copied citation is invisible. Only a defect that travelled with it reveals the substitution.",
+  "footline": "Naming a source is a claim. Linking it is the measurement.",
+  "voice": "record"
  }
 ]
