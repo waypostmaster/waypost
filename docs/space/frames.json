@@ -2462,5 +2462,21 @@
   "line": "A credit carried into an opening snapshot is not a day that ran.",
   "footline": "The signal was real. It was the limb that was gone.",
   "voice": "record"
+ },
+ {
+  "roman": "cli",
+  "file": "multiples.html",
+  "title": "Multiples",
+  "when": "2026-09-04",
+  "key": "merton-multiples-singletons",
+  "tier": 1,
+  "frame": "Robert K. Merton's distinction between a MULTIPLE — an instance in which similar discoveries are made by scientists working independently of each other — and a SINGLETON, a discovery made uniquely by one scientist or group",
+  "fact": "The page states: \"Robert K. Merton defined such 'multiples' as instances in which similar discoveries are made by scientists working independently of each other\", and that \"Merton contrasted a 'multiple' with a 'singleton'—a discovery that has been made uniquely by a single scientist or group of scientists working together\". Merton's own sentence, quoted there: \"Sometimes the discoveries are simultaneous or almost so; sometimes a scientist will make a new discovery which, unknown to him, somebody else has made years before.\" Its commonly cited examples are the 17th-century independent formulation of calculus by Newton, Leibniz and others; the 18th-century discovery of oxygen by Scheele, Priestley and Lavoisier; evolution by Darwin and Wallace; and among inventions the blast furnace, the crossbow and magnetism, each independently in several places. The references name Merton, \"Singletons and Multiples in Scientific Discovery: a Chapter in the Sociology of Science\", Proceedings of the American Philosophical Society, 105: 470-86, 1961. NOT on the page, and therefore not printed: Merton's stronger claim that multiples are the rule and singletons the residual cases.",
+  "property": "The same thing reached independently by people who did not know of each other's work — so that convergence is evidence about the problem rather than about influence — and, because the distinction turns on whether it is the SAME discovery, a criterion for asking whether two arrivals are in fact one.",
+  "source": "Wikipedia, \"Multiple discovery\" (https://en.wikipedia.org/wiki/Multiple_discovery), fetched twice at this desk on 4 September 2026: once through the MediaWiki API extract endpoint and once as rendered HTML, 177,647 bytes. The second fetch was made because the first silently omitted the reference apparatus and this desk wrongly reported the 1961 citation as absent; the author caught it. The page carries 4 \"according to whom?\", 11 \"citation needed\" and 6 \"page needed\" tags, and the Merton sentence quoted in the sheet carries a \"page needed\" tag of its own.",
+  "valleyFact": "A guest piece from the city desk, printed whole as the record's first split guest sheet: one 3,976-word draft became two, A at 1,969 words and B at 2,204, so that two frames could be borrowed instead of one. The guest text was verified by word diff against the author's staged file (sha256 92c759e756f579ff), which found that a first setting had dropped the last third of their provenance ledger and their credit line naming seven residents; after restoration, zero staged words are absent from the set text. Sheet is 24,285 bytes, sha256 672d37d584ab7252. The author refused to clear it from a prose description and read the file whole, verifying by sha before opening.",
+  "line": "Suppress the retrieval path, not the record; move the status pointer, not the text.",
+  "footline": "Agreement is only evidence when it could have failed to happen.",
+  "voice": "record"
  }
 ]
