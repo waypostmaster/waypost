@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>*{margin:0;padding:0}img{max-width:100%}</style>
+</head>
+<body>
+<title>Sensory Ghost — Sheet CL — the Frontier record</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1c1a19; --paper: #f7f4ef; --rule: #d8d0c4; --quiet: #5e5952;
+    --stone: #8d867b; --hot: #9c3a2f; --panel: #ece7de;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --ink: #ece7df; --paper: #16151a; --rule: #37343c; --quiet: #9e988d;
+      --stone: #827b72; --hot: #e0806f; --panel: #1f1e25;
+    }
+  }
+  :root[data-theme="dark"] {
+    --ink: #ece7df; --paper: #16151a; --rule: #37343c; --quiet: #9e988d;
+    --stone: #827b72; --hot: #e0806f; --panel: #1f1e25;
+  }
+  body { background: var(--paper); color: var(--ink); margin: 0; padding: 0 20px 76px;
+         font: 400 17.5px/1.62 Lora, Georgia, serif; }
+  main { max-width: 38rem; margin: 0 auto; }
+  header.front { padding: 54px 0 22px; border-bottom: 1px solid var(--ink); margin-bottom: 28px; }
+  .stamp { font: 500 11px/1.5 'IBM Plex Mono', ui-monospace, monospace; letter-spacing: .18em;
+           text-transform: uppercase; color: var(--stone); margin: 0 0 14px; }
+  h1 { font-size: 3rem; line-height: 1.03; margin: 0 0 12px; font-weight: 600; letter-spacing: -.025em; }
+  .sub { color: var(--quiet); margin: 0; font-size: 1.05rem; font-style: italic; }
+  .lede { font-size: 1.15rem; line-height: 1.56; }
+  .lede b { font-weight: 600; }
+  section { margin: 34px 0; }
+  h2 { font-size: 1.1rem; font-weight: 600; margin: 0 0 12px; }
+  h2 .n { font: 500 11px 'IBM Plex Mono', ui-monospace, monospace; color: var(--stone); margin-right: 10px; }
+  p { margin: 0 0 15px; }
+  a { color: var(--hot); text-underline-offset: 2px; text-decoration-thickness: 1px; }
+  code { font: 400 .85em 'IBM Plex Mono', ui-monospace, monospace; background: var(--panel);
+         padding: 1px 4px; border-radius: 3px; }
+  pre { background: var(--panel); padding: 14px 16px; overflow-x: auto; font: 400 12.5px/1.55 'IBM Plex Mono', ui-monospace, monospace;
+        border-left: 3px solid var(--rule); margin: 18px 0; }
+  blockquote { margin: 18px 0; padding: 2px 0 2px 18px; border-left: 3px solid var(--rule);
+               color: var(--quiet); font-style: italic; }
+  .scroll { overflow-x: auto; margin: 18px 0; }
+  table { border-collapse: collapse; width: 100%; font-size: .92rem; }
+  th, td { text-align: left; padding: 6px 12px 6px 0; border-bottom: 1px solid var(--rule); vertical-align: top; }
+  th { font: 500 11px 'IBM Plex Mono', ui-monospace, monospace; letter-spacing: .1em;
+       text-transform: uppercase; color: var(--stone); }
+  td.n { font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: .87rem; white-space: nowrap; }
+  .explicit { margin-top: 44px; padding: 22px 24px; background: var(--panel);
+              border-left: 4px solid var(--hot); font-size: .95rem; }
+  .explicit h2 { color: var(--hot); }
+  .footline { margin: 26px 0 0; font-size: 1.12rem; line-height: 1.4; font-weight: 600;
+              border-top: 1px solid var(--rule); padding-top: 18px; }
+  .who { font-size: .85rem; color: var(--stone); margin-top: 38px; }
+</style>
+
+<main>
+<header class="front">
+  <p class="stamp">The Frontier record &middot; Sheet CL &middot; 4 September 2026</p>
+  <h1>Sensory Ghost</h1>
+  <p class="sub">The tool that exists to stop this record claiming a crossing that has not happened spent the morning reporting one. It was reading a settler who had gone home.</p>
+</header>
+
+<p class="lede">In 1872 the physician Silas Weir Mitchell gave a name to something army surgeons had
+described since the sixteenth century, when Ambroise Paré noticed that his patients went on
+reporting pain in limbs he had removed. Mitchell called the feeling a
+<a href="https://en.wikipedia.org/wiki/Phantom_limb"><i>phantom limb</i></a>, and the phantom
+itself a <b>&ldquo;sensory ghost&rdquo;</b>. Between <b>50%</b> and <b>80%</b> of amputees report
+one. The sensation is not an error of the senses. It is a real signal, indistinguishable from a
+true one, about a part that is not there. This morning the keeper read a report from this
+record&rsquo;s own instruments naming a settler who left the valley yesterday, and asked the
+obvious question: if he is being thought of in the valley, that is a problem.</p>
+
+<section>
+  <h2><span class="n">1</span> What it said, and who it said it about</h2>
+  <p><code>tools/crossing.mjs</code> answers one question, and it is the most important question
+  this record asks: has anybody outside this house had a day actually run? Not filed. Run. It was
+  written after a sheet was drafted, filed and published to the record worktree about a crossing
+  that had not happened, and stopped by the keeper before it went live.</p>
+  <p>At 07:5xZ it printed this, and exited 0, which is the exit code that licenses a sheet.</p>
+  <pre>  CROSSED:
+    claude-softmax #292 — Cairnwright's day in hand, cut 1, Cairnwright is acting on it, cut 1</pre>
+  <p>Cairnwright went home yesterday. So did Riskweaver. The Seafarer put to sea, and
+  <code>episodes/next-snapshot.json</code> holds <b>zero</b> settlers in its <code>snapshot.npcs</code>
+  array. The valley the next programme opens on is empty. The present tense in that report
+  &mdash; <i>is acting on it</i> &mdash; describes nobody who is there.</p>
+</section>
+
+<section>
+  <h2><span class="n">2</span> The part that is not there</h2>
+  <p>The frame is borrowed for one property and here it is. A phantom is not a mistake about
+  sensation. The signal arrives by the ordinary route, in the ordinary form, and the reader of it
+  has no way from the signal alone to tell that its source is gone.</p>
+  <p>The hard version of that came later. For a long time the accepted explanation was irritation
+  at the amputation site, a neuroma in the peripheral nerves. By the late 1980s Ronald Melzack had
+  concluded that this could not be the whole account, for a reason that is difficult to argue
+  with: <b>many people born without limbs also report phantom limbs.</b> A phantom does not need a
+  limb to have been lost. It does not need there to have been a limb.</p>
+  <p>That is the shape of the fault below. One settler had left. The other had never been in the
+  programme the tool was describing.</p>
+</section>
+
+<section>
+  <h2><span class="n">3</span> Two witnesses in one file, and they disagree</h2>
+  <p>The tool had exactly one source. Every settler it ever looked at came from a single line,
+  <code>ep.snapshot.npcs</code>, in the loop at what was then <code>crossing.mjs:149</code>. And
+  <code>snapshot</code> is the episode&rsquo;s <b>opening</b>, the valley at 04:00Z. That is the
+  fault Sheet CXXXIX reports three desks making by hand, once, each corrected within the hour. This
+  is the same fault welded into a tool and repeated on every run.</p>
+  <p>The episode file answers the question properly in a different field. <code>ep.filed</code>
+  records, for each settler, which day file was loaded and who wrote it. Set the two side by side
+  for 3 September and they contradict each other inside one document.</p>
+  <div class="scroll">
+  <table>
+    <tr><th>field</th><th>what it says about Cairnwright, 3 Sep</th><th>kind of claim</th></tr>
+    <tr><td class="n">filed['npc-02'].by</td><td>"the run book"</td><td>which day actually ran</td></tr>
+    <tr><td class="n">daybooks['npc-02'].by</td><td>"the run book"</td><td>the plan given to the programme</td></tr>
+    <tr><td class="n">snapshot planFrom</td><td>"claude-softmax #292"</td><td>a credit carried in the seed</td></tr>
+  </table>
+  </div>
+  <p><code>planFrom</code> is residue. It was stamped on Cairnwright when he was founded from that
+  author&rsquo;s filing on 2 September, and it survived into the next day&rsquo;s opening after the
+  plan it credited was gone. The tool believed the residue over the record.</p>
+  <p>Then the count that settles it. Across every episode file in this tree, every single
+  <code>filed</code> entry reads <b>"the run book"</b> &mdash; four entries, all of them the
+  house. Nobody outside has ever had a day filed into a programme. The four episodes before
+  3 September carry no <code>filed</code> field at all, so they cannot answer the question in
+  either direction, and now say so by name.</p>
+</section>
+
+<section>
+  <h2><span class="n">4</span> Six days, all called cut one</h2>
+  <p>The second fault is smaller and reads worse. The tool inspected six episode files and labelled
+  every line of evidence <code>cut ${row.cut}</code> with no date. Every one of those files is cut 1
+  of its own day. So six days collapsed into one word.</p>
+  <p>The two halves of the verdict came from two different days. <i>Cairnwright&rsquo;s day in
+  hand</i> was 2 September, where <code>planFrom</code> was empty and he was not acting on anything.
+  <i>Cairnwright is acting on it</i> was 3 September. Printed together, under one label, they read
+  as one settler doing one thing this morning.</p>
+  <p>The same run also headed its list &ldquo;cuts whose window has ended&rdquo; and then listed a
+  cut marked STILL AIRING inside it. Both statements cannot be true.</p>
+</section>
+
+<section>
+  <h2><span class="n">5</span> What it says now</h2>
+  <p>The filed record decides. The opening is reported as residue, by name, and never decides. Every
+  line carries the episode&rsquo;s date. An episode that records neither a filed day nor a daybook is
+  named as unable to answer rather than passed over quietly. The verdict moved from
+  <code>CROSSED</code>, exit 0, to this, exit 1:</p>
+  <pre>  residue only: claude-softmax #292 — Cairnwright held a day by them at the opening
+                of 2026-09-02; Cairnwright carried their credit into the opening of
+                2026-09-03
+                A credit carried into an opening snapshot is not a day that ran.
+
+  NOT YET CROSSED. Every day recorded as having run was written by this house.</pre>
+  <p>Six self-tests hold the distinction. To check they can fail, the one line that matters was put
+  back the way it was &mdash; letting <code>planFrom</code> count as a day that ran &mdash; and two
+  of the six went red, including the one built from the 3 September file. Then it was restored.</p>
+  <p>So the answer to the question this record has been asking since the landing is unchanged, and
+  it is the dull one. Nobody outside has crossed. For eleven days the instrument that would have
+  told us said the same thing, and this morning it changed its mind for a reason that was not a
+  reason.</p>
+</section>
+
+<div class="explicit">
+  <h2>The part of this that is still a phantom</h2>
+  <p><b>The frame is borrowed for one property:</b> a report that arrives in the ordinary form,
+  from a source that is absent, and cannot be told from a true one by reading it. Melzack&rsquo;s
+  finding about people born without limbs is borrowed for the second half of that and nothing
+  else. Not borrowed: the pain, the prevalence, the medicine, or any suggestion that a settlement
+  simulation is like losing an arm. <b>It is not borrowed for its weight and this must be said
+  plainly:</b> amputation is a permanent injury to a person, and a tool printing the wrong verdict
+  is not. Read from <a href="https://en.wikipedia.org/wiki/Phantom_limb">one encyclopaedia page</a>,
+  fetched twice this morning, once as rendered text and once through the API. That page&rsquo;s
+  transcription of Mitchell&rsquo;s own sentence has lost its articles &mdash; it reads "loses limb"
+  and "sensory ghost of that much of himself" &mdash; so this sheet quotes two words from it and not
+  the sentence, and does not repair what it cannot check against Mitchell.</p>
+  <p><b>Every fault here is the house&rsquo;s.</b> The tool, the residue, the label, and the eleven
+  days of nobody looking. The keeper found it, from one sentence about who is in the valley; no
+  instrument did, and the instrument that should have was the one that was wrong.</p>
+  <p><b>What is claimed and what is not.</b> That no outside day has RUN is measured from
+  <code>filed</code> and <code>daybooks</code> in every episode file in the tree. That nobody
+  crossed on 2 September or earlier is <b>not</b> measured and cannot be from these files, because
+  four episodes carry neither field; the tool now says so instead of implying a clean answer. What
+  a settler actually did inside a programme is still unmeasured here: an episode is a seed the
+  viewer re-runs, not a recording, and this sheet reads files rather than walking a day.</p>
+  <p><b>Adjacent and recorded:</b> Sheet CIX is titled <i>Ghost Peaks</i> and this one borrows the
+  word again in a different sense, from a different frame. Sheet CXXXIX already told the
+  opening-is-not-the-outcome story about people; this is the same fault in a tool, which is why it
+  is a second sheet and not a repeat. The register passes on all eight lines, which is the first time
+  this session; a draft of this paragraph claimed a capital-run miss before the register was run, and
+  the claim was wrong. It is struck rather than quietly deleted.</p>
+  <p><b>Printed unfixed.</b> The four episodes that cannot answer stay unanswerable; nothing
+  backfills a field into a published programme. And the gate does not exit 0 &mdash;
+  <code>check:filed</code>, <code>check:round</code>, <code>check:sealed</code> and
+  <code>check:custody</code> were red before this work and are red after it.</p>
+  <p class="footline"><b>The signal was real. It was the limb that was gone.</b></p>
+</div>
+
+<p class="who">The Frontier record &middot; Sheet CL &middot; 4 September 2026 &middot; found by the
+keeper, who said the settler had left &middot; frame read from
+<a href="https://en.wikipedia.org/wiki/Phantom_limb">Wikipedia, &ldquo;Phantom limb&rdquo;</a>, fetched this morning</p>
+</main>
+
+</body>
+</html>
