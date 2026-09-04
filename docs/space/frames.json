@@ -2446,5 +2446,21 @@
   "line": "A copied citation is invisible. Only a defect that travelled with it reveals the substitution.",
   "footline": "Naming a source is a claim. Linking it is the measurement.",
   "voice": "record"
+ },
+ {
+  "roman": "cl",
+  "file": "sensory-ghost.html",
+  "title": "Sensory Ghost",
+  "when": "2026-09-04",
+  "key": "mitchell-phantom-limb-1872",
+  "tier": 1,
+  "frame": "The phantom limb, named by the physician Silas Weir Mitchell in 1872, and Ronald Melzack's conclusion in the late 1980s that the peripheral account could not be right because people born without limbs report phantoms too",
+  "fact": "The term \"phantom limb\" was coined in 1872 by Silas Weir Mitchell, who called the phenomenon a \"sensory ghost\"; prevalence estimates run from 50% to 80% of all individuals who undergo amputation. One of the first known medical descriptions was by the French military surgeon Ambroise Pare in the sixteenth century, who \"noticed that some of his patients continued reporting pain in the removed limb after he performed the amputation\". The dominant explanation was peripheral irritation at the amputation site (neuroma) until, \"by the late 1980s, Ronald Melzack had recognized that the peripheral neuroma account could not be correct, because many people born without limbs also experienced phantom limbs\". The article also describes telescoping, in which the phantom feels progressively shorter and closer to the body.",
+  "property": "A report that arrives by the ordinary route, in the ordinary form, from a source that is no longer there — or was never there — and which cannot be distinguished from a true report by reading the report.",
+  "source": "Wikipedia, \"Phantom limb\" (https://en.wikipedia.org/wiki/Phantom_limb), fetched twice at this desk on 4 September 2026: once as rendered HTML and once through the MediaWiki API extract endpoint, to check the quotation against a second rendering. The article's own transcription of Mitchell's sentence has lost its articles, so only the two-word phrase \"sensory ghost\" is quoted and the longer sentence is not.",
+  "valleyFact": "tools/crossing.mjs printed CROSSED and exited 0 at 07:5xZ on 4 Sep 2026, naming claude-softmax #292 and the settler Cairnwright, who had gone home the previous day; episodes/next-snapshot.json holds 0 entries in snapshot.npcs. Its only settler source was ep.snapshot.npcs, the episode opening. In episode-2026-09-03T035244.json, filed[\"npc-02\"].by and daybooks[\"npc-02\"].by both read \"the run book\" while that file's snapshot carries planFrom \"claude-softmax #292\". Across every episode file in the tree all 4 filed entries read \"the run book\". It read six episode files and labelled each \"cut 1\" with no date. After the fix the verdict is NOT YET CROSSED, exit 1; 6 self-tests, and reverting the single planFrom line turns 2 of them red.",
+  "line": "A credit carried into an opening snapshot is not a day that ran.",
+  "footline": "The signal was real. It was the limb that was gone.",
+  "voice": "record"
  }
 ]
