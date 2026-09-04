@@ -2366,5 +2366,21 @@
   "line": "Neither representative filed one, and both said so in writing the next morning.",
   "footline": "A paper that says who may not be taken is worth exactly what the men holding the boat decide it is worth.",
   "voice": "both"
+ },
+ {
+  "roman": "cxlv",
+  "file": "lions-mouth.html",
+  "title": "The Lion's Mouth",
+  "when": "2026-09-04",
+  "key": "venice-bocche-dei-leoni-council-of-ten",
+  "tier": 1,
+  "frame": "The bocche dei leoni, the stone lion's-head letterboxes of the Council of Ten, Venice, 1310–1797",
+  "fact": "The Council of Ten governed Venice from 1310 to 1797 and used bocche dei leoni placed around the city, which \"allowed Venetians to report suspected illegal activities by placing a written note into the mouth\". Later observers including Mark Twain took them for an oppressive autocratic government spying on its citizens, \"but in reality the reports placed in lion's mouths were examined and only credible reports were investigated\".",
+  "property": "A box in a wall is not a channel; the reader on the far side is. The masonry is the visible half and the least of it.",
+  "source": "Wikipedia, \"Council of Ten\", en.wikipedia.org/wiki/Council_of_Ten, fetched and read 4 September 2026; the quoted sentences are the article's own wording.",
+  "valleyFact": "233 wishes on file, 217 granted, 16 open across 49 categories; askWish has one caller at vite.config.ts:734 and none in tools/episode.mts; hearAsks at sim.ts:8651 caps at 160 (:8652) and requires over 11 (:8653), then emits one feed line with zero consumers; src/hud.ts:343 is ['wish', 'Proposals', 'feed feed-wish']; livestock is the only category of 49 with neither unlocks nor boon, and carries 14 wishes.",
+  "line": "It is not dropped in silence. It is dropped out loud, which reads exactly like being heard.",
+  "footline": "A box in a wall asks nothing of anybody. The reader is the promise, and we never hired one.",
+  "voice": "record"
  }
 ]
