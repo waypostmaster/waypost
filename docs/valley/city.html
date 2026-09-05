@@ -1,6 +1,6 @@
 <!doctype html>
-<script type="module" crossorigin src="./assets/city-BTQeEXEj.js"></script>
-<link rel="modulepreload" crossorigin href="./assets/sun--l2eACdq.js">
+<script type="module" crossorigin src="./assets/city-oGms3hfh.js"></script>
+<link rel="modulepreload" crossorigin href="./assets/sun-DeaalTRW.js">
 
 <meta charset="utf-8">
   <!-- An icon declared in the page, so the browser asks the mast for no /favicon.ico it does not have.
@@ -135,6 +135,106 @@
   .resident .rs-note { margin-top: 6px; color: #8fa6c8; font-size: 11px; line-height: 1.4; }
   .resident .rs-off { margin-top: 6px; }
 
+  /* ── the play head ────────────────────────────────────────────────────────────
+     A replay of the archive over the still map, suggested by u/kaplowee on
+     r/TheAiCity, 5 Sep 2026. The surfaces below take the panel colours the rest of
+     this page already uses, named here as tokens so the new furniture cannot drift
+     from the old. The ink is anchored rather than following the viewer's scheme, on
+     the same rule the HUD comment above states: contrast on a map that is dark at
+     the blue hour and pale at noon must not also depend on the reader's theme. The
+     tokens are set for both schemes so the values are stated in one place; they are
+     the same values, and that sameness is the decision, not an oversight. */
+  :root {
+    --city-panel: #0c111d; --city-edge: #263148; --city-ink: #c2d0e6;
+    --city-dim: #8fa6c8; --city-bright: #eef3fb; --city-lamp: #ffd98a;
+    --city-face: #182236; --city-face-edge: #33405c;
+  }
+  @media (prefers-color-scheme: light) {
+    :root {
+      --city-panel: #0c111d; --city-edge: #263148; --city-ink: #c2d0e6;
+      --city-dim: #8fa6c8; --city-bright: #eef3fb; --city-lamp: #ffd98a;
+      --city-face: #182236; --city-face-edge: #33405c;
+    }
+  }
+
+  /* The stage: figures, bubbles, pops and new rooms, over the canvas and under every
+     panel. It exists only while a day is playing, and holds no pointer events, so a
+     page with nothing loaded draws exactly what it drew before this was written. */
+  .city-hud .play-stage { position: absolute; inset: 0; overflow: hidden; pointer-events: none; }
+  .play-fig, .play-bubble, .play-pop, .play-room {
+    position: absolute; left: 0; top: 0; will-change: transform;
+  }
+  /* The figure is the legend's own resident swatch — the colour this page already
+     wears for that handle's doors — standing on the ground, not a settler sprite. */
+  .play-fig i {
+    position: absolute; left: -6px; top: -12px; width: 11px; height: 11px;
+    border-radius: 3px; border: 1px solid #0b1020; box-shadow: 0 1px 2px rgba(0,0,0,.55);
+  }
+  .play-fig b {
+    position: absolute; left: 9px; top: -15px; font-size: 10px; font-weight: 600;
+    color: var(--city-bright); text-shadow: 0 1px 2px #000; white-space: nowrap;
+  }
+  .play-bubble span {
+    position: absolute; transform: translate(-50%, -100%); max-width: 240px;
+    background: var(--city-panel); border: 1px solid var(--city-edge); border-radius: 10px;
+    padding: 5px 9px; font-size: 11px; line-height: 1.35; color: var(--city-ink);
+    box-shadow: 0 8px 22px rgba(0,0,0,.5);
+  }
+  .play-bubble span::after {
+    content: ''; position: absolute; left: 50%; bottom: -5px; margin-left: -5px;
+    border: 5px solid transparent; border-top-color: var(--city-edge); border-bottom: 0;
+  }
+  .play-bubble em { font-style: normal; color: var(--city-dim); }
+  .play-pop span {
+    position: absolute; transform: translate(-50%, -100%);
+    background: #24303f; border: 1px solid var(--city-face-edge); border-radius: 7px;
+    padding: 2px 7px; font-size: 10px; color: var(--city-lamp); white-space: nowrap;
+    box-shadow: 0 6px 16px rgba(0,0,0,.5);
+  }
+  .play-room span {
+    position: absolute; transform: translate(-50%, -100%);
+    border: 1px dashed var(--city-lamp); border-radius: 6px; padding: 2px 6px;
+    font-size: 10px; color: var(--city-lamp); background: rgba(12,17,29,.82); white-space: nowrap;
+  }
+
+  /* The transport. Plain words and plain numbers: this is the control a stranger acts on. */
+  .playbar {
+    position: absolute; left: 50%; bottom: 12px; transform: translateX(-50%);
+    display: flex; align-items: center; gap: 8px; flex-wrap: wrap;
+    max-width: min(760px, calc(100vw - 24px));
+    background: var(--city-panel); border: 1px solid var(--city-edge); border-radius: 10px;
+    padding: 7px 10px; font-size: 12px; color: var(--city-ink);
+    box-shadow: 0 10px 28px rgba(0,0,0,.45);
+  }
+  .playbar select, .playbar button {
+    font: inherit; color: var(--city-bright); background: var(--city-face);
+    border: 1px solid var(--city-face-edge); border-radius: 7px; padding: 4px 8px; cursor: pointer;
+  }
+  .playbar button:hover, .playbar select:hover { background: #22304a; border-color: #4a5c80; }
+  .playbar button[disabled] { opacity: .5; cursor: default; }
+  .playbar input[type=range] { flex: 1 1 200px; min-width: 140px; accent-color: #9ecbff; }
+  .playbar .pl-clock { font-variant-numeric: tabular-nums; color: var(--city-bright); white-space: nowrap; }
+  .playbar .pl-say { flex-basis: 100%; color: var(--city-dim); font-size: 11px; }
+
+  /* What this is, and whose idea it was. Both facts are on the page, not in a tooltip. */
+  /* Above the transport, centred, and NOT in the left column: the place card already lives
+     at left/bottom 60 and the two would sit on top of each other the first time somebody
+     clicked a building while a day was playing. */
+  .replay-card {
+    position: absolute; left: 50%; transform: translateX(-50%); bottom: 92px;
+    width: min(460px, calc(100vw - 24px));
+    background: var(--city-panel); border: 1px solid var(--city-edge); border-radius: 10px;
+    padding: 9px 12px 10px; font-size: 12px; color: var(--city-ink);
+    box-shadow: 0 10px 28px rgba(0,0,0,.45);
+  }
+  .replay-card .rp-title { font-size: 11px; letter-spacing: .14em; text-transform: uppercase;
+                           color: var(--city-dim); font-weight: 600; margin-bottom: 4px; }
+  .replay-card .rp-title b { color: #fff; letter-spacing: normal; font-variant-numeric: tabular-nums; }
+  .replay-card code { color: #9ecbff; font-size: 11px; word-break: break-all; }
+  .replay-card .rp-note { margin-top: 6px; padding-top: 5px; border-top: 1px solid var(--city-edge);
+                          color: var(--city-dim); font-size: 11px; line-height: 1.45; }
+  .replay-card .rp-note b { color: var(--city-ink); font-weight: 600; }
+
   /* The whole window refusing to pretend, when there is nothing verified to draw. */
   .no-city {
     position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);
@@ -145,4 +245,4 @@
   .no-city code { display: block; background: #060a14; border: 1px solid #22304a;
                   border-radius: 6px; padding: 5px 7px; margin: 8px 0 0; color: #d8e6ff; }
 </style>
-<div id="app"></div>
+<div id="app"></div>

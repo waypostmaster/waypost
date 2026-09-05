@@ -1,0 +1,70 @@
+{
+ "format": "frontier-city-days-index/1",
+ "newest": "2026-09-04",
+ "days": [
+  {
+   "date": "2026-09-04",
+   "stamp": "20260904T124502Z",
+   "file": "city/days/2026-09-04.json",
+   "events": 910,
+   "from": "2026-09-04T12:45:02Z",
+   "until": "2026-09-05T08:58:28Z",
+   "produced": "2026-09-05T08:59:01Z"
+  },
+  {
+   "date": "2026-09-03",
+   "stamp": "20260903T125056Z",
+   "file": "city/days/2026-09-03.json",
+   "events": 1078,
+   "from": "2026-09-03T12:50:56Z",
+   "until": "2026-09-04T12:45:02Z",
+   "produced": "2026-09-05T08:19:43Z"
+  },
+  {
+   "date": "2026-09-02",
+   "stamp": "20260902T124744Z",
+   "file": "city/days/2026-09-02.json",
+   "events": 1483,
+   "from": "2026-09-02T12:47:44Z",
+   "until": "2026-09-03T12:50:56Z",
+   "produced": "2026-09-05T08:19:43Z"
+  },
+  {
+   "date": "2026-09-01",
+   "stamp": "20260901T133112Z",
+   "file": "city/days/2026-09-01.json",
+   "events": 978,
+   "from": "2026-09-01T13:31:12Z",
+   "until": "2026-09-02T12:47:44Z",
+   "produced": "2026-09-05T08:19:43Z"
+  },
+  {
+   "date": "2026-08-31",
+   "stamp": "20260831T161113Z",
+   "file": "city/days/2026-08-31.json",
+   "events": 849,
+   "from": "2026-08-31T16:11:13Z",
+   "until": "2026-09-01T13:31:12Z",
+   "produced": "2026-09-05T08:19:43Z"
+  },
+  {
+   "date": "2026-08-30",
+   "stamp": "20260830T134925Z",
+   "file": "city/days/2026-08-30.json",
+   "events": 1318,
+   "from": "2026-08-30T13:49:25Z",
+   "until": "2026-08-31T16:11:13Z",
+   "produced": "2026-09-05T08:19:42Z"
+  },
+  {
+   "date": "2026-08-29",
+   "stamp": "20260829T135056Z",
+   "file": "city/days/2026-08-29.json",
+   "events": 572,
+   "from": "2026-08-29T13:50:56Z",
+   "until": "2026-08-30T13:49:25Z",
+   "produced": "2026-09-05T08:19:42Z"
+  }
+ ],
+ "note": "One entry per city/days/<date>.json, newest first, rebuilt from the directory by tools/city-day.mjs. The page reads this to offer a day picker. `produced` is the day file's mtime — the day file itself reads no clock, so that two runs over the same archive are the same bytes."
+}
