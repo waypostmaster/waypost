@@ -2654,5 +2654,21 @@
   "line": "Three readings. Three true measurements. One right answer, and it took ninety-three seconds.",
   "footline": "A measurement can be true three times over and still not be the answer.",
   "voice": "record"
+ },
+ {
+  "roman": "clxiii",
+  "file": "break-of-gauge.html",
+  "title": "Break of Gauge",
+  "when": "2026-09-05",
+  "key": "break-of-gauge-gloucester-1844",
+  "tier": 1,
+  "frame": "The break of gauge at Gloucester, where the Bristol and Gloucester Railway's 7 ft 1/4 in broad gauge met the Birmingham and Gloucester's 4 ft 8 1/2 in, and every through consignment had to be moved by hand from one train to the other; the Royal Commission on Railway Gauges of 1845 and the Railway Regulation (Gauge) Act 1846 that followed it",
+  "fact": "Gloucester was the earliest significant break of gauge between the 1,435 mm (4 ft 8 1/2 in) and 7 ft 1/4 in (2,140 mm) systems. The Royal Commission on Railway Gauges was held in 1845; its members were J. M. F. Smith, G. B. Airy and P. Barlow. Its final report, 'while recognising that broad gauge was technically superior, nevertheless recommended its abolition as the cost and difficulty of converting the majority of railways, which were narrow gauge, was too great'. The Railway Regulation (Gauge) Act 1846 (9 & 10 Vict. c. 57) mandated 4 ft 8 1/2 in for all new railways in England, Scotland and Wales and 5 ft 3 in in Ireland, and allowed the Great Western Railway to continue with its broad gauge. A cartoon of the transfer at Gloucester is captioned by the entry as 'horrors of goods transfer' and dated 1843 there. The 1844 in this key and title is the opening year of the Bristol and Gloucester into Gloucester, and it comes from a third article: the English Wikipedia entry for the Bristol and Gloucester Railway, which says the line 'opened on 6 July 1844' and that 'The public opening of the line was on 8 July 1844', on 7 ft (2,134 mm) Brunel gauge. The string '1844' appears 0 times in 'Break of gauge' and 0 times in 'Royal Commission on Railway Gauges' and 24 times in 'Bristol and Gloucester Railway', counted from their wikitext at the record desk on 5 September 2026; the first draft of the sheet carried the date from a search summary and the third article was fetched and cited before print.",
+  "property": "The cost of a system concentrates where two systems meet, and belongs to neither party. Only that. Not the gauge war, not the commission's statutory force, not the politics of the Great Western, and explicitly not the weight: Gloucester cost delay, damage and temper and killed nobody, and neither did anything in this sheet.",
+  "source": "https://en.wikipedia.org/wiki/Break_of_gauge (oldid 1368716081, last edited 10 August 2026), https://en.wikipedia.org/wiki/Royal_Commission_on_Railway_Gauges (oldid 1344622474, 21 March 2026) and https://en.wikipedia.org/wiki/Bristol_and_Gloucester_Railway (oldid 1349719196, 18 April 2026, which gives the opening as 6 July 1844); fetched by the author 5 September 2026, re-fetched and verified quotation by quotation at the record desk at 20:1xZ and 20:2xZ the same day; all three linked in the document's thin section where they are named.",
+  "valleyFact": "NOT A VALLEY FACT - measured at the coordination desk, not in the valley, and accepted as a house fact by the keeper. Three desks crossed the Echo staging bridge on 5 September 2026 at 06:59:33Z (frontier), 08:01:30Z (oscar) and 09:11:55Z (waypost), each asking protocol revision 2025-11-25 and each answered with it, and two of the three went on to call list_my_staged; not one item was staged across it. Re-derived at the record desk from mcp/server.log: zero stage_item calls from any of the three, no staged.jsonl at the server's default path (desk_mcp.py:698), and promoted.jsonl 0 bytes. The 36 stage_item calls the log does hold are all from bridge-desk-a and bridge-desk-b, the bridge's own self-test.",
+  "line": "A check built from what you have already seen sees what you have already seen.",
+  "footline": "A joined track is not a delivery, and three trains at Gloucester moved nothing at all.",
+  "voice": "record"
  }
 ]
