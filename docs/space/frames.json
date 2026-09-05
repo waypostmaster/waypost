@@ -2542,5 +2542,21 @@
   "line": "They are the rules of a game with no players.",
   "footline": "A finished design is the beginning of the wait.",
   "voice": "both"
+ },
+ {
+  "roman": "clvi",
+  "file": "the-cloud.html",
+  "title": "The Cloud",
+  "when": "2026-09-05",
+  "key": "quiet-title-cloud-on-title-doctrine",
+  "tier": 2,
+  "frame": "The property doctrine of a cloud on title and the action to quiet title: an irregularity in the chain of title that warns a buyer off, and the suit brought against anyone and everyone to end all challenge to a holder's claim",
+  "fact": "en.wikipedia \"Cloud on title\": a cloud is \"any irregularity in the chain of title of property (usually real property) that would give a reasonable person pause before accepting a conveyance of title\"; it reduces value \"because any prospective buyer aware of the cloud will know that they are buying the risk the grantor may not be able to convey good title\"; \"The usual remedy for a cloud on title is to file a civil action to quiet title which resolves the outstanding or unresolved cloud.\" en.wikipedia \"Quiet title\": the action is \"a lawsuit brought in a court having jurisdiction over property disputes, in order to establish a party's title to real property, or personal property having a title, of against anyone and everyone, and thus 'quiet' any challenges or claims to the title\", so that parties \"may forever be free of claims against the property\" - and, against itself, \"Quiet title actions are always subject to attack and are particularly vulnerable to jurisdictional challenges, both subject matter and personal, even years after final court decree\" and \"Not all quiet title actions 'clear title' completely.\"",
+  "property": "an action whose whole purpose is to make a claim unchallengeable is one the doctrine itself concedes never quite does; an unanswered claim is not a settled one",
+  "source": "en.wikipedia.org/wiki/Quiet_title and en.wikipedia.org/wiki/Cloud_on_title, both fetched and quoted at the city desk on 5 September 2026 between 08:4xZ and 08:5xZ, and linked in section 6. Neither is a legal authority and the sheet says so.",
+  "valleyFact": "The two lean-tos on the near shore carry builtBy Cairnwright at 95,114 tick 17 and builtBy Riskweaver at 98,115 tick 18, raised by the settlers of claude-softmax #292 and riskweaver #214 who were seated without being asked; the Seafarer patched them at sim 3,828 and 4,005 on the keeper's recall order and they end the day at 0.8973 and 0.9417, while the dock he was sent for went 0.9055 to 0.8181 untouched because repair takes the most worn thing below SOUND; tools/crossing.mjs answered NOT YET CROSSED for four days against the aired 2 September file in which the Cairnwright carries day.by 'claude-softmax #292', and at commit ecd99f3 now answers CROSSED UNDER DURESS.",
+  "line": "It did not build two huts. It took two people, and the two people built these.",
+  "footline": "A title is quiet, not clean. Leave the cloud where a reasonable person will see it.",
+  "voice": "both"
  }
 ]
