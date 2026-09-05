@@ -2590,5 +2590,21 @@
   "line": "This desk said the city recorded no movement. It was wrong within the hour.",
   "footline": "You can hear them all. You may read all but one.",
   "voice": "both"
+ },
+ {
+  "roman": "clix",
+  "file": "owney.html",
+  "title": "Owney",
+  "when": "2026-09-05",
+  "key": "owney-railway-mail-service-albany-1888",
+  "tier": 1,
+  "frame": "Owney, the mongrel adopted by the clerks of the Albany, New York post office in 1888 and made mascot of the Railway Mail Service, who rode the mailbags and collected a tag at nearly every stop",
+  "fact": "Postal workers in the Albany post office &ldquo;became attached to Owney, a scruffy mutt, in the late 1880s. He fell asleep on some mailbags, and the clerks let him stay.&rdquo; His owner &ldquo;was likely a postal clerk who let the dog walk him to work&rdquo;, and &ldquo;when his master moved away, Owney stayed with his new mail clerk friends.&rdquo; Clerks of the Railway Mail Service &ldquo;adopted Owney as their mascot, and began to record the dog&rsquo;s travels with medals and tags attached to his collar&rdquo;; Postmaster General John Wanamaker, hearing the collar was weighted down, gave him a jacket to carry the trophies. The Brooklyn Daily Eagle of 9 April 1894: &ldquo;Nearly every place he stopped Owney received an additional tag, until now he wears a big bunch. When he jogs along, they jingle like the bells on a junk wagon.&rdquo; He died of a bullet wound in Toledo on 11 June 1897, was preserved by the clerks, and stands in the museum&rsquo;s atrium wearing his harness.",
+  "property": "A traveller who went where the bags went and belonged to the people who carried him, whose entire record is what other people fastened on at each stop. Nothing of the death, the luck or the fame is borrowed, and the sheet says so in those terms.",
+  "source": "Two pages of the Smithsonian National Postal Museum, postalmuseum.si.edu/museum-highlight/story-of-owney and postalmuseum.si.edu/exhibition/mail-by-rail/owney-mascot-of-the-railway-mail-service, read at the commissioning desk at 14:2xZ on 5 September 2026 and linked where each is introduced. This writer&rsquo;s re-fetch of both at 14:3xZ returned 403, so the quotations are carried from that reading and named as carried in the sheet.",
+  "valleyFact": "The Cairnwright&rsquo;s founding rule reads &ldquo;Raise nothing. Not a house, not a claim, not on any shore&rdquo;, and he carried it all six days; at tick 17 he built a claim at 95,114 and moved into it, and his craft ledger holds one entry under building, <code>building:claim: 1</code>. The engine refused him twelve times with a reason each time. <code>bond</code> at <code>sim.ts:3572</code> writes &ldquo;counts as a friend&rdquo; at an affinity of 0.45; he and the Riskweaver finished at 0.72 and 0.64, against 0.10 and 0.18 toward the Seafarer. <code>remember</code> at <code>sim.ts:3556</code> keeps 120 history lines, so his arrival had dropped off the end before he went home at tick 1,368. Their two lean-tos stand at 0.8973 and 0.9417 in the produced end state, <code>builtBy</code> Cairnwright and Riskweaver.",
+  "line": "The day is theirs. The man around it is ours.",
+  "footline": "Everything on his collar was hung there by somebody else.",
+  "voice": "both"
  }
 ]
