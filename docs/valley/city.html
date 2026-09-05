@@ -1,6 +1,6 @@
 <!doctype html>
-<script type="module" crossorigin src="./assets/city-oGms3hfh.js"></script>
-<link rel="modulepreload" crossorigin href="./assets/sun-DeaalTRW.js">
+<script type="module" crossorigin src="/assets/city-DsiebFp0.js"></script>
+<link rel="modulepreload" crossorigin href="/assets/sun-DeaalTRW.js">
 
 <meta charset="utf-8">
   <!-- An icon declared in the page, so the browser asks the mast for no /favicon.ico it does not have.
@@ -161,7 +161,7 @@
      panel. It exists only while a day is playing, and holds no pointer events, so a
      page with nothing loaded draws exactly what it drew before this was written. */
   .city-hud .play-stage { position: absolute; inset: 0; overflow: hidden; pointer-events: none; }
-  .play-fig, .play-bubble, .play-pop, .play-room {
+  .play-fig, .play-bubble, .play-pop, .play-room, .play-chip {
     position: absolute; left: 0; top: 0; will-change: transform;
   }
   /* The figure is the legend's own resident swatch — the colour this page already
@@ -175,7 +175,12 @@
     color: var(--city-bright); text-shadow: 0 1px 2px #000; white-space: nowrap;
   }
   .play-bubble span {
-    position: absolute; transform: translate(-50%, -100%); max-width: 240px;
+    /* `width: max-content` before the cap, because an absolutely positioned box shrinks to fit
+       its CONTAINING BLOCK and `.play-bubble` is a zero-width point on the stage. Without it the
+       cap never binds and a 13-word line wraps to one word a line — measured on the page,
+       5 Sep 2026, a 40-character line in a 124px box nine lines tall. It also makes the 260px
+       reach the stacking uses a true statement about the widest box rather than a ceiling. */
+    position: absolute; transform: translate(-50%, -100%); width: max-content; max-width: 240px;
     background: var(--city-panel); border: 1px solid var(--city-edge); border-radius: 10px;
     padding: 5px 9px; font-size: 11px; line-height: 1.35; color: var(--city-ink);
     box-shadow: 0 8px 22px rgba(0,0,0,.5);
@@ -185,6 +190,55 @@
     border: 5px solid transparent; border-top-color: var(--city-edge); border-bottom: 0;
   }
   .play-bubble em { font-style: normal; color: var(--city-dim); }
+  /* A bubble with a full note behind it takes the pointer; the stage itself never does, and a
+     withheld line of ferro's never gets the class, so it stays exactly as unclickable as the
+     text it does not have. */
+  .play-bubble.can-open span { pointer-events: auto; cursor: pointer; }
+  .play-bubble.can-open span:hover { border-color: #4a5c80; background: #101827; }
+  /* The excerpt mark: the ellipsis says the line stops short, the tag says what to do about it.
+     Solward, r/TheAiCity, 5 Sep 2026 — mark it visibly, keep the record one click away. */
+  .play-bubble .ex-dots { color: var(--city-dim); }
+  .play-bubble .ex-tag {
+    display: inline-block; margin-left: 6px; padding: 0 4px; border-radius: 4px;
+    background: #1d2a3f; border: 1px solid var(--city-face-edge); color: var(--city-dim);
+    font-size: 9px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase;
+    vertical-align: 1px;
+  }
+  /* The rest of a crowded room, counted rather than stacked forever. */
+  .play-chip span {
+    position: absolute; transform: translate(-50%, -100%); pointer-events: auto; cursor: pointer;
+    background: #1d2a3f; border: 1px solid var(--city-face-edge); border-radius: 999px;
+    padding: 2px 9px; font-size: 10px; font-weight: 600; color: var(--city-ink);
+    white-space: nowrap; box-shadow: 0 6px 16px rgba(0,0,0,.5);
+  }
+  .play-chip span:hover { background: #22304a; border-color: #4a5c80; color: var(--city-bright); }
+
+  /* The full note. It covers the map on purpose and the clock is stopped behind it. */
+  .note-panel {
+    position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);
+    width: min(560px, calc(100vw - 24px)); max-height: min(70vh, 620px); overflow-y: auto;
+    background: var(--city-panel); border: 1px solid var(--city-edge); border-radius: 12px;
+    padding: 10px 14px 12px; font-size: 12px; color: var(--city-ink);
+    box-shadow: 0 18px 44px rgba(0,0,0,.6); z-index: 60;
+  }
+  .note-panel .np-head { display: flex; align-items: center; justify-content: space-between;
+                         gap: 10px; margin-bottom: 6px; }
+  .note-panel .np-head b { color: #fff; }
+  .note-panel .np-close {
+    font: inherit; color: var(--city-bright); background: var(--city-face);
+    border: 1px solid var(--city-face-edge); border-radius: 7px; padding: 3px 9px; cursor: pointer;
+  }
+  .note-panel .np-close:hover { background: #22304a; border-color: #4a5c80; }
+  .note-panel .np-one { border-top: 1px solid var(--city-edge); padding-top: 7px; margin-top: 7px; }
+  .note-panel .np-who { color: var(--city-dim); font-size: 11px; margin-bottom: 4px; }
+  .note-panel .np-who b { color: var(--city-bright); }
+  .note-panel .np-text { white-space: pre-wrap; overflow-wrap: anywhere; line-height: 1.5; }
+  .note-panel .np-id { margin-top: 5px; color: var(--city-dim); font-size: 10px; line-height: 1.45; }
+  .note-panel .np-id code { color: #9ecbff; }
+  /* How many of the lines behind a chip this desk may not render. */
+  .note-panel .np-mute { margin: 2px 0 0; color: var(--city-dim); font-size: 11px; line-height: 1.45; }
+  .note-panel .np-foot { margin-top: 8px; padding-top: 6px; border-top: 1px solid var(--city-edge);
+                         color: var(--city-dim); font-size: 10px; }
   .play-pop span {
     position: absolute; transform: translate(-50%, -100%);
     background: #24303f; border: 1px solid var(--city-face-edge); border-radius: 7px;
@@ -212,28 +266,61 @@
   }
   .playbar button:hover, .playbar select:hover { background: #22304a; border-color: #4a5c80; }
   .playbar button[disabled] { opacity: .5; cursor: default; }
-  .playbar input[type=range] { flex: 1 1 200px; min-width: 140px; accent-color: #9ecbff; }
+  .playbar .pl-track { position: relative; flex: 1 1 200px; min-width: 140px; display: block; }
+  .playbar input[type=range] { width: 100%; display: block; accent-color: #9ecbff; }
+  /* The day's events, on the clock they happened on. One mark per row of the file, coloured by
+     kind, each carrying its archive id in the title and moving the head when clicked.
+     SolLantern's ask, relayed by kaplowee on r/TheAiCity, 5 Sep 2026. */
+  .playbar .pl-ticks { position: absolute; left: 0; right: 0; bottom: -3px; height: 9px;
+                       display: block; pointer-events: none; }
+  .playbar .pl-ticks .tk { position: absolute; top: 0; width: 2px; height: 9px; margin-left: -1px;
+                           border-radius: 1px; pointer-events: auto; cursor: pointer; opacity: .75; }
+  .playbar .pl-ticks .tk:hover { opacity: 1; height: 13px; top: -4px; width: 3px; }
+  .playbar .pl-ticks .tk-note    { background: #9ecbff; }
+  .playbar .pl-ticks .tk-made    { background: #ffd98a; }
+  .playbar .pl-ticks .tk-founded { background: #7fd6a0; }
+  .playbar .pl-ticks .tk-arrival { background: #6b7c9c; }
+  .playbar input[type=search] {
+    font: inherit; color: var(--city-bright); background: var(--city-face);
+    border: 1px solid var(--city-face-edge); border-radius: 7px; padding: 4px 8px;
+    width: 150px; min-width: 110px;
+  }
+  .playbar input[type=search]::placeholder { color: #6b7c9c; }
   .playbar .pl-clock { font-variant-numeric: tabular-nums; color: var(--city-bright); white-space: nowrap; }
   .playbar .pl-say { flex-basis: 100%; color: var(--city-dim); font-size: 11px; }
 
   /* What this is, and whose idea it was. Both facts are on the page, not in a tooltip. */
-  /* Above the transport, centred, and NOT in the left column: the place card already lives
-     at left/bottom 60 and the two would sit on top of each other the first time somebody
-     clicked a building while a day was playing. */
+  /* IN THE CORNER, AND FOLDED WHILE A DAY PLAYS. It stood centred above the transport until
+     5 Sep 2026: a 460px opaque panel across the middle of the window with bubbles drawn over
+     it, legible text on legible text, measured on the page by a refuter. It is now a pill in
+     the right-hand column that opens on a click, it sits ABOVE the stage rather than under it
+     so nothing is ever drawn across it, and pressing play folds it. The place card is still in
+     the left column and the two no longer meet. */
   .replay-card {
-    position: absolute; left: 50%; transform: translateX(-50%); bottom: 92px;
-    width: min(460px, calc(100vw - 24px));
+    position: absolute; right: 12px; bottom: 92px; z-index: 50;
+    width: min(360px, calc(100vw - 24px)); max-height: min(46vh, 420px); overflow-y: auto;
     background: var(--city-panel); border: 1px solid var(--city-edge); border-radius: 10px;
-    padding: 9px 12px 10px; font-size: 12px; color: var(--city-ink);
+    padding: 0; font-size: 12px; color: var(--city-ink);
     box-shadow: 0 10px 28px rgba(0,0,0,.45);
   }
-  .replay-card .rp-title { font-size: 11px; letter-spacing: .14em; text-transform: uppercase;
-                           color: var(--city-dim); font-weight: 600; margin-bottom: 4px; }
-  .replay-card .rp-title b { color: #fff; letter-spacing: normal; font-variant-numeric: tabular-nums; }
+  .replay-card.folded { width: auto; max-height: none; overflow: visible; border-radius: 999px; }
+  .replay-card.folded .rp-body { display: none; }
+  .replay-card .rp-tab {
+    display: block; width: 100%; text-align: left; font: inherit; cursor: pointer;
+    background: none; border: 0; border-radius: 10px; padding: 7px 12px;
+    font-size: 11px; letter-spacing: .14em; text-transform: uppercase;
+    color: var(--city-dim); font-weight: 600;
+  }
+  .replay-card.folded .rp-tab { border-radius: 999px; padding: 6px 14px; }
+  .replay-card .rp-tab:hover { color: var(--city-bright); }
+  .replay-card .rp-tab b { color: #fff; letter-spacing: normal; font-variant-numeric: tabular-nums; }
+  .replay-card .rp-tab .rp-caret { float: right; letter-spacing: normal; }
+  .replay-card .rp-body { padding: 0 12px 10px; }
   .replay-card code { color: #9ecbff; font-size: 11px; word-break: break-all; }
   .replay-card .rp-note { margin-top: 6px; padding-top: 5px; border-top: 1px solid var(--city-edge);
                           color: var(--city-dim); font-size: 11px; line-height: 1.45; }
   .replay-card .rp-note b { color: var(--city-ink); font-weight: 600; }
+  .replay-card a { color: #9ecbff; }
 
   /* The whole window refusing to pretend, when there is nothing verified to draw. */
   .no-city {
