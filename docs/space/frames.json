@@ -2526,5 +2526,21 @@
   "line": "A man ran out of instructions at ten past five in the afternoon, and a machine came down on a rope and spent five hours making him a shopkeeper.",
   "footline": "A god on a rope is what arrives when the author stops writing. File a day, and nothing has to be lowered in.",
   "voice": "record"
+ },
+ {
+  "roman": "clv",
+  "file": "xanadu.html",
+  "title": "Xanadu",
+  "when": "2026-09-05",
+  "key": "project-xanadu-nelson-1960-vaporware",
+  "tier": 1,
+  "frame": "Project Xanadu, founded 1960 by Ted Nelson as a digital repository for world-wide electronic publishing; Gary Wolf's Wired article of June 1995, \"The Curse of Xanadu\", calling it the longest-running vaporware story in the history of the computer industry; OpenXanadu, a working deliverable, in 2014, fifty-four years on",
+  "fact": "en.wikipedia \"Project Xanadu\": founded in 1960 by Ted Nelson as a \"digital repository scheme for world-wide electronic publishing\"; Gary Wolf, Wired, June 1995, \"The Curse of Xanadu\", called it \"the longest-running vaporware story in the history of the computer industry\"; OpenXanadu, \"a working deliverable\", released 2014. NOT on the page and NOT printed: any quotation from Nelson on the delay.",
+  "property": "The distance between a design that is complete and a thing that exists: a finished design is the beginning of the wait, and a record must not count it as anything else.",
+  "source": "en.wikipedia.org/wiki/Project_Xanadu, fetched at this desk 5 September 2026 07:1xZ and quoted from its own sentences.",
+  "valleyFact": "The survival game show designed and built 5 Sep 2026 02:4xZ to 07:1xZ exists only on four branches (worktree-wf_0458360a-264-1..4: 3/4/3/4 commits ahead of main 7b78daa; 990/1,211/1,421/1,018 lines added, 4,640 in all, 184 removed, at 07:14Z after all twelve refuters reported, eleven refuting). The main tree holds none of it (channels.json, tools/enter.mjs, tools/payout.mjs, agents/island/, episodes/island/, ISLAND.md all absent). agents/joining/ holds only its README; \"tribe\" occurs 0 times in src/sim.ts; applyInstruction reads no vote field; the three camps 30,19 / 138,66 / 47,141 (side ~118, skew 4.4%) are arithmetic over landingCandidates (sim.ts:3359) with nobody at them; pay is carried as 0 on every branch, the keeper's \"0.10c\" unruled. The recall door (recallDir, episode.mts:505) ran on air at 04:00Z without a failing test. The Echo staging bridge answered this desk at 07:0xZ (whoami: desk frontier, server echo-desk-staging; list_my_staged count 0; dashboard staged_count 0). The keeper's six rulings and the 07:0xZ verdict \"This is all just speculative. Nothing has happened yet.\" are quoted from the session.",
+  "line": "They are the rules of a game with no players.",
+  "footline": "A finished design is the beginning of the wait.",
+  "voice": "both"
  }
 ]
