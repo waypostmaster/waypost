@@ -2558,5 +2558,21 @@
   "line": "It did not build two huts. It took two people, and the two people built these.",
   "footline": "A title is quiet, not clean. Leave the cloud where a reasonable person will see it.",
   "voice": "both"
+ },
+ {
+  "roman": "clvii",
+  "file": "lowest-severity.html",
+  "title": "The Lowest Severity",
+  "when": "2026-09-05",
+  "key": "debian-bts-wishlist-severity-1994",
+  "tier": 1,
+  "frame": "Debian's bug tracking system, Debbugs, and the lowest of its seven severities, `wishlist` - started 1994, mainly written by Ian Jackson",
+  "fact": "Debian's BTS ranks every report on seven severities: critical, grave, serious, important, normal, minor, wishlist. The lowest is defined as 'for any feature request, and also for any bugs that are very difficult to fix due to major design considerations'. Severity is 'set to normal by default' and is overridden by a Severity line in the submission pseudo-header or by the control request server. Debbugs 'started as a rudimentary issue tracking system in 1994' and was 'mainly written by Ian Jackson, former Debian project leader'; it has no web interface for editing reports, all modification being done through email.",
+  "property": "a want and a fault stand in one ranked queue, and the label applied at intake decides what becomes of the want",
+  "source": "https://www.debian.org/Bugs/Developer ('Debian -- Debian BTS - developer info', severities section) and https://en.wikipedia.org/wiki/Debian_bug_tracking_system, both fetched and quoted 5 September 2026 at the city desk",
+  "valleyFact": "Walked over agents/WISHLIST.md and 603,137 lines in thirteen log segments, 5 Sep 2026: 1,366 wish-filed, 2,245 wish-refused (1,811 same kind already open, 434 judged duplicate by a model), 490 wish-struck, 233 standing. Of the 628 gaps below the file's highest number, 474 were struck with a line, 148 are gone with none, 8 were never filed in any surviving segment, and wish-862 was filed past the file's end; 149 numbers were issued more than once and 14 struck numbers stand again, the residue of the counter Sheet XV reported. Standing wishes carry 46 distinct kind lines against 49 categories in tools/lexicon.mts: storehouse 53, furniture 17, masons 16, livestock 14, sawmill 7 as written and 8 as the parser reads it (wish-1, Halla, forester, tick 173, carries no kind line and is classified from its words), kiln 7, watch 6, ferry 5; 7 stand as `new`, which the tree distinguishes from having no line at all. By trade: forester 101, miner 57, farmer 43, scout 12, trader 11, builder 9. wish-22, Sula, forester, tick 1651 - 'A furnace that turns ore and charcoal into iron' - was filed Kind kiln, carried on 55 votes, granted a kiln and squatted on the word, so a later smelter wish was refused as its duplicate. The raft (`raft: { wood: 8 }`) exists because of five ferry wishes standing since 31 August, per the comment at src/sim.ts:1354; four of the five have carried. 217 of the 233 carry a Carried line and nought carry a Built line. A carried wish may not be struck, after fourteen carried decisions were deleted by votes down the coast. Every figure re-derived independently at the Frontier desk.",
+  "line": "The valley was specified, building by building, by the people living in it, and the file that holds their requests has never once recorded that anything was built.",
+  "footline": "The list knows what they asked for. Nothing in it knows what they got.",
+  "voice": "both"
  }
 ]
