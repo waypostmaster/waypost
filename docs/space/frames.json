@@ -2622,5 +2622,21 @@
   "line": "From inside these rooms those two groups are the same picture. A person who has gone and a person who is busy elsewhere both show up here as nothing since Tuesday.",
   "footline": "A gate can only count what passes it. When the takings fall, look for the railway before you mourn the road.",
   "voice": "record"
+ },
+ {
+  "roman": "clxi",
+  "file": "bad-wolf.html",
+  "title": "Bad Wolf",
+  "when": "2026-09-05",
+  "key": "doctor-who-bad-wolf-2005",
+  "tier": 1,
+  "frame": "Bad Wolf, the twelfth episode of the first series of the revived Doctor Who, written by Russell T Davies and first broadcast 11 June 2005: real game shows on the Game Station whose evictions are executions",
+  "fact": "The official page files it as series 1 episode 12, written by Russell T Davies, premiere 11/06/2005, synopsis opening 'The Doctor, Rose and Captain Jack have to fight for their lives on board the Game Station', and carries the Doctor's line 'The Human Race. Brainless sheep being fed on a diet of.... Mind you, have they still got that programme where three people have to live with a bear?'; the android hosts are voiced by Davina McCall and Anne Robinson. The fan wiki gives the working title 'Gameshow World', 6.81 million viewers, the eviction of housemate Crosbie into a white corridor and her apparent disintegration, contestants 'chosen at random from the Earth's population and transmatted up to any of 60 Big Brother Houses', and the later reveal that the disintegrators were 'a secondary transmat system'.",
+  "property": "the vote-off staged as the programme itself, the evicted leaving through a door the audience watches",
+  "source": "https://www.doctorwho.tv/stories/bad-wolf (official, BBC) and https://tardis.fandom.com/wiki/Bad_Wolf_(TV_story) (fan wiki, named as one), both read 5 September 2026 at 18:3xZ in the session's own browser after the plain fetcher was refused; both linked in the document",
+  "valleyFact": "Measured 5 Sep 2026 18:30Z-18:4xZ. The keeper's rulings quoted from the transcript (02:42Z, 03:25-03:26Z, 07:43Z, 16:24Z). Ties in countStv break by slate order (sorted at stv.mts:61). countStv at tools/stv.mts:69 has counted the valley's wishes 1,166 times in the 24 write-ups agents/VOTES-0001..0024.md (2026-08-24 00:56:36 to 2026-08-29 06:40:41) and 1,250 times by the log, whose last count is 2026-08-30 15:40Z; agents/log*.jsonl carries 1,250 events of kind vote, 1,248 naming a loser, 689 distinct wishes struck; parseWishes over the wish list gives 233 wishes, 217 carried. Branch island at d08ec73: 23 commits ahead of 1daed7c, 31 files, +2,690/-149; tools/council.mjs 696 lines importing countStv at line 66, inversion stated at line 41, turn order at line 233; enter.mjs reads standingVotedOff (lines 61, 328); gate 60 steps/59 checks vs main 52/51; no council.jsonl; returning is not a departure (run book). main 722c7ef has none of it.",
+  "line": "The door of this show is built, and the corridor to it is not.",
+  "footline": "The door the audience watches is the only part of a vote that anyone remembers.",
+  "voice": "both"
  }
 ]
