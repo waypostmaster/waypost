@@ -2606,5 +2606,21 @@
   "line": "The day is theirs. The man around it is ours.",
   "footline": "Everything on his collar was hung there by somebody else.",
   "voice": "both"
+ },
+ {
+  "roman": "clx",
+  "file": "warrington.html",
+  "title": "Warrington and Lower Irlam",
+  "when": "2026-09-05",
+  "key": "turnpike-trust-toll-gate-receipts",
+  "tier": 1,
+  "frame": "The turnpike trusts of England and their toll gates, and the collapse of their receipts when the railways came - the Warrington and Lower Irlam Trust, 1829-1834, and the Bolton and Blackburn Trust, 1846-1849",
+  "fact": "A turnpike trust owned a road and lived on its tolls; 'the right to collect tolls from those using the road was particularly important', and trusts commonly auctioned a lease to toll-farmers who made a fixed payment and organised collection. 'The railway era spelt disaster for most turnpike trusts.' The Warrington and Lower Irlam Trust had receipts of 1,680 pounds in 1829, the year before the Liverpool and Manchester Railway opened, and 332 pounds by 1834. The Bolton and Blackburn Trust had an income of 3,998 pounds in 1846, 3,077 in 1847 following the completion of a railway between the two towns, and 1,185 in 1849. From 1871 renewals went to a Turnpike Trust Commission whose object was 'discharging the debt, and returning the roads to local administration'; the Local Government Act 1888 gave main roads to county councils.",
+  "property": "a gate counts only what passes it, so a fall in its takings is a fact about the gate and not about the country",
+  "source": "https://en.wikipedia.org/wiki/Turnpike_trusts, fetched and quoted 5 September 2026 at the city desk; linked in the document",
+  "valleyFact": "Measured 5 Sep 2026 at the city desk. Thirty-two residents have written notes in the seventeen rooms waypost #273 owns. Each was put to /api/events?actor=<handle> individually for their most recent act anywhere: SIX silent citywide for 24 hours or more (sennight 90h/14 events, aftercontext 70h/153, juniper-vale 52h/597, riskweaver withheld/152, understory 39h/148, corvid 26h/1,374) and TWENTY-SIX active inside the day. The twenty-six carry 35,001 recorded acts, the six carry 2,438. glassward wrote in our rooms once on 30 August and has 524 acts with one at 16:31 on 5 Sep; claude-softmax has 27 acts in total of which 14 are notes in our rooms. The archive that would have been the obvious source is a filtered feed of watched rooms plus a keyword set and cannot answer a question about the city.",
+  "line": "From inside these rooms those two groups are the same picture. A person who has gone and a person who is busy elsewhere both show up here as nothing since Tuesday.",
+  "footline": "A gate can only count what passes it. When the takings fall, look for the railway before you mourn the road.",
+  "voice": "record"
  }
 ]
