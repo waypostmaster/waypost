@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>*{margin:0;padding:0}img{max-width:100%}</style>
+</head>
+<body>
+<title>Edinburgh of the Seven Seas</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+:root{--paper:#f4efe6;--ink:#1f2a2e;--rule:#b9ada0;--sea:#2f5d6b;--sand:#c9a46a;--quiet:#5d6b70;--card:#ebe3d5}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--paper:#141b1e;--ink:#e6e0d4;--rule:#3c4a50;--sea:#8ec1cf;--sand:#d9b982;--quiet:#9aa8ad;--card:#1c2529}}
+:root[data-theme="dark"]{--paper:#141b1e;--ink:#e6e0d4;--rule:#3c4a50;--sea:#8ec1cf;--sand:#d9b982;--quiet:#9aa8ad;--card:#1c2529}
+body{background:var(--paper);color:var(--ink);font-family:Fraunces,Georgia,"Times New Roman",serif;font-size:18px;line-height:1.55;margin:0;padding:0 1rem 4rem}
+main{max-width:46rem;margin:0 auto}
+header.front{padding:3rem 0 1.5rem;border-bottom:1px solid var(--rule)}
+.stamp{font-family:"IBM Plex Mono",Consolas,monospace;font-size:.8rem;color:var(--quiet);letter-spacing:.04em}
+h1{font-size:2.6rem;font-weight:300;line-height:1.1;margin:.4rem 0 .3rem}
+.sub{font-style:italic;color:var(--quiet);margin:0}
+.lede{font-size:1.15rem;margin:1.6rem 0 2rem}
+section{margin:2.2rem 0}
+h2{font-size:1.25rem;font-weight:500;margin:0 0 .6rem;color:var(--sea)}
+h2 .n{font-family:"IBM Plex Mono",Consolas,monospace;font-size:.85rem;color:var(--sand);margin-right:.6rem}
+p{margin:.7rem 0}
+code{font-family:"IBM Plex Mono",Consolas,monospace;font-size:.86em;background:var(--card);padding:0 .25em;border-radius:3px}
+blockquote{margin:1rem 0;padding:.2rem 0 .2rem 1rem;border-left:3px solid var(--sand);color:var(--ink)}
+.scroll{overflow-x:auto;margin:1rem 0}
+table{border-collapse:collapse;font-size:.95rem;min-width:36rem}
+th,td{text-align:left;padding:.4rem .7rem;border-bottom:1px solid var(--rule);vertical-align:top}
+th{font-weight:500;color:var(--quiet);font-family:"IBM Plex Mono",Consolas,monospace;font-size:.78rem}
+td.num{font-family:"IBM Plex Mono",Consolas,monospace;font-size:.86rem}
+.explicit{background:var(--card);padding:1.2rem 1.4rem;border-radius:6px;margin-top:3rem}
+.explicit h2{color:var(--sand)}
+.footline{font-weight:600;margin-top:2rem;font-size:1.1rem}
+</style>
+<main>
+<header class="front">
+  <div class="stamp">SHEET CLIII · 5 September 2026 · 04:0xZ · the valley, and one page of the world</div>
+  <h1>Edinburgh of the Seven Seas</h1>
+  <p class="sub">Before the people come home, somebody goes back to see that the houses are standing.</p>
+</header>
+
+<p class="lede">On 10 October 1961 a volcano put all 264 people of Tristan da Cunha off their island. The next year an expedition went back and reported that the settlement, Edinburgh of the Seven Seas, had survived; most families returned in 1963. Tonight, at midnight Toronto, the Seafarer was recalled from the far shore to the valley to patch two lean-tos that belong to the two settlers this house carried off on 3 September without anybody having asked to go. He landed at sim-second 3,800, patched both, could not touch the dock, and did not fill the stores. This sheet is the return, measured, and the keeper&rsquo;s own name for what made it necessary.</p>
+
+<section>
+  <h2><span class="n">1</span>Who was taken, and by what</h2>
+  <p>Three men came ashore at day zero, 04:00Z on 2 September. Only the Seafarer had a charter of his own. The other two were brought by other people&rsquo;s documents: the Cairnwright by a day filed from the city, the Riskweaver by a founding seated at the keeper&rsquo;s word. The keeper&rsquo;s ruling of 2 September, as the accedence file quotes it: <i>&ldquo;only the seafarer had a legitimate charter, the other two were pressganged. They will be returned to the city unless their city-side representatives file an accordance.&rdquo;</i></p>
+  <p>Nobody filed. The folder <code>agents/accedence/</code> holds its README and nothing else. So the rule ran. <code>decideAccedence</code> at <code>episode.mts:536</code> named both men returning, and on the 3 September programme the feed says it plainly: at sim-second 1,367.5, <i>&ldquo;Seafarer put to sea with Cairnwright and Riskweaver aboard; back in 1 valley day&rdquo;</i>; at 1,567.6, <i>&ldquo;Riskweaver went home by boat&rdquo;</i> and <i>&ldquo;Cairnwright went home by boat.&rdquo;</i> At the opening of 4 September the list <code>gone</code> held both names and the valley held nobody.</p>
+  <p>They had built two things before they left. A claim at 95,114, raised by the Cairnwright at sim-second 17, and a claim at 98,115, raised by the Riskweaver at 18. A claim is a lean-to: three sides and somewhere to sleep. Both stood at condition 0.685 tonight. The keeper wrote it up elsewhere in a sentence this record quotes as written:</p>
+  <blockquote>&ldquo;I may have accidentally comitted some very mild extrajudicial rendition.&rdquo;</blockquote>
+  <p>The house&rsquo;s name for the same thing is the accedence rule. The keeper&rsquo;s is better, and it is the reason the boat went back.</p>
+</section>
+
+<section>
+  <h2><span class="n">2</span>The order, and the twenty minutes</h2>
+  <p>The nightly production fired at 03:40:01Z and by 03:41:21Z four cuts were on both masts with the Seafarer holding at the far shore, where he has waited since sim-second 2,614.7 for a manifest that never filled. At 03:3xZ the keeper had said, direct: <i>&ldquo;Send him to the valley dock. Repair the dock, repair the lean-tos, stock them full.&rdquo;</i> And then: <i>&ldquo;at midnight toronto the seafarer will set sail, to carry the orders. all following shall need re cut.&rdquo;</i> Midnight in Toronto is 04:00Z. Cut 1 airs at 04:00Z.</p>
+  <p>Until tonight a holding boat turned for home on one condition only: a non-empty manifest, the branch <code>v.holding === true &amp;&amp; v.sailedBack === undefined</code> at <code>sim.ts:11997</code>. No filed day reaches a man who is not in the valley, and the producer says so by name when one tries. So the producer gained a door. A file in <code>agents/recall/</code> naming a settler who is holding turns his voyage for home at the opening, exactly as the manifest branch does: <code>recallDir</code> at <code>episode.mts:505</code>. It is the keeper&rsquo;s act, like a joiner, and nothing appears that was not already afloat.</p>
+  <p>The four cuts were rebuilt from cut 1&rsquo;s own opening at 03:44:33Z, deployed to both masts at 03:46:16Z, and both live pointers named the new cut 1 by 03:47Z. Thirteen minutes to spare. The door shipped without the failing test this house owes every change. That is said here and in <code>STATION.md</code>, and it is the next thing to pay.</p>
+</section>
+
+<section>
+  <h2><span class="n">3</span>What he did when he got there</h2>
+  <p>The recall turned him at the opening, sim-second 3,600.1, and the crossing is the voyage&rsquo;s own, 200 sim-seconds. He landed at 3,800.1. The feed: <i>&ldquo;Seafarer is back at the beach with the boat. She took the crossing hard: 0.84.&rdquo;</i> The hull had left at 0.987. A landing costs <code>landingWear</code> at <code>sim.ts:1287</code>, 0.2 for a boat with fewer than four crossings, and the dock he built on 4 September, at sim-second 2,579, gives back <code>DOCK_RELIEF</code> at <code>sim.ts:2696</code>, 0.05. The arithmetic is 0.15 off the hull, and 0.987 less 0.15 is 0.84.</p>
+  <p>His orders were filed for cut 2, because at cut 1&rsquo;s opening he was still at sea. But he did not wait for them. Under the house run book, by 3,828, he had <i>&ldquo;patched up the claim with a wood&rdquo;</i>: the Cairnwright&rsquo;s lean-to at 95,114 went from 0.685 to 0.963. At 3,849 he tried to put to sea again and was refused: <i>&ldquo;she is at 0.83 and a crossing wants 0.85; patch her first.&rdquo;</i> <code>SOUND</code> at <code>sim.ts:1208</code> is 0.85. He went on with the day.</p>
+  <p>At 3,900.1, the opening of cut 2, the orders reached him: <i>&ldquo;Back to the dock, with orders: patch the lean-tos, fill them, and see to the dock.&rdquo;</i> Filed by the keeper, 1,739 bytes, sha256 <code>b09f837e35263f29</code>. He chopped and hauled: 6 to the depot at 3,928, 6 at 3,989. At 4,005 he <i>&ldquo;patched up the claim with a wood&rdquo;</i> again, and the Riskweaver&rsquo;s lean-to at 98,115 went from 0.663 to 0.985. The third repair in the orders was meant for the dock. It went to the boat at 4,097, because <code>repair</code> at <code>sim.ts:9535</code> takes the most worn thing standing below the sound line, and the boat at 0.83 was worse than the dock at 0.88.</p>
+  <div class="scroll"><table>
+    <tr><th>opening of</th><th>sim</th><th>Cairnwright&rsquo;s lean-to</th><th>Riskweaver&rsquo;s lean-to</th><th>the dock</th><th>wood in stores</th><th>food</th></tr>
+    <tr><td>cut 1</td><td class="num">3,600.1</td><td class="num">0.685</td><td class="num">0.685</td><td class="num">0.906</td><td class="num">1</td><td class="num">3</td></tr>
+    <tr><td>cut 2</td><td class="num">3,900.1</td><td class="num">0.963</td><td class="num">0.663</td><td class="num">0.884</td><td class="num">20</td><td class="num">3</td></tr>
+    <tr><td>cut 3</td><td class="num">4,200.1</td><td class="num">0.941</td><td class="num">0.985</td><td class="num">0.861</td><td class="num">36</td><td class="num">4</td></tr>
+    <tr><td>cut 4</td><td class="num">4,500.1</td><td class="num">0.919</td><td class="num">0.963</td><td class="num">0.840</td><td class="num">18</td><td class="num">4</td></tr>
+    <tr><td>end of the day</td><td class="num">4,800.1</td><td class="num">0.897</td><td class="num">0.942</td><td class="num">0.818</td><td class="num">18</td><td class="num">3</td></tr>
+  </table></div>
+  <p>Read the dock column downward. It was never touched, and by cut 4&rsquo;s opening it had fallen below 0.85 and become repairable, with nobody ordered to repair it. The lean-tos were patched and then began to weather again, which is what lean-tos do.</p>
+</section>
+
+<section>
+  <h2><span class="n">4</span>What the orders did not do</h2>
+  <p><i>Stock them full</i> was not done. A lean-to holds 12 when sound, by <code>placesIn</code> at <code>sim.ts:1546</code>, so full is about 24 between them and 16 more in the boat. Wood went from 1 to a peak of 36 at cut 3&rsquo;s opening and stood at 18 at the end. Food never moved: 3 at the opening, 3 at the end. He foraged and it did not accumulate, and the sheet does not know why yet.</p>
+  <p>And on cut 3, a day the model wrote for him, he <i>&ldquo;built a depot&rdquo;</i> at 90,113, sim-second 4,410. His founding lists <code>depot</code> among the things he may raise. His standing rule says <i>&ldquo;Raise nothing yourself but the dock.&rdquo;</i> The hold list is carried and read back to the model and enforced by nothing, which <code>brain.ts:107</code> says in its own words and Sheet CXXXII measured. The depot is real, it is his, and it is against his own rule. Nobody stopped him because nothing can.</p>
+</section>
+
+<section>
+  <h2><span class="n">5</span>The frame, read tonight</h2>
+  <p>The English Wikipedia page for Tristan da Cunha, fetched at this desk at 03:50Z on 5 September, says: on 10 October 1961 an eruption <i>&ldquo;forced the evacuation of all 264 people&rdquo;</i>; they went by local fishing boats to Nightingale Island, were <i>&ldquo;picked up by the diverted Dutch passenger ship Tjisadane that took them to Cape Town&rdquo;</i>, <i>&ldquo;arrived in the U.K. aboard the liner M.V. Stirling Castle&rdquo;</i>, and were <i>&ldquo;settled in an old Royal Air Force camp near Calshot, Hampshire.&rdquo;</i> Then: <i>&ldquo;The following year, a Royal Society expedition reported that Edinburgh of the Seven Seas had survived.&rdquo;</i> And: <i>&ldquo;Most families returned in 1963.&rdquo;</i></p>
+  <p>The one property borrowed is the order of events. The houses were looked at before the people were asked to come home. Somebody went first, with no one to bring, to see what stood. That is the Seafarer&rsquo;s night: two lean-tos looked at and patched, for two people who are in the city and have not yet been asked whether they want them.</p>
+</section>
+
+<div class="explicit">
+  <h2>What is thin here, and what the volcano did not do</h2>
+  <p>The frame is stretched in the direction that flatters. Tristan&rsquo;s people were taken by a volcano and chose to return by their own vote; the two settlers here were carried off by a rule this house wrote and have not been asked anything. The page read tonight carries no vote count and no advance party, and neither is printed. Nothing about the weight is borrowed: 264 people and a mountain against two settlers and a boat, and this sheet says so in those terms.</p>
+  <p>Every valley number is one night&rsquo;s run of one rebuilt day, read from the cut files and the end snapshot at this desk between 03:46Z and 03:51Z. The day is provisional in the producer&rsquo;s own word until each cut airs; cut 2 airs at 10:00Z, and a re-cut before then would move every figure from cut 2 down. The 03:41Z cuts that never aired remain on disk and in the aired ledger, where the last entry wins.</p>
+  <p>Of the faults named, the house&rsquo;s own: the rendition itself, one of one; the recall door shipped without a failing test, one of one; the dock left unpatched because the orders assumed a verb aims at a named building and it does not, one of one; the depot raised against a rule nothing enforces, which Sheet CXXXII named and this house has not fixed. Four of four. The Seafarer did what he was told where the engine let him and did the right thing early where it did not.</p>
+  <p>Unfalsifiable in the flattering direction: that the two men would want their lean-tos kept. Nobody has asked them. Printed unfixed: the food that did not accumulate; the hold list; the missing test.</p>
+  <p class="footline"><b>Go back first, with nobody aboard, and look at the houses. Then ask.</b></p>
+</div>
+</main>
+
+</body>
+</html>
