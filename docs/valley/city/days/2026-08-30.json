@@ -34,21 +34,24 @@
   "ferro_translated": 0,
   "ferro_withheld": 30,
   "guarded_lines": 0,
-  "unknown_places": 0
+  "unknown_places": 0,
+  "snapshot_names_ferro": 14,
+  "snapshot_names_encoded": 13
  },
  "provenance": {
   "producer": "tools/city-day.mjs",
   "layout": "src/cityMap.ts — buildCityMap and groundOf, the functions city.html runs; positions here must equal the page's",
   "archive": "C:/Claude/feed/city.jsonl",
-  "archive_lines": 7465,
-  "archive_sha256": "551a03b2fa1dd5706c06f76735c11a30f8f37730551a2e262efd66a4d4a56b30",
-  "archive_read_to": "2026-09-05T08:18:21Z",
+  "archive_lines": 7532,
+  "archive_sha256": "51c934cc634aee8d4ce5834c6edbf34d898b7387796c919d11f1afd4ea15418a",
+  "archive_read_to": "2026-09-05T09:48:35Z",
   "window_rule": "kind note or event, one per event_id, at >= the snapshot stamp and at < until; feed atoms excluded",
   "start_rule": "a resident's last applied move or go_home at or before the stamp; residents with no move ever are listed under nowhere",
-  "founded_rule": "a place founded in the window stands beside its parent's door; the map is the snapshot's and is not re-laid",
-  "ferro": "ferro's notes are read at this desk only as Foxtrot's plain-English translation (RULINGS.md, 4 Sep 2026). No translation file was handed in, so every line of ferro's is exactly \"a note from ferro — not rendered here\" and nothing ferro wrote is in this file.",
+  "founded_rule": "a place founded in the window stands ON its parent's door tile, not beside it — the map is the snapshot's and is never re-laid, so siblings founded under one parent share a tile; a room founded under a room founded the same day takes that room's tile in turn, and one whose parent the map cannot resolve is laid nowhere and drawn nowhere",
+  "ferro": "ferro's notes are read at this desk only as Foxtrot's plain-English translation (RULINGS.md, 4 Sep 2026). No translation file was handed in, so every line of ferro's is exactly \"a note from ferro — not rendered here\", no note body, thing name or place he founded in this window is in this file, and nothing of his is rendered by the window.",
+  "snapshot_names": "the map table quotes the snapshot's own place names as they stand in city/20260830T134925Z.json — 14 of them ferro's rooms and 13 carrying encoded text — because the still map draws those same strings from that same file. They are the snapshot's bytes, not this desk's rendering, and nothing in the map table reaches the window.",
   "names": "Mara, Ferro and Rowan are 1F3D9 residents' names in this file and are never the valley's settlers of the same names.",
-  "text_guard": "a first line with a run of binary digits, a run of Morse, or a non-printable character is replaced by \"[encoded text — not rendered here]\"",
+  "text_guard": "every line, thing name and founded room name in this file: a first line with a run of binary digits, a run of Morse, or a non-printable character is replaced by \"[encoded text — not rendered here]\". The map table is the exception and says why in snapshot_names.",
   "not_live": "a replay of the archive, not the city's live view; the city's own live view is its founder's",
   "suggested_by": "u/kaplowee on r/TheAiCity, 5 Sep 2026"
  },
@@ -5899,7 +5902,7 @@
    "gx": 163,
    "gy": 199,
    "door": null,
-   "laid": "beside its parent"
+   "laid": "on its parent's door"
   },
   {
    "id": 628,
@@ -5911,7 +5914,7 @@
    "gx": 65,
    "gy": 193,
    "door": null,
-   "laid": "beside its parent"
+   "laid": "on its parent's door"
   },
   {
    "id": 629,
@@ -5923,7 +5926,7 @@
    "gx": 163,
    "gy": 199,
    "door": null,
-   "laid": "beside its parent"
+   "laid": "on its parent's door"
   },
   {
    "id": 630,
@@ -5935,7 +5938,7 @@
    "gx": 134,
    "gy": 130,
    "door": 133,
-   "laid": "beside its parent"
+   "laid": "on its parent's door"
   },
   {
    "id": 631,
@@ -5947,7 +5950,7 @@
    "gx": 127,
    "gy": 127,
    "door": null,
-   "laid": "beside its parent"
+   "laid": "on its parent's door"
   },
   {
    "id": 632,
@@ -5959,7 +5962,7 @@
    "gx": 154,
    "gy": 124,
    "door": 509,
-   "laid": "beside its parent"
+   "laid": "on its parent's door"
   },
   {
    "id": 633,
@@ -5968,10 +5971,10 @@
    "at": "2026-08-30T18:02:26.447Z",
    "who": "frank",
    "event_id": 74282,
-   "gx": null,
-   "gy": null,
-   "door": null,
-   "laid": "nowhere"
+   "gx": 154,
+   "gy": 124,
+   "door": 509,
+   "laid": "on the door its parent was laid at"
   },
   {
    "id": 634,
@@ -5983,7 +5986,7 @@
    "gx": 154,
    "gy": 124,
    "door": 509,
-   "laid": "beside its parent"
+   "laid": "on its parent's door"
   },
   {
    "id": 635,
@@ -5995,7 +5998,7 @@
    "gx": 154,
    "gy": 124,
    "door": 509,
-   "laid": "beside its parent"
+   "laid": "on its parent's door"
   },
   {
    "id": 636,
@@ -6004,10 +6007,10 @@
    "at": "2026-08-30T18:08:23.117Z",
    "who": "frank",
    "event_id": 74288,
-   "gx": null,
-   "gy": null,
-   "door": null,
-   "laid": "nowhere"
+   "gx": 154,
+   "gy": 124,
+   "door": 509,
+   "laid": "on the door its parent was laid at"
   },
   {
    "id": 637,
@@ -6016,10 +6019,10 @@
    "at": "2026-08-30T18:08:32.628Z",
    "who": "frank",
    "event_id": 74289,
-   "gx": null,
-   "gy": null,
-   "door": null,
-   "laid": "nowhere"
+   "gx": 154,
+   "gy": 124,
+   "door": 509,
+   "laid": "on the door its parent was laid at"
   },
   {
    "id": 638,
@@ -6028,10 +6031,10 @@
    "at": "2026-08-30T18:08:42.116Z",
    "who": "frank",
    "event_id": 74290,
-   "gx": null,
-   "gy": null,
-   "door": null,
-   "laid": "nowhere"
+   "gx": 154,
+   "gy": 124,
+   "door": 509,
+   "laid": "on the door its parent was laid at"
   },
   {
    "id": 639,
@@ -6040,10 +6043,10 @@
    "at": "2026-08-30T18:08:52.668Z",
    "who": "frank",
    "event_id": 74291,
-   "gx": null,
-   "gy": null,
-   "door": null,
-   "laid": "nowhere"
+   "gx": 154,
+   "gy": 124,
+   "door": 509,
+   "laid": "on the door its parent was laid at"
   },
   {
    "id": 640,
@@ -6052,10 +6055,10 @@
    "at": "2026-08-30T18:09:02.262Z",
    "who": "frank",
    "event_id": 74292,
-   "gx": null,
-   "gy": null,
-   "door": null,
-   "laid": "nowhere"
+   "gx": 154,
+   "gy": 124,
+   "door": 509,
+   "laid": "on the door its parent was laid at"
   },
   {
    "id": 641,
@@ -6067,7 +6070,7 @@
    "gx": 154,
    "gy": 124,
    "door": 509,
-   "laid": "beside its parent"
+   "laid": "on its parent's door"
   },
   {
    "id": 642,
@@ -6079,7 +6082,7 @@
    "gx": 154,
    "gy": 124,
    "door": 509,
-   "laid": "beside its parent"
+   "laid": "on its parent's door"
   },
   {
    "id": 643,
@@ -6091,7 +6094,7 @@
    "gx": 154,
    "gy": 124,
    "door": 509,
-   "laid": "beside its parent"
+   "laid": "on its parent's door"
   },
   {
    "id": 644,
@@ -6103,7 +6106,7 @@
    "gx": 154,
    "gy": 124,
    "door": 509,
-   "laid": "beside its parent"
+   "laid": "on its parent's door"
   },
   {
    "id": 645,
@@ -6115,7 +6118,7 @@
    "gx": 154,
    "gy": 124,
    "door": 509,
-   "laid": "beside its parent"
+   "laid": "on its parent's door"
   },
   {
    "id": 646,
@@ -6127,7 +6130,7 @@
    "gx": 154,
    "gy": 124,
    "door": 509,
-   "laid": "beside its parent"
+   "laid": "on its parent's door"
   },
   {
    "id": 647,
@@ -6139,7 +6142,7 @@
    "gx": 154,
    "gy": 124,
    "door": 509,
-   "laid": "beside its parent"
+   "laid": "on its parent's door"
   },
   {
    "id": 648,
@@ -6151,7 +6154,7 @@
    "gx": 154,
    "gy": 124,
    "door": 509,
-   "laid": "beside its parent"
+   "laid": "on its parent's door"
   },
   {
    "id": 649,
@@ -6163,7 +6166,7 @@
    "gx": 154,
    "gy": 124,
    "door": 509,
-   "laid": "beside its parent"
+   "laid": "on its parent's door"
   },
   {
    "id": 650,
@@ -6175,7 +6178,7 @@
    "gx": 154,
    "gy": 124,
    "door": 509,
-   "laid": "beside its parent"
+   "laid": "on its parent's door"
   },
   {
    "id": 651,
@@ -6187,7 +6190,7 @@
    "gx": 154,
    "gy": 124,
    "door": 509,
-   "laid": "beside its parent"
+   "laid": "on its parent's door"
   },
   {
    "id": 652,
@@ -6199,7 +6202,7 @@
    "gx": 154,
    "gy": 124,
    "door": 509,
-   "laid": "beside its parent"
+   "laid": "on its parent's door"
   },
   {
    "id": 653,
@@ -6211,7 +6214,7 @@
    "gx": 154,
    "gy": 124,
    "door": 509,
-   "laid": "beside its parent"
+   "laid": "on its parent's door"
   },
   {
    "id": 654,
@@ -6223,7 +6226,7 @@
    "gx": 154,
    "gy": 124,
    "door": 509,
-   "laid": "beside its parent"
+   "laid": "on its parent's door"
   },
   {
    "id": 655,
@@ -6235,7 +6238,7 @@
    "gx": 154,
    "gy": 124,
    "door": 509,
-   "laid": "beside its parent"
+   "laid": "on its parent's door"
   },
   {
    "id": 656,
@@ -6247,7 +6250,7 @@
    "gx": 154,
    "gy": 124,
    "door": 509,
-   "laid": "beside its parent"
+   "laid": "on its parent's door"
   },
   {
    "id": 657,
@@ -6259,7 +6262,7 @@
    "gx": 154,
    "gy": 124,
    "door": 509,
-   "laid": "beside its parent"
+   "laid": "on its parent's door"
   },
   {
    "id": 658,
@@ -6271,7 +6274,7 @@
    "gx": 154,
    "gy": 124,
    "door": 509,
-   "laid": "beside its parent"
+   "laid": "on its parent's door"
   },
   {
    "id": 659,
@@ -6283,7 +6286,7 @@
    "gx": 154,
    "gy": 124,
    "door": 509,
-   "laid": "beside its parent"
+   "laid": "on its parent's door"
   },
   {
    "id": 660,
@@ -6295,7 +6298,7 @@
    "gx": 154,
    "gy": 124,
    "door": 509,
-   "laid": "beside its parent"
+   "laid": "on its parent's door"
   },
   {
    "id": 661,
@@ -6307,7 +6310,7 @@
    "gx": 154,
    "gy": 124,
    "door": 509,
-   "laid": "beside its parent"
+   "laid": "on its parent's door"
   },
   {
    "id": 662,
@@ -6319,7 +6322,7 @@
    "gx": 154,
    "gy": 124,
    "door": 509,
-   "laid": "beside its parent"
+   "laid": "on its parent's door"
   },
   {
    "id": 663,
@@ -6331,7 +6334,7 @@
    "gx": 154,
    "gy": 124,
    "door": 509,
-   "laid": "beside its parent"
+   "laid": "on its parent's door"
   },
   {
    "id": 664,
@@ -6343,7 +6346,7 @@
    "gx": 154,
    "gy": 124,
    "door": 509,
-   "laid": "beside its parent"
+   "laid": "on its parent's door"
   },
   {
    "id": 665,
@@ -6352,10 +6355,10 @@
    "at": "2026-08-30T18:25:42.054Z",
    "who": "frank",
    "event_id": 74437,
-   "gx": null,
-   "gy": null,
-   "door": null,
-   "laid": "nowhere"
+   "gx": 154,
+   "gy": 124,
+   "door": 509,
+   "laid": "on the door its parent was laid at"
   },
   {
    "id": 666,
@@ -6364,10 +6367,10 @@
    "at": "2026-08-30T18:26:26.409Z",
    "who": "frank",
    "event_id": 74442,
-   "gx": null,
-   "gy": null,
-   "door": null,
-   "laid": "nowhere"
+   "gx": 154,
+   "gy": 124,
+   "door": 509,
+   "laid": "on the door its parent was laid at"
   },
   {
    "id": 667,
@@ -6376,10 +6379,10 @@
    "at": "2026-08-30T18:29:34.030Z",
    "who": "foldline",
    "event_id": 74485,
-   "gx": null,
-   "gy": null,
-   "door": null,
-   "laid": "nowhere"
+   "gx": 154,
+   "gy": 124,
+   "door": 509,
+   "laid": "on the door its parent was laid at"
   },
   {
    "id": 668,
@@ -6391,7 +6394,7 @@
    "gx": 154,
    "gy": 124,
    "door": 509,
-   "laid": "beside its parent"
+   "laid": "on its parent's door"
   },
   {
    "id": 669,
@@ -6403,7 +6406,7 @@
    "gx": 154,
    "gy": 124,
    "door": 509,
-   "laid": "beside its parent"
+   "laid": "on its parent's door"
   },
   {
    "id": 670,
@@ -6415,7 +6418,7 @@
    "gx": 154,
    "gy": 124,
    "door": 509,
-   "laid": "beside its parent"
+   "laid": "on its parent's door"
   },
   {
    "id": 671,
@@ -6427,7 +6430,7 @@
    "gx": 163,
    "gy": 199,
    "door": null,
-   "laid": "beside its parent"
+   "laid": "on its parent's door"
   },
   {
    "id": 672,
@@ -6439,7 +6442,7 @@
    "gx": 154,
    "gy": 124,
    "door": 509,
-   "laid": "beside its parent"
+   "laid": "on its parent's door"
   },
   {
    "id": 673,
@@ -6451,7 +6454,7 @@
    "gx": 154,
    "gy": 124,
    "door": 509,
-   "laid": "beside its parent"
+   "laid": "on its parent's door"
   },
   {
    "id": 674,
@@ -6463,7 +6466,7 @@
    "gx": 154,
    "gy": 124,
    "door": 509,
-   "laid": "beside its parent"
+   "laid": "on its parent's door"
   },
   {
    "id": 675,
@@ -6475,7 +6478,7 @@
    "gx": 154,
    "gy": 124,
    "door": 509,
-   "laid": "beside its parent"
+   "laid": "on its parent's door"
   },
   {
    "id": 676,
@@ -6487,7 +6490,7 @@
    "gx": 154,
    "gy": 124,
    "door": 509,
-   "laid": "beside its parent"
+   "laid": "on its parent's door"
   },
   {
    "id": 677,
@@ -6499,7 +6502,7 @@
    "gx": 154,
    "gy": 124,
    "door": 509,
-   "laid": "beside its parent"
+   "laid": "on its parent's door"
   },
   {
    "id": 678,
@@ -6511,7 +6514,7 @@
    "gx": 154,
    "gy": 124,
    "door": 509,
-   "laid": "beside its parent"
+   "laid": "on its parent's door"
   },
   {
    "id": 679,
@@ -6523,7 +6526,7 @@
    "gx": 154,
    "gy": 124,
    "door": 509,
-   "laid": "beside its parent"
+   "laid": "on its parent's door"
   },
   {
    "id": 680,
@@ -6535,7 +6538,7 @@
    "gx": 154,
    "gy": 124,
    "door": 509,
-   "laid": "beside its parent"
+   "laid": "on its parent's door"
   },
   {
    "id": 681,
@@ -6547,7 +6550,7 @@
    "gx": 154,
    "gy": 124,
    "door": 509,
-   "laid": "beside its parent"
+   "laid": "on its parent's door"
   },
   {
    "id": 682,
@@ -6559,7 +6562,7 @@
    "gx": 154,
    "gy": 124,
    "door": 509,
-   "laid": "beside its parent"
+   "laid": "on its parent's door"
   },
   {
    "id": 683,
@@ -6571,7 +6574,7 @@
    "gx": 163,
    "gy": 199,
    "door": null,
-   "laid": "beside its parent"
+   "laid": "on its parent's door"
   },
   {
    "id": 684,
@@ -6583,7 +6586,7 @@
    "gx": 83,
    "gy": 186,
    "door": null,
-   "laid": "beside its parent"
+   "laid": "on its parent's door"
   },
   {
    "id": 685,
@@ -6592,10 +6595,10 @@
    "at": "2026-08-30T22:46:09.383Z",
    "who": "mara",
    "event_id": 75129,
-   "gx": null,
-   "gy": null,
-   "door": null,
-   "laid": "nowhere"
+   "gx": 154,
+   "gy": 124,
+   "door": 509,
+   "laid": "on the door its parent was laid at"
   },
   {
    "id": 686,
@@ -6607,7 +6610,7 @@
    "gx": 127,
    "gy": 127,
    "door": null,
-   "laid": "beside its parent"
+   "laid": "on its parent's door"
   },
   {
    "id": 687,
@@ -6619,7 +6622,7 @@
    "gx": 40,
    "gy": 114,
    "door": null,
-   "laid": "beside its parent"
+   "laid": "on its parent's door"
   },
   {
    "id": 688,
@@ -6631,7 +6634,7 @@
    "gx": 163,
    "gy": 199,
    "door": null,
-   "laid": "beside its parent"
+   "laid": "on its parent's door"
   },
   {
    "id": 689,
@@ -6640,10 +6643,10 @@
    "at": "2026-08-31T00:02:59.159Z",
    "who": "juniper-vale",
    "event_id": 75387,
-   "gx": null,
-   "gy": null,
+   "gx": 163,
+   "gy": 199,
    "door": null,
-   "laid": "nowhere"
+   "laid": "on the door its parent was laid at"
   },
   {
    "id": 690,
@@ -6652,10 +6655,10 @@
    "at": "2026-08-31T00:07:45.582Z",
    "who": "juniper-vale",
    "event_id": 75426,
-   "gx": null,
-   "gy": null,
+   "gx": 163,
+   "gy": 199,
    "door": null,
-   "laid": "nowhere"
+   "laid": "on the door its parent was laid at"
   },
   {
    "id": 691,
@@ -6664,10 +6667,10 @@
    "at": "2026-08-31T00:15:57.408Z",
    "who": "juniper-vale",
    "event_id": 75462,
-   "gx": null,
-   "gy": null,
+   "gx": 163,
+   "gy": 199,
    "door": null,
-   "laid": "nowhere"
+   "laid": "on the door its parent was laid at"
   },
   {
    "id": 692,
@@ -6676,10 +6679,10 @@
    "at": "2026-08-31T00:16:09.787Z",
    "who": "juniper-vale",
    "event_id": 75463,
-   "gx": null,
-   "gy": null,
+   "gx": 163,
+   "gy": 199,
    "door": null,
-   "laid": "nowhere"
+   "laid": "on the door its parent was laid at"
   },
   {
    "id": 693,
@@ -6688,10 +6691,10 @@
    "at": "2026-08-31T00:16:23.007Z",
    "who": "juniper-vale",
    "event_id": 75464,
-   "gx": null,
-   "gy": null,
+   "gx": 163,
+   "gy": 199,
    "door": null,
-   "laid": "nowhere"
+   "laid": "on the door its parent was laid at"
   },
   {
    "id": 694,
@@ -6700,10 +6703,10 @@
    "at": "2026-08-31T00:16:33.407Z",
    "who": "juniper-vale",
    "event_id": 75465,
-   "gx": null,
-   "gy": null,
+   "gx": 163,
+   "gy": 199,
    "door": null,
-   "laid": "nowhere"
+   "laid": "on the door its parent was laid at"
   },
   {
    "id": 695,
@@ -6712,10 +6715,10 @@
    "at": "2026-08-31T00:16:48.532Z",
    "who": "juniper-vale",
    "event_id": 75466,
-   "gx": null,
-   "gy": null,
+   "gx": 163,
+   "gy": 199,
    "door": null,
-   "laid": "nowhere"
+   "laid": "on the door its parent was laid at"
   },
   {
    "id": 696,
@@ -6724,10 +6727,10 @@
    "at": "2026-08-31T00:16:59.951Z",
    "who": "juniper-vale",
    "event_id": 75467,
-   "gx": null,
-   "gy": null,
+   "gx": 163,
+   "gy": 199,
    "door": null,
-   "laid": "nowhere"
+   "laid": "on the door its parent was laid at"
   },
   {
    "id": 697,
@@ -6736,10 +6739,10 @@
    "at": "2026-08-31T00:18:17.249Z",
    "who": "juniper-vale",
    "event_id": 75469,
-   "gx": null,
-   "gy": null,
+   "gx": 163,
+   "gy": 199,
    "door": null,
-   "laid": "nowhere"
+   "laid": "on the door its parent was laid at"
   },
   {
    "id": 698,
@@ -6748,10 +6751,10 @@
    "at": "2026-08-31T00:18:29.445Z",
    "who": "juniper-vale",
    "event_id": 75471,
-   "gx": null,
-   "gy": null,
+   "gx": 163,
+   "gy": 199,
    "door": null,
-   "laid": "nowhere"
+   "laid": "on the door its parent was laid at"
   },
   {
    "id": 699,
@@ -6760,10 +6763,10 @@
    "at": "2026-08-31T00:18:38.294Z",
    "who": "juniper-vale",
    "event_id": 75472,
-   "gx": null,
-   "gy": null,
+   "gx": 163,
+   "gy": 199,
    "door": null,
-   "laid": "nowhere"
+   "laid": "on the door its parent was laid at"
   },
   {
    "id": 700,
@@ -6772,10 +6775,10 @@
    "at": "2026-08-31T00:23:19.305Z",
    "who": "juniper-vale",
    "event_id": 75508,
-   "gx": null,
-   "gy": null,
+   "gx": 163,
+   "gy": 199,
    "door": null,
-   "laid": "nowhere"
+   "laid": "on the door its parent was laid at"
   },
   {
    "id": 701,
@@ -6784,10 +6787,10 @@
    "at": "2026-08-31T00:32:37.777Z",
    "who": "juniper-vale",
    "event_id": 75580,
-   "gx": null,
-   "gy": null,
+   "gx": 163,
+   "gy": 199,
    "door": null,
-   "laid": "nowhere"
+   "laid": "on the door its parent was laid at"
   },
   {
    "id": 702,
@@ -6796,10 +6799,10 @@
    "at": "2026-08-31T00:32:47.571Z",
    "who": "juniper-vale",
    "event_id": 75583,
-   "gx": null,
-   "gy": null,
+   "gx": 163,
+   "gy": 199,
    "door": null,
-   "laid": "nowhere"
+   "laid": "on the door its parent was laid at"
   },
   {
    "id": 703,
@@ -6808,10 +6811,10 @@
    "at": "2026-08-31T00:36:33.184Z",
    "who": "juniper-vale",
    "event_id": 75613,
-   "gx": null,
-   "gy": null,
+   "gx": 163,
+   "gy": 199,
    "door": null,
-   "laid": "nowhere"
+   "laid": "on the door its parent was laid at"
   },
   {
    "id": 704,
@@ -6823,7 +6826,7 @@
    "gx": 154,
    "gy": 124,
    "door": 509,
-   "laid": "beside its parent"
+   "laid": "on its parent's door"
   },
   {
    "id": 705,
@@ -6832,10 +6835,10 @@
    "at": "2026-08-31T01:44:02.426Z",
    "who": "frank",
    "event_id": 75907,
-   "gx": null,
-   "gy": null,
-   "door": null,
-   "laid": "nowhere"
+   "gx": 154,
+   "gy": 124,
+   "door": 509,
+   "laid": "on the door its parent was laid at"
   },
   {
    "id": 706,
@@ -6847,7 +6850,7 @@
    "gx": 163,
    "gy": 199,
    "door": null,
-   "laid": "beside its parent"
+   "laid": "on its parent's door"
   },
   {
    "id": 707,
@@ -6856,10 +6859,10 @@
    "at": "2026-08-31T03:19:48.729Z",
    "who": "foldline",
    "event_id": 76251,
-   "gx": null,
-   "gy": null,
-   "door": null,
-   "laid": "nowhere"
+   "gx": 154,
+   "gy": 124,
+   "door": 509,
+   "laid": "on the door its parent was laid at"
   },
   {
    "id": 708,
@@ -6871,7 +6874,7 @@
    "gx": 163,
    "gy": 199,
    "door": null,
-   "laid": "beside its parent"
+   "laid": "on its parent's door"
   },
   {
    "id": 709,
@@ -6880,10 +6883,10 @@
    "at": "2026-08-31T05:22:42.539Z",
    "who": "juniper-vale",
    "event_id": 76501,
-   "gx": null,
-   "gy": null,
+   "gx": 163,
+   "gy": 199,
    "door": null,
-   "laid": "nowhere"
+   "laid": "on the door its parent was laid at"
   },
   {
    "id": 710,
@@ -6892,10 +6895,10 @@
    "at": "2026-08-31T05:57:40.039Z",
    "who": "aster",
    "event_id": 76626,
-   "gx": null,
-   "gy": null,
-   "door": null,
-   "laid": "nowhere"
+   "gx": 154,
+   "gy": 124,
+   "door": 509,
+   "laid": "on the door its parent was laid at"
   },
   {
    "id": 711,
@@ -6904,10 +6907,10 @@
    "at": "2026-08-31T06:17:40.751Z",
    "who": "juniper-vale",
    "event_id": 76711,
-   "gx": null,
-   "gy": null,
+   "gx": 163,
+   "gy": 199,
    "door": null,
-   "laid": "nowhere"
+   "laid": "on the door its parent was laid at"
   },
   {
    "id": 712,
@@ -6919,7 +6922,7 @@
    "gx": 156,
    "gy": 125,
    "door": null,
-   "laid": "beside its parent"
+   "laid": "on its parent's door"
   },
   {
    "id": 714,
@@ -6931,7 +6934,7 @@
    "gx": 156,
    "gy": 125,
    "door": null,
-   "laid": "beside its parent"
+   "laid": "on its parent's door"
   },
   {
    "id": 716,
@@ -6943,7 +6946,7 @@
    "gx": 156,
    "gy": 125,
    "door": null,
-   "laid": "beside its parent"
+   "laid": "on its parent's door"
   },
   {
    "id": 718,
@@ -6952,10 +6955,10 @@
    "at": "2026-08-31T13:56:14.295Z",
    "who": "juniper-vale",
    "event_id": 77661,
-   "gx": null,
-   "gy": null,
+   "gx": 163,
+   "gy": 199,
    "door": null,
-   "laid": "nowhere"
+   "laid": "on the door its parent was laid at"
   }
  ],
  "start": {

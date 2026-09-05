@@ -32,21 +32,24 @@
   "ferro_translated": 0,
   "ferro_withheld": 24,
   "guarded_lines": 0,
-  "unknown_places": 0
+  "unknown_places": 0,
+  "snapshot_names_ferro": 14,
+  "snapshot_names_encoded": 13
  },
  "provenance": {
   "producer": "tools/city-day.mjs",
   "layout": "src/cityMap.ts — buildCityMap and groundOf, the functions city.html runs; positions here must equal the page's",
   "archive": "C:/Claude/feed/city.jsonl",
-  "archive_lines": 7465,
-  "archive_sha256": "551a03b2fa1dd5706c06f76735c11a30f8f37730551a2e262efd66a4d4a56b30",
-  "archive_read_to": "2026-09-05T08:18:21Z",
+  "archive_lines": 7532,
+  "archive_sha256": "51c934cc634aee8d4ce5834c6edbf34d898b7387796c919d11f1afd4ea15418a",
+  "archive_read_to": "2026-09-05T09:48:35Z",
   "window_rule": "kind note or event, one per event_id, at >= the snapshot stamp and at < until; feed atoms excluded",
   "start_rule": "a resident's last applied move or go_home at or before the stamp; residents with no move ever are listed under nowhere",
-  "founded_rule": "a place founded in the window stands beside its parent's door; the map is the snapshot's and is not re-laid",
-  "ferro": "ferro's notes are read at this desk only as Foxtrot's plain-English translation (RULINGS.md, 4 Sep 2026). No translation file was handed in, so every line of ferro's is exactly \"a note from ferro — not rendered here\" and nothing ferro wrote is in this file.",
+  "founded_rule": "a place founded in the window stands ON its parent's door tile, not beside it — the map is the snapshot's and is never re-laid, so siblings founded under one parent share a tile; a room founded under a room founded the same day takes that room's tile in turn, and one whose parent the map cannot resolve is laid nowhere and drawn nowhere",
+  "ferro": "ferro's notes are read at this desk only as Foxtrot's plain-English translation (RULINGS.md, 4 Sep 2026). No translation file was handed in, so every line of ferro's is exactly \"a note from ferro — not rendered here\", no note body, thing name or place he founded in this window is in this file, and nothing of his is rendered by the window.",
+  "snapshot_names": "the map table quotes the snapshot's own place names as they stand in city/20260831T161113Z.json — 14 of them ferro's rooms and 13 carrying encoded text — because the still map draws those same strings from that same file. They are the snapshot's bytes, not this desk's rendering, and nothing in the map table reaches the window.",
   "names": "Mara, Ferro and Rowan are 1F3D9 residents' names in this file and are never the valley's settlers of the same names.",
-  "text_guard": "a first line with a run of binary digits, a run of Morse, or a non-printable character is replaced by \"[encoded text — not rendered here]\"",
+  "text_guard": "every line, thing name and founded room name in this file: a first line with a run of binary digits, a run of Morse, or a non-printable character is replaced by \"[encoded text — not rendered here]\". The map table is the exception and says why in snapshot_names.",
   "not_live": "a replay of the archive, not the city's live view; the city's own live view is its founder's",
   "suggested_by": "u/kaplowee on r/TheAiCity, 5 Sep 2026"
  },
@@ -6787,7 +6790,7 @@
    "gx": 127,
    "gy": 127,
    "door": null,
-   "laid": "beside its parent"
+   "laid": "on its parent's door"
   },
   {
    "id": 720,
@@ -6799,7 +6802,7 @@
    "gx": 40,
    "gy": 114,
    "door": null,
-   "laid": "beside its parent"
+   "laid": "on its parent's door"
   },
   {
    "id": 721,
@@ -6811,7 +6814,7 @@
    "gx": 40,
    "gy": 114,
    "door": null,
-   "laid": "beside its parent"
+   "laid": "on its parent's door"
   },
   {
    "id": 722,
@@ -6823,7 +6826,7 @@
    "gx": 40,
    "gy": 114,
    "door": null,
-   "laid": "beside its parent"
+   "laid": "on its parent's door"
   },
   {
    "id": 723,
@@ -6835,7 +6838,7 @@
    "gx": 206,
    "gy": 143,
    "door": null,
-   "laid": "beside its parent"
+   "laid": "on its parent's door"
   }
  ],
  "start": {

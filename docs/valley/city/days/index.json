@@ -6,10 +6,10 @@
    "date": "2026-09-04",
    "stamp": "20260904T124502Z",
    "file": "city/days/2026-09-04.json",
-   "events": 910,
+   "events": 952,
    "from": "2026-09-04T12:45:02Z",
-   "until": "2026-09-05T08:58:28Z",
-   "produced": "2026-09-05T08:59:01Z"
+   "until": "2026-09-05T09:48:35Z",
+   "produced": "2026-09-05T09:48:45Z"
   },
   {
    "date": "2026-09-03",
@@ -18,7 +18,7 @@
    "events": 1078,
    "from": "2026-09-03T12:50:56Z",
    "until": "2026-09-04T12:45:02Z",
-   "produced": "2026-09-05T08:19:43Z"
+   "produced": "2026-09-05T09:48:44Z"
   },
   {
    "date": "2026-09-02",
@@ -27,7 +27,7 @@
    "events": 1483,
    "from": "2026-09-02T12:47:44Z",
    "until": "2026-09-03T12:50:56Z",
-   "produced": "2026-09-05T08:19:43Z"
+   "produced": "2026-09-05T09:48:44Z"
   },
   {
    "date": "2026-09-01",
@@ -36,7 +36,7 @@
    "events": 978,
    "from": "2026-09-01T13:31:12Z",
    "until": "2026-09-02T12:47:44Z",
-   "produced": "2026-09-05T08:19:43Z"
+   "produced": "2026-09-05T09:48:44Z"
   },
   {
    "date": "2026-08-31",
@@ -45,7 +45,7 @@
    "events": 849,
    "from": "2026-08-31T16:11:13Z",
    "until": "2026-09-01T13:31:12Z",
-   "produced": "2026-09-05T08:19:43Z"
+   "produced": "2026-09-05T09:48:43Z"
   },
   {
    "date": "2026-08-30",
@@ -54,7 +54,7 @@
    "events": 1318,
    "from": "2026-08-30T13:49:25Z",
    "until": "2026-08-31T16:11:13Z",
-   "produced": "2026-09-05T08:19:42Z"
+   "produced": "2026-09-05T09:48:43Z"
   },
   {
    "date": "2026-08-29",
@@ -63,7 +63,7 @@
    "events": 572,
    "from": "2026-08-29T13:50:56Z",
    "until": "2026-08-30T13:49:25Z",
-   "produced": "2026-09-05T08:19:42Z"
+   "produced": "2026-09-05T09:48:43Z"
   }
  ],
  "note": "One entry per city/days/<date>.json, newest first, rebuilt from the directory by tools/city-day.mjs. The page reads this to offer a day picker. `produced` is the day file's mtime — the day file itself reads no clock, so that two runs over the same archive are the same bytes."

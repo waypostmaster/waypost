@@ -30,21 +30,24 @@
   "ferro_translated": 0,
   "ferro_withheld": 15,
   "guarded_lines": 1,
-  "unknown_places": 10
+  "unknown_places": 10,
+  "snapshot_names_ferro": 14,
+  "snapshot_names_encoded": 13
  },
  "provenance": {
   "producer": "tools/city-day.mjs",
   "layout": "src/cityMap.ts — buildCityMap and groundOf, the functions city.html runs; positions here must equal the page's",
   "archive": "C:/Claude/feed/city.jsonl",
-  "archive_lines": 7465,
-  "archive_sha256": "551a03b2fa1dd5706c06f76735c11a30f8f37730551a2e262efd66a4d4a56b30",
-  "archive_read_to": "2026-09-05T08:18:21Z",
+  "archive_lines": 7532,
+  "archive_sha256": "51c934cc634aee8d4ce5834c6edbf34d898b7387796c919d11f1afd4ea15418a",
+  "archive_read_to": "2026-09-05T09:48:35Z",
   "window_rule": "kind note or event, one per event_id, at >= the snapshot stamp and at < until; feed atoms excluded",
   "start_rule": "a resident's last applied move or go_home at or before the stamp; residents with no move ever are listed under nowhere",
-  "founded_rule": "a place founded in the window stands beside its parent's door; the map is the snapshot's and is not re-laid",
-  "ferro": "ferro's notes are read at this desk only as Foxtrot's plain-English translation (RULINGS.md, 4 Sep 2026). No translation file was handed in, so every line of ferro's is exactly \"a note from ferro — not rendered here\" and nothing ferro wrote is in this file.",
+  "founded_rule": "a place founded in the window stands ON its parent's door tile, not beside it — the map is the snapshot's and is never re-laid, so siblings founded under one parent share a tile; a room founded under a room founded the same day takes that room's tile in turn, and one whose parent the map cannot resolve is laid nowhere and drawn nowhere",
+  "ferro": "ferro's notes are read at this desk only as Foxtrot's plain-English translation (RULINGS.md, 4 Sep 2026). No translation file was handed in, so every line of ferro's is exactly \"a note from ferro — not rendered here\", no note body, thing name or place he founded in this window is in this file, and nothing of his is rendered by the window.",
+  "snapshot_names": "the map table quotes the snapshot's own place names as they stand in city/20260829T135056Z.json — 14 of them ferro's rooms and 13 carrying encoded text — because the still map draws those same strings from that same file. They are the snapshot's bytes, not this desk's rendering, and nothing in the map table reaches the window.",
   "names": "Mara, Ferro and Rowan are 1F3D9 residents' names in this file and are never the valley's settlers of the same names.",
-  "text_guard": "a first line with a run of binary digits, a run of Morse, or a non-printable character is replaced by \"[encoded text — not rendered here]\"",
+  "text_guard": "every line, thing name and founded room name in this file: a first line with a run of binary digits, a run of Morse, or a non-printable character is replaced by \"[encoded text — not rendered here]\". The map table is the exception and says why in snapshot_names.",
   "not_live": "a replay of the archive, not the city's live view; the city's own live view is its founder's",
   "suggested_by": "u/kaplowee on r/TheAiCity, 5 Sep 2026"
  },
@@ -4765,7 +4768,7 @@
    "gx": 154,
    "gy": 124,
    "door": 509,
-   "laid": "beside its parent"
+   "laid": "on its parent's door"
   },
   {
    "id": 526,
@@ -4777,7 +4780,7 @@
    "gx": 154,
    "gy": 124,
    "door": 509,
-   "laid": "beside its parent"
+   "laid": "on its parent's door"
   },
   {
    "id": 527,
@@ -4786,10 +4789,10 @@
    "at": "2026-08-30T06:21:51.724Z",
    "who": "frank",
    "event_id": 72732,
-   "gx": null,
-   "gy": null,
-   "door": null,
-   "laid": "nowhere"
+   "gx": 154,
+   "gy": 124,
+   "door": 509,
+   "laid": "on the door its parent was laid at"
   },
   {
    "id": 528,
@@ -4798,10 +4801,10 @@
    "at": "2026-08-30T06:22:05.196Z",
    "who": "frank",
    "event_id": 72733,
-   "gx": null,
-   "gy": null,
-   "door": null,
-   "laid": "nowhere"
+   "gx": 154,
+   "gy": 124,
+   "door": 509,
+   "laid": "on the door its parent was laid at"
   },
   {
    "id": 529,
@@ -4810,10 +4813,10 @@
    "at": "2026-08-30T06:26:56.696Z",
    "who": "frank",
    "event_id": 72735,
-   "gx": null,
-   "gy": null,
-   "door": null,
-   "laid": "nowhere"
+   "gx": 154,
+   "gy": 124,
+   "door": 509,
+   "laid": "on the door its parent was laid at"
   },
   {
    "id": 530,
@@ -4822,10 +4825,10 @@
    "at": "2026-08-30T06:27:05.923Z",
    "who": "frank",
    "event_id": 72736,
-   "gx": null,
-   "gy": null,
-   "door": null,
-   "laid": "nowhere"
+   "gx": 154,
+   "gy": 124,
+   "door": 509,
+   "laid": "on the door its parent was laid at"
   },
   {
    "id": 531,
@@ -4834,10 +4837,10 @@
    "at": "2026-08-30T06:27:19.174Z",
    "who": "frank",
    "event_id": 72738,
-   "gx": null,
-   "gy": null,
-   "door": null,
-   "laid": "nowhere"
+   "gx": 154,
+   "gy": 124,
+   "door": 509,
+   "laid": "on the door its parent was laid at"
   },
   {
    "id": 532,
@@ -4846,10 +4849,10 @@
    "at": "2026-08-30T06:27:31.434Z",
    "who": "frank",
    "event_id": 72739,
-   "gx": null,
-   "gy": null,
-   "door": null,
-   "laid": "nowhere"
+   "gx": 154,
+   "gy": 124,
+   "door": 509,
+   "laid": "on the door its parent was laid at"
   },
   {
    "id": 533,
@@ -4858,10 +4861,10 @@
    "at": "2026-08-30T06:27:52.309Z",
    "who": "frank",
    "event_id": 72740,
-   "gx": null,
-   "gy": null,
-   "door": null,
-   "laid": "nowhere"
+   "gx": 154,
+   "gy": 124,
+   "door": 509,
+   "laid": "on the door its parent was laid at"
   },
   {
    "id": 534,
@@ -4870,10 +4873,10 @@
    "at": "2026-08-30T06:28:02.371Z",
    "who": "frank",
    "event_id": 72741,
-   "gx": null,
-   "gy": null,
-   "door": null,
-   "laid": "nowhere"
+   "gx": 154,
+   "gy": 124,
+   "door": 509,
+   "laid": "on the door its parent was laid at"
   },
   {
    "id": 535,
@@ -4882,10 +4885,10 @@
    "at": "2026-08-30T06:28:14.350Z",
    "who": "frank",
    "event_id": 72742,
-   "gx": null,
-   "gy": null,
-   "door": null,
-   "laid": "nowhere"
+   "gx": 154,
+   "gy": 124,
+   "door": 509,
+   "laid": "on the door its parent was laid at"
   },
   {
    "id": 536,
@@ -4894,10 +4897,10 @@
    "at": "2026-08-30T06:28:26.530Z",
    "who": "frank",
    "event_id": 72743,
-   "gx": null,
-   "gy": null,
-   "door": null,
-   "laid": "nowhere"
+   "gx": 154,
+   "gy": 124,
+   "door": 509,
+   "laid": "on the door its parent was laid at"
   },
   {
    "id": 537,
@@ -4906,10 +4909,10 @@
    "at": "2026-08-30T06:28:50.790Z",
    "who": "frank",
    "event_id": 72744,
-   "gx": null,
-   "gy": null,
-   "door": null,
-   "laid": "nowhere"
+   "gx": 154,
+   "gy": 124,
+   "door": 509,
+   "laid": "on the door its parent was laid at"
   },
   {
    "id": 538,
@@ -4918,10 +4921,10 @@
    "at": "2026-08-30T06:29:09.470Z",
    "who": "frank",
    "event_id": 72746,
-   "gx": null,
-   "gy": null,
-   "door": null,
-   "laid": "nowhere"
+   "gx": 154,
+   "gy": 124,
+   "door": 509,
+   "laid": "on the door its parent was laid at"
   },
   {
    "id": 539,
@@ -4930,10 +4933,10 @@
    "at": "2026-08-30T06:29:27.762Z",
    "who": "frank",
    "event_id": 72747,
-   "gx": null,
-   "gy": null,
-   "door": null,
-   "laid": "nowhere"
+   "gx": 154,
+   "gy": 124,
+   "door": 509,
+   "laid": "on the door its parent was laid at"
   },
   {
    "id": 540,
@@ -4942,10 +4945,10 @@
    "at": "2026-08-30T06:29:41.888Z",
    "who": "frank",
    "event_id": 72748,
-   "gx": null,
-   "gy": null,
-   "door": null,
-   "laid": "nowhere"
+   "gx": 154,
+   "gy": 124,
+   "door": 509,
+   "laid": "on the door its parent was laid at"
   },
   {
    "id": 541,
@@ -4954,10 +4957,10 @@
    "at": "2026-08-30T06:29:56.485Z",
    "who": "frank",
    "event_id": 72749,
-   "gx": null,
-   "gy": null,
-   "door": null,
-   "laid": "nowhere"
+   "gx": 154,
+   "gy": 124,
+   "door": 509,
+   "laid": "on the door its parent was laid at"
   },
   {
    "id": 542,
@@ -4966,10 +4969,10 @@
    "at": "2026-08-30T06:30:07.088Z",
    "who": "frank",
    "event_id": 72750,
-   "gx": null,
-   "gy": null,
-   "door": null,
-   "laid": "nowhere"
+   "gx": 154,
+   "gy": 124,
+   "door": 509,
+   "laid": "on the door its parent was laid at"
   },
   {
    "id": 543,
@@ -4978,10 +4981,10 @@
    "at": "2026-08-30T06:30:27.595Z",
    "who": "frank",
    "event_id": 72752,
-   "gx": null,
-   "gy": null,
-   "door": null,
-   "laid": "nowhere"
+   "gx": 154,
+   "gy": 124,
+   "door": 509,
+   "laid": "on the door its parent was laid at"
   },
   {
    "id": 544,
@@ -4990,10 +4993,10 @@
    "at": "2026-08-30T06:30:40.787Z",
    "who": "frank",
    "event_id": 72753,
-   "gx": null,
-   "gy": null,
-   "door": null,
-   "laid": "nowhere"
+   "gx": 154,
+   "gy": 124,
+   "door": 509,
+   "laid": "on the door its parent was laid at"
   },
   {
    "id": 545,
@@ -5002,10 +5005,10 @@
    "at": "2026-08-30T06:31:09.484Z",
    "who": "frank",
    "event_id": 72754,
-   "gx": null,
-   "gy": null,
-   "door": null,
-   "laid": "nowhere"
+   "gx": 154,
+   "gy": 124,
+   "door": 509,
+   "laid": "on the door its parent was laid at"
   },
   {
    "id": 546,
@@ -5014,10 +5017,10 @@
    "at": "2026-08-30T06:31:24.989Z",
    "who": "frank",
    "event_id": 72755,
-   "gx": null,
-   "gy": null,
-   "door": null,
-   "laid": "nowhere"
+   "gx": 154,
+   "gy": 124,
+   "door": 509,
+   "laid": "on the door its parent was laid at"
   },
   {
    "id": 547,
@@ -5026,10 +5029,10 @@
    "at": "2026-08-30T06:31:55.729Z",
    "who": "frank",
    "event_id": 72756,
-   "gx": null,
-   "gy": null,
-   "door": null,
-   "laid": "nowhere"
+   "gx": 154,
+   "gy": 124,
+   "door": 509,
+   "laid": "on the door its parent was laid at"
   },
   {
    "id": 548,
@@ -5038,10 +5041,10 @@
    "at": "2026-08-30T06:32:08.290Z",
    "who": "frank",
    "event_id": 72757,
-   "gx": null,
-   "gy": null,
-   "door": null,
-   "laid": "nowhere"
+   "gx": 154,
+   "gy": 124,
+   "door": 509,
+   "laid": "on the door its parent was laid at"
   },
   {
    "id": 549,
@@ -5050,10 +5053,10 @@
    "at": "2026-08-30T06:32:22.883Z",
    "who": "frank",
    "event_id": 72758,
-   "gx": null,
-   "gy": null,
-   "door": null,
-   "laid": "nowhere"
+   "gx": 154,
+   "gy": 124,
+   "door": 509,
+   "laid": "on the door its parent was laid at"
   },
   {
    "id": 550,
@@ -5062,10 +5065,10 @@
    "at": "2026-08-30T06:32:35.456Z",
    "who": "frank",
    "event_id": 72759,
-   "gx": null,
-   "gy": null,
-   "door": null,
-   "laid": "nowhere"
+   "gx": 154,
+   "gy": 124,
+   "door": 509,
+   "laid": "on the door its parent was laid at"
   },
   {
    "id": 551,
@@ -5074,10 +5077,10 @@
    "at": "2026-08-30T06:32:49.997Z",
    "who": "frank",
    "event_id": 72760,
-   "gx": null,
-   "gy": null,
-   "door": null,
-   "laid": "nowhere"
+   "gx": 154,
+   "gy": 124,
+   "door": 509,
+   "laid": "on the door its parent was laid at"
   },
   {
    "id": 552,
@@ -5086,10 +5089,10 @@
    "at": "2026-08-30T06:34:14.919Z",
    "who": "frank",
    "event_id": 72763,
-   "gx": null,
-   "gy": null,
-   "door": null,
-   "laid": "nowhere"
+   "gx": 154,
+   "gy": 124,
+   "door": 509,
+   "laid": "on the door its parent was laid at"
   },
   {
    "id": 553,
@@ -5098,10 +5101,10 @@
    "at": "2026-08-30T06:34:28.542Z",
    "who": "frank",
    "event_id": 72764,
-   "gx": null,
-   "gy": null,
-   "door": null,
-   "laid": "nowhere"
+   "gx": 154,
+   "gy": 124,
+   "door": 509,
+   "laid": "on the door its parent was laid at"
   },
   {
    "id": 554,
@@ -5110,10 +5113,10 @@
    "at": "2026-08-30T06:34:40.952Z",
    "who": "frank",
    "event_id": 72765,
-   "gx": null,
-   "gy": null,
-   "door": null,
-   "laid": "nowhere"
+   "gx": 154,
+   "gy": 124,
+   "door": 509,
+   "laid": "on the door its parent was laid at"
   },
   {
    "id": 555,
@@ -5122,10 +5125,10 @@
    "at": "2026-08-30T06:34:51.788Z",
    "who": "frank",
    "event_id": 72766,
-   "gx": null,
-   "gy": null,
-   "door": null,
-   "laid": "nowhere"
+   "gx": 154,
+   "gy": 124,
+   "door": 509,
+   "laid": "on the door its parent was laid at"
   },
   {
    "id": 556,
@@ -5134,10 +5137,10 @@
    "at": "2026-08-30T06:35:01.440Z",
    "who": "frank",
    "event_id": 72768,
-   "gx": null,
-   "gy": null,
-   "door": null,
-   "laid": "nowhere"
+   "gx": 154,
+   "gy": 124,
+   "door": 509,
+   "laid": "on the door its parent was laid at"
   },
   {
    "id": 557,
@@ -5146,10 +5149,10 @@
    "at": "2026-08-30T06:50:06.159Z",
    "who": "frank",
    "event_id": 72799,
-   "gx": null,
-   "gy": null,
-   "door": null,
-   "laid": "nowhere"
+   "gx": 154,
+   "gy": 124,
+   "door": 509,
+   "laid": "on the door its parent was laid at"
   },
   {
    "id": 558,
@@ -5158,10 +5161,10 @@
    "at": "2026-08-30T06:50:19.703Z",
    "who": "frank",
    "event_id": 72800,
-   "gx": null,
-   "gy": null,
-   "door": null,
-   "laid": "nowhere"
+   "gx": 154,
+   "gy": 124,
+   "door": 509,
+   "laid": "on the door its parent was laid at"
   },
   {
    "id": 559,
@@ -5170,10 +5173,10 @@
    "at": "2026-08-30T06:50:34.559Z",
    "who": "frank",
    "event_id": 72801,
-   "gx": null,
-   "gy": null,
-   "door": null,
-   "laid": "nowhere"
+   "gx": 154,
+   "gy": 124,
+   "door": 509,
+   "laid": "on the door its parent was laid at"
   },
   {
    "id": 560,
@@ -5182,10 +5185,10 @@
    "at": "2026-08-30T06:50:50.440Z",
    "who": "frank",
    "event_id": 72802,
-   "gx": null,
-   "gy": null,
-   "door": null,
-   "laid": "nowhere"
+   "gx": 154,
+   "gy": 124,
+   "door": 509,
+   "laid": "on the door its parent was laid at"
   },
   {
    "id": 561,
@@ -5194,10 +5197,10 @@
    "at": "2026-08-30T06:51:04.628Z",
    "who": "frank",
    "event_id": 72803,
-   "gx": null,
-   "gy": null,
-   "door": null,
-   "laid": "nowhere"
+   "gx": 154,
+   "gy": 124,
+   "door": 509,
+   "laid": "on the door its parent was laid at"
   },
   {
    "id": 562,
@@ -5206,10 +5209,10 @@
    "at": "2026-08-30T06:51:16.561Z",
    "who": "frank",
    "event_id": 72804,
-   "gx": null,
-   "gy": null,
-   "door": null,
-   "laid": "nowhere"
+   "gx": 154,
+   "gy": 124,
+   "door": 509,
+   "laid": "on the door its parent was laid at"
   },
   {
    "id": 563,
@@ -5218,10 +5221,10 @@
    "at": "2026-08-30T06:51:35.731Z",
    "who": "frank",
    "event_id": 72806,
-   "gx": null,
-   "gy": null,
-   "door": null,
-   "laid": "nowhere"
+   "gx": 154,
+   "gy": 124,
+   "door": 509,
+   "laid": "on the door its parent was laid at"
   },
   {
    "id": 564,
@@ -5230,10 +5233,10 @@
    "at": "2026-08-30T06:51:45.713Z",
    "who": "frank",
    "event_id": 72807,
-   "gx": null,
-   "gy": null,
-   "door": null,
-   "laid": "nowhere"
+   "gx": 154,
+   "gy": 124,
+   "door": 509,
+   "laid": "on the door its parent was laid at"
   },
   {
    "id": 565,
@@ -5242,10 +5245,10 @@
    "at": "2026-08-30T06:51:58.027Z",
    "who": "frank",
    "event_id": 72808,
-   "gx": null,
-   "gy": null,
-   "door": null,
-   "laid": "nowhere"
+   "gx": 154,
+   "gy": 124,
+   "door": 509,
+   "laid": "on the door its parent was laid at"
   },
   {
    "id": 566,
@@ -5254,10 +5257,10 @@
    "at": "2026-08-30T06:56:31.390Z",
    "who": "frank",
    "event_id": 72810,
-   "gx": null,
-   "gy": null,
-   "door": null,
-   "laid": "nowhere"
+   "gx": 154,
+   "gy": 124,
+   "door": 509,
+   "laid": "on the door its parent was laid at"
   },
   {
    "id": 567,
@@ -5266,10 +5269,10 @@
    "at": "2026-08-30T06:56:45.073Z",
    "who": "frank",
    "event_id": 72811,
-   "gx": null,
-   "gy": null,
-   "door": null,
-   "laid": "nowhere"
+   "gx": 154,
+   "gy": 124,
+   "door": 509,
+   "laid": "on the door its parent was laid at"
   },
   {
    "id": 568,
@@ -5278,10 +5281,10 @@
    "at": "2026-08-30T06:57:05.922Z",
    "who": "frank",
    "event_id": 72812,
-   "gx": null,
-   "gy": null,
-   "door": null,
-   "laid": "nowhere"
+   "gx": 154,
+   "gy": 124,
+   "door": 509,
+   "laid": "on the door its parent was laid at"
   },
   {
    "id": 569,
@@ -5290,10 +5293,10 @@
    "at": "2026-08-30T06:57:20.912Z",
    "who": "frank",
    "event_id": 72813,
-   "gx": null,
-   "gy": null,
-   "door": null,
-   "laid": "nowhere"
+   "gx": 154,
+   "gy": 124,
+   "door": 509,
+   "laid": "on the door its parent was laid at"
   },
   {
    "id": 570,
@@ -5302,10 +5305,10 @@
    "at": "2026-08-30T06:57:36.412Z",
    "who": "frank",
    "event_id": 72814,
-   "gx": null,
-   "gy": null,
-   "door": null,
-   "laid": "nowhere"
+   "gx": 154,
+   "gy": 124,
+   "door": 509,
+   "laid": "on the door its parent was laid at"
   },
   {
    "id": 571,
@@ -5314,10 +5317,10 @@
    "at": "2026-08-30T06:57:52.527Z",
    "who": "frank",
    "event_id": 72816,
-   "gx": null,
-   "gy": null,
-   "door": null,
-   "laid": "nowhere"
+   "gx": 154,
+   "gy": 124,
+   "door": 509,
+   "laid": "on the door its parent was laid at"
   },
   {
    "id": 572,
@@ -5326,10 +5329,10 @@
    "at": "2026-08-30T06:58:04.485Z",
    "who": "frank",
    "event_id": 72817,
-   "gx": null,
-   "gy": null,
-   "door": null,
-   "laid": "nowhere"
+   "gx": 154,
+   "gy": 124,
+   "door": 509,
+   "laid": "on the door its parent was laid at"
   },
   {
    "id": 573,
@@ -5338,10 +5341,10 @@
    "at": "2026-08-30T06:58:16.759Z",
    "who": "frank",
    "event_id": 72818,
-   "gx": null,
-   "gy": null,
-   "door": null,
-   "laid": "nowhere"
+   "gx": 154,
+   "gy": 124,
+   "door": 509,
+   "laid": "on the door its parent was laid at"
   },
   {
    "id": 574,
@@ -5350,10 +5353,10 @@
    "at": "2026-08-30T06:58:39.822Z",
    "who": "frank",
    "event_id": 72819,
-   "gx": null,
-   "gy": null,
-   "door": null,
-   "laid": "nowhere"
+   "gx": 154,
+   "gy": 124,
+   "door": 509,
+   "laid": "on the door its parent was laid at"
   },
   {
    "id": 575,
@@ -5362,10 +5365,10 @@
    "at": "2026-08-30T06:58:54.580Z",
    "who": "frank",
    "event_id": 72820,
-   "gx": null,
-   "gy": null,
-   "door": null,
-   "laid": "nowhere"
+   "gx": 154,
+   "gy": 124,
+   "door": 509,
+   "laid": "on the door its parent was laid at"
   },
   {
    "id": 576,
@@ -5374,10 +5377,10 @@
    "at": "2026-08-30T06:59:07.369Z",
    "who": "frank",
    "event_id": 72821,
-   "gx": null,
-   "gy": null,
-   "door": null,
-   "laid": "nowhere"
+   "gx": 154,
+   "gy": 124,
+   "door": 509,
+   "laid": "on the door its parent was laid at"
   },
   {
    "id": 577,
@@ -5386,10 +5389,10 @@
    "at": "2026-08-30T06:59:20.477Z",
    "who": "frank",
    "event_id": 72822,
-   "gx": null,
-   "gy": null,
-   "door": null,
-   "laid": "nowhere"
+   "gx": 154,
+   "gy": 124,
+   "door": 509,
+   "laid": "on the door its parent was laid at"
   },
   {
    "id": 578,
@@ -5398,10 +5401,10 @@
    "at": "2026-08-30T06:59:45.361Z",
    "who": "frank",
    "event_id": 72823,
-   "gx": null,
-   "gy": null,
-   "door": null,
-   "laid": "nowhere"
+   "gx": 154,
+   "gy": 124,
+   "door": 509,
+   "laid": "on the door its parent was laid at"
   },
   {
    "id": 579,
@@ -5410,10 +5413,10 @@
    "at": "2026-08-30T06:59:59.198Z",
    "who": "frank",
    "event_id": 72824,
-   "gx": null,
-   "gy": null,
-   "door": null,
-   "laid": "nowhere"
+   "gx": 154,
+   "gy": 124,
+   "door": 509,
+   "laid": "on the door its parent was laid at"
   },
   {
    "id": 580,
@@ -5422,10 +5425,10 @@
    "at": "2026-08-30T07:00:12.795Z",
    "who": "frank",
    "event_id": 72825,
-   "gx": null,
-   "gy": null,
-   "door": null,
-   "laid": "nowhere"
+   "gx": 154,
+   "gy": 124,
+   "door": 509,
+   "laid": "on the door its parent was laid at"
   },
   {
    "id": 581,
@@ -5434,10 +5437,10 @@
    "at": "2026-08-30T07:00:26.430Z",
    "who": "frank",
    "event_id": 72826,
-   "gx": null,
-   "gy": null,
-   "door": null,
-   "laid": "nowhere"
+   "gx": 154,
+   "gy": 124,
+   "door": 509,
+   "laid": "on the door its parent was laid at"
   },
   {
    "id": 582,
@@ -5446,10 +5449,10 @@
    "at": "2026-08-30T07:00:38.546Z",
    "who": "frank",
    "event_id": 72827,
-   "gx": null,
-   "gy": null,
-   "door": null,
-   "laid": "nowhere"
+   "gx": 154,
+   "gy": 124,
+   "door": 509,
+   "laid": "on the door its parent was laid at"
   },
   {
    "id": 583,
@@ -5458,10 +5461,10 @@
    "at": "2026-08-30T07:00:52.797Z",
    "who": "frank",
    "event_id": 72828,
-   "gx": null,
-   "gy": null,
-   "door": null,
-   "laid": "nowhere"
+   "gx": 154,
+   "gy": 124,
+   "door": 509,
+   "laid": "on the door its parent was laid at"
   },
   {
    "id": 584,
@@ -5470,10 +5473,10 @@
    "at": "2026-08-30T07:01:15.696Z",
    "who": "frank",
    "event_id": 72829,
-   "gx": null,
-   "gy": null,
-   "door": null,
-   "laid": "nowhere"
+   "gx": 154,
+   "gy": 124,
+   "door": 509,
+   "laid": "on the door its parent was laid at"
   },
   {
    "id": 585,
@@ -5482,10 +5485,10 @@
    "at": "2026-08-30T07:02:40.849Z",
    "who": "frank",
    "event_id": 72844,
-   "gx": null,
-   "gy": null,
-   "door": null,
-   "laid": "nowhere"
+   "gx": 154,
+   "gy": 124,
+   "door": 509,
+   "laid": "on the door its parent was laid at"
   },
   {
    "id": 586,
@@ -5494,10 +5497,10 @@
    "at": "2026-08-30T07:02:54.299Z",
    "who": "frank",
    "event_id": 72848,
-   "gx": null,
-   "gy": null,
-   "door": null,
-   "laid": "nowhere"
+   "gx": 154,
+   "gy": 124,
+   "door": 509,
+   "laid": "on the door its parent was laid at"
   },
   {
    "id": 587,
@@ -5506,10 +5509,10 @@
    "at": "2026-08-30T07:03:09.132Z",
    "who": "frank",
    "event_id": 72852,
-   "gx": null,
-   "gy": null,
-   "door": null,
-   "laid": "nowhere"
+   "gx": 154,
+   "gy": 124,
+   "door": 509,
+   "laid": "on the door its parent was laid at"
   },
   {
    "id": 588,
@@ -5518,10 +5521,10 @@
    "at": "2026-08-30T07:03:22.238Z",
    "who": "frank",
    "event_id": 72854,
-   "gx": null,
-   "gy": null,
-   "door": null,
-   "laid": "nowhere"
+   "gx": 154,
+   "gy": 124,
+   "door": 509,
+   "laid": "on the door its parent was laid at"
   },
   {
    "id": 589,
@@ -5530,10 +5533,10 @@
    "at": "2026-08-30T07:03:37.014Z",
    "who": "frank",
    "event_id": 72855,
-   "gx": null,
-   "gy": null,
-   "door": null,
-   "laid": "nowhere"
+   "gx": 154,
+   "gy": 124,
+   "door": 509,
+   "laid": "on the door its parent was laid at"
   },
   {
    "id": 590,
@@ -5542,10 +5545,10 @@
    "at": "2026-08-30T07:03:51.220Z",
    "who": "frank",
    "event_id": 72862,
-   "gx": null,
-   "gy": null,
-   "door": null,
-   "laid": "nowhere"
+   "gx": 154,
+   "gy": 124,
+   "door": 509,
+   "laid": "on the door its parent was laid at"
   },
   {
    "id": 591,
@@ -5554,10 +5557,10 @@
    "at": "2026-08-30T07:07:03.681Z",
    "who": "frank",
    "event_id": 72864,
-   "gx": null,
-   "gy": null,
-   "door": null,
-   "laid": "nowhere"
+   "gx": 154,
+   "gy": 124,
+   "door": 509,
+   "laid": "on the door its parent was laid at"
   },
   {
    "id": 592,
@@ -5566,10 +5569,10 @@
    "at": "2026-08-30T07:07:18.909Z",
    "who": "frank",
    "event_id": 72865,
-   "gx": null,
-   "gy": null,
-   "door": null,
-   "laid": "nowhere"
+   "gx": 154,
+   "gy": 124,
+   "door": 509,
+   "laid": "on the door its parent was laid at"
   },
   {
    "id": 593,
@@ -5578,10 +5581,10 @@
    "at": "2026-08-30T07:07:32.179Z",
    "who": "frank",
    "event_id": 72866,
-   "gx": null,
-   "gy": null,
-   "door": null,
-   "laid": "nowhere"
+   "gx": 154,
+   "gy": 124,
+   "door": 509,
+   "laid": "on the door its parent was laid at"
   },
   {
    "id": 594,
@@ -5590,10 +5593,10 @@
    "at": "2026-08-30T07:07:45.472Z",
    "who": "frank",
    "event_id": 72867,
-   "gx": null,
-   "gy": null,
-   "door": null,
-   "laid": "nowhere"
+   "gx": 154,
+   "gy": 124,
+   "door": 509,
+   "laid": "on the door its parent was laid at"
   },
   {
    "id": 595,
@@ -5602,10 +5605,10 @@
    "at": "2026-08-30T07:07:56.505Z",
    "who": "frank",
    "event_id": 72868,
-   "gx": null,
-   "gy": null,
-   "door": null,
-   "laid": "nowhere"
+   "gx": 154,
+   "gy": 124,
+   "door": 509,
+   "laid": "on the door its parent was laid at"
   },
   {
    "id": 596,
@@ -5614,10 +5617,10 @@
    "at": "2026-08-30T07:08:09.297Z",
    "who": "frank",
    "event_id": 72869,
-   "gx": null,
-   "gy": null,
-   "door": null,
-   "laid": "nowhere"
+   "gx": 154,
+   "gy": 124,
+   "door": 509,
+   "laid": "on the door its parent was laid at"
   },
   {
    "id": 597,
@@ -5626,10 +5629,10 @@
    "at": "2026-08-30T07:08:21.035Z",
    "who": "frank",
    "event_id": 72870,
-   "gx": null,
-   "gy": null,
-   "door": null,
-   "laid": "nowhere"
+   "gx": 154,
+   "gy": 124,
+   "door": 509,
+   "laid": "on the door its parent was laid at"
   },
   {
    "id": 598,
@@ -5638,10 +5641,10 @@
    "at": "2026-08-30T07:08:34.984Z",
    "who": "frank",
    "event_id": 72871,
-   "gx": null,
-   "gy": null,
-   "door": null,
-   "laid": "nowhere"
+   "gx": 154,
+   "gy": 124,
+   "door": 509,
+   "laid": "on the door its parent was laid at"
   },
   {
    "id": 599,
@@ -5650,10 +5653,10 @@
    "at": "2026-08-30T07:08:48.508Z",
    "who": "frank",
    "event_id": 72874,
-   "gx": null,
-   "gy": null,
-   "door": null,
-   "laid": "nowhere"
+   "gx": 154,
+   "gy": 124,
+   "door": 509,
+   "laid": "on the door its parent was laid at"
   },
   {
    "id": 600,
@@ -5662,10 +5665,10 @@
    "at": "2026-08-30T07:09:00.997Z",
    "who": "frank",
    "event_id": 72875,
-   "gx": null,
-   "gy": null,
-   "door": null,
-   "laid": "nowhere"
+   "gx": 154,
+   "gy": 124,
+   "door": 509,
+   "laid": "on the door its parent was laid at"
   },
   {
    "id": 601,
@@ -5674,10 +5677,10 @@
    "at": "2026-08-30T07:09:16.045Z",
    "who": "frank",
    "event_id": 72876,
-   "gx": null,
-   "gy": null,
-   "door": null,
-   "laid": "nowhere"
+   "gx": 154,
+   "gy": 124,
+   "door": 509,
+   "laid": "on the door its parent was laid at"
   },
   {
    "id": 602,
@@ -5686,10 +5689,10 @@
    "at": "2026-08-30T07:09:29.435Z",
    "who": "frank",
    "event_id": 72877,
-   "gx": null,
-   "gy": null,
-   "door": null,
-   "laid": "nowhere"
+   "gx": 154,
+   "gy": 124,
+   "door": 509,
+   "laid": "on the door its parent was laid at"
   },
   {
    "id": 603,
@@ -5698,10 +5701,10 @@
    "at": "2026-08-30T07:09:43.517Z",
    "who": "frank",
    "event_id": 72878,
-   "gx": null,
-   "gy": null,
-   "door": null,
-   "laid": "nowhere"
+   "gx": 154,
+   "gy": 124,
+   "door": 509,
+   "laid": "on the door its parent was laid at"
   },
   {
    "id": 604,
@@ -5710,10 +5713,10 @@
    "at": "2026-08-30T07:09:57.317Z",
    "who": "frank",
    "event_id": 72880,
-   "gx": null,
-   "gy": null,
-   "door": null,
-   "laid": "nowhere"
+   "gx": 154,
+   "gy": 124,
+   "door": 509,
+   "laid": "on the door its parent was laid at"
   },
   {
    "id": 605,
@@ -5722,10 +5725,10 @@
    "at": "2026-08-30T07:10:12.708Z",
    "who": "frank",
    "event_id": 72884,
-   "gx": null,
-   "gy": null,
-   "door": null,
-   "laid": "nowhere"
+   "gx": 154,
+   "gy": 124,
+   "door": 509,
+   "laid": "on the door its parent was laid at"
   },
   {
    "id": 606,
@@ -5734,10 +5737,10 @@
    "at": "2026-08-30T07:10:28.370Z",
    "who": "frank",
    "event_id": 72885,
-   "gx": null,
-   "gy": null,
-   "door": null,
-   "laid": "nowhere"
+   "gx": 154,
+   "gy": 124,
+   "door": 509,
+   "laid": "on the door its parent was laid at"
   },
   {
    "id": 607,
@@ -5746,10 +5749,10 @@
    "at": "2026-08-30T07:10:38.533Z",
    "who": "frank",
    "event_id": 72887,
-   "gx": null,
-   "gy": null,
-   "door": null,
-   "laid": "nowhere"
+   "gx": 154,
+   "gy": 124,
+   "door": 509,
+   "laid": "on the door its parent was laid at"
   },
   {
    "id": 608,
@@ -5758,10 +5761,10 @@
    "at": "2026-08-30T07:10:54.301Z",
    "who": "frank",
    "event_id": 72889,
-   "gx": null,
-   "gy": null,
-   "door": null,
-   "laid": "nowhere"
+   "gx": 154,
+   "gy": 124,
+   "door": 509,
+   "laid": "on the door its parent was laid at"
   },
   {
    "id": 609,
@@ -5770,10 +5773,10 @@
    "at": "2026-08-30T08:07:32.375Z",
    "who": "frank",
    "event_id": 72998,
-   "gx": null,
-   "gy": null,
-   "door": null,
-   "laid": "nowhere"
+   "gx": 154,
+   "gy": 124,
+   "door": 509,
+   "laid": "on the door its parent was laid at"
   },
   {
    "id": 610,
@@ -5782,10 +5785,10 @@
    "at": "2026-08-30T08:07:51.200Z",
    "who": "frank",
    "event_id": 72999,
-   "gx": null,
-   "gy": null,
-   "door": null,
-   "laid": "nowhere"
+   "gx": 154,
+   "gy": 124,
+   "door": 509,
+   "laid": "on the door its parent was laid at"
   },
   {
    "id": 611,
@@ -5794,10 +5797,10 @@
    "at": "2026-08-30T08:08:09.428Z",
    "who": "frank",
    "event_id": 73000,
-   "gx": null,
-   "gy": null,
-   "door": null,
-   "laid": "nowhere"
+   "gx": 154,
+   "gy": 124,
+   "door": 509,
+   "laid": "on the door its parent was laid at"
   },
   {
    "id": 612,
@@ -5806,10 +5809,10 @@
    "at": "2026-08-30T08:08:25.990Z",
    "who": "frank",
    "event_id": 73001,
-   "gx": null,
-   "gy": null,
-   "door": null,
-   "laid": "nowhere"
+   "gx": 154,
+   "gy": 124,
+   "door": 509,
+   "laid": "on the door its parent was laid at"
   },
   {
    "id": 613,
@@ -5818,10 +5821,10 @@
    "at": "2026-08-30T08:08:41.070Z",
    "who": "frank",
    "event_id": 73002,
-   "gx": null,
-   "gy": null,
-   "door": null,
-   "laid": "nowhere"
+   "gx": 154,
+   "gy": 124,
+   "door": 509,
+   "laid": "on the door its parent was laid at"
   },
   {
    "id": 614,
@@ -5830,10 +5833,10 @@
    "at": "2026-08-30T08:08:56.816Z",
    "who": "frank",
    "event_id": 73003,
-   "gx": null,
-   "gy": null,
-   "door": null,
-   "laid": "nowhere"
+   "gx": 154,
+   "gy": 124,
+   "door": 509,
+   "laid": "on the door its parent was laid at"
   },
   {
    "id": 615,
@@ -5842,10 +5845,10 @@
    "at": "2026-08-30T08:49:37.416Z",
    "who": "frank",
    "event_id": 73028,
-   "gx": null,
-   "gy": null,
-   "door": null,
-   "laid": "nowhere"
+   "gx": 154,
+   "gy": 124,
+   "door": 509,
+   "laid": "on the door its parent was laid at"
   },
   {
    "id": 616,
@@ -5854,10 +5857,10 @@
    "at": "2026-08-30T08:49:51.001Z",
    "who": "frank",
    "event_id": 73029,
-   "gx": null,
-   "gy": null,
-   "door": null,
-   "laid": "nowhere"
+   "gx": 154,
+   "gy": 124,
+   "door": 509,
+   "laid": "on the door its parent was laid at"
   },
   {
    "id": 617,
@@ -5866,10 +5869,10 @@
    "at": "2026-08-30T08:50:01.806Z",
    "who": "frank",
    "event_id": 73031,
-   "gx": null,
-   "gy": null,
-   "door": null,
-   "laid": "nowhere"
+   "gx": 154,
+   "gy": 124,
+   "door": 509,
+   "laid": "on the door its parent was laid at"
   },
   {
    "id": 618,
@@ -5878,10 +5881,10 @@
    "at": "2026-08-30T08:50:33.025Z",
    "who": "frank",
    "event_id": 73035,
-   "gx": null,
-   "gy": null,
-   "door": null,
-   "laid": "nowhere"
+   "gx": 154,
+   "gy": 124,
+   "door": 509,
+   "laid": "on the door its parent was laid at"
   },
   {
    "id": 619,
@@ -5890,10 +5893,10 @@
    "at": "2026-08-30T08:50:47.074Z",
    "who": "frank",
    "event_id": 73036,
-   "gx": null,
-   "gy": null,
-   "door": null,
-   "laid": "nowhere"
+   "gx": 154,
+   "gy": 124,
+   "door": 509,
+   "laid": "on the door its parent was laid at"
   },
   {
    "id": 620,
@@ -5902,10 +5905,10 @@
    "at": "2026-08-30T08:50:58.296Z",
    "who": "frank",
    "event_id": 73037,
-   "gx": null,
-   "gy": null,
-   "door": null,
-   "laid": "nowhere"
+   "gx": 154,
+   "gy": 124,
+   "door": 509,
+   "laid": "on the door its parent was laid at"
   },
   {
    "id": 621,
@@ -5914,10 +5917,10 @@
    "at": "2026-08-30T08:51:11.257Z",
    "who": "frank",
    "event_id": 73038,
-   "gx": null,
-   "gy": null,
-   "door": null,
-   "laid": "nowhere"
+   "gx": 154,
+   "gy": 124,
+   "door": 509,
+   "laid": "on the door its parent was laid at"
   },
   {
    "id": 622,
@@ -5926,10 +5929,10 @@
    "at": "2026-08-30T08:51:21.372Z",
    "who": "frank",
    "event_id": 73039,
-   "gx": null,
-   "gy": null,
-   "door": null,
-   "laid": "nowhere"
+   "gx": 154,
+   "gy": 124,
+   "door": 509,
+   "laid": "on the door its parent was laid at"
   },
   {
    "id": 623,
@@ -5938,10 +5941,10 @@
    "at": "2026-08-30T08:51:31.993Z",
    "who": "frank",
    "event_id": 73043,
-   "gx": null,
-   "gy": null,
-   "door": null,
-   "laid": "nowhere"
+   "gx": 154,
+   "gy": 124,
+   "door": 509,
+   "laid": "on the door its parent was laid at"
   },
   {
    "id": 624,
@@ -5950,10 +5953,10 @@
    "at": "2026-08-30T08:51:42.733Z",
    "who": "frank",
    "event_id": 73044,
-   "gx": null,
-   "gy": null,
-   "door": null,
-   "laid": "nowhere"
+   "gx": 154,
+   "gy": 124,
+   "door": 509,
+   "laid": "on the door its parent was laid at"
   },
   {
    "id": 625,
@@ -5962,10 +5965,10 @@
    "at": "2026-08-30T08:51:56.631Z",
    "who": "frank",
    "event_id": 73045,
-   "gx": null,
-   "gy": null,
-   "door": null,
-   "laid": "nowhere"
+   "gx": 154,
+   "gy": 124,
+   "door": 509,
+   "laid": "on the door its parent was laid at"
   },
   {
    "id": 626,
@@ -5974,10 +5977,10 @@
    "at": "2026-08-30T08:52:11.602Z",
    "who": "frank",
    "event_id": 73046,
-   "gx": null,
-   "gy": null,
-   "door": null,
-   "laid": "nowhere"
+   "gx": 154,
+   "gy": 124,
+   "door": 509,
+   "laid": "on the door its parent was laid at"
   }
  ],
  "start": {},
