@@ -596,5 +596,77 @@
   },
   "sealed_at": "2026-09-05T03:41:16.521Z",
   "replaces": null
+ },
+ {
+  "file": "episode-2026-09-05T034433-cut1.json",
+  "cut": 1,
+  "day": "2026-09-05",
+  "aired_at": "2026-09-05T04:00:00.000Z",
+  "ends_at": "2026-09-05T10:00:00.000Z",
+  "ticks": 21600,
+  "sha256": "a7d4a67edaa7284fac58187f3e263a72fcffb39e5632f3b4fd6c03daf2a68c36",
+  "engine": {
+   "commit": "7276e6dbed6d",
+   "dirty": true,
+   "bundle": null,
+   "sun": null,
+   "built_at": null
+  },
+  "sealed_at": "2026-09-05T03:44:34.817Z",
+  "replaces": null
+ },
+ {
+  "file": "episode-2026-09-05T034433-cut2.json",
+  "cut": 2,
+  "day": "2026-09-05",
+  "aired_at": "2026-09-05T10:00:00.000Z",
+  "ends_at": "2026-09-05T16:00:00.000Z",
+  "ticks": 21600,
+  "sha256": "df1a69785714923cdbe50f971ecff4f4db7ac413e0e34116da5328f5b3bda658",
+  "engine": {
+   "commit": "7276e6dbed6d",
+   "dirty": true,
+   "bundle": null,
+   "sun": null,
+   "built_at": null
+  },
+  "sealed_at": "2026-09-05T03:44:36.310Z",
+  "replaces": null
+ },
+ {
+  "file": "episode-2026-09-05T034433-cut3.json",
+  "cut": 3,
+  "day": "2026-09-05",
+  "aired_at": "2026-09-05T16:00:00.000Z",
+  "ends_at": "2026-09-05T22:00:00.000Z",
+  "ticks": 21600,
+  "sha256": "ccdd3b189eb7ef5c775454957772b32d3b0e3aa05a486c22c0c9ab04fc977a33",
+  "engine": {
+   "commit": "7276e6dbed6d",
+   "dirty": true,
+   "bundle": null,
+   "sun": null,
+   "built_at": null
+  },
+  "sealed_at": "2026-09-05T03:45:09.437Z",
+  "replaces": null
+ },
+ {
+  "file": "episode-2026-09-05T034433-cut4.json",
+  "cut": 4,
+  "day": "2026-09-05",
+  "aired_at": "2026-09-05T22:00:00.000Z",
+  "ends_at": "2026-09-06T04:00:00.000Z",
+  "ticks": 21600,
+  "sha256": "5c50ebfccc7c27d5fad3bc1ddfdd78579176b0591e2d1609dacdf6d1d3911461",
+  "engine": {
+   "commit": "7276e6dbed6d",
+   "dirty": true,
+   "bundle": null,
+   "sun": null,
+   "built_at": null
+  },
+  "sealed_at": "2026-09-05T03:45:44.779Z",
+  "replaces": null
  }
 ]

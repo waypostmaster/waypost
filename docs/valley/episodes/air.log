@@ -314,3 +314,6 @@
 2026-09-04 23:41:16     next: 4 of 4 cut(s) still to come GÇö episodes/next.json
 2026-09-04 23:41:16     ledger: 27 + 4 entries GÇö episodes/aired.json
 2026-09-04 23:41:16     tomorrow starts where cut 4 ended: episodes/next-snapshot.json
+2026-09-04 23:41:19 deployed to the mast (waypost.quest/valley/): tonight's four cuts, aired 2026-09-05T04:00:00Z
+2026-09-04 23:41:21 and on the new mast (frontier-valley/mast): tonight's four cuts, aired 2026-09-05T04:00:00Z
+2026-09-04 23:41:21 aired and on the masts
