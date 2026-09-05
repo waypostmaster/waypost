@@ -171,3 +171,146 @@
 2026-09-03 23:41:18     next: 4 of 4 cut(s) still to come GÇö episodes/next.json
 2026-09-03 23:41:18     ledger: 0 + 4 entries GÇö episodes/aired.json
 2026-09-03 23:41:18     tomorrow starts where cut 4 ended: episodes/next-snapshot.json
+2026-09-03 23:41:21 deployed to the mast (waypost.quest/valley/): tonight's four cuts, aired 2026-09-04T04:00:00Z
+2026-09-03 23:41:24 and on the new mast (frontier-valley/mast): tonight's four cuts, aired 2026-09-04T04:00:00Z
+2026-09-03 23:41:24 aired and on the masts
+2026-09-04 00:40:02 not the production hour (04:40Z); nothing to do
+2026-09-04 01:40:02 not the production hour (05:40Z); nothing to do
+2026-09-04 02:40:02 not the production hour (06:40Z); nothing to do
+2026-09-04 03:40:02 not the production hour (07:40Z); nothing to do
+2026-09-04 04:40:02 not the production hour (08:40Z); nothing to do
+2026-09-04 05:40:02 not the production hour (09:40Z); nothing to do
+2026-09-04 06:40:01 not the production hour (10:40Z); nothing to do
+2026-09-04 07:40:01 not the production hour (11:40Z); nothing to do
+2026-09-04 08:40:01 not the production hour (12:40Z); nothing to do
+2026-09-04 09:40:01 not the production hour (13:40Z); nothing to do
+2026-09-04 10:40:02 not the production hour (14:40Z); nothing to do
+2026-09-04 11:40:02 not the production hour (15:40Z); nothing to do
+2026-09-04 12:40:01 not the production hour (16:40Z); nothing to do
+2026-09-04 13:40:01 not the production hour (17:40Z); nothing to do
+2026-09-04 14:40:01 not the production hour (18:40Z); nothing to do
+2026-09-04 15:40:01 not the production hour (19:40Z); nothing to do
+2026-09-04 16:40:01 not the production hour (20:40Z); nothing to do
+2026-09-04 17:40:01 not the production hour (21:40Z); nothing to do
+2026-09-04 18:40:01 not the production hour (22:40Z); nothing to do
+2026-09-04 19:40:01 not the production hour (23:40Z); nothing to do
+2026-09-04 20:40:01 not the production hour (00:40Z); nothing to do
+2026-09-04 21:40:01 not the production hour (01:40Z); nothing to do
+2026-09-04 22:40:01 not the production hour (02:40Z); nothing to do
+2026-09-04 23:40:01 --- transmission begins ---
+2026-09-04 23:40:02   gate: npx tsc --noEmit passed
+2026-09-04 23:41:05   gate: npm run check:replay passed
+2026-09-04 23:41:06   gate: npm run check:landing passed
+2026-09-04 23:41:08   gate: npm run check:day passed
+2026-09-04 23:41:08   producing for 2026-09-05T04:00:00Z - four cuts of 21600 ticks (04:00, 10:00, 16:00, 22:00Z)
+2026-09-04 23:41:08   founding: Seafarer GÇö "persona" clipped from 267 to 200
+2026-09-04 23:41:09   founding: Seafarer GÇö "days[].say" clipped from 104 to 90
+2026-09-04 23:41:09   founding: Cairnwright GÇö "persona" clipped from 268 to 200
+2026-09-04 23:41:09   founding: Riskweaver GÇö "constitution" clipped from 245 to 200
+2026-09-04 23:41:09   joining: nobody (agents/joining/ is empty or every file was refused)
+2026-09-04 23:41:09       accedence: Seafarer GÇö chartered
+2026-09-04 23:41:09       nobody is being returned: every settler who was asked has acceded
+2026-09-04 23:41:09   episode: 4 cut(s) of 21600 ticks GÇö 6000 steps of 0.05 each GÇö from a 99577-byte snapshot
+2026-09-04 23:41:09            day 2026-09-05, cuts 1..4 produced this run; 1.50 valley days a cut, 6.00 in the day
+2026-09-04 23:41:09            cut 1: airs 2026-09-05T04:00:00.000Z GÇö ends 2026-09-05T10:00:00.000Z
+2026-09-04 23:41:09            cut 2: airs 2026-09-05T10:00:00.000Z GÇö ends 2026-09-05T16:00:00.000Z
+2026-09-04 23:41:09            cut 3: airs 2026-09-05T16:00:00.000Z GÇö ends 2026-09-05T22:00:00.000Z
+2026-09-04 23:41:09            cut 4: airs 2026-09-05T22:00:00.000Z GÇö ends 2026-09-06T04:00:00.000Z
+2026-09-04 23:41:09     building the engine this programme will be watched on: npx vite build --base=./
+2026-09-04 23:41:10   [36mvite v8.2.2 [32mbuilding client environment for production...[36m[39m
+2026-09-04 23:41:10   transforming...
+2026-09-04 23:41:10   G£ô 108 modules transformed.
+2026-09-04 23:41:10   rendering chunks...
+2026-09-04 23:41:10   computing gzip size...
+2026-09-04 23:41:10   dist/city.html                         9.45 kB Göé gzip:   3.07 kB
+2026-09-04 23:41:10   dist/index.html                       32.15 kB Göé gzip:   9.56 kB
+2026-09-04 23:41:10   dist/assets/07-softmax-BC5IJGgT.js     4.24 kB Göé gzip:   1.75 kB
+2026-09-04 23:41:10   dist/assets/06-seafarer-BpxfBq-0.js    5.22 kB Göé gzip:   1.85 kB
+2026-09-04 23:41:10   dist/assets/city-D5YP4YIw.js          34.51 kB Göé gzip:  14.26 kB
+2026-09-04 23:41:10   dist/assets/sun-C0M5Hd8K.js          116.55 kB Göé gzip:  41.59 kB
+2026-09-04 23:41:10   dist/assets/valley-BQRg6FWQ.js       376.50 kB Göé gzip: 126.98 kB
+2026-09-04 23:41:10   
+2026-09-04 23:41:10   [32mG£ô built in 121ms[39m
+2026-09-04 23:41:10     built in 1.2s GÇö assets/valley-BQRg6FWQ.js, assets/sun-C0M5Hd8K.js
+2026-09-04 23:41:10     NOTE: the tree is dirty, so commit 7276e6dbed6d is not what built this bundle. The
+2026-09-04 23:41:10           bundle name still pins the engine; the commit beside it does not fetch it.
+2026-09-04 23:41:10   founding: Seafarer GÇö "persona" clipped from 267 to 200
+2026-09-04 23:41:10   founding: Seafarer GÇö "days[].say" clipped from 104 to 90
+2026-09-04 23:41:10   founding: Cairnwright GÇö "persona" clipped from 268 to 200
+2026-09-04 23:41:10   founding: Riskweaver GÇö "constitution" clipped from 245 to 200
+2026-09-04 23:41:10     0 flight plan(s) filed, 0 by the model
+2026-09-04 23:41:11   founding: Seafarer GÇö "persona" clipped from 267 to 200
+2026-09-04 23:41:11   founding: Seafarer GÇö "days[].say" clipped from 104 to 90
+2026-09-04 23:41:11   founding: Cairnwright GÇö "persona" clipped from 268 to 200
+2026-09-04 23:41:11   founding: Riskweaver GÇö "constitution" clipped from 245 to 200
+2026-09-04 23:41:11   founding: Seafarer GÇö "persona" clipped from 267 to 200
+2026-09-04 23:41:11   founding: Seafarer GÇö "days[].say" clipped from 104 to 90
+2026-09-04 23:41:11   founding: Cairnwright GÇö "persona" clipped from 268 to 200
+2026-09-04 23:41:11   founding: Riskweaver GÇö "constitution" clipped from 245 to 200
+2026-09-04 23:41:11     cut 1: computed twice, identical to the byte (99573 bytes) GÇö fit to air
+2026-09-04 23:41:11     cut 1: end state sha256 d5234f67344d3ea8GÇª GÇö the word the viewer's card will check
+2026-09-04 23:41:11     aired: C:\claude\games\frontier\episodes\episode-2026-09-05T034110-cut1.json (98.8 KiB, sha256 801a345b824115b5GÇª, 1.3s)
+2026-09-04 23:41:12   founding: Seafarer GÇö "persona" clipped from 267 to 200
+2026-09-04 23:41:12   founding: Seafarer GÇö "days[].say" clipped from 104 to 90
+2026-09-04 23:41:12   founding: Cairnwright GÇö "persona" clipped from 268 to 200
+2026-09-04 23:41:12   founding: Riskweaver GÇö "constitution" clipped from 245 to 200
+2026-09-04 23:41:12   founding: Seafarer GÇö "persona" clipped from 267 to 200
+2026-09-04 23:41:12   founding: Seafarer GÇö "days[].say" clipped from 104 to 90
+2026-09-04 23:41:12   founding: Cairnwright GÇö "persona" clipped from 268 to 200
+2026-09-04 23:41:12   founding: Riskweaver GÇö "constitution" clipped from 245 to 200
+2026-09-04 23:41:12     0 flight plan(s) filed, 0 by the model
+2026-09-04 23:41:12   founding: Seafarer GÇö "persona" clipped from 267 to 200
+2026-09-04 23:41:12   founding: Seafarer GÇö "days[].say" clipped from 104 to 90
+2026-09-04 23:41:12   founding: Cairnwright GÇö "persona" clipped from 268 to 200
+2026-09-04 23:41:12   founding: Riskweaver GÇö "constitution" clipped from 245 to 200
+2026-09-04 23:41:13   founding: Seafarer GÇö "persona" clipped from 267 to 200
+2026-09-04 23:41:13   founding: Seafarer GÇö "days[].say" clipped from 104 to 90
+2026-09-04 23:41:13   founding: Cairnwright GÇö "persona" clipped from 268 to 200
+2026-09-04 23:41:13   founding: Riskweaver GÇö "constitution" clipped from 245 to 200
+2026-09-04 23:41:13     cut 2: computed twice, identical to the byte (99492 bytes) GÇö fit to air
+2026-09-04 23:41:13     cut 2: end state sha256 8f5d7c5ece9d84f1GÇª GÇö the word the viewer's card will check
+2026-09-04 23:41:13     aired: C:\claude\games\frontier\episodes\episode-2026-09-05T034110-cut2.json (99.2 KiB, sha256 29b5900de22dbbf3GÇª, 1.3s)
+2026-09-04 23:41:13   founding: Seafarer GÇö "persona" clipped from 267 to 200
+2026-09-04 23:41:13   founding: Seafarer GÇö "days[].say" clipped from 104 to 90
+2026-09-04 23:41:13   founding: Cairnwright GÇö "persona" clipped from 268 to 200
+2026-09-04 23:41:13   founding: Riskweaver GÇö "constitution" clipped from 245 to 200
+2026-09-04 23:41:13   founding: Seafarer GÇö "persona" clipped from 267 to 200
+2026-09-04 23:41:13   founding: Seafarer GÇö "days[].say" clipped from 104 to 90
+2026-09-04 23:41:13   founding: Cairnwright GÇö "persona" clipped from 268 to 200
+2026-09-04 23:41:13   founding: Riskweaver GÇö "constitution" clipped from 245 to 200
+2026-09-04 23:41:13     0 flight plan(s) filed, 0 by the model
+2026-09-04 23:41:14   founding: Seafarer GÇö "persona" clipped from 267 to 200
+2026-09-04 23:41:14   founding: Seafarer GÇö "days[].say" clipped from 104 to 90
+2026-09-04 23:41:14   founding: Cairnwright GÇö "persona" clipped from 268 to 200
+2026-09-04 23:41:14   founding: Riskweaver GÇö "constitution" clipped from 245 to 200
+2026-09-04 23:41:14   founding: Seafarer GÇö "persona" clipped from 267 to 200
+2026-09-04 23:41:14   founding: Seafarer GÇö "days[].say" clipped from 104 to 90
+2026-09-04 23:41:14   founding: Cairnwright GÇö "persona" clipped from 268 to 200
+2026-09-04 23:41:14   founding: Riskweaver GÇö "constitution" clipped from 245 to 200
+2026-09-04 23:41:14     cut 3: computed twice, identical to the byte (99497 bytes) GÇö fit to air
+2026-09-04 23:41:14     cut 3: end state sha256 23c9ab396cadcff1GÇª GÇö the word the viewer's card will check
+2026-09-04 23:41:14     aired: C:\claude\games\frontier\episodes\episode-2026-09-05T034110-cut3.json (99.1 KiB, sha256 6d587cf879c08a7aGÇª, 1.2s)
+2026-09-04 23:41:15   founding: Seafarer GÇö "persona" clipped from 267 to 200
+2026-09-04 23:41:15   founding: Seafarer GÇö "days[].say" clipped from 104 to 90
+2026-09-04 23:41:15   founding: Cairnwright GÇö "persona" clipped from 268 to 200
+2026-09-04 23:41:15   founding: Riskweaver GÇö "constitution" clipped from 245 to 200
+2026-09-04 23:41:15   founding: Seafarer GÇö "persona" clipped from 267 to 200
+2026-09-04 23:41:15   founding: Seafarer GÇö "days[].say" clipped from 104 to 90
+2026-09-04 23:41:15   founding: Cairnwright GÇö "persona" clipped from 268 to 200
+2026-09-04 23:41:15   founding: Riskweaver GÇö "constitution" clipped from 245 to 200
+2026-09-04 23:41:15     0 flight plan(s) filed, 0 by the model
+2026-09-04 23:41:15   founding: Seafarer GÇö "persona" clipped from 267 to 200
+2026-09-04 23:41:15   founding: Seafarer GÇö "days[].say" clipped from 104 to 90
+2026-09-04 23:41:15   founding: Cairnwright GÇö "persona" clipped from 268 to 200
+2026-09-04 23:41:15   founding: Riskweaver GÇö "constitution" clipped from 245 to 200
+2026-09-04 23:41:16   founding: Seafarer GÇö "persona" clipped from 267 to 200
+2026-09-04 23:41:16   founding: Seafarer GÇö "days[].say" clipped from 104 to 90
+2026-09-04 23:41:16   founding: Cairnwright GÇö "persona" clipped from 268 to 200
+2026-09-04 23:41:16   founding: Riskweaver GÇö "constitution" clipped from 245 to 200
+2026-09-04 23:41:16     cut 4: computed twice, identical to the byte (99547 bytes) GÇö fit to air
+2026-09-04 23:41:16     cut 4: end state sha256 8960d805eb44a94bGÇª GÇö the word the viewer's card will check
+2026-09-04 23:41:16     aired: C:\claude\games\frontier\episodes\episode-2026-09-05T034110-cut4.json (99.1 KiB, sha256 b2d0895477678a13GÇª, 1.3s)
+2026-09-04 23:41:16     pointer: C:\claude\games\frontier\episodes\latest.json GÇö 4 cuts, episode names cut 1 (episode-2026-09-05T034110-cut1.json)
+2026-09-04 23:41:16     next: 4 of 4 cut(s) still to come GÇö episodes/next.json
+2026-09-04 23:41:16     ledger: 27 + 4 entries GÇö episodes/aired.json
+2026-09-04 23:41:16     tomorrow starts where cut 4 ended: episodes/next-snapshot.json
