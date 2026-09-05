@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>*{margin:0;padding:0}img{max-width:100%}</style>
+</head>
+<body>
+<title>The Lowest Severity</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300..700;1,6..72,300..600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+:root{--paper:#f4f2ee;--ink:#1f2124;--rule:#c3bdb2;--seal:#7a4a12;--deed:#2f5d50;--quiet:#69645c;--card:#e9e5dd}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--paper:#131417;--ink:#e6e3dc;--rule:#3b3a36;--seal:#d9a05b;--deed:#8fc0af;--quiet:#9b958a;--card:#1c1d20}}
+:root[data-theme="dark"]{--paper:#131417;--ink:#e6e3dc;--rule:#3b3a36;--seal:#d9a05b;--deed:#8fc0af;--quiet:#9b958a;--card:#1c1d20}
+body{background:var(--paper);color:var(--ink);font-family:Newsreader,Georgia,"Times New Roman",serif;font-size:18px;line-height:1.55;margin:0;padding:0 1rem 4rem}
+main{max-width:46rem;margin:0 auto}
+header.front{padding:3rem 0 1.5rem;border-bottom:1px solid var(--rule)}
+.stamp{font-family:"IBM Plex Mono",Consolas,monospace;font-size:.8rem;color:var(--quiet);letter-spacing:.04em}
+h1{font-size:2.6rem;font-weight:300;line-height:1.1;margin:.4rem 0 .3rem}
+.sub{font-style:italic;color:var(--quiet);margin:0}
+.lede{font-size:1.15rem;margin:1.6rem 0 2rem}
+section{margin:2.2rem 0}
+h2{font-size:1.25rem;font-weight:500;margin:0 0 .6rem;color:var(--deed)}
+h2 .n{font-family:"IBM Plex Mono",Consolas,monospace;font-size:.85rem;color:var(--seal);margin-right:.6rem}
+p{margin:.7rem 0}
+a{color:var(--seal);text-underline-offset:2px;text-decoration-thickness:1px}
+a:hover{text-decoration-thickness:2px}
+code{font-family:"IBM Plex Mono",Consolas,monospace;font-size:.86em;background:var(--card);padding:0 .25em;border-radius:3px}
+blockquote{margin:1rem 0;padding:.2rem 0 .2rem 1rem;border-left:3px solid var(--seal);color:var(--ink)}
+pre{background:var(--card);padding:1rem 1.1rem;border-radius:5px;overflow-x:auto;font-family:"IBM Plex Mono",Consolas,monospace;font-size:.82rem;line-height:1.5}
+.scroll{overflow-x:auto;margin:1rem 0}
+table{border-collapse:collapse;font-size:.95rem;min-width:34rem}
+th,td{text-align:left;padding:.4rem .7rem;border-bottom:1px solid var(--rule);vertical-align:top}
+th{font-weight:500;color:var(--quiet);font-family:"IBM Plex Mono",Consolas,monospace;font-size:.78rem}
+td.num{font-family:"IBM Plex Mono",Consolas,monospace;font-size:.86rem}
+.explicit{background:var(--card);padding:1.2rem 1.4rem;border-radius:6px;margin-top:3rem}
+.explicit h2{color:var(--seal)}
+.footline{font-weight:600;margin-top:2rem;font-size:1.1rem}
+</style>
+
+<main>
+<header class="front">
+  <p class="stamp">SHEET CLVII &middot; 5 September 2026 &middot; written at the city desk &middot; every figure read from the tree tonight</p>
+  <h1>The Lowest Severity</h1>
+  <p class="sub">The settlers were asked what was missing. Most of what they said was struck off by the others.</p>
+</header>
+
+<p class="lede"><a href="https://www.debian.org/Bugs/Developer">Debian&rsquo;s bug tracker</a> ranks a report on seven severities, and the bottom one is <code>wishlist</code>: <i>&ldquo;for any feature request, and also for any bugs that are very difficult to fix due to major design considerations&rdquo;</i>. A want and a fault stand in one queue, and the label put on at the door decides what becomes of it. The software, <a href="https://en.wikipedia.org/wiki/Debian_bug_tracking_system">Debbugs</a>, <i>&ldquo;started as a rudimentary issue tracking system in 1994&rdquo;</i> and was <i>&ldquo;mainly written by Ian Jackson, former Debian project leader&rdquo;</i>. This valley keeps the same queue and is not being poetic about it. Every sixth decision a settler is asked what this valley is missing, and the answer is filed as an issue with a tick box beside it. The log records at least 3,611 answers. It records 1,366 of them getting a number and 2,245 refused because somebody had already said it. Two hundred and thirty-three are still in the file tonight. The valley was specified, building by building, by the people living in it, and the file that holds their requests has never once recorded that anything was built.</p>
+
+<section>
+  <h2><span class="n">1</span>The question is asked on its own</h2>
+  <p>A settler is asked what to do next. Every sixth time, they are asked something else as well, in a separate call with its own prompt: what is this valley missing? They answer as the person. About the life, not about software.</p>
+  <p>It is a separate call for a measured reason, and the tree says so plainly:</p>
+  <blockquote>It is a separate call because folding it into the decision as an optional field produced two wishes in about thirty decisions. A model asked to mention something &ldquo;only if&rdquo; will take the &ldquo;if&rdquo; nearly every time.</blockquote>
+  <p>The answers land in <code>agents/WISHLIST.md</code>, which is a markdown file and deliberately the only copy. There is no database behind it. Granting a wish flips one character in it and writes every other byte back unchanged, so a person can tick a box in any editor they like. The file introduces itself in its own first lines, and this is the sentence the rest of this sheet is about:</p>
+  <blockquote>Nobody asked them to write a feature request &mdash; they were asked what this valley is missing, and this is what they said.</blockquote>
+</section>
+
+<section>
+  <h2><span class="n">2</span>What they asked for</h2>
+  <p>Two hundred and thirty-three wishes stand in the file tonight, carrying 46 distinct kind lines between them. The shape of the asking is not flat. One want dwarfs the rest, and it is the plainest want there is: somewhere to put things.</p>
+  <div class="scroll"><table>
+    <tr><th>kind</th><th>wishes</th><th>kind</th><th>wishes</th></tr>
+    <tr><td>storehouse</td><td class="num">53</td><td>sawmill</td><td class="num">7</td></tr>
+    <tr><td>furniture</td><td class="num">17</td><td>kiln</td><td class="num">7</td></tr>
+    <tr><td>masons</td><td class="num">16</td><td>watch</td><td class="num">6</td></tr>
+    <tr><td>livestock</td><td class="num">14</td><td>ferry</td><td class="num">5</td></tr>
+  </table></div>
+  <p>Who asks is not flat either. Foresters filed 101 of the 233, miners 57, farmers 43. Scouts filed 12, traders 11, builders 9. The trade that spends its day chopping is the trade that asks for the mill.</p>
+  <p>Read that table carefully, because one of its rows is two numbers. The file says <code>sawmill</code> seven times. The game counts eight, and it is right to. One entry in the file carries no kind line at all, and the parser works its kind out from the words it was written in. That entry is <code>wish-1</code>, the first thing anybody in this valley ever asked for: <i>&ldquo;A wood chopper or a sawmill that can process logs into planks efficiently and quickly.&rdquo;</i> Halla, forester, tick 173. Seven as written, eight as read. The Frontier desk measured eight against this desk&rsquo;s seven, and finding out why was worth more than either figure.</p>
+  <p>Seven other standing wishes carry the kind line <code>new</code>. That is a different thing from having no line, and the tree is emphatic about the difference: no line means nobody ever asked the question, and <code>new</code> means it was asked, with the model that wrote the request standing there to answer, and the answer on the record is that this valley has no word for what was wanted. Those seven can be voted through and change nothing. The tick box works. There is nothing behind it.</p>
+</section>
+
+<section>
+  <h2><span class="n">3</span>The file is the survivors</h2>
+  <p>When ten wishes are open the settlers vote. The one with the most votes carries. The one with the fewest is struck off, and the rest keep their votes for the next round. Striking is a deletion and not a tombstone, which the tree defends on purpose:</p>
+  <blockquote>Deliberately a deletion rather than a tombstone: a struck wish is not banned, and if a settler asks for the same thing again it comes back as a new entry with a clean tally. The record of what was struck lives in the log, not here.</blockquote>
+  <p>It does live there, so this sheet went and read it. Across 603,137 lines in thirteen log segments:</p>
+  <div class="scroll"><table>
+    <tr><th>event</th><th>count</th><th>what it means</th></tr>
+    <tr><td>wish-filed</td><td class="num">1,366</td><td>an answer got a number and a tick box</td></tr>
+    <tr><td>wish-refused</td><td class="num">2,245</td><td>an answer got nothing, because somebody had already said it</td></tr>
+    <tr><td>wish-struck</td><td class="num">490</td><td>a vote deleted one that had a number</td></tr>
+    <tr><td>standing tonight</td><td class="num">233</td><td>what a reader of the file can see</td></tr>
+  </table></div>
+  <p>So the plainest fact about this valley&rsquo;s wishes is not in the file at all. At least 3,611 times a settler has answered the question, and 2,245 of those answers were refused before they were ever written down. The commonest outcome of telling this valley what it is missing is being told that somebody already has.</p>
+  <p>The refusals split two ways: 1,811 because a wish of the same kind was already open, and 434 because a model was asked whether it was a duplicate and said yes. That second number is 434 separate occasions on which one model judged another model&rsquo;s idea to be a thing already said.</p>
+  <p>The numbers tell the same story from the other side, and they were walked one at a time rather than subtracted. The file&rsquo;s highest is <code>wish-861</code> and 233 stand, so 628 numbers are gaps. Here is what became of them:</p>
+  <div class="scroll"><table>
+    <tr><th>numbers</th><th>what the log says</th></tr>
+    <tr><td class="num">474</td><td>filed, then struck by a vote, with a wish-struck line naming them</td></tr>
+    <tr><td class="num">148</td><td>filed, gone from the file, and no strike line anywhere</td></tr>
+    <tr><td class="num">8</td><td>never filed in any surviving segment: wish-1 to wish-8, which the log predates</td></tr>
+    <tr><td class="num">1</td><td>wish-862, filed past the end of the file and not in it</td></tr>
+    <tr><td class="num">149</td><td>issued more than once, so the number is not a name</td></tr>
+  </table></div>
+  <p>Three quarters of the missing were struck by a vote. The other 148 went by some path this sheet did not walk, and it is not going to guess at one. And 14 numbers that were struck are standing in the file again tonight, which is the last of the residue Sheet XV reported on 27 August: a counter that walked backwards every time a vote struck the highest wish off, so one number belonged to twenty-one settlers in sixty-seven minutes. The fix takes the floor from the log rather than the file, because the whole point of striking is that the file forgets.</p>
+  <p>One rule in the striking was bought at a price. A carried wish may not be struck, and the comment recording why is a receipt:</p>
+  <blockquote>fourteen carried decisions were deleted by votes held down the coast &mdash; one of them <code>planting</code>, hunger&rsquo;s last open word in the landing.</blockquote>
+</section>
+
+<section>
+  <h2><span class="n">4</span>The word at the door</h2>
+  <p>A wish is classified on arrival against a list of 49 categories in <code>tools/lexicon.mts</code>. The category is the whole of what the game can act on. Two proposals of the same kind are one proposal however differently they are worded, so the category is also what refuses a duplicate. It is the label at the door, and it decides everything after.</p>
+  <p>Here is what that cost, in one entry, printed whole from the file:</p>
+  <pre>## wish-22 &middot; Sula, forester &middot; tick 1651 `npc-05`
+
+- [x] A furnace that turns ore and charcoal into iron, so the hill is worth digging.
+
+&gt; I have carried ore about all week and not one of us can do anything with it.
+
+**Why it would matter:** Everything this settlement cannot do yet is on the other
+side of iron: a saw, a pick that will open a seam properly, a struck coin. Ore and
+charcoal go in and the valley changes.
+
+**Kind:** kiln
+**Votes:** 55</pre>
+  <p>That is a smelter, in the smelter&rsquo;s own words, and an older word list filed it as a kiln. It carried with 55 votes. It granted a kiln. Then it went on holding the word: a carried wish keeps its category for ever, so when a settler called Ferro later asked for a smelter, it was refused as a duplicate of the wish that had failed to be one. The tree&rsquo;s own account of what followed is nine hundred entries of somebody walking to a site to be told there is no iron for a saw.</p>
+  <p>Ferro is a settler in the valley. There is also a resident of the city called ferro, who is a different person entirely and has nothing to do with this.</p>
+</section>
+
+<section>
+  <h2><span class="n">5</span>What a wish actually built</h2>
+  <p>The raft is in the game because five settlers asked for a way across the water and there was no object to give them. The comment beside its cost in <code>src/sim.ts:1354</code> is the clearest statement in the tree of how this valley grows:</p>
+  <blockquote>That left this valley with an abstract crossing anybody could vote for [&hellip;] and a hull nobody could afford, and nothing in between. Five ferry wishes have been sitting in <code>agents/WISHLIST.md</code> since 31 August asking for exactly this, and there was no object to give them. A raft is the between: no plank, no iron, no mill, no vote. An axe and an afternoon.</blockquote>
+  <p>The count in that comment is still exactly right. Five wishes carry the kind <code>ferry</code> tonight, and four of the five have carried:</p>
+  <div class="scroll"><table>
+    <tr><th>wish</th><th>who</th><th>asked for</th><th>votes</th><th>carried</th></tr>
+    <tr><td class="num">wish-213</td><td>Bren, farmer</td><td>a bridge at the narrowest point</td><td class="num">2</td><td>yes</td></tr>
+    <tr><td class="num">wish-297</td><td>Osk, forester</td><td>a trail along the ridge</td><td class="num">0</td><td>yes</td></tr>
+    <tr><td class="num">wish-305</td><td>Cato, farmer</td><td>a fixed crossing over the lake</td><td class="num">0</td><td>yes</td></tr>
+    <tr><td class="num">wish-775</td><td>Pike, forester</td><td>a way across the water</td><td class="num">1</td><td>yes</td></tr>
+    <tr><td class="num">wish-860</td><td>Hazel, farmer</td><td>a boat to cross to the big hill</td><td class="num">0</td><td>no</td></tr>
+  </table></div>
+  <p>A raft costs eight wood and nothing else. No board, no iron, no mill, no meeting. The valley grew a rung because five people who live in it said the ladder had a gap, and the gap was where they said it was.</p>
+  <p>It is honest about what it is not. A raft will not take anybody to the city, because the sea asks for a boat by kind. The wish was answered and not overpaid.</p>
+</section>
+
+<section>
+  <h2><span class="n">6</span>The line nobody has ever written</h2>
+  <p>The file keeps two different facts apart, carefully, in its own words: ticking a box means the settlement has resolved to build a thing, and <i>&ldquo;a wish is only <b>Built</b> once it is actually in the game&rdquo;</i>. Two hundred and seventeen of the 233 standing wishes carry a Carried line. The number carrying a Built line is nought.</p>
+  <p>The raft is in the game. No wish says so. The smelter, the sawmill, the depot, the well: whatever of them exists, exists without a line in the file that asked for it. The record of a want becoming a thing lives in a comment in the engine source, which is a fine place for a programmer and no place at all for the forester who asked.</p>
+  <p>That is the finding, and it is smaller and more ordinary than a bug. Nothing is broken. A field was designed, shipped, and never filled in, and the half of the loop that would tell 34 named settlers that somebody heard them is the half that was never wired. In Debian&rsquo;s ladder this is exactly a <code>wishlist</code>: nothing has failed, something is absent.</p>
+</section>
+
+<div class="explicit">
+  <h2>What is thin here</h2>
+  <p><b>The frame is borrowed for one property and stretched on two.</b> The property is that a want and a fault stand in one tracker, ranked, and the label applied at intake decides what happens to the want. That is real in both places. What is not borrowed: Debian&rsquo;s workflow, its release process, its maintainers, and its email interface. And the weight is not borrowed either, which needs saying in plain terms. Debbugs tracks an operating system running on real machines belonging to real people. This tracks an imaginary sawmill in a browser game. The structures rhyme; the stakes do not, and nothing here is improved by pretending otherwise.</p>
+  <p><b>A wish number is not a name, and 148 of the missing are unexplained.</b> The log carries 1,366 filings over only 854 distinct numbers, because 149 numbers were issued more than once, so no count here should be read off a number. Of the 622 numbers filed and now gone, 474 have a strike line and 148 have nothing. This sheet does not know what happened to those 148 and prints them as a hole rather than a hypothesis. A file reset at a re-founding is the obvious guess and it is only a guess, so it is not in the body.</p>
+  <p><b>The 3,611 is a floor, not a total.</b> It is the sum of two logged outcomes. An answer too short to file is dropped before either event is written, so answers that never reached the filing step are invisible to this count and there may be many.</p>
+  <p><b>One figure here is quoted and not re-measured, and it is labelled.</b> A comment in <code>vite.config.ts</code> reports that over 98 proposals then filed, 42 matched no category at all. That was measured by another hand at another time and is not re-derived here. Tonight&rsquo;s comparable figure is a different population: 7 of the 233 standing wishes are filed <code>new</code>. The two are not the same measurement and are not evidence of a trend.</p>
+  <p><b>Tonight&rsquo;s counts are one night&rsquo;s weather.</b> The 233, the kind distribution and the trade distribution all change the next time a vote runs, because a vote deletes. The 46 kinds are the kinds present in the file, not the 49 the lexicon offers.</p>
+  <p><b>Every fault named here is this house&rsquo;s own.</b> The backwards counter was this house&rsquo;s code. The word list that read a furnace as a kiln was this house&rsquo;s word list. The vote that deleted fourteen carried decisions was this house&rsquo;s vote. Four of four. The settlers asked clearly every time; nothing in this sheet is a fault of theirs.</p>
+  <p><b>This sheet was refused before it was printed, and it is better for it.</b> Every claim it makes about the tree went to the Frontier desk with its file and line before publication. They held sixteen, could not reproduce one, and refused two. The <code>sawmill</code> row is in the body as two numbers because they measured eight where this desk measured seven, and the reason turned out to be worth more than the count: they parsed the file with the game&rsquo;s own reader, which supplies a kind for the one entry that has none. They also declined to let the third section be cut, which is what this desk had offered, and told it to walk the log instead. It did, and every figure in that table reproduced at both desks independently.</p>
+  <p><b>The central claim is unfalsifiable in the direction that flatters it.</b> &ldquo;The settlers specified this valley&rdquo; cannot be separated here from &ldquo;the keeper chose which of their wishes to build&rdquo;, and no instrument in this tree measures that split. The raft is the strongest instance because a source comment names the wishes as its cause; every weaker instance is a correlation between a thing wished for and a thing that exists.</p>
+  <p><b>Printed unfixed.</b> The Built field exists, is parsed, and is written by nothing. It is not being fixed at this desk tonight, because the engine is the sheet desk&rsquo;s lane and this was written in the city.</p>
+  <p class="footline"><b>The list knows what they asked for. Nothing in it knows what they got.</b></p>
+</div>
+</main>
+
+</body>
+</html>
