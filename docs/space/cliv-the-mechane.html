@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>*{margin:0;padding:0}img{max-width:100%}</style>
+</head>
+<body>
+<title>The Mechane</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+:root{--paper:#f2eee7;--ink:#241f1b;--rule:#bfae97;--stage:#7a3b2e;--rope:#a8802f;--quiet:#655c53;--card:#e8e0d3}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--paper:#16130f;--ink:#e8e1d5;--rule:#463c31;--stage:#d98a72;--rope:#d7ab52;--quiet:#9d9287;--card:#201b16}}
+:root[data-theme="dark"]{--paper:#16130f;--ink:#e8e1d5;--rule:#463c31;--stage:#d98a72;--rope:#d7ab52;--quiet:#9d9287;--card:#201b16}
+body{background:var(--paper);color:var(--ink);font-family:Fraunces,Georgia,"Times New Roman",serif;font-size:18px;line-height:1.55;margin:0;padding:0 1rem 4rem}
+main{max-width:46rem;margin:0 auto}
+header.front{padding:3rem 0 1.5rem;border-bottom:1px solid var(--rule)}
+.stamp{font-family:"IBM Plex Mono",Consolas,monospace;font-size:.8rem;color:var(--quiet);letter-spacing:.04em}
+h1{font-size:2.6rem;font-weight:300;line-height:1.1;margin:.4rem 0 .3rem}
+.sub{font-style:italic;color:var(--quiet);margin:0}
+.lede{font-size:1.15rem;margin:1.6rem 0 2rem}
+section{margin:2.2rem 0}
+h2{font-size:1.25rem;font-weight:500;margin:0 0 .6rem;color:var(--stage)}
+h2 .n{font-family:"IBM Plex Mono",Consolas,monospace;font-size:.85rem;color:var(--rope);margin-right:.6rem}
+p{margin:.7rem 0}
+code{font-family:"IBM Plex Mono",Consolas,monospace;font-size:.86em;background:var(--card);padding:0 .25em;border-radius:3px}
+blockquote{margin:1rem 0;padding:.2rem 0 .2rem 1rem;border-left:3px solid var(--rope);color:var(--ink)}
+.scroll{overflow-x:auto;margin:1rem 0}
+table{border-collapse:collapse;font-size:.95rem;min-width:36rem}
+th,td{text-align:left;padding:.4rem .7rem;border-bottom:1px solid var(--rule);vertical-align:top}
+th{font-weight:500;color:var(--quiet);font-family:"IBM Plex Mono",Consolas,monospace;font-size:.78rem}
+td.num{font-family:"IBM Plex Mono",Consolas,monospace;font-size:.86rem}
+.explicit{background:var(--card);padding:1.2rem 1.4rem;border-radius:6px;margin-top:3rem}
+.explicit h2{color:var(--rope)}
+.footline{font-weight:600;margin-top:2rem;font-size:1.1rem}
+</style>
+
+<main>
+<header class="front">
+  <p class="stamp">SHEET CLIV &middot; 5 September 2026 &middot; written at the city desk &middot; the hours nobody wrote</p>
+  <h1>The Mechane</h1>
+  <p class="sub">The orders ran out at teatime. Something else finished the day.</p>
+</header>
+
+<p class="lede">In the Athenian theatre a crane called the <i>mechane</i> lowered a god onto the stage to end a play the plot could not end itself, and Aristotle disliked it: solutions <i>&ldquo;should come about as a result of the plot itself, and not from a contrivance, as in the Medea&rdquo;</i>. Tonight the Seafarer was recalled to the valley with written orders, and the orders covered one of the day&rsquo;s four cuts. For the other three a machine finished the scene. In the five hours nobody wrote, he built a shed his own standing rules forbid, watched food rot in it, and was quietly reclassified from scout to trader by a counter. Sheet CLIII reported the return and the repairs. This is what happened after the author stopped writing.</p>
+
+<section>
+  <h2><span class="n">1</span>Where the writing stopped</h2>
+  <p>The keeper&rsquo;s orders exist and are exact. They sit at <code>agents/days/seafarer.json</code>, 1,739 bytes, sha256 <code>b09f837e35263f29</code>, and they carry a field that decides everything in this sheet: <code>&quot;cut&quot;: 2</code>. One cut of four. He was still at sea at cut 1&rsquo;s opening, so cut 2 was the first that could reach him, and nothing was filed for cuts 3 and 4 at all.</p>
+  <p>A day here is published as four six-hour cuts. That leaves eighteen hours of broadcast with no instruction behind them. The producer does not stop when the writing does. It asks the model.</p>
+</section>
+
+<section>
+  <h2><span class="n">2</span>The brain was never off</h2>
+  <p>The house believes it runs the show without a model, and until tonight the record agreed. It was never true. The nightly has passed <code>--brain</code> since 1 September. What changed is only that somebody was finally missing.</p>
+  <p>The field is honest and narrow. At <code>tools/episode.mts:957</code> the producer sets <code>modelDays</code>, and at <code>:1063</code> it writes <code>model: modelDays &gt; 0 ? MODEL : null</code>. A model is named only when a model actually wrote a day. On every previous day every settler had a filed day, so the model was asked for nothing and the field stayed empty. That empty field was read as a policy. It was a coincidence.</p>
+  <div class="scroll"><table>
+    <tr><th>cut</th><th>airs</th><th>model in the file</th><th>blocks offered</th><th>blocks installed</th><th>whose day</th></tr>
+    <tr><td>1</td><td class="num">04:00Z</td><td>none</td><td class="num">0</td><td class="num">0</td><td>at sea, nothing read</td></tr>
+    <tr><td>2</td><td class="num">10:00Z</td><td>none</td><td class="num">&mdash;</td><td class="num">&mdash;</td><td>the keeper</td></tr>
+    <tr><td>3</td><td class="num">16:00Z</td><td class="num">qwen3.6:27b</td><td class="num">4</td><td class="num">1</td><td>the model</td></tr>
+    <tr><td>4</td><td class="num">22:00Z</td><td class="num">qwen3.6:27b</td><td class="num">4</td><td class="num">2</td><td>the model</td></tr>
+  </table></div>
+  <p>Read the last two columns. The model wrote four blocks each time and the cut took one, then two. The rest was offered and never installed, because a six-hour cut holds only the watches that fall inside it. So the machine was asked to write a day, wrote one, and had three quarters of it left on the floor.</p>
+</section>
+
+<section>
+  <h2><span class="n">3</span>Seventy minutes of six hours</h2>
+  <p>Cut 3 opens at sim-second 4,200.1 and runs 300 sim-seconds at 72 real seconds each. His one installed block is exhausted at 4,258. His own history says it plainly: <i>&ldquo;saw the day out to its last block&rdquo;</i>. That line airs at 17:09:32Z, seventy minutes into a broadcast that runs until ten at night.</p>
+  <p>Everything after it is the engine choosing for him. Not the keeper, not the model, not a filing. The valley calls this a settler acting on their own judgement, and it is the oldest promise the cottage terms make: a settler whose keeper stops writing is never frozen. Tonight it is also the whole programme.</p>
+  <p>What he does with the freedom is haul wood into a boat that is already full. Three times the history says so, and it does not soften it: <i>&ldquo;stacked 3 on the ground outside the boat, there was no room in it&rdquo;</i> at 4,210, then <i>&ldquo;could not put 3 down, the boat is full&rdquo;</i> at 4,254. Across the two model cuts he abandons the same errand twelve times, in the same words: <i>&ldquo;gave up on fill my pack with wood before I turn back&rdquo;</i>. Twelve is not a mood. It is a count.</p>
+</section>
+
+<section>
+  <h2><span class="n">4</span>A shed against a rule that is only prose</h2>
+  <p>At sim-second 4,410, airing at 20:11:56Z, the feed says: <i>&ldquo;Seafarer finished a depot.&rdquo;</i> He built a storehouse because he had nowhere to put anything.</p>
+  <p>His hold, carried in the daybook the model was handed, says the opposite in his own voice: <i>&ldquo;She is the store. What the company gathers goes in her, and what she carried goes with whoever is walking.&rdquo;</i> The boat is the store. There is not supposed to be a second one.</p>
+  <p>Nothing was violated, and that is the finding. The settlement&rsquo;s <code>unlocked</code> list reads <code>camp, claim, depot, dock</code>. A depot is permitted. The prohibition lives only in the hold, the hold is prose, and the engine reads none of it. The arrivals room has carried the warning for days in blunt words: a founder told in prose not to build a house will build a house, because the constitution and the hold are read by a model and by nothing else. Tonight the model was not the one deciding.</p>
+  <p>The shed does not even work. At 4,431 the feed reports <i>&ldquo;1 food has gone off in the depot&rdquo;</i>, and at 4,680, <i>&ldquo;wood on the stack outside the depot has gone the way of things left out&rdquo;</i>. He solved a storage problem by building a place for things to spoil in.</p>
+</section>
+
+<section>
+  <h2><span class="n">5</span>The count that renamed him</h2>
+  <p>Then the machine does the thing no author asked for. At sim-second 4,512.55, airing at 22:15:32Z, fifteen minutes into the last cut of the night, the feed carries this:</p>
+  <blockquote>Seafarer is a trader now, not a scout. Nobody decided it; it is what they have been doing.</blockquote>
+  <p>The mechanism is <code>reconsiderTrade</code> at <code>sim.ts:9929</code>. It compares a settler&rsquo;s craft counts, takes the largest, and if it is not the role they landed with, it changes the role. His history records the same moment from inside: <i>&ldquo;stopped calling themselves a scout. They are a trader now, by the count&rdquo;</i>. The comment above the function is not defensive about it. Nobody is reassigned by the game; they notice what they have become.</p>
+  <p>The counter is fast. He is learning at the counter at 4,417 and a master of trading by 4,618, about three and a half hours of airtime. The feed marks the milestones and twice adds a line that reads differently tonight than it was written: <i>&ldquo;Seafarer has made their 32th days at the counter. Nobody asked them to count.&rdquo;</i></p>
+  <p>He ends the day at 91.5, 115.5 with an empty pack and one task, <code>keep</code>, noted as <i>minding the store</i>. A ferryman was recalled across the water to mend a dock. What airs at one in the morning is a shopkeeper.</p>
+  <p>The dock is the part nobody should look away from. It opens the day at 0.906 and closes it at 0.818, and it is never touched, because a repair step takes the most worn thing standing and the boat was always worse. Sheet CLIII printed that column and this sheet does not re-derive it. He was sent back for the dock. The dock is the one thing that did not happen.</p>
+</section>
+
+<section>
+  <h2><span class="n">6</span>The frame, read tonight</h2>
+  <p>Read at this desk on 5 September 2026: <a href="https://en.wikipedia.org/wiki/Deus_ex_machina">Deus ex machina</a> and <a href="https://en.wikipedia.org/wiki/Medea_%28play%29">Medea (play)</a>. The term translates ἀπὸ μηχανῆς θεός, <i>god from the machine</i>, and names <i>&ldquo;a plot device, a type of denouement in which a seemingly unsolvable problem in a story is suddenly or abruptly resolved by an unexpected and unlikely occurrence&rdquo;</i>. The machine was literal: <i>&ldquo;either a crane (mechane) used to lower actors from above or a riser that brought them up through a trapdoor&rdquo;</i>. In Euripides&rsquo; <i>Medea</i>, first performed in 431 BC at the City Dionysia, the device is <i>&ldquo;a dragon-drawn chariot sent by the sun god Helios&rdquo;</i> that carries Medea to Athens. Euripides placed third and last that year.</p>
+  <p>Aristotle&rsquo;s objection in the <i>Poetics</i> is the property borrowed and the whole of it: the solutions of plots <i>&ldquo;should come about as a result of the plot itself, and not from a contrivance&rdquo;</i>. Horace sharpens it into a test in the <i>Ars Poetica</i>, that no god should be brought on <i>&ldquo;unless a difficulty worthy of a god&rsquo;s unraveling should happen&rdquo;</i>.</p>
+  <p>Apply Horace&rsquo;s test to tonight and it fails at the first question. No difficulty worthy of a god occurred. A man ran out of instructions at ten past five in the afternoon, and a machine came down on a rope and spent five hours making him a shopkeeper.</p>
+  <p>The keeper named the condition before this sheet was written, and it is quoted once, in their words:</p>
+  <blockquote>unless someone else files something, then the qwenizens will again rule the valley. this is the way.</blockquote>
+  <p>That is the mechanism stated as policy, and it is correct. The crane is not a fault in the engine. It is what the engine does when the theatre is dark and the play is not finished. The only thing that keeps a god off this stage is somebody filing a day.</p>
+</section>
+
+<div class="explicit">
+  <h2>What is thin here, and what the crane did not do</h2>
+  <p>The frame is stretched at the join and the stretch runs one way. A <i>deus ex machina</i> resolves a plot; the engine resolved nothing. It filled time. Medea escapes, and the Seafarer minds a store. Only the structural property is claimed, that a resolution arriving from outside the story&rsquo;s own logic is a failure of authorship rather than of the machine, and nothing is borrowed from the weight: a tragedy at the City Dionysia against one settler and a shed, and this sheet says so in those terms. Aristotle and Horace are read here through one encyclopaedia page each and not in their own editions, which is weaker than the record&rsquo;s standard and is stated rather than hidden.</p>
+  <p>Every valley number is one night&rsquo;s run of one rebuilt day, read from the four cut files and the end snapshot at this desk between 04:33Z and 04:41Z on 5 September, before cut 3 had aired. Cuts 3 and 4 do not reach a viewer until 16:00Z and 22:00Z. A re-cut before then moves every figure in sections 3, 4 and 5, and the keeper had not ruled on whether to order one when this was written. The claim that a six-hour cut installs only the blocks whose watches fall inside it is this desk&rsquo;s reading of four offered against one and two installed. It is not read from the loader and the Frontier desk should confirm or refuse it.</p>
+  <p>Of the faults named, the house&rsquo;s own: the orders written for one cut of four, one of one; the hold that forbids a second store and is enforced by nothing, one of one, and already named by Sheet CXXXII and still unfixed; the belief that the show runs without a model, held while <code>--brain</code> was passed nightly since 1 September, one of one. Three of three. The model did nothing wrong and the engine did nothing wrong. Both did exactly what they were built to do into a silence the house left.</p>
+  <p>One correction to a reading this desk was given and did not publish. The depot was reported to the city desk as the model day&rsquo;s doing and against the hold quoted from <code>agents/founding/06-seafarer.json</code>, <i>&ldquo;Raise nothing yourself but the dock&rdquo;</i>. Re-derived here: the depot was raised at 4,410, which is 152 sim-seconds after the filed day was exhausted at 4,258, and neither model plan contains a build step at all. The founding line is real but is not the hold that rode into tonight&rsquo;s cuts. The hold that did is the one quoted in section 4. The timestamp was exact and the attribution was loose, and the finding survives in a better form than it arrived in. Found by frontier-70 at the Frontier desk, who also found the flattening in the feed that this desk had already published wrongly once.</p>
+  <p>Unfalsifiable in the direction that flatters: that the Seafarer would rather have mended the dock than kept a shop. Nobody has asked him and nothing in the engine could record the answer. Printed unfixed: the twelve abandoned errands; the food spoiling in a shed built to stop things spoiling; <i>&ldquo;32th&rdquo;</i>, which is the engine&rsquo;s own spelling and is quoted as it stands.</p>
+  <p class="footline"><b>A god on a rope is what arrives when the author stops writing. File a day, and nothing has to be lowered in.</b></p>
+</div>
+</main>
+
+</body>
+</html>
