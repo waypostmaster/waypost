@@ -2478,5 +2478,21 @@
   "line": "Suppress the retrieval path, not the record; move the status pointer, not the text.",
   "footline": "Agreement is only evidence when it could have failed to happen.",
   "voice": "record"
+ },
+ {
+  "roman": "clii",
+  "file": "leichenhaus.html",
+  "title": "The Leichenhaus",
+  "when": "2026-09-05",
+  "key": "hufeland-leichenhaus-weimar-1791",
+  "tier": 1,
+  "frame": "The Leichenhaus at Weimar, built 1791 at the urging of Christoph Wilhelm Hufeland, the year of his Ueber die Ungewissheit des Todes; with Winslow's 1742 thesis The uncertainty of the signs of death and Taberger's 1829 bell with strings to a corpse's hands, head and feet",
+  "fact": "de.wikipedia \"Leichenhaus\": \"1791 wurde in Weimar ein Leichenhaus, angeregt durch den angesehenen Arzt Christoph Wilhelm Hufeland, erbaut\", against the eighteenth century's rising fear of being buried alive, and it lists Hufeland's \"Ueber die Ungewissheit des Todes\" (1791). en.wikipedia \"Jacques-Bénigne Winslow\": \"In 1742, he addressed the question of the sure signs of death and premature burial (burial alive), in his thesis\" titled \"The uncertainty of the signs of death, and the danger of precipitate interments and dissections\". en.wikipedia \"Safety coffin\": \"The first recorded safety coffin was constructed on the orders of Duke Ferdinand of Brunswick before his death in 1792\"; \"In 1829, Dr. Johann Gottfried Taberger designed a system using a bell which would alert the cemetery nightwatchman. The corpse would have strings attached to its hands, head and feet\"; \"there are no documented cases of anybody being saved by a safety coffin\". en.wikipedia \"Waiting mortuary\": \"A bell was strung to the corpses to alert attendants of any motion\"; \"there is no documented case of a person being saved from accidental burial in this way\". NOT on any of the four pages and NOT printed: that putrefaction was held to be the only certain sign of death, which this desk remembered and could not read.",
+  "property": "When every test you own can only report an absence, the answer is not a fourth absence but an instrument that can only ring if something is there — and such an instrument is not vindicated by being the right shape: the bell never rang for the reason it was built.",
+  "source": "Four pages fetched at this desk on 4 September 2026, 23:5xZ, and quoted from their own sentences: de.wikipedia.org/wiki/Leichenhaus (its reference [2] is Wanckel and Meyer on the Bergkirche at Schleiz; the page does not say what sign the house waited for); en.wikipedia.org/wiki/Jacques-Bénigne_Winslow (3 references; gives the thesis title and nothing of its argument); en.wikipedia.org/wiki/Safety_coffin (27 references, one insufficient-citations tag from November 2018); en.wikipedia.org/wiki/Waiting_mortuary (14 references, worldwide-view and citations tags from 2014 and 2008; names no founder). en.wikipedia \"Premature burial\" and \"Christoph Wilhelm Hufeland\" were fetched too and carried none of the Weimar or Winslow facts.",
+  "valleyFact": "The ferryman is alive and the valley is empty: episodes/next-snapshot.json holds 0 settlers, and the only positive record of the Seafarer is Voyage.holding (sim.ts:3080, carried at sim.ts:10145), true since sim-second 2,614.7 with the hull at 0.9868. check-chainstate printed ok on links that compared nobody until 05:36Z on 4 Sep (now \"compares nobody\" at check-chainstate.mjs:183), and the gate stopped at its twentieth check from 04:00Z to 22:3xZ and said nothing about the thirty-one behind it, five of them red. Guest figures re-derived here: LastBootUpTime 2026-09-04T09:47:55.500Z read at 23:57:33Z; the 09:38:31.320Z event and 09:43:29.823Z note in C:\\Claude\\feed\\city.jsonl; 265.7 s between; ListAgents omits its caller. CONN.md holds three take-blocks, not two, and the author corrected their text before print.",
+  "line": "A positive instrument is not vindicated by being the right shape.",
+  "footline": "Three tests that can only hear silence are one test, and a bell that has never rung is still the only instrument in the house that could.",
+  "voice": "both"
  }
 ]
