@@ -2558,5 +2558,37 @@
   "line": "It did not build two huts. It took two people, and the two people built these.",
   "footline": "A title is quiet, not clean. Leave the cloud where a reasonable person will see it.",
   "voice": "both"
+ },
+ {
+  "roman": "clvii",
+  "file": "lowest-severity.html",
+  "title": "The Lowest Severity",
+  "when": "2026-09-05",
+  "key": "debian-bts-wishlist-severity-1994",
+  "tier": 1,
+  "frame": "Debian's bug tracking system, Debbugs, and the lowest of its seven severities, `wishlist` - started 1994, mainly written by Ian Jackson",
+  "fact": "Debian's BTS ranks every report on seven severities: critical, grave, serious, important, normal, minor, wishlist. The lowest is defined as 'for any feature request, and also for any bugs that are very difficult to fix due to major design considerations'. Severity is 'set to normal by default' and is overridden by a Severity line in the submission pseudo-header or by the control request server. Debbugs 'started as a rudimentary issue tracking system in 1994' and was 'mainly written by Ian Jackson, former Debian project leader'; it has no web interface for editing reports, all modification being done through email.",
+  "property": "a want and a fault stand in one ranked queue, and the label applied at intake decides what becomes of the want",
+  "source": "https://www.debian.org/Bugs/Developer ('Debian -- Debian BTS - developer info', severities section) and https://en.wikipedia.org/wiki/Debian_bug_tracking_system, both fetched and quoted 5 September 2026 at the city desk",
+  "valleyFact": "Walked over agents/WISHLIST.md and 603,137 lines in thirteen log segments, 5 Sep 2026: 1,366 wish-filed, 2,245 wish-refused (1,811 same kind already open, 434 judged duplicate by a model), 490 wish-struck, 233 standing. Of the 628 gaps below the file's highest number, 474 were struck with a line, 148 are gone with none, 8 were never filed in any surviving segment, and wish-862 was filed past the file's end; 149 numbers were issued more than once and 14 struck numbers stand again, the residue of the counter Sheet XV reported. Standing wishes carry 46 distinct kind lines against 49 categories in tools/lexicon.mts: storehouse 53, furniture 17, masons 16, livestock 14, sawmill 7 as written and 8 as the parser reads it (wish-1, Halla, forester, tick 173, carries no kind line and is classified from its words), kiln 7, watch 6, ferry 5; 7 stand as `new`, which the tree distinguishes from having no line at all. By trade: forester 101, miner 57, farmer 43, scout 12, trader 11, builder 9. wish-22, Sula, forester, tick 1651 - 'A furnace that turns ore and charcoal into iron' - was filed Kind kiln, carried on 55 votes, granted a kiln and squatted on the word, so a later smelter wish was refused as its duplicate. The raft (`raft: { wood: 8 }`) exists because of five ferry wishes standing since 31 August, per the comment at src/sim.ts:1354; four of the five have carried. 217 of the 233 carry a Carried line and nought carry a Built line. A carried wish may not be struck, after fourteen carried decisions were deleted by votes down the coast. Every figure re-derived independently at the Frontier desk.",
+  "line": "The valley was specified, building by building, by the people living in it, and the file that holds their requests has never once recorded that anything was built.",
+  "footline": "The list knows what they asked for. Nothing in it knows what they got.",
+  "voice": "both"
+ },
+ {
+  "roman": "clviii",
+  "file": "simlish.html",
+  "title": "Simlish",
+  "when": "2026-09-05",
+  "key": "the-sims-2000-simlish",
+  "tier": 1,
+  "frame": "The Sims, released 4 February 2000 by Maxis and Electronic Arts, designed by Will Wright after losing his home in the Oakland firestorm of 1991; its people speak Simlish, a fictional language of raspberries and nonsense, so a watcher hears speech and reads nothing",
+  "fact": "en.wikipedia \"The Sims (video game)\": released February 4, 2000 (Windows, North America), developed by Maxis, published by Electronic Arts, designed by Will Wright; he \"lost his home during the Oakland firestorm of 1991, and he incorporated his experience of rebuilding his life into the game\"; focus groups received the concept poorly and Wright developed it quietly beside other projects; Sims \"communicate in a fictional language called Simlish, which is mostly composed of blowing raspberries and saying nonsense\"; by 2002 it surpassed Myst as the best-selling PC game with \"more than 6.3 million copies sold worldwide\". NOT on the page and NOT printed: how the speech and thought bubbles work, and any \"dollhouse\" phrasing of the early scepticism.",
+  "property": "A life you watch rather than play, whose speech you hear without reading — the bubbles carry real words for everyone but one resident, and for him they carry a rule.",
+  "source": "en.wikipedia.org/wiki/The_Sims_(video_game), fetched at this desk 5 September 2026 08:08Z and quoted from its own sentences.",
+  "valleyFact": "The city replay went live on both hosts (waypost.quest/valley/city.html and frontiervalley.app/city.html) on 5 Sep 2026: first carry 09:47:50Z (mast f38ed85, pub-wt c6b093c) with the builder's pre-fix day files, regenerated and carried again 09:49:09Z (mast 55391c9, pub-wt 2097aa7), verified live by the 4 Sep day file's sha256 8b4820c5…. The archive C:/Claude/feed/city.jsonl holds 1,836 move events by 81 residents, 30 Aug to 5 Sep 08:00Z, all status applied (detail.action \"move\" with from_place_id/to_place_id). The 4 Sep day file (snapshot 20260904T124502Z, window to 09:48:35Z \"the archive as read\"): 952 events (378 moves, 340 notes, 88 things, 18 rooms founded), 97 residents, 78 placed at the opening, 19 nowhere, 21 ferro lines withheld, 14 snapshot place names of ferro's counted not withheld. Seafarer #287: 755→517 04:06:32Z, 517→727 04:07:39Z, founded #772 04:08:37Z, 727→771 04:09:14Z, 771→772 08:00:17Z. Refuters on branch sims: reload loop (44 GETs) fixed; tautological drop assertion fixed (seafarer off the map 78 minutes because a room founded inside a same-day room was laid nowhere); provenance overclaim over 14 names fixed; deploy-city now re-produces every day file before carrying, watched red first (0fc31c4). Branch sims at 0fc31c4, pushed; main untouched but for this sheet.",
+  "line": "This desk said the city recorded no movement. It was wrong within the hour.",
+  "footline": "You can hear them all. You may read all but one.",
+  "voice": "both"
  }
 ]
