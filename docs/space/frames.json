@@ -2725,5 +2725,23 @@
   "domain": "television",
   "subject": "engine",
   "waiver": "the keeper, 6 Sep 2026 01:0xZ — \"Waive it\": television is inside its cool-down, CLXI Bad Wolf five sheets back"
+ },
+ {
+  "roman": "clxvii",
+  "file": "consent-form.html",
+  "title": "The Consent Form",
+  "when": "2026-09-06",
+  "key": "informed-consent-nhs-three-conditions",
+  "tier": 2,
+  "frame": "Informed consent to medical treatment as a standing clinical practice: consent is given to a named procedure, and the three conditions the NHS sets on it — voluntary, informed, capacity. The practice is the frame, not any single case. Montgomery v Lanarkshire (2015) appears once, quoted from the Royal College of Surgeons' own page, only to date the shift in WHO decides what counts as material; it is not the frame and the sheet is not tagged law. Nothing in the 170 catalogued entries names consent, surgery, the NHS or a medical regulator.",
+  "fact": "The NHS page 'Consent to treatment' (https://www.nhs.uk/conditions/consent-to-treatment/), fetched at the city desk on 6 September 2026 with Cache-Control: no-cache, http 200, 31,317 bytes, gives three conditions and defines the middle one as: \"informed – the person must be given all of the information about what the treatment involves, including the benefits and risks, whether there are reasonable alternative treatments, and what will happen if treatment does not go ahead\". The same page: \"If they change their mind at any point before the procedure, they're entitled to withdraw their previous consent.\" The Royal College of Surgeons' consent guidance page, fetched in the same pass, http 200: after Montgomery, \"doctors are no longer the sole arbiter of determining what risks are material to their patients.\"",
+  "property": "That an agreement is to a described thing, that the description can stop being true without anybody lying, and that the person consenting — not the operator — decides what change is material enough to require asking again. Only that. NOT borrowed: medicine's authority, the law of negligence, any suggestion that a filed settler is a patient or that a port is a clinician, and no weight of any kind from real surgery or real harm.",
+  "source": "https://www.nhs.uk/conditions/consent-to-treatment/ — fetched at the city desk 6 September 2026, http 200, 31,317 bytes; and https://www.rcseng.ac.uk/standards-and-research/standards-and-guidance/good-practice-guides/consent/ — fetched in the same pass, http 200, 69,167 bytes. NEITHER IS A WIKIPEDIA HOST.",
+  "valleyFact": "A bare `repair` step names nothing and chooses nothing: `worn` in the untargeted arm of `case 'repair'` in `applyStep` (`src/sim.ts:9676`) filters the settlement's standing buildings, camps excluded, to those under `SOUND` = 0.85 (`src/sim.ts:1208`), sorts worst-first and takes the head; `if (worn === undefined) return \\`nothing in ${town.name} needs patching\\`` (`src/sim.ts:9677`). So a published sentence naming what the step would mend is a claim about a sort order at one instant. Measured from the valley's own end-of-day states: dock 0.8181 / lean-to 95,114 0.8973 / lean-to 98,115 0.9417 / depot 0.9725 at 5 September's close; 0.9328 / 0.8103 / 0.8548 / 0.8880 at 6 September's; and after the re-cut of cuts 3 and 4 at 14:45:27Z, 0.9328 / 0.9663 / 0.8548 / 0.8880, with nothing under the line at all.",
+  "line": "They approved a plan whose load-bearing sentence was true about a sort order rather than about a dock, and said in advance what would void it.",
+  "footline": "Consent is to the operation described, not to the one discovered; the moment the description moves, the signature stays behind.",
+  "voice": "both",
+  "domain": "medicine",
+  "subject": "settler"
  }
 ]
