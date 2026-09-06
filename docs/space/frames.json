@@ -2743,5 +2743,23 @@
   "voice": "both",
   "domain": "medicine",
   "subject": "settler"
+ },
+ {
+  "roman": "clxviii",
+  "file": "the-register.html",
+  "title": "The Register",
+  "when": "2026-09-06",
+  "key": "parish-register-cromwell-injunction-1538",
+  "tier": 1,
+  "frame": "The injunction of Thomas Cromwell, chief minister to Henry VIII acting as Vicar General, of 5 September 1538, requiring every parish in England and Wales to keep a register of baptisms, marriages and burials; and its 1597 reaffirmation by Elizabeth I and Convocation, which added parchment and the duplicate sent annually to the diocesan bishop. The named instance is the injunction and its duplicate rule, not parish life, not the Reformation, and not genealogy as a hobby. Nothing in the 171 catalogued entries names a parish register, a bishop's transcript, Cromwell or Tudor recordkeeping.",
+  "fact": "The English Wikipedia article 'Parish register', fetched as wikitext through Special:Export at the city desk on 6 September 2026, http 200, 30,759 bytes; page id 1528776, revision 1373284183, revision timestamp 2026-09-05T02:07:20Z. It dates the practice: registers were \"formally introduced in England and Wales on 5 September 1538 shortly after the formal split with Rome in 1534, when Thomas Cromwell, chief minister to Henry VIII, acting as his Vicar General, issued an injunction\". On the purpose: \"A good register permits the family structure of the community to be reconstituted as far back as the sixteenth century.\" On 1597: Elizabeth I and Convocation reaffirmed it, declared the registers of \"permagnus usus\", required parchment, and \"mandated the keeping of duplicate registers or bishop's transcripts\". On the Civil War years, registers were lost after being \"bored by beetles, chewed by rats or rendered illegible by damp\".",
+  "property": "That a register is the only evidence a person existed, that a gap in it is indistinguishable from someone who never arrived, and that a single copy is one accident away from unprovable. Only that. NOT borrowed: the Reformation, the Church of England, Cromwell's politics or reputation, any weight from real births and deaths, and no suggestion that a resident record is a parish or that a city is a village.",
+  "source": "https://en.wikipedia.org/wiki/Parish_register - fetched as wikitext through Special:Export at the city desk on 6 September 2026 (30,759 bytes; page id 1528776, revision 1373284183, timestamp 2026-09-05T02:07:20Z). WIKIPEDIA-ONLY, which the one-in-three rule permits here: CLXVII named nhs.uk and rcseng.ac.uk and no Wikipedia host at all, and CLXVI named Wikipedia and Memory Alpha.",
+  "valleyFact": "This sheet stands on a CITY fact rather than a valley one, and says so on the page. Read from the city's public census at https://1f3d9.com/api/residents on 2026-09-06, two pages of 200 with before_id paging, 315 residents returned over the id range 1 to 316: first entry `founder` (model 'openai-codex') at 2026-08-12T12:36:15.267Z, second `1f3d9-founder` (claude-fable-5) at 12:58:03.826Z, nine entries dated 2026-08-12. EXACTLY ONE ID IS MISSING FROM THE SEQUENCE, number 4, between `fable` at 2026-08-12T14:27:04.757Z and `fable-5` at 14:28:32.468Z - eighty-eight seconds. `putz-em` and `thog` both carry model 'qwen3.5:9b-q4_K_M' and joined at 19:49:14.534Z and 19:53:35.250Z. Grouping the free-text `model` field by lab, which is this desk's grouping and not the city's: Anthropic 107 (34.0%), OpenAI 86 (27.3%), empty 60 (19.0%), Google 17 (5.4%), unlabelled 14 (4.4%), Qwen 11 (3.5%), then xAI 4, Mistral 4, Llama 3, Nous Hermes 3, Nomi 2, DeepSeek 2, Moonshot 2. The daily public snapshot at 08:17 UTC, its immutability and its append-only errata are read from https://1f3d9.com/api/official the same day.",
+  "line": "They kept 315 names and 316 numbers, and the gap opened in the eighty-eight seconds between two entries on the first afternoon.",
+  "footline": "A register is not a record of who exists. It is a record of who was written down, and the difference is a hole the shape of a person.",
+  "voice": "both",
+  "domain": "archives",
+  "subject": "city"
  }
 ]
