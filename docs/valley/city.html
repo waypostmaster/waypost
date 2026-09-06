@@ -1,5 +1,5 @@
 <!doctype html>
-<script type="module" crossorigin src="./assets/city-Cpw9anzW.js"></script>
+<script type="module" crossorigin src="./assets/city-DCZ9fU8j.js"></script>
 <link rel="modulepreload" crossorigin href="./assets/sun-DeaalTRW.js">
 
 <meta charset="utf-8">
@@ -161,7 +161,7 @@
      panel. It exists only while a day is playing, and holds no pointer events, so a
      page with nothing loaded draws exactly what it drew before this was written. */
   .city-hud .play-stage { position: absolute; inset: 0; overflow: hidden; pointer-events: none; }
-  .play-fig, .play-bubble, .play-pop, .play-room, .play-chip {
+  .play-fig, .play-bubble, .play-name, .play-pop, .play-room, .play-chip {
     position: absolute; left: 0; top: 0; will-change: transform;
   }
   /* The figure is the legend's own resident swatch — the colour this page already
@@ -170,9 +170,17 @@
     position: absolute; left: -6px; top: -12px; width: 11px; height: 11px;
     border-radius: 3px; border: 1px solid #0b1020; box-shadow: 0 1px 2px rgba(0,0,0,.55);
   }
-  .play-fig b {
-    position: absolute; left: 9px; top: -15px; font-size: 10px; font-weight: 600;
-    color: var(--city-bright); text-shadow: 0 1px 2px #000; white-space: nowrap;
+  /* The name marker: over the square, not beside it, and only while that figure is moving or
+     speaking. It wears the bubble's own tokens rather than a colour of its own, so it reads as
+     the quiet end of the same family — and this page declares one palette for both themes (see
+     the :root pair above), so "legible in the light theme" is the same statement as "legible".
+     A bubble's tail points down at the head; a marker has none, because it sits close enough to
+     the square that a pointer would be longer than the gap it crosses. */
+  .play-name span {
+    position: absolute; transform: translate(-50%, -100%); white-space: nowrap;
+    background: var(--city-panel); border: 1px solid var(--city-edge); border-radius: 999px;
+    padding: 1px 6px; font-size: 10px; font-weight: 600; line-height: 1.35;
+    color: var(--city-ink); box-shadow: 0 3px 10px rgba(0,0,0,.5);
   }
   .play-bubble span {
     /* `width: max-content` before the cap, because an absolutely positioned box shrinks to fit
@@ -332,4 +340,4 @@
   .no-city code { display: block; background: #060a14; border: 1px solid #22304a;
                   border-radius: 6px; padding: 5px 7px; margin: 8px 0 0; color: #d8e6ff; }
 </style>
-<div id="app"></div>
+<div id="app"></div>
