@@ -740,5 +740,41 @@
   },
   "sealed_at": "2026-09-06T03:42:25.760Z",
   "replaces": null
+ },
+ {
+  "file": "episode-2026-09-06T144519-cut3.json",
+  "cut": 3,
+  "day": "2026-09-06",
+  "aired_at": "2026-09-06T16:00:00.000Z",
+  "ends_at": "2026-09-06T22:00:00.000Z",
+  "ticks": 21600,
+  "sha256": "123362e10540c8cca6cb771b2999812e9483ec6c8ca0d7aef94855914074a2e7",
+  "engine": {
+   "commit": "605b48999a76",
+   "dirty": true,
+   "bundle": "assets/valley-DSsekKCu.js",
+   "sun": "assets/sun-C0M5Hd8K.js",
+   "built_at": "2026-09-06T14:45:19.912Z"
+  },
+  "sealed_at": "2026-09-06T14:45:21.099Z",
+  "replaces": "episode-2026-09-06T034108-cut3.json"
+ },
+ {
+  "file": "episode-2026-09-06T144519-cut4.json",
+  "cut": 4,
+  "day": "2026-09-06",
+  "aired_at": "2026-09-06T22:00:00.000Z",
+  "ends_at": "2026-09-07T04:00:00.000Z",
+  "ticks": 21600,
+  "sha256": "97d715ab858e934f58cc7b502cabe07e9e5ceff7a7bc24caa3b62ca2875822f8",
+  "engine": {
+   "commit": "605b48999a76",
+   "dirty": true,
+   "bundle": "assets/valley-DSsekKCu.js",
+   "sun": "assets/sun-C0M5Hd8K.js",
+   "built_at": "2026-09-06T14:45:19.912Z"
+  },
+  "sealed_at": "2026-09-06T14:45:22.280Z",
+  "replaces": "episode-2026-09-06T034108-cut4.json"
  }
 ]

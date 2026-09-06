@@ -399,3 +399,56 @@
 2026-09-05 23:42:25     next: 4 of 4 cut(s) still to come GÇö episodes/next.json
 2026-09-05 23:42:25     ledger: 35 + 4 entries GÇö episodes/aired.json
 2026-09-05 23:42:25     tomorrow starts where cut 4 ended: episodes/next-snapshot.json
+2026-09-05 23:42:34 deployed to the mast (waypost.quest/valley/): tonight's four cuts, aired 2026-09-06T04:00:00Z
+2026-09-05 23:42:37 and on the new mast (frontier-valley/mast): tonight's four cuts, aired 2026-09-06T04:00:00Z
+2026-09-05 23:42:37 aired and on the masts
+2026-09-06 00:40:02 not the production hour (04:40Z); nothing to do
+2026-09-06 01:40:01 not the production hour (05:40Z); nothing to do
+2026-09-06 02:40:01 not the production hour (06:40Z); nothing to do
+2026-09-06 03:40:01 not the production hour (07:40Z); nothing to do
+2026-09-06 04:40:01 not the production hour (08:40Z); nothing to do
+2026-09-06 05:40:01 not the production hour (09:40Z); nothing to do
+2026-09-06 06:40:02 not the production hour (10:40Z); nothing to do
+2026-09-06 07:40:02 not the production hour (11:40Z); nothing to do
+2026-09-06 08:40:01 not the production hour (12:40Z); nothing to do
+2026-09-06 09:40:01 not the production hour (13:40Z); nothing to do
+2026-09-06 10:40:02 not the production hour (14:40Z); nothing to do
+2026-09-06 10:45:10 --- re-cut 3 begins ---
+2026-09-06 10:45:10   re-cut: cut 3 of 4, opening from episode-2026-09-06T034108-cut3.json's own snapshot
+2026-09-06 10:45:10           (the end of cut 2, already published). Cuts 1..2 are not touched.
+2026-09-06 10:45:10   episode: 4 cut(s) of 21600 ticks — 6000 steps of 0.05 each — from a 128211-byte snapshot
+2026-09-06 10:45:10            day 2026-09-06, cuts 3..4 produced this run; 1.50 valley days a cut, 6.00 in the day
+2026-09-06 10:45:10            cut 1: airs 2026-09-06T04:00:00.000Z — ends 2026-09-06T10:00:00.000Z   (not touched)
+2026-09-06 10:45:10            cut 2: airs 2026-09-06T10:00:00.000Z — ends 2026-09-06T16:00:00.000Z   (not touched)
+2026-09-06 10:45:10            cut 3: airs 2026-09-06T16:00:00.000Z — ends 2026-09-06T22:00:00.000Z
+2026-09-06 10:45:10            cut 4: airs 2026-09-06T22:00:00.000Z — ends 2026-09-07T04:00:00.000Z
+2026-09-06 10:45:10     building the engine this programme will be watched on: npx vite build --base=./
+2026-09-06 10:45:19   vite v8.2.2 building client environment for production...
+2026-09-06 10:45:19   transforming...
+2026-09-06 10:45:19   ? 109 modules transformed.
+2026-09-06 10:45:19   rendering chunks...
+2026-09-06 10:45:19   computing gzip size...
+2026-09-06 10:45:19   dist/city.html                         9.45 kB ¦ gzip:   3.07 kB
+2026-09-06 10:45:19   dist/index.html                       32.15 kB ¦ gzip:   9.56 kB
+2026-09-06 10:45:19   dist/assets/07-softmax-BC5IJGgT.js     4.24 kB ¦ gzip:   1.75 kB
+2026-09-06 10:45:19   dist/assets/06-seafarer-BpxfBq-0.js    5.22 kB ¦ gzip:   1.85 kB
+2026-09-06 10:45:19   dist/assets/city-DbAZzjD9.js          34.80 kB ¦ gzip:  14.38 kB
+2026-09-06 10:45:19   dist/assets/sun-C0M5Hd8K.js          116.55 kB ¦ gzip:  41.59 kB
+2026-09-06 10:45:19   dist/assets/valley-DSsekKCu.js       380.86 kB ¦ gzip: 128.62 kB
+2026-09-06 10:45:19   
+2026-09-06 10:45:19   ? built in 233ms
+2026-09-06 10:45:19     built in 9.3s — assets/valley-DSsekKCu.js, assets/sun-C0M5Hd8K.js
+2026-09-06 10:45:19     NOTE: the tree is dirty, so commit 605b48999a76 is not what built this bundle. The
+2026-09-06 10:45:19           bundle name still pins the engine; the commit beside it does not fetch it.
+2026-09-06 10:45:19       Seafarer: a day filed by the keeper, by the house desk from agents/days/seafarer-cut3.json (2260 bytes, sha256 6942ed2d8bb00616), on cut 3; the model is not asked
+2026-09-06 10:45:21     cut 3: computed twice, identical to the byte (128892 bytes) — fit to air
+2026-09-06 10:45:21     cut 3: end state sha256 5c23a64bb89989e8… — the word the viewer's card will check
+2026-09-06 10:45:21     aired: C:\claude\games\frontier\episodes\episode-2026-09-06T144519-cut3.json (129.7 KiB, sha256 123362e10540c8cc…, 1.2s)
+2026-09-06 10:45:21       Seafarer: a day filed by the keeper, by the house desk from agents/days/seafarer-cut4.json (1757 bytes, sha256 32451816152c162e), on cut 4; the model is not asked
+2026-09-06 10:45:22     cut 4: computed twice, identical to the byte (128666 bytes) — fit to air
+2026-09-06 10:45:22     cut 4: end state sha256 22f885f96d0b399b… — the word the viewer's card will check
+2026-09-06 10:45:22     aired: C:\claude\games\frontier\episodes\episode-2026-09-06T144519-cut4.json (130.1 KiB, sha256 97d715ab858e934f…, 0.9s)
+2026-09-06 10:45:22     pointer: C:\claude\games\frontier\episodes\latest.json — 4 cuts, episode names cut 1 (episode-2026-09-06T034108-cut1.json)
+2026-09-06 10:45:22     next: 2 of 4 cut(s) still to come — episodes/next.json
+2026-09-06 10:45:22     ledger: 39 + 2 entries — episodes/aired.json
+2026-09-06 10:45:22     tomorrow starts where cut 4 ended: episodes/next-snapshot.json
