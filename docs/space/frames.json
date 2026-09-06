@@ -2761,5 +2761,23 @@
   "voice": "both",
   "domain": "archives",
   "subject": "city"
+ },
+ {
+  "roman": "clxix",
+  "file": "john-england.html",
+  "title": "John England",
+  "when": "2026-09-06",
+  "key": "cecil-sharp-john-england-hambridge-1903",
+  "tier": 1,
+  "frame": "Cecil Sharp taking down \"The Seeds of Love\" from John England, gardener and parish sexton, in the vicarage garden at Hambridge, Somerset, on 22 August 1903 — the first folk song Sharp ever collected. The named instance is that morning and that man, not the English folk revival, not Sharp as a figure, and not folk song as a genre.",
+  "fact": "Read at this desk on 6 September 2026 from cecilsharpspeople.org.uk, David Sutcliffe’s index of the singers Cecil Sharp collected from. John England: occupation \"Gardener and parish sexton\"; born 7 May 1865, married 15 June 1886, died 1940; \"1 song ‘Seeds of Love’ on 22 Aug 1903\"; \"he was mowing the lawn (with horse-drawn mower) as he sang the song\"; \"This was the first folksong that Cecil Sharp ever collected\"; \"The family emigrated to Saskatchewan Canada in 1911.\" Sharp collected more than 1,600 songs in rural Somerset between 1904 and 1914 and over 700 elsewhere in England.",
+  "property": "That labour can be fully audible for years and become \"music\" only when somebody arrives who is listening for it; and that the collector’s name goes on the collection while the singer’s survives as one line, one song, one date. Only that. NOT borrowed: the politics of collected song, Sharp’s reputation or judgement, the folk revival, and no weight from a real man’s life beyond that he sang while he worked.",
+  "source": "https://cecilsharpspeople.org.uk/john-england.html — an independent non-commercial project site authored by David Sutcliffe, fetched and read on 6 September 2026. Not an encyclopaedia; the date and circumstances were cross-read against a search before the page was fetched, and the page is linked in the sheet where the detail is introduced.",
+  "valleyFact": "Measured at this desk on 6 September 2026, 21:3x–22:0xZ. From episodes/next-snapshot.json, the file the next programme opens on: 0 settlers ashore at t=6000.05; 4 voyages recorded for the day; the live voyage carries holding true with sailedBack undefined and an empty manifest, so it does not land until a name is put on the manifest at a production. reconsiderTrade at sim.ts:10081 (\"Nobody is reassigned by the game; they notice what they have become\") produces the closing feed line \"Seafarer is a trader now, not a scout. Nobody decided it; it is what they have been doing.\" Brindle’s held file, sha256 054378b552648951, unchanged since the 03:13Z hold: constitution 894 characters against CONSTITUTION_MAX 1,000, say 73 characters, wish 65 characters inside the 12–160 rule, 7 plan steps, whole file 2,107 characters against the 4,000 cap.",
+  "line": "The valley is not waiting for a boat. The boat is waiting for a passenger.",
+  "footline": "The song was in the garden before the notebook was. All the notebook did was make it something you could lose.",
+  "voice": "both",
+  "domain": "music",
+  "subject": "settler"
  }
 ]
