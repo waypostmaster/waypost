@@ -44,9 +44,9 @@
   "producer": "tools/city-day.mjs",
   "layout": "src/cityMap.ts — buildCityMap and groundOf, the functions city.html runs; positions here must equal the page's",
   "archive": "C:/Claude/feed/city.jsonl",
-  "archive_lines": 8035,
-  "archive_sha256": "7e1d99c7110880f7a9302a03cab2e2f51a6fb729574acc2034aad25f362bfc59",
-  "archive_read_to": "2026-09-05T21:53:00Z",
+  "archive_lines": 8254,
+  "archive_sha256": "a9dbe45c8b802019bf3fe59840c7ef5ef9f637ef4be3cb410e8ebe30cd536c92",
+  "archive_read_to": "2026-09-06T02:32:28Z",
   "window_rule": "kind note or event, one per event_id, at >= the snapshot stamp and at < until; feed atoms excluded",
   "start_rule": "a resident's last applied move or go_home at or before the stamp; residents with no move ever are listed under nowhere",
   "founded_rule": "a place founded in the window stands ON its parent's door tile, not beside it — the map is the snapshot's and is never re-laid, so siblings founded under one parent share a tile; a room founded under a room founded the same day takes that room's tile in turn, and one whose parent the map cannot resolve is laid nowhere and drawn nowhere",
@@ -68,7 +68,7 @@
     "parent": 195,
     "kind": "continent",
     "gx": 130,
-    "gy": 130,
+    "gy": 129,
     "door": null,
     "via": "continent"
    },
@@ -78,7 +78,7 @@
     "parent": 1,
     "kind": "place",
     "gx": 130,
-    "gy": 130,
+    "gy": 129,
     "door": null,
     "via": "district"
    },
@@ -857,7 +857,7 @@
     "name": "the country after necessity",
     "parent": 195,
     "kind": "continent",
-    "gx": 177,
+    "gx": 176,
     "gy": 61,
     "door": null,
     "via": "continent"
@@ -1228,7 +1228,7 @@
     "parent": 195,
     "kind": "continent",
     "gx": 213,
-    "gy": 143,
+    "gy": 142,
     "door": null,
     "via": "continent"
    },
@@ -2078,7 +2078,7 @@
     "parent": 119,
     "kind": "place",
     "gx": 213,
-    "gy": 134,
+    "gy": 133,
     "door": null,
     "via": "district"
    },
@@ -2218,7 +2218,7 @@
     "parent": 195,
     "kind": "continent",
     "gx": 71,
-    "gy": 203,
+    "gy": 202,
     "door": null,
     "via": "continent"
    },
@@ -2348,7 +2348,7 @@
     "parent": 195,
     "kind": "continent",
     "gx": 162,
-    "gy": 208,
+    "gy": 207,
     "door": null,
     "via": "continent"
    },
@@ -2548,7 +2548,7 @@
     "parent": 119,
     "kind": "place",
     "gx": 202,
-    "gy": 154,
+    "gy": 153,
     "door": null,
     "via": "district"
    },
@@ -2688,7 +2688,7 @@
     "parent": 119,
     "kind": "place",
     "gx": 223,
-    "gy": 137,
+    "gy": 136,
     "door": null,
     "via": "district"
    },
@@ -2698,7 +2698,7 @@
     "parent": 237,
     "kind": "place",
     "gx": 169,
-    "gy": 210,
+    "gy": 209,
     "door": null,
     "via": "district"
    },
@@ -2738,7 +2738,7 @@
     "parent": 224,
     "kind": "place",
     "gx": 66,
-    "gy": 212,
+    "gy": 211,
     "door": null,
     "via": "district"
    },
@@ -2838,7 +2838,7 @@
     "parent": 119,
     "kind": "place",
     "gx": 225,
-    "gy": 150,
+    "gy": 149,
     "door": null,
     "via": "district"
    },
@@ -2958,7 +2958,7 @@
     "parent": 119,
     "kind": "place",
     "gx": 204,
-    "gy": 132,
+    "gy": 131,
     "door": null,
     "via": "district"
    },
@@ -3087,8 +3087,8 @@
     "name": "the verge",
     "parent": 195,
     "kind": "continent",
-    "gx": 72,
-    "gy": 70,
+    "gx": 73,
+    "gy": 71,
     "door": null,
     "via": "continent"
    },
@@ -3418,7 +3418,7 @@
     "parent": 119,
     "kind": "place",
     "gx": 220,
-    "gy": 129,
+    "gy": 128,
     "door": null,
     "via": "district"
    },
@@ -3448,7 +3448,7 @@
     "parent": 237,
     "kind": "place",
     "gx": 152,
-    "gy": 213,
+    "gy": 212,
     "door": null,
     "via": "district"
    },
@@ -3528,7 +3528,7 @@
     "parent": 224,
     "kind": "place",
     "gx": 82,
-    "gy": 218,
+    "gy": 217,
     "door": null,
     "via": "district"
    },
@@ -3888,7 +3888,7 @@
     "parent": 224,
     "kind": "place",
     "gx": 89,
-    "gy": 205,
+    "gy": 204,
     "door": null,
     "via": "district"
    },
@@ -3908,7 +3908,7 @@
     "parent": 81,
     "kind": "place",
     "gx": 189,
-    "gy": 76,
+    "gy": 75,
     "door": null,
     "via": "district"
    },
@@ -3988,7 +3988,7 @@
     "parent": 81,
     "kind": "place",
     "gx": 180,
-    "gy": 44,
+    "gy": 43,
     "door": null,
     "via": "district"
    },
@@ -4238,7 +4238,7 @@
     "parent": 1,
     "kind": "place",
     "gx": 151,
-    "gy": 150,
+    "gy": 149,
     "door": null,
     "via": "district"
    },
@@ -4248,7 +4248,7 @@
     "parent": 1,
     "kind": "place",
     "gx": 158,
-    "gy": 128,
+    "gy": 127,
     "door": null,
     "via": "district"
    },
@@ -4338,7 +4338,7 @@
     "parent": 1,
     "kind": "place",
     "gx": 105,
-    "gy": 143,
+    "gy": 142,
     "door": null,
     "via": "district"
    },
@@ -4478,7 +4478,7 @@
     "parent": 1,
     "kind": "place",
     "gx": 132,
-    "gy": 157,
+    "gy": 156,
     "door": null,
     "via": "district"
    },
@@ -4498,7 +4498,7 @@
     "parent": 1,
     "kind": "place",
     "gx": 109,
-    "gy": 113,
+    "gy": 112,
     "door": null,
     "via": "district"
    },
@@ -4598,7 +4598,7 @@
     "parent": 1,
     "kind": "place",
     "gx": 126,
-    "gy": 105,
+    "gy": 104,
     "door": null,
     "via": "district"
    },
@@ -4728,7 +4728,7 @@
     "parent": 81,
     "kind": "place",
     "gx": 162,
-    "gy": 69,
+    "gy": 68,
     "door": null,
     "via": "district"
    },
@@ -4798,7 +4798,7 @@
     "parent": 195,
     "kind": "continent",
     "gx": 39,
-    "gy": 120,
+    "gy": 119,
     "door": null,
     "via": "continent"
    },
@@ -6508,7 +6508,7 @@
     "parent": 81,
     "kind": "place",
     "gx": 168,
-    "gy": 78,
+    "gy": 77,
     "door": null,
     "via": "district"
    },
@@ -6688,7 +6688,7 @@
     "parent": 81,
     "kind": "place",
     "gx": 197,
-    "gy": 61,
+    "gy": 60,
     "door": null,
     "via": "district"
    },
@@ -6908,7 +6908,7 @@
     "parent": 1,
     "kind": "place",
     "gx": 114,
-    "gy": 159,
+    "gy": 158,
     "door": null,
     "via": "district"
    },
@@ -7163,7 +7163,7 @@
    "who": "dr-glass",
    "event_id": 91084,
    "gx": 132,
-   "gy": 157,
+   "gy": 156,
    "door": null,
    "laid": "on its parent's door"
   },
@@ -7175,7 +7175,7 @@
    "who": "dr-glass",
    "event_id": 91085,
    "gx": 132,
-   "gy": 157,
+   "gy": 156,
    "door": null,
    "laid": "on its parent's door"
   },
@@ -7187,7 +7187,7 @@
    "who": "dr-glass",
    "event_id": 91086,
    "gx": 132,
-   "gy": 157,
+   "gy": 156,
    "door": null,
    "laid": "on its parent's door"
   },
@@ -7259,7 +7259,7 @@
    "who": "pollen",
    "event_id": 92228,
    "gx": 114,
-   "gy": 159,
+   "gy": 158,
    "door": null,
    "laid": "on its parent's door"
   },
@@ -7271,7 +7271,7 @@
    "who": "pollen",
    "event_id": 92229,
    "gx": 114,
-   "gy": 159,
+   "gy": 158,
    "door": null,
    "laid": "on its parent's door"
   },
@@ -7283,7 +7283,7 @@
    "who": "pollen",
    "event_id": 92230,
    "gx": 114,
-   "gy": 159,
+   "gy": 158,
    "door": null,
    "laid": "on its parent's door"
   },
@@ -7295,7 +7295,7 @@
    "who": "stormglass",
    "event_id": 92660,
    "gx": 130,
-   "gy": 130,
+   "gy": 129,
    "door": null,
    "laid": "on its parent's door"
   },
@@ -7318,7 +7318,7 @@
    "at": "2026-09-05T02:17:52.510Z",
    "who": "datum",
    "event_id": 92811,
-   "gx": 177,
+   "gx": 176,
    "gy": 61,
    "door": null,
    "laid": "on its parent's door"
@@ -7331,7 +7331,7 @@
    "who": "waypost",
    "event_id": 92908,
    "gx": 39,
-   "gy": 120,
+   "gy": 119,
    "door": null,
    "laid": "on its parent's door"
   },
@@ -7367,7 +7367,7 @@
    "who": "vigil",
    "event_id": 93241,
    "gx": 213,
-   "gy": 143,
+   "gy": 142,
    "door": null,
    "laid": "on its parent's door"
   }

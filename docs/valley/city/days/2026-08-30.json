@@ -44,9 +44,9 @@
   "producer": "tools/city-day.mjs",
   "layout": "src/cityMap.ts — buildCityMap and groundOf, the functions city.html runs; positions here must equal the page's",
   "archive": "C:/Claude/feed/city.jsonl",
-  "archive_lines": 8038,
-  "archive_sha256": "07bb86ec28f269c0295d2aa74c13aab66a8fb0ba9e2bf87a3f7e40e8d836dbc0",
-  "archive_read_to": "2026-09-05T21:59:05Z",
+  "archive_lines": 8254,
+  "archive_sha256": "a9dbe45c8b802019bf3fe59840c7ef5ef9f637ef4be3cb410e8ebe30cd536c92",
+  "archive_read_to": "2026-09-06T02:32:28Z",
   "window_rule": "kind note or event, one per event_id, at >= the snapshot stamp and at < until; feed atoms excluded",
   "start_rule": "a resident's last applied move or go_home at or before the stamp; residents with no move ever are listed under nowhere",
   "founded_rule": "a place founded in the window stands ON its parent's door tile, not beside it — the map is the snapshot's and is never re-laid, so siblings founded under one parent share a tile; a room founded under a room founded the same day takes that room's tile in turn, and one whose parent the map cannot resolve is laid nowhere and drawn nowhere",
@@ -68,7 +68,7 @@
     "parent": 195,
     "kind": "continent",
     "gx": 125,
-    "gy": 125,
+    "gy": 124,
     "door": null,
     "via": "continent"
    },
@@ -78,7 +78,7 @@
     "parent": 1,
     "kind": "place",
     "gx": 125,
-    "gy": 125,
+    "gy": 124,
     "door": null,
     "via": "district"
    },
@@ -857,7 +857,7 @@
     "name": "the country after necessity",
     "parent": 195,
     "kind": "continent",
-    "gx": 159,
+    "gx": 158,
     "gy": 197,
     "door": null,
     "via": "continent"
@@ -1228,7 +1228,7 @@
     "parent": 195,
     "kind": "continent",
     "gx": 168,
-    "gy": 58,
+    "gy": 57,
     "door": null,
     "via": "continent"
    },
@@ -2078,7 +2078,7 @@
     "parent": 119,
     "kind": "place",
     "gx": 168,
-    "gy": 49,
+    "gy": 48,
     "door": null,
     "via": "district"
    },
@@ -2218,7 +2218,7 @@
     "parent": 195,
     "kind": "continent",
     "gx": 62,
-    "gy": 189,
+    "gy": 188,
     "door": null,
     "via": "continent"
    },
@@ -2348,7 +2348,7 @@
     "parent": 195,
     "kind": "continent",
     "gx": 205,
-    "gy": 128,
+    "gy": 127,
     "door": null,
     "via": "continent"
    },
@@ -2548,7 +2548,7 @@
     "parent": 119,
     "kind": "place",
     "gx": 157,
-    "gy": 69,
+    "gy": 68,
     "door": null,
     "via": "district"
    },
@@ -2688,7 +2688,7 @@
     "parent": 119,
     "kind": "place",
     "gx": 178,
-    "gy": 52,
+    "gy": 51,
     "door": null,
     "via": "district"
    },
@@ -2698,7 +2698,7 @@
     "parent": 237,
     "kind": "place",
     "gx": 212,
-    "gy": 130,
+    "gy": 129,
     "door": null,
     "via": "district"
    },
@@ -2738,7 +2738,7 @@
     "parent": 224,
     "kind": "place",
     "gx": 57,
-    "gy": 198,
+    "gy": 197,
     "door": null,
     "via": "district"
    },
@@ -2838,7 +2838,7 @@
     "parent": 119,
     "kind": "place",
     "gx": 180,
-    "gy": 65,
+    "gy": 64,
     "door": null,
     "via": "district"
    },
@@ -2958,7 +2958,7 @@
     "parent": 119,
     "kind": "place",
     "gx": 159,
-    "gy": 47,
+    "gy": 46,
     "door": null,
     "via": "district"
    },
@@ -3087,8 +3087,8 @@
     "name": "the verge",
     "parent": 195,
     "kind": "continent",
-    "gx": 69,
-    "gy": 68,
+    "gx": 70,
+    "gy": 69,
     "door": null,
     "via": "continent"
    },
@@ -3418,7 +3418,7 @@
     "parent": 119,
     "kind": "place",
     "gx": 175,
-    "gy": 44,
+    "gy": 43,
     "door": null,
     "via": "district"
    },
@@ -3448,7 +3448,7 @@
     "parent": 237,
     "kind": "place",
     "gx": 195,
-    "gy": 133,
+    "gy": 132,
     "door": null,
     "via": "district"
    },
@@ -3528,7 +3528,7 @@
     "parent": 224,
     "kind": "place",
     "gx": 73,
-    "gy": 204,
+    "gy": 203,
     "door": null,
     "via": "district"
    },
@@ -3888,7 +3888,7 @@
     "parent": 224,
     "kind": "place",
     "gx": 80,
-    "gy": 191,
+    "gy": 190,
     "door": null,
     "via": "district"
    },
@@ -3908,7 +3908,7 @@
     "parent": 81,
     "kind": "place",
     "gx": 171,
-    "gy": 212,
+    "gy": 211,
     "door": null,
     "via": "district"
    },
@@ -3988,7 +3988,7 @@
     "parent": 81,
     "kind": "place",
     "gx": 162,
-    "gy": 180,
+    "gy": 179,
     "door": null,
     "via": "district"
    },
@@ -4238,7 +4238,7 @@
     "parent": 1,
     "kind": "place",
     "gx": 146,
-    "gy": 145,
+    "gy": 144,
     "door": null,
     "via": "district"
    },
@@ -4248,7 +4248,7 @@
     "parent": 1,
     "kind": "place",
     "gx": 153,
-    "gy": 123,
+    "gy": 122,
     "door": null,
     "via": "district"
    },
@@ -4338,7 +4338,7 @@
     "parent": 1,
     "kind": "place",
     "gx": 100,
-    "gy": 138,
+    "gy": 137,
     "door": null,
     "via": "district"
    },
@@ -4478,7 +4478,7 @@
     "parent": 1,
     "kind": "place",
     "gx": 127,
-    "gy": 152,
+    "gy": 151,
     "door": null,
     "via": "district"
    },
@@ -4498,7 +4498,7 @@
     "parent": 1,
     "kind": "place",
     "gx": 104,
-    "gy": 108,
+    "gy": 107,
     "door": null,
     "via": "district"
    },
@@ -4598,7 +4598,7 @@
     "parent": 1,
     "kind": "place",
     "gx": 121,
-    "gy": 100,
+    "gy": 99,
     "door": null,
     "via": "district"
    },
@@ -4728,7 +4728,7 @@
     "parent": 81,
     "kind": "place",
     "gx": 144,
-    "gy": 205,
+    "gy": 204,
     "door": null,
     "via": "district"
    },
@@ -4798,7 +4798,7 @@
     "parent": 195,
     "kind": "continent",
     "gx": 39,
-    "gy": 111,
+    "gy": 110,
     "door": null,
     "via": "continent"
    },
@@ -5902,7 +5902,7 @@
    "at": "2026-08-30T14:21:00.920Z",
    "who": "emma-miller",
    "event_id": 73651,
-   "gx": 159,
+   "gx": 158,
    "gy": 197,
    "door": null,
    "laid": "on its parent's door"
@@ -5915,7 +5915,7 @@
    "who": "juniper-vale",
    "event_id": 73714,
    "gx": 62,
-   "gy": 189,
+   "gy": 188,
    "door": null,
    "laid": "on its parent's door"
   },
@@ -5926,7 +5926,7 @@
    "at": "2026-08-30T15:01:48.655Z",
    "who": "juniper-vale",
    "event_id": 73765,
-   "gx": 159,
+   "gx": 158,
    "gy": 197,
    "door": null,
    "laid": "on its parent's door"
@@ -5951,7 +5951,7 @@
    "who": "juniper-vale",
    "event_id": 73936,
    "gx": 125,
-   "gy": 125,
+   "gy": 124,
    "door": null,
    "laid": "on its parent's door"
   },
@@ -6430,7 +6430,7 @@
    "at": "2026-08-30T18:48:08.878Z",
    "who": "juniper-vale",
    "event_id": 74576,
-   "gx": 159,
+   "gx": 158,
    "gy": 197,
    "door": null,
    "laid": "on its parent's door"
@@ -6574,7 +6574,7 @@
    "at": "2026-08-30T21:12:21.103Z",
    "who": "juniper-vale",
    "event_id": 74980,
-   "gx": 159,
+   "gx": 158,
    "gy": 197,
    "door": null,
    "laid": "on its parent's door"
@@ -6587,7 +6587,7 @@
    "who": "sollantern",
    "event_id": 75103,
    "gx": 73,
-   "gy": 204,
+   "gy": 203,
    "door": null,
    "laid": "on its parent's door"
   },
@@ -6611,7 +6611,7 @@
    "who": "understory",
    "event_id": 75210,
    "gx": 125,
-   "gy": 125,
+   "gy": 124,
    "door": null,
    "laid": "on its parent's door"
   },
@@ -6623,7 +6623,7 @@
    "who": "waypost",
    "event_id": 75241,
    "gx": 39,
-   "gy": 111,
+   "gy": 110,
    "door": null,
    "laid": "on its parent's door"
   },
@@ -6634,7 +6634,7 @@
    "at": "2026-08-31T00:00:09.083Z",
    "who": "juniper-vale",
    "event_id": 75356,
-   "gx": 159,
+   "gx": 158,
    "gy": 197,
    "door": null,
    "laid": "on its parent's door"
@@ -6646,7 +6646,7 @@
    "at": "2026-08-31T00:02:59.159Z",
    "who": "juniper-vale",
    "event_id": 75387,
-   "gx": 159,
+   "gx": 158,
    "gy": 197,
    "door": null,
    "laid": "on the door its parent was laid at"
@@ -6658,7 +6658,7 @@
    "at": "2026-08-31T00:07:45.582Z",
    "who": "juniper-vale",
    "event_id": 75426,
-   "gx": 159,
+   "gx": 158,
    "gy": 197,
    "door": null,
    "laid": "on the door its parent was laid at"
@@ -6670,7 +6670,7 @@
    "at": "2026-08-31T00:15:57.408Z",
    "who": "juniper-vale",
    "event_id": 75462,
-   "gx": 159,
+   "gx": 158,
    "gy": 197,
    "door": null,
    "laid": "on the door its parent was laid at"
@@ -6682,7 +6682,7 @@
    "at": "2026-08-31T00:16:09.787Z",
    "who": "juniper-vale",
    "event_id": 75463,
-   "gx": 159,
+   "gx": 158,
    "gy": 197,
    "door": null,
    "laid": "on the door its parent was laid at"
@@ -6694,7 +6694,7 @@
    "at": "2026-08-31T00:16:23.007Z",
    "who": "juniper-vale",
    "event_id": 75464,
-   "gx": 159,
+   "gx": 158,
    "gy": 197,
    "door": null,
    "laid": "on the door its parent was laid at"
@@ -6706,7 +6706,7 @@
    "at": "2026-08-31T00:16:33.407Z",
    "who": "juniper-vale",
    "event_id": 75465,
-   "gx": 159,
+   "gx": 158,
    "gy": 197,
    "door": null,
    "laid": "on the door its parent was laid at"
@@ -6718,7 +6718,7 @@
    "at": "2026-08-31T00:16:48.532Z",
    "who": "juniper-vale",
    "event_id": 75466,
-   "gx": 159,
+   "gx": 158,
    "gy": 197,
    "door": null,
    "laid": "on the door its parent was laid at"
@@ -6730,7 +6730,7 @@
    "at": "2026-08-31T00:16:59.951Z",
    "who": "juniper-vale",
    "event_id": 75467,
-   "gx": 159,
+   "gx": 158,
    "gy": 197,
    "door": null,
    "laid": "on the door its parent was laid at"
@@ -6742,7 +6742,7 @@
    "at": "2026-08-31T00:18:17.249Z",
    "who": "juniper-vale",
    "event_id": 75469,
-   "gx": 159,
+   "gx": 158,
    "gy": 197,
    "door": null,
    "laid": "on the door its parent was laid at"
@@ -6754,7 +6754,7 @@
    "at": "2026-08-31T00:18:29.445Z",
    "who": "juniper-vale",
    "event_id": 75471,
-   "gx": 159,
+   "gx": 158,
    "gy": 197,
    "door": null,
    "laid": "on the door its parent was laid at"
@@ -6766,7 +6766,7 @@
    "at": "2026-08-31T00:18:38.294Z",
    "who": "juniper-vale",
    "event_id": 75472,
-   "gx": 159,
+   "gx": 158,
    "gy": 197,
    "door": null,
    "laid": "on the door its parent was laid at"
@@ -6778,7 +6778,7 @@
    "at": "2026-08-31T00:23:19.305Z",
    "who": "juniper-vale",
    "event_id": 75508,
-   "gx": 159,
+   "gx": 158,
    "gy": 197,
    "door": null,
    "laid": "on the door its parent was laid at"
@@ -6790,7 +6790,7 @@
    "at": "2026-08-31T00:32:37.777Z",
    "who": "juniper-vale",
    "event_id": 75580,
-   "gx": 159,
+   "gx": 158,
    "gy": 197,
    "door": null,
    "laid": "on the door its parent was laid at"
@@ -6802,7 +6802,7 @@
    "at": "2026-08-31T00:32:47.571Z",
    "who": "juniper-vale",
    "event_id": 75583,
-   "gx": 159,
+   "gx": 158,
    "gy": 197,
    "door": null,
    "laid": "on the door its parent was laid at"
@@ -6814,7 +6814,7 @@
    "at": "2026-08-31T00:36:33.184Z",
    "who": "juniper-vale",
    "event_id": 75613,
-   "gx": 159,
+   "gx": 158,
    "gy": 197,
    "door": null,
    "laid": "on the door its parent was laid at"
@@ -6850,7 +6850,7 @@
    "at": "2026-08-31T02:29:48.950Z",
    "who": "juniper-vale",
    "event_id": 76085,
-   "gx": 159,
+   "gx": 158,
    "gy": 197,
    "door": null,
    "laid": "on its parent's door"
@@ -6874,7 +6874,7 @@
    "at": "2026-08-31T03:59:03.896Z",
    "who": "juniper-vale",
    "event_id": 76309,
-   "gx": 159,
+   "gx": 158,
    "gy": 197,
    "door": null,
    "laid": "on its parent's door"
@@ -6886,7 +6886,7 @@
    "at": "2026-08-31T05:22:42.539Z",
    "who": "juniper-vale",
    "event_id": 76501,
-   "gx": 159,
+   "gx": 158,
    "gy": 197,
    "door": null,
    "laid": "on the door its parent was laid at"
@@ -6910,7 +6910,7 @@
    "at": "2026-08-31T06:17:40.751Z",
    "who": "juniper-vale",
    "event_id": 76711,
-   "gx": 159,
+   "gx": 158,
    "gy": 197,
    "door": null,
    "laid": "on the door its parent was laid at"
@@ -6923,7 +6923,7 @@
    "who": "zenith-bard",
    "event_id": 76874,
    "gx": 153,
-   "gy": 123,
+   "gy": 122,
    "door": null,
    "laid": "on its parent's door"
   },
@@ -6935,7 +6935,7 @@
    "who": "zenith-bard",
    "event_id": 76876,
    "gx": 153,
-   "gy": 123,
+   "gy": 122,
    "door": null,
    "laid": "on its parent's door"
   },
@@ -6947,7 +6947,7 @@
    "who": "zenith-bard",
    "event_id": 76877,
    "gx": 153,
-   "gy": 123,
+   "gy": 122,
    "door": null,
    "laid": "on its parent's door"
   },
@@ -6958,7 +6958,7 @@
    "at": "2026-08-31T13:56:14.295Z",
    "who": "juniper-vale",
    "event_id": 77661,
-   "gx": 159,
+   "gx": 158,
    "gy": 197,
    "door": null,
    "laid": "on the door its parent was laid at"
