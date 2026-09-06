@@ -317,3 +317,85 @@
 2026-09-04 23:41:19 deployed to the mast (waypost.quest/valley/): tonight's four cuts, aired 2026-09-05T04:00:00Z
 2026-09-04 23:41:21 and on the new mast (frontier-valley/mast): tonight's four cuts, aired 2026-09-05T04:00:00Z
 2026-09-04 23:41:21 aired and on the masts
+2026-09-04 23:46:13 deployed to the mast (waypost.quest/valley/): rebuilt: the Seafarer recalled to the valley dock at the keeper's word, aired 2026-09-05T04:00:00Z
+2026-09-04 23:46:16 and on the new mast (frontier-valley/mast): rebuilt: the Seafarer recalled to the valley dock at the keeper's word, aired 2026-09-05T04:00:00Z
+2026-09-05 00:40:01 not the production hour (04:40Z); nothing to do
+2026-09-05 01:40:01 not the production hour (05:40Z); nothing to do
+2026-09-05 02:40:01 not the production hour (06:40Z); nothing to do
+2026-09-05 03:40:01 not the production hour (07:40Z); nothing to do
+2026-09-05 04:40:01 not the production hour (08:40Z); nothing to do
+2026-09-05 05:40:01 not the production hour (09:40Z); nothing to do
+2026-09-05 06:40:02 not the production hour (10:40Z); nothing to do
+2026-09-05 07:40:01 not the production hour (11:40Z); nothing to do
+2026-09-05 08:40:01 not the production hour (12:40Z); nothing to do
+2026-09-05 09:40:01 not the production hour (13:40Z); nothing to do
+2026-09-05 10:40:01 not the production hour (14:40Z); nothing to do
+2026-09-05 11:40:02 not the production hour (15:40Z); nothing to do
+2026-09-05 12:40:02 not the production hour (16:40Z); nothing to do
+2026-09-05 13:40:01 not the production hour (17:40Z); nothing to do
+2026-09-05 14:40:01 not the production hour (18:40Z); nothing to do
+2026-09-05 15:40:01 not the production hour (19:40Z); nothing to do
+2026-09-05 16:40:01 not the production hour (20:40Z); nothing to do
+2026-09-05 17:40:01 not the production hour (21:40Z); nothing to do
+2026-09-05 18:40:01 not the production hour (22:40Z); nothing to do
+2026-09-05 19:40:01 not the production hour (23:40Z); nothing to do
+2026-09-05 20:40:01 not the production hour (00:40Z); nothing to do
+2026-09-05 21:40:01 not the production hour (01:40Z); nothing to do
+2026-09-05 22:40:01 not the production hour (02:40Z); nothing to do
+2026-09-05 23:40:01 --- transmission begins ---
+2026-09-05 23:40:04   gate: npx tsc --noEmit passed
+2026-09-05 23:41:02   gate: npm run check:replay passed
+2026-09-05 23:41:03   gate: npm run check:landing passed
+2026-09-05 23:41:05   gate: npm run check:day passed
+2026-09-05 23:41:05   producing for 2026-09-06T04:00:00Z - four cuts of 21600 ticks (04:00, 10:00, 16:00, 22:00Z)
+2026-09-05 23:41:06   joining: nobody (agents/joining/ is empty or every file was refused)
+2026-09-05 23:41:06   recall: nobody (agents/recall/ is empty or absent)
+2026-09-05 23:41:06       nobody is being returned: every settler who was asked has acceded
+2026-09-05 23:41:06   episode: 4 cut(s) of 21600 ticks GÇö 6000 steps of 0.05 each GÇö from a 113498-byte snapshot
+2026-09-05 23:41:06            day 2026-09-06, cuts 1..4 produced this run; 1.50 valley days a cut, 6.00 in the day
+2026-09-05 23:41:06            cut 1: airs 2026-09-06T04:00:00.000Z GÇö ends 2026-09-06T10:00:00.000Z
+2026-09-05 23:41:06            cut 2: airs 2026-09-06T10:00:00.000Z GÇö ends 2026-09-06T16:00:00.000Z
+2026-09-05 23:41:06            cut 3: airs 2026-09-06T16:00:00.000Z GÇö ends 2026-09-06T22:00:00.000Z
+2026-09-05 23:41:06            cut 4: airs 2026-09-06T22:00:00.000Z GÇö ends 2026-09-07T04:00:00.000Z
+2026-09-05 23:41:06     building the engine this programme will be watched on: npx vite build --base=./
+2026-09-05 23:41:08   [36mvite v8.2.2 [32mbuilding client environment for production...[36m[39m
+2026-09-05 23:41:08   transforming...
+2026-09-05 23:41:08   G£ô 109 modules transformed.
+2026-09-05 23:41:08   rendering chunks...
+2026-09-05 23:41:08   computing gzip size...
+2026-09-05 23:41:08   dist/city.html                         9.45 kB Göé gzip:   3.07 kB
+2026-09-05 23:41:08   dist/index.html                       32.15 kB Göé gzip:   9.56 kB
+2026-09-05 23:41:08   dist/assets/07-softmax-BC5IJGgT.js     4.24 kB Göé gzip:   1.75 kB
+2026-09-05 23:41:08   dist/assets/06-seafarer-BpxfBq-0.js    5.22 kB Göé gzip:   1.85 kB
+2026-09-05 23:41:08   dist/assets/city-DbAZzjD9.js          34.80 kB Göé gzip:  14.38 kB
+2026-09-05 23:41:08   dist/assets/sun-C0M5Hd8K.js          116.55 kB Göé gzip:  41.59 kB
+2026-09-05 23:41:08   dist/assets/valley-Dp0c5iv4.js       380.86 kB Göé gzip: 128.62 kB
+2026-09-05 23:41:08   
+2026-09-05 23:41:08   [32mG£ô built in 116ms[39m
+2026-09-05 23:41:08     built in 2.1s GÇö assets/valley-Dp0c5iv4.js, assets/sun-C0M5Hd8K.js
+2026-09-05 23:41:08     NOTE: the tree is dirty, so commit 92aee343f97f is not what built this bundle. The
+2026-09-05 23:41:08           bundle name still pins the engine; the commit beside it does not fetch it.
+2026-09-05 23:41:08       Seafarer: a day filed by the keeper from agents/days/seafarer.json (4715 bytes, sha256 ecd97af0370ba3a8), on cut 1; the model is not asked
+2026-09-05 23:41:08     1 flight plan(s) filed, 0 by the model
+2026-09-05 23:41:09     cut 1: computed twice, identical to the byte (128624 bytes) GÇö fit to air
+2026-09-05 23:41:09     cut 1: end state sha256 c41bb40caf86b849GÇª GÇö the word the viewer's card will check
+2026-09-05 23:41:09     aired: C:\claude\games\frontier\episodes\episode-2026-09-06T034108-cut1.json (116.5 KiB, sha256 6316e3169d843162GÇª, 1.5s)
+2026-09-05 23:41:28       Seafarer: a day filed, 18050ms
+2026-09-05 23:41:28     1 flight plan(s) filed, 1 by the model
+2026-09-05 23:41:29     cut 2: computed twice, identical to the byte (128210 bytes) GÇö fit to air
+2026-09-05 23:41:29     cut 2: end state sha256 016d4bba8682719bGÇª GÇö the word the viewer's card will check
+2026-09-05 23:41:29     aired: C:\claude\games\frontier\episodes\episode-2026-09-06T034108-cut2.json (129.5 KiB, sha256 4462066331bbc277GÇª, 19.3s)
+2026-09-05 23:41:57       Seafarer: a day filed, 27029ms
+2026-09-05 23:41:57     1 flight plan(s) filed, 1 by the model
+2026-09-05 23:41:58     cut 3: computed twice, identical to the byte (127913 bytes) GÇö fit to air
+2026-09-05 23:41:58     cut 3: end state sha256 acefd98c7e781c63GÇª GÇö the word the viewer's card will check
+2026-09-05 23:41:58     aired: C:\claude\games\frontier\episodes\episode-2026-09-06T034108-cut3.json (129.3 KiB, sha256 19954c82592f1e53GÇª, 28.3s)
+2026-09-05 23:42:24       Seafarer: a day filed, 26082ms
+2026-09-05 23:42:24     1 flight plan(s) filed, 1 by the model
+2026-09-05 23:42:25     cut 4: computed twice, identical to the byte (127699 bytes) GÇö fit to air
+2026-09-05 23:42:25     cut 4: end state sha256 63b78f224d715869GÇª GÇö the word the viewer's card will check
+2026-09-05 23:42:25     aired: C:\claude\games\frontier\episodes\episode-2026-09-06T034108-cut4.json (128.8 KiB, sha256 5d15811839bb5674GÇª, 27.3s)
+2026-09-05 23:42:25     pointer: C:\claude\games\frontier\episodes\latest.json GÇö 4 cuts, episode names cut 1 (episode-2026-09-06T034108-cut1.json)
+2026-09-05 23:42:25     next: 4 of 4 cut(s) still to come GÇö episodes/next.json
+2026-09-05 23:42:25     ledger: 35 + 4 entries GÇö episodes/aired.json
+2026-09-05 23:42:25     tomorrow starts where cut 4 ended: episodes/next-snapshot.json
