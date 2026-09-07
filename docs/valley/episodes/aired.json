@@ -884,5 +884,41 @@
   },
   "sealed_at": "2026-09-07T15:17:42.106Z",
   "replaces": "episode-2026-09-07T034107-cut4.json"
+ },
+ {
+  "file": "episode-2026-09-07T152132-cut3.json",
+  "cut": 3,
+  "day": "2026-09-07",
+  "aired_at": "2026-09-07T16:00:00.000Z",
+  "ends_at": "2026-09-07T22:00:00.000Z",
+  "ticks": 21600,
+  "sha256": "d9bbcae5c73c00552ed073265c015959812d97c9da081f77179399e75ee36e23",
+  "engine": {
+   "commit": "b097da74a506",
+   "dirty": true,
+   "bundle": "assets/valley-BIWSLnAP.js",
+   "sun": "assets/sun-C0M5Hd8K.js",
+   "built_at": "2026-09-07T15:21:32.943Z"
+  },
+  "sealed_at": "2026-09-07T15:21:33.891Z",
+  "replaces": "episode-2026-09-07T151739-cut3.json"
+ },
+ {
+  "file": "episode-2026-09-07T152132-cut4.json",
+  "cut": 4,
+  "day": "2026-09-07",
+  "aired_at": "2026-09-07T22:00:00.000Z",
+  "ends_at": "2026-09-08T04:00:00.000Z",
+  "ticks": 21600,
+  "sha256": "a1df22e6af9bfa75b954a58ee567fef82c653b8073f332527dedb8886eeecfd0",
+  "engine": {
+   "commit": "b097da74a506",
+   "dirty": true,
+   "bundle": "assets/valley-BIWSLnAP.js",
+   "sun": "assets/sun-C0M5Hd8K.js",
+   "built_at": "2026-09-07T15:21:32.943Z"
+  },
+  "sealed_at": "2026-09-07T15:21:35.071Z",
+  "replaces": "episode-2026-09-07T151739-cut4.json"
  }
 ]
