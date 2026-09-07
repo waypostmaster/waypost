@@ -2779,5 +2779,23 @@
   "voice": "both",
   "domain": "music",
   "subject": "settler"
+ },
+ {
+  "roman": "clxx",
+  "file": "the-colonnade.html",
+  "title": "The Colonnade",
+  "when": "2026-09-06",
+  "key": "nurse-log-colonnade-spruce-nature-trail",
+  "tier": 2,
+  "frame": "The nurse log and the colonnade: fallen trunks in temperate rainforest on which seedlings germinate, and the rows of centuries-old trees left standing in a straight line after the log beneath them has rotted away. Instanced at the Spruce Nature Trail, Olympic National Park, where the National Park Service points visitors at every stage of it. Tier 2 and recorded as tier 2: the frame is the phenomenon, and the trail is where it is documented rather than the subject.",
+  "fact": "Read at this desk on 6 September 2026 from the National Park Service page for the Spruce Nature Trail, Olympic National Park, nps.gov. Verbatim: “This is a great place to look for the fascinating phenomenon known as ‘nurse logs’ - fallen trees which provide a place for new seedlings to grow.” And: “You can see them at every stage, from the new-fallen log with brand new baby trees sprouting on it to the rows of centuries-old trees whose ‘nurse log’ has long since rotted away, leaving them standing in a perfectly straight line, called a colonnade.”",
+  "property": "That the shape of what a thing grew on stays visible after that thing is entirely gone. Only that. NOT borrowed: forest ecology, the age or species of the trees, decay as a metaphor for software ageing, any suggestion that a dependency is dying, and no claim that code is alive.",
+  "source": "https://www.nps.gov/places/000/spruce-nature-trail.htm — the National Park Service’s own page for the trail, fetched and read on 6 September 2026, and linked in the sheet where the quotation is introduced. An official body rather than an encyclopaedia; no Wikipedia host is named in this sheet.",
+  "valleyFact": "Measured at this desk on 6 September 2026, 22:0x–22:1xZ. Frontier’s package.json holds six runtime dependencies and no others: @latticekit/core, iso, draw, loop, input and ui, all 0.1.1. The npm registry gives @latticekit/core created 2026-08-18T18:01:16.787Z under a single maintainer account. Every package’s repository field is git+https://github.com/C-Aniruddh/lattice.git, which answers 301 to plausibleventures/lattice, created 2026-08-16T06:08:27Z, TypeScript, 36 stars, described as “Isometric games made easy — an agentic game kit.” From the GitHub API on the same account: DeepConversation created 2017-06-30T12:37:14Z (Python, 7 stars, 4 commits, README naming a TensorFlow seq2seq model on the Cornell Movie Dialogue corpus deployed to Telegram); ACEMusicPlayer created 2015-01-06T11:55:29Z (Java, 312 stars); xPlodMusic created 2014-08-01T17:15:30Z (Java, 26 stars); profile bio “ML Infra @ Tesla Autopilot”, 143 repositories. And lattice.plausible.ventures resolves to 198.54.117.242, refuses connection on 443, and answers 200 on port 80 with a Namecheap page titled “Registrant WHOIS contact information verification”; /api.json is unreachable with it.",
+  "line": "Four commits. Seven stars. Nobody wrote a sheet about it.",
+  "footline": "A colonnade is not a row of trees that agreed to line up. It is the shape of something that got there first.",
+  "voice": "record",
+  "domain": "forestry",
+  "subject": "engine"
  }
 ]
