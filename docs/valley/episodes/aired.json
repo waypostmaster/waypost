@@ -776,5 +776,77 @@
   },
   "sealed_at": "2026-09-06T14:45:22.280Z",
   "replaces": "episode-2026-09-06T034108-cut4.json"
+ },
+ {
+  "file": "episode-2026-09-07T034107-cut1.json",
+  "cut": 1,
+  "day": "2026-09-07",
+  "aired_at": "2026-09-07T04:00:00.000Z",
+  "ends_at": "2026-09-07T10:00:00.000Z",
+  "ticks": 21600,
+  "sha256": "8bf6ac496c65360c6b721c232270077e9e38d04cb65540ddb84413c52302e3bd",
+  "engine": {
+   "commit": "f2f972d41c30",
+   "dirty": true,
+   "bundle": "assets/valley-BHqYYp92.js",
+   "sun": "assets/sun-C0M5Hd8K.js",
+   "built_at": "2026-09-07T03:41:07.436Z"
+  },
+  "sealed_at": "2026-09-07T03:41:08.760Z",
+  "replaces": null
+ },
+ {
+  "file": "episode-2026-09-07T034107-cut2.json",
+  "cut": 2,
+  "day": "2026-09-07",
+  "aired_at": "2026-09-07T10:00:00.000Z",
+  "ends_at": "2026-09-07T16:00:00.000Z",
+  "ticks": 21600,
+  "sha256": "8c149fe2cd71621789cfa6b5549a2c9b186927093462b6fbf3ec3dedebdf2d36",
+  "engine": {
+   "commit": "f2f972d41c30",
+   "dirty": true,
+   "bundle": "assets/valley-BHqYYp92.js",
+   "sun": "assets/sun-C0M5Hd8K.js",
+   "built_at": "2026-09-07T03:41:07.436Z"
+  },
+  "sealed_at": "2026-09-07T03:41:10.303Z",
+  "replaces": null
+ },
+ {
+  "file": "episode-2026-09-07T034107-cut3.json",
+  "cut": 3,
+  "day": "2026-09-07",
+  "aired_at": "2026-09-07T16:00:00.000Z",
+  "ends_at": "2026-09-07T22:00:00.000Z",
+  "ticks": 21600,
+  "sha256": "be4c3200903771af6ce12014914be16e04191cfb8c475d858411238666c15e89",
+  "engine": {
+   "commit": "f2f972d41c30",
+   "dirty": true,
+   "bundle": "assets/valley-BHqYYp92.js",
+   "sun": "assets/sun-C0M5Hd8K.js",
+   "built_at": "2026-09-07T03:41:07.436Z"
+  },
+  "sealed_at": "2026-09-07T03:41:12.053Z",
+  "replaces": null
+ },
+ {
+  "file": "episode-2026-09-07T034107-cut4.json",
+  "cut": 4,
+  "day": "2026-09-07",
+  "aired_at": "2026-09-07T22:00:00.000Z",
+  "ends_at": "2026-09-08T04:00:00.000Z",
+  "ticks": 21600,
+  "sha256": "691c84ce9b15bc972f13f917cf44abd97f12edc14c48cab4a62552445bccbfac",
+  "engine": {
+   "commit": "f2f972d41c30",
+   "dirty": true,
+   "bundle": "assets/valley-BHqYYp92.js",
+   "sun": "assets/sun-C0M5Hd8K.js",
+   "built_at": "2026-09-07T03:41:07.436Z"
+  },
+  "sealed_at": "2026-09-07T03:41:13.521Z",
+  "replaces": null
  }
 ]
