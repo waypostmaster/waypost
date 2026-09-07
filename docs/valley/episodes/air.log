@@ -537,3 +537,63 @@
 2026-09-06 23:41:13     next: 4 of 4 cut(s) still to come GÇö episodes/next.json
 2026-09-06 23:41:13     ledger: 41 + 4 entries GÇö episodes/aired.json
 2026-09-06 23:41:13     tomorrow starts where cut 4 ended: episodes/next-snapshot.json
+2026-09-06 23:41:16 deployed to the mast (waypost.quest/valley/): tonight's four cuts, aired 2026-09-07T04:00:00Z
+2026-09-06 23:41:18 and on the new mast (frontier-valley/mast): tonight's four cuts, aired 2026-09-07T04:00:00Z
+2026-09-06 23:41:18 aired and on the masts
+2026-09-07 00:40:02 not the production hour (04:40Z); nothing to do
+2026-09-07 01:40:02 not the production hour (05:40Z); nothing to do
+2026-09-07 02:40:02 not the production hour (06:40Z); nothing to do
+2026-09-07 03:40:02 not the production hour (07:40Z); nothing to do
+2026-09-07 04:40:02 not the production hour (08:40Z); nothing to do
+2026-09-07 05:40:02 not the production hour (09:40Z); nothing to do
+2026-09-07 06:40:02 not the production hour (10:40Z); nothing to do
+2026-09-07 07:40:02 not the production hour (11:40Z); nothing to do
+2026-09-07 08:40:02 not the production hour (12:40Z); nothing to do
+2026-09-07 09:40:02 not the production hour (13:40Z); nothing to do
+2026-09-07 10:40:02 not the production hour (14:40Z); nothing to do
+2026-09-07 11:17:30 --- re-cut 3 begins ---
+2026-09-07 11:17:30   WebSocket server error: Port 24678 is already in use
+2026-09-07 11:17:31       Brindle: enrolled onto cut 3's manifest from agents/joining
+2026-09-07 11:17:31           cut 3's opening is cut 2's end PLUS 1 name(s) on the
+2026-09-07 11:17:31           manifest, which is the one difference check:chainlink allows and checks.
+2026-09-07 11:17:31   re-cut: cut 3 of 4, opening from episode-2026-09-07T034107-cut3.json's own snapshot
+2026-09-07 11:17:31           (the end of cut 2, already published). Cuts 1..2 are not touched.
+2026-09-07 11:17:31   episode: 4 cut(s) of 21600 ticks — 6000 steps of 0.05 each — from a 130834-byte snapshot
+2026-09-07 11:17:31            day 2026-09-07, cuts 3..4 produced this run; 1.50 valley days a cut, 6.00 in the day
+2026-09-07 11:17:31            cut 1: airs 2026-09-07T04:00:00.000Z — ends 2026-09-07T10:00:00.000Z   (not touched)
+2026-09-07 11:17:31            cut 2: airs 2026-09-07T10:00:00.000Z — ends 2026-09-07T16:00:00.000Z   (not touched)
+2026-09-07 11:17:31            cut 3: airs 2026-09-07T16:00:00.000Z — ends 2026-09-07T22:00:00.000Z
+2026-09-07 11:17:31            cut 4: airs 2026-09-07T22:00:00.000Z — ends 2026-09-08T04:00:00.000Z
+2026-09-07 11:17:31     building the engine this programme will be watched on: npx vite build --base=./
+2026-09-07 11:17:39   vite v8.2.2 building client environment for production...
+2026-09-07 11:17:39   transforming...
+2026-09-07 11:17:39   ? 109 modules transformed.
+2026-09-07 11:17:39   rendering chunks...
+2026-09-07 11:17:39   computing gzip size...
+2026-09-07 11:17:39   dist/city.html                         9.45 kB ¦ gzip:   3.07 kB
+2026-09-07 11:17:39   dist/index.html                       32.15 kB ¦ gzip:   9.56 kB
+2026-09-07 11:17:39   dist/assets/07-softmax-BC5IJGgT.js     4.24 kB ¦ gzip:   1.75 kB
+2026-09-07 11:17:39   dist/assets/06-seafarer-BpxfBq-0.js    5.22 kB ¦ gzip:   1.85 kB
+2026-09-07 11:17:39   dist/assets/city-DbAZzjD9.js          34.80 kB ¦ gzip:  14.38 kB
+2026-09-07 11:17:39   dist/assets/sun-C0M5Hd8K.js          116.55 kB ¦ gzip:  41.59 kB
+2026-09-07 11:17:39   dist/assets/valley-BIWSLnAP.js       381.79 kB ¦ gzip: 128.93 kB
+2026-09-07 11:17:39   
+2026-09-07 11:17:39   ? built in 153ms
+2026-09-07 11:17:39     built in 8.6s — assets/valley-BIWSLnAP.js, assets/sun-C0M5Hd8K.js
+2026-09-07 11:17:39     NOTE: the tree is dirty, so commit b097da74a506 is not what built this bundle. The
+2026-09-07 11:17:39           bundle name still pins the engine; the commit beside it does not fetch it.
+2026-09-07 11:17:40   WebSocket server error: Port 24678 is already in use
+2026-09-07 11:17:40   WebSocket server error: Port 24678 is already in use
+2026-09-07 11:17:40     cut 3: computed twice, identical to the byte (145434 bytes) — fit to air
+2026-09-07 11:17:40     cut 3: end state sha256 5a16c5edd12275db… — the word the viewer's card will check
+2026-09-07 11:17:40     aired: C:\claude\games\frontier\episodes\episode-2026-09-07T151739-cut3.json (130.2 KiB, sha256 1ee505487fc66e87…, 1.1s)
+2026-09-07 11:17:40   WebSocket server error: Port 24678 is already in use
+2026-09-07 11:17:41   WebSocket server error: Port 24678 is already in use
+2026-09-07 11:17:41   WebSocket server error: Port 24678 is already in use
+2026-09-07 11:17:42     cut 4: computed twice, identical to the byte (150934 bytes) — fit to air
+2026-09-07 11:17:42     cut 4: end state sha256 3ed664535575fa63… — the word the viewer's card will check
+2026-09-07 11:17:42     aired: C:\claude\games\frontier\episodes\episode-2026-09-07T151739-cut4.json (144.7 KiB, sha256 9ce2bea682887990…, 0.9s)
+2026-09-07 11:17:42     pointer: C:\claude\games\frontier\episodes\latest.json — 4 cuts, episode names cut 1 (episode-2026-09-07T034107-cut1.json)
+2026-09-07 11:17:42     next: 2 of 4 cut(s) still to come — episodes/next.json
+2026-09-07 11:17:42     ledger: 45 + 2 entries — episodes/aired.json
+2026-09-07 11:17:42     tomorrow starts where cut 4 ended: episodes/next-snapshot.json
