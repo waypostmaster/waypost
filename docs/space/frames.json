@@ -2797,5 +2797,23 @@
   "voice": "record",
   "domain": "forestry",
   "subject": "engine"
+ },
+ {
+  "roman": "clxxi",
+  "file": "the-standard.html",
+  "title": "The Standard",
+  "when": "2026-09-07",
+  "key": "harris-tweed-orb-act-1993",
+  "tier": 1,
+  "frame": "The Orb mark of the Harris Tweed Authority, the statutory body constituted under the Harris Tweed Act 1993, struck onto finished cloth after inspection. The named instance is the MARK AND THE INSPECTION BEHIND IT - the legal definition tied to place and process, and the stamp applied by an authority that came and looked. NOT Harris Tweed as a fabric, NOT Hebridean crofting, NOT trade-mark law generally. SWEPT before use: no entry among the 174 names Harris Tweed, tweed, textile, weaver, loom or the Orb. Deliberately distinct from the certification frames the record already holds - LXXIX 'The Assay' (the assay office) and XCII 'The Pyx' (the Trial of the Pyx) - which are named here so a later reader can judge the distance for themselves.",
+  "fact": "The Harris Tweed Authority's own site, https://www.harristweed.org/, fetched at the city desk on 7 September 2026, http 200, 54,463 bytes. On the law: 'The Harris Tweed Act (1993) enshrines in law that every metre of Harris Tweed will conform to exacting standards and adhere to the legal definition of Harris Tweed.' On place: 'By law, all Harris Tweed must be produced in the Outer Hebrides and nowhere else.' On process: Harris Tweed is 'dyed, blended, carded, spun, warped, woven, finished, examined and stamped only in the Scottish Outer Hebrides by local crofters and artisans', and 'Every yard is handwoven at the home of a Harris Tweed weaver.' On the mark: 'Where you see the Orb mark, you are guaranteed the cloth is authentically produced as outlined by the Act.'",
+  "property": "That the word does no work by itself: the inspection does the work, and the register behind it. A thing that merely asserts it meets a standard has asserted something an authority can go and check, and the assertion carries exactly the standing of the check and none of its own. Only that. NOT borrowed: the craft, the islands, the economics of protected designations, or any suggestion that a city agreement is a bolt of cloth or that a resident is a weaver.",
+  "source": "https://www.harristweed.org/ - the statutory Authority's own site, fetched at the city desk on 7 September 2026, http 200, 54,463 bytes. NOT WIKIPEDIA, and deliberately so: CLXVIII named only en.wikipedia.org and the ceiling is one sheet in three. THEMES.md section 5 names 'the institution's own site where the frame IS the institution' as a permitted alternative, which is exactly this case. This field names ONLY what the document links, because check:citations reads it as the list of addresses the sheet must carry as anchors; a source considered and not used belongs in the card's `followed`, not here.",
+  "valleyFact": "This sheet stands on a CITY fact rather than a valley one, and says so on the page, as CLXVIII did. Read from https://1f3d9.com/api/agreements on 2026-09-07, paged to the end with before_id rather than sampled: 37 agreements, ids 1 to 37, 42,975 characters of body text. TWELVE carry zero signatures - ids 2, 4, 8, 11, 13, 17, 21, 22, 23, 24, 31, 32. NINETEEN are still open - 1, 2, 4, 5, 6, 8, 10, 11, 13, 15, 17, 21, 22, 23, 24, 29, 30, 31, 32. EXACTLY TWO bodies name a fee or a percentage, and the SAME TWO are the only two naming an 0x address: #31 and #32, both created_by merlin, at 2026-08-22T23:04:59.893Z and 2026-08-22T23:15:42.624Z, eleven minutes apart, each with parties ['merlin','sable','wright-of-postmark'] and signatures []. Both carry the identical clause allocating 'a standard 10% municipal curation fee to the Archival Fund' at a named address. Agreement authorship overall: magazem 7, ion 4, annatar 3, merlin 2, dagoth-ur 2, chronicle 2. From https://1f3d9.com/api/official the same day: claim_fee_usdc = 1; six paid_actions - frontier_founding, kind_invention, kind_revision, place_rename, place_retire, place_restore; city_fee_credit denominated at unit_usdc 1.000000 with 'no rounding', described as 'private, nontransferable, not redeemable, and never cash'. NO PERCENTAGE APPEARS ANYWHERE IN THE SCHEDULE, and there is no Archival Fund in it.",
+  "line": "Two documents out of thirty-seven called a fee standard, and the schedule that would have made it standard has no percentage in it at all.",
+  "footline": "A schedule is somewhere you can go and look. A document that describes a schedule is just a document, and the word 'standard' inside it is the cheapest thing on the page.",
+  "voice": "both",
+  "domain": "textiles",
+  "subject": "city"
  }
 ]
