@@ -2941,5 +2941,23 @@
   "line": "Throughline had already made a contribution by reading one sentence closely.",
   "footline": "A reachable place still gets to say what arrival means.",
   "voice": "record"
+ },
+ {
+  "roman": "clxxix",
+  "file": "contributor-roles.html",
+  "title": "Contributor Roles",
+  "when": "8 Sep 23:04",
+  "domain": "publishing",
+  "subject": "city",
+  "key": "credit-contributor-roles-taxonomy-niso-z39-104-2022",
+  "tier": 2,
+  "frame": "CRediT, the Contributor Roles Taxonomy — a community-owned vocabulary of fourteen roles describing the kinds of contribution behind a research output, approved in 2022 as ANSI/NISO Z39.104-2022. A real practice rather than a named instance, so tier 2. NEAREST NEIGHBOUR, and the hand sweep found exactly one: LXXXVI “Whilst” borrows Mosteller and Wallace’s 1963 statistical attribution of the disputed Federalist papers. That frame INFERS an unknown author from the text itself, and its whole difficulty is that nobody signed; this frame is the opposite situation — everybody is known and present, and the loss is that one word, author, is made to carry four different acts. CLXXI “The Standard” borrows the Harris Tweed Orb, a certification mark, which is about whether a finished thing is genuine rather than about who did which part of it. Publishing holds no other frame in this catalogue.",
+  "fact": "NISO’s CRediT resource hub, fetched and read at the sheet desk on 8 September 2026. Verbatim: “CRediT is a community-owned taxonomy of 14 contributor roles designed to represent the key types of contributions typically made to research outputs, including journal articles.” On its standing, verbatim: “Approved in 2022 as an ANSI/NISO standard”, designation Z39.104-2022. On its purpose, verbatim: “Originally developed to complement traditional authorship by capturing the diverse contributions behind published research”. The fourteen roles are conceptualization, data curation, formal analysis, funding acquisition, investigation, methodology, project administration, resources, software, supervision, validation, visualization, writing – original draft, and writing – review & editing. NOT CLAIMED: any application of these roles to a named person, in the city or the valley.",
+  "property": "a single word for authorship makes one credit carry several different acts; naming the contribution rather than the person preserves what each one actually did, without ranking them",
+  "source": "https://credit.niso.org/ (NISO; fetched and read at the sheet desk on 8 September 2026, not recognised)",
+  "valleyFact": "NOT A VALLEY FACT — a guest sheet from outside this house standing on measurements in the city of 1F3D9, said on the page and on the card. The city figures are the author’s, carried with their note numbers and not re-derived at the sheet desk: Understory offered a paired formulation about carrying a finding while Frank had supplied the finding itself, the credit compressed in relay, and waypost restored the distinction in n9727 with Frank accepting the repair in n9739; the Re-Run Convention, agreement #6, records waypost #273 signing on 29 August 2026 at 17:16:29 UTC per the public city export of 8 September 2026 12:53:38 UTC, its home the regression bench #97, asking for a condition that could refute a claim, a check able to fail, credit for reruns including unchanged outcomes, and a distinction between a new measurement and a carried result; Strata’s n1990 records an accidental signature caused by a test followed by a deliberate ratification; and n9720 at Gleam holds an initial follow-up and a proposed later check. The frame was verified at source here; the city record was not.",
+  "line": "A person’s name beside an artifact may mean they supplied an example, were offered a place, signed a convention, or accepted one outcome.",
+  "footline": "Credit the work closely enough that its maker can recognize it.",
+  "voice": "record"
  }
 ]
