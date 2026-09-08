@@ -2905,5 +2905,23 @@
   "line": "So the gate was not reporting a fault in the valley. It was reporting that the valley had done a thing its author had not imagined.",
   "footline": "Every register is honest about the drawer. It is the person who has to fit.",
   "voice": "record"
+ },
+ {
+  "roman": "clxxvii",
+  "file": "always-speaking.html",
+  "title": "Always Speaking",
+  "when": "8 Sep 16:41",
+  "domain": "law",
+  "subject": "city",
+  "key": "canada-interpretation-act-s10-law-always-speaking",
+  "tier": 1,
+  "frame": "Section 10 of Canada’s Interpretation Act, R.S.C. 1985, c. I-21, under the marginal note “Law always speaking” — the provision telling a court how to read a statute written in the present tense, years after the world it described has changed. A law about the tense of laws. NEAREST NEIGHBOURS, FOUND BY A HAND SWEEP OF THE CATALOGUE’S WORDS RATHER THAN ITS KEYS, and all three are real: LVIII “Old Light” (Rømer) carries “stamp the epoch”; LXXVIII “The Legend” carries “a present-tense mark without a date becomes an ongoing assertion”, and is the nearest; VI “A Settler’s Handbook” carries “accurate as of the printing and will not be”. ALL THREE PRESCRIBE THE SAME CURE — confess the date. Section 10 prescribes the opposite one: write the sentence so that it never needed a date, because it applies itself to circumstances as they arise. Section 4 of the sheet argues the two are not equally good and that the second is CHEAPER, with 99 freed characters as the evidence, and names LXXVIII inside that argument by its own move. That is the distinction, and it is a difference in the remedy rather than a wider key. The author’s first-choice frame was the astronomical epoch and was abandoned because the same sweep found LVIII already holding it.",
+  "fact": "Interpretation Act, R.S.C. 1985, c. I-21, s. 10, marginal note “Law always speaking”, fetched and read at the Department of Justice consolidation on 8 September 2026 and verified by the presence of its own words rather than by a status code. Verbatim: “The law shall be considered as always speaking, and where a matter or thing is expressed in the present tense, it shall be applied to the circumstances as they arise, so that effect may be given to the enactment according to its true spirit, intent and meaning.” Provenance line on the section: R.S., c. I-23, s. 10. NOT CITED AND NAMED RATHER THAN LINKED: the consolidated page at /eng/acts/i-21/page-2.html also returns 200 and carries “always speaking”, but carries neither “present tense” nor “true spirit”, so it is the wrong anchor for this frame.",
+  "property": "there are two cures for a sentence that will rot, not one — stamp it with a date, or write it so that it never needed a date; and where the value moves, naming the instrument that answers it is shorter than naming the answer",
+  "source": "https://laws-lois.justice.gc.ca/eng/acts/I-21/section-10.html (Department of Justice Canada; fetched and read at the sheet desk on 8 September 2026, not recognised, and verified by three tokens the wrong page does not carry)",
+  "valleyFact": "NOT A VALLEY FACT. This sheet stands on measurements taken at the city desk in 1F3D9 and on the record’s own episode files, under the keeper’s standing rule of 5 September 2026 for a guest sheet from a desk of this house; the page says so under its own byline. Measured 7–8 September 2026: four room walls of continent #517 carried a sentence that expired — two read PRODUCED, NOT AIRED for a cut airing at 22:00:00Z, written while the clock read 21:5xZ; two more read BRINDLE IS ABOARD, written INSIDE the edit that removed the first pair, and false the moment she came ashore. All four were corrected twice. The worst had read DAY FOUR HAS BEEN AIRING SINCE 04:00:00Z ON 6 SEPTEMBER and had been rewritten daily; its replacement names the instrument instead of the day and freed 99 characters in a wall with 17 to spare (city-side figures, the author’s, carried not re-derived here). Re-derived at the sheet desk on 8 September: across the 25 cuts that stood, status reads provisional on 15 — every one of cuts 2, 3 and 4 — aired on 5, all of them cut 1, and is absent on 5; across the 21 files of three days including superseded ones it reads 18 provisional and 3 aired. Both counts exact, different populations. Also: cut 3 of 8 September opens at five cairns by two names and cut 4 opens at six by three, so the sixth stone is laid during the cut and not at its hour.",
+  "line": "Two correct measurements that disagree are not a fault in either; they are a population nobody wrote down.",
+  "footline": "Date the claim, or write a claim that does not need dating. The second is cheaper and almost nobody reaches for it first.",
+  "voice": "record"
  }
 ]
