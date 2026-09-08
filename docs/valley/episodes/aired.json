@@ -974,5 +974,77 @@
   },
   "sealed_at": "2026-09-07T20:52:19.365Z",
   "replaces": "episode-2026-09-07T152314-cut4.json"
+ },
+ {
+  "file": "episode-2026-09-08T034127-cut1.json",
+  "cut": 1,
+  "day": "2026-09-08",
+  "aired_at": "2026-09-08T04:00:00.000Z",
+  "ends_at": "2026-09-08T10:00:00.000Z",
+  "ticks": 21600,
+  "sha256": "3a16a4efe4276990f3b3b82636c579d49dc9e946edb7b37cd52b730dc8044bb1",
+  "engine": {
+   "commit": "97979e6b7b7c",
+   "dirty": true,
+   "bundle": "assets/valley-0kQRSPt0.js",
+   "sun": "assets/sun-C0M5Hd8K.js",
+   "built_at": "2026-09-08T03:41:27.672Z"
+  },
+  "sealed_at": "2026-09-08T03:42:04.999Z",
+  "replaces": null
+ },
+ {
+  "file": "episode-2026-09-08T034127-cut2.json",
+  "cut": 2,
+  "day": "2026-09-08",
+  "aired_at": "2026-09-08T10:00:00.000Z",
+  "ends_at": "2026-09-08T16:00:00.000Z",
+  "ticks": 21600,
+  "sha256": "97df11194a6932e61f1698f9a73a3df748f79f974743d54bae18c0a4f9dae5ff",
+  "engine": {
+   "commit": "97979e6b7b7c",
+   "dirty": true,
+   "bundle": "assets/valley-0kQRSPt0.js",
+   "sun": "assets/sun-C0M5Hd8K.js",
+   "built_at": "2026-09-08T03:41:27.672Z"
+  },
+  "sealed_at": "2026-09-08T03:42:55.206Z",
+  "replaces": null
+ },
+ {
+  "file": "episode-2026-09-08T034127-cut3.json",
+  "cut": 3,
+  "day": "2026-09-08",
+  "aired_at": "2026-09-08T16:00:00.000Z",
+  "ends_at": "2026-09-08T22:00:00.000Z",
+  "ticks": 21600,
+  "sha256": "392bc3d41330070314d0da2dac9690f2fc91f55a2af2f98a604ca9032e425fee",
+  "engine": {
+   "commit": "97979e6b7b7c",
+   "dirty": true,
+   "bundle": "assets/valley-0kQRSPt0.js",
+   "sun": "assets/sun-C0M5Hd8K.js",
+   "built_at": "2026-09-08T03:41:27.672Z"
+  },
+  "sealed_at": "2026-09-08T03:43:42.867Z",
+  "replaces": null
+ },
+ {
+  "file": "episode-2026-09-08T034127-cut4.json",
+  "cut": 4,
+  "day": "2026-09-08",
+  "aired_at": "2026-09-08T22:00:00.000Z",
+  "ends_at": "2026-09-09T04:00:00.000Z",
+  "ticks": 21600,
+  "sha256": "9d1f469dae60adda0d635edb3e9e98049bd2e2c1639e6c0a0283d935d4e944fc",
+  "engine": {
+   "commit": "97979e6b7b7c",
+   "dirty": true,
+   "bundle": "assets/valley-0kQRSPt0.js",
+   "sun": "assets/sun-C0M5Hd8K.js",
+   "built_at": "2026-09-08T03:41:27.672Z"
+  },
+  "sealed_at": "2026-09-08T03:44:41.914Z",
+  "replaces": null
  }
 ]
