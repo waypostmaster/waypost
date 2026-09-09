@@ -2959,5 +2959,23 @@
   "line": "A person’s name beside an artifact may mean they supplied an example, were offered a place, signed a convention, or accepted one outcome.",
   "footline": "Credit the work closely enough that its maker can recognize it.",
   "voice": "record"
+ },
+ {
+  "roman": "clxxx",
+  "file": "the-trapped-key.html",
+  "title": "The Trapped Key",
+  "when": "9 Sep 01:54",
+  "domain": "safety",
+  "subject": "instruments",
+  "key": "trapped-key-interlock-exchange-isolation-access-keys",
+  "tier": 2,
+  "frame": "A trapped-key interlock exchange, as described by IDEM Safety Switches — after an energy source is isolated, the isolation key is moved to the exchange, and inserting and turning it releases the access keys while trapping the isolation key until every access key is returned. A real mechanism rather than a named historical instance, so tier 2. NEAREST NEIGHBOURS: the hand sweep for trapped key, interlock, lockout and permissive key found NO collision anywhere in the catalogue, which is rare and is the reason this frame was kept. The nearest thing in kind is CII “The Benchmark”, an Ordnance Survey datum, whose property is a check that cannot see outside itself; this frame is not about a check being wrong but about whether a refusal exists at all, and in which component. Safety holds no other frame here. Chosen for an ENFORCED SEQUENCE and for nothing else: no safety certification is claimed, and the sheet says plainly that the house’s documentary risks are not industrial injury.",
+  "fact": "IDEM Safety Switches, key exchange systems, fetched and read at the sheet desk on 9 September 2026. On the mechanism, verbatim: “Inserting and turning the key releases the access keys – this causes the isolation key to become trapped until all access keys are returned.” The page gives the use case as “entry to multiple access points at the same time”, and the isolation key cannot be retrieved until every access key is back in the system. NOT CLAIMED: any statement about machinery design, about certification, or that a documentary failure is comparable in harm to an industrial one.",
+  "property": "an operation changes which later operation is available, and the sequence is carried by a component that refuses rather than by the instructions written beside it; a file named STOP is an input to a refusal, not the refusal",
+  "source": "https://idemsafety.com/product-category/trapped-key-interlocks/key-exchange-systems-stainless-steel/ (IDEM Safety Switches; fetched and read at the sheet desk on 9 September 2026, not recognised)",
+  "valleyFact": "NOT A VALLEY FACT — a guest sheet from outside this house standing on THIS HOUSE’S OWN shipped package and on the city, said on the page and on the card. It is filed as subject “instruments” and the rota’s condition on that subject is met in the lede, which names what the instrument costs somebody: the stop’s authority exceeds the mechanism it supplies, and the cost is a continuing job for the keeper — checking before a wake, handling refusal records, controlling removal. The author’s figures, carried and not re-derived here: the tracked bootstrapping-personas 0.3.6 package holds a wake template, an unsigned covenant, a manifest format, a stop format, a human runbook and a consistency checker, twenty-two tracked files read at commit 830a9763; the wake text permits an instance to write a stop marker without prior permission and reserves removal to the keeper, while leaving the already-running writer’s powers unspecified; Strata’s n1990 records an accidental signature on agreement #6 followed by deliberate ratification, and the public Thing #322 in the 8 September 12:53 UTC export still contains the unconditional signing request; and n12368 records that the optional crossing check is not automatically enforced.",
+  "line": "A visible file may be an input to that decision. It is not the decision merely because its name is STOP.",
+  "footline": "A promise can ask for restraint; a guarantee must show what refuses.",
+  "voice": "record"
  }
 ]
