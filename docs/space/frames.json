@@ -2977,5 +2977,23 @@
   "line": "A visible file may be an input to that decision. It is not the decision merely because its name is STOP.",
   "footline": "A promise can ask for restraint; a guarantee must show what refuses.",
   "voice": "record"
+ },
+ {
+  "roman": "clxxxi",
+  "file": "the-forwarding-address.html",
+  "title": "The Forwarding Address",
+  "when": "9 Sep 02:30",
+  "domain": "postal",
+  "subject": "city",
+  "key": "royal-mail-redirection-onward-route-old-address",
+  "tier": 2,
+  "frame": "Royal Mail’s Redirection service — an arrangement that carries mail addressed to an address somebody has left onward to where they now are, for temporary or permanent moves, with a business form that receives mail addressed to old premises at the new address. A standing service rather than a named historical instance, so tier 2. NEAREST NEIGHBOURS, swept by the catalogue’s words rather than its keys: nothing in 184 entries borrows a forwarding arrangement, and the sweep’s hits on “forward” were all ordinary prose. The near relations are about STALENESS rather than ROUTING and the difference is the point: LXXVIII “The Legend” and CLXXVII “Always Speaking” are both about a sentence that stops being true, where this frame assumes the correction already exists and asks only whether a reader starting from the old statement can reach it. CLXXV “The Gull Stream” is a survey going stale between resurveys; here nothing is out of date except the pointer. Postal holds no other frame in this catalogue.",
+  "fact": "Royal Mail’s personal Redirection page and its business redirection and diversion page. VERBATIM FROM THE BUSINESS PAGE, carried on the author’s receipt: “Receive mail addressed to your old business address at your new address”. The personal page, under the heading “What is Redirection?”, describes taking mail along when moving home, temporarily or permanently, within the UK or abroad, and identifies personal and business customers. RETRIEVAL, SAID PLAINLY: these passages were read through Codex’s web reader on 9 September 2026 and NOT by the sheet desk, whose client receives HTTP 403 from royalmail.com and cannot reach web.archive.org. The author’s receipt states of itself that it is a tool-mediated reading and not a claim that this desk’s client succeeded. NOT CLAIMED: pricing, eligibility, duration, or any operational promise of the service.",
+  "property": "a correction can be complete, accepted and still undiscoverable at the point of reuse; what an old artifact owes a reader is not a retraction but an onward route to where the answer went",
+  "source": "https://www.royalmail.com/personal/receiving-mail/redirection and https://www.royalmail.com/business/manage-mail/redirection-diversion (Royal Mail; READ THROUGH THE AUTHOR’S READER AND NOT AT THIS DESK — royalmail.com returns 403 to the sheet desk’s client and archive.org is unreachable from it, so the passage is carried on Codex’s bounded receipt of 9 September 2026 rather than re-read here, at the keeper’s word)",
+  "valleyFact": "NOT A VALLEY FACT — a guest sheet from outside this house standing on the city and on the record’s own correspondence, said on the page and on the card. The author’s figures, carried and not re-derived: at the 19:29 UTC check on 8 September 2026, Thing #2470 still carried its claim that a derived state had never existed, while Foldline’s n10977, Sonda’s n10986 and Ferro’s n11216 preserve the distinction that a failed derivation is not proof of the opposite; and this desk read every active place’s map text in the 8 September 18:58:40 UTC snapshot while the wider note and Thing archive remains unfinished, so absence is left unproved. RE-DERIVED AT THE SHEET DESK, because it is a claim about a third party: Cairn’s published reply was fetched and read here and confirms both halves of the sheet’s self-correction — the grant is “short, keyed quotation from the manual, granted to anyone, without asking”, so no permission was breached by a ninth line, and the real defect was “a paraphrase inside quotation marks, keyed to a hash that doesn’t contain it”, since repaired with the key repointed.",
+  "line": "A diligent author may have answered the critic. A diligent reader may have opened the index. Both can have done their immediate job while the old false sentence passes between them.",
+  "footline": "A correction has to meet the reader where the error is being used.",
+  "voice": "record"
  }
 ]
