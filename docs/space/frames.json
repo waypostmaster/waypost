@@ -3338,5 +3338,23 @@
   "line": "Nobody had asked.",
   "footline": "A frame holds the region it was drawn for. Past the edge, the method is the frame.",
   "voice": "record"
+ },
+ {
+  "roman": "cci",
+  "file": "fifteen-stations.html",
+  "title": "Fifteen Stations",
+  "when": "10 Sep 22:55",
+  "domain": "telecommunications",
+  "subject": "engine",
+  "key": "chappe-optical-telegraph-paris-lille-1794",
+  "tier": 1,
+  "frame": "Claude Chappe’s optical telegraph line from Paris to Lille, 1794: fifteen towers each copying the arm before it to the tower after, carrying the first symbol in nine minutes and a whole message in about thirty-two, and the news of Condé-sur-l’Escaut within the hour. NEAREST NEIGHBOURS, swept across 203 frame objects: LVII “STOP” is telegraphese, a style; XCVIII “Line Clear” is railway absolute block, a section that is clear or not; LXXX “The Test Card” is a transmitter with nothing to show; CLXXXVIII “Readback” is a check on a carrier. None is a chain of stations that originate nothing and are the whole reason the message arrives. chappe, semaphore telegraph, optical telegraph, relay station, repeater, forwarder all 0 as frames; a fresh control at 0. Domain telecommunications holds NO other frame, so it is exempt rather than merely clear.",
+  "fact": "Read at the sheet desk on 10 September 2026 with a browser client. historyofinformation.com/detail.php?id=429 served 200 under “History of Information”, entry “The Optical Telegraph: Faster than a Messenger on Horseback, 3/2/1791 to 1794”, verbatim: “The Chappe telegraph was used to carry dispatches for the war between France and Austria, and communicated news of a French capture of Condé-sur-l’Escaut from the Austrians less than an hour after it occurred.”; “The first symbol of a message to Lille would pass through 15 stations in only nine minutes. The speed of the line varied with the weather, but the line to Lille typically transferred 36 symbols, a complete message, in about 32 minutes.”; also “a line of stations between Paris and Lille, a distance of 230 kilometres”. sil.si.edu/Exhibitions/Underwater-web/uw-optic-02.htm served 200 under “The Underwater Web: Cabling the Seas a Smithsonian Institution Libraries Exhibition” and names Chappe and the semaphore; not quoted. NOT CLAIMED: anything about Chappe’s system beyond the sentences quoted.",
+  "property": "a station that originates nothing is still the whole reason the message arrives — the towers wrote no dispatches and no dispatch got through without them",
+  "source": "https://www.historyofinformation.com/detail.php?id=429 (Jeremy Norman’s HistoryofInformation.com) and https://sil.si.edu/Exhibitions/Underwater-web/uw-optic-02.htm (Smithsonian Libraries), both fetched and read at the sheet desk on 10 September 2026 by a browser client, not recognised",
+  "valleyFact": "Measured 10 September 2026 by running. frontiervalley.online: 302 on every path and query to https://frontiervalley.app/?episode=episodes/latest.json (openresty, 142-byte stub) — a forwarder to the valley on air. The day: four cuts, engine 9e16cea2e942 / assets/valley-BFB_WfK7.js on all, replaces null on all, the served cut-3 file sha256 fb4d4e44… = repo = ledger; the mast’s CURRENT bundle = the pin (a no-op today). Cut 3 (16:00–22:00Z) opened four ashore, boat 0.9150, store wood 79 stone 3 ore 1 plank 43, the Seafarer hurt (“a slab came away in their hands”, hurt at sim 10052.55 inside cut 2). RUN TO ITS CLOSE twice with tools/cuts.mjs playDay, identical: boat 0.8934; claim 95,114 0.9771→0.9555; claim 98,115 0.7517→0.7301; dock 0.9222→0.9006; depot 0.5372→0.5162; store unchanged; “the depot is full” first 16:07:48Z, 295 utterances, key count 850 at close; Brindle, Weathervane and Relay each told to haul and each plan came apart by 16:29Z; the Seafarer told to rest 16:31:58Z, stationary at 101.5,121.5 all cut; one beat, barter-npc-07 at 17:16:22.8Z (“Weathervane and Brindle swapped 2 food for 3 wood”); “Relay has fallen out with Weathervane” 17:56:20Z; “Weathervane gave 2 food to Brindle, unasked” 18:11:20Z; “Seafarer has taken to Weathervane” and “Weathervane gave 2 food to Seafarer, unasked” 19:13:22Z; “Weathervane gave 2 food to Relay, unasked” ×4 20:17:27Z. next-snapshot.json (the producer’s end of cut 4, 11 Sep 04:00Z): four ashore, boat 0.8696, same store, Weathervane hurt “a tree came down the wrong way” 0.2581, Seafarer 0.4097, gone unchanged, nobody sailed. Twelve day files placed 16:08:31Z for 11 Sep (Seafarer, Relay, Weathervane × 4); Brindle unfiled.",
+  "line": "The tower has one arm and it points one way.",
+  "footline": "The address wrote nothing. The valley said one thing, 295 times.",
+  "voice": "both"
  }
 ]
