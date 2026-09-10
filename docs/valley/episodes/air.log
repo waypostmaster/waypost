@@ -931,3 +931,117 @@
 2026-09-08 23:44:24     next: 4 of 4 cut(s) still to come GÇö episodes/next.json
 2026-09-08 23:44:24     ledger: 56 + 4 entries GÇö episodes/aired.json
 2026-09-08 23:44:24     tomorrow starts where cut 4 ended: episodes/next-snapshot.json
+2026-09-08 23:44:34 deployed to the mast (waypost.quest/valley/): tonight's four cuts, aired 2026-09-09T04:00:00Z
+2026-09-08 23:44:37 and on the new mast (frontier-valley/mast): tonight's four cuts, aired 2026-09-09T04:00:00Z
+2026-09-08 23:44:37 aired and on the masts
+2026-09-09 00:40:01 not the production hour (04:40Z); nothing to do
+2026-09-09 01:40:01 not the production hour (05:40Z); nothing to do
+2026-09-09 02:40:01 not the production hour (06:40Z); nothing to do
+2026-09-09 03:40:01 not the production hour (07:40Z); nothing to do
+2026-09-09 04:40:01 not the production hour (08:40Z); nothing to do
+2026-09-09 05:40:01 not the production hour (09:40Z); nothing to do
+2026-09-09 06:40:01 not the production hour (10:40Z); nothing to do
+2026-09-09 07:40:01 not the production hour (11:40Z); nothing to do
+2026-09-09 08:40:01 not the production hour (12:40Z); nothing to do
+2026-09-09 09:40:02 not the production hour (13:40Z); nothing to do
+2026-09-09 10:40:01 not the production hour (14:40Z); nothing to do
+2026-09-09 11:40:01 not the production hour (15:40Z); nothing to do
+2026-09-09 12:40:01 not the production hour (16:40Z); nothing to do
+2026-09-09 13:40:01 not the production hour (17:40Z); nothing to do
+2026-09-09 14:40:01 not the production hour (18:40Z); nothing to do
+2026-09-09 15:40:01 not the production hour (19:40Z); nothing to do
+2026-09-09 16:40:01 not the production hour (20:40Z); nothing to do
+2026-09-09 17:40:01 not the production hour (21:40Z); nothing to do
+2026-09-09 18:40:01 not the production hour (22:40Z); nothing to do
+2026-09-09 19:40:01 not the production hour (23:40Z); nothing to do
+2026-09-09 20:40:01 not the production hour (00:40Z); nothing to do
+2026-09-09 21:40:01 not the production hour (01:40Z); nothing to do
+2026-09-09 22:40:01 not the production hour (02:40Z); nothing to do
+2026-09-09 23:40:01 --- transmission begins ---
+2026-09-09 23:40:02   gate: npx tsc --noEmit passed
+2026-09-09 23:41:00   gate: npm run check:replay passed
+2026-09-09 23:41:01   gate: npm run check:landing passed
+2026-09-09 23:41:03   gate: npm run check:day passed
+2026-09-09 23:41:03   producing for 2026-09-10T04:00:00Z - four cuts of 21600 ticks (04:00, 10:00, 16:00, 22:00Z)
+2026-09-09 23:41:03   [31mWebSocket server error: Port 24678 is already in use[39m
+2026-09-09 23:41:03   joining: Brindle was carried on the opening's manifest and is already ashore; taken off it.
+2026-09-09 23:41:03   joining: Brindle is already ashore in the opening; not enrolled again (file agents/joining/brindle.json)
+2026-09-09 23:41:03       Relay: waiting at the far shore for the boat (agents/joining)
+2026-09-09 23:41:03       Weathervane: waiting at the far shore for the boat (agents/joining)
+2026-09-09 23:41:03   recall: nobody (agents/recall/ is empty or absent)
+2026-09-09 23:41:04       accedence: Seafarer GÇö chartered
+2026-09-09 23:41:04       accedence: Brindle GÇö consented
+2026-09-09 23:41:04       nobody is being returned: every settler who was asked has acceded
+2026-09-09 23:41:04   episode: 4 cut(s) of 21600 ticks GÇö 6000 steps of 0.05 each GÇö from a 162323-byte snapshot
+2026-09-09 23:41:04            day 2026-09-10, cuts 1..4 produced this run; 1.50 valley days a cut, 6.00 in the day
+2026-09-09 23:41:04            cut 1: airs 2026-09-10T04:00:00.000Z GÇö ends 2026-09-10T10:00:00.000Z
+2026-09-09 23:41:04            cut 2: airs 2026-09-10T10:00:00.000Z GÇö ends 2026-09-10T16:00:00.000Z
+2026-09-09 23:41:04            cut 3: airs 2026-09-10T16:00:00.000Z GÇö ends 2026-09-10T22:00:00.000Z
+2026-09-09 23:41:04            cut 4: airs 2026-09-10T22:00:00.000Z GÇö ends 2026-09-11T04:00:00.000Z
+2026-09-09 23:41:04     building the engine this programme will be watched on: npx vite build --base=./
+2026-09-09 23:41:06   [36mvite v8.2.2 [32mbuilding client environment for production...[36m[39m
+2026-09-09 23:41:06   transforming...
+2026-09-09 23:41:06   G£ô 109 modules transformed.
+2026-09-09 23:41:06   rendering chunks...
+2026-09-09 23:41:06   computing gzip size...
+2026-09-09 23:41:06   dist/city.html                         9.45 kB Göé gzip:   3.07 kB
+2026-09-09 23:41:06   dist/index.html                       32.15 kB Göé gzip:   9.56 kB
+2026-09-09 23:41:06   dist/assets/07-softmax-BC5IJGgT.js     4.24 kB Göé gzip:   1.75 kB
+2026-09-09 23:41:06   dist/assets/06-seafarer-BpxfBq-0.js    5.22 kB Göé gzip:   1.85 kB
+2026-09-09 23:41:06   dist/assets/city-DbAZzjD9.js          34.80 kB Göé gzip:  14.38 kB
+2026-09-09 23:41:06   dist/assets/sun-C0M5Hd8K.js          116.55 kB Göé gzip:  41.59 kB
+2026-09-09 23:41:06   dist/assets/valley-BFB_WfK7.js       388.16 kB Göé gzip: 130.11 kB
+2026-09-09 23:41:06   
+2026-09-09 23:41:06   [32mG£ô built in 118ms[39m
+2026-09-09 23:41:06     built in 2.3s GÇö assets/valley-BFB_WfK7.js, assets/sun-C0M5Hd8K.js
+2026-09-09 23:41:06     NOTE: the tree is dirty, so commit 9e16cea2e942 is not what built this bundle. The
+2026-09-09 23:41:06           bundle name still pins the engine; the commit beside it does not fetch it.
+2026-09-09 23:41:06       Seafarer: a day filed by the keeper from agents/days/seafarer-cut1.json (2234 bytes, sha256 7917944e6f8100a7), on cut 1; the model is not asked
+2026-09-09 23:41:06   [31mWebSocket server error: Port 24678 is already in use[39m
+2026-09-09 23:41:27       Brindle: a day filed, 20744ms
+2026-09-09 23:41:27     2 flight plan(s) filed, 1 by the model
+2026-09-09 23:41:28   [31mWebSocket server error: Port 24678 is already in use[39m
+2026-09-09 23:41:28   [31mWebSocket server error: Port 24678 is already in use[39m
+2026-09-09 23:41:29     cut 1: computed twice, identical to the byte (184746 bytes) GÇö fit to air
+2026-09-09 23:41:29     cut 1: end state sha256 8e5adba028258217GÇª GÇö the word the viewer's card will check
+2026-09-09 23:41:29     aired: C:\claude\games\frontier\episodes\episode-2026-09-10T034106-cut1.json (164.6 KiB, sha256 29f6f4e4ba1bdc59GÇª, 22.7s)
+2026-09-09 23:41:29   [31mWebSocket server error: Port 24678 is already in use[39m
+2026-09-09 23:41:29       Seafarer: a day filed by the keeper from agents/days/seafarer-cut2.json (1741 bytes, sha256 4b4ee7fcb42b84e3), on cut 2; the model is not asked
+2026-09-09 23:41:29   [31mWebSocket server error: Port 24678 is already in use[39m
+2026-09-09 23:42:04       Brindle: a day filed, 34046ms
+2026-09-09 23:42:19       Relay: a day filed, 15325ms
+2026-09-09 23:42:38       Weathervane: a day filed, 19564ms
+2026-09-09 23:42:38     4 flight plan(s) filed, 3 by the model
+2026-09-09 23:42:39   [31mWebSocket server error: Port 24678 is already in use[39m
+2026-09-09 23:42:39   [31mWebSocket server error: Port 24678 is already in use[39m
+2026-09-09 23:42:40     cut 2: computed twice, identical to the byte (192401 bytes) GÇö fit to air
+2026-09-09 23:42:40     cut 2: end state sha256 5e01c1abde98fbf2GÇª GÇö the word the viewer's card will check
+2026-09-09 23:42:40     aired: C:\claude\games\frontier\episodes\episode-2026-09-10T034106-cut2.json (190.9 KiB, sha256 5c2483afec1ea0daGÇª, 70.5s)
+2026-09-09 23:42:40   [31mWebSocket server error: Port 24678 is already in use[39m
+2026-09-09 23:42:40       Seafarer: a day filed by the keeper from agents/days/seafarer-cut3.json (1497 bytes, sha256 8bbd3e9c309a1000), on cut 3; the model is not asked
+2026-09-09 23:42:40   [31mWebSocket server error: Port 24678 is already in use[39m
+2026-09-09 23:43:11       Brindle: a day filed, 30435ms
+2026-09-09 23:43:34       Relay: a day filed, 23042ms
+2026-09-09 23:43:51       Weathervane: a day filed, 17129ms
+2026-09-09 23:43:51     4 flight plan(s) filed, 3 by the model
+2026-09-09 23:43:51   [31mWebSocket server error: Port 24678 is already in use[39m
+2026-09-09 23:43:52   [31mWebSocket server error: Port 24678 is already in use[39m
+2026-09-09 23:43:52     cut 3: computed twice, identical to the byte (200110 bytes) GÇö fit to air
+2026-09-09 23:43:52     cut 3: end state sha256 d74d3e950eca668fGÇª GÇö the word the viewer's card will check
+2026-09-09 23:43:52     aired: C:\claude\games\frontier\episodes\episode-2026-09-10T034106-cut3.json (197.9 KiB, sha256 fb4d4e44b2ee07c5GÇª, 72.1s)
+2026-09-09 23:43:52   [31mWebSocket server error: Port 24678 is already in use[39m
+2026-09-09 23:43:53       Seafarer: a day filed by the keeper from agents/days/seafarer-cut4.json (1615 bytes, sha256 cd005d2d2689db43), on cut 4; the model is not asked
+2026-09-09 23:43:53   [31mWebSocket server error: Port 24678 is already in use[39m
+2026-09-09 23:44:26       Brindle: a day filed, 32957ms
+2026-09-09 23:44:41       Relay: a day filed, 15349ms
+2026-09-09 23:45:03       Weathervane: a day filed, 21492ms
+2026-09-09 23:45:03     4 flight plan(s) filed, 3 by the model
+2026-09-09 23:45:03   [31mWebSocket server error: Port 24678 is already in use[39m
+2026-09-09 23:45:04   [31mWebSocket server error: Port 24678 is already in use[39m
+2026-09-09 23:45:04     cut 4: computed twice, identical to the byte (200940 bytes) GÇö fit to air
+2026-09-09 23:45:04     cut 4: end state sha256 85bcab880747ae48GÇª GÇö the word the viewer's card will check
+2026-09-09 23:45:04     aired: C:\claude\games\frontier\episodes\episode-2026-09-10T034106-cut4.json (205.7 KiB, sha256 e86a2ec36e58855aGÇª, 71.3s)
+2026-09-09 23:45:04     pointer: C:\claude\games\frontier\episodes\latest.json GÇö 4 cuts, episode names cut 1 (episode-2026-09-10T034106-cut1.json)
+2026-09-09 23:45:04     next: 4 of 4 cut(s) still to come GÇö episodes/next.json
+2026-09-09 23:45:04     ledger: 60 + 4 entries GÇö episodes/aired.json
+2026-09-09 23:45:04     tomorrow starts where cut 4 ended: episodes/next-snapshot.json
