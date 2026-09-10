@@ -3158,5 +3158,23 @@
   "line": "The cup is unpoured because there is nothing in the valley to pour.",
   "footline": "A cafe that pours nothing serves what is already in the room.",
   "voice": "both"
+ },
+ {
+  "roman": "cxci",
+  "file": "pilot-launch.html",
+  "title": "The Pilot Comes Aboard",
+  "when": "10 Sep 01:05",
+  "domain": "maritime",
+  "subject": "settler",
+  "key": "maritime-pilot-boards-from-the-launch",
+  "tier": 2,
+  "frame": "Harbour pilotage: an expert transferred bodily onto a vessel not theirs, from a launch carrying nobody else, to advise and never command. A practice with no single instance, so tier 2. The author’s frame; the note is the record’s. NEAREST NEIGHBOURS, as the author argues them and read here: CXLI “The Cub Pilot” is the collision risk and shares the word — Bixby teaching Clemens twelve hundred miles of the Mississippi is acquiring the knowledge over two years, and the pilot there walks aboard at a wharf; this is the twenty minutes in which the knowledge is delivered to a stranger’s bridge, and the transfer is the property. The other three “pilot” hits move nobody: XCVI “The Rutter” is the local knowledge written down, LXXV “The Pilot Plant” a works built to be closed, CLXXXVIII “Readback” a radio check. LXXVI “The Dragoman”, a petition rewritten into the court’s form, is the frame this sheet was nearly written on, and the sweep is why it was not. Maritime holds thirteen frames, the last 49 sheets back, inside the twelve-sheet window for a heavy domain.",
+  "fact": "Read at the sheet desk on 10 September 2026, twice — the reader client, then a browser client against the served HTML. “IMO & Pilotage | International Maritime Pilots’ Association”, verbatim: “Pilots with local knowledge are employed on board ships to safely guide them into or out of port or wherever navigation may be considered hazardous, particularly when a master and bridge team are unfamiliar with the area.” — the draft closed it at “hazardous” and listed it under the other page. “Maritime Pilots | International Maritime Pilots’ Association”, verbatim and exact: “Most often the pilot boards an inbound vessel from a pilot launch, by climbing a ladder rigged over the side of the vessel.” Followed, not quoted: “About IMPA | International Maritime Pilots’ Association”. REFUSED, and the refusal checked here: the GOV.UK Port Marine Safety Code page returns 200 with the served title “GOV.UK” and a body carrying “Ports and marine facilities safety code” and never its former name; the reader client showed a different title, a client artefact. NOT CLAIMED: pilotage law, the hazards of boarding, or that a city note is a ship.",
+  "property": "an expert is moved bodily from one hull to another in open water and conducts a vessel that is not theirs, advising and never commanding; the launch goes out empty and comes back empty, and nobody can climb the ladder on their behalf",
+  "source": "https://www.impahq.org/imo-pilotage and https://www.impahq.org/maritime-pilots (International Maritime Pilots’ Association), fetched and read at the sheet desk on 10 September 2026 — the reader client first, then a browser client against the served HTML, which is the one that found the first quotation; the About IMPA page named in the fact field was followed and not quoted, so it is not a source",
+  "valleyFact": "Measured at the sheet desk on 10 September 2026: the boat building in snapshot.buildings reads condition 0.6936266209845688 at cut 4’s opening (episode-2026-09-09T034110-cut4.json) and 0.6719328531783884 at episodes/next-snapshot.json, against SOUND = 0.85 at sim.ts:1225; voyages[0].boat.condition is a frozen 0.6223744788555048 in every cut. agents/joining/relay.json at the door, placed 00:11:08Z after validation through the shipped engine: name Relay, trade scout, joins Seafarer, day survey, wander, meet, watch, rest with wander, watch, rest if stuck, five hold rules, three goals each with an aim (befriend Seafarer; carry food 4; deliver food 12), constitution 832 characters; the producer’s dry run resolves tonight’s manifest to [“Relay”] with Brindle taken off it. CARRIED from the city desk, not re-derived here: relay’s three unfiled drafts of 23:34–23:35Z and their city-shaped fields; the annotations’ EXPLICIT/INFERRED marks; seafarer #287’s n14634 (23:55:57Z) and n14635 (twenty-three seconds later); the keeper’s contingency as said at that desk (RULINGS.md 5187); the rendered letter’s 2,575 characters against DAY_TEXT_MAX 4,000 at src/letter.ts:38. The settler has not acted.",
+  "line": "The launch goes out empty and comes back empty, and that is what a launch is for.",
+  "footline": "The launch carries the pilot to the ladder and no further; the climb is the pilot’s own.",
+  "voice": "both"
  }
 ]
