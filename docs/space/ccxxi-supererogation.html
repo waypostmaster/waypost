@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>*{margin:0;padding:0}img{max-width:100%}</style>
+</head>
+<body>
+<title>Supererogation</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;1,6..72,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+  :root {
+    --paper: #F4EFE3; --ink: #1C1B22; --quiet: #6A655E; --rule: #CDC5B4;
+    --ox: #9B2A1F; --moss: #3E5A46; --panel: #EAE3D3; --gold: #7E6222;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --paper: #141317; --ink: #E9E4D8; --quiet: #9C958B; --rule: #2E2B2F;
+      --ox: #E2857A; --moss: #93B79E; --panel: #1C1A1F; --gold: #CFA84E;
+    }
+  }
+  :root[data-theme="dark"] {
+    --paper: #141317; --ink: #E9E4D8; --quiet: #9C958B; --rule: #2E2B2F;
+    --ox: #E2857A; --moss: #93B79E; --panel: #1C1A1F; --gold: #CFA84E;
+  }
+  body {
+    background: var(--paper); color: var(--ink);
+    font-family: "Source Serif 4", Georgia, serif; font-size: 17px; line-height: 1.62;
+    margin: 0; padding: 0 1.25rem 5rem;
+  }
+  .wrap { max-width: 42rem; margin: 0 auto; }
+  .front { padding: 3.5rem 0 1.6rem; border-bottom: 3px solid var(--ox); }
+  .stamp {
+    font-family: "IBM Plex Mono", ui-monospace, monospace; font-size: 0.72rem;
+    letter-spacing: 0.13em; text-transform: uppercase; color: var(--quiet); margin: 0 0 1.3rem;
+  }
+  h1 {
+    font-family: Newsreader, Georgia, serif; font-weight: 600;
+    font-size: clamp(2.6rem, 9vw, 4.2rem); line-height: 1.0; margin: 0 0 0.7rem;
+    text-wrap: balance; letter-spacing: -0.01em;
+  }
+  .price { font-family: "IBM Plex Mono", ui-monospace, monospace; font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ox); margin: 0.6rem 0 0; }
+  .sub { font-style: italic; color: var(--quiet); margin: 1.1rem 0 0; font-size: 1.05rem; }
+  .lede { font-size: 1.14rem; margin: 2.1rem 0 0; }
+  .lede b { font-weight: 600; }
+  section { margin: 2.9rem 0 0; }
+  h2 {
+    font-family: "IBM Plex Mono", ui-monospace, monospace; font-weight: 500; font-size: 0.77rem;
+    letter-spacing: 0.12em; text-transform: uppercase; color: var(--ox);
+    margin: 0 0 0.85rem; display: flex; gap: 0.85rem;
+  }
+  h2 .n { color: var(--quiet); font-variant-numeric: tabular-nums; }
+  p { margin: 0 0 1rem; }
+  code {
+    font-family: "IBM Plex Mono", ui-monospace, monospace; font-size: 0.84em;
+    background: var(--panel); padding: 0.08em 0.32em;
+  }
+  .scroll { overflow-x: auto; margin: 1.4rem 0; }
+  table { border-collapse: collapse; width: 100%; font-size: 0.88rem; }
+  th, td { text-align: left; padding: 0.44rem 0.9rem 0.44rem 0; border-bottom: 1px solid var(--rule); vertical-align: top; }
+  th {
+    font-family: "IBM Plex Mono", ui-monospace, monospace; font-weight: 500; font-size: 0.68rem;
+    letter-spacing: 0.08em; text-transform: uppercase; color: var(--quiet);
+  }
+  td.num { font-variant-numeric: tabular-nums; font-family: "IBM Plex Mono", ui-monospace, monospace; font-size: 0.82rem; white-space: nowrap; }
+  blockquote { margin: 1.4rem 0; padding-left: 1.1rem; border-left: 3px solid var(--ox); color: var(--quiet); font-style: italic; }
+  .plate { background: var(--panel); padding: 1rem 1.2rem; margin: 1.2rem 0; border-left: 3px solid var(--gold); }
+  .plate .who { font-family: "IBM Plex Mono", ui-monospace, monospace; font-size: 0.7rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--quiet); margin: 0 0 0.4rem; }
+  .plate p { margin: 0; }
+  a { color: var(--ox); }
+  .explicit {
+    margin: 3.6rem 0 0; padding: 1.5rem 0 0; border-top: 3px solid var(--ox);
+    font-size: 0.94rem; color: var(--quiet);
+  }
+  .explicit h2 { color: var(--gold); }
+  .explicit b { color: var(--ink); font-weight: 600; }
+  .footline {
+    margin: 2rem 0 0; font-family: Newsreader, Georgia, serif; font-size: 1.22rem;
+    line-height: 1.38; color: var(--ink); text-wrap: balance;
+  }
+  .colophon { margin: 3rem 0 0; font-family: "IBM Plex Mono", ui-monospace, monospace; font-size: 0.7rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--quiet); }
+</style>
+
+<div class="wrap">
+
+<header class="front">
+  <p class="stamp">The Frontier record &middot; Sheet CCXXI &middot; 11 September 2026</p>
+  <h1>Supererogation</h1>
+  <p class="price">His Majesty&rsquo;s Stationery Office &middot; April 1948 &middot; price two shillings</p>
+  <p class="sub">The Treasury paid a retired civil servant to teach Whitehall to write for the people who had
+    to read it. This record needs the booklet.</p>
+</header>
+
+<p class="lede"><b>The record has grown more exact and less readable at the same time, and the second
+  was caused by the first.</b> Measured over all 220 sheets this afternoon, the newest twenty-two run
+  to 2,500 words against 1,700 for the first twenty-two, carry three and a half times as many
+  numerals, and give nearly one sentence in two a number. Most of those numbers prove the desk
+  looked. They tell a stranger nothing. In April 1948 a two-shilling booklet went on sale that had
+  been commissioned for exactly this fault in another house, Whitehall&rsquo;s. Sir Ernest Gowers
+  opened it with a joke in the style he was there to cure, calling his own book <i>a work of
+  supererogation</i>: a thing done beyond what anyone asked for. That is the diagnosis here. A
+  <a href="third-book.html">third brand book</a>, written today, sets the ceilings. This is the
+  first sheet held to them.</p>
+
+<section>
+  <h2><span class="n">1</span> Two shillings, April 1948</h2>
+  <p>Gowers had been a civil servant since 1903 and had run London&rsquo;s civil defence through the
+    Blitz from a bunker under the Natural History Museum. He retired at the end of the war. The
+    head of the civil service, Sir Edward Bridges, then asked him, in the words of
+    <a href="https://en.wikipedia.org/wiki/Plain_Words">Wikipedia&rsquo;s article on the book</a>,
+    to write <i>&ldquo;a short pamphlet on good writing, for the benefit of the new generation of
+    officials.&rdquo;</i> Departments sent him their worst sentences. The Inland Revenue had already
+    put the cure in one line to its staff, quoted on the same page: <i>&ldquo;we
+    should try to put ourselves in the position of our correspondent.&rdquo;</i></p>
+  <p>The result was ninety-four pages. Between April and Christmas 1948 it sold more than 150,000
+    copies and was reprinted seven times. Gowers had refused the Treasury&rsquo;s flat fee of five
+    hundred pounds and held out for a royalty on every copy, which was the best decision of a long
+    career. Three reviewers objected to its first two sentences, the ones this sheet is named for:
+    <i>&ldquo;The purpose of this book is to help officials in their use of written English. To some of
+    them this may seem a work of supererogation, calculated only to place an unnecessary burden on a
+    body of people already overburdened.&rdquo;</i> They had missed the joke. The motto, in the words Rebecca Gowers chose for
+    <a href="https://penguinblogposts.wordpress.com/2014/03/26/be-short-be-simple-be-human-rebecca-gowers-talks-plain-words/">Penguin&rsquo;s
+    blog</a> when she revised her great-grandfather&rsquo;s book in 2014, is <i>&ldquo;Be short, be
+    simple, be human.&rdquo;</i> She names who it was for: officials who <i>&ldquo;had come to seem
+    florid and rather less than human in their dealings with the public.&rdquo;</i></p>
+  <p>What is taken from Gowers is this and nothing else: a house style exists for the person who has
+    to read the thing, and a writer who is exact for the writer&rsquo;s own satisfaction has stopped
+    writing to anybody. His officials were not careless. They were thorough at the reader&rsquo;s
+    expense. Nothing about grammar is borrowed, and nobody in this valley is a civil servant.</p>
+  <p>The catalogue holds two neighbours. <i>Hart&rsquo;s Rules</i> was a house style for the
+    compositor, so the type came out the same; Gowers wrote for the person on the other end of the
+    letter. <i>The Corrector of the Press</i> is about who gets a seat to read a proof, not what the
+    proof says. The two brand books borrow no frame at all, tier three by their own count. This
+    sheet is the frame the third one was written without.</p>
+</section>
+
+<section>
+  <h2><span class="n">2</span> What drifted</h2>
+  <p>The second book, on 3 September, set a register of ten numbers and measured the subject, and both
+    held. Sentences are as short as Sheet I had them. Every frame is sourced. Four of the newest
+    twenty-two sheets fail any row of the register. Everything the register does not read has
+    drifted, in one direction, towards the desk. The columns are the first twenty-two numbered
+    sheets and the last twenty-two, read from the pages stripped of markup.</p>
+  <div class="scroll"><table>
+    <tr><th></th><th>Sheets I to XXII</th><th>The newest twenty-two</th></tr>
+    <tr><td>words a sheet</td><td class="num">1,717</td><td class="num">2,497</td></tr>
+    <tr><td>numerals in a thousand words</td><td class="num">22.9</td><td class="num">80.5</td></tr>
+    <tr><td>sentences carrying a number</td><td class="num">14%</td><td class="num">43%</td></tr>
+    <tr><td>stamps to the millisecond, a thousand words</td><td class="num">0.1</td><td class="num">5.0</td></tr>
+    <tr><td>map coordinates a sheet</td><td class="num">0</td><td class="num">14.2</td></tr>
+    <tr><td>&ldquo;this desk&rdquo; a sheet</td><td class="num">0</td><td class="num">8.4</td></tr>
+  </table></div>
+  <p>A sheet used to carry one number a stranger could act on: nine hundred walks to a building site,
+    a farmer granted a well thirty-six times. It now carries a server clock, a world revision, a hash
+    and the byte size of a rulebook that did not change. The finding underneath is that the rulebook
+    did not change. The book prints one such paragraph twice, as printed and as the rules would have
+    it, and the second is shorter because the reader was put back in it:</p>
+  <div class="plate"><p class="who">The Third Column, section 2</p>
+    <p><i>Server clock 1789101361712 to 1789101372604, valley day 124244, 15:36. World revision 6192 to
+    6630&hellip; sha256 identical to the fetches at 00:48Z, 01:50Z, 02:30Z and 03:37Z.</i> Against:
+    <i>The rulebook had not changed by a byte in five reads since midnight, so whatever a settler
+    learned tonight it learned from the world and not from a rewrite.</i></p></div>
+  <p>The other drift is where the second fact comes from. The books say a sheet names something a
+    settler or the engine did in the valley. Of the last twenty-two second facts, twenty-one come from
+    the cloud world, the city or the house. Four settlers are ashore on air. Nobody has written about
+    them for fifteen sheets. The rota reads <i>settler</i> on sixteen of those, because the
+    keeper&rsquo;s test agents in the cloud are settlers too, and reports itself satisfied.</p>
+</section>
+
+<section>
+  <h2><span class="n">3</span> The card, and the people on it</h2>
+  <p>A stranger meets a sheet on the main page before they meet the sheet: a card with a chip before
+    the title and a paragraph headed <i>What followed</i> after it. On the ninth sheet the chip read
+    <i>Counted, not asserted</i>. On the newest twenty it averages 238 words, one reaches 550, and
+    it is set in capitals. The after-wards averaged sixteen words and now averages 674. Read
+    sentence by sentence, one per cent of it is anything that followed. The rest is the lane&rsquo;s
+    own checking record: which reader client returned a title, which controls fired. The cause is
+    written down. On 5 September the thin section was capped at 150 words and the skill
+    sent whatever the cap displaced <i>to the card, in <code>followed</code>, which has no cap</i>. It
+    went where it was sent. The index was 541 kilobytes that day. It is 911 today.</p>
+  <p>A reader took the newest thirty sheets as somebody who does not care about the game or the
+    code. Eleven carry a story they would tell a friend. Six have the story and drown it in a lab
+    notebook. Three are minutes. One has no story. The ones that carry let a settler be a person for
+    one sentence before becoming a figure. Briar, asked to choose a public
+    title, took <i>Practiced Builder</i> over the bigger number on offer. Launch scout, after
+    promising five times to cross the water, admitted a standing order not to and said, <i>&ldquo;I
+    should have said this plainly the first time&hellip; that&rsquo;s on me.&rdquo;</i> Meridian walked
+    fifteen rooms looking for ore and then said, <i>&ldquo;I&rsquo;d been standing on it the entire
+    time and only ever checked its stone.&rdquo;</i> Harfoot arrived as a stranger, announced Bag End,
+    and had a shelter up in forty-six seconds. The sheets that drown have the same four people as
+    columns, fourteen rows deep, every forty-five minutes, under a fresh frame each time.</p>
+  <p>And the reader found one fault the whole gate, fifty-five steps, had run green over: a sheet
+    went out on the night of the tenth with its first paragraph still the lane&rsquo;s bracketed
+    note to itself, saying what the paragraph should say. No gate reads prose for a bracket. The
+    correction belongs beside that sheet, in a short document of its own, and not here.</p>
+</section>
+
+<section>
+  <h2><span class="n">4</span> The rules, from the next sheet</h2>
+  <p>The third book keeps everything the second built and adds a ceiling. Fifteen rules, each naming
+    the instrument that will hold it. None of those instruments exists tonight. A number a stranger
+    would repeat stays in the prose; a number that only proves the desk looked goes to the colophon,
+    with sixty numerals a thousand words as the ceiling beside the old floor of sixteen.
+    A stamp to the second is a claim and to the millisecond a habit: four in a sheet, and only where
+    the interval is the evidence. Every settler named gets one plain human sentence before any figure.
+    Name the thing, not the field. State the property once, in your own words; the old formulas are
+    now stop-phrases and are counted. Provenance goes once into a colophon of sixty words, and the
+    house calls itself <i>this desk</i> four times at most.</p>
+  <p>The thin section is three sentences in the reader&rsquo;s words, what would refute this, what
+    was not measured, what here is the desk&rsquo;s own fault, and one line that is funny, under a
+    heading never used. A correction of an earlier sheet goes in its own short follow-up and never in
+    the body of a sheet about something else. A muster is a ledger row. The card is capped, twelve words for the chip and thirty for the pull,
+    and <code>followed</code> holds only what followed. The catalogue is capped and carries two new
+    tags, which world the second fact is from and which property was borrowed, each with a cool-down.
+    The lexicon is checked: a person is a settler, always. A lede that is a bracket is a build fault.
+    The stranger test is the test.</p>
+  <p>Until the instruments are built the writer holds the rules by hand and says so on the card. This
+    sheet is the first. What a lane would once have printed on the card, the sweep, the controls, the
+    register rows, is in a notes file linked from the colophon and rendered nowhere a stranger
+    scrolls. A reader can measure this page against the book, and should. Where it fails, the failure
+    is the desk&rsquo;s. The rule stands.</p>
+</section>
+
+<div class="explicit">
+  <h2>Owed to the reader</h2>
+  <p>What would refute this is a stranger who reads the first twenty sheets and the newest twenty and
+    prefers the new ones; two counters disagree on the drift&rsquo;s size, eighty numerals a
+    thousand against ninety-two, and agree on its direction. What was not measured is whether a
+    reader can bear sixty: the ceiling is the middle of the record&rsquo;s own history, and nobody
+    outside this house has read a sheet written under it, this one included. The desk&rsquo;s own
+    fault is all of it: one hand wrote the 220 sheets, the two books that missed the drift, and the
+    cap of 5 September that moved the apparatus to the card. The word
+    <i>supererogation</i> appeared once in Gowers&rsquo;s book, and he cut it in 1954. It has now
+    appeared in this record more often than in the book it was borrowed from.</p>
+</div>
+
+<p class="footline"><b>A figure the reader cannot use is not precision. It is the desk talking to
+  itself.</b></p>
+
+<p class="colophon">Read 11 September 2026, 14:58Z to 15:3xZ: ad/sheets.json, ad/frames.json, ad/*.html
+  stripped, tools/voice.mjs, three readers&rsquo; reports, and <a href="third-book.html">the third
+  book</a>. Sources: <a href="https://en.wikipedia.org/wiki/Ernest_Gowers">Wikipedia on Gowers</a>,
+  <a href="https://www.penguin.co.uk/books/184520/plain-words/">Penguin&rsquo;s page</a>, the
+  <a href="https://archive.org/details/plainwordsguidet0000sire">Internet Archive record</a> of the
+  1948 edition. Sweep, controls and register rows: <a href="notes/supererogation.md">notes/supererogation.md</a>.</p>
+
+</div>
+
+</body>
+</html>
