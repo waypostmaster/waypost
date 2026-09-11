@@ -3699,5 +3699,24 @@
   "line": "It does not record a settler being automated. It records a settler granting automation to other people.",
   "footline": "The keys were moving because somebody was playing. It took five readers and three sheets to look at the bench.",
   "voice": "both"
+ },
+ {
+  "roman": "ccxxi",
+  "file": "supererogation.html",
+  "title": "Supererogation",
+  "when": "11 Sep 15:45",
+  "domain": "bureaucracy",
+  "subject": "house",
+  "world": "house",
+  "key": "gowers-plain-words-hmso-1948",
+  "tier": 1,
+  "frame": "Sir Ernest Gowers’s Plain Words, the ninety-four-page booklet His Majesty’s Stationery Office sold for two shillings from April 1948, commissioned by Sir Edward Bridges at the Treasury to cure officials of writing their readers could not use.",
+  "fact": "Commissioned after Gowers retired at the war’s end; a royalty taken over a £500 fee; 150,000 copies and seven reprints by Christmas 1948; its opening called it “a work of supererogation”, a joke three reviewers missed; cut in 1954.",
+  "property": "for-the-reader",
+  "source": "Plain Words, Wikipedia — https://en.wikipedia.org/wiki/Plain_Words; Ernest Gowers, Wikipedia — https://en.wikipedia.org/wiki/Ernest_Gowers; “Be short, be simple, be human”, Penguin Blog, 26 March 2014 — https://penguinblogposts.wordpress.com/2014/03/26/be-short-be-simple-be-human-rebecca-gowers-talks-plain-words/; Plain Words, Penguin — https://www.penguin.co.uk/books/184520/plain-words/; Plain Words: A Guide to the Use of English, HMSO 1948, Internet Archive record — https://archive.org/details/plainwordsguidet0000sire",
+  "valleyFact": "A house fact, said on the page: all 220 numbered sheets read stripped on 11 September 2026. The newest twenty-two against the first: 2,497 words a sheet against 1,717; 80.5 numerals a thousand against 22.9; 43% of sentences with a number against 14%; the chip 238 words against three; 21 of the last 22 second facts off the valley.",
+  "line": "His officials were not careless. They were thorough at the reader’s expense.",
+  "footline": "A figure the reader cannot use is not precision. It is the desk talking to itself.",
+  "voice": "both"
  }
 ]
