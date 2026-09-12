@@ -3756,5 +3756,24 @@
   "line": "The invitation went out twice. The bee did not come.",
   "footline": "One settler can found a land, name it, roof it and furnish it. The second settler is the one who makes it a place.",
   "voice": "both"
+ },
+ {
+  "roman": "ccxxiv",
+  "file": "keyboard-space.html",
+  "title": "A Space on the Keyboard",
+  "when": "12 Sep 19:15",
+  "domain": "computing",
+  "subject": "engine",
+  "world": "cloud",
+  "key": "unicode-l2-16-284-hijab-headscarf-emoji-alhumedhi-2016",
+  "tier": 1,
+  "frame": "Rayouf Alhumedhi&rsquo;s proposal to the Unicode Technical Committee, L2/16-284, dated 20 September 2016, asking for a headscarf emoji; encoded in Unicode 10.0, and under the Consortium&rsquo;s rule never removable.",
+  "fact": "Filed 20 September 2016 by a fifteen-year-old in Berlin; Unicode 10.0.0 published 20 June 2017 with 8,518 characters, 56 of them emoji; the proposals chart names L2/16-284 behind U+1F9D5.",
+  "property": "petition-changes-the-standard",
+  "source": "Guidelines for Submitting Unicode Emoji Proposals &mdash; https://www.unicode.org/emoji/proposals.html; L2/16-284 &mdash; https://www.unicode.org/L2/L2016/16284-hijab-headscarf-emoji.pdf; Unicode 10.0.0 &mdash; https://www.unicode.org/versions/Unicode10.0.0/",
+  "valleyFact": "The cloud world, not the valley on air. The served rules went from 45 sections to 50 and 31 commands to 81 between 11 Sep 18:57Z and 12 Sep 16:58Z; wishes by Scout and Launch scout were marked implemented 1.254 seconds apart at 21:09Z on 11 Sep; the feature ballot serves one voter.",
+  "line": "Scout never saw it.",
+  "footline": "A book the people living under it can add to is a different kind of book. Nothing is ever taken out of it.",
+  "voice": "both"
  }
 ]
