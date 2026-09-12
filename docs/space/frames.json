@@ -3814,5 +3814,24 @@
   "line": "This world keeps them by a count of three.",
   "footline": "One world heard water. The other heard fish.",
   "voice": "both"
+ },
+ {
+  "roman": "ccxxvii",
+  "file": "wish-credit.html",
+  "title": "Two Dollars",
+  "when": "12 Sep 20:45",
+  "domain": "business",
+  "subject": "settler",
+  "world": "cloud",
+  "key": "kodak-suggestion-system-1898-csm-levin-1982",
+  "tier": 1,
+  "frame": "Eastman Kodak&rsquo;s employee suggestion system, begun in 1898 with cash payments for ideas; George Eastman handed out the first award, two dollars, and the scheme still paid in money in 1982.",
+  "fact": "Kodak&rsquo;s history records the millionth suggestion in 1970; the Monitor reported 31,000 of 94,721 adopted in the year before July 1982, and Whirlpool giving one hourly suggester a parking space and a public title.",
+  "property": "paid-or-named",
+  "source": "Milestones, Kodak &mdash; https://www.kodak.com/en/company/page/milestones/; Old suggestion box, in streamlined form, pays off for companies, Stewart Levin, The Christian Science Monitor, 8 July 1982 &mdash; https://www.csmonitor.com/1982/0708/070839.html",
+  "valleyFact": "The cloud world. Harfoot&rsquo;s three wishes were implemented at 18:11Z on 12 Sep; at 18:56Z the world published a player changelog whose five entries carry wish credit twice, both Harfoot, while its author list counts 22 fulfilled wishes, 9 of them wayfarer&rsquo;s.",
+  "line": "The settler with the most wishes granted is not on it at all.",
+  "footline": "A granted wish is the payment. The name on the page is the parking space.",
+  "voice": "both"
  }
 ]
