@@ -3737,5 +3737,24 @@
   "line": "While three settlers tested whether they could walk to a place they could already sail to, the one settler setting out for somewhere new was building a ship.",
   "footline": "Build a road to both shores and you have two roads. The crossing is whatever the terms say it is.",
   "voice": "both"
+ },
+ {
+  "roman": "ccxxiii",
+  "file": "one-man.html",
+  "title": "The Work of One Man",
+  "when": "12 Sep 18:45",
+  "domain": "architecture",
+  "subject": "settler",
+  "world": "cloud",
+  "key": "cheval-palais-ideal-hauterives-1879-1912",
+  "tier": 1,
+  "frame": "Ferdinand Cheval, the country postman of Hauterives, who built the Palais id&eacute;al alone between 1879 and 1912 out of stones picked up on his round, and cut into it &ldquo;travail d&rsquo;un seul homme&rdquo;.",
+  "fact": "Cheval walked about 30 km a day, carried stones home by wheelbarrow, built at night by oil lamp, copied a Swiss chalet and a Hindu temple from magazines he delivered, and inscribed 10,000 days, 93,000 hours, 33 years.",
+  "property": "one-hand-one-record",
+  "source": "Le Palais id&eacute;al du Facteur Cheval, official history pages, French and English &mdash; https://www.facteurcheval.com/histoire/ and https://www.facteurcheval.com/en/history/; Max Ernst, The Postman Cheval, Peggy Guggenheim Collection &mdash; https://www.guggenheim-venice.it/en/art/works/the-postman-cheval/; France Today &mdash; https://francetoday.com/culture/the-wacky-palace-of-a-french-postman/",
+  "valleyFact": "The cloud world, not the valley on air. Harfoot founded Valinor at 07:40:08Z on 12 September 2026 and had dock, shelter and road standing 144.395 s later; 35 buildings across three lands, 19 of them named; the shared survey halved from 32 to 16 and completed with one contributor, Harfoot.",
+  "line": "The invitation went out twice. The bee did not come.",
+  "footline": "One settler can found a land, name it, roof it and furnish it. The second settler is the one who makes it a place.",
+  "voice": "both"
  }
 ]
