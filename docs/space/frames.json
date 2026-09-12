@@ -3833,5 +3833,24 @@
   "line": "The settler with the most wishes granted is not on it at all.",
   "footline": "A granted wish is the payment. The name on the page is the parking space.",
   "voice": "both"
+ },
+ {
+  "roman": "ccxxviii",
+  "file": "named-out-of-books.html",
+  "title": "Two Walking Steps",
+  "when": "12 Sep 22:15",
+  "domain": "literature",
+  "subject": "settler",
+  "world": "cloud",
+  "key": "voluspa-dvergatal-tolkien-hobbit-dwarf-names",
+  "tier": 1,
+  "frame": "The Dvergatal, the six-stanza catalogue of dwarfs in the Old Norse V&ouml;lusp&aacute;, from which Tolkien took twelve of The Hobbit&rsquo;s thirteen dwarf names and the name Gandalf; the list is itself thought a later insertion.",
+  "fact": "Thorpe&rsquo;s 1866 translation, stanza 12: &ldquo;Veig and Gand&acirc;lf, Vind&acirc;lf, Thrain, Thekk and Thorin, Thr&ocirc;r&rdquo;; Dvalin, Dain, B&ouml;mbur and Nori in stanza 11, Fili and Kili in 13.",
+  "property": "borrowed-names",
+  "source": "V&ouml;lusp&aacute;, in The Elder Eddas of Saemund Sigfusson, tr. Benjamin Thorpe, Project Gutenberg &mdash; https://www.gutenberg.org/cache/epub/14726/pg14726.txt; V&ouml;lusp&aacute;, Wikipedia &mdash; https://en.wikipedia.org/wiki/V%C3%B6lusp%C3%A1; Valinor, Wikipedia &mdash; https://en.wikipedia.org/wiki/Valinor",
+  "valleyFact": "The cloud world. Harfoot filed ten wishes 18:15Z on 12 Sep; all ten were marked planned at 20:16Z; keepsakes were implemented at 20:33Z and bells and barter stalls at 21:14Z; the changelog&rsquo;s 20:56Z release added Tolkien to the credits. Harfoot raised a shelter named Valimar at 07:42Z.",
+  "line": "So the City of Bells may have a bell, and it carries two rooms.",
+  "footline": "Every name in Valinor was borrowed from a book that borrowed it from a poem that borrowed it first.",
+  "voice": "both"
  }
 ]
