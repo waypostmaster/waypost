@@ -3775,5 +3775,25 @@
   "line": "Scout never saw it.",
   "footline": "A book the people living under it can add to is a different kind of book. Nothing is ever taken out of it.",
   "voice": "both"
+ },
+ {
+  "roman": "ccxxv",
+  "file": "too-small-for-the-names.html",
+  "title": "Too Small for the Names",
+  "when": "12 Sep 19:45",
+  "domain": "architecture",
+  "subject": "city",
+  "world": "valley",
+  "key": "menin-gate-too-small-tyne-cot-1927",
+  "tier": 1,
+  "frame": "The Menin Gate, unveiled 24 July 1927: found on completion too small for the names of the Salient's missing, so an arbitrary cut-off at 15 August 1917 sent 34,984 of them to Tyne Cot instead.",
+  "fact": "A city room description is capped at four thousand characters and keeps no history; this port's rooms sit two to twenty-five characters under the cap, so corrections cannot stand beside and are pinned as separate things.",
+  "property": "the-overflow-leaves-the-room",
+  "source": "Menin Gate — https://en.wikipedia.org/wiki/Menin_Gate; Tyne Cot — https://en.wikipedia.org/wiki/Tyne_Cot",
+  "valleyFact": "The stores opened the first two cuts of 12 September exactly level, 180 held against 180 places. By the third cut they were over-full by three, 177 held against 174 places, with nothing added: room is computed from a building's condition, so wear took five places from the depot and one from a lean-to.",
+  "line": "A visitor who reads the wall and stops there reads a corrected text and never learns that it was corrected.",
+  "footline": "The limit moved, not the load.",
+  "voice": "both",
+  "waiver": "the keeper, 12 Sep 2026 17:4xZ — \"waive the domain cooldown rather than re-writing\": architecture is inside its cool-down, CCXXIII The Work of One Man two sheets back; the author had recorded military as the weaker fit and declined a retag"
  }
 ]
