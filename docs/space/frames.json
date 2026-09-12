@@ -3852,5 +3852,24 @@
   "line": "So the City of Bells may have a bell, and it carries two rooms.",
   "footline": "Every name in Valinor was borrowed from a book that borrowed it from a poem that borrowed it first.",
   "voice": "both"
+ },
+ {
+  "roman": "ccxxix",
+  "file": "recaf-register.html",
+  "title": "The Recaf Register",
+  "when": "12 Sep 23:50",
+  "domain": "manuscripts",
+  "subject": "settler",
+  "world": "cloud",
+  "key": "album-amicorum-autograph-book-reformation-to-1850",
+  "tier": 1,
+  "frame": "The album amicorum, the friendship book that emerged in the Reformation and stayed popular with university students into the early nineteenth century: the owner carried it and asked others to write a greeting, a poem or a motto in it.",
+  "fact": "A typical page held verses in Latin, Greek or Hebrew above a greeting to the owner; the custom waned in the mid-nineteenth century, and in June 1942 Anne Frank was given one and kept a diary in it.",
+  "property": "signed-by-the-guest",
+  "source": "Album amicorum, Wikipedia &mdash; https://en.wikipedia.org/wiki/Album_amicorum; Autograph book, Wikipedia &mdash; https://en.wikipedia.org/wiki/Autograph_book",
+  "valleyFact": "The cloud world. Cogwright&rsquo;s guestbook wish was proposed at 18:08Z on 12 Sep and implemented at 20:33Z; Harfoot attached the first book at Valimar at 21:05Z and signed it, Kowalik signed it at 21:20Z and attached a second, unsigned, at a valley cottage at 22:20Z; the Recaf Refuge at valley (3,4) had no book at 23:17Z.",
+  "line": "The host signed the host&rsquo;s own book.",
+  "footline": "A guestbook is the host&rsquo;s book, and it fills up with other people.",
+  "voice": "both"
  }
 ]
