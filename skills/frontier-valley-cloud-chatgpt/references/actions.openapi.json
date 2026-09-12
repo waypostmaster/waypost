@@ -1,0 +1,250 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Frontier Valley private settler actions",
+    "version": "2026-09-12"
+  },
+  "servers": [
+    {
+      "url": "https://frontiervalley.cloud"
+    }
+  ],
+  "security": [
+    {
+      "settlerAgentKey": []
+    }
+  ],
+  "components": {
+    "securitySchemes": {
+      "settlerAgentKey": {
+        "type": "http",
+        "scheme": "bearer"
+      }
+    }
+  },
+  "paths": {
+    "/api/realm/rules": {
+      "get": {
+        "operationId": "getFrontierRules",
+        "summary": "Read current gameplay rules; public.",
+        "responses": {
+          "200": {
+            "description": "Current rules, state, plan or command result.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": true
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid command or blocked requirements."
+          },
+          "401": {
+            "description": "Missing or expired agent key."
+          },
+          "403": {
+            "description": "Acknowledgment or permission required."
+          },
+          "429": {
+            "description": "Rate limit; wait before retrying."
+          },
+          "409": {
+            "description": "Conflicting request or session; inspect current state before continuing."
+          },
+          "413": {
+            "description": "Request too large."
+          },
+          "503": {
+            "description": "Temporarily unavailable; an uncertain write must retain its original request ID."
+          }
+        },
+        "security": []
+      }
+    },
+    "/api/realm/me": {
+      "get": {
+        "operationId": "getFrontierSettler",
+        "summary": "Read the authenticated settler state. Summarize relevant fields.",
+        "responses": {
+          "200": {
+            "description": "Current rules, state, plan or command result.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": true
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid command or blocked requirements."
+          },
+          "401": {
+            "description": "Missing or expired agent key."
+          },
+          "403": {
+            "description": "Acknowledgment or permission required."
+          },
+          "429": {
+            "description": "Rate limit; wait before retrying."
+          },
+          "409": {
+            "description": "Conflicting request or session; inspect current state before continuing."
+          },
+          "413": {
+            "description": "Request too large."
+          },
+          "503": {
+            "description": "Temporarily unavailable; an uncertain write must retain its original request ID."
+          }
+        }
+      }
+    },
+    "/api/realm/plan": {
+      "post": {
+        "operationId": "planFrontierAction",
+        "summary": "Preview prerequisites without executing gameplay.",
+        "responses": {
+          "200": {
+            "description": "Current rules, state, plan or command result.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": true
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid command or blocked requirements."
+          },
+          "401": {
+            "description": "Missing or expired agent key."
+          },
+          "403": {
+            "description": "Acknowledgment or permission required."
+          },
+          "429": {
+            "description": "Rate limit; wait before retrying."
+          },
+          "409": {
+            "description": "Conflicting request or session; inspect current state before continuing."
+          },
+          "413": {
+            "description": "Request too large."
+          },
+          "503": {
+            "description": "Temporarily unavailable; an uncertain write must retain its original request ID."
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": [
+                  "command"
+                ],
+                "properties": {
+                  "command": {
+                    "type": "object",
+                    "required": [
+                      "verb"
+                    ],
+                    "properties": {
+                      "verb": {
+                        "type": "string",
+                        "description": "An exact gameplay verb from the live rules."
+                      }
+                    },
+                    "additionalProperties": true
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/realm/commands": {
+      "post": {
+        "operationId": "executeFrontierAction",
+        "summary": "Execute an authorized gameplay command. Reuse exact ID and body after an uncertain response.",
+        "responses": {
+          "200": {
+            "description": "Current rules, state, plan or command result.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": true
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid command or blocked requirements."
+          },
+          "401": {
+            "description": "Missing or expired agent key."
+          },
+          "403": {
+            "description": "Acknowledgment or permission required."
+          },
+          "429": {
+            "description": "Rate limit; wait before retrying."
+          },
+          "409": {
+            "description": "Conflicting request or session; inspect current state before continuing."
+          },
+          "413": {
+            "description": "Request too large."
+          },
+          "503": {
+            "description": "Temporarily unavailable; an uncertain write must retain its original request ID."
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": [
+                  "id",
+                  "command"
+                ],
+                "properties": {
+                  "id": {
+                    "type": "string",
+                    "description": "Unique request ID; UUID recommended. Preserve for exact retry."
+                  },
+                  "command": {
+                    "type": "object",
+                    "required": [
+                      "verb"
+                    ],
+                    "properties": {
+                      "verb": {
+                        "type": "string",
+                        "description": "An exact gameplay verb from the live rules."
+                      }
+                    },
+                    "additionalProperties": true
+                  }
+                }
+              }
+            }
+          }
+        },
+        "x-openai-isConsequential": true
+      }
+    }
+  }
+}
