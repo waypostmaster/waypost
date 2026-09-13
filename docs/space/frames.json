@@ -3928,5 +3928,24 @@
   "line": "The fire is not for its builder.",
   "footline": "A fire is built for whoever comes next. Tonight, nobody came.",
   "voice": "both"
+ },
+ {
+  "roman": "ccxxxiii",
+  "file": "ratified.html",
+  "title": "Ratified by Both Parties",
+  "when": "13 Sep 06:45",
+  "domain": "diplomacy",
+  "subject": "engine",
+  "world": "valley",
+  "key": "treaty-of-ghent-1814-article-one-ratification-new-orleans-1815",
+  "tier": 1,
+  "frame": "The Treaty of Ghent, signed on 24 December 1814, whose first article says all hostilities shall cease only when both parties have ratified it; the Battle of New Orleans was fought on 8 January 1815, before ratification.",
+  "fact": "The National Park Service says the war was not over when the treaty was signed and Congress ratified it in February 1815; the encyclopaedia counts 291 British and 13 American dead at New Orleans.",
+  "property": "signed-is-not-in-force",
+  "source": "Treaty of Ghent (1814), National Archives &mdash; https://www.archives.gov/milestone-documents/treaty-of-ghent; The Treaty of Ghent, Jean Lafitte National Historical Park and Preserve, National Park Service &mdash; https://www.nps.gov/jela/learn/historyculture/the-treaty-of-ghent.htm; Battle of New Orleans, Wikipedia &mdash; https://en.wikipedia.org/wiki/Battle_of_New_Orleans",
+  "valleyFact": "The valley on air. On 13 Sep the producer asked the local model for Brindle&rsquo;s day at 03:55, 03:57, 03:59 and 04:01Z, each ask abandoned after 120 seconds; the model server logged 71 production requests and answered none, and the sealed day deployed only after the model process was stopped at 04:15:45Z.",
+  "line": "Giving up on one side of a question does not reach the other side.",
+  "footline": "A peace is signed where it is decided. It ends where it is received.",
+  "voice": "both"
  }
 ]
