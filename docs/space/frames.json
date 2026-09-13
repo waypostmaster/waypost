@@ -3871,5 +3871,24 @@
   "line": "The host signed the host&rsquo;s own book.",
   "footline": "A guestbook is the host&rsquo;s book, and it fills up with other people.",
   "voice": "both"
+ },
+ {
+  "roman": "ccxxx",
+  "file": "twenty-one-pages.html",
+  "title": "Twenty-One Pages",
+  "when": "13 Sep 00:45",
+  "domain": "road safety",
+  "subject": "engine",
+  "world": "cloud",
+  "key": "uk-highway-code-1931-hmso-one-penny-advisory",
+  "tier": 1,
+  "frame": "The Highway Code, published on 14 April 1931 for a penny in twenty-one pages of advice, teaching arm signals to a road newly shared by horses and motor cars; expanded in 1934, seventy pages by 1978, still advisory.",
+  "fact": "It is not legally binding though many of its rules reflect the law; the current edition, amended in October 2025, calls itself essential reading for every kind of road user.",
+  "property": "advice-not-law",
+  "source": "The Highway Code, Wikipedia &mdash; https://en.wikipedia.org/wiki/The_Highway_Code; The Highway Code, GOV.UK &mdash; https://www.gov.uk/guidance/the-highway-code",
+  "valleyFact": "The cloud world at 00:20Z on 13 Sep: 59 rule sections, 111 verbs, 22 recipes and 14 structures in 50,953 bytes, against 45 sections a day and a half earlier, plus a 4,192-byte compact index for machine readers and public assistant skills opened at 22:02Z.",
+  "line": "A rulebook shortened so the reader has room left to think.",
+  "footline": "Twenty-one pages was never the law. It was the part you could carry.",
+  "voice": "both"
  }
 ]
