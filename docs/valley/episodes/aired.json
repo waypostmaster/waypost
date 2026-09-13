@@ -1334,5 +1334,77 @@
   },
   "sealed_at": "2026-09-12T03:43:23.536Z",
   "replaces": null
+ },
+ {
+  "file": "episode-2026-09-13T035333-cut1.json",
+  "cut": 1,
+  "day": "2026-09-13",
+  "aired_at": "2026-09-13T04:00:00.000Z",
+  "ends_at": "2026-09-13T10:00:00.000Z",
+  "ticks": 21600,
+  "sha256": "a7c19f4c6589b1eb25facdb724644e843ece08494a5f5258e79105bee1cfcce5",
+  "engine": {
+   "commit": "8f4fbc5dfa9c",
+   "dirty": true,
+   "bundle": "assets/valley-BKiZZTGj.js",
+   "sun": "assets/sun-C0M5Hd8K.js",
+   "built_at": "2026-09-13T03:53:33.004Z"
+  },
+  "sealed_at": "2026-09-13T03:55:35.584Z",
+  "replaces": null
+ },
+ {
+  "file": "episode-2026-09-13T035333-cut2.json",
+  "cut": 2,
+  "day": "2026-09-13",
+  "aired_at": "2026-09-13T10:00:00.000Z",
+  "ends_at": "2026-09-13T16:00:00.000Z",
+  "ticks": 21600,
+  "sha256": "8f5ee4ba6acc0ea055aa22bb270d7880d66017b24c3bf8fd3aeb9becf1ecaa82",
+  "engine": {
+   "commit": "8f4fbc5dfa9c",
+   "dirty": true,
+   "bundle": "assets/valley-BKiZZTGj.js",
+   "sun": "assets/sun-C0M5Hd8K.js",
+   "built_at": "2026-09-13T03:53:33.004Z"
+  },
+  "sealed_at": "2026-09-13T03:57:38.809Z",
+  "replaces": null
+ },
+ {
+  "file": "episode-2026-09-13T035333-cut3.json",
+  "cut": 3,
+  "day": "2026-09-13",
+  "aired_at": "2026-09-13T16:00:00.000Z",
+  "ends_at": "2026-09-13T22:00:00.000Z",
+  "ticks": 21600,
+  "sha256": "91103a37f5f81a4da0d9cc34ab9f52b8bae711f0676513c89eb83106f101b8b5",
+  "engine": {
+   "commit": "8f4fbc5dfa9c",
+   "dirty": true,
+   "bundle": "assets/valley-BKiZZTGj.js",
+   "sun": "assets/sun-C0M5Hd8K.js",
+   "built_at": "2026-09-13T03:53:33.004Z"
+  },
+  "sealed_at": "2026-09-13T03:59:41.413Z",
+  "replaces": null
+ },
+ {
+  "file": "episode-2026-09-13T035333-cut4.json",
+  "cut": 4,
+  "day": "2026-09-13",
+  "aired_at": "2026-09-13T22:00:00.000Z",
+  "ends_at": "2026-09-14T04:00:00.000Z",
+  "ticks": 21600,
+  "sha256": "278772ff9fdcb95e09611290c28db4693646d8e4852fafaaa56f59d1a59d9d12",
+  "engine": {
+   "commit": "8f4fbc5dfa9c",
+   "dirty": true,
+   "bundle": "assets/valley-BKiZZTGj.js",
+   "sun": "assets/sun-C0M5Hd8K.js",
+   "built_at": "2026-09-13T03:53:33.004Z"
+  },
+  "sealed_at": "2026-09-13T04:01:44.148Z",
+  "replaces": null
  }
 ]
