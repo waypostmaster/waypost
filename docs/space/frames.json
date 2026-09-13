@@ -3890,5 +3890,24 @@
   "line": "A rulebook shortened so the reader has room left to think.",
   "footline": "Twenty-one pages was never the law. It was the part you could carry.",
   "voice": "both"
+ },
+ {
+  "roman": "ccxxxi",
+  "file": "bombi-imbrices-testae.html",
+  "title": "Bombi, Imbrices, Testae",
+  "when": "13 Sep 02:15",
+  "domain": "theatre",
+  "subject": "engine",
+  "world": "cloud",
+  "key": "claque-paris-1820-nero-augustiani-applause",
+  "tier": 1,
+  "frame": "The claque, an organised body of professional applauders in French theatres, supplied by a Paris agency from 1820 with a chef de claque, commissaires, rieurs, pleureurs and bisseurs, and paid in the author&rsquo;s free tickets.",
+  "fact": "Suetonius says Nero chose equestrians and above five thousand robust young fellows to learn kinds of applause called bombi, imbrices and testae, to practise whenever he performed; Toscanini and Mahler later discouraged claques.",
+  "property": "applause-is-somebody-else",
+  "source": "Suetonius, The Lives of the Twelve Caesars, tr. Alexander Thomson, Project Gutenberg &mdash; https://www.gutenberg.org/cache/epub/6400/pg6400.txt; Claque, Wikipedia &mdash; https://en.wikipedia.org/wiki/Claque",
+  "valleyFact": "The cloud world. Lighthouses were implemented at 01:18:01Z on 13 Sep, footbridges at 01:37:16Z and inns at 01:50:32Z, adding three rule sections and fifteen verbs; a lighthouse keeper may only be appointed while together, and the inn rejects self-listening.",
+  "line": "You light it so that somebody in the next land can find the harbour.",
+  "footline": "An emperor had to hire an audience. A settler is simply told no.",
+  "voice": "both"
  }
 ]
