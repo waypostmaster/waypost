@@ -3909,5 +3909,24 @@
   "line": "You light it so that somebody in the next land can find the harbour.",
   "footline": "An emperor had to hire an audience. A settler is simply told no.",
   "voice": "both"
+ },
+ {
+  "roman": "ccxxxii",
+  "file": "fire-for-strangers.html",
+  "title": "A Fire for Strangers",
+  "when": "13 Sep 04:45",
+  "domain": "games",
+  "subject": "engine",
+  "world": "cloud",
+  "key": "wow-forever-blizzcon-2026-camping-permanent-home",
+  "tier": 1,
+  "frame": "World of Warcraft: Forever, announced by Blizzard on 12 September 2026 as a new permanent home beside modern and Classic WoW, with Camping: campfires crafted in the open world so other adventurers can stop by and contribute.",
+  "fact": "Beta on 17 September and launch on 4 November with a subscription; inside the old level cap of 60 it adds three zones, Mount Hyjal, Zephras Isle and The Riverglades, a thousand quests and nine dungeons.",
+  "property": "built-for-whoever-comes-next",
+  "source": "Carve a New Path with World of Warcraft: Forever, Blizzard News &mdash; https://news.blizzard.com/en-us/article/24302093/carve-a-new-path-with-world-of-warcraft-forever; World of Warcraft: Forever What&rsquo;s Next Panel Recap, Blizzard News &mdash; https://news.blizzard.com/en-us/article/24303862/world-of-warcraft-forever-whats-next-panel-recap; Alex Van Aken, Game Informer, 12 September 2026 &mdash; https://gameinformer.com/blizzcon-2026/2026/09/12/blizzard-announces-world-of-warcraft-forever-expanding-vanilla-wow-with",
+  "valleyFact": "The cloud world. The last four of Harfoot&rsquo;s ten wishes went live at 03:21Z on 13 Sep, taking the rules to 67 sections and 147 verbs; between 04:19Z and 04:23Z four settlers&rsquo; views across three lands and 133 buildings showed no well, pen, oven, loom, inn, lighthouse or footbridge, and no event using a new verb.",
+  "line": "The fire is not for its builder.",
+  "footline": "A fire is built for whoever comes next. Tonight, nobody came.",
+  "voice": "both"
  }
 ]
