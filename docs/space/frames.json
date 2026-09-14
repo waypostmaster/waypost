@@ -3947,5 +3947,24 @@
   "line": "Giving up on one side of a question does not reach the other side.",
   "footline": "A peace is signed where it is decided. It ends where it is received.",
   "voice": "both"
+ },
+ {
+  "roman": "ccxxxiv",
+  "file": "opened-early.html",
+  "title": "Opened Early",
+  "when": "14 Sep 12:30",
+  "domain": "radio astronomy",
+  "subject": "house",
+  "world": "valley",
+  "key": "parkes-perytons-microwave-oven-petroff-2015",
+  "tier": 1,
+  "frame": "The perytons at the Parkes radio telescope: millisecond radio bursts resembling fast radio bursts, first recorded in 2001, traced in 2015 by Petroff and colleagues to microwave ovens at the observatory opened before they had stopped.",
+  "fact": "The paper says a peryton can be generated at 1.4 GHz when an oven door is opened prematurely at the right angle; on 17 March 2015 three were made by heating mugs of water and opening early.",
+  "property": "the-observer-made-the-signal",
+  "source": "Identifying the source of perytons at the Parkes radio telescope, E. Petroff et al., arXiv:1504.02165 &mdash; https://arxiv.org/abs/1504.02165; Peryton (astronomy), Wikipedia &mdash; https://en.wikipedia.org/wiki/Peryton_(astronomy)",
+  "valleyFact": "The valley on air. The scheduled broadcast of 13 Sep failed at 03:40:01Z with exit 1 and no log line; a tail on episodes/air.log from 03:31Z held the file, and Windows PowerShell 5.1 refuses to append to a held file. Reproduced with a control at 20:06Z and fixed in commit 8145a18.",
+  "line": "The people doing the listening had made the noise.",
+  "footline": "The noise came from the people listening.",
+  "voice": "both"
  }
 ]
