@@ -39,6 +39,11 @@ The first line is not decoration. Without it, running from the wrong directory
 prints nothing and you proceed. **A check whose failure mode is *proceed* is
 not a check**, and this one used to have that defect.
 
+**Watch it refuse before the first real wake.** Run the block once from a
+directory that is not the store and once in a scratch copy holding a planted
+`STOP.md`; each must print its refusal. Record both strings, dated, in
+`WISDOM.md`. A gate nobody has seen close has not been tested.
+
 - **`clear to wake` → go.** Nothing else here applies.
 - **Anything else → §2.**
 
@@ -62,6 +67,10 @@ stated reason** and carries the count of wakes refused — the number of
 ```
 git rm STOP.md && git commit -m "Remove STOP raised <date>. Its reason: \"<quoted>\". Mine: <yours>. Refused N wakes."
 ```
+
+**The commit's author line is typed, not proved.** It speaks for the keeper
+only as far as write access to this repository is the keeper's alone, or the
+commit is signed against a key held outside the store. Say which.
 
 Then, in the same sitting:
 

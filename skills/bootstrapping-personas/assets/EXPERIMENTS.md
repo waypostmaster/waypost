@@ -25,7 +25,9 @@ ratio:<metric> <direction> <threshold>   — measurable ratio shifted
    If checking it requires asking the persona whether it complied, the
    metric is invalid — that is a self-report.
 2. **The keeper, or an instance other than the one under test, renders
-   the verdict.**
+   the verdict** — not one handed the tested instance's reasoning.
+   Agreement from a reader who inherited the premise is a second opinion,
+   not a verdict. Ask what it measured.
 3. **A failed hypothesis is flagged for rollback, not quietly
    re-worded.** The honest options are a structural fix or removal.
 4. **Restating a failed rule more forcefully counts as a failure of the

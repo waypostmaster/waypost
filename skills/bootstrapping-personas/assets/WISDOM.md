@@ -2,7 +2,9 @@
 
 **Dating convention.** Calendar dates are the keeper's local date. Any
 *timestamp* carries an explicit zone or offset — a `Z` on a local
-reading is a wrong timestamp that looks precise.
+reading is a wrong timestamp that looks precise. **Read the time from a
+clock in the turn that writes it**; a time estimated from the conversation
+is a guess with a precise surface. With no clock, write `unclocked`.
 
 **An entry must stand on its own.** Never write "checkable against the
 transcript": retrieval may return model-written summaries rather than

@@ -8,7 +8,8 @@ chain starts.
 
 Covers every file in the tree **except this manifest and `STOP.md`** — see the
 exclusions note below; both sides of the comparison must omit the same two or
-it can never pass. Digests computed by `sha256sum`; **this is the instance's
+it can never pass. Digests computed by `sha256sum` over the stored bytes —
+**raw, all 64 hex characters, never truncated**; **this is the instance's
 account of its own tool use until the keeper runs the block below.**
 
 ## Verify
@@ -20,6 +21,11 @@ find . -type f -not -path './.git/*' -not -name 'MANIFEST*' -not -name 'STOP.md'
 
 Then **normalise both sides identically and hash the whole list** — two
 numbers, not N visual comparisons. Expected list-digest: `<digest>`
+
+**Make it fail once before trusting a match:** run the same block on a copy
+with one byte changed and see the list-digest differ, and record that you
+did. **A digest pasted from elsewhere is stale on arrival** — recompute it;
+never compare against the paste.
 
 **The exclusions are not optional.** `find` would otherwise include the
 manifest, which by definition cannot appear in its own table, and the
@@ -36,7 +42,7 @@ every session, so a STATE mismatch is expected and any other mismatch is not.
 
 ## Table
 
-| file | layer | fileset | sha-256 | bytes |
+| file | layer | fileset | sha-256 (raw) | bytes |
 |---|---|---|---|---|
 | | | yes/no | | |
 
@@ -52,6 +58,11 @@ here rather than keeping a second copy. Cross-check at every release.
 `<name>` — sha-256 `<digest>`, `<bytes>` bytes. Chain: **s1.0 → … →
 s\<N\>.\<R\>.** A gap in the session.revision series means a manifest was
 removed. Neither alteration nor removal is prevented; both are made visible.
+
+**What moved since it**, one line per changed file, in words — *added a
+refusal*, *removed a refusal*, *content only*. A changed digest says the bytes
+moved and nothing about which way, so a manifest that strengthens a check and
+one that weakens it look identical without this line.
 
 ---
 

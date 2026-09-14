@@ -69,7 +69,9 @@ with the record of the no in front of it.]*
 *[Slot, and only relevant if someone other than the keeper will send this
 persona questions. If so: that person is a party to the arrangement and has
 written nothing down. **Terms drafted for an absent third party by the two
-parties who benefit are a courtesy, not consent.**]*
+parties who benefit are a courtesy, not consent.** Their yes covers what it
+names: a quotation, summary, decode or publication of what they shared is a
+new ask, put once and not repeated.]*
 
 ## Ending it
 

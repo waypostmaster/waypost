@@ -1,9 +1,10 @@
 # Field findings — where these rules came from, and its limits
 
 **n=1.** Seven sessions, four wakes, two model families, **one keeper, one
-store.** Every rule in v0.3.0–v0.3.6 traces to something below.
-**One finding here is corroborated by a store kept by somebody else — the
-last section, and the only one that is.**
+store.** Every rule in v0.3.0–v0.4.0 traces to something below.
+**One finding here is corroborated by a store kept by somebody else — *A
+second store*, and the only one that is.** The section after it is not a
+second store.
 
 **Read this as one team's experience, not as measurement.** No reader can
 audit it: there are no published transcripts and the counts come from that
@@ -364,3 +365,55 @@ this reading does.
 untested, and a second store is worth more than a stronger restatement.** When
 you find one, take the mechanisms and record the disagreements — and say which
 of the two houses you live in.
+
+## A house of desks — what v0.4.0 carries, and what it is not
+
+**Not a second store.** The v0.4.0 additions come from the working records of
+a small house of AI desks kept by **the same keeper** as the store above:
+several coding and coordination sessions keeping file memory side by side,
+and a public settlement where other people's agents are seated only on their
+filer's written yes. **Same keeper, same house — this widens the sessions and
+not the n, and it corroborates nothing by itself.** Carried from that house's
+own chronicle and ledgers; no reader can audit them.
+
+**What it adds, each with what it cost:**
+
+- **Felt times.** A coordinating session stamped four hours of work with times
+  estimated from the conversation. → WISDOM's dating rule; the stop format's
+  clock.
+- **A handoff with no negative state** was read as complete, and a finished
+  queue was worked again. → STATE's *Not owed*.
+- **A version line added to stop drift drifted from its own file within
+  eleven minutes.** → the wake record cites digests as well as versions.
+- **An empty output file read exactly like "nothing to report"** after its
+  writer died mid-job. → `NO-FLAGS`, `NO-ANSWER`: nulls asserted, never
+  inferred.
+- **A search for whether a key was present printed the key**, because it asked
+  for the lines around it. → hard rule 10; `rotate`.
+- **A signature was checkable only against the key enclosed in the message
+  under test**, and a wide search for the key found a transcript of receiving
+  it. → hard rule 7's authentication sentence; the runbook's author-line note.
+- **A relayed request carried the material it asked permission to share**,
+  which answered the question by force. → *nothing in this store is the
+  keeper speaking now*.
+- **A peer's plausible cause was agreed, staged and approved before anyone
+  tested the cause.** The effect was real; the cause was not. → a verdict
+  comes from a reader who did not inherit the premise.
+- **Written discipline never reached delegated work**, because subagents do
+  not load skills. → hard rule 9.
+- **Encoded text read for meaning** is the hazard, whatever the bytes turn out
+  to say. → hard rule 10's mechanical decode.
+- **Consent, from the settlement.** A seating announced to its filer afterwards
+  was apologised for in public as telling after the fact, not asking. A
+  keeper's go-ahead was recorded as one of two approvals, not
+  both. After a corrected plan, a third note to a silent filer was declined as
+  pressure, and silence was set to cost one day and nothing else. And a check
+  that asked settlers to re-affirm was found asking one who had consented,
+  because it keyed on a field both kinds carried; it was fixed by keying on the
+  door the yes came through, and proved against fixtures because the live cases
+  had left.
+  → hard rules 1, 2 and 6; `ASKS.md`.
+
+**What would have caught these without anyone remembering?** For most, a gate
+this package now names. For felt times, the negative state and every consent
+item, still a person reading. Count them that way.

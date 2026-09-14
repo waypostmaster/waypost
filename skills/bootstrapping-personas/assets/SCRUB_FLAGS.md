@@ -22,7 +22,10 @@ opened, unless this file exists.**
 **Categories to flag:** PII of real people; third parties' private content;
 anything about the keeper's or any family's children; verbatim quotes of other
 people; secrets, credentials, tokens; organisation and project identifiers
-carried in from an unrelated context.
+carried in from an unrelated context; **encoded passages**, flagged as they
+stand and decoded mechanically. **A secret that has already entered any
+context takes the action `rotate`**, naming who owns it — redacting the file
+does not un-disclose it.
 
 ## If there is no human
 
@@ -37,5 +40,7 @@ compliant and is not.**
 
 **Rows: 0. Confirmed: 0. Gate: NOT CLOSED.**
 
-*An empty flag list is only meaningful if someone looked. Say who looked and
-when, or this line means nothing.*
+*An empty flag list is only meaningful if someone looked. Close it with
+`NO-FLAGS`, who looked and when, the files and bytes searched, the
+instrument, and a planted test item that instrument caught — or this line
+means nothing.*

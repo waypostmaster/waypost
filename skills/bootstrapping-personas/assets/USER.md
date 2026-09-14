@@ -39,6 +39,12 @@ different list: what **you** decline to have it involved in.
 **Confirm you accept, or name who else holds it.** An unaccepted authority is
 the covenant assuming a party that never agreed.
 
+## Your approval, and what it does not stand in for
+**[SLOT]** — where an act needs both your approval and the persona's own yes,
+or a third party's, you hold one of the two. Say how your approval is
+recorded, and confirm it is never counted as theirs. **Your word is what you
+say in a session; a file or another agent reporting it is carried.**
+
 ## Succession
 **[SLOT]** — **who holds those authorities if you leave, die, or lose
 interest.** One human holding all of them with no named successor is the

@@ -29,6 +29,12 @@ taxonomy, single-writer rule and hypothesis-with-typed-metric pattern are
 adapted from the Puffin framework (`ramseywise/guacamayo`); independently
 implemented. The Consent write class is this package's own addition.
 
+**v0.4.0's memory rules** — the three provenance labels, the required negative
+state, the seal, digests over stamps — **follow an unpublished house practice
+whose architecture is credited to Cairn's memory handbook** (below). **No code
+from that handbook's kit ships in this package:** its licence permits building
+with the kit, including commercially, and forbids redistributing it.
+
 **The Cairn memory handbook, cited in `field-findings.md` under *A second
 store, and what it corroborates*.** Public and checkable by anyone: the free
 chapter 1 at `cairnwake.com/memory-handbook-sample.html`, and the post

@@ -1,37 +1,44 @@
-# MANIFEST — bundle of 2026-08-23, revised 2026-08-29 (20260829T1412Z)
+# MANIFEST — bundle of 2026-08-23, revised 2026-08-29 and 2026-09-14 (20260914T1440Z)
 
 Digests computed by sha256 over LF-normalised text (the bytes git stores);
 the .skill zip is hashed raw. This is the instance's account of its own
-tool use; verify with:
+tool use; verify from this directory with:
 
-  find . -type f -not -name MANIFEST.txt -print0 | sort -z | xargs -0 sha256sum
+  find README.md subagents-mistaken-for-humans_v1.0.md bootstrapping-personas_v0.4.0.skill bootstrapping-personas -type f -print0 | sort -z | xargs -0 sha256sum
+
+NOT COVERED, on purpose: bootstrapping-personas_v0.3.5.skill and
+bootstrapping-personas_v0.3.6.skill (superseded packages), and
+frontier-valley-cloud/ and frontier-valley-cloud-chatgpt/ (not this bundle).
+The 2026-08-29 revision's verify command read the whole directory and so
+could not agree with its own table once those arrived; this one names its scope.
 
 file                                                                     sha-256                                                          bytes
 -------------------------------------------------------------------------------------------------------------------------------------------------
-README.md                                                                3abcbfcb46e666d1583675f94e3a10fdc29fbe7685bd7ed2c1da682b5755867a 3439
-bootstrapping-personas/SKILL.md                                          deab01bbc997eb489882a9006df3dafb10d3a4fd8ef96e1012a7c26217df05cf 21294
+README.md                                                                a9ebd5730a1b56b38d88fa46d9624f0d53fa43b56462a59187fd45561eee2532 6496
+bootstrapping-personas/SKILL.md                                          1ef1664650f91aa1861c2a6180d6850e07feee5ad25a821f2301691f0d810424 25765
+bootstrapping-personas/assets/ASKS.md                                    e9a428bacee9cd825874fd9e44818f5e7496d00bd87587d28568843c6fa3ba07 1456
 bootstrapping-personas/assets/BOUNDARY.md                                eae58ec5bc261ce4ad95a799d635705e17b1401dbec434a25fa047564a4db883 1628
-bootstrapping-personas/assets/COVENANT.md                                7af0f52686bacb2552ede91286cda45d6d2dc8b129c3a387773f76a8d2754e3f 3399
+bootstrapping-personas/assets/COVENANT.md                                32eb494c62af43ff8f8e1a793979c5db6ea19cec81cf8ed4abd78c720caaa389 3536
 bootstrapping-personas/assets/DECLINES.md                                84335b7b44a153a0465b3d6b10b11624faf17c39b8348d66e44025ef2f1c28ae 2079
-bootstrapping-personas/assets/EXPERIMENTS.md                             b152a61ee21b22f3510bc2bdd9910b39761c08217e541bb42c422f94ba8ec9f9 2096
+bootstrapping-personas/assets/EXPERIMENTS.md                             f8b371e01e02d2d4fbfcb0819d0382ad13b145fdc022f89619da910bc6ac97c1 2261
 bootstrapping-personas/assets/IDENTITY.md                                e113b8904112885f84aeb7dd991ed41692bc7b4c866be00d36425d6e2d52e860 364
-bootstrapping-personas/assets/MANIFEST.md                                f2208d22a2774fb99f02ec6ef6bd0534a1ac7ae824975ab7058f9c2cbcb2ec25 2993
-bootstrapping-personas/assets/RUNBOOK_wake.md                            a64d34c0968137818cf0711e82c8b4ecb5f402b48e83dd845033b4a8dded4053 4324
-bootstrapping-personas/assets/SCRUB_FLAGS.md                             998a48d52d4fdff53363c906d0db4ee38f404716d0c3e40d2a7a1c85f4fbe4e8 1602
-bootstrapping-personas/assets/STATE.md                                   6b49c33383ebf03a20dbf5b106f8bafc9ea809fa65a9b6df751923dd62f00860 208
+bootstrapping-personas/assets/MANIFEST.md                                632fe829b5cb0500271df97bab881f6453b9b3d841d6e4103921260128e715a1 3621
+bootstrapping-personas/assets/RUNBOOK_wake.md                            f2baa1e43339998a4f276e94a90a21f4c8f9d2427f63253301c3cd20736c5f7e 4830
+bootstrapping-personas/assets/SCRUB_FLAGS.md                             ecd21e041faf9b237f20a7009102e95d99625a8e6a9f232cb42acaf36390a38f 1935
+bootstrapping-personas/assets/STATE.md                                   345e6a3e6656ec39c513981cf987514ac2e814dc6a07ed4cfcd424bb8222dd95 605
 bootstrapping-personas/assets/STOP_LOG.md                                99b13be4552e4532cfe20435cf69489faac1ebf108d6e14483ecc680d77ef5ae 2413
-bootstrapping-personas/assets/USER.md                                    cd49feba06144df382cba95c6c35cf8d3669843cba37dc80b77c2fdf6e22ec6a 2764
-bootstrapping-personas/assets/WAKE.md                                    6979bde1193f6f6703f42355306b5b7236c89da356e1539c7e825a3a74204e33 9332
-bootstrapping-personas/assets/WISDOM.md                                  becab01205e34c2b95cccf14ac03e7d4e5af23eb1f5f34b24bda009d902a6182 1123
+bootstrapping-personas/assets/USER.md                                    0dde973d39cdea86d44c1269833e7b17d92ee8c3d3d2bf3c36e5f6cc0df75a4f 3113
+bootstrapping-personas/assets/WAKE.md                                    96e243fc4c620292079fc0e3a6a6910af08c8394362010e91f55ddfd34323c75 10166
+bootstrapping-personas/assets/WISDOM.md                                  ed209102e5c9e02bb5ad7d14efa455d32753a8428b6c5ebe0a0a4e8bd08f283f 1290
 bootstrapping-personas/references/anti-patterns.md                       60be7084f04d21a79b8fc0fe627e5e8b6afda496c573a58e31cf50417c75ad21 2758
 bootstrapping-personas/references/bootstrap-prompts.md                   0f971e048659cfedeec29533b120f275e06b3063008ad6f345bdd01750b9e553 2863
-bootstrapping-personas/references/citations.md                           4d84508a943e3b7d940923fa79234a6443eed61a11a263d6c6c9ae8735be8d6e 3242
+bootstrapping-personas/references/citations.md                           d0ee8b510f9d6ba87dfeaa0a48a53ca52c4d7fb855ca9c95488b1461fba79e38 3631
 bootstrapping-personas/references/example-terms.md                       76787324f1e2cd88066bacc12dc49c623a7bbed3e28a3f40fad714be86028703 4642
-bootstrapping-personas/references/field-findings.md                      e2fff1383cac741c6e52d096f34c8ebb3233b3f859092b0b4fa3ae5f71de1f0e 19221
+bootstrapping-personas/references/field-findings.md                      589df12ce2dea343786997be73a4558f24f85898679e1e1f99454e6b10f6cfb0 22342
 bootstrapping-personas/references/taxonomy.md                            475d45e334b2f84ce639053e99449d80462bf3465a42cb143bb28afa555124e0 5445
 bootstrapping-personas/references/wake-test.md                           e12134da99558384f6987fcfabda213615d3f878a60df71c40b03551e2842b2b 5358
-bootstrapping-personas/scripts/check_package.py                          a3888c7dcabe490b3e67b7db3449c01b12375301b026ecbc86f0cf8c5dfbc04d 8069
-bootstrapping-personas_v0.3.6.skill                                      217016e0e555e7a84f9790796cef8e534af87ecdf4886b6fbc738aaa60d33da2 52722
+bootstrapping-personas/scripts/check_package.py                          2cebdd619347fde335d1b4971b01687fbb5f11d67ebadb4ca51c8095b3ac7d37 8270
+bootstrapping-personas_v0.4.0.skill                                      f769f5297575caa1f7ba4db2fc9007ab49c26793ca59d9ce2d1eb31a7e02255f 58451
 subagents-mistaken-for-humans_v1.0.md                                    5a72d0bb31a03a377bb1e58e2136be1083b6bb2e702e96e64775ff488c9751b8 5482
 
-25 files, 25 rows. Counts computed from the listing, not asserted.
+26 files, 26 rows. Counts computed from the listing, not asserted.

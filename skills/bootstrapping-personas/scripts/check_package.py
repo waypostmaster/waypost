@@ -67,6 +67,9 @@ for a in assets:
 known = assets | refs | {f.replace('.template','') for f in assets} | {'SKILL.md'}
 store_only = {'STOP.md'}
 for path, text in files.items():
+    for t in set(re.findall(r'`(?:assets/|references/)?([A-Za-z_]+\.md\.template)`', text)):
+        if t not in assets:
+            bad('dangling-ref', f'{path} references `{t}` which does not ship')
     for m in set(re.findall(r'`(?:assets/|references/)?([A-Za-z_]+\.md)`', text)):
         if m not in known and m not in store_only and not m.startswith('MANIFEST_') \
            and m not in {'SOUL.md','CLAUDE.md','LODESTONE.md','NAME.md'}:
