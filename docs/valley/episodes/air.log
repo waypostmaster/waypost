@@ -1612,3 +1612,73 @@
 2026-09-14 23:48:52     next: 4 of 4 cut(s) still to come G�� episodes/next.json
 2026-09-14 23:48:52     ledger: 80 + 4 entries G�� episodes/aired.json
 2026-09-14 23:48:52     tomorrow starts where cut 4 ended: episodes/next-snapshot.json
+2026-09-14 23:48:57 deployed to the mast (waypost.quest/valley/): tonight's four cuts, aired 2026-09-15T04:00:00Z
+2026-09-14 23:49:01 and on the new mast (frontier-valley/mast): tonight's four cuts, aired 2026-09-15T04:00:00Z
+2026-09-14 23:49:01 aired and on the masts
+2026-09-14 23:55:07 --- re-cut 2 begins (by hand: tools/recut.ps1's producer call plus --join <empty>, because a re-cut enrols settlers already ashore) ---
+2026-09-14 23:55:07   joining: nobody new for cut 2 (C:/Users/there/AppData/Local/Temp/claude/C--Claude-Games-Frontier/edd20e58-92bd-47b1-9eb0-627e9f22be32/scratchpad/days15/nojoin/ is empty, every file was refused, or everyone in it is already aboard)
+2026-09-14 23:55:07   re-cut: cut 2 of 4, opening from episode-2026-09-15T034143-cut2.json's own snapshot
+2026-09-14 23:55:07           (the end of cut 1, already published). Cuts 1..1 are not touched.
+2026-09-14 23:55:07   episode: 4 cut(s) of 21600 ticks — 6000 steps of 0.05 each — from a 212577-byte snapshot
+2026-09-14 23:55:07            day 2026-09-15, cuts 2..4 produced this run; 1.50 valley days a cut, 6.00 in the day
+2026-09-14 23:55:07            cut 1: airs 2026-09-15T04:00:00.000Z — ends 2026-09-15T10:00:00.000Z   (not touched)
+2026-09-14 23:55:07            cut 2: airs 2026-09-15T10:00:00.000Z — ends 2026-09-15T16:00:00.000Z
+2026-09-14 23:55:07            cut 3: airs 2026-09-15T16:00:00.000Z — ends 2026-09-15T22:00:00.000Z
+2026-09-14 23:55:07            cut 4: airs 2026-09-15T22:00:00.000Z — ends 2026-09-16T04:00:00.000Z
+2026-09-14 23:55:07     building the engine this programme will be watched on: npx vite build --base=./
+2026-09-14 23:55:07   [36mvite v8.2.2 [32mbuilding client environment for production...[36m[39m
+2026-09-14 23:55:07   transforming...
+2026-09-14 23:55:07   ✓ 110 modules transformed.
+2026-09-14 23:55:07   rendering chunks...
+2026-09-14 23:55:07   computing gzip size...
+2026-09-14 23:55:07   dist/city.html                         9.45 kB │ gzip:   3.07 kB
+2026-09-14 23:55:07   dist/index.html                       32.15 kB │ gzip:   9.56 kB
+2026-09-14 23:55:07   dist/assets/07-softmax-BC5IJGgT.js     4.24 kB │ gzip:   1.75 kB
+2026-09-14 23:55:07   dist/assets/06-seafarer-BpxfBq-0.js    5.22 kB │ gzip:   1.85 kB
+2026-09-14 23:55:07   dist/assets/city-BafkmfE0.js          34.88 kB │ gzip:  14.41 kB
+2026-09-14 23:55:07   dist/assets/sun-C0M5Hd8K.js          116.55 kB │ gzip:  41.59 kB
+2026-09-14 23:55:07   dist/assets/valley-BwQ_OFh9.js       389.74 kB │ gzip: 130.64 kB
+2026-09-14 23:55:07   
+2026-09-14 23:55:07   [32m✓ built in 158ms[39m
+2026-09-14 23:55:07     built in 1.7s — assets/valley-BwQ_OFh9.js, assets/sun-C0M5Hd8K.js
+2026-09-14 23:55:07     NOTE: the tree is dirty, so commit 5d80a696a9cd is not what built this bundle. The
+2026-09-14 23:55:07           bundle name still pins the engine; the commit beside it does not fetch it.
+2026-09-14 23:55:07       Relay: a day filed by the Frontier desk, from relay.json from agents/days/relay-cut2.json (2722 bytes, sha256 6c88e2fb64497f1d), on cut 2; the model is not asked
+2026-09-14 23:55:07         filer: none named — this day has no resident behind it
+2026-09-14 23:55:07       Seafarer: a day filed by the keeper from agents/days/seafarer-cut2.json (2656 bytes, sha256 e9ddef68dabfaecd), on cut 2; the model is not asked
+2026-09-14 23:55:07         filer: none named — this day has no resident behind it
+2026-09-14 23:55:07       Weathervane: a day filed by the Frontier desk, from weathervane.json from agents/days/weathervane-cut2.json (2376 bytes, sha256 100e9c8fd28914af), on cut 2; the model is not asked
+2026-09-14 23:55:07         filer: none named — this day has no resident behind it
+2026-09-14 23:55:07   [31mWebSocket server error: Port 24678 is already in use[39m
+2026-09-14 23:55:07   [31mWebSocket server error: Port 24678 is already in use[39m
+2026-09-14 23:55:07     cut 2: computed twice, identical to the byte (211601 bytes) — fit to air
+2026-09-14 23:55:07     cut 2: end state sha256 2d51ef661bd61ceb… — the word the viewer's card will check
+2026-09-14 23:55:07     aired: C:\Claude\Games\Frontier\episodes\episode-2026-09-15T035500-cut2.json (218.9 KiB, sha256 521d86051d89e7bd…, 2.1s)
+2026-09-14 23:55:07   [31mWebSocket server error: Port 24678 is already in use[39m
+2026-09-14 23:55:07       Relay: a day filed by the Frontier desk, from relay.json from agents/days/relay-cut3.json (2828 bytes, sha256 811642ae2004aad0), on cut 3; the model is not asked
+2026-09-14 23:55:07         filer: none named — this day has no resident behind it
+2026-09-14 23:55:07       Seafarer: a day filed by the keeper from agents/days/seafarer-cut3.json (2835 bytes, sha256 4cee8fea34eea494), on cut 3; the model is not asked
+2026-09-14 23:55:07         filer: none named — this day has no resident behind it
+2026-09-14 23:55:07       Weathervane: a day filed by the Frontier desk, from weathervane.json from agents/days/weathervane-cut3.json (2527 bytes, sha256 c4384736105fc227), on cut 3; the model is not asked
+2026-09-14 23:55:07         filer: none named — this day has no resident behind it
+2026-09-14 23:55:07   [31mWebSocket server error: Port 24678 is already in use[39m
+2026-09-14 23:55:07   [31mWebSocket server error: Port 24678 is already in use[39m
+2026-09-14 23:55:07     cut 3: computed twice, identical to the byte (211461 bytes) — fit to air
+2026-09-14 23:55:07     cut 3: end state sha256 77a80e16d3838f49… — the word the viewer's card will check
+2026-09-14 23:55:07     aired: C:\Claude\Games\Frontier\episodes\episode-2026-09-15T035500-cut3.json (218.2 KiB, sha256 b27ab6267fe2988f…, 1.3s)
+2026-09-14 23:55:07   [31mWebSocket server error: Port 24678 is already in use[39m
+2026-09-14 23:55:07       Relay: a day filed by the Frontier desk, from relay.json from agents/days/relay-cut4.json (2551 bytes, sha256 c971b65c5ce24941), on cut 4; the model is not asked
+2026-09-14 23:55:07         filer: none named — this day has no resident behind it
+2026-09-14 23:55:07       Seafarer: a day filed by the keeper from agents/days/seafarer-cut4.json (2555 bytes, sha256 9ab0ea5879dba7df), on cut 4; the model is not asked
+2026-09-14 23:55:07         filer: none named — this day has no resident behind it
+2026-09-14 23:55:07       Weathervane: a day filed by the Frontier desk, from weathervane.json from agents/days/weathervane-cut4.json (2402 bytes, sha256 1d8ed63e0907e0c4), on cut 4; the model is not asked
+2026-09-14 23:55:07         filer: none named — this day has no resident behind it
+2026-09-14 23:55:07   [31mWebSocket server error: Port 24678 is already in use[39m
+2026-09-14 23:55:07   [31mWebSocket server error: Port 24678 is already in use[39m
+2026-09-14 23:55:07     cut 4: computed twice, identical to the byte (211414 bytes) — fit to air
+2026-09-14 23:55:07     cut 4: end state sha256 d81bd70dd7881ee8… — the word the viewer's card will check
+2026-09-14 23:55:07     aired: C:\Claude\Games\Frontier\episodes\episode-2026-09-15T035500-cut4.json (217.6 KiB, sha256 3d6e4799712dd682…, 1.8s)
+2026-09-14 23:55:07     pointer: C:\Claude\Games\Frontier\episodes\latest.json — 4 cuts, episode names cut 1 (episode-2026-09-15T034143-cut1.json)
+2026-09-14 23:55:07     next: 4 of 4 cut(s) still to come — episodes/next.json
+2026-09-14 23:55:07     ledger: 84 + 3 entries — episodes/aired.json
+2026-09-14 23:55:07     tomorrow starts where cut 4 ended: episodes/next-snapshot.json
