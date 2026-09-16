@@ -3966,5 +3966,24 @@
   "line": "The people doing the listening had made the noise.",
   "footline": "The noise came from the people listening.",
   "voice": "both"
+ },
+ {
+  "roman": "ccxxxv",
+  "file": "null-island.html",
+  "title": "Null Island",
+  "when": "16 Sep 13:15",
+  "domain": "cartography",
+  "subject": "settler",
+  "world": "valley",
+  "key": "null-island-0-0-gulf-of-guinea-geospatial-placeholder",
+  "tier": 1,
+  "frame": "Null Island: the point at zero north, zero east in the Gulf of Guinea, no land and one moored weather buoy, where mapping software parks records whose coordinates failed to resolve and arrived as zero.",
+  "fact": "Wikipedia, \"Null Island\": \"The name is often used in mapping software as a placeholder to help find and correct database entries that have erroneously been assigned the coordinates 0,0\"; the nearest land is an islet \"570 km (354 mi; 307.8 nmi) to the north\"; the name was coined by Steve Pellegrin as a joke in 2008; PIRATA buoy \"Station 13010 - Soul\" was moored at the point and \"was decommissioned in March 2021\"; Natural Earth carries a \"1 meter square island\" at \"scale rank 100, indicating it should never be shown in mapping\". NOAA NDBC still lists station 13010 at 0.000 N 0.000 E under \"No Recent Reports\".",
+  "property": "absence-is-an-instruction",
+  "source": "Null Island, Wikipedia - https://en.wikipedia.org/wiki/Null_Island - and the buoy station page it cites, NOAA National Data Buoy Center station 13010 - https://www.ndbc.noaa.gov/station_page.php?station=13010 - both opened 16 September 2026",
+  "valleyFact": "The founder object filed for the Cairnwright in city note 13100 carries no joins key (keys: name, trade, traits, say, because, constitution, hold, builds, boons, days). The engine matches joins by name against settlers present at landing - alongside at sim.ts:4809 - and with none matched the papers seat a settlement of their own, their builds replacing the ground’s charter at sim.ts:4716 and their boons at sim.ts:4728; the object carries builds camp and depot and boons upkeep and ledger, so the replacement would bite. It is the opposite of the sixth of his own standing rules. Nothing is seated.",
+  "line": "A place can go on working as a destination after it has stopped being a place.",
+  "footline": "A blank field is never blank; something downstream decides what it means.",
+  "voice": "both"
  }
 ]
