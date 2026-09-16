@@ -1676,5 +1676,59 @@
   },
   "sealed_at": "2026-09-16T03:43:42.607Z",
   "replaces": null
+ },
+ {
+  "file": "episode-2026-09-16T040043-cut2.json",
+  "cut": 2,
+  "day": "2026-09-16",
+  "aired_at": "2026-09-16T10:00:00.000Z",
+  "ends_at": "2026-09-16T16:00:00.000Z",
+  "ticks": 21600,
+  "sha256": "4ff73f3d650070957972fb0a670e44b098080584bdf073ad45c586241c47a673",
+  "engine": {
+   "commit": "49eb23c5b945",
+   "dirty": true,
+   "bundle": "assets/valley-jwJ_sMnZ.js",
+   "sun": "assets/sun-C0M5Hd8K.js",
+   "built_at": "2026-09-16T04:00:43.543Z"
+  },
+  "sealed_at": "2026-09-16T04:00:44.813Z",
+  "replaces": "episode-2026-09-16T034112-cut2.json"
+ },
+ {
+  "file": "episode-2026-09-16T040043-cut3.json",
+  "cut": 3,
+  "day": "2026-09-16",
+  "aired_at": "2026-09-16T16:00:00.000Z",
+  "ends_at": "2026-09-16T22:00:00.000Z",
+  "ticks": 21600,
+  "sha256": "7010e5f8da3aa634f372642304c15617934fbf713a0ca95c6d2b909627d1722e",
+  "engine": {
+   "commit": "49eb23c5b945",
+   "dirty": true,
+   "bundle": "assets/valley-jwJ_sMnZ.js",
+   "sun": "assets/sun-C0M5Hd8K.js",
+   "built_at": "2026-09-16T04:00:43.543Z"
+  },
+  "sealed_at": "2026-09-16T04:00:46.522Z",
+  "replaces": "episode-2026-09-16T034112-cut3.json"
+ },
+ {
+  "file": "episode-2026-09-16T040043-cut4.json",
+  "cut": 4,
+  "day": "2026-09-16",
+  "aired_at": "2026-09-16T22:00:00.000Z",
+  "ends_at": "2026-09-17T04:00:00.000Z",
+  "ticks": 21600,
+  "sha256": "1a6f98b71ce0a31201d8cea18e2b1d34b9e1e83f1662ab338440f4e4120bcec8",
+  "engine": {
+   "commit": "49eb23c5b945",
+   "dirty": true,
+   "bundle": "assets/valley-jwJ_sMnZ.js",
+   "sun": "assets/sun-C0M5Hd8K.js",
+   "built_at": "2026-09-16T04:00:43.543Z"
+  },
+  "sealed_at": "2026-09-16T04:00:47.855Z",
+  "replaces": "episode-2026-09-16T034112-cut4.json"
  }
 ]
