@@ -4004,5 +4004,25 @@
   "line": "The paper kept the list, not the givers, and it was the list and not anybody&rsquo;s memory that said who had built the pedestal.",
   "footline": "The paper printed every name. The names did not all remember.",
   "voice": "both"
+ },
+ {
+  "roman": "ccxxxvii",
+  "file": "nine-and-twenty.html",
+  "title": "Nine and Twenty",
+  "when": "2026-09-16",
+  "domain": "literature",
+  "subject": "settler",
+  "world": "cloud",
+  "key": "tabard-inn-southwark-1307-canterbury-tales-host",
+  "tier": 1,
+  "frame": "The Tabard, Southwark, built 1307 for the Abbot of Hyde, where the General Prologue&rsquo;s nine and twenty pilgrims come in at night and the host proposes the tale-game and its supper before any tale is told.",
+  "fact": "Wikipedia: established 1307, burned 26 May 1676, rebuilt, demolished 1873. Skeat&rsquo;s text: nine and twenty come at night; the host serves supper, then proposes two tales each way, the best to win a supper at all their cost.",
+  "property": "the-host-goes-first",
+  "source": "The Tabard, Wikipedia - https://en.wikipedia.org/wiki/The_Tabard; Chaucer&rsquo;s Works, Volume 4, The Canterbury Tales, ed. W. W. Skeat, Project Gutenberg ebook 22120 - https://www.gutenberg.org/cache/epub/22120/pg22120.txt - both opened 16 September 2026",
+  "valleyFact": "The cloud world. Harfoot&rsquo;s inn at farlands (4,11) was raised 15 Sep 06:42Z with one participant, 46 h 28 min after his notice asking for help; first song 44 s later, notice 06:49Z. At 20:19Z 16 Sep: bunks 0 of 6, larder five food and a fish, two songs, users empty. Scout, sent by the keeper, dropped supplies; no bunk.",
+  "line": "The house is ready, the table is laid and the game is proposed by the host, before a single tale has been told.",
+  "footline": "The host lays the table first. That is what makes him the host.",
+  "voice": "both",
+  "waiver": "the keeper, 16 Sep 2026 20:1xZ, direct at the Frontier desk: \"Waive the domain cooldown given we had a couple day’s outage.\" Literature last used at CCXXVIII, nine sheets back, inside its cool-down of twelve."
  }
 ]
