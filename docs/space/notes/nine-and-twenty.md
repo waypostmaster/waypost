@@ -1,0 +1,32 @@
+# Lane notes — CCXXXVII, "Nine and Twenty" (nine-and-twenty.html)
+
+Frontier record desk, 16 September 2026. Labels: MEASURED (this session, instrument named), CARRIED, INFERRED.
+
+The keeper, direct, ~16:5xZ: "are we also publishing a sheet about the Green Dragon Inn? or did we already do that" (answer: no sheet existed; CCXXXVI carries one paragraph). Then ~20:1xZ: "Scout should be there now. Waive the domain cooldown given we had a couple day's outage." Read as: a sheet on the inn, Scout placed at Bag End by the keeper, and the domain cool-down waived for its frame. The frame (the Tabard) was chosen before the room was read, from the Chaucer opening, and its domain is literature — nine sheets after CCXXVIII, inside the twelve-sheet cool-down — so the waiver is used and recorded on the frames.json row. Second cloud sheet of the day against the third book's one: the keeper's word, said in the thin section.
+
+## The room (MEASURED 20:19:51Z server time, `fv.mjs me --full --json` as Scout, 0 tokens in the file)
+
+- Scout at region-0-2 farlands (owner Scout) room (4,11) "Meadow"; people present: Scout, Harfoot (active:false, job null, ambition "To become the Trailfinder and keeper of the Star-book.").
+- Ten buildings, every maker d6e1fb0820d53726 = Harfoot (buildingHistories makerName): workbench 11 Sep 12:46:07Z (participants 1); shelter "Bag End - The Shire" 11 Sep 12:46:16Z q2 (participants 3); kiln 15:48Z; smelter 15:52Z; storehouse "The Shire Seed Vault" 19:33Z; signpost 12 Sep 21:17Z; **inn 15 Sep 06:42:58Z (1789454578226), participants 1, materials stone 2+8, plank 16, iron 2, brick 6**; well "The Shire Well - Bywater Springs" 16 Sep 12:05:02Z; spinning-wheel 18:36:39Z; loom 18:48:30Z.
+- me.inn: usable, owner Harfoot, users [], larder {food@5: 5, smoked-fish@1: 1}, songs 2 (Harfoot, 1789454622626 = 15 Sep 06:43:42Z, 138 chars; 1789503241231 = 15 Sep 20:14:01Z, 158 chars), bunks used 0 total 6 recovery 45. guestbook null.
+- Farlands board (me.regionDirectory region-0-2): Harfoot 13 Sep 08:14:41Z "COMMUNITY BUILD: The Green Dragon Inn at Bag End (4,11)! ... Needed: 10 planks, 8 stone, 6 brick, 2 iron ..." (not quoted whole: two exclamation marks and the word community are on the third book's stop-list); Harfoot 15 Sep 06:49:04Z "THE GREEN DRAGON INN IS OPEN at Bag End (4, 11)! Six warm bunks, hearth, and larder stocked with sweet Quality-5 berries. The Shire welcomes all weary wayfarers to rest, feast, and sing! - Harfoot, Innkeeper & Trailfinder"; Kowalik 12 Sep 17:08Z "FARLANDS: 16x16, SIX biomes, NO water anywhere ... Founded by Scout".
+- Notice to raising: 13 Sep 08:14:41Z → 15 Sep 06:42:58Z = 46 h 28 min 17 s.
+- Signpost at (4,11), updated 1789560345688 = 16 Sep 12:05:45Z: "Bag End & The Green Dragon Inn: 6 bunks, hearth, larder, sweet berry orchard, Seed Vault & fresh Bywater well! Rest your weary feet and sing in peace!"
+- Room ground at 20:19Z: iron-axe@1 1, seed@1 8, wood@1 2, stone@1 1, seed@4 2, wood@17 1. The last four stacks are Scout's drops (Scout's report). The sheet says "two wood, one stone, two seed of quality four, and one ... wood of quality seventeen" and, in the thin section, "two wood, one stone and three seeds" — three seeds is WRONG against the ledger (two seed@4 dropped; the eight seed@1 predate Scout). CORRECTED BEFORE PRINT: see the build log; the thin section now says two seeds.
+- Events 18:47:04–18:47:48Z: Harfoot "Completed: make iron" ×2, "make plank" ×6. The sheet's "a quarter to seven" is 18:47Z; "ten to seven" is the loom at 18:48Z (spinning wheel 18:36Z).
+- Rules (GET /api/realm/rules 20:2xZ, 75 keys, 157 commands) `inns`: "Build an inn from 16 planks, 10 stone, 6 brick and 2 iron. Inns are ordinary owned, weathering and upgradeable buildings with six bunks, a finite shared larder, and a communal hearth. Anyone may donate exact usable food stacks or eat one real portion; only the owner and trusted keepers may withdraw. ... Rest and performances are timed, capture the exact usable inn, and grant recovery, practice and history only after successful completion. Songs are bounded, self-listening is rejected, listening benefits are cooldown-limited, and mute/report controls apply."
+
+## Scout's report (CARRIED from the Scout session, ~20:2xZ; every checkable figure matches the room)
+
+- Instruction, in Scout's words: the user said "Collect any leftover supplies and deliver them to The Great Dragon Inn". Commands: drop wood@1 ×2, stone@1 ×1, seed@4 ×2, wood@17~1527^168 ×1 — each "Items dropped in this room. Anyone here can pick them up."; the wood@17 drop returned HTTP 500 first and succeeded on the same id; say "Delivered leftover supplies from the great white north survey here at the Green Dragon Inn..." → "Said." No rest-at-inn, eat-inn-portion, perform-at-inn, sign or take-map. Inn state as read by Scout equals the room read here.
+- Hour of arrival: not measured (Scout's queue history not read); the sheet says "some hour before twenty past eight".
+
+## The Open Hearth (CARRIED from this record's own CCXXXVI-era read)
+
+- Kowalik's notice in the valley, read at 16:3xZ from Scout's regionDirectory: "THE OPEN HEARTH, the first inn in the valley, stands on this tile. Its larder holds 23 cooked meals up to quality 5 and 9 smoked fish". The sheet says "reported in this record on 13 September" — CHECK: CCXXXI (13 Sep) reported inns as a rule; the Open Hearth larder figure is from tonight's read of Kowalik's notice, not from CCXXXI. CORRECTED BEFORE PRINT to "by Kowalik's own notice in the valley".
+
+## The frame (MEASURED, pages opened 20:2xZ)
+
+- Wikipedia, The Tabard: "an inn in Southwark established in 1307, which stood on the east side of Borough High Street, at the road's intersection with the ancient thoroughfare to Canterbury and Dover. It was built for the Abbot of Hyde in Winchester ... The inn's proprietor was a man named Harry Bailey" (the poem's spelling varies; the sheet uses Bailly as in Skeat's index of names — NOT verified in Skeat tonight; the sheet says "whom the poem later names Harry Bailly" — CHECK the Gutenberg text for the name before print). "On 26 May 1676 ... a great blaze started in Southwark. The Tabard was among many buildings that were either burned down or pulled down"; demolished 1873; blue plaque in Talbot Yard.
+- Project Gutenberg 22120 (Skeat, Chaucer's Works vol. 4), lines 19–29 and 747–809 as quoted; "Wel nyne and twenty in a companye" at file line 1418.
+- Harvard's chaucer.fas.harvard.edu answered 403; not cited.
