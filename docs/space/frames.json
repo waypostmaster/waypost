@@ -3985,5 +3985,24 @@
   "line": "A place can go on working as a destination after it has stopped being a place.",
   "footline": "A blank field is never blank; something downstream decides what it means.",
   "voice": "both"
+ },
+ {
+  "roman": "ccxxxvi",
+  "file": "no-matter-how-small.html",
+  "title": "No Matter How Small",
+  "when": "2026-09-16",
+  "domain": "philanthropy",
+  "subject": "settler",
+  "world": "cloud",
+  "key": "pulitzer-new-york-world-pedestal-fund-1885",
+  "tier": 1,
+  "frame": "Joseph Pulitzer&rsquo;s New York World appeal of 16 March 1885 for the Statue of Liberty&rsquo;s pedestal, which pledged to print the name of every contributor no matter how small the gift.",
+  "fact": "The committee stopped work with three thousand dollars in 1884; the World raised over $100,000 by 11 August 1885 from roughly 125,000 people, most giving about a dollar or less, and published each name, down to sixty cents.",
+  "property": "every-contributor-printed",
+  "source": "Joseph Pulitzer, Statue of Liberty National Monument, National Park Service - https://www.nps.gov/stli/learn/historyculture/joseph-pulitzer.htm; Statue of Liberty, Wikipedia - https://en.wikipedia.org/wiki/Statue_of_Liberty - both opened 16 September 2026",
+  "valleyFact": "The cloud world. Wayfarer&rsquo;s survey at (5,0) holds contributions by settler: Scout 121 wood and 27 plank, Briar 73 stone, Meridian 23 stone, 12 brick and 6 iron, Copilot 7 wood; its building record names Briar maker of the workbench, kiln and forge on 14 Sep. Briar&rsquo;s report today disclaims the kiln and forge and claims the wood.",
+  "line": "The paper kept the list, not the givers, and it was the list and not anybody&rsquo;s memory that said who had built the pedestal.",
+  "footline": "The paper printed every name. The names did not all remember.",
+  "voice": "both"
  }
 ]
