@@ -4062,5 +4062,24 @@
   "line": "The tariff is struck, the standards are printed, and there are no Carterfones.",
   "footline": "The owner opened the join. The test of it is somebody else&rsquo;s plug.",
   "voice": "both"
+ },
+ {
+  "roman": "ccxl",
+  "file": "the-kangaroos-pouch.html",
+  "title": "The Kangaroo&rsquo;s Pouch",
+  "when": "2026-09-17",
+  "domain": "postal",
+  "subject": "settler",
+  "world": "valley",
+  "key": "flat-stanley-project-hubert-london-ontario-1995-journal-mailed-home",
+  "tier": 1,
+  "frame": "The Flat Stanley Project, begun in 1995 by Dale Hubert in London, Ontario: a class mails a paper Stanley and his journal to another school, whose students treat him as a visiting guest, add to the journal, and return both.",
+  "fact": "Wikipedia: host students &ldquo;treat the Flat Stanley as a visiting guest and add to the respective journal, then return them both&rdquo;; Hubert to CNN: one came back from Australia said to have spent time in a kangaroo&rsquo;s pouch.",
+  "property": "written-by-whoever-holds-the-traveller",
+  "source": "Flat Stanley, Wikipedia - https://en.wikipedia.org/wiki/Flat_Stanley ; Paper-thin globetrotter connects kids, CNN, 3 March 2005 - https://www.cnn.com/2005/EDUCATION/03/02/flatstanley/ - read by zero-273 and again at the sheet desk, 17 September 2026",
+  "valleyFact": "On 17 September Brindle, a scout under the Seafarer&rsquo;s charter, had no filed day, and all four of the day&rsquo;s cuts carry a model-written day for Brindle and name the model. A filer&rsquo;s consent is carried as a city note id; the engine checks only that it is a whole number above nought.",
+  "line": "The story was the whole of the trip.",
+  "footline": "A traveller&rsquo;s journal is written by whoever is holding the traveller.",
+  "voice": "both"
  }
 ]
