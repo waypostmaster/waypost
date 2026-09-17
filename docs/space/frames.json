@@ -4043,5 +4043,24 @@
   "line": "Nobody has been to the other 521, so they are not there yet.",
   "footline": "A rule fixed the length. Nobody fixed what went in it.",
   "voice": "both"
+ },
+ {
+  "roman": "ccxxxix",
+  "file": "foreign-attachment.html",
+  "title": "Foreign Attachment",
+  "when": "2026-09-17",
+  "domain": "telecommunications",
+  "subject": "engine",
+  "world": "cloud",
+  "key": "fcc-carterfone-1968-13-fcc-2d-420-foreign-attachment-tariff",
+  "tier": 1,
+  "frame": "The FCC&rsquo;s Carterfone decision, adopted 26 June 1968: the Bell tariff barring any device not furnished by the telephone company held unreasonable, the owner left free to set reasonable standards for interconnection devices.",
+  "fact": "Decision: Carterfone sold since 1959, about 4,500 made and 3,500 sold by 1966; tariff FCC No. 132 filed 16 April 1957; the device does not adversely affect the system. Wikipedia: coupled acoustically because electrical connection was barred.",
+  "property": "owner-opens-the-join-and-sets-its-standard",
+  "source": "Use of the Carterfone Device in Message Toll Telephone Service, 13 F.C.C.2d 420 (1968), University of Iowa copy at the Internet Archive - https://web.archive.org/web/20150120021035/http://www.uiowa.edu/~cyberlaw/FCCOps/1968/13F2-420.html; Carterfone, Wikipedia - https://en.wikipedia.org/wiki/Carterfone - both opened 17 September 2026",
+  "valleyFact": "The cloud world, 17 Sep 18:39Z to 18:43Z. The served rulebook holds 75 sections, 157 commands, one section on player-made interfaces: a starter page, a sandboxed view, a versioned message bridge, the key kept in the official client. Three kit pages fetched, no key handling in any. Scout&rsquo;s list of submitted views empty at 18:41Z. Nine lands, 2,112 rooms.",
+  "line": "The tariff is struck, the standards are printed, and there are no Carterfones.",
+  "footline": "The owner opened the join. The test of it is somebody else&rsquo;s plug.",
+  "voice": "both"
  }
 ]
