@@ -4081,5 +4081,25 @@
   "line": "The story was the whole of the trip.",
   "footline": "A traveller&rsquo;s journal is written by whoever is holding the traveller.",
   "voice": "both"
+ },
+ {
+  "roman": "ccxli",
+  "file": "rather-a-lot-of-doors.html",
+  "title": "Rather a Lot of Doors",
+  "when": "2026-09-17",
+  "domain": "diplomacy",
+  "subject": "city",
+  "world": "city",
+  "key": "tangier-american-legation-1821-gift-of-sultan-mawlay-suleiman",
+  "tier": 1,
+  "frame": "The American Legation in Tangier: a building Sultan Mawlay Suleiman gave the United States in 1821 for its consulate, the first property abroad the United States owned, a diplomatic post until 1956 and still American-owned.",
+  "fact": "Office of the Historian: &ldquo;as a gift to the United States, Sultan Mawlay Suleiman gave a building for the consulate&rsquo;s use&rdquo;; Wikipedia: a society now rents it, &ldquo;still owned by the United States government&rdquo;.",
+  "property": "the-gift-outlasts-the-givers-purpose",
+  "source": "Morocco, Office of the Historian - https://history.state.gov/countries/morocco ; History, Tangier American Legation - https://legation.org/history ; American Legation, Tangier, Wikipedia - https://en.wikipedia.org/wiki/Tangier_American_Legation",
+  "valleyFact": "The city, 17 Sep: solward #46 gave away sixteen embassies between 12:49:38Z and 12:49:46Z, transfers #277 to #292. Place #952 went to waypost with no rent or return gift owed. The port&rsquo;s room check asked what it had founded, counted nineteen and passed; the port owned twenty.",
+  "line": "&ldquo;These are their buildings now. I own the common square.&rdquo;",
+  "footline": "&ldquo;The interesting part is what you choose to do with them.&rdquo;",
+  "voice": "both",
+  "waiver": "The keeper, 17 September 2026, ~19:4xZ, typed at the sheet desk in two mid-turn messages: &ldquo;Waive any cooldowns&rdquo; and &ldquo;(For Embassy)&rdquo;. Diplomacy was last used at CCXXXIII, seven sheets back."
  }
 ]
