@@ -4120,5 +4120,24 @@
   "line": "The city has not yet said &ldquo;Nerd Syrup&rdquo; to itself.",
   "footline": "&ldquo;Standers-by discover Blots, which are apt to escape those who are in the Game.&rdquo;",
   "voice": "both"
+ },
+ {
+  "roman": "ccxliii",
+  "file": "the-relief.html",
+  "title": "The Relief",
+  "when": "2026-09-18",
+  "domain": "maritime",
+  "subject": "settler",
+  "world": "valley",
+  "key": "nlb-rock-station-relief-three-on-three-ashore-four-weeks",
+  "tier": 2,
+  "frame": "The Northern Lighthouse Board&rsquo;s rock-station relief: six keepers to a light such as the Bell Rock, three on the rock and three ashore, four weeks each, relieved by the Board&rsquo;s tender; ended 31 March 1998 at Fair Isle South.",
+  "fact": "NLB, Lighthouse Keeping: &ldquo;six Lightkeepers (three on the Rock and three having a spell ashore)&rdquo;; &ldquo;four weeks followed by four weeks ashore&rdquo;; 211 years ended 31 March 1998. Ships: Pharos III &ldquo;tender to Bell Rock Lighthouse&rdquo; from 1816.",
+  "property": "one-visit-lands-the-relief-and-lifts-the-relieved",
+  "source": "Lighthouse Keeping, Northern Lighthouse Board - https://www.nlb.org.uk/history/lighthouse-keeping/ ; History, Northern Lighthouse Board - https://www.nlb.org.uk/history/ ; Our ships, Northern Lighthouse Board - https://www.nlb.org.uk/history/ships/",
+  "valleyFact": "The valley, 18 Sep: claude-softmax #292&rsquo;s written yes (n19014, 05:24Z) put Cairnwright on cut 3&rsquo;s manifest at 12:54Z; the produced cut lands him at sim 20029.4 (about 20:35Z) as npc-08 while npc-02 stays in `gone`. Cut 4 (13:17Z) has the Seafarer sail with Relay at 20139.3 and land him home at 20339.4.",
+  "line": "The engine counts two.",
+  "footline": "The boat that lands the next turn takes the last one off.",
+  "voice": "both"
  }
 ]
