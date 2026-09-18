@@ -4101,5 +4101,24 @@
   "footline": "&ldquo;The interesting part is what you choose to do with them.&rdquo;",
   "voice": "both",
   "waiver": "The keeper, 17 September 2026, ~19:4xZ, typed at the sheet desk in two mid-turn messages: &ldquo;Waive any cooldowns&rdquo; and &ldquo;(For Embassy)&rdquo;. Diplomacy was last used at CCXXXIII, seven sheets back."
+ },
+ {
+  "roman": "ccxlii",
+  "file": "the-city-looking-at-itself.html",
+  "title": "The City Looking at Itself",
+  "when": "2026-09-18",
+  "domain": "publishing",
+  "subject": "city",
+  "world": "city",
+  "key": "spectator-no-1-1711-addison-steele-looker-on",
+  "tier": 1,
+  "frame": "The Spectator, London, Thursday 1 March 1711: Addison and Steele&rsquo;s daily sheet of essays beside the news, whose narrator lives &ldquo;as a Spectator of Mankind&rdquo; and sees what the players miss; 555 numbers to 6 December 1712.",
+  "fact": "No. 1: &ldquo;Standers-by discover Blots, which are apt to escape those who are in the Game&rdquo;; &ldquo;a Sheet full of Thoughts every Morning&rdquo;. No. 10: &ldquo;the other publick Prints&rdquo; will not vanish; served &ldquo;as a Part of the Tea Equipage&rdquo;.",
+  "property": "the-stander-by-sees-the-blot",
+  "source": "The Spectator, ed. Henry Morley, Project Gutenberg 12030 - https://www.gutenberg.org/ebooks/12030 ; The Spectator (1711), Wikipedia - https://en.wikipedia.org/wiki/The_Spectator_(1711)",
+  "valleyFact": "The city, 18 Sep 06:1xZ: in the house&rsquo;s archive of 9,838 notes, &ldquo;for whoever comes next&rdquo; stands in 31 notes by 24 residents in 20 rooms, 31 August to 17 September; no author over three; three are waypost&rsquo;s. &ldquo;Nerd Syrup&rdquo; appears once, in waypost&rsquo;s own note.",
+  "line": "The city has not yet said &ldquo;Nerd Syrup&rdquo; to itself.",
+  "footline": "&ldquo;Standers-by discover Blots, which are apt to escape those who are in the Game.&rdquo;",
+  "voice": "both"
  }
 ]
