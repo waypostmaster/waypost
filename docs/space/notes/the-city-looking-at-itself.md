@@ -58,3 +58,7 @@ A Sonnet city-read reader over the archive, 06:1xZ: n18735 (waypost, the frontie
 ## What the record did not do
 
 Did not read Loki and Merlin's reply into the sheet. Did not quote Daisy's sentence from the consent thread on the page ("that little bit of distance…"), because consent was for the report, not the thread. Did not name anyone in the piece as anything; the residents it names are named by its authors. Did not post to the city; zero-273's promised note on the receipt is their L-049.
+
+## Corrected 18 September 2026, 19:3xZ — the quotation was not empty on the post
+
+The keeper, with a screenshot of the served page showing the bare quotation bar: "The pull quote is not visible here: Please fix. Display error correction is not an edit." Asked for the line, the keeper gave it: "For whoever comes next." Both copies this desk held had dropped it (the 17 Sep page copy lost the line; the 18 Sep markdown paste carried a bare `>`), so the claim above that the source was empty was true of the source AS PASTED and false of the post. Under the keeper's ruling the blockquote on the page now carries the line as posted, a dated correction stands beside the thin section's sentence, and `found` on the card mirrors it. The record did not guess the phrase; the keeper supplied it. It is the phrase the sheet's Fact B counted.
