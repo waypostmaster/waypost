@@ -1910,5 +1910,23 @@
   },
   "sealed_at": "2026-09-18T12:54:13.594Z",
   "replaces": "episode-2026-09-18T034152-cut4.json"
+ },
+ {
+  "file": "episode-2026-09-18T131749-cut4.json",
+  "cut": 4,
+  "day": "2026-09-18",
+  "aired_at": "2026-09-18T22:00:00.000Z",
+  "ends_at": "2026-09-19T04:00:00.000Z",
+  "ticks": 21600,
+  "sha256": "40bcf88f592350e2ea8484bea19b1aeebfc5e98e8320bb0ed87c89a68d6187a0",
+  "engine": {
+   "commit": "71a44db7e308",
+   "dirty": true,
+   "bundle": "assets/valley-DzyD_nKS.js",
+   "sun": "assets/sun-C0M5Hd8K.js",
+   "built_at": "2026-09-18T13:17:49.982Z"
+  },
+  "sealed_at": "2026-09-18T13:17:51.039Z",
+  "replaces": "episode-2026-09-18T125411-cut4.json"
  }
 ]
