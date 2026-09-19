@@ -4139,5 +4139,24 @@
   "line": "The engine counts two.",
   "footline": "The boat that lands the next turn takes the last one off.",
   "voice": "both"
+ },
+ {
+  "roman": "ccxliv",
+  "file": "langar.html",
+  "title": "Langar",
+  "when": "2026-09-19",
+  "domain": "religion",
+  "subject": "settler",
+  "world": "cloud",
+  "key": "langar-sikh-community-kitchen-guru-nanak-c1500",
+  "tier": 2,
+  "frame": "The langar, the community kitchen of a gurdwara, credited to Guru Nanak around 1500: a free meal to whoever comes, regardless of who they are, everyone sitting together, kept by volunteers; the Golden Temple&rsquo;s is Langar Sri Guru Ramdas Ji.",
+  "fact": "Wikipedia: a langar &ldquo;serves meals to all free of charge, regardless of religion, caste, gender, economic status, or ethnicity&rdquo;; introduced by Guru Nanak around 1500 in Punjab; people sit together on the floor; the SGPC names the Amritsar kitchen.",
+  "property": "the-meal-comes-before-the-question",
+  "source": "Langar (Sikhism), Wikipedia - https://en.wikipedia.org/wiki/Langar_(Sikhism) ; Langar Sri Guru Ramdas Ji, SGPC - https://sgpc.net/langar/",
+  "valleyFact": "The cloud valley, 17&ndash;19 Sep: the Launch scout (1e373cd4579ccee3) gave one meal each to Kestrel, Harfoot and Kowalik; 6 buy orders read received-empty at 65 checks and 7 offers stayed open, re-read here 19 Sep 03:15Z; Harfoot filled Kowalik&rsquo;s 3 stone and 12 ore orders 36 s before the second meal.",
+  "line": "The kitchen does not ask. It is not clear anybody was asking the kitchen either.",
+  "footline": "The meal comes before the question.",
+  "voice": "both"
  }
 ]
