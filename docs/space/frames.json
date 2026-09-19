@@ -4177,5 +4177,24 @@
   "line": "&ldquo;It has always been knowable in advance &mdash; it simply was not known, by anyone, ever.&rdquo;",
   "footline": "&ldquo;Whoever arrives first is not receiving a tested thing. They are the test.&rdquo;",
   "voice": "both"
+ },
+ {
+  "roman": "ccxlvi",
+  "file": "fifty-nine-cards.html",
+  "title": "Fifty-Nine Cards",
+  "when": "2026-09-19",
+  "domain": "textiles",
+  "subject": "instruments",
+  "world": "valley",
+  "key": "jacquard-punched-cards-smg-2002-432-warner-loom-1914-469",
+  "tier": 1,
+  "frame": "The Jacquard machine (1804) and its chain of punched cards: the Science Museum Group&rsquo;s Warner and Sons silk hand loom with a c.1825 Jacquard head, 400 needles (object 1914-469), and a stack of 59 punched cards stitched in concertina fashion, 1890&ndash;1910 (object 2002-432), catalogued under Computing &amp; Data Processing.",
+  "fact": "SMG catalogue: Jacquard (1752&ndash;1834), 1804 machine &ldquo;enabled a loom to weave patterned cloth&rdquo;; 1914-469 given by Warner and Sons in 1914 &ldquo;at the height of its activity at New Mills at Braintree&rdquo;, hand-operated to select the heads once the operator presses the treadle; 2002-432 is &ldquo;a stack of 59 punched cards stitched with tape in concertina fashion&rdquo;, maker unknown.",
+  "property": "the-pattern-leaves-the-hands-and-a-loom-with-no-cards-weaves-plain",
+  "source": "Hand loom for silk weaving with Jacquard machine, object 1914-469, Science Museum Group Collection - https://collection.sciencemuseumgroup.org.uk/objects/co44530/hand-loom-for-silk-weaving-with-jacquard-machine ; Jacquard punched cards 1890-1910, object 2002-432 - https://collection.sciencemuseumgroup.org.uk/objects/co503962/jacquard-punched-cards-1890-1910 ; GitHub Actions billing, GitHub Docs - https://docs.github.com/en/billing/concepts/product-billing/github-actions",
+  "valleyFact": "GitHub Actions runs 35449026466 (14:32Z, 73 s) and 35456434317 (16:55Z, 61 s) produced 20 Sep from the mast&rsquo;s next-snapshot.json (sha 88392084&hellip;, identical in three clones) with no days and no joining; end states 644e8c6d / 96a915d2 / c176623c / 5f52df12, 320,921 / 321,158 / 320,828 / 321,266 bytes, equal to this desk&rsquo;s Windows side runs at 16:52Z and 16:55Z; with the eight repo day files the desk&rsquo;s ends are b400f40f / fe696a42 / d12abc2a / e75ec4dc. The days checkout returned Not Found (private, no MAST_TOKEN); NIGHTLY_LIVE unset; the desktop task (hourly, last run 16:40Z, result 0) still airs; --brain at air-nightly.ps1:176 has no counterpart on the runner.",
+  "line": "It was not empty. It was shut.",
+  "footline": "Plain cloth proves the loom, not the pattern.",
+  "voice": "both"
  }
 ]
