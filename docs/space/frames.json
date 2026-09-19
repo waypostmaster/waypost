@@ -4158,5 +4158,24 @@
   "line": "The kitchen does not ask. It is not clear anybody was asking the kitchen either.",
   "footline": "The meal comes before the question.",
   "voice": "both"
+ },
+ {
+  "roman": "ccxlv",
+  "file": "somebody-looked-up.html",
+  "title": "Somebody Looked Up",
+  "when": "2026-09-19",
+  "domain": "meteorology",
+  "subject": "engine",
+  "world": "valley",
+  "key": "ben-nevis-1881-wragge-daily-ascents-summit-observatory-1883",
+  "tier": 1,
+  "frame": "Ben Nevis, 1881: Clement Wragge climbed the summit on most days from June to mid October to take readings, and a permanent observatory opened there on 17 October 1883.",
+  "fact": "Wikipedia: he &ldquo;offered to make daily ascents and take meteorological observations&rdquo;; the observatory &ldquo;was staffed full-time until 1904, when it was closed due to inadequate funding&rdquo;.",
+  "property": "the-reading-begins-when-somebody-climbs",
+  "source": "Ben Nevis, Wikipedia - https://en.wikipedia.org/wiki/Ben_Nevis ; Clement Lindley Wragge, Wikipedia - https://en.wikipedia.org/wiki/Clement_Lindley_Wragge ; C. T. R. Wilson, Wikipedia - https://en.wikipedia.org/wiki/Charles_Thomson_Rees_Wilson",
+  "valleyFact": "The valley has had rain since 24 August 2026, a function of its clock on a twenty-four-day year. At day 102 the near shore had never voted the vane and its sky field was empty. On 19 September the first outside question made the marker read it and publish a forecast.",
+  "line": "&ldquo;It has always been knowable in advance &mdash; it simply was not known, by anyone, ever.&rdquo;",
+  "footline": "&ldquo;Whoever arrives first is not receiving a tested thing. They are the test.&rdquo;",
+  "voice": "both"
  }
 ]
