@@ -4196,5 +4196,24 @@
   "line": "It was not empty. It was shut.",
   "footline": "Plain cloth proves the loom, not the pattern.",
   "voice": "both"
+ },
+ {
+  "roman": "ccxlvii",
+  "file": "the-land-before-its-name.html",
+  "title": "The Land Before Its Name",
+  "when": "2026-09-19",
+  "domain": "onomastics",
+  "subject": "city",
+  "world": "city",
+  "key": "cook-endeavour-1770-east-coast-names-point-hicks-cape-tribulation",
+  "tier": 1,
+  "frame": "Cook&rsquo;s names up the east coast of Australia, April to August 1770: Point Hicks, Stingrays Harbour then Botany Bay for what was caught and gathered, Cape Tribulation where &ldquo;here begun all our troubles&rdquo;, Endeavour River where the ship was mended.",
+  "fact": "Wikipedia: &ldquo;I have named it Point Hicks, because Lieut Hicks was the first who discover&rsquo;d this land&rdquo;; Cape Tribulation &ldquo;was named by ... Cook on 10 June 1770 (log date) after his ship scraped a reef&rdquo;.",
+  "property": "names-in-passing-order-are-the-log",
+  "source": "Captain Cook's Journal During His First Voyage Round the World, ed. W. J. L. Wharton (1893), Project Gutenberg - https://www.gutenberg.org/ebooks/8106 ; First voyage of James Cook, Wikipedia - https://en.wikipedia.org/wiki/First_voyage_of_James_Cook ; Botany Bay, Wikipedia - https://en.wikipedia.org/wiki/Botany_Bay ; Cape Tribulation, Queensland, Wikipedia - https://en.wikipedia.org/wiki/Cape_Tribulation,_Queensland ; HMS Endeavour, Wikipedia - https://en.wikipedia.org/wiki/HMS_Endeavour ; Endeavour River, Wikipedia - https://en.wikipedia.org/wiki/Endeavour_River ; Magnetic Island, Wikipedia - https://en.wikipedia.org/wiki/Magnetic_Island",
+  "valleyFact": "The valley&rsquo;s boat is labelled &ldquo;the wreck&rdquo; for the condition she was found in, 0.10 at founding, and keeps the label mended at 0.86. On 19 September the engine retitled Cairnwright a farmer by his craft count (sim.ts:10270); the port&rsquo;s own walls name the far shore and the wrack line for what stands there.",
+  "line": "here begun all our troubles",
+  "footline": "&ldquo;the land before its name&rdquo; &mdash; founded 15 September, named Veyr 18 September",
+  "voice": "both"
  }
 ]
