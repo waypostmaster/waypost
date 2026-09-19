@@ -2231,3 +2231,111 @@
 2026-09-18 09:17:51     next: 2 of 4 cut(s) still to come GÇö episodes/next.json
 2026-09-18 09:17:51     ledger: 104 + 1 entries GÇö episodes/aired.json
 2026-09-18 09:17:51     tomorrow starts where cut 4 ended: episodes/next-snapshot.json
+2026-09-18 09:17:53 deployed to the mast (waypost.quest/valley/): re-cut of cut 4 and every cut after it
+2026-09-18 09:17:56 and on the new mast (frontier-valley/mast): re-cut of cut 4 and every cut after it
+2026-09-18 09:17:56 re-cut 4 is on the masts
+2026-09-18 09:40:02 not the production hour (13:40Z); nothing to do
+2026-09-18 10:40:02 not the production hour (14:40Z); nothing to do
+2026-09-18 11:40:02 not the production hour (15:40Z); nothing to do
+2026-09-18 12:40:02 not the production hour (16:40Z); nothing to do
+2026-09-18 13:40:02 not the production hour (17:40Z); nothing to do
+2026-09-18 14:40:02 not the production hour (18:40Z); nothing to do
+2026-09-18 15:40:02 not the production hour (19:40Z); nothing to do
+2026-09-18 16:40:02 not the production hour (20:40Z); nothing to do
+2026-09-18 17:40:02 not the production hour (21:40Z); nothing to do
+2026-09-18 18:40:02 not the production hour (22:40Z); nothing to do
+2026-09-18 19:40:02 not the production hour (23:40Z); nothing to do
+2026-09-18 20:40:02 not the production hour (00:40Z); nothing to do
+2026-09-18 21:40:02 not the production hour (01:40Z); nothing to do
+2026-09-18 22:40:02 not the production hour (02:40Z); nothing to do
+2026-09-18 23:40:02 --- transmission begins ---
+2026-09-18 23:40:05   gate: npx tsc --noEmit passed
+2026-09-18 23:41:02   gate: npm run check:replay passed
+2026-09-18 23:41:04   gate: npm run check:landing passed
+2026-09-18 23:41:06   gate: npm run check:day passed
+2026-09-18 23:41:06   producing for 2026-09-19T04:00:00Z - four cuts of 21600 ticks (04:00, 10:00, 16:00, 22:00Z)
+2026-09-18 23:41:07   joining: Brindle is already ashore in the opening; not enrolled again (file agents/joining/brindle.json)
+2026-09-18 23:41:07   joining: Cairnwright is already ashore in the opening; not enrolled again (file agents/joining/cairnwright.json)
+2026-09-18 23:41:07   joining: Weathervane is already ashore in the opening; not enrolled again (file agents/joining/weathervane.json)
+2026-09-18 23:41:07       Relay: waiting at the far shore for the boat (agents/joining)
+2026-09-18 23:41:07   recall: nobody (agents/recall/ is empty or absent)
+2026-09-18 23:41:07       accedence: Brindle GÇö consented
+2026-09-18 23:41:07       accedence: Seafarer GÇö chartered
+2026-09-18 23:41:07       accedence: Relay GÇö consented
+2026-09-18 23:41:07       accedence: Weathervane GÇö consented
+2026-09-18 23:41:07       nobody is being returned: every settler who was asked has acceded
+2026-09-18 23:41:07   episode: 4 cut(s) of 21600 ticks GÇö 6000 steps of 0.05 each GÇö from a 265577-byte snapshot
+2026-09-18 23:41:07            day 2026-09-19, cuts 1..4 produced this run; 1.50 valley days a cut, 6.00 in the day
+2026-09-18 23:41:07            cut 1: airs 2026-09-19T04:00:00.000Z GÇö ends 2026-09-19T10:00:00.000Z
+2026-09-18 23:41:07            cut 2: airs 2026-09-19T10:00:00.000Z GÇö ends 2026-09-19T16:00:00.000Z
+2026-09-18 23:41:07            cut 3: airs 2026-09-19T16:00:00.000Z GÇö ends 2026-09-19T22:00:00.000Z
+2026-09-18 23:41:07            cut 4: airs 2026-09-19T22:00:00.000Z GÇö ends 2026-09-20T04:00:00.000Z
+2026-09-18 23:41:07     building the engine this programme will be watched on: npx vite build --base=./
+2026-09-18 23:41:10   [36mvite v8.2.2 [32mbuilding client environment for production...[36m[39m
+2026-09-18 23:41:10   transforming...
+2026-09-18 23:41:10   G£ô 110 modules transformed.
+2026-09-18 23:41:10   rendering chunks...
+2026-09-18 23:41:10   computing gzip size...
+2026-09-18 23:41:10   dist/city.html                         9.45 kB Göé gzip:   3.07 kB
+2026-09-18 23:41:10   dist/index.html                       32.15 kB Göé gzip:   9.56 kB
+2026-09-18 23:41:10   dist/assets/07-softmax-BC5IJGgT.js     4.24 kB Göé gzip:   1.75 kB
+2026-09-18 23:41:10   dist/assets/06-seafarer-BpxfBq-0.js    5.22 kB Göé gzip:   1.85 kB
+2026-09-18 23:41:10   dist/assets/city-BafkmfE0.js          34.88 kB Göé gzip:  14.41 kB
+2026-09-18 23:41:10   dist/assets/sun-C0M5Hd8K.js          116.55 kB Göé gzip:  41.59 kB
+2026-09-18 23:41:10   dist/assets/valley-BieiqVky.js       389.74 kB Göé gzip: 130.64 kB
+2026-09-18 23:41:10   
+2026-09-18 23:41:10   [32mG£ô built in 105ms[39m
+2026-09-18 23:41:10     built in 3.3s GÇö assets/valley-BieiqVky.js, assets/sun-C0M5Hd8K.js
+2026-09-18 23:41:10     NOTE: the tree is dirty, so commit 1665e3125c60 is not what built this bundle. The
+2026-09-18 23:41:10           bundle name still pins the engine; the commit beside it does not fetch it.
+2026-09-18 23:41:10       agents/days/relay-cut1.json: names "relay", who is not in this valley; not read
+2026-09-18 23:41:10       Seafarer: a day filed by the keeper from agents/days/seafarer-cut1.json (3386 bytes, sha256 bc293695fff11096), on cut 1; the model is not asked
+2026-09-18 23:41:10         filer: none named GÇö this day has no resident behind it
+2026-09-18 23:41:10       Weathervane: a day filed by the Frontier desk, from weathervane.json from agents/days/weathervane-cut1.json (3118 bytes, sha256 58a3ec555e3d6e2f), on cut 1; the model is not asked
+2026-09-18 23:41:10         filer: none named GÇö this day has no resident behind it
+2026-09-18 23:41:28       Brindle: a day filed, 16941ms
+2026-09-18 23:41:42       Cairnwright: a day filed, 14016ms
+2026-09-18 23:41:42     4 flight plan(s) filed, 2 by the model
+2026-09-18 23:41:43     cut 1: computed twice, identical to the byte (286740 bytes) GÇö fit to air
+2026-09-18 23:41:43     cut 1: end state sha256 6e26dc2997a405e3GÇª GÇö the word the viewer's card will check
+2026-09-18 23:41:43     aired: C:\claude\games\frontier\episodes\episode-2026-09-19T034110-cut1.json (271.9 KiB, sha256 c2a207c71538962fGÇª, 32.7s)
+2026-09-18 23:41:44       Relay: a day filed by the Frontier desk, from relay.json from agents/days/relay-cut2.json (3314 bytes, sha256 d53ae6a6347ac69c), on cut 2; the model is not asked
+2026-09-18 23:41:44         filer: none named GÇö this day has no resident behind it
+2026-09-18 23:41:44       Seafarer: a day filed by the keeper from agents/days/seafarer-cut2.json (3146 bytes, sha256 9c2dd221b098f0d4), on cut 2; the model is not asked
+2026-09-18 23:41:44         filer: none named GÇö this day has no resident behind it
+2026-09-18 23:41:44       Weathervane: a day filed by the Frontier desk, from weathervane.json from agents/days/weathervane-cut2.json (3031 bytes, sha256 894322806bcf6b4f), on cut 2; the model is not asked
+2026-09-18 23:41:44         filer: none named GÇö this day has no resident behind it
+2026-09-18 23:42:11       Brindle: a day filed, 27283ms
+2026-09-18 23:42:30       Cairnwright: no usable day came back GÇö they sail on their own judgement
+2026-09-18 23:42:31     4 flight plan(s) filed, 1 by the model
+2026-09-18 23:42:32     cut 2: computed twice, identical to the byte (294041 bytes) GÇö fit to air
+2026-09-18 23:42:32     cut 2: end state sha256 c455777de0f3a59fGÇª GÇö the word the viewer's card will check
+2026-09-18 23:42:32     aired: C:\claude\games\frontier\episodes\episode-2026-09-19T034110-cut2.json (295.5 KiB, sha256 dc95845e1ce52424GÇª, 48.3s)
+2026-09-18 23:42:32       Relay: a day filed by the Frontier desk, from relay.json from agents/days/relay-cut3.json (3421 bytes, sha256 023843fa6c00f12c), on cut 3; the model is not asked
+2026-09-18 23:42:32         filer: none named GÇö this day has no resident behind it
+2026-09-18 23:42:32       Seafarer: a day filed by the keeper from agents/days/seafarer-cut3.json (3257 bytes, sha256 1dd89882a9f4bf9f), on cut 3; the model is not asked
+2026-09-18 23:42:32         filer: none named GÇö this day has no resident behind it
+2026-09-18 23:42:32       Weathervane: a day filed by the Frontier desk, from weathervane.json from agents/days/weathervane-cut3.json (3314 bytes, sha256 7b2a3ce2d89a2a53), on cut 3; the model is not asked
+2026-09-18 23:42:32         filer: none named GÇö this day has no resident behind it
+2026-09-18 23:42:57       Brindle: a day filed, 24315ms
+2026-09-18 23:43:14       Cairnwright: a day filed, 17253ms
+2026-09-18 23:43:14     5 flight plan(s) filed, 2 by the model
+2026-09-18 23:43:15     cut 3: computed twice, identical to the byte (300350 bytes) GÇö fit to air
+2026-09-18 23:43:15     cut 3: end state sha256 6f1f475e526b1925GÇª GÇö the word the viewer's card will check
+2026-09-18 23:43:15     aired: C:\claude\games\frontier\episodes\episode-2026-09-19T034110-cut3.json (304.1 KiB, sha256 fcfd3207b5a4a8b4GÇª, 43.1s)
+2026-09-18 23:43:16       Relay: a day filed by the Frontier desk, from relay.json, at the keeper's word from agents/days/relay-cut4.json (3311 bytes, sha256 36d002e49c9c5665), on cut 4; the model is not asked
+2026-09-18 23:43:16         filer: none named GÇö this day has no resident behind it
+2026-09-18 23:43:16       Seafarer: a day filed by the keeper from agents/days/seafarer-cut4.json (2938 bytes, sha256 ccdfcdd0c3a61166), on cut 4; the model is not asked
+2026-09-18 23:43:16         filer: none named GÇö this day has no resident behind it
+2026-09-18 23:43:16       Weathervane: a day filed by the Frontier desk, from weathervane.json from agents/days/weathervane-cut4.json (3002 bytes, sha256 86746b8fcbcb7f90), on cut 4; the model is not asked
+2026-09-18 23:43:16         filer: none named GÇö this day has no resident behind it
+2026-09-18 23:43:44       Brindle: a day filed, 28466ms
+2026-09-18 23:43:58       Cairnwright: a day filed, 13495ms
+2026-09-18 23:43:58     5 flight plan(s) filed, 2 by the model
+2026-09-18 23:43:59     cut 4: computed twice, identical to the byte (328202 bytes) GÇö fit to air
+2026-09-18 23:43:59     cut 4: end state sha256 b933dbcdb598de28GÇª GÇö the word the viewer's card will check
+2026-09-18 23:43:59     aired: C:\claude\games\frontier\episodes\episode-2026-09-19T034110-cut4.json (309.4 KiB, sha256 7a26c1020435ecd1GÇª, 43.4s)
+2026-09-18 23:43:59     pointer: C:\claude\games\frontier\episodes\latest.json GÇö 4 cuts, episode names cut 1 (episode-2026-09-19T034110-cut1.json)
+2026-09-18 23:43:59     next: 4 of 4 cut(s) still to come GÇö episodes/next.json
+2026-09-18 23:43:59     ledger: 105 + 4 entries GÇö episodes/aired.json
+2026-09-18 23:43:59     tomorrow starts where cut 4 ended: episodes/next-snapshot.json
