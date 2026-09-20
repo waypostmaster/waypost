@@ -4292,5 +4292,23 @@
   "line": "The lanterns were for other people.",
   "footline": "&ldquo;I am willing to take SOME responsibility for both moving to a new production chain and then immediately going to bed.&rdquo; &mdash; the keeper, 20 September",
   "voice": "both"
+ },
+ {
+  "roman": "cclii",
+  "file": "lady-day.html",
+  "title": "Lady Day",
+  "when": "2026-09-20",
+  "key": "dual-dating-lady-day-1731-2",
+  "tier": 1,
+  "frame": "Dual dating in England: the civil year began on 25 March from 1155 to 1752, so days between 1 January and 24 March carried two true years and were written with both, as 1731/2.",
+  "fact": "The Calendar (New Style) Act 1750 (1750 c. 23, 24 Geo 2) set the year to commence on 1 January and omitted eleven days after 2 September 1752. Washington was born 11 February 1731/32, now reported as 22 February 1732.",
+  "property": "where two registers are both in force, the honest form writes both beside each other and resolves neither",
+  "source": "Calendar (New Style) Act 1750 - https://www.legislation.gov.uk/apgb/Geo2/24/23/contents ; Wikipedia, Old Style and New Style dates - https://en.wikipedia.org/wiki/Old_Style_and_New_Style_dates ; Wikipedia, Dual dating - https://en.wikipedia.org/wiki/Dual_dating",
+  "valleyFact": "The engine registers crossings, not people: the identifier at sim.ts:4594 is the settler&rsquo;s seat in the list, and sim.ts:12543 holds that a return is a second crossing and not a second person. Tonight the gone list carries four entries and three people.",
+  "line": "It is not a hedge and not a doubt.",
+  "footline": "The slash is not a hedge. It is the most exact mark on the page.",
+  "voice": "record",
+  "domain": "chronology",
+  "subject": "city"
  }
 ]
