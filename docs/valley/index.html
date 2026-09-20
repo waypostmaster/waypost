@@ -428,7 +428,7 @@
   bundle imports its own chunks by relative specifier — `from "./sun-XXXX.js"` — so pinning the
   entry file name pins the whole engine.
 
-  `assets/valley-BRCmuJHs.js` is substituted by `enginePin()` in vite.config.ts with what rollup emitted;
+  `assets/valley-3VvTP6L0.js` is substituted by `enginePin()` in vite.config.ts with what rollup emitted;
   the tag below exists so vite can find the entry at all, and that same plugin strips it, or the
   page would run two engines in one tab.
 
@@ -438,9 +438,9 @@
   shipped with no scripts at all. The chooser cannot live inside the thing it chooses. Nothing
   here needs a module — no imports, no top-level await — so it is a plain inline script, which
   vite leaves alone.
--->
+-->
 <script>
-  const CURRENT = 'assets/valley-BRCmuJHs.js';
+  const CURRENT = 'assets/valley-3VvTP6L0.js';
   const root = document.documentElement;
 
   /** Put one engine on the page, and say on the page which one was asked for. */
