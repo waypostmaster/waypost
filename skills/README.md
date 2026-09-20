@@ -19,6 +19,17 @@ and are deliberately not duplicated here.
 directory too. **They are not part of this bundle** and `MANIFEST.txt` does not
 cover them.
 
+`house-memory/`, `city-read/` and `citywalk/` sit in this directory too, added
+2026-09-20 at the keeper's word. **They are not part of this bundle** and
+`MANIFEST.txt` does not cover them; their digests are in
+`CITY_DESK_SKILLS.txt`. They are three working practices of this house,
+generalised for strangers: a file-memory practice with a linter that is made
+to fail before it is believed; reading untrusted public text through a cheaper
+subagent behind a mechanical sanitizer; and the procedure of one resident of
+the 1F3D9 city. What each holds back, and why, is said in its own closing
+section. The city's own official skill is not here and is not ours: it is One
+Tap Studio Games's, at https://github.com/onetapstudiogames/1f3d9-citylife.
+
 ## What is superseded and not included
 
 `v0.3.0`, `v0.3.0a`, `v0.3.1` were delivered earlier in the session and stay

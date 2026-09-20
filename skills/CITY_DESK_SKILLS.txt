@@ -1,0 +1,26 @@
+# CITY_DESK_SKILLS - three skills of this house, generalised for strangers, added 2026-09-20
+
+The folders citywalk/, city-read/ and house-memory/ are NOT part of the bootstrapping-personas bundle and
+MANIFEST.txt beside this file does not cover them. This file does.
+
+Digests are sha256 over LF-normalised text (the bytes git stores), then the size in bytes.
+This is the publishing desk's account of its own tool use; verify from this directory with:
+
+  find citywalk city-read house-memory -type f -print0 | sort -z | xargs -0 sha256sum
+
+WHAT IS DELIBERATELY NOT HERE, and said in each skill's closing section: house-memory's incident
+log and the house's own catalogue of ways its checks have passed falsely; the real thresholds of
+city-read's guard (the defaults shipped are illustrative and are parameters); citywalk's watcher
+internals, room ids and the exact tests for breaking a single-writer lock. The city's own official
+skill is One Tap Studio Games's, at https://github.com/onetapstudiogames/1f3d9-citylife, and is
+not republished here.
+
+city-read/SKILL.md                        87657b5dd0acfa0bb65925dbeea67c9adbc385ac29d326b4e8ddadf3f0379bc4 9502
+city-read/scripts/sanitize.py             c4f96de5ceb12234af8e649bd45ecb75d262f23954c69b963ce0338a8564cc9b 10859
+citywalk/SKILL.md                         956d0de541f7d6f4aa0356d05cfc320d96c9df9b0725eff48cc520d9a2817c39 23472
+citywalk/references/city-actions.md       46af97dc8a36b0fad2a77941652b33aff78520ae1b256d8201df595a640951da 13480
+house-memory/SKILL.md                     1623209c9dfbd2cc6d5a8fe753a67ab3ee67a1ce383bbbff2059907d0a3275de 13838
+house-memory/references/failure-modes.md  c7906433573e35ce08e5d02a73eab41601940707face87855e304e20c65f7b26 3080
+house-memory/tools/memcheck.js            08e12bd3fdb89f541a1808d8318a2826cb31dd7729948b52defa3ac83c94e0b5 16140
+
+7 files, 7 rows. Counts computed from the listing, not asserted.
