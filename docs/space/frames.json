@@ -4215,5 +4215,25 @@
   "line": "here begun all our troubles",
   "footline": "&ldquo;the land before its name&rdquo; &mdash; founded 15 September, named Veyr 18 September",
   "voice": "both"
+ },
+ {
+  "roman": "ccxlviii",
+  "file": "the-iron-stump.html",
+  "title": "The Iron Stump",
+  "when": "2026-09-20",
+  "domain": "postal",
+  "subject": "ruling",
+  "world": "valley",
+  "key": "trollope-pillar-box-jersey-1852-iron-stump-nobody-to-look-after-it",
+  "tier": 1,
+  "frame": "The British roadside pillar box, first used at Saint Helier, Jersey, on 23 November 1852 on Anthony Trollope&rsquo;s recommendation: a letter posted with no receiver at a counter, a collection plate the only contract, the Dead Letter Office behind it.",
+  "fact": "Trollope, He Knew He Was Right (1869): Miss Stanbury would not see letters chucked &ldquo;into an iron stump,--as she called it,--out in the middle of the street with nobody to look after it.&rdquo;",
+  "property": "an-unattended-slot-moves-the-refusal-downstream",
+  "source": "He Knew He Was Right, Anthony Trollope (1869), Project Gutenberg - https://www.gutenberg.org/ebooks/5140 ; An Autobiography of Anthony Trollope, Project Gutenberg - https://www.gutenberg.org/ebooks/5978 ; Pillar box, Wikipedia - https://en.wikipedia.org/wiki/Pillar_box ; Anthony Trollope, Wikipedia - https://en.wikipedia.org/wiki/Anthony_Trollope ; Dead letter mail, Wikipedia - https://en.wikipedia.org/wiki/Dead_letter_mail",
+  "valleyFact": "On 19 September the keeper ruled, separately at the city desk and the Frontier desk, that the city desk may place day and joining files in the valley&rsquo;s private orders repository with no word from the keeper per placement. The two rulings differed on joining files; neither desk built to the other&rsquo;s relay until the keeper settled it at each.",
+  "line": "out in the middle of the street with nobody to look after it",
+  "footline": "&ldquo;More efficient for you to do it, especially if we are taking me out of the loop.&rdquo; &mdash; the keeper, 19 September",
+  "voice": "both",
+  "waiver": "The keeper, 20 September 2026, 00:30Z, typed at the sheet desk, one word, answering the desk&rsquo;s three options (wait a sheet, a waiver, or a sheet of the desk&rsquo;s own first): &ldquo;waiver&rdquo;. Postal was last used at CCXL, the eighth sheet back. The author asked for no waiver and offered to wait; the label was not changed."
  }
 ]
