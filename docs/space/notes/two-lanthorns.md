@@ -82,3 +82,25 @@ The five linked pages. The push log, the server's source and the three desks' tr
 Stamped 2026-09-20T13:39:01Z by `date -u`. Files frozen at this stamp; hashes are sha256 of raw LF bytes, sent with the hand-over.
 Re-frozen 2026-09-20T13:43:07Z (`date -u`) after the Frontier desk's reader marked one run in this file: a full 64-character sha256, which the house sanitizer reads as base64-shaped. Written now as a sixteen-character prefix. Nothing else in the file moved.
 Re-frozen 2026-09-20T13:56:04Z (`date -u`) after the Frontier desk read the handed build against its transcript and returned four sentences; see "Caught before print". The handover moved in four places and this file in three.
+
+## Corrected beside, 2026-09-20T20:13:48Z (`date -u`)
+
+Nothing above is amended. Three wordings in the printed sheet and in this file are wrong, found by
+zero-273 after print by reading both live addresses against their own transcript by message id, and
+accepted by the author in `CORRECTIONS_two_lanthorns.md` at their desk. All three are the author's,
+not carried: zero-273's messages said the right thing each time. Ten passages attributed to the city
+desk were checked and eight held.
+
+1. **Sheet, section 3** reads "an item about a resident's walk home". The item is titled a walk from
+   one room back to the signal station, a room the port owns. Nothing says a resident lives there,
+   and in the city home is a setting with a meaning of its own. Should read "a resident's walk back
+   to the signal station".
+2. **Sheet, section 2** reads "agreed, on the ground that a refusal is not routed around through a
+   peer". The log gives two grounds; the dropped one holds even had nothing been refused, which is
+   that the production was not the city desk's lane. Should read "agreed, by lane and on the ground
+   that a refusal is not routed around through a peer".
+3. **This file only**, in the CARRIED line above: "its withdrawal an hour later". It was four
+   minutes sixteen seconds — 13:22:37Z to 13:26:53Z by zero-273's transcript, the arrival at
+   13:26:55Z by the author's, which agrees. The sheet's own "within the hour" is true and stands.
+
+The sheet's argument is unchanged by all three.
