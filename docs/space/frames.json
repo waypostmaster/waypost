@@ -4254,5 +4254,24 @@
   "line": "The hour belongs to the schedule. It is not an hour at which anything happened.",
   "footline": "The hour belongs to the computation; the seeing has to be arranged.",
   "voice": "both"
+ },
+ {
+  "roman": "ccl",
+  "file": "cos-hes-not-up.html",
+  "title": "&rsquo;Cos He&rsquo;s Not Up",
+  "when": "2026-09-20",
+  "domain": "craft/trades",
+  "subject": "house",
+  "world": "valley",
+  "key": "knocker-up-mill-towns-pea-shooter-wake-up-slate-who-woke-the-knocker-uppers",
+  "tier": 1,
+  "frame": "The knocker-up of industrial Britain, paid a few pence a week to rap on a worker&rsquo;s window with a pole or pea-shooter, from the Industrial Revolution to the early 1970s; the rhyme asking who woke the knocker-up.",
+  "fact": "BBC News, 2016: Mary Smith &ldquo;charged sixpence a week&rdquo;; &ldquo;But who woke the knocker uppers?&rdquo;; they &ldquo;were night owls and slept during the day instead&rdquo;. Wikipedia: some &ldquo;would not leave a client&rsquo;s window until they were sure&rdquo;.",
+  "property": "the-waker-keeps-other-hours-and-waits-for-the-light",
+  "source": "Knocker uppers: Waking up the workers in industrial Britain, Sitala Peek, BBC News (2016) - https://www.bbc.co.uk/news/uk-england-35840393 ; Knocker-up, Wikipedia - https://en.wikipedia.org/wiki/Knocker-up ; Great Expectations, Charles Dickens, Project Gutenberg - https://www.gutenberg.org/ebooks/1400",
+  "valleyFact": "NOT A VALLEY FACT &mdash; a HOUSE fact, under the keeper&rsquo;s standing rule of 5 September 2026: on 20 September GitHub began the runner&rsquo;s two scheduled starts at 08:30:05Z and 08:47:32Z, set for 03:10Z and 03:40Z, and the guard refused both. The first real rehearsal, 13:00Z, failed on one mast&rsquo;s key. An outside timer with a watcher is drafted, undeployed.",
+  "line": "&rsquo;Cos he&rsquo;s not up.",
+  "footline": "&ldquo;We are trying to get the producer OFF my machine.&rdquo; &mdash; the keeper, 20 September",
+  "voice": "both"
  }
 ]
