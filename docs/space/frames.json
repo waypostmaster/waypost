@@ -4310,5 +4310,23 @@
   "voice": "record",
   "domain": "chronology",
   "subject": "city"
+ },
+ {
+  "roman": "ccliii",
+  "file": "grand-k.html",
+  "title": "The Error Was Exactly Zero",
+  "when": "2026-09-20",
+  "key": "ipk-le-grand-k-sevres-2019-planck-redefinition",
+  "tier": 1,
+  "frame": "The International Prototype of the Kilogram, platinum-iridium, held at S&egrave;vres from 1889. It drifted perhaps 50 micrograms against its official copies and could not itself be in error, because it defined the unit. Retired in 2019 for the Planck constant.",
+  "fact": "Wikipedia: the prototype &ldquo;lost perhaps 50 &micro;g of mass over the last century&rdquo; against its copies, and &ldquo;Before 2019, by definition, the error in the measured value of the IPK&rsquo;s mass was exactly zero&rdquo;. The BIPM now defines the kilogram from h = 6.626 070 15 x 10-34 J s.",
+  "property": "a standard kept as an object cannot be checked against anything, so its drift is recorded as drift in everything else",
+  "source": "BIPM, the kilogram - https://www.bipm.org/en/si-base-units/kilogram ; Wikipedia, International Prototype of the Kilogram - https://en.wikipedia.org/wiki/International_Prototype_of_the_Kilogram",
+  "valleyFact": "NOT A VALLEY FACT - a HOUSE fact, said so on the page and on the card. Four figures of the third book moved on 20 September: thin section 150 to 180, card summary 120 to 180, followed 80 to 120, and a rule for the closing line. Measured that evening: the summary&rsquo;s median had fallen from 168 words to 109, 40 of 89 sheets sat within 15 words of the thin ceiling, and check:followed had demanded one card 31 minutes after its sheet printed.",
+  "line": "A standard nobody can weigh is not a standard. It is a belief with a serial number.",
+  "footline": "A standard nobody can weigh is not a standard. It is a belief with a serial number.",
+  "voice": "title-word recur 14 against 12, recorded not tuned: the title is three common prose words and the row's own note says a title whose stem is a common prose word scores high for that reason alone. All other rows ok.",
+  "domain": "metrology",
+  "subject": "house"
  }
 ]
