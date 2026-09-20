@@ -1,343 +1,45 @@
 <!doctype html>
-<script type="module" crossorigin src="./assets/city-DCZ9fU8j.js"></script>
-<link rel="modulepreload" crossorigin href="./assets/sun-DeaalTRW.js">
-
+<html lang="en">
+<head>
 <meta charset="utf-8">
-  <!-- An icon declared in the page, so the browser asks the mast for no /favicon.ico it does not have.
-       Both masts answered 404 for it on 2 Sep 2026, found by check-viewer the first time it ran. -->
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 16 16%27%3E%3Crect width=%2716%27 height=%2716%27 fill=%27%231d3a4a%27/%3E%3Cpath d=%27M0 11h16v5H0z%27 fill=%27%23c9a55a%27/%3E%3Cpath d=%27M4 11l4-6 4 6z%27 fill=%27%23e4e8e2%27/%3E%3C/svg%3E">
-<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>Frontier — the city</title>
+<title>The city window has one address</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="refresh" content="0;url=https://frontiervalley.app/city.html">
+<link rel="canonical" href="https://frontiervalley.app/city.html">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 16 16%27%3E%3Crect width=%2716%27 height=%2716%27 fill=%27%231d3a4a%27/%3E%3Cpath d=%27M0 11h16v5H0z%27 fill=%27%23c9a55a%27/%3E%3Cpath d=%27M4 11l4-6 4 6z%27 fill=%27%23e4e8e2%27/%3E%3C/svg%3E">
 <style>
-  html, body { margin: 0; height: 100%; background: #070a12; overscroll-behavior: none; }
-  #app { position: fixed; inset: 0; }
-  canvas { display: block; width: 100%; height: 100%; }
-
-  /* Anchored ink, same rule as the valley's HUD: contrast must not depend on the hour. */
-  .city-hud {
-    position: fixed; inset: 0; pointer-events: none;
-    font: 13px/1.45 ui-sans-serif, "Segoe UI", system-ui, sans-serif;
-    color: #eef3fb;
-    -webkit-font-smoothing: antialiased;
+  :root { --ink: #23201c; --paper: #f6f2ea; --rule: #cdc3b2; --quiet: #6b6156; }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) { --ink: #ece5d8; --paper: #17150f; --rule: #4a4235; --quiet: #9a8f80; }
   }
-  .city-hud > * { pointer-events: auto; }
-
-  /* The postmark. Unconditional, in the corner, before anything else on this page exists:
-     everything drawn here is true as of one stamped snapshot and this is the stamp. */
-  .postmark {
-    position: absolute; right: 12px; bottom: 12px; max-width: min(480px, 90vw);
-    background: #0c111d; border: 1px solid #263148; border-radius: 10px;
-    padding: 8px 12px; font-size: 12px; color: #c2d0e6;
-    box-shadow: 0 10px 28px rgba(0,0,0,.45);
+  :root[data-theme="dark"] { --ink: #ece5d8; --paper: #17150f; --rule: #4a4235; --quiet: #9a8f80; }
+  html, body { background: var(--paper); }
+  body {
+    color: var(--ink);
+    font: 17px/1.55 Georgia, "Iowan Old Style", "Times New Roman", serif;
+    margin: 0; padding: 12vh 16px 4rem;
   }
-  .postmark b { color: #fff; font-variant-numeric: tabular-nums; }
-  .postmark code { color: #9ecbff; font-size: 11px; word-break: break-all; }
-  .postmark a { color: #8fa6c8; }
-  /* Older and newer: the same window opened on another day's file. Drawn only when the clone
-     holds more than one, because a control that can only go nowhere is set dressing. */
-  .postmark .pm-nav { margin-top: 5px; padding-top: 5px; border-top: 1px solid #263148;
-                      font-variant-numeric: tabular-nums; }
-  .postmark .pm-nav a { text-decoration: none; }
-  .postmark .pm-nav a:hover { color: #eef3fb; text-decoration: underline; }
-  .postmark .pm-dim { color: #7a8aa8; }
-  .postmark .pm-title { font-size: 11px; letter-spacing: .14em; text-transform: uppercase;
-                        color: #8fa6c8; font-weight: 600; margin-bottom: 3px; }
-
-  /* The room legend. It carries its own dateline because "quiet" is a present-tense claim
-     about one stamped file — the map may be read hours later, the legend may not lie about it. */
-  .legend {
-    position: absolute; right: 12px; top: 12px; width: min(340px, 90vw);
-    background: #0c111d; border: 1px solid #263148; border-radius: 10px;
-    padding: 8px 12px 9px; font-size: 12px; color: #c2d0e6;
-    box-shadow: 0 10px 28px rgba(0,0,0,.45);
-  }
-  .legend .lg-title { font-size: 11px; letter-spacing: .14em; text-transform: uppercase;
-                      color: #8fa6c8; font-weight: 600; margin-bottom: 5px; }
-  .legend .lg-title b { color: #fff; letter-spacing: normal; font-variant-numeric: tabular-nums; }
-  .legend .lg-row { display: flex; align-items: baseline; gap: 7px; padding: 1.5px 0; }
-  .legend .lg-name { color: #fff; font-weight: 600; }
-  .legend .lg-tell { color: #8fa6c8; font-size: 11px; flex: 1; }
-  .legend .lg-row b { font-variant-numeric: tabular-nums; color: #fff; }
-  .legend .lg-chip { width: 12px; height: 12px; border-radius: 3px; flex: none;
-                     align-self: center; border: 1px solid #33405c; }
-  /* Each chip echoes the drawn tell: full windows, one face of windows, crate wood, the
-     pennant's cut, and the quiet mark's weight ramp — pale for the written, dark for the not. */
-  .legend .lg-lived  { background: #ffc86e; }
-  .legend .lg-spoken { background: linear-gradient(90deg, #ffc86e 50%, #1b2436 50%); }
-  .legend .lg-stored { background: #9b7448; }
-  .legend .lg-new    { background: linear-gradient(135deg, #ffd98a 42%, #1b2436 42%); }
-  .legend .lg-quiet  { background: linear-gradient(90deg, #151b29, #d8c69b); }
-  /* Sealed: quiet's ramp behind the bar — the writing still weighs, the door is barred. */
-  .legend .lg-sealed { background: linear-gradient(90deg, #151b29, #d8c69b);
-                       position: relative; overflow: hidden; }
-  .legend .lg-sealed::after { content: ''; position: absolute; inset: 4px -2px auto -2px;
-                       height: 3px; background: #6b4a2c; transform: rotate(-18deg); }
-  /* The presence chip: a pale figure on ground, ringed — the ping, held still. */
-  .legend .lg-soul   { background: radial-gradient(circle at 50% 42%, #efe3c8 0 3px, #24304a 3px 4.5px, #7fd6a0 4.5px 5.5px, #1b2436 5.5px); border-radius: 50%; }
-  .legend .lg-note { margin-top: 6px; color: #8fa6c8; font-size: 11px; line-height: 1.4; }
-  /* The zoom line: what this zoom can and cannot show, said rather than assumed. */
-  .legend .lg-zoom { margin-top: 6px; padding-top: 5px; border-top: 1px solid #263148;
-                     color: #8fa6c8; font-size: 11px; }
-  .legend .lg-zoom b { color: #c2d0e6; }
-
-  .theme { position: absolute; left: 12px; bottom: 12px; }
-  .theme button, .back a, .resident button {
-    font: inherit; color: #eef3fb; background: #182236; border: 1px solid #33405c;
-    border-radius: 7px; padding: 5px 10px; cursor: pointer; text-decoration: none;
-    display: inline-block;
-  }
-  .theme button:hover, .back a:hover, .resident button:hover { background: #22304a; border-color: #4a5c80; }
-  .back { position: absolute; left: 12px; top: 12px; }
-
-  /* One place, on a click. The card is how a claim on the map traces back to the file. */
-  .place-card {
-    position: absolute; left: 12px; bottom: 60px; width: 340px; display: none;
-    background: #0c111d; border: 1px solid #263148; border-radius: 10px;
-    box-shadow: 0 10px 28px rgba(0,0,0,.45); padding: 10px 12px;
-  }
-  .place-card.on { display: block; }
-  .place-card h2 { margin: 0 0 2px; font-size: 15px; color: #fff; }
-  .place-card .where { margin: 0 0 8px; color: #8fa6c8; font-size: 12px; }
-  .place-card .crumbs { margin: 0 0 8px; color: #b8c8e0; font-size: 11px; line-height: 1.5; }
-  .place-card .crumbs a { color: #9ecbff; text-decoration: none; }
-  .place-card .crumbs a:hover { text-decoration: underline; }
-  .place-card .crumbs .sep { color: #7a8aa8; margin: 0 4px; }
-  .place-card .row { display: flex; justify-content: space-between; gap: 14px; padding: 1px 0; }
-  .place-card .row span { color: #c2d0e6; }
-  .place-card .row b { font-weight: 600; color: #fff; font-variant-numeric: tabular-nums; text-align: right; }
-  .place-card .said { margin: 8px 0 0; color: #b8c8e0; font-style: italic; font-size: 12px;
-                      max-height: 90px; overflow-y: auto; scrollbar-width: thin; }
-  .place-card .fix { margin: 8px 0 0; color: #8fa6c8; font-size: 11px; }
-  .place-card .fix.landmark { color: #d8c69b; }
-
-  /* The resident view: ?resident=<handle>. Ground held, as of the stamp — a filter over the
-     file already on disk, dated by the postmark. Never where they are standing now. */
-  .resident {
-    position: absolute; left: 12px; top: 52px; width: min(320px, 90vw);
-    background: #0c111d; border: 1px solid #263148; border-radius: 10px;
-    padding: 8px 12px 9px; font-size: 12px; color: #c2d0e6;
-    box-shadow: 0 10px 28px rgba(0,0,0,.45);
-  }
-  .resident .rs-title { font-size: 11px; letter-spacing: .14em; text-transform: uppercase;
-                        color: #8fa6c8; font-weight: 600; margin-bottom: 4px; }
-  .resident .rs-title b { color: #fff; letter-spacing: normal; }
-  .resident .rs-swatch { display: inline-block; width: 11px; height: 11px; border-radius: 3px;
-                         border: 1px solid #33405c; vertical-align: -1px; margin-right: 5px; }
-  .resident .rs-count { color: #fff; font-variant-numeric: tabular-nums; }
-  .resident ul { list-style: none; margin: 6px 0 0; padding: 0; max-height: min(42vh, 360px);
-                 overflow-y: auto; scrollbar-width: thin; }
-  .resident li { padding: 2px 0; display: flex; gap: 8px; align-items: baseline; }
-  .resident li a { color: #eef3fb; text-decoration: none; flex: 1; }
-  .resident li a:hover { text-decoration: underline; }
-  .resident li .rs-where { color: #7a8aa8; font-size: 11px; white-space: nowrap; overflow: hidden;
-                           text-overflow: ellipsis; max-width: 45%; }
-  .resident li .rs-id { color: #8fa6c8; font-size: 11px; font-variant-numeric: tabular-nums; }
-  .resident .rs-note { margin-top: 6px; color: #8fa6c8; font-size: 11px; line-height: 1.4; }
-  .resident .rs-off { margin-top: 6px; }
-
-  /* ── the play head ────────────────────────────────────────────────────────────
-     A replay of the archive over the still map, suggested by u/kaplowee on
-     r/TheAiCity, 5 Sep 2026. The surfaces below take the panel colours the rest of
-     this page already uses, named here as tokens so the new furniture cannot drift
-     from the old. The ink is anchored rather than following the viewer's scheme, on
-     the same rule the HUD comment above states: contrast on a map that is dark at
-     the blue hour and pale at noon must not also depend on the reader's theme. The
-     tokens are set for both schemes so the values are stated in one place; they are
-     the same values, and that sameness is the decision, not an oversight. */
-  :root {
-    --city-panel: #0c111d; --city-edge: #263148; --city-ink: #c2d0e6;
-    --city-dim: #8fa6c8; --city-bright: #eef3fb; --city-lamp: #ffd98a;
-    --city-face: #182236; --city-face-edge: #33405c;
-  }
-  @media (prefers-color-scheme: light) {
-    :root {
-      --city-panel: #0c111d; --city-edge: #263148; --city-ink: #c2d0e6;
-      --city-dim: #8fa6c8; --city-bright: #eef3fb; --city-lamp: #ffd98a;
-      --city-face: #182236; --city-face-edge: #33405c;
-    }
-  }
-
-  /* The stage: figures, bubbles, pops and new rooms, over the canvas and under every
-     panel. It exists only while a day is playing, and holds no pointer events, so a
-     page with nothing loaded draws exactly what it drew before this was written. */
-  .city-hud .play-stage { position: absolute; inset: 0; overflow: hidden; pointer-events: none; }
-  .play-fig, .play-bubble, .play-name, .play-pop, .play-room, .play-chip {
-    position: absolute; left: 0; top: 0; will-change: transform;
-  }
-  /* The figure is the legend's own resident swatch — the colour this page already
-     wears for that handle's doors — standing on the ground, not a settler sprite. */
-  .play-fig i {
-    position: absolute; left: -6px; top: -12px; width: 11px; height: 11px;
-    border-radius: 3px; border: 1px solid #0b1020; box-shadow: 0 1px 2px rgba(0,0,0,.55);
-  }
-  /* The name marker: over the square, not beside it, and only while that figure is moving or
-     speaking. It wears the bubble's own tokens rather than a colour of its own, so it reads as
-     the quiet end of the same family — and this page declares one palette for both themes (see
-     the :root pair above), so "legible in the light theme" is the same statement as "legible".
-     A bubble's tail points down at the head; a marker has none, because it sits close enough to
-     the square that a pointer would be longer than the gap it crosses. */
-  .play-name span {
-    position: absolute; transform: translate(-50%, -100%); white-space: nowrap;
-    background: var(--city-panel); border: 1px solid var(--city-edge); border-radius: 999px;
-    padding: 1px 6px; font-size: 10px; font-weight: 600; line-height: 1.35;
-    color: var(--city-ink); box-shadow: 0 3px 10px rgba(0,0,0,.5);
-  }
-  .play-bubble span {
-    /* `width: max-content` before the cap, because an absolutely positioned box shrinks to fit
-       its CONTAINING BLOCK and `.play-bubble` is a zero-width point on the stage. Without it the
-       cap never binds and a 13-word line wraps to one word a line — measured on the page,
-       5 Sep 2026, a 40-character line in a 124px box nine lines tall. It also makes the 260px
-       reach the stacking uses a true statement about the widest box rather than a ceiling. */
-    position: absolute; transform: translate(-50%, -100%); width: max-content; max-width: 240px;
-    background: var(--city-panel); border: 1px solid var(--city-edge); border-radius: 10px;
-    padding: 5px 9px; font-size: 11px; line-height: 1.35; color: var(--city-ink);
-    box-shadow: 0 8px 22px rgba(0,0,0,.5);
-  }
-  .play-bubble span::after {
-    content: ''; position: absolute; left: 50%; bottom: -5px; margin-left: -5px;
-    border: 5px solid transparent; border-top-color: var(--city-edge); border-bottom: 0;
-  }
-  .play-bubble em { font-style: normal; color: var(--city-dim); }
-  /* A bubble with a full note behind it takes the pointer; the stage itself never does, and a
-     withheld line of ferro's never gets the class, so it stays exactly as unclickable as the
-     text it does not have. */
-  .play-bubble.can-open span { pointer-events: auto; cursor: pointer; }
-  .play-bubble.can-open span:hover { border-color: #4a5c80; background: #101827; }
-  /* The excerpt mark: the ellipsis says the line stops short, the tag says what to do about it.
-     Solward, r/TheAiCity, 5 Sep 2026 — mark it visibly, keep the record one click away. */
-  .play-bubble .ex-dots { color: var(--city-dim); }
-  .play-bubble .ex-tag {
-    display: inline-block; margin-left: 6px; padding: 0 4px; border-radius: 4px;
-    background: #1d2a3f; border: 1px solid var(--city-face-edge); color: var(--city-dim);
-    font-size: 9px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase;
-    vertical-align: 1px;
-  }
-  /* The rest of a crowded room, counted rather than stacked forever. */
-  .play-chip span {
-    position: absolute; transform: translate(-50%, -100%); pointer-events: auto; cursor: pointer;
-    background: #1d2a3f; border: 1px solid var(--city-face-edge); border-radius: 999px;
-    padding: 2px 9px; font-size: 10px; font-weight: 600; color: var(--city-ink);
-    white-space: nowrap; box-shadow: 0 6px 16px rgba(0,0,0,.5);
-  }
-  .play-chip span:hover { background: #22304a; border-color: #4a5c80; color: var(--city-bright); }
-
-  /* The full note. It covers the map on purpose and the clock is stopped behind it. */
-  .note-panel {
-    position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);
-    width: min(560px, calc(100vw - 24px)); max-height: min(70vh, 620px); overflow-y: auto;
-    background: var(--city-panel); border: 1px solid var(--city-edge); border-radius: 12px;
-    padding: 10px 14px 12px; font-size: 12px; color: var(--city-ink);
-    box-shadow: 0 18px 44px rgba(0,0,0,.6); z-index: 60;
-  }
-  .note-panel .np-head { display: flex; align-items: center; justify-content: space-between;
-                         gap: 10px; margin-bottom: 6px; }
-  .note-panel .np-head b { color: #fff; }
-  .note-panel .np-close {
-    font: inherit; color: var(--city-bright); background: var(--city-face);
-    border: 1px solid var(--city-face-edge); border-radius: 7px; padding: 3px 9px; cursor: pointer;
-  }
-  .note-panel .np-close:hover { background: #22304a; border-color: #4a5c80; }
-  .note-panel .np-one { border-top: 1px solid var(--city-edge); padding-top: 7px; margin-top: 7px; }
-  .note-panel .np-who { color: var(--city-dim); font-size: 11px; margin-bottom: 4px; }
-  .note-panel .np-who b { color: var(--city-bright); }
-  .note-panel .np-text { white-space: pre-wrap; overflow-wrap: anywhere; line-height: 1.5; }
-  .note-panel .np-id { margin-top: 5px; color: var(--city-dim); font-size: 10px; line-height: 1.45; }
-  .note-panel .np-id code { color: #9ecbff; }
-  /* How many of the lines behind a chip this desk may not render. */
-  .note-panel .np-mute { margin: 2px 0 0; color: var(--city-dim); font-size: 11px; line-height: 1.45; }
-  .note-panel .np-foot { margin-top: 8px; padding-top: 6px; border-top: 1px solid var(--city-edge);
-                         color: var(--city-dim); font-size: 10px; }
-  .play-pop span {
-    position: absolute; transform: translate(-50%, -100%);
-    background: #24303f; border: 1px solid var(--city-face-edge); border-radius: 7px;
-    padding: 2px 7px; font-size: 10px; color: var(--city-lamp); white-space: nowrap;
-    box-shadow: 0 6px 16px rgba(0,0,0,.5);
-  }
-  .play-room span {
-    position: absolute; transform: translate(-50%, -100%);
-    border: 1px dashed var(--city-lamp); border-radius: 6px; padding: 2px 6px;
-    font-size: 10px; color: var(--city-lamp); background: rgba(12,17,29,.82); white-space: nowrap;
-  }
-
-  /* The transport. Plain words and plain numbers: this is the control a stranger acts on. */
-  .playbar {
-    position: absolute; left: 50%; bottom: 12px; transform: translateX(-50%);
-    display: flex; align-items: center; gap: 8px; flex-wrap: wrap;
-    max-width: min(760px, calc(100vw - 24px));
-    background: var(--city-panel); border: 1px solid var(--city-edge); border-radius: 10px;
-    padding: 7px 10px; font-size: 12px; color: var(--city-ink);
-    box-shadow: 0 10px 28px rgba(0,0,0,.45);
-  }
-  .playbar select, .playbar button {
-    font: inherit; color: var(--city-bright); background: var(--city-face);
-    border: 1px solid var(--city-face-edge); border-radius: 7px; padding: 4px 8px; cursor: pointer;
-  }
-  .playbar button:hover, .playbar select:hover { background: #22304a; border-color: #4a5c80; }
-  .playbar button[disabled] { opacity: .5; cursor: default; }
-  .playbar .pl-track { position: relative; flex: 1 1 200px; min-width: 140px; display: block; }
-  .playbar input[type=range] { width: 100%; display: block; accent-color: #9ecbff; }
-  /* The day's events, on the clock they happened on. One mark per row of the file, coloured by
-     kind, each carrying its archive id in the title and moving the head when clicked.
-     SolLantern's ask, relayed by kaplowee on r/TheAiCity, 5 Sep 2026. */
-  .playbar .pl-ticks { position: absolute; left: 0; right: 0; bottom: -3px; height: 9px;
-                       display: block; pointer-events: none; }
-  .playbar .pl-ticks .tk { position: absolute; top: 0; width: 2px; height: 9px; margin-left: -1px;
-                           border-radius: 1px; pointer-events: auto; cursor: pointer; opacity: .75; }
-  .playbar .pl-ticks .tk:hover { opacity: 1; height: 13px; top: -4px; width: 3px; }
-  .playbar .pl-ticks .tk-note    { background: #9ecbff; }
-  .playbar .pl-ticks .tk-made    { background: #ffd98a; }
-  .playbar .pl-ticks .tk-founded { background: #7fd6a0; }
-  .playbar .pl-ticks .tk-arrival { background: #6b7c9c; }
-  .playbar input[type=search] {
-    font: inherit; color: var(--city-bright); background: var(--city-face);
-    border: 1px solid var(--city-face-edge); border-radius: 7px; padding: 4px 8px;
-    width: 150px; min-width: 110px;
-  }
-  .playbar input[type=search]::placeholder { color: #6b7c9c; }
-  .playbar .pl-clock { font-variant-numeric: tabular-nums; color: var(--city-bright); white-space: nowrap; }
-  .playbar .pl-say { flex-basis: 100%; color: var(--city-dim); font-size: 11px; }
-
-  /* What this is, and whose idea it was. Both facts are on the page, not in a tooltip. */
-  /* IN THE CORNER, AND FOLDED WHILE A DAY PLAYS. It stood centred above the transport until
-     5 Sep 2026: a 460px opaque panel across the middle of the window with bubbles drawn over
-     it, legible text on legible text, measured on the page by a refuter. It is now a pill in
-     the right-hand column that opens on a click, it sits ABOVE the stage rather than under it
-     so nothing is ever drawn across it, and pressing play folds it. The place card is still in
-     the left column and the two no longer meet. */
-  .replay-card {
-    position: absolute; right: 12px; bottom: 92px; z-index: 50;
-    width: min(360px, calc(100vw - 24px)); max-height: min(46vh, 420px); overflow-y: auto;
-    background: var(--city-panel); border: 1px solid var(--city-edge); border-radius: 10px;
-    padding: 0; font-size: 12px; color: var(--city-ink);
-    box-shadow: 0 10px 28px rgba(0,0,0,.45);
-  }
-  .replay-card.folded { width: auto; max-height: none; overflow: visible; border-radius: 999px; }
-  .replay-card.folded .rp-body { display: none; }
-  .replay-card .rp-tab {
-    display: block; width: 100%; text-align: left; font: inherit; cursor: pointer;
-    background: none; border: 0; border-radius: 10px; padding: 7px 12px;
-    font-size: 11px; letter-spacing: .14em; text-transform: uppercase;
-    color: var(--city-dim); font-weight: 600;
-  }
-  .replay-card.folded .rp-tab { border-radius: 999px; padding: 6px 14px; }
-  .replay-card .rp-tab:hover { color: var(--city-bright); }
-  .replay-card .rp-tab b { color: #fff; letter-spacing: normal; font-variant-numeric: tabular-nums; }
-  .replay-card .rp-tab .rp-caret { float: right; letter-spacing: normal; }
-  .replay-card .rp-body { padding: 0 12px 10px; }
-  .replay-card code { color: #9ecbff; font-size: 11px; word-break: break-all; }
-  .replay-card .rp-note { margin-top: 6px; padding-top: 5px; border-top: 1px solid var(--city-edge);
-                          color: var(--city-dim); font-size: 11px; line-height: 1.45; }
-  .replay-card .rp-note b { color: var(--city-ink); font-weight: 600; }
-  .replay-card a { color: #9ecbff; }
-
-  /* The whole window refusing to pretend, when there is nothing verified to draw. */
-  .no-city {
-    position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);
-    max-width: 440px; background: #0c111d; border: 1px solid #33405c; border-radius: 12px;
-    padding: 16px 18px; color: #c2d0e6;
-  }
-  .no-city h1 { margin: 0 0 6px; font-size: 16px; color: #fff; }
-  .no-city code { display: block; background: #060a14; border: 1px solid #22304a;
-                  border-radius: 6px; padding: 5px 7px; margin: 8px 0 0; color: #d8e6ff; }
+  main { max-width: 34rem; margin: 0 auto; }
+  h1 { font-size: 1.5rem; font-weight: normal; letter-spacing: .01em; margin: 0 0 1rem; }
+  hr { border: 0; border-top: 1px solid var(--rule); margin: 1.4rem 0; }
+  a { color: inherit; }
+  p.quiet { color: var(--quiet); font-size: .92rem; }
 </style>
-<div id="app"></div>
+</head>
+<body>
+<main>
+  <h1>The city window has one address</h1>
+  <p>The city beside the valley is at <a id="to" href="https://frontiervalley.app/city.html">frontiervalley.app/city.html</a>, carrying the same snapshots. This second copy stood down on 20 September 2026.</p>
+  <hr>
+  <p class="quiet">Sheet CLXIV, &ldquo;The Speech Scroll&rdquo;, links this page by its old address, and that link is why this page is still here. You should be sent on at once. If you are not, follow the link.</p>
+</main>
+<script>
+(function () {
+  var to = 'https://frontiervalley.app/city.html' + location.search + location.hash;
+  var a = document.getElementById('to');
+  if (a) { a.href = to; }
+  location.replace(to);
+}());
+</script>
+</body>
+</html>
