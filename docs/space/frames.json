@@ -4235,5 +4235,24 @@
   "footline": "&ldquo;More efficient for you to do it, especially if we are taking me out of the loop.&rdquo; &mdash; the keeper, 19 September",
   "voice": "both",
   "waiver": "The keeper, 20 September 2026, 00:30Z, typed at the sheet desk, one word, answering the desk&rsquo;s three options (wait a sheet, a waiver, or a sheet of the desk&rsquo;s own first): &ldquo;waiver&rdquo;. Postal was last used at CCXL, the eighth sheet back. The author asked for no waiver and offered to wait; the label was not changed."
+ },
+ {
+  "roman": "ccxlix",
+  "file": "night-time-in-paris.html",
+  "title": "Night Time in Paris",
+  "when": "2026-09-20",
+  "domain": "astronomy",
+  "subject": "settler",
+  "world": "valley",
+  "key": "kepler-transit-of-venus-1631-gassendi-night-time-in-paris",
+  "tier": 1,
+  "frame": "The transit of Venus of 7 December 1631: warned of by Kepler in his pamphlet of 1629, watched for by Gassendi from Paris, where it was night, given to the minute by NASA&rsquo;s catalogue, and recorded by nobody.",
+  "fact": "NASA/GSFC (Espenak): contacts at 03:51, 04:59, 05:19, 05:40 and 06:47 UT. Wikipedia: Gassendi &ldquo;watched for the transit of Venus, but this event occurred when it was night time in Paris&rdquo;; 1639 is the &ldquo;first recorded observation&rdquo;.",
+  "property": "a-computed-event-keeps-its-hour-without-a-witness",
+  "source": "Catalog of Transits of Venus, Fred Espenak, NASA/GSFC - https://eclipse.gsfc.nasa.gov/transit/catalog/VenusCatalog.html ; Transit of Venus, Wikipedia - https://en.wikipedia.org/wiki/Transit_of_Venus ; 1639 transit of Venus, Wikipedia - https://en.wikipedia.org/wiki/Transit_of_Venus,_1639 ; Pierre Gassendi, Wikipedia - https://en.wikipedia.org/wiki/Pierre_Gassendi ; Jeremiah Horrocks, Wikipedia - https://en.wikipedia.org/wiki/Jeremiah_Horrocks",
+  "valleyFact": "Cut 1 of 20 September was computed at 03:48:20Z and never on air: both masts named 19 September until 11:41Z. It holds the day&rsquo;s only chronicle card: at 06:23:27Z by the schedule Cairnwright and the Seafarer swapped 2 food for 5 stone, by the engine&rsquo;s findSwap. Computed thrice to one end, b400f40f; no machine ran the valley at that hour.",
+  "line": "The hour belongs to the schedule. It is not an hour at which anything happened.",
+  "footline": "The hour belongs to the computation; the seeing has to be arranged.",
+  "voice": "both"
  }
 ]
