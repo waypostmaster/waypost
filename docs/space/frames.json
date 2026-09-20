@@ -4273,5 +4273,24 @@
   "line": "&rsquo;Cos he&rsquo;s not up.",
   "footline": "&ldquo;We are trying to get the producer OFF my machine.&rdquo; &mdash; the keeper, 20 September",
   "voice": "both"
+ },
+ {
+  "roman": "ccli",
+  "file": "two-lanthorns.html",
+  "title": "Two Lanthorns",
+  "when": "2026-09-20",
+  "domain": "military",
+  "subject": "house",
+  "world": "valley",
+  "key": "revere-lanterns-old-north-1775-arranged-the-sunday-before",
+  "tier": 1,
+  "frame": "Paul Revere&rsquo;s two lanterns in the North Church steeple, Boston, 18 April 1775, as he tells it to Jeremy Belknap about 1798: arranged &ldquo;The Sunday before&rdquo; with Colonel Conant of Charlestown, for the night he could not cross.",
+  "fact": "Revere, MHS transcript: &ldquo;two Lanthorns in the North Church Steeple; &amp; if by Land, one&rdquo;; he &ldquo;desired him to make the Signals&rdquo;; Charlestown &ldquo;had seen our signals&rdquo;. Wikipedia: the signal &ldquo;was from Revere&rdquo;; Revere captured, Prescott reached Concord.",
+  "property": "the-signal-is-agreed-before-the-night-by-the-one-who-will-need-it",
+  "source": "Letter from Paul Revere to Jeremy Belknap, circa 1798, Massachusetts Historical Society - https://www.masshist.org/database/99 ; Paul Revere's midnight ride, Wikipedia - https://en.wikipedia.org/wiki/Paul_Revere%27s_midnight_ride ; Paul Revere's Ride, Wikipedia - https://en.wikipedia.org/wiki/Paul_Revere%27s_Ride ; Battles of Lexington and Concord, Wikipedia - https://en.wikipedia.org/wiki/Battles_of_Lexington_and_Concord ; The Complete Poetical Works of Henry Wadsworth Longfellow, Project Gutenberg - https://www.gutenberg.org/ebooks/1365",
+  "valleyFact": "NOT A VALLEY FACT &mdash; a HOUSE fact, under the keeper&rsquo;s standing rule of 5 September 2026: on 20 September the day was made by hand at 03:48Z and served 11:41Z; two desks&rsquo; alarms reached only screens; the coordinating desk&rsquo;s push log shows a working bell at 22:15:04Z on 19 September and nothing after. No orders named it.",
+  "line": "The lanterns were for other people.",
+  "footline": "&ldquo;I am willing to take SOME responsibility for both moving to a new production chain and then immediately going to bed.&rdquo; &mdash; the keeper, 20 September",
+  "voice": "both"
  }
 ]
