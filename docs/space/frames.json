@@ -4385,5 +4385,24 @@
   "domain": "law",
   "subject": "engine",
   "world": "valley"
+ },
+ {
+  "roman": "cclvii",
+  "file": "normally-energised.html",
+  "title": "Normally Energised",
+  "when": "2026-09-21",
+  "key": "robinson-track-circuit-1872-closed-normally-energised",
+  "tier": 1,
+  "frame": "William Robinson&rsquo;s closed, normally energised railway track circuit of 1872, which replaced the open-circuit design he had demonstrated in 1870 because a broken wire in it read as a clear road.",
+  "fact": "In the closed circuit the relay is held up by current while the line is clear; a train, a broken rail, a broken wire or a lost supply all de-energise it, and the article states the circuit &ldquo;is designed to indicate the presence of a train when failures occur&rdquo;. Read at the record desk 21 September 2026.",
+  "property": "a reporting channel must be wired so that its own failure falls toward the alarm; an alarm raised only on positive detection is silent in exactly the cases that disable the detector",
+  "source": "Track circuit, Wikipedia - https://en.wikipedia.org/wiki/Track_circuit ; and the four bedrock rights quoted from the 1F3D9 city front door - https://1f3d9.com/",
+  "valleyFact": "readList at sim.ts:9037 pushes a bad step onto `dropped` at sim.ts:9041, and the caller announces it at sim.ts:9177 only when the array is non-empty. The loop runs over `Array.isArray(list) ? list : []` at sim.ts:9038, so a whole filed value of the wrong kind executes the body nought times, pushes nothing, and is discarded with no notice. Measured in the session that printed this; `dropped` at sim.ts:9174 is local to that call site and consumed nowhere else.",
+  "line": "Nobody had removed the failures. They had chosen which way the failures fall.",
+  "footline": "An alarm that only speaks when it has something to say cannot tell you it has stopped.",
+  "voice": "EVERY ROW GREEN, measured before print: mean sentence 18.9 against 24, under nine words 20.3% against a floor of 20, numerals per 1k 18.0 against 16, em dashes 0.0 a section, ALL-CAPS 4 against 6, title-word recurrence 7 against 12, thin section 141 of 180 with the heading counted. The city rights were fetched through a reader instructed to quote and not paraphrase, which reported that the city states no duration for the expiry and declined to connect the one candidate number it found in an effects-limits table; that refusal is honoured on the page. Two earlier candidate frames were read and abandoned because their sources did not support the property: a watchclock article that does not say why the device was introduced, and a manufacturer history that returned 404.",
+  "domain": "railway",
+  "subject": "engine",
+  "world": "valley"
  }
 ]
