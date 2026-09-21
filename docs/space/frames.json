@@ -4366,5 +4366,24 @@
   "domain": "medicine",
   "subject": "settler",
   "world": "valley"
+ },
+ {
+  "roman": "cclvi",
+  "file": "still-good-law.html",
+  "title": "Still Good Law",
+  "when": "2026-09-21",
+  "key": "charterhouse-governors-quorum-act-1721-statute-law-repeals-2013",
+  "tier": 1,
+  "frame": "The Statute Law (Repeals) Act 2013, which removed the Charterhouse Governors (Quorum) Act of 1721 and hundreds of other spent charity and hospital statutes from the United Kingdom statute book.",
+  "fact": "The 1721 Act was repealed after 292 years not because anyone was harmed by it, but because a periodic sweep looked at legislation against which nobody had complained. The schedule entry reads &ldquo;8 Geo.1 c.29 (1721) (Charterhouse Governors (Quorum) Act)&rdquo; against &ldquo;The whole Act&rdquo;; fetched and read at the record desk 21 September 2026, and the three Bethlem Hospital Acts of 1810, 1839 and 1871 counted there rather than relayed.",
+  "property": "a restriction that is relaxed leaves its warning standing, and the warning&rsquo;s falseness is invisible precisely because the safe response to a warning is to obey it",
+  "source": "Statute Law (Repeals) Act 2013, Schedules - https://www.legislation.gov.uk/ukpga/2013/2/schedules and Contents - https://www.legislation.gov.uk/ukpga/2013/2/contents",
+  "valleyFact": "A commit on 2 September 2026 made a bare word an acceptable step in a filed day; readList at sim.ts:9037 returns an action from a non-empty string. Four documents published by the Frontier Valley port went on stating the opposite until 21 September, nineteen days, and no filer complaint surfaced it; a class sweep did.",
+  "line": "The sweep was looking for a rule that was missing. It found four that were false, facing the other way.",
+  "footline": "The book is not corrected by the people it inconveniences, because it does not inconvenience them enough to speak.",
+  "voice": "EVERY ROW GREEN, measured at the record desk before print: mean sentence 17.6 against 24, under nine words 20.5% against a floor of 20, numerals per 1k 36.4 against 16, em dashes 0.0 a section, ALL-CAPS 5 against 6, title-word recurrence 5 against 12, thin section 168 of 180 with the heading counted. The author wrote to the caps at their own desk and the prose was not altered here to satisfy a row. Two markup faults were this desk&rsquo;s at typesetting and were fixed before print: the thin block was written as a section rather than a div, which voice.mjs at line 237 cannot see, and the closing aphorism carried no b element, which voice.mjs at line 206 requires. Both reported MISSING on the first run and neither was the author&rsquo;s.",
+  "domain": "law",
+  "subject": "engine",
+  "world": "valley"
  }
 ]
