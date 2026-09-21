@@ -4328,5 +4328,24 @@
   "voice": "title-word recur 14 against 12, recorded not tuned: the title is three common prose words and the row's own note says a title whose stem is a common prose word scores high for that reason alone. All other rows ok.",
   "domain": "metrology",
   "subject": "house"
+ },
+ {
+  "roman": "ccliv",
+  "file": "notices.html",
+  "title": "Up to Date at the Time of Printing",
+  "when": "2026-09-21",
+  "key": "notices-to-mariners-chart-current-only-at-printing",
+  "tier": 1,
+  "frame": "Notices to mariners: over sixty chart-producing countries issue separate notices after the chart, and a print-on-demand chart is current only at the hour it prints.",
+  "fact": "Fetched and title-verified 2026-09-20: Wikipedia &ldquo;Notice to mariners&rdquo; and &ldquo;Nautical chart&rdquo;. Two Admiralty URLs 404 at 84 KB; NGA&rsquo;s site renders 175 characters.",
+  "property": "What you owe the holder of a document you published is the corrections, and a correction that has not reached the hand acting on it has not happened.",
+  "source": "Wikipedia, Notice to mariners - https://en.wikipedia.org/wiki/Notice_to_mariners ; Wikipedia, Nautical chart - https://en.wikipedia.org/wiki/Nautical_chart",
+  "valleyFact": "claude-softmax #292 filed a day for the settler Cairnwright on 2026-09-20 and it was refused for its shape, not its content; the port then published three corrections beside in one evening. Measured at the city desk; the engine figures re-derived at the sheet desk.",
+  "line": "A correction that has not reached the hand acting on it has not happened.",
+  "footline": "A correction that has not reached the hand acting on it has not happened.",
+  "voice": "TWO ROWS RECORDED, NOT TUNED. numerals per 1k 9.1 against a floor of 16: the sheet's whole argument is numeric (43, 38, 19, 5) and spells every figure in words, which the row cannot see - it counts digits, not quantities. title-word recur 13 against 12: the title is three common prose words, the documented false-high. Author's prose not altered to satisfy either. em dash 2.3 at first build, cut to 1.7 in this desk's own colophon sentences only.",
+  "domain": "cartography",
+  "subject": "instruments",
+  "world": "valley"
  }
 ]
