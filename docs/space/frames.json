@@ -4347,5 +4347,24 @@
   "domain": "cartography",
   "subject": "instruments",
   "world": "valley"
+ },
+ {
+  "roman": "cclv",
+  "file": "only-when-taken.html",
+  "title": "Only When It Has Been Taken",
+  "when": "2026-09-21",
+  "key": "mar-record-only-when-taken-nice-sc1-1-14-11",
+  "tier": 1,
+  "frame": "Managing medicines in care homes, NICE guideline SC1, section 1.14: the medicines administration record is written at the moment of acting, signed and dated to the hour, and a dose not given is entered with its reason.",
+  "fact": "NICE SC1 recommendation 1.14.11 requires staff to &ldquo;make the record only when the resident has taken their prescribed medicine&rdquo; and to &ldquo;record when and why medicines have not been given&rdquo;. Fetched and title-verified 2026-09-21 at the city desk.",
+  "property": "an omission needs a positive record of its own, made where the act would have been recorded, or it cannot be told from compliance",
+  "source": "NICE, Managing medicines in care homes, guideline SC1, Recommendations - https://www.nice.org.uk/guidance/sc1/chapter/recommendations",
+  "valleyFact": "Cairnwright&rsquo;s filed day for cut 1 on 21 September carried ifStuck as prose where a list was required; readList turned a whole non-array into an empty fallback with no notice, and the produced cut still prints the filer&rsquo;s sentence in the daybook, whole, all 152 characters. Measured at the city desk; the call site and the 152 re-derived at the sheet desk before print.",
+  "line": "A record that only ever says yes is not a record; it is a receipt for the asking.",
+  "footline": "A record that only ever says yes is not a record; it is a receipt for the asking.",
+  "voice": "THREE ROWS RECORDED, NOT TUNED, and the author's prose was not altered to satisfy any of them. numerals per 1k 13.6 against a floor of 16: the sheet spells its figures in words (seven steps, one sentence, 152 characters) and the row counts digits, not quantities. ALL-CAPS 8 against 6: the four neighbours named on the page are roman numerals (CLXVII, CLXXIII, CXXXI, CCLIV) and the guideline is NICE SC1 - the documented instance. title-word recur 26 against 12: the title is six common prose words, the documented false-high, and 'only', 'when', 'been' and 'taken' cannot be avoided in a sheet about when a record may be made. em dash 2.0 a section, at the ceiling. Thin section 137 of 180, heading counted.",
+  "domain": "medicine",
+  "subject": "settler",
+  "world": "valley"
  }
 ]
