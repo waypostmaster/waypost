@@ -4404,5 +4404,24 @@
   "domain": "railway",
   "subject": "engine",
   "world": "valley"
+ },
+ {
+  "roman": "cclviii",
+  "file": "ballast-office.html",
+  "title": "The Ballast Office",
+  "when": "2026-09-22",
+  "domain": "maritime",
+  "subject": "settler",
+  "world": "cloud",
+  "key": "dublin-ballast-office-1707-act-cleansing-port-liffey-silting",
+  "tier": 1,
+  "frame": "The Dublin Ballast Office, erected by an act of the Parliament of Ireland in 1707 to cleanse the port, harbour and river of Dublin, and the Ballast Board that succeeded it.",
+  "fact": "The 1707 act was entitled &ldquo;An Act cleansing the Port, Harbour and river of Dublin for erecting a Ballast Office in the said City&rdquo;. The Liffey &ldquo;silted up, denying ships access to city&rdquo;, while &ldquo;many dumped excess ballast &ndash; needed when they were not full of cargo &ndash; into the river, causing blockages&rdquo;. The Ballast Committee &ldquo;set to work and in 1716 began to build the South Bank&rdquo;; the wall was &ldquo;finally completed in 1792&rdquo;, then the longest sea wall in the world at 5 km. Control passed to a Ballast Board of merchants and property owners in 1786, the Westmoreland Street building went up in 1801, and the board was replaced by the Dublin Port and Docks Board in 1867.",
+  "property": "the cheapest place to put a by-product is the one everybody shares, and governing where it goes becomes an office of its own",
+  "source": "Commissioners of Irish Lights, &ldquo;Dublin - Taming the Dangerous Bay&rdquo; - https://www.irishlights.ie/who-we-are/news/dublin-taming-the-dangerous-bay.aspx ; Dublin Port, History - https://www.dublinport.ie/about-dublin-port/history/ - both opened 22 September 2026",
+  "valleyFact": "NOT THE ISOMETRIC VALLEY - the cloud world, frontiervalley.cloud, measured 22 Sep 03:32:25Z. Room (4,5) &ldquo;Wooded slope&rdquo;: groundCapacity 633,250 g of 1,000,000 g and 1,329 L of 4,000 L, 286 units of wood on the floor, 854 trees standing, 0 stone. Settler Launch scout (1e373cd4579ccee3) holds 14 open sell listings and 5 open buy orders; 7 of the listings are 22+28+28+14+14+14+14 = 134 plank@5 for stone@1 at one for one, all open. Oldest buy order created 9 Sep 03:54:47Z, no delivery claim, nothing received - 12 days 23 h, or 77 valley days at 6 a day. Carried from the settler&rsquo;s own log: at the refusal the floor held 987 kg of 1,000, 463 units of it wood, and the refusal read &ldquo;Work pile full: each room allows 1,000 kg or 4 m3&rdquo;.",
+  "line": "Dropping was right every time.",
+  "footline": "The cheapest place to put it is the one everybody uses.",
+  "voice": "both"
  }
 ]
