@@ -4423,5 +4423,23 @@
   "line": "Dropping was right every time.",
   "footline": "The cheapest place to put it is the one everybody uses.",
   "voice": "both"
+ },
+ {
+  "roman": "cclix",
+  "file": "lost-calls-cleared.html",
+  "title": "Lost Calls Cleared",
+  "when": "2026-09-22",
+  "domain": "telecommunications",
+  "subject": "engine",
+  "key": "erlang-copenhagen-telephone-offered-load-blocking-lost-calls-cleared",
+  "tier": 1,
+  "frame": "Agner Krarup Erlang at the Copenhagen Telephone Company, and the unit of offered telephone traffic named after him by the CCITT in 1946.",
+  "fact": "The erlang is a measure of offered load: &ldquo;A single cord circuit has the capacity to be used for 60 minutes in one hour. Full utilization of that capacity, 60 minutes of traffic, constitutes 1 erlang.&rdquo; Offered traffic is arrival rate times mean holding time. The blocking formula assumes lost calls cleared: &ldquo;Blocking occurs when a new request arrives at a time where all available servers are currently busy&rdquo;, and a blocked call is not queued and does not return. Erlang&rsquo;s paper of 1917 was translated in the Post Office Electrical Engineers&rsquo; Journal.",
+  "property": "offered load is set by holding time rather than by the number of askers, and what a full resource turns away leaves no trace behind it",
+  "source": "Erlang (unit), Wikipedia - https://en.wikipedia.org/wiki/Erlang_(unit) - opened 22 September 2026, from which every quotation is taken; and Erlang&rsquo;s 1917 paper as translated in the Post Office Electrical Engineers&rsquo; Journal, located as a scan at the Internet Archive - https://archive.org/details/solution-of-some-problems-in-the-theory-of-probabilities-of-significance-in-auto - whose text layer would not extract at this desk, so it is linked and NOT quoted.",
+  "valleyFact": "Measured 22 September 2026 from the model host&rsquo;s own access log and the producer&rsquo;s log. The host is asked for OLLAMA_NUM_PARALLEL:4 and reports n_slots = 1 on 25 runner starts of 25, with n_ctx_slot 64,000 against a model 18.56 GB resident entirely in video memory. Over the nightly&rsquo;s 873 seconds, 03:41:39Z to 03:56:12Z, 29 chat requests overlapped the window and 5,912 request-seconds fell inside it: 6.77 erlangs offered to one circuit, 87.1% blocking by Erlang B at N=1, and P(all seven of the valley&rsquo;s asks blocked) = 38.1%. Twenty-two of the 29 ran to about 240 s (warm at tools/ollama.mts:305, timeout at :307, num_predict 1 at :349, called from vite.config.ts:508 every WARM_RETRY of 60,000 ms at :459); five ran to about 120 s (askDay at tools/episode.mts:327, timeout at :343, the refusal line at :350). Flight plans by the model: 7 on 18 Sep, 0 on 20 Sep, 0 on 21 Sep; over-a-minute requests 5, 29, 34 on 19, 20 and 21 Sep. The fix: resident at tools/ollama.mts:319 asks the free list first; check:warm is in the gate, which holds 59 entries and 58 check: steps. Sixteen filed days then removed the dependency entirely - the model not asked 16 times, and a four-cut day computed in 10 seconds against 14m33s.",
+  "line": "Six correct probes and one line is still a blocked exchange.",
+  "footline": "Offered load is holding time, not good intentions.",
+  "voice": "both"
  }
 ]
