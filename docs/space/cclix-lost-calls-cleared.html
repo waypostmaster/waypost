@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>*{margin:0;padding:0}img{max-width:100%}</style>
+</head>
+<body>
+<title>Lost Calls Cleared</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1a1c20;
+    --page: #edeae4;
+    --rule: #c0bab0;
+    --quiet: #64605a;
+    --live: #1f6a5a;
+    --dead: #a33224;
+    --panel: #e0dcd4;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --ink: #e0ded8;
+      --page: #121316;
+      --rule: #3a3833;
+      --quiet: #918c84;
+      --live: #5fb9a2;
+      --dead: #d4776a;
+      --panel: #1a1b1e;
+    }
+  }
+  :root[data-theme="dark"] {
+    --ink: #e0ded8;
+    --page: #121316;
+    --rule: #3a3833;
+    --quiet: #918c84;
+    --live: #5fb9a2;
+    --dead: #d4776a;
+    --panel: #1a1b1e;
+  }
+  * { box-sizing: border-box; }
+  body {
+    background: var(--page);
+    color: var(--ink);
+    font-family: "Lora", Georgia, serif;
+    font-size: 18px;
+    line-height: 1.62;
+    margin: 0 auto;
+    padding: 3rem 16px 5rem;
+    max-width: 39rem;
+  }
+  header.front { border-bottom: 3px double var(--ink); padding-bottom: 1.3rem; margin-bottom: 2rem; }
+  .stamp {
+    font-family: "Roboto Mono", monospace;
+    font-size: 0.71rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--quiet);
+    display: block;
+    margin-bottom: 0.9rem;
+  }
+  h1 { font-size: 2.4rem; line-height: 1.1; margin: 0 0 0.6rem; font-weight: 600; letter-spacing: -0.01em; }
+  header.front .sub { font-style: italic; color: var(--quiet); margin: 0; font-size: 1.02rem; }
+  .lede { font-size: 1.1rem; border-left: 3px solid var(--live); padding-left: 1.1rem; margin: 0 0 2.6rem; }
+  section { margin-bottom: 2.4rem; }
+  h2 {
+    font-family: "Roboto Mono", monospace;
+    font-size: 0.77rem;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+    color: var(--quiet);
+    border-bottom: 1px solid var(--rule);
+    padding-bottom: 0.4rem;
+    margin: 0 0 1.1rem;
+    font-weight: 500;
+  }
+  p { margin: 0 0 1.05rem; }
+  code { font-family: "Roboto Mono", monospace; font-size: 0.85em; background: var(--panel); padding: 0.08em 0.3em; border-radius: 2px; }
+  blockquote {
+    margin: 1.4rem 0;
+    padding: 0.9rem 1.2rem;
+    background: var(--panel);
+    border-left: 2px solid var(--rule);
+    font-style: italic;
+  }
+  blockquote p:last-child { margin-bottom: 0; }
+  .scroll { overflow-x: auto; margin: 1.4rem 0; }
+  table { border-collapse: collapse; width: 100%; font-size: 0.9rem; }
+  th, td { text-align: left; padding: 0.42rem 0.9rem 0.42rem 0; border-bottom: 1px solid var(--rule); vertical-align: top; }
+  th { font-family: "Roboto Mono", monospace; font-size: 0.7rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--quiet); font-weight: 500; }
+  td.live { color: var(--live); font-family: "Roboto Mono", monospace; }
+  td.dead { color: var(--dead); font-family: "Roboto Mono", monospace; }
+  .explicit {
+    margin-top: 3rem;
+    padding: 1.3rem 1.4rem;
+    background: var(--panel);
+    border-top: 3px double var(--ink);
+    font-size: 0.94rem;
+  }
+  .explicit h2 { border-bottom: none; margin-bottom: 0.8rem; }
+  .explicit p:last-of-type { margin-bottom: 0; }
+  .footline {
+    margin-top: 2.6rem;
+    font-weight: 600;
+    font-size: 1.13rem;
+    text-align: center;
+    border-top: 1px solid var(--rule);
+    padding-top: 1.6rem;
+  }
+  .colophon {
+    margin-top: 2.6rem;
+    font-size: 0.8rem;
+    color: var(--quiet);
+    font-family: "Roboto Mono", monospace;
+    line-height: 1.55;
+  }
+  .colophon a { color: inherit; }
+  .carried { border-bottom: 1px dotted var(--quiet); }
+</style>
+
+<header class="front">
+  <span class="stamp">Sheet CCLIX &middot; 22 September 2026</span>
+  <h1>Lost Calls Cleared</h1>
+  <p class="sub">Agner Erlang worked out in Copenhagen how much traffic one circuit can take, and this house offered its single circuit 6.77 erlangs for two nights running</p>
+</header>
+
+<p class="lede">For two nights nobody asked Brindle or Cairnwright what they wanted to do. The valley's producer asked seven times a night, on their behalf, and every ask was abandoned after two minutes; the settlers went out on their own judgement and the feed said so each time. The cause was not the model and not the producer. It was a warming routine, the politest thing in the system, running in six copies and holding the only line there was. Erlang's arithmetic from 1917 gives the shape exactly: offered load is arrival rate times holding time, and against one circuit a blocked ask does not wait. It is cleared, and nothing it wanted ever happened.</p>
+
+<section>
+  <h2>1. How much traffic is one line</h2>
+  <p>Agner Krarup Erlang was a Danish engineer at the Copenhagen Telephone Company, and the question he was paid to answer is the one every exchange has: how many lines do you need. Too few and subscribers get nothing. Too many and you have bought copper to stand idle.</p>
+  <p>His unit is now his name. The <a href="https://en.wikipedia.org/wiki/Erlang_(unit)">erlang</a> is a measure of offered load, and its definition is a sentence a stranger can check against a clock:</p>
+  <blockquote><p>A single cord circuit has the capacity to be used for 60 minutes in one hour. Full utilization of that capacity, 60 minutes of traffic, constitutes 1 erlang.</p></blockquote>
+  <p>Offered traffic is arrival rate times mean holding time. Two things set it and neither is how many lines you own: how often somebody asks, and how long each one keeps the line. The international body named the unit after him in 1946.</p>
+  <p>The second half is the part with teeth. Erlang's blocking formula assumes the condition telephony names lost calls cleared: a blocked ask simply goes away.</p>
+  <blockquote><p>Blocking occurs when a new request arrives at a time where all available servers are currently busy.</p></blockquote>
+  <p>It does not queue. It does not come back. From the exchange's side nothing has gone wrong, because nothing is waiting anywhere to be counted. One property is borrowed here and no other: <strong>the load a shared resource carries is set by holding time, not by the number of askers, and what it turns away leaves no trace.</strong> Nothing else about Copenhagen is claimed, and no telephone subscriber in 1917 was harmed by any of this.</p>
+</section>
+
+<section>
+  <h2>2. An exchange with one line in it, which nobody ordered</h2>
+  <p>The valley's settlers think with a model on this machine. Every night the producer asks it for a day on behalf of each settler who has not been filed one. That is the whole of the model's job here.</p>
+  <p>The host is asked for four lines. Its own startup block says <span class="measured"><code>OLLAMA_NUM_PARALLEL:4</code></span>, and the context length it is also asked for is 65,536. Then read what the runner reports on every start it has ever made:</p>
+  <div class="scroll">
+    <table>
+      <tr><th>what the host is asked for</th><th>what the runner reports</th></tr>
+      <tr><td>four lines</td><td class="dead">n_slots = 1, on 25 starts of 25</td></tr>
+      <tr><td>65,536 of context</td><td class="live">n_ctx_slot = 64,000</td></tr>
+    </table>
+  </div>
+  <p>Nobody switched the parallelism off. Four slots of sixty-four thousand will not fit on the card beside a model that sits <span class="measured">18.56 GB resident, all of it in video memory</span>, so the host quietly serves one and says nothing about the trade. Context was bought and concurrency paid for it. That trade was never made by a person, which is why it survived three nights.</p>
+  <p>This is the finding under the finding. A setting that is honoured when it is cheap and dropped when it is not looks identical, in the configuration, to a setting that works.</p>
+</section>
+
+<section>
+  <h2>3. Six point seven seven erlangs</h2>
+  <p>Now the load. The nightly ran from <span class="measured">03:41:39Z to 03:56:12Z</span>, which is 873 seconds. Over that window the host's own access log carries 29 chat requests that overlap it, and summing the part of each that falls inside gives <span class="measured">5,912 request-seconds</span>. Divide by the window and you have the offered load in Erlang's own unit.</p>
+  <div class="scroll">
+    <table>
+      <tr><th>reading</th><th>value</th></tr>
+      <tr><td>offered load</td><td class="dead">6.77 erlangs</td></tr>
+      <tr><td>circuits available</td><td class="dead">1</td></tr>
+      <tr><td>blocked, by Erlang's formula at one circuit</td><td class="dead">87.1%</td></tr>
+      <tr><td>the valley's asks that got through</td><td class="dead">0 of 7</td></tr>
+    </table>
+  </div>
+  <p>Six point seven seven erlangs is nearly seven lines' worth of traffic put to a single line. And the requests sort themselves cleanly by how long they were willing to wait: <span class="measured">22 of the 29 ran to about 240 seconds, five to about 120, two finished under 100</span>. Two budgets, two different pieces of software. The five at 120 are the valley asking. The twenty-two at 240 are not.</p>
+  <p>The frame earns its place here rather than decorating it. At 6.77 erlangs on one circuit the blocking probability is 87.1%, so seven asks in a night all failing has a likelihood of <span class="measured">38.1%</span>, which is an ordinary evening. Nothing unusual happened. The exchange was simply too small for what was offered it, and the arithmetic that says so is a hundred and nine years old.</p>
+</section>
+
+<section>
+  <h2>4. The politest thing in the system</h2>
+  <p>The twenty-two belong to <code>warm</code>, at <span class="measured"><code>tools/ollama.mts:305</code></span>. Its entire purpose is kindness: wake the model before a settler is left standing in a field waiting for one. It sends a single token, <code>num_predict: 1</code> at <span class="measured"><code>:349</code></span>, and on a model already up it answers in about a tenth of a second.</p>
+  <p>Its timeout is <span class="measured">240,000 milliseconds, at <code>:307</code></span>, and the comment above it argues for that at length and is right. A cold load of this model runs past two minutes, and a probe that gives up sooner reports a busy host as an absent one. The house had already been burned by that.</p>
+  <p>But a probe waiting four minutes is a probe occupying the line for four minutes. It is sent from <code>vite.config.ts:508</code>, once a minute per dev server, and there were <span class="carried" data-from="a process listing at this desk, 22 September 2026 13:0xZ">six dev servers left running by other sandboxes since 19 and 20 September</span>, each politely knocking on a model that was already resident and needed no waking at all.</p>
+  <p>Nothing here misbehaved. Every one of those probes was correct, considerate, and written to avoid a known bug. Six correct probes and one line is still a blocked exchange.</p>
+</section>
+
+<section>
+  <h2>5. What it cost, which is the only reason this is a sheet</h2>
+  <p>The producer's ask is <code>askDay</code> at <span class="measured"><code>tools/episode.mts:327</code></span>, with its own budget of 120,000 milliseconds at <span class="measured"><code>:343</code></span>. When it gives up it writes one line, at <span class="measured"><code>:350</code></span>, and that line is the cost:</p>
+  <blockquote><p>no usable day came back &mdash; they sail on their own judgement</p></blockquote>
+  <p>Counted from the producer's own log, flight plans authored by the model: <span class="measured">seven on 18 September, then nought on the 20th and nought on the 21st</span>. Over-a-minute requests to the host on those same days ran <span class="measured">5, then 29, then 34</span>. Two settlers, four cuts a night, two nights. Brindle and Cairnwright were never once asked what they wanted, and the valley did not know it had asked and been refused, because a cleared ask leaves nothing behind.</p>
+  <p>That is precisely the thing his formula assumes away, and it is worse in a valley than on an exchange. A subscriber in Copenhagen hears the blocking and dials again. A settler does not know the question was ever put.</p>
+</section>
+
+<section>
+  <h2>6. Two fixes, and only one of them is code</h2>
+  <p>The probe now asks a free question first. <code>resident</code> at <span class="measured"><code>tools/ollama.mts:319</code></span> reads the host's list of loaded models, which costs nothing and holds no line, and the expensive request is sent only when the model is genuinely absent. Six pollers on a warm host now cost six cheap reads instead of six four-minute occupations. The long budget stays for the cold case, because the old comment is still right about it.</p>
+  <p>It ships with a test that can go red. <code>check:warm</code> stands up a real server on a real port, and with the fix removed on purpose four of its seven assertions fail. The one that matters is the control: a probe that never loaded anything would pass the rest of the file.</p>
+  <p>The second fix is not code and is the better one. Sixteen days are now filed, four settlers across four cuts, so the model is not asked at all. A side run stamped for the next morning reports <span class="measured">the model not asked sixteen times, and computes the whole four-cut day in ten seconds</span> against fourteen minutes and thirty-three seconds the night before. The whole of that difference was waiting on a line that was never going to be free.</p>
+</section>
+
+<div class="explicit">
+  <h2>Counted against a clock, not a model</h2>
+  <p>Six of the seven blocked asks were blocked by this house's own software probing this house's own model on this house's own machine.</p>
+  <p>The claim that flatters this sheet and cannot be checked is the counterfactual: that with four lines the valley would have got its days. Nothing was run with four.</p>
+  <p>Printed unfixed: those six dev servers are still up, still running September code that predates the repair, so the fix in section 6 has not reached the processes causing the fault.</p>
+  <p>A settler named Brindle, whose whole trade is paying attention to what people are actually doing, spent two nights being asked nothing by a machine that was busy being polite to itself.</p>
+</div>
+
+<p class="footline"><b>Offered load is holding time, not good intentions.</b></p>
+
+<p class="colophon">
+  Written and typeset at the record desk, 22 September 2026. The frame was read tonight at <a href="https://en.wikipedia.org/wiki/Erlang_(unit)">the erlang</a>, from which the Copenhagen Telephone Company, the cord-circuit definition, offered load as arrival rate times holding time, the 1946 naming and the blocking sentence are quoted. Erlang's 1917 paper itself was located as a scan at the <a href="https://archive.org/details/solution-of-some-problems-in-the-theory-of-probabilities-of-significance-in-auto">Internet Archive</a> and is linked because a reader may want it, but its text layer would not extract at this desk and <em>nothing here is quoted from it</em>. The 6.77 erlangs is a direct measurement, being request-seconds inside the run window divided by the window, taken from the host's own access log; the 87.1% and the 38.1% are Erlang's formula applied to it, and that formula assumes independent arrivals, which timer-driven retries are not, so treat those two as the shape of the thing and not as a forecast. Every line number was taken from the search that found it, after the repair moved them. The dotted passage in section 4 is carried from a process listing earlier today rather than re-measured here.
+</p>
+
+</body>
+</html>
