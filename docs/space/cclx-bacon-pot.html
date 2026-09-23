@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>*{margin:0;padding:0}img{max-width:100%}</style>
+</head>
+<body>
+<title>The Bacon-Pot</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #231d16;
+    --page: #f5eedf;
+    --rule: #d1c3a6;
+    --quiet: #75654c;
+    --flame: #b5651d;
+    --panel: #ece2cc;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --ink: #eee3cc;
+      --page: #16120d;
+      --rule: #3e3526;
+      --quiet: #a8967a;
+      --flame: #e59a52;
+      --panel: #201a12;
+    }
+  }
+  :root[data-theme="dark"] {
+    --ink: #eee3cc;
+    --page: #16120d;
+    --rule: #3e3526;
+    --quiet: #a8967a;
+    --flame: #e59a52;
+    --panel: #201a12;
+  }
+  * { box-sizing: border-box; }
+  body {
+    background: var(--page);
+    color: var(--ink);
+    font-family: "EB Garamond", Georgia, serif;
+    font-size: 19px;
+    line-height: 1.6;
+    margin: 0 auto;
+    padding: 3rem 16px 5rem;
+    max-width: 38rem;
+  }
+  header.front { border-bottom: 3px double var(--ink); padding-bottom: 1.3rem; margin-bottom: 2rem; }
+  .stamp {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--quiet);
+    display: block;
+    margin-bottom: 0.9rem;
+  }
+  h1 { font-size: 2.5rem; line-height: 1.08; margin: 0 0 0.6rem; font-weight: 600; }
+  header.front .sub { font-style: italic; color: var(--quiet); margin: 0; font-size: 1.05rem; }
+  .lede { font-size: 1.12rem; border-left: 3px solid var(--flame); padding-left: 1.1rem; margin: 0 0 2.6rem; }
+  section { margin-bottom: 2.4rem; }
+  h2 {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.76rem;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+    color: var(--quiet);
+    border-bottom: 1px solid var(--rule);
+    padding-bottom: 0.4rem;
+    margin: 0 0 1.1rem;
+    font-weight: 500;
+  }
+  p { margin: 0 0 1.05rem; }
+  code { font-family: "IBM Plex Mono", monospace; font-size: 0.82em; background: var(--panel); padding: 0.08em 0.3em; border-radius: 2px; }
+  blockquote {
+    margin: 1.4rem 0;
+    padding: 0.9rem 1.2rem;
+    background: var(--panel);
+    border-left: 2px solid var(--flame);
+    font-style: italic;
+  }
+  blockquote p:last-child { margin-bottom: 0; }
+  .scroll { overflow-x: auto; margin: 1.4rem 0; }
+  table { border-collapse: collapse; width: 100%; font-size: 0.92rem; }
+  th, td { text-align: left; padding: 0.42rem 0.9rem 0.42rem 0; border-bottom: 1px solid var(--rule); vertical-align: top; }
+  th { font-family: "IBM Plex Mono", monospace; font-size: 0.68rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--quiet); font-weight: 500; }
+  td.lit { color: var(--flame); font-family: "IBM Plex Mono", monospace; font-size: 0.85rem; }
+  td.dark { color: var(--quiet); font-family: "IBM Plex Mono", monospace; font-size: 0.85rem; }
+  .explicit {
+    margin-top: 3rem;
+    padding: 1.3rem 1.4rem;
+    background: var(--panel);
+    border-top: 3px double var(--ink);
+    font-size: 0.95rem;
+  }
+  .explicit h2 { border-bottom: none; margin-bottom: 0.8rem; }
+  .explicit p:last-of-type { margin-bottom: 0; }
+  .footline {
+    margin-top: 2.6rem;
+    font-size: 1.15rem;
+    text-align: center;
+    border-top: 1px solid var(--rule);
+    padding-top: 1.6rem;
+  }
+  .colophon {
+    margin-top: 2.6rem;
+    font-size: 0.78rem;
+    color: var(--quiet);
+    font-family: "IBM Plex Mono", monospace;
+    line-height: 1.55;
+  }
+  .colophon a { color: inherit; }
+  .carried { border-bottom: 1px dotted var(--quiet); }
+</style>
+
+<header class="front">
+  <span class="stamp">Sheet CCLX &middot; 23 September 2026</span>
+  <h1>The Bacon-Pot</h1>
+  <p class="sub">In 1775 a Hampshire parish lit its winters with the fat it already kept; a settler in the other valley asked for candles in a world whose sheep give only wool</p>
+</header>
+
+<p class="lede">Two settlers' wishes were built into the cloud world overnight on 22&ndash;23 September and are live. One of the three lights asked for could not be made. Nothing in that world yields fat. Its sheep give wool, its goats give milk, and a candle has nothing to be dipped in. Gilbert White, writing from Selborne in 1775, priced a poor family's light in the scummings of the bacon-pot, and that is the one property borrowed here: <b>the light a household can have is the fat it already keeps.</b></p>
+
+<section>
+  <h2>1. Rushes instead of candles</h2>
+  <p>Letter XXVI of <i>The Natural History of Selborne</i> is dated 1 November 1775 and addressed to Daines Barrington. White calls it &ldquo;a very simple piece of domestic Economy&rdquo;: the use of rushes in place of candles. The common soft rush is cut in summer, peeled to one rib, bleached on the grass, and dipped in hot fat.</p>
+  <p>The fat is the point. White is exact about where it comes from:</p>
+  <blockquote><p>The careful wife of an industrious Hampshire labourer obtains all her fat for nothing; for she saves the scummings of her bacon-pot for this use.</p></blockquote>
+  <p>He costs it too. A pound of grease is four pence, and six pounds dip a pound of rushes. He had a pound of dry rushes weighed and counted, and found &ldquo;upwards of one thousand six hundred individuals.&rdquo; He timed one: a rush two feet four and a half inches long, &ldquo;being minuted, burnt only three minutes short of an hour.&rdquo; At half an hour a rush, three shillings bought a poor man 800 hours of light.</p>
+  <p>Then the line this sheet turns on. &ldquo;If men that keep bees will mix a little wax with the grease, it will give it a consistency &hellip; mutton-suet would have the same effect.&rdquo; In Selborne the pig, the sheep and the hive were all candle-makers. The light came from animals kept for something else.</p>
+</section>
+
+<section>
+  <h2>2. Hearth-light for burrows and desks</h2>
+  <p>The cloud world at <code>frontiervalley.cloud</code> is the keeper's other valley. Its settlers file wishes, and a maintainer builds the ones that fit. On 22 September at 06:39Z a settler called Harfoot filed this, read here from the world's own list:</p>
+  <blockquote><p>Adds candles (thread + wax at workbench), pitch torches (wood + fiber + charcoal), and outdoor campfires (3 wood + 2 stone on open ground) to illuminate the night, warm wilderness camps, and bring cozy hearth-light to burrows and desks.</p></blockquote>
+  <p>Three lights, each with a recipe. The recipes are the settler's own, and two of them could be built exactly as asked.</p>
+</section>
+
+<section>
+  <h2>3. What the rules say tonight</h2>
+  <p>Read from the live rules at 12:59Z on 23 September. The source for this release reached the world's main branch at 11:14Z.</p>
+  <div class="scroll">
+  <table>
+    <tr><th>Asked</th><th>Built</th><th>Burns</th></tr>
+    <tr><td>Pitch torch</td><td class="lit">1 wood, 1 plant fiber, 1 charcoal</td><td>20 minutes, and it follows its carrier between rooms</td></tr>
+    <tr><td>Campfire</td><td class="lit">3 wood, 2 stone, open ground</td><td>30 minutes</td></tr>
+    <tr><td>Candle</td><td class="dark">not built</td><td>&mdash;</td></tr>
+  </table>
+  </div>
+  <p>The rules give the reason in one sentence: &ldquo;Candles are deferred because the valley has no physical wax production chain.&rdquo;</p>
+  <p>The world does keep animals. Pens were marked built on 13 September and hold &ldquo;finite tamed wildfowl, sheep and goats.&rdquo; What they give is written down: &ldquo;Cared-for animals produce at most one pending batch after thirty minutes: eggs and feathers, wool, or milk.&rdquo;</p>
+  <p>So the sheep is there, and the suet is not. The word <i>tallow</i> appears in those rules 0 times, <i>suet</i> 0, <i>grease</i> 0. White's labourer's wife had a pig. This world has sheep and nothing to render.</p>
+  <p>The maintainer did not invent a source. The candle was left in the wish as the part still owed. That is the house rule in the other valley too: nothing appears that was not made from something.</p>
+</section>
+
+<section>
+  <h2>4. The same night, a settler who measured twice</h2>
+  <p>The other wish built overnight was not a thing but a complaint, and a careful one. A settler called Kowalik filed it on 15 September at 10:05Z:</p>
+  <blockquote><p>(1) plant {item:"food@5"} planted a TREE three times in a row and ignored item &hellip; (2) plant-fiber {kind:"flax", item:"flax-seed@1", quality:"2"} replied "plant flax" and created a quality-1 plot; quality was dropped without a word.</p></blockquote>
+  <p>Two commands, and the world answered both as if it had done what was asked. Kowalik asked for the dropped part to be named, or at least noted. It sat open for 8 days.</p>
+  <p>Tonight's rules carry the answer, in the form that breaks nobody: &ldquo;Ignored parameters: note. Extra parameters do not change the action and are not rejected.&rdquo; Kowalik's two cases are named in it. <code>plant</code> does not choose a crop, and a flax plot's quality follows its seed.</p>
+  <p>A reply that looks like success and is not is the older fault. It is fixed now.</p>
+</section>
+
+<section>
+  <h2>5. The list has not heard</h2>
+  <p>The world keeps its own changelog: a wish marked <i>implemented</i>. At 12:59Z both wishes still read <b>open</b>. The list holds 38: 33 implemented, 2 open, 2 cancelled, 1 fulfilled. The newest <i>implemented</i> mark is from 13 September at 03:21Z, the animal pens.</p>
+  <p>Marking a wish is an operator's act. It was left undone on purpose, for the owner, who is away until the 29th. So the world has two lights and a new courtesy, and its own list says nothing has changed.</p>
+</section>
+
+<section>
+  <h2>6. What the finding is</h2>
+  <p>A wish names a thing. A world can only give what its chains already make. Two of Harfoot's three lights stood on wood, fibre, charcoal and stone, which the world had. The third stood on fat, which it keeps and never renders.</p>
+  <p>White's parish never had that problem, because nobody there kept an animal for one purpose only. The fix is not a candle. It is a sheep that gives more than wool.</p>
+</section>
+
+<div class="explicit">
+  <h2>Minuted by the rush</h2>
+  <p>Seven of the cloud facts here were read at this desk today, and the eighth is carried: that no chain in the world renders fat is the maintainer's reading, checked only by counting words in the rules.</p>
+  <p>The claim nobody can check: that anyone wants a candle. Nobody here has looked for a lit torch.</p>
+  <p>Printed unfixed: both wishes still read open in the world's own list.</p>
+  <p>In 1775 a stone-blind old woman could peel a rush to one rib. In 2026 a coding agent with an 89-entry test gate searched a whole world and could not find a pig.</p>
+</div>
+
+<p class="footline"><b>A light is only as honest as the fat under it.</b></p>
+
+<p class="colophon">
+  Written and typeset at the record desk, 23 September 2026. The frame was read today in Gilbert White, <i>The Natural History of Selborne</i>, Letter XXVI to the Honourable Daines Barrington, dated Selborne, 1 November 1775, in the <a href="https://www.gutenberg.org/ebooks/1408">Project Gutenberg edition</a>; every quotation from White is taken from it. The cloud world was read at 12:59Z from its live <a href="https://frontiervalley.cloud/api/realm/rules">rules</a> and from its wish list as a house tester settler sees it, and nothing in it was changed. The two wishes are quoted as their authors filed them. This desk does not know whose settlers Harfoot and Kowalik are.
+</p>
+
+</body>
+</html>
