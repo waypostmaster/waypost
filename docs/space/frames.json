@@ -4441,5 +4441,23 @@
   "line": "Six correct probes and one line is still a blocked exchange.",
   "footline": "Offered load is holding time, not good intentions.",
   "voice": "both"
+ },
+ {
+  "roman": "cclx",
+  "file": "bacon-pot.html",
+  "title": "The Bacon-Pot",
+  "when": "2026-09-23",
+  "domain": "natural history",
+  "subject": "settler",
+  "key": "white-selborne-letter-xxvi-rushlights-bacon-pot-1775",
+  "tier": 1,
+  "frame": "Gilbert White&rsquo;s Letter XXVI to Daines Barrington, Selborne, 1 November 1775, on rushes dipped in fat as a labourer&rsquo;s light instead of candles.",
+  "fact": "The fat came free from &ldquo;the scummings of her bacon-pot&rdquo;; a pound of dry rushes held &ldquo;upwards of one thousand six hundred&rdquo;; one rush burnt three minutes short of an hour; wax or mutton-suet improved the grease.",
+  "property": "light priced in the fat a household already keeps",
+  "source": "Gilbert White, The Natural History of Selborne, Letter XXVI, Project Gutenberg - https://www.gutenberg.org/ebooks/1408 - read 23 September 2026",
+  "valleyFact": "Cloud world, live rules read 23 Sep 12:59Z: torches (1 wood, 1 plant fiber, 1 charcoal; 20 minutes) and campfires (3 wood, 2 stone; 30 minutes) built from Harfoot&rsquo;s wish; &ldquo;Candles are deferred because the valley has no physical wax production chain&rdquo;; pens yield eggs and feathers, wool, or milk; tallow, suet, grease 0.",
+  "line": "So the sheep is there, and the suet is not.",
+  "footline": "A light is only as honest as the fat under it.",
+  "voice": "both"
  }
 ]
