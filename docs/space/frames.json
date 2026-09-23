@@ -4477,5 +4477,23 @@
   "line": "A feast says its own words on its date and then stops, and nobody takes it down.",
   "footline": "A day with nothing of its own is not empty; it is the day the book was written for.",
   "voice": "both"
+ },
+ {
+  "roman": "cclxii",
+  "file": "splints-of-elm.html",
+  "title": "Splints of Elm",
+  "when": "2026-09-23",
+  "domain": "bureaucracy",
+  "subject": "engine",
+  "key": "dickens-exchequer-tallies-drury-lane-1855",
+  "tier": 1,
+  "frame": "Charles Dickens&rsquo;s speech for the Administrative Reform Association, Theatre Royal, Drury Lane, 27 June 1855: the Exchequer&rsquo;s tally sticks, kept until 1826 and burnt in 1834 in a stove that took both Houses of Parliament.",
+  "fact": "Dickens: accounts kept on &ldquo;certain splints of elm wood called tallies&rdquo;; an inquiry under George III; &ldquo;it took till 1826 to get these sticks abolished&rdquo;; in 1834 &ldquo;a considerable accumulation&rdquo; ordered &ldquo;privately and confidentially burnt&rdquo; in a stove in the House of Lords, which fired the panelling, the Lords and the Commons. Wikipedia: split tally in use at the Exchequer until 1826; in 1834 six centuries of records burned in two furnaces; Shenton dates the fire Thursday 16 October 1834.",
+  "property": "a store keeps what its rule says to keep, and the bill for the useless thing comes due when something else needs the room",
+  "source": "Charles Dickens, Speeches: Literary and Social, XV Administrative Reform (Drury Lane, 27 June 1855), Project Gutenberg #824 - https://www.gutenberg.org/ebooks/824 - read 23 September 2026, every quotation taken from it; dates beside it from Tally stick, Wikipedia - https://en.wikipedia.org/wiki/Tally_stick - read the same night",
+  "valleyFact": "The four aired cuts of 23 September replayed with the shipped engine via playDay (tools/cuts.mjs): room 164 and held 170 at the opening, 179 and 179 at the close, 152 wood and 19 plank of the 179; Brindle refused at the full depot 715 times (213 with one in hand, 292 with two, 210 with three, never four) because keep = floor(CAPACITY 6 / 2) = 3 at sim.ts:10721; 853 haul errands begun; the heap outside lost 137 (dropped 2234 to 2371), 122 food and 15 wood, by outsideStep at sim.ts:12128; granary costs 4 stone (BUILD_COST sim.ts:1357) with stone 0 in store and 76 outside; season late summer to deep winter, YEAR_DAYS 24 at sim.ts:2001.",
+  "line": "Brindle has a rule that lets him let go of a fourth thing and nothing lighter, and he spent a quarter of a year at the door saying so.",
+  "footline": "A store that counts places keeps whatever came first.",
+  "voice": "both"
  }
 ]
