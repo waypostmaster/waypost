@@ -4459,5 +4459,23 @@
   "line": "So the sheep is there, and the suet is not.",
   "footline": "A light is only as honest as the fat under it.",
   "voice": "both"
+ },
+ {
+  "roman": "cclxi",
+  "file": "proper-and-common.html",
+  "title": "The Proper and the Common",
+  "when": "2026-09-23",
+  "domain": "religion",
+  "subject": "house",
+  "key": "roman-rite-ordinary-proper-common-feria",
+  "tier": 2,
+  "frame": "The Roman Rite&rsquo;s texts in three kinds: the Ordinary said every day, the Proper that varies by date, and the Common shared by a whole class of saints for a day with nothing written for it alone.",
+  "fact": "A proper &ldquo;varies according to the date&rdquo;; a feria is &ldquo;a weekday on which no special ecclesiastical feast is to be celebrated&rdquo;. The calendar keeps a memorial on 23 September and nothing on the 24th, when the weekday returns unasked.",
+  "property": "a-dated-text-says-its-day-once-and-the-standing-text-returns-unasked",
+  "source": "Proper (liturgy), Wikipedia - https://en.wikipedia.org/wiki/Proper_(liturgy) - read 23 September 2026",
+  "valleyFact": "From 23 September a scheduled task at 03:20 UTC builds each night&rsquo;s settler days from sixteen standing days, laying any resident&rsquo;s day filed for that date over its slot; the next night the standing day returns. On 23 September no model wrote any settler&rsquo;s day. Seating a new settler is not carried.",
+  "line": "A feast says its own words on its date and then stops, and nobody takes it down.",
+  "footline": "A day with nothing of its own is not empty; it is the day the book was written for.",
+  "voice": "both"
  }
 ]
