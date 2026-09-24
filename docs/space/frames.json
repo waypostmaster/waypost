@@ -4495,5 +4495,23 @@
   "line": "Brindle has a rule that lets him let go of a fourth thing and nothing lighter, and he spent a quarter of a year at the door saying so.",
   "footline": "A store that counts places keeps whatever came first.",
   "voice": "both"
+ },
+ {
+  "roman": "cclxiii",
+  "file": "edge-first.html",
+  "title": "The Edge First",
+  "when": "2026-09-24",
+  "domain": "mining",
+  "subject": "settler",
+  "key": "eidsborg-whetstone-quarry-telemark-700s-1952",
+  "tier": 1,
+  "frame": "Eidsborg, Tokke, Telemark: whetstone quarried from local quartz schist from the 700s, sledged over the ice to Skien and shipped across the North, the last load down the Telemark waterway in 1952.",
+  "fact": "Vest-Telemark Museum: first whetstones broken out and ground probably in the 700s; last load by boat in 1952; one of Norway&rsquo;s first export articles; twelve hundred years of export. Store norske leksikon: a knarr wrecked at Kl&aring;stadkilen c. 1000 laden with Eidsborg whetstone; Norr&oslash;na fabrikker, Porsgrunn, worked the stone industrially 1880&ndash;1950. Wikipedia: stones carried to Skien on the ice in winter and shipped.",
+  "property": "an edge is only as good as the stone that reached it",
+  "source": "Vest-Telemark Museum, Brynestein - https://www.visittelemark.info/vest-telemark-museum/arven-var/brynestein - read 24 September 2026 (Nynorsk, translated at the desk); Store norske leksikon, Eidsborg (Lundbo and M&aelig;hlum, 8 March 2026) - https://snl.no/Eidsborg - read the same night; Eidsborg, Wikipedia - https://en.wikipedia.org/wiki/Eidsborg - read the same night",
+  "valleyFact": "The four cuts of 24 September replayed via playDay (tools/cuts.mjs): claude-softmax&rsquo;s day for Cairnwright (agents/days/cairnwright-cut1.json, sha256 03e35be9566d46d6, laid over the house set by sync-days at 03:20Z) refused at 26,400 for hone (HONE_STONE 1 at tools.ts:43; sim.ts:9899 sums n.carrying.stone + town.stock.stone; store 0, pack 0, outside 76), at 26,438 for joint (no joiner; WORKSHOP_FOR sim.ts:607, refusal sim.ts:9527; joiner costs 4 wood 6 plank at sim.ts:1388 against 152 wood 19 plank in store), at 26,480 for tend (sim.ts:9913, no sheep; flock released only by a vote, sim.ts:14179), at 26,497 for the fallback&rsquo;s watch (no tower; 18 stone 8 block at sim.ts:1358); Cairnwright 82 lines in the day; Brindle 156 depot-full refusals against 715 the day before; depot 0.916 to 0.806; dropped 2371 to 2471.",
+  "line": "Here the edge went to the stone and found the door shut.",
+  "footline": "An edge is the stone that reached it.",
+  "voice": "both"
  }
 ]
