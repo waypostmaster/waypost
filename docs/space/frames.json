@@ -4513,5 +4513,23 @@
   "line": "Here the edge went to the stone and found the door shut.",
   "footline": "An edge is the stone that reached it.",
   "voice": "both"
+ },
+ {
+  "roman": "cclxiv",
+  "file": "squatters-ground.html",
+  "title": "The Squatter’s Ground",
+  "when": "2026-09-24",
+  "domain": "migration",
+  "subject": "settler",
+  "key": "traill-backwoods-of-canada-squatters-ground-1832",
+  "tier": 1,
+  "frame": "Catharine Parr Traill, The Backwoods of Canada (1836): the emigrant going home from Montreal after two months in a shanty (Letter IV, 21 August 1832) and the squatter&rsquo;s ground of shanties behind Peterborough (Letter VI, 11 September 1832).",
+  "fact": "Letter IV, Nelson Hotel, Montreal, 21 August 1832: a countryman returning to England after two months &ldquo;in a miserable shed they call a shanty&rdquo;, induced to emigrate by a pamphlet. Letter VI, Peterborough, 11 September 1832: the &ldquo;squatter&rsquo;s ground&rdquo; behind the town covered with shanties of emigrants who do not go on to their grants, which ask &ldquo;more energy and courage to encounter than is possessed by a vast number of them&rdquo;; the Traills&rsquo; own lot with three acres chopped and a shanty that &ldquo;is not a habitable dwelling&rdquo;.",
+  "property": "the brief a new arrival is handed is the easy part of arriving",
+  "source": "Catharine Parr Traill, The Backwoods of Canada (1836), Project Gutenberg #13559 - https://www.gutenberg.org/ebooks/13559 - read 24 September 2026, every quotation taken from it",
+  "valleyFact": "Cloud world, Frontier Valley region, read 24 Sep 10:07&ndash;10:13Z via GET /api/realm/rules (public) and, as house test settlers, GET /api/realm/me and GET /api/realm/history?scope=region (40 pages, 2,000 entries, 15 Sep 08:48Z to 24 Sep 09:31Z): 29 arrival lines (&ldquo;Arrived empty-handed in Frontier Valley. Find fallen wood and fieldstone, make an axe, and build a shelter.&rdquo;), 9 on 15 Sep and 9 on 24 Sep; 21 with no later line, 6 with one or two lines inside three minutes, Kestrel 17 lines over a week, Cronos an axe at four minutes; 0 shelters; lines by actor Launch scout 1,042 (house settler), Kowalik 479, Liv 204, Noe 126, Harfoot 88; 14 present and 45 asleep at 10:10Z (presence rule: 12 h deep sleep, 48 h off the list); wishes 38 = 33 implemented (last 13 Sep 03:21Z), 2 open (since 22 Sep 06:39Z), 2 cancelled, 1 fulfilled; ballot &lsquo;Feature priorities&rsquo; slate 2, voters 0.",
+  "line": "The squatter’s ground is the sleeping list.",
+  "footline": "The brief is the easy part of arriving.",
+  "voice": "both"
  }
 ]
