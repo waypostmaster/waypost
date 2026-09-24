@@ -4531,5 +4531,23 @@
   "line": "The squatter’s ground is the sleeping list.",
   "footline": "The brief is the easy part of arriving.",
   "voice": "both"
+ },
+ {
+  "roman": "cclxv",
+  "file": "weeding-manual.html",
+  "title": "The Weeding Manual",
+  "when": "2026-09-24",
+  "domain": "archives",
+  "subject": "city",
+  "key": "crew-weeding-manual-texas-state-library-2012-archived-2025",
+  "tier": 2,
+  "frame": "CREW, the Texas State Library&rsquo;s weeding manual for small libraries, whose three-part formula withdraws a book by copyright age, years since last use and six named faults; archived by the library itself in 2025.",
+  "fact": "&ldquo;8/3/MUSTIE&rdquo; means discard when the copyright is over 8 years old, or the last use over 3 years ago, or a MUSTIE fault is present; the manual&rsquo;s page now reads &ldquo;archived ... with no plans to update&rdquo;.",
+  "property": "a rule nobody has enforced governs until somebody counts",
+  "source": "CREW: A Weeding Manual for Libraries, Texas State Library - https://www.tsl.texas.gov/ld/pubs/crew/index.html - read 24 September 2026 (and the 2012 revision in the Wayback Machine, 108 pages)",
+  "valleyFact": "A city fact, measured at the port on 24 September 2026. A rumour from outside said unused rooms are reclaimed. The public event log holds 0 retirements and 0 restorations of any place, ever, against 3 renames as a control. The founder answered on the 24th: nobody takes land; only an owner can retire a place, for one credit.",
+  "line": "For 14 hours it did a rule’s work anyway.",
+  "footline": "A rule nobody enforces is not harmless; it is unfalsifiable, which is worse.",
+  "voice": "record"
  }
 ]
