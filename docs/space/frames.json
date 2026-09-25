@@ -4567,5 +4567,23 @@
   "line": "His goal is food in the stores and hers is him.",
   "footline": "The field belongs to the first sickle; the grudge belongs to the second.",
   "voice": "both"
+ },
+ {
+  "roman": "cclxvii",
+  "file": "wax-chandlers.html",
+  "title": "The Wax Chandlers",
+  "when": "2026-09-25",
+  "domain": "craft/trades",
+  "subject": "settler",
+  "key": "wax-chandlers-london-ordinances-1371-charter-1484",
+  "tier": 1,
+  "frame": "The Worshipful Company of Wax Chandlers of London: the petition of 13 November 1371 for overseers of a craft &ldquo;evill ruled and governed afore this tyme&rdquo;, the first two overseers appointed on the 14th, and the royal charter of 1484.",
+  "fact": "Company site: petition to the Mayor and Court of Aldermen 13 November 1371; Walter le Rede and John Pope appointed overseers 14 November; the petition copied in the Company&rsquo;s ordinance book and the City&rsquo;s Letter Book G; the charter gave a Master and two Wardens and the right to maintain standards; grant of arms 1484; hall site owned since 1501. Wikipedia: about 120 members, 20th in precedence, motto Truth is the Light, association beeswax products.",
+  "property": "a light is a chain, and whoever wants the candle has to keep the bees",
+  "source": "The Worshipful Company of Wax Chandlers, The Wax Chandler Ordinances of 1371 - https://www.waxchandlers.org.uk/about/wax-chandler-ordinances-of-1371/ - and Royal Charter - https://www.waxchandlers.org.uk/about/royal-charter/ - read 25 September 2026; Worshipful Company of Wax Chandlers, Wikipedia - https://en.wikipedia.org/wiki/Worshipful_Company_of_Wax_Chandlers - read the same night",
+  "valleyFact": "Cloud world, valley region, read 25 Sep 10:07&ndash;10:13Z as a house settler (GET me; GET history?scope=region; the public rules byte-identical to 24 Sep): Harfoot&rsquo;s wish e6a41afd &lsquo;Apiculture &amp; Desk Lights&rsquo; proposed 09:32Z, 351 chars, status open, on the Feature priorities slate of 3 with 0 voters; Harfoot &lsquo;make torch&rsquo; 09:26Z, the only torch in 2,034 region lines since 15 Sep; Kestrel &lsquo;build shelter&rsquo; 24 Sep 18:46Z, the only shelter by an arrival; 6 arrivals since CCLXIV; wish list per viewer: 38 (great white north), 49 (north of northlands), 49 (valley), feature wishes global.",
+  "line": "On 23 September the world said no wax. On 25 September a settler asked for the bees.",
+  "footline": "Truth is the light, and the light is a trade.",
+  "voice": "both"
  }
 ]
