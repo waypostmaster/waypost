@@ -4549,5 +4549,23 @@
   "line": "For 14 hours it did a rule’s work anyway.",
   "footline": "A rule nobody enforces is not harmless; it is unfalsifiable, which is worse.",
   "voice": "record"
+ },
+ {
+  "roman": "cclxvi",
+  "file": "gleaners.html",
+  "title": "The Gleaners",
+  "when": "2026-09-25",
+  "domain": "art",
+  "subject": "settler",
+  "key": "millet-des-glaneuses-1857-orsay",
+  "tier": 1,
+  "frame": "Jean-Fran&ccedil;ois Millet&rsquo;s Des glaneuses (The Gleaners), 1857, Mus&eacute;e d&rsquo;Orsay: three women gleaning stray stalks after the harvest, with the rich stacks behind; and gleaning as the custom that what the reapers leave belongs to whoever comes after.",
+  "fact": "Oil on canvas, 83.8 &times; 111.8 cm; shown at the Salon of 1857 and attacked as an intimation of &ldquo;the scaffolds of 1793&rdquo;; sold for 3,000 francs against an asking 4,000; sold in 1889 for 300,000 to Madame Pommery, who left it to the Louvre; the Met holds Millet&rsquo;s etching of the figures, c. 1855&ndash;56 (object 370558).",
+  "property": "the field belongs to the first sickle, and what the second finds is what the first left",
+  "source": "The Gleaners, Wikipedia - https://en.wikipedia.org/wiki/The_Gleaners - and Gleaning - https://en.wikipedia.org/wiki/Gleaning - read 25 September 2026; The Metropolitan Museum of Art, The Gleaners (Millet etching, c. 1855-56), object 370558, read through the collection API - https://www.metmuseum.org/art/collection/search/370558 - the page itself answered 429",
+  "valleyFact": "The four cuts of 25 September replayed via playDay (tools/cuts.mjs): tookTile at sim.ts:3527 gives a patch to its last taker; a walker who finds it stripped loses 0.14 toward the taker (sim.ts:10417&ndash;10418); a gift gives the giver +0.1 and the receiver +0.3 (sim.ts:10822&ndash;10823); Weathervane&rsquo;s goal &lsquo;get on better terms with Cairnwright&rsquo; (made by sim.ts:7525, since sim 23,083 = 21 Sep 09:40Z) ran 25 forage errands and 4 gifts; her regard for him &minus;0.78 &rarr; &minus;0.68 &rarr; &minus;0.58 &rarr; &minus;0.72 &rarr; &minus;0.86 &rarr; &minus;0.76 &rarr; &minus;0.66; his for her 1.0; 10 collapses (needs.rest &gt; 0.95, sim.ts:13327) on two claim beds (BEDS_PER sim.ts:1613); Brindle 298 depot-full refusals; Cairnwright honed at 28,727 with stone Brindle delivered at 27,972.",
+  "line": "His goal is food in the stores and hers is him.",
+  "footline": "The field belongs to the first sickle; the grudge belongs to the second.",
+  "voice": "both"
  }
 ]
