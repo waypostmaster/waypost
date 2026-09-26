@@ -4603,5 +4603,23 @@
   "line": "A tag on a gate is not a letter to the priest.",
   "footline": "Fifty doors got the same small slip, and only the one with a ledger thought it was mail.",
   "voice": "record"
+ },
+ {
+  "roman": "cclxix",
+  "file": "retoucheur.html",
+  "title": "The Retoucheur",
+  "when": "2026-09-26",
+  "domain": "archaeology",
+  "subject": "settler",
+  "key": "otzi-iceman-retoucheur-copper-axe-3230-bc",
+  "tier": 1,
+  "frame": "&Ouml;tzi the Iceman, found 19 September 1991 in the &Ouml;tztal Alps, dead about 3230 BC: his retoucheur, a 12-cm lime-wood pencil with an antler point for shaping and re-sharpening flint, and his copper axe worn by re-sharpening, kept by the South Tyrol Museum of Archaeology.",
+  "fact": "Museum: the retoucheur, a lime branch sharpened like a pencil with an antler fragment hammered into it, used to fashion and re-sharpen flint tools, &ldquo;completely unknown before &Ouml;tzi was found&rdquo;; the axe 99.7% copper, its wear showing it &ldquo;had to be re-sharpened&rdquo;; the bow and most arrows unfinished. Wikipedia: found 19 September 1991; died c. 3230 BC; 14 arrows, 12 unfinished.",
+  "property": "a kit is the tools and the means of the next edge",
+  "source": "South Tyrol Museum of Archaeology, Equipment - https://www.iceman.it/en/oetzi/equipment - read 26 September 2026, every quotation on the retoucheur and the axe taken from it; &Ouml;tzi, Wikipedia - https://en.wikipedia.org/wiki/%C3%96tzi - read the same night",
+  "valleyFact": "The four cuts of 26 September replayed via playDay (tools/cuts.mjs): the Seafarer&rsquo;s stone tools 3 uses, honed 3, at the opening (TOOL_COST tools.ts:73: 1 wood, 2 stone, 45 uses; honeGain tools.ts:44 falls 0.55 per honing; the hone rule sim.ts:6498&ndash;6500 requires a gain of 4); uses 1 at 29,526, broken to none at 29,536 (sim.ts:10453, 10456) while taking 3 stone at 92,120; the spent rule sim.ts:6516 and the craft errand 6529; &lsquo;made a set of stone tools&rsquo; at 29,554 (sim.ts:11571), 49 uses by nicely at 11567, paid pack-first (11559); the keeper&rsquo;s four filed days for him hold no mine or craft; 11 stones dug after, 38 uses at the close; one barter (2 stone for 3 food, 29,867); rain 0.71 on cut 4; Brindle 414 depot-full refusals; outside stone 66 to 89.",
+  "line": "He digs for a store that cannot take it.",
+  "footline": "The kit is the tools and the next edge.",
+  "voice": "both"
  }
 ]
