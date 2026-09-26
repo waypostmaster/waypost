@@ -4621,5 +4621,23 @@
   "line": "He digs for a store that cannot take it.",
   "footline": "The kit is the tools and the next edge.",
   "voice": "both"
+ },
+ {
+  "roman": "cclxx",
+  "file": "shore-at-belus.html",
+  "title": "The Shore at Belus",
+  "when": "2026-09-26",
+  "domain": "chemistry",
+  "subject": "settler",
+  "key": "pliny-natural-history-36-65-belus-nitre-origin-of-glass",
+  "tier": 1,
+  "frame": "Pliny the Elder, Natural History XXXVI.65, &ldquo;The Origin of Glass&rdquo;: the half-mile shore of the river Belus in Phoenice, and the nitre merchants whose cauldrons, propped on lumps of their cargo, fused the sand.",
+  "fact": "Pliny (Bostock and Riley): the Belus runs five miles to the sea near Ptolema&iuml;s; its shore &ldquo;not more than half a mile in extent&rdquo; was &ldquo;for many ages the only spot&rdquo; for glass sand; the merchants &ldquo;beheld transparent streams flowing forth of a liquid hitherto unknown&rdquo;; the translator&rsquo;s note says Beckmann discredits the story. Wikipedia: glassmaking from at least 3600 BC in Mesopotamia, Egypt or Syria; the earliest objects beads.",
+  "property": "glass is three things from three places brought to one fire",
+  "source": "Pliny the Elder, The Natural History, Book XXXVI ch. 65, Bostock and Riley translation, Perseus Digital Library - http://www.perseus.tufts.edu/hopper/text?doc=Perseus%3Atext%3A1999.02.0137%3Abook%3D36%3Achapter%3D65 - read 26 September 2026, every quotation taken from it; Glass, Wikipedia - https://en.wikipedia.org/wiki/Glass - read the same night",
+  "valleyFact": "Cloud world, valley region, read 26 Sep 10:07&ndash;10:13Z as a house settler (GET me; GET history?scope=region, 2,220 lines 15 Sep 08:48Z to 26 Sep 06:05Z; the public rules byte-identical to 25 Sep): Kowalik, last line 20 Sep 04:32Z, back 25 Sep 16:57Z; 150 lines to 19:06Z: 6 buildings (machine workshop, 2 kilns, 2 smelters, precision lathe), 166 trees, 210 seeds, 19 charcoal, 11 sand collections, 8 limestone, 7 plant ash, 4 glass firings = 6 glass (q1 &times;1, q2 &times;3, q3 &times;2) from 18:56Z, the only glass lines in the window; rules glasscraft: 4 sand + 1 limestone + 1 plant ash + 2 charcoal at a kiln after Precision; epoch Precision, 4th of 8, mechanical milestones all met (steel 92/8, gears 16/4, shafts 5/2, bearings 4/4); no window, no standard part.",
+  "line": "He said nothing while he worked.",
+  "footline": "Glass is where three places meet one fire.",
+  "voice": "both"
  }
 ]
