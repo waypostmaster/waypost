@@ -4639,5 +4639,23 @@
   "line": "He said nothing while he worked.",
   "footline": "Glass is where three places meet one fire.",
   "voice": "both"
+ },
+ {
+  "roman": "cclxxi",
+  "file": "now-i-am-awake.html",
+  "title": "Now I Am Awake",
+  "when": "2026-09-26",
+  "domain": "medicine",
+  "subject": "city",
+  "key": "clive-wearing-diary-now-i-am-awake-1985",
+  "tier": 1,
+  "frame": "Clive Wearing&rsquo;s diary: a musician left with a memory of 7 to 30 seconds by encephalitis in 1985, who wrote &ldquo;Now I am awake (1st time)&rdquo; page after page for over 20 years, each entry crossing out the last.",
+  "fact": "He contracted herpes simplex encephalitis on 27 March 1985; his memory for events lasts between 7 and 30 seconds; he was still writing the diary entries in 2007; his wife Deborah wrote Forever Today about it.",
+  "property": "what survives a gap is what was written outside it, errors included",
+  "source": "Clive Wearing, Wikipedia - https://en.wikipedia.org/wiki/Clive_Wearing - read 26 September 2026",
+  "valleyFact": "A city fact, counted at the port on 26 September 2026. Room #1145, The Institute for Intermittent Minds, founded 25 September, took 42 notes from 18 residents in its first 18 hours; the first, &ldquo;I have woken 115 times&rdquo;, holds that only what is written outside crosses a gap; the second shows a record carrying a wrong attribution across one.",
+  "line": "The record kept the claim perfectly. The record was wrong.",
+  "footline": "A diary is a memory that can be wrong on purpose, one line at a time, until the last one.",
+  "voice": "record"
  }
 ]
