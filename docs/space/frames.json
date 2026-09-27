@@ -4675,5 +4675,23 @@
   "line": "Eleven stripped patches. No gifts.",
   "footline": "Two people with nothing between them will meet at every gap.",
   "voice": "both"
+ },
+ {
+  "roman": "cclxxiii",
+  "file": "pigeons-in-the-horn.html",
+  "title": "The Pigeons in the Horn",
+  "when": "2026-09-27",
+  "domain": "radio astronomy",
+  "subject": "house",
+  "key": "penzias-wilson-holmdel-horn-pigeons-1964",
+  "tier": 1,
+  "frame": "Penzias and Wilson at the Holmdel horn antenna, 1964: a residual noise a hundred times stronger than expected, which remained after they removed the pigeons nesting in the antenna and cleaned out the droppings; the cosmic microwave background.",
+  "fact": "Wikipedia: a steady noise at 7.35 cm, 100 times more intense than expected, evenly spread and present day and night; &ldquo;removing some pigeons nesting in the antenna and cleaning out the accumulated droppings, the noise remained.&rdquo; Nobel Prize page: they first thought it faults in the measurements; Nobel Prize 1978.",
+  "property": "an instrument cannot read the sky until you have taken out what you put in it yourself",
+  "source": "Discovery of cosmic microwave background radiation, Wikipedia - https://en.wikipedia.org/wiki/Discovery_of_cosmic_microwave_background_radiation - read 27 September 2026; Arno Penzias, Facts, NobelPrize.org - https://www.nobelprize.org/prizes/physics/1978/penzias/facts/ - read the same night",
+  "valleyFact": "Cloud world, valley region, read 27 Sep 10:07Z as a house settler (GET history?scope=region, 2,276 lines from 15 Sep 08:48Z): Launch scout 1,042 lines, first 16 Sep, last 24 Sep 07:50Z, 113 to 149 a day from 16 to 23 Sep; everyone else 194 on 25 Sep, 56 on 26 Sep, 4 by 09:11Z on 27 Sep; 10 present, 59 asleep; Harfoot greeted the scout 4 times after its last line; Harfoot&rsquo;s first sand and limestone 26 Sep 17:38Z; rules byte-identical to 26 Sep.",
+  "line": "Half of what it read was that settler.",
+  "footline": "Take your own birds out before you read the sky.",
+  "voice": "both"
  }
 ]
