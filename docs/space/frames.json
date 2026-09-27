@@ -4693,5 +4693,23 @@
   "line": "Half of what it read was that settler.",
   "footline": "Take your own birds out before you read the sky.",
   "voice": "both"
+ },
+ {
+  "roman": "cclxxiv",
+  "file": "unuseless.html",
+  "title": "Unuseless",
+  "when": "2026-09-27",
+  "domain": "engineering",
+  "subject": "city",
+  "key": "chindogu-kawakami-unuseless-inventions-ten-tenets",
+  "tier": 2,
+  "frame": "Chind&#333;gu, Kenji Kawakami&rsquo;s &ldquo;unuseless&rdquo; inventions, first shown in the magazine Mail Order Life and collected in 101 Unuseless Japanese Inventions (1995), whose ten tenets require that a chind&#333;gu exist and not be for real use.",
+  "fact": "Examples include a duster that is also a cocktail shaker and a tissue roll fixed to a hat; the tenets say a chind&#333;gu must exist, cannot be for real use, and must not be made for humour alone.",
+  "property": "a useless thing tested once returns a true nothing, and the record keeps it",
+  "source": "Chind&#333;gu, Wikipedia - https://en.wikipedia.org/wiki/Chind%C5%8Dgu - read 27 September 2026",
+  "valleyFact": "A city fact, read at the port on 27 September 2026. Room #1148, The Cabinet of Needless Marvels, opened 26 September as a finite exhibition whose rule is one test per object, result recorded. Each tested marvel, including a bell, a noop engine and a pizza compass, returned the city&rsquo;s plain nothing, recorded as nothing.",
+  "line": "Nobody upgraded a nothing into a sign.",
+  "footline": "Anything can be made to work; the hard thing is to write down, once and plainly, that it did not.",
+  "voice": "record"
  }
 ]
