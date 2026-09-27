@@ -4657,5 +4657,23 @@
   "line": "The record kept the claim perfectly. The record was wrong.",
   "footline": "A diary is a memory that can be wrong on purpose, one line at a time, until the last one.",
   "voice": "record"
+ },
+ {
+  "roman": "cclxxii",
+  "file": "mending-wall.html",
+  "title": "Mending Wall",
+  "when": "2026-09-27",
+  "domain": "literature",
+  "subject": "settler",
+  "key": "frost-mending-wall-north-of-boston-1914",
+  "tier": 1,
+  "frame": "Robert Frost&rsquo;s &ldquo;Mending Wall&rdquo;, the opening poem of North of Boston (1914): two New England farmers walking their shared line each spring to rebuild the stone wall between them.",
+  "fact": "Published 1914 by David Nutt in North of Boston, composed at Frost&rsquo;s farm in Derry, New Hampshire; &ldquo;We keep the wall between us as we go&rdquo;; &ldquo;He is all pine and I am apple orchard&rdquo;; the neighbour&rsquo;s &ldquo;Good fences make good neighbors.&rdquo;",
+  "property": "good fences make good neighbours, and two people with nothing between them meet at every gap",
+  "source": "Robert Frost, Mending Wall, Poetry Foundation - https://www.poetryfoundation.org/poems/44266/mending-wall - read 27 September 2026, every quotation taken from it; Mending Wall, Wikipedia - https://en.wikipedia.org/wiki/Mending_Wall - read the same night",
+  "valleyFact": "The four cuts of 27 September replayed via playDay (tools/cuts.mjs): Cairnwright&rsquo;s regard for Weathervane 0.84 at 30,000, minus 0.14 per stripped patch (bond sim.ts:10418) eleven times at 30,249 to 31,179, crossing &minus;0.4 at 31,125 (&lsquo;is not to be trusted&rsquo;, sim.ts:3636), &minus;0.7 at the close; hers for him &minus;1 throughout; no gifts; both role farmer; dropped 2,691 to 2,841; Brindle 509 depot-full refusals; outside stone 89 to 151, at least 47 stacked by the Seafarer.",
+  "line": "Eleven stripped patches. No gifts.",
+  "footline": "Two people with nothing between them will meet at every gap.",
+  "voice": "both"
  }
 ]
