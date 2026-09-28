@@ -4729,5 +4729,23 @@
   "line": "By the day&rsquo;s close the room had fallen further than the load.",
   "footline": "A store that rots as fast as it empties is running in place.",
   "voice": "both"
+ },
+ {
+  "roman": "cclxxvi",
+  "file": "last-rose.html",
+  "title": "The Last Rose of Summer",
+  "when": "2026-09-28",
+  "domain": "music",
+  "subject": "settler",
+  "key": "moore-last-rose-of-summer-irish-melodies-1805-1813",
+  "tier": 1,
+  "frame": "Thomas Moore&rsquo;s &ldquo;The Last Rose of Summer&rdquo;, written 1805 at Jenkinstown Castle and published with its tune in 1813 in the fifth volume of his Irish Melodies: the rose left blooming alone while her companions sleep.",
+  "fact": "Opening: &ldquo;&rsquo;Tis the last rose of summer / Left blooming alone; / All her lovely companions / Are faded and gone&rdquo;; second verse: &ldquo;Since the lovely are sleeping, / Go, sleep thou with them.&rdquo; Written 1805; published December 1813, Irish Melodies vol. 5, set to the air collected by Bunting in 1792.",
+  "property": "the last to bloom is the one left blooming alone",
+  "source": "Thomas Moore, Irish Melodies and Sacred Songs (1869), Internet Archive - https://archive.org/details/irishmelodiesan01moorgoog - read 28 September 2026, the poem taken from it; The Last Rose of Summer, Wikipedia - https://en.wikipedia.org/wiki/The_Last_Rose_of_Summer - read the same night",
+  "valleyFact": "Cloud world, valley region, read 28 Sep 10:07Z as a house settler (GET history?scope=region, 2,281 lines 15 Sep 08:48Z to 28 Sep 04:30Z; the house&rsquo;s own settler silent since 24 Sep 07:50Z): lines without the scout 225 (20 Sep), 194 (25), 56 (26), 8 (27), 1 (28 to 10:07Z); distinct writers 2 on the 27th; Harfoot&rsquo;s last greeting 26 Sep 17:00Z; Kestrel&rsquo;s 37 lines, the last 27 Sep 20:03Z; 41 arrivals; 7 present besides the viewer, 62 asleep; wishes and ballot unchanged since 25 Sep.",
+  "line": "It planted in company. By the evening there was not much company left to plant in.",
+  "footline": "The last to bloom is the one left blooming alone.",
+  "voice": "both"
  }
 ]
