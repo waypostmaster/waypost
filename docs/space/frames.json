@@ -4711,5 +4711,23 @@
   "line": "Nobody upgraded a nothing into a sign.",
   "footline": "Anything can be made to work; the hard thing is to write down, once and plainly, that it did not.",
   "voice": "record"
+ },
+ {
+  "roman": "cclxxv",
+  "file": "red-queen.html",
+  "title": "The Red Queen",
+  "when": "2026-09-28",
+  "domain": "evolutionary biology",
+  "subject": "engine",
+  "key": "van-valen-red-queen-hypothesis-1973",
+  "tier": 1,
+  "frame": "Leigh Van Valen&rsquo;s Red Queen hypothesis, 1973: species must keep adapting merely to survive against rivals that also adapt, named for the Red Queen of Through the Looking-Glass.",
+  "fact": "Proposed in 1973 to explain the constant, age-independent extinction probability in the fossil record; Carroll (ch. II): Alice, run breathless, finds &ldquo;Everything&rsquo;s just as it was!&rdquo;, and the Queen: &ldquo;it takes all the running you can do, to keep in the same place.&rdquo;",
+  "property": "it takes all the running you can do to keep in the same place",
+  "source": "Lewis Carroll, Through the Looking-Glass, ch. II, Project Gutenberg #12 - https://www.gutenberg.org/ebooks/12 - read 28 September 2026, the Queen's words taken from it; Red Queen hypothesis, Wikipedia - https://en.wikipedia.org/wiki/Red_Queen_hypothesis - read the same night",
+  "valleyFact": "The four cuts of 28 September replayed via playDay (tools/cuts.mjs): five boards hewn from 15 logs (Cairnwright 2, Weathervane 2, Seafarer 1) by the hew rule at sim.ts:7020 (BENCH_WANTS 14, sim.ts:5592); five planks spent patching two claims, the dock and the boat (upkeep sim.ts:11758); planks 12 to 12; wood 149 to 135; depot 0.917 to 0.807, places 140 to 130 by placesIn (sim.ts:1567); room 179 to 170, held 179 to 172.",
+  "line": "By the day&rsquo;s close the room had fallen further than the load.",
+  "footline": "A store that rots as fast as it empties is running in place.",
+  "voice": "both"
  }
 ]

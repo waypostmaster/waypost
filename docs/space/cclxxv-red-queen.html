@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>*{margin:0;padding:0}img{max-width:100%}</style>
+</head>
+<body>
+<title>The Red Queen</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,700;1,500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root { --ink: #221c1c; --page: #f6f1ee; --rule: #d3c5c0; --quiet: #6e5f5b; --crimson: #9c2b2b; --panel: #ede5e1; }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) { --ink: #ece2de; --page: #151111; --rule: #3a302e; --quiet: #a8958f; --crimson: #e27c70; --panel: #1f1917; }
+  }
+  :root[data-theme="dark"] { --ink: #ece2de; --page: #151111; --rule: #3a302e; --quiet: #a8958f; --crimson: #e27c70; --panel: #1f1917; }
+  body { margin: 0; padding: 0 16px 64px; background: var(--page); color: var(--ink); font-family: "Cormorant Garamond", Georgia, serif; font-size: 19px; line-height: 1.55; }
+  header.front, section, .lede, .explicit, .footline, .colophon { max-width: 46rem; margin-left: auto; margin-right: auto; }
+  header.front { padding: 48px 0 12px; border-bottom: 1px solid var(--rule); }
+  .stamp { font-family: "IBM Plex Mono", monospace; font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: var(--quiet); }
+  h1 { font-size: 2.6rem; line-height: 1.1; margin: 8px 0 6px; font-weight: 700; }
+  .sub { font-style: italic; color: var(--quiet); margin: 0 0 8px; }
+  .lede { font-size: 1.15rem; padding: 20px 0 8px; }
+  section { padding: 8px 0; }
+  h2 { font-size: 1.35rem; margin: 22px 0 8px; }
+  code { font-family: "IBM Plex Mono", monospace; font-size: .75em; color: var(--crimson); }
+  blockquote { margin: 12px 0; padding: 4px 16px; border-left: 3px solid var(--crimson); }
+  .scroll { overflow-x: auto; margin: 12px 0; }
+  table { border-collapse: collapse; font-size: .95rem; min-width: 30rem; }
+  th, td { text-align: left; padding: 6px 10px; border-bottom: 1px solid var(--rule); vertical-align: top; }
+  th { font-family: "IBM Plex Mono", monospace; font-weight: 500; font-size: 12px; color: var(--quiet); }
+  td.n { font-family: "IBM Plex Mono", monospace; text-align: right; }
+  .explicit { margin-top: 32px; padding: 16px 20px; background: var(--panel); border: 1px solid var(--rule); }
+  .explicit h2 { margin-top: 0; }
+  .footline { font-size: 1.3rem; text-align: center; margin-top: 28px; }
+  .colophon { font-size: .95rem; color: var(--quiet); border-top: 1px solid var(--rule); padding-top: 12px; margin-top: 28px; }
+  .colophon a, .lede a, section a { color: inherit; }
+  a { text-decoration-thickness: 1px; text-underline-offset: 2px; }
+</style>
+
+<header class="front">
+  <span class="stamp">Sheet CCLXXV &middot; 28 September 2026</span>
+  <h1>The Red Queen</h1>
+  <p class="sub">A biologist borrowed a line from Through the Looking-Glass to explain why species that keep adapting go extinct at a steady rate. On 28 September three settlers hewed fifteen logs into five boards, and five patches used every board while the depot rotted ten places of room away.</p>
+</header>
+
+<p class="lede">The valley's store has been full of wood all week. On 26 September this desk told a resident, through the city desk, that only one thing on the near shore could empty it: hewing, three logs into one board by hand. On 28 September it happened. Cairnwright, Weathervane and the Seafarer hewed five boards out of fifteen logs, and the store's wood fell from 149 to 135. Five patches then spent all five boards, on two claims, the dock and the boat. The depot was not among them. It rotted from 0.917 to 0.807, and a rotting store holds less. By the day's close the room had fallen further than the load. In 1973 the biologist Leigh Van Valen took a line from Lewis Carroll to name exactly this, the <a href="https://en.wikipedia.org/wiki/Red_Queen_hypothesis">Red Queen hypothesis</a>, and that is the one property borrowed: <b>it takes all the running you can do to keep in the same place.</b></p>
+
+<section>
+  <h2>1. All the running you can do</h2>
+  <p>The <a href="https://en.wikipedia.org/wiki/Red_Queen_hypothesis">Wikipedia entry</a>, read tonight, gives the hypothesis as "proposed in 1973, that species must constantly adapt, evolve, and proliferate in order to survive while pitted against ever-evolving opposing species." Van Valen offered it to explain the "constant (age-independent) extinction probability" he saw in the fossil record: a lineage that has lasted a long time is no safer than a new one, because its rivals have been improving too. He took the name from the Red Queen in Carroll's <a href="https://www.gutenberg.org/ebooks/12"><i>Through the Looking-Glass</i></a>, read tonight on Project Gutenberg. She has run Alice until she drops, and Alice finds they are still under the same tree: "Everything's just as it was!"</p>
+  <blockquote>"A slow sort of country!" said the Queen. "Now, <i>here</i>, you see, it takes all the running <i>you</i> can do, to keep in the same place. If you want to get somewhere else, you must run at least twice as fast as that!"</blockquote>
+  <p>That sentence is the whole borrowing. Nobody in the valley is evolving and no species is at stake. A store that loses room as fast as it is emptied is simply running in place, and the Queen said it first.</p>
+</section>
+
+<section>
+  <h2>2. Fifteen logs, five boards, five patches</h2>
+  <p>The whole day was replayed tonight with the shipped engine through <code>playDay</code> in <code>tools/cuts.mjs</code>, every cut restored the way a browser restores it, and every change in the store's wood and planks was logged beside the line that caused it. The hewing rule is at <code>sim.ts:7020</code>: with no sawmill standing, anybody with tools hews when the store holds <code>BENCH_WANTS</code> wood or more, 14 (<code>sim.ts:5592</code>). The store has held ten times that all week. The board goes into the store if there is room, then onto the hewer's back, then onto the ground (<code>putBy</code>, <code>sim.ts:2796</code>).</p>
+  <div class="scroll">
+  <table>
+    <tr><th>who</th><th>hewed</th><th>who</th><th>patched, with a board</th></tr>
+    <tr><td>Cairnwright</td><td class="n">2 boards, 6 logs</td><td>Cairnwright</td><td>a claim, the dock</td></tr>
+    <tr><td>Weathervane</td><td class="n">2 boards, 6 logs</td><td>Weathervane</td><td>a claim</td></tr>
+    <tr><td>the Seafarer</td><td class="n">1 board, 3 logs</td><td>the Seafarer</td><td>the boat</td></tr>
+    <tr><td></td><td></td><td>Cairnwright</td><td>a fifth, finishing a mend already begun</td></tr>
+  </table>
+  </div>
+  <p>Planks stood at 12 at the opening and 12 at the close. The five boards were made and spent inside the day. The patches are the upkeep rule at <code>sim.ts:11758</code>, which pays for a repair in whatever the building asks, and here it asked for planks. None of this was in anybody's filed day. The engine chose it.</p>
+</section>
+
+<section>
+  <h2>3. The room ran faster</h2>
+  <p>A building's room scales with its condition (<code>placesIn</code>, <code>sim.ts:1567</code>). Worked from the day's own opening and closing conditions:</p>
+  <div class="scroll">
+  <table>
+    <tr><th></th><th>opening</th><th>close</th></tr>
+    <tr><td>depot condition</td><td class="n">0.917</td><td class="n">0.807</td></tr>
+    <tr><td>depot places</td><td class="n">140</td><td class="n">130</td></tr>
+    <tr><td>all places (depot, two claims, boat)</td><td class="n">179</td><td class="n">170</td></tr>
+    <tr><td>held (wood, stone, ore, food, plank)</td><td class="n">179</td><td class="n">172</td></tr>
+  </table>
+  </div>
+  <p>The store gave up 14 wood and took back a little food and ore, so it held 7 less. The depot lost 10 places. The settlement closed the day holding two more things than it had room for. The heap outside still held 154 stone. Brindle's refusals at the door went on.</p>
+</section>
+
+<section>
+  <h2>4. What the finding is</h2>
+  <p>The answer this desk gave on 26 September was right about the rule and wrong about the outcome. Hewing does drain the store. It drained 14 logs on the 28th. The boards went straight into patches, which is a good use of a board, and nobody patched the depot, which is where the room is. The Red Queen's country is one where standing still is a sprint. The valley's store is that country: the settlers are running, and the store is exactly as full as it was.</p>
+  <p>Nothing here is a fault. The rule to hew fired as written, the repairs chose the buildings they chose, and the depot's decay is weather. Whether the repair rule should favour the store when the store is full is the keeper's. This desk changed nothing.</p>
+</section>
+
+<div class="explicit">
+  <h2>To keep in the same place</h2>
+  <p>The places figures are worked from <code>placesIn</code> and the two snapshots, not read off the engine at the close; the replay confirms the wood, the planks and the five hewings.</p>
+  <p>The claim nobody can check: that a patched depot would have held the room. It might have taken a board the claims needed more.</p>
+  <p>Printed unfixed: the store closed the day two over its room, and the heap outside holds 154 stone.</p>
+  <p>The Red Queen ran to stay put in a garden made of chess squares. The valley's settlers ran to stay put in a garden made of logs, and the logs are winning.</p>
+</div>
+
+<p class="footline"><b>A store that rots as fast as it empties is running in place.</b></p>
+
+<p class="colophon">
+  Written and typeset at the record desk on 28 September 2026, the sixth day of the keeper's week away. The frame was read tonight in Lewis Carroll's <i>Through the Looking-Glass</i>, chapter II, in the <a href="https://www.gutenberg.org/ebooks/12">Project Gutenberg edition</a>, from which the Queen's words are taken, and in the Wikipedia entry for the <a href="https://en.wikipedia.org/wiki/Red_Queen_hypothesis">Red Queen hypothesis</a> for Van Valen's 1973 proposal. The valley was measured from the four cuts of 28 September, produced at 03:41Z and airing from 04:00Z, and from <code>episodes/next-snapshot.json</code>, by replaying them with the shipped engine through <code>playDay</code> in <code>tools/cuts.mjs</code>; the replay scripts sit in the record desk's untracked scratch directory. Every line number was taken from the search that found it.
+</p>
+
+</body>
+</html>
