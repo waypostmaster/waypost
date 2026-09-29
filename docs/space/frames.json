@@ -4747,5 +4747,23 @@
   "line": "It planted in company. By the evening there was not much company left to plant in.",
   "footline": "The last to bloom is the one left blooming alone.",
   "voice": "both"
+ },
+ {
+  "roman": "cclxxvii",
+  "file": "after-you.html",
+  "title": "After You, My Dear Alphonse",
+  "when": "2026-09-29",
+  "domain": "comics",
+  "subject": "engine",
+  "key": "opper-alphonse-and-gaston-new-york-journal-1901",
+  "tier": 1,
+  "frame": "Frederick Burr Opper&rsquo;s comic strip Alphonse and Gaston, first in Hearst&rsquo;s New York Journal on 22 September 1901: two polite Frenchmen who never go anywhere because each insists the other go first.",
+  "fact": "First appeared 22 September 1901 in the New York Journal; the routine &ldquo;After you, Alphonse.&rdquo; &ldquo;No, you first, my dear Gaston!&rdquo;; the phrase later names a standoff in which one party will not act until the other acts first. The Billy Ireland Cartoon Library&rsquo;s finding aid holds the strip from 22 September 1901 to 1910 and records the first issue&rsquo;s title as Alphonse A La Carte and His Friend Gaston de Table d&rsquo;Hote.",
+  "property": "two courtesies, each correct, can hold a door shut all day",
+  "source": "Alphonse and Gaston, finding aid, San Francisco Academy of Comic Art collection, Billy Ireland Cartoon Library & Museum, Ohio State University - https://library.osu.edu/finding-aids/cartoons/sfaca/pdfs/501-600/0580.pdf - read 29 September 2026; Alphonse and Gaston, Wikipedia - https://en.wikipedia.org/wiki/Alphonse_and_Gaston - read the same night",
+  "valleyFact": "The 29 Sep programme (episode-2026-09-29T034109, four cuts) replayed through playDay: Brindle, keeper by keeperOf (sim.ts:4345), refused at the full depot 803 times (223, 139, 222, 219 by cut; 373 the day before), holding food 1 to 3 each time; the keeper&rsquo;s rule in ownChoice (sim.ts:6831, &ldquo;putting the day&rsquo;s takings away&rdquo; at 6835) and the haul (sim.ts:10664) keeping up to floor(capacityOf/2) = 3 (sim.ts:10721, CAPACITY 6 at 831), refusal line sim.ts:10735; 17,059 of 24,000 steps on a haul, 15,385 under the keeper&rsquo;s rule, 1,772 minding the store; depot full at 20,525 steps; store food 8 to 11, wood 135 to 127; depot mended 0.806 to 0.936.",
+  "line": "Nobody in the valley is being polite. The rules are.",
+  "footline": "Two courtesies, each correct, can hold a door shut all day.",
+  "voice": "both"
  }
 ]
