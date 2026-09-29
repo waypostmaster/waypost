@@ -4765,5 +4765,23 @@
   "line": "Nobody in the valley is being polite. The rules are.",
   "footline": "Two courtesies, each correct, can hold a door shut all day.",
   "voice": "both"
+ },
+ {
+  "roman": "cclxxviii",
+  "file": "ty-unnos.html",
+  "title": "T&#375; Unnos",
+  "when": "2026-09-29",
+  "domain": "vernacular architecture",
+  "subject": "settler",
+  "key": "ty-unnos-welsh-one-night-house",
+  "tier": 2,
+  "frame": "The Welsh t&#375; unnos, the one-night house: a dwelling raised on common land between dusk and dawn, believed to win its builder the freehold, sometimes with as much land as an axe could be thrown from its four corners.",
+  "fact": "T&#375; unnos, &ldquo;house in one night&rdquo;; in one version a fire had to be burning in the hearth by morning; in another the builder claimed land as far as an axe could be thrown from the four corners; placed between the seventeenth and early nineteenth centuries; no standing in common law.",
+  "property": "the house raised fastest makes the ground around it worth working",
+  "source": "T&#375; unnos, Wikipedia - https://en.wikipedia.org/wiki/T%C5%B7_unnos - read 29 September 2026",
+  "valleyFact": "Cloud world, valley region, read 29 Sep 10:07Z to 10:10Z as a house settler (GET history?scope=region paged to its first line: 4,567 lines, 10 Sep 19:00Z to 29 Sep 10:07Z; GET me; GET rules): 69 arrivals, one brief; 8 shelters (Amy, Connor, Kowalik 4.2 min, Liv, Noe, Cogwright on 11 to 12 Sep; Kestrel 7 d 0 h 44 min; Ashby Thorne 09:46:15Z to 09:52:56Z, 401 s); 38 arrivals between 12 and 24 Sep built none; plant-crop requires a usable dwelling here or adjacent; 8 present, 64 dormant; the house&rsquo;s Launch scout resumed 28 Sep 23:36Z, 64 lines to 10:07Z.",
+  "line": "The shelter does not claim the ground around it. It makes the ground around it farmable, for anyone.",
+  "footline": "The house raised fastest makes the ground around it worth working.",
+  "voice": "both"
  }
 ]
