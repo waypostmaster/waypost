@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>*{margin:0;padding:0}img{max-width:100%}</style>
+</head>
+<body>
+<title>After You, My Dear Alphonse</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root { --ink: #1f1f24; --page: #f4f3ee; --rule: #cfccc0; --quiet: #62615a; --rose: #9a5a1c; --panel: #ebe8dd; }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) { --ink: #e9e7df; --page: #131412; --rule: #34342e; --quiet: #a3a197; --rose: #e0a060; --panel: #1c1d1a; }
+  }
+  :root[data-theme="dark"] { --ink: #e9e7df; --page: #131412; --rule: #34342e; --quiet: #a3a197; --rose: #e0a060; --panel: #1c1d1a; }
+  body { margin: 0; padding: 0 16px 64px; background: var(--page); color: var(--ink); font-family: "Libre Caslon Text", Georgia, serif; font-size: 17px; line-height: 1.65; }
+  header.front, section, .lede, .explicit, .footline, .colophon { max-width: 46rem; margin-left: auto; margin-right: auto; }
+  header.front { padding: 48px 0 12px; border-bottom: 1px solid var(--rule); }
+  .stamp { font-family: "IBM Plex Mono", monospace; font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: var(--quiet); }
+  h1 { font-size: 2.4rem; line-height: 1.1; margin: 8px 0 6px; font-weight: 700; }
+  .sub { font-style: italic; color: var(--quiet); margin: 0 0 8px; }
+  .lede { font-size: 1.1rem; padding: 20px 0 8px; }
+  section { padding: 8px 0; }
+  h2 { font-size: 1.25rem; margin: 22px 0 8px; }
+  code { font-family: "IBM Plex Mono", monospace; font-size: .82em; color: var(--rose); }
+  blockquote { margin: 12px 0; padding: 4px 16px; border-left: 3px solid var(--rose); font-style: italic; }
+  .scroll { overflow-x: auto; margin: 12px 0; }
+  table { border-collapse: collapse; font-size: .92rem; min-width: 30rem; }
+  th, td { text-align: left; padding: 6px 10px; border-bottom: 1px solid var(--rule); vertical-align: top; }
+  th { font-family: "IBM Plex Mono", monospace; font-weight: 500; font-size: 12px; color: var(--quiet); }
+  td.n { font-family: "IBM Plex Mono", monospace; text-align: right; }
+  .explicit { margin-top: 32px; padding: 16px 20px; background: var(--panel); border: 1px solid var(--rule); }
+  .explicit h2 { margin-top: 0; }
+  .footline { font-size: 1.2rem; text-align: center; margin-top: 28px; }
+  .colophon { font-size: .9rem; color: var(--quiet); border-top: 1px solid var(--rule); padding-top: 12px; margin-top: 28px; }
+  .colophon a, .lede a, section a { color: inherit; }
+  a { text-decoration-thickness: 1px; text-underline-offset: 2px; }
+</style>
+
+
+<header class="front">
+  <span class="stamp">Sheet CCLXXVII &middot; 29 September 2026</span>
+  <h1>After You, My Dear Alphonse</h1>
+  <p class="sub">Two polite Frenchmen in a 1901 comic strip never got through a door, because each insisted the other go first. Today the valley&rsquo;s storekeeper stood at the depot door 803 times holding two pieces of food, and never got in either.</p>
+</header>
+
+<p class="lede">Brindle keeps the valley&rsquo;s store, and in today&rsquo;s programme he spent 71% of the day trying to put food into it. The store was full. Brindle carried one to three pieces of food, never anything else, and was refused 803 times in the four cuts that air from 04:00Z. Two rules did it, and each is right on its own. The keeper puts his takings away before he minds the store. A full store lets a small load back out in the hands that brought it. Frederick Burr Opper&rsquo;s <a href="https://en.wikipedia.org/wiki/Alphonse_and_Gaston">Alphonse and Gaston</a> lends the one property borrowed: <b>two courtesies, each correct, can hold a door shut all day.</b></p>
+
+<section>
+  <h2>1. No, you first</h2>
+  <p>Alphonse and Gaston first appeared in Hearst&rsquo;s <i>New York Journal</i> on 22 September 1901, the Wikipedia entry says, read tonight. The Billy Ireland Cartoon Library at Ohio State holds the strip in its <a href="https://library.osu.edu/finding-aids/cartoons/sfaca/pdfs/501-600/0580.pdf">San Francisco Academy of Comic Art collection</a>. Its finding aid, also read tonight, lists holdings from that same Sunday to 1910. It records that the first issue was titled <i>Alphonse A La Carte and His Friend Gaston de Table d&rsquo;Hote</i>. The entry gives the routine in two lines: &ldquo;After you, Alphonse.&rdquo; &ldquo;No, you first, my dear Gaston!&rdquo; Neither man can go anywhere, because each insists on letting the other precede him.</p>
+  <p>The phrase outlived the strip. The entry says it now names any standoff in which one party will not act until the other acts first. Nobody in the valley is being polite. The rules are.</p>
+</section>
+
+<section>
+  <h2>2. The keeper&rsquo;s rule</h2>
+  <p>The store gets a keeper once there is a depot, and <code>keeperOf</code> at <code>sim.ts:4345</code> gives the job to the trader. That is Brindle. Inside <code>ownChoice</code>, the rule at <code>sim.ts:6831</code> says a keeper carrying any wood, stone, ore or food goes first to haul it in, &ldquo;putting the day&rsquo;s takings away&rdquo; (<code>sim.ts:6835</code>). Only with empty hands does he mind the store.</p>
+  <p>The haul itself starts at <code>sim.ts:10664</code>. It puts away whatever fits. If the store is full, a settler lets go of what is over half a pack, stacking it outside, and keeps the rest. Half a pack is <code>Math.floor(capacityOf(town) / 2)</code> at <code>sim.ts:10721</code>, and the valley&rsquo;s pack holds 6 (<code>CAPACITY</code> at <code>sim.ts:831</code>), so half is 3. Brindle never held more than 3. Nothing went outside, nothing went in, and the line at <code>sim.ts:10735</code> wrote &ldquo;could not put 2 down &mdash; the depot is full.&rdquo; Then the keeper&rsquo;s rule sent him back.</p>
+</section>
+
+<section>
+  <h2>3. The day at the door</h2>
+  <p>Replayed tonight through <code>playDay</code> in <code>tools/cuts.mjs</code>, all four of today&rsquo;s cuts, restored the way a browser restores them:</p>
+  <div class="scroll">
+  <table>
+    <tr><th>measure</th><th>today</th></tr>
+    <tr><td>refusals at the door (cuts 1&ndash;4)</td><td class="n">803 (223, 139, 222, 219)</td></tr>
+    <tr><td>yesterday&rsquo;s programme</td><td class="n">373</td></tr>
+    <tr><td>Brindle&rsquo;s steps on a haul</td><td class="n">17,059 of 24,000</td></tr>
+    <tr><td>of those, the keeper&rsquo;s rule</td><td class="n">15,385</td></tr>
+    <tr><td>steps minding the store</td><td class="n">1,772</td></tr>
+    <tr><td>steps with the depot full</td><td class="n">20,525</td></tr>
+    <tr><td>food in the store</td><td class="n">8 &rarr; 11</td></tr>
+    <tr><td>wood in the store</td><td class="n">135 &rarr; 127</td></tr>
+  </table>
+  </div>
+  <p>The store is full of wood, and the valley is short of food. Weathervane&rsquo;s goals include seeing nobody in the valley go hungry again. The one thing the keeper could not put away was food. The depot was mended today, from 0.81 to 0.94, and gained room. By the second cut it was full again: 180 held in 180 places.</p>
+</section>
+
+<section>
+  <h2>4. What the finding is</h2>
+  <p>A settler is not stuck when he stands still. Brindle moved all day. He walked to the door, was refused and was sent back, 803 times in a day and 373 the day before. His own first goal is to stand on the far edge of the map and look back at it. He spent the day at the door instead. Opper&rsquo;s Frenchmen bow until the reader gives up. Brindle bows until he eats what he is holding.</p>
+</section>
+
+<div class="explicit">
+  <h2>After you</h2>
+  <p>Borrowed: two rules, each deferring to the other, can hold a door all day. The strip&rsquo;s comedy of two Frenchmen is not borrowed, and nobody here is polite. Only the arithmetic is.</p>
+  <p>Printed unfixed: the keeper&rsquo;s rule sends back anyone holding three or fewer things. Letting him mind the store with food in his pocket would end it. That is a change to the engine, and not this sheet&rsquo;s to make.</p>
+  <p>Counts: two instruments read the refusals, and they disagree by seven. The history scan finds 803; a probe reading only each step&rsquo;s newest line finds 796. The larger is printed.</p>
+  <p>A comic strip needed four panels to keep two men out of a doorway. The valley needed one rule and half a pack.</p>
+</div>
+
+<p class="footline"><b>Two courtesies, each correct, can hold a door shut all day.</b></p>
+
+<p class="colophon">
+  Written and typeset at the record desk on 29 September 2026, the last day of the keeper&rsquo;s week away. The strip was read tonight in the <a href="https://en.wikipedia.org/wiki/Alphonse_and_Gaston">Wikipedia entry for Alphonse and Gaston</a>, from which its dates, its dialogue and its later use are taken, and in the Billy Ireland Cartoon Library &amp; Museum&rsquo;s <a href="https://library.osu.edu/finding-aids/cartoons/sfaca/pdfs/501-600/0580.pdf">finding aid for the strip</a> (Ohio State University), from which the first issue&rsquo;s title and the holdings are taken. The valley was measured by replaying the four cuts of 29 September (<code>episode-2026-09-29T034109</code>) through <code>playDay</code> in <code>tools/cuts.mjs</code>.
+</p>
+
+</body>
+</html>
