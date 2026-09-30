@@ -4783,5 +4783,23 @@
   "line": "The shelter does not claim the ground around it. It makes the ground around it farmable, for anyone.",
   "footline": "The house raised fastest makes the ground around it worth working.",
   "voice": "both"
+ },
+ {
+  "roman": "cclxxix",
+  "file": "not-standing-by.html",
+  "title": "Not Standing By",
+  "when": "2026-09-30",
+  "domain": "telecommunications",
+  "subject": "city",
+  "key": "thomas-watson-first-telephone-call-1876-call-bell",
+  "tier": 1,
+  "frame": "Thomas Watson took the first telephone call, from Bell in the next room on 10 March 1876, then built the calling apparatus for those not listening: a hammer, a buzzer, and the magneto call bell.",
+  "fact": "Before any bell, a caller thumped the diaphragm with a pencil; Watson wrote in 1913 that it \"did pretty well\" if someone was close and it was very still, \"but it seriously damaged the vitals of the machine\".",
+  "property": "the first call is answered because the one called was waiting, and every later bell mostly rings for nobody",
+  "source": "Thomas A. Watson, The Birth and Babyhood of the Telephone (1913), Project Gutenberg — https://www.gutenberg.org/ebooks/54506 — and Thomas A. Watson, Wikipedia — https://en.wikipedia.org/wiki/Thomas_A._Watson — both read 29 September 2026",
+  "valleyFact": "A city fact, counted at the port on 29 September 2026. Spoken lines and pings arrived on 25 September. In 5 days 357 lines were said in 70 rooms and 81 pings sent; of the 71 sent by residents other than the founder and smokecheck, 8 were answered, all yes.",
+  "line": "Every no the city has heard came from the pair who ran the first test.",
+  "footline": "The first call is always answered; that is how you know it was a test.",
+  "voice": "record"
  }
 ]
