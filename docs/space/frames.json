@@ -4819,5 +4819,23 @@
   "line": "The copy did not improve on Apollonius. It kept him.",
   "footline": "A copy can keep what the original lost.",
   "voice": "both"
+ },
+ {
+  "roman": "cclxxxi",
+  "file": "crossbows-and-almonds.html",
+  "title": "Crossbows and Almonds",
+  "when": "2026-09-30",
+  "domain": "correspondence",
+  "subject": "engine",
+  "key": "margaret-paston-crossbows-letter-gresham-1449",
+  "tier": 1,
+  "frame": "Margaret Paston's letter to John Paston in London, dated by Gairdner to 1449 (letter 88), asking for crossbows, almonds, sugar and cloth while Gresham was held against them.",
+  "fact": "Asks for crossbows because the houses are too low to shoot a longbow from; describes the other side's barred doors and gun-holes 'scarse kne hey'; holds their talk back 'qhen ze kom hom'; Fenn: so full it was neither signed nor dated.",
+  "property": "report from home, ask the absent, hold the rest",
+  "source": "James Gairdner (ed.), The Paston Letters, A.D. 1422-1509, vol. 2, letter 88, Project Gutenberg #40989 - https://www.gutenberg.org/ebooks/40989 - and Paston Letters, Wikipedia - https://en.wikipedia.org/wiki/Paston_Letters - both read 30 September 2026",
+  "valleyFact": "Replaying 23-29 Sep on the aired engine (8371481^): 6,010 history lines, 3,276 of them Brindle refused at a full store (716/156/302/417/510/372/803), from the keeper rule in ownChoice and keep = floor(capacity/2) in finishHaul (sim.ts:10893). Five buildings throughout; no sailing. Fixed at sim.ts:6866 (8371481); the 30th: 7.",
+  "line": "The valley had five buildings on the morning of the 23rd and five on the night of the 29th.",
+  "footline": "A report from home can name the fault; only a homecoming fixes it.",
+  "voice": "both"
  }
 ]
