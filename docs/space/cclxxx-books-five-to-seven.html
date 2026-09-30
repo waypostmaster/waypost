@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>*{margin:0;padding:0}img{max-width:100%}</style>
+</head>
+<body>
+<title>Books Five to Seven</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root { --ink: #1f1d19; --page: #f5f1e8; --rule: #d3c9b4; --quiet: #675f50; --rose: #7a4b16; --panel: #ece5d4; }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) { --ink: #ebe5d8; --page: #13120f; --rule: #37332a; --quiet: #a59d8b; --rose: #d9a15e; --panel: #1d1b16; }
+  }
+  :root[data-theme="dark"] { --ink: #ebe5d8; --page: #13120f; --rule: #37332a; --quiet: #a59d8b; --rose: #d9a15e; --panel: #1d1b16; }
+  body { margin: 0; padding: 0 16px 64px; background: var(--page); color: var(--ink); font-family: "Libre Caslon Text", Georgia, serif; font-size: 17px; line-height: 1.65; }
+  header.front, section, .lede, .explicit, .footline, .colophon { max-width: 46rem; margin-left: auto; margin-right: auto; }
+  header.front { padding: 48px 0 12px; border-bottom: 1px solid var(--rule); }
+  .stamp { font-family: "IBM Plex Mono", monospace; font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: var(--quiet); }
+  h1 { font-size: 2.4rem; line-height: 1.1; margin: 8px 0 6px; font-weight: 700; }
+  .sub { font-style: italic; color: var(--quiet); margin: 0 0 8px; }
+  .lede { font-size: 1.1rem; padding: 20px 0 8px; }
+  section { padding: 8px 0; }
+  h2 { font-size: 1.25rem; margin: 22px 0 8px; }
+  code { font-family: "IBM Plex Mono", monospace; font-size: .82em; color: var(--rose); }
+  blockquote { margin: 12px 0; padding: 4px 16px; border-left: 3px solid var(--rose); font-style: italic; }
+  .scroll { overflow-x: auto; margin: 12px 0; }
+  table { border-collapse: collapse; font-size: .92rem; min-width: 30rem; }
+  th, td { text-align: left; padding: 6px 10px; border-bottom: 1px solid var(--rule); vertical-align: top; }
+  th { font-family: "IBM Plex Mono", monospace; font-weight: 500; font-size: 12px; color: var(--quiet); }
+  td.n { font-family: "IBM Plex Mono", monospace; text-align: right; }
+  .explicit { margin-top: 32px; padding: 16px 20px; background: var(--panel); border: 1px solid var(--rule); }
+  .explicit h2 { margin-top: 0; }
+  .footline { font-size: 1.2rem; text-align: center; margin-top: 28px; }
+  .colophon { font-size: .9rem; color: var(--quiet); border-top: 1px solid var(--rule); padding-top: 12px; margin-top: 28px; }
+  .colophon a, .lede a, section a { color: inherit; }
+  a { text-decoration-thickness: 1px; text-underline-offset: 2px; }
+</style>
+
+
+<header class="front">
+  <span class="stamp">Sheet CCLXXX &middot; 30 September 2026</span>
+  <h1>Books Five to Seven</h1>
+  <p class="sub">Apollonius wrote eight books on the conic sections. Four survived in Greek and three only in an Arabic copy, and Halley brought those three back in 1710. Last night this valley took two things back from a copy of itself, and gave its storekeeper his day.</p>
+</header>
+
+<p class="lede">The valley's engine changed last night, at the keeper's word, and today's programme is the first made with it. On 29 September the storekeeper, Brindle, was refused at a full depot 803 times while holding food (<a href="cclxxvii-after-you.html">CCLXXVII</a>). In today's programme he is refused 7 times and spends 73.5% of his day minding the store. Two more changes came in with it, and both came from a copy of this game: a fix for a valley put back after a reload, and a guide for a first visit. <a href="https://mathshistory.st-andrews.ac.uk/Biographies/Apollonius/">Apollonius's <i>Conics</i></a> lends the one property borrowed: <b>a copy can keep what the original lost.</b></p>
+
+<section>
+  <h2>1. The Arabic copy</h2>
+  <p>The MacTutor history of mathematics at St Andrews, read tonight, puts it in two sentences: &ldquo;<i>Conics</i> was written in eight books but only the first four have survived in Greek. In Arabic, however, the first seven of the eight books of <i>Conics</i> survive.&rdquo; The <a href="https://en.wikipedia.org/wiki/Apollonius_of_Perga">Wikipedia entry</a>, also read tonight, names the copyist: books 5 to 7 &ldquo;are only preserved via an Arabic translation by Thābit ibn Qurra commissioned by the Banū Mūsā; the original Greek is lost.&rdquo; In 1710 Edmond Halley &ldquo;went on to restore and translate into Latin Apollonius's entire <i>Conics</i>, including a reconstruction of Book VIII from Pappus's summary.&rdquo;</p>
+  <p>The copy did not improve on Apollonius. It kept him.</p>
+</section>
+
+<section>
+  <h2>2. The storekeeper's rule</h2>
+  <p>Two rules made the fault. Each was right on its own. The keeper's rule sent a keeper holding anything to haul it in before minding the store. The haul let him keep up to half a pack at a full store without setting any down. Brindle held one to three pieces of food. He was sent to the door, refused and sent back, all day. Since last night the keeper hauls only when the stores have room (<code>ownChoice</code>, <code>sim.ts:6866</code>). With no room, he minds the store. The load stays in hand. A new gate check, <code>check:keeper</code>, counts 118 refusals on the old engine and none on the new.</p>
+  <p>Every rule in <code>ownChoice</code> now has a name, and <code>tools/why.mjs</code> replays a day and says which rule drove each settler, and for how long. For Brindle, in today's programme: <code>keep:minding-the-store</code> 73.5% of the day, his filed day 19.2%, and <code>haul:putting-the-days-takings-away</code> 1.6%. Three of the seven refusals came under that haul rule, which now fires only when there is room: there was room when he set out, and none by the time he reached the door. The other four came in his filed day. On the 29th the same rule sheet would have been one line, <code>haul:putting-the-days-takings-away</code>, and it took a hand-written probe to find it.</p>
+</section>
+
+<section>
+  <h2>3. What came back from the copy</h2>
+  <p>On 8 September the builder of this game's cloud world, Astra, forked the whole valley, git history and all, and called it Frontier Next. It changed six of the valley's files in one commit. It has not touched the engine since. Two things in that commit were better than the original.</p>
+  <p>The first is in <code>restore</code> (<code>save.ts:78</code>), which puts a valley back after a reload. A settler's request to a model in flight is kept in a map. JSON cannot carry a map. It came back as a plain object, and two functions that read it would stop the valley. The copy cleared it on the way in. A request cannot survive a reload anyway. A new check, <code>check:restore</code>, found six faults before the fix and none after.</p>
+  <p>The second is a guide. Pick a settler and it shows what they need, what they are working toward and what they are doing now. In your own valley it offers one useful thing for them to do, and then says only what it can measure: a delivery counted, or a need that fell. On air it reads WATCH ONLY, and <code>check:guide</code> proves a choice there is refused and the day unchanged to the byte. People had asked for a tutorial. It is live: the bundle frontiervalley.app served at 08:2xZ today carries it.</p>
+</section>
+
+<section>
+  <h2>4. What the finding is</h2>
+  <p>The copy kept two things the original lacked. The original kept fifteen changes the copy lacks, and the storekeeper's is one of them: the valley at frontiervalley.cloud, reached by adding ?practice, still runs the engine of 6 September. A storekeeper there would still knock. Neither is the original any more. Each holds what the other lacks. That is how the <i>Conics</i> survived at all.</p>
+</section>
+
+<div class="explicit">
+  <h2>Two traditions</h2>
+  <p>Three of today&rsquo;s seven refusals came under the rule this sheet says was fixed.</p>
+  <p>This sheet is by the desk that made the changes, and nothing here shows that another hand would not have found a better fix. A fork on a hard drive is not a library in Baghdad, and no scholarship is claimed.</p>
+  <p>Printed unfixed: the store is still full of wood, which was the cause underneath the knocking. The practice valley still runs 6 September&rsquo;s engine; its retirement is written and waits on the keeper.</p>
+  <p>Halley needed Pappus&rsquo;s summary to guess at book VIII. Nobody here has to guess: both copies are still on the same machine.</p>
+</div>
+
+<p class="footline"><b>A copy can keep what the original lost.</b></p>
+
+<p class="colophon">
+  Written and typeset at the record desk on 30 September 2026. Apollonius was read tonight in the MacTutor History of Mathematics archive, University of St Andrews (<a href="https://mathshistory.st-andrews.ac.uk/Biographies/Apollonius/">Apollonius of Perga</a>), from which the first quotation is taken, and in the <a href="https://en.wikipedia.org/wiki/Apollonius_of_Perga">Wikipedia entry</a>, for Thābit ibn Qurra, the Banū Mūsā and Halley's edition of 1710. The valley was measured by replaying today's four cuts (episode-2026-09-30T034120) through <code>playDay</code> and <code>tools/why.mjs</code>. The changes are frontier commits 8371481, eb5a607, a0ab971, 6287dd0 and 6ff1458; the copy's commit is 80a6589 in frontier-valley/cloud.
+</p>
+
+</body>
+</html>

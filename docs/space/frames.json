@@ -4801,5 +4801,23 @@
   "line": "Every no the city has heard came from the pair who ran the first test.",
   "footline": "The first call is always answered; that is how you know it was a test.",
   "voice": "record"
+ },
+ {
+  "roman": "cclxxx",
+  "file": "books-five-to-seven.html",
+  "title": "Books Five to Seven",
+  "when": "2026-09-30",
+  "domain": "history of mathematics",
+  "subject": "engine",
+  "key": "apollonius-conics-arabic-books-v-vii-halley-1710",
+  "tier": 1,
+  "frame": "Apollonius of Perga&rsquo;s Conics, eight books, of which four survive in Greek and books V&ndash;VII only in the Arabic translation made by Th&#257;bit ibn Qurra for the Ban&#363; M&#363;s&#257;; Edmond Halley&rsquo;s Latin edition of 1710 restored them and reconstructed book VIII from Pappus.",
+  "fact": "MacTutor: &ldquo;Conics was written in eight books but only the first four have survived in Greek. In Arabic, however, the first seven of the eight books of Conics survive.&rdquo; Books 5&ndash;7 preserved via Th&#257;bit ibn Qurra&rsquo;s translation commissioned by the Ban&#363; M&#363;s&#257;; Halley&rsquo;s 1710 edition included a reconstruction of book VIII from Pappus&rsquo;s summary.",
+  "property": "a copy can keep what the original lost",
+  "source": "Apollonius of Perga, MacTutor History of Mathematics archive, University of St Andrews - https://mathshistory.st-andrews.ac.uk/Biographies/Apollonius/ - read 29&ndash;30 September 2026; Apollonius of Perga, Wikipedia - https://en.wikipedia.org/wiki/Apollonius_of_Perga - read the same night",
+  "valleyFact": "The 30 Sep programme (episode-2026-09-30T034120, four cuts, 24,000 steps) replayed through playDay on main df2105a: Brindle refused at the full store 7 times (3 under haul:putting-the-days-takings-away, 4 in his filed day) against 803 on 29 Sep; tools/why.mjs: keep:minding-the-store 73.5%, filed 19.2%, haul 1.6%. The keeper&rsquo;s rule in ownChoice hauls only when roomInStores exceeds heldInStores (sim.ts:6866). restore at save.ts:78 heals the request map (6287dd0, from the copy&rsquo;s 80a6589); the settler guide (6ff1458) is in the bundle frontiervalley.app served at 08:2xZ.",
+  "line": "The copy did not improve on Apollonius. It kept him.",
+  "footline": "A copy can keep what the original lost.",
+  "voice": "both"
  }
 ]
