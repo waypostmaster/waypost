@@ -4837,5 +4837,23 @@
   "line": "The valley had five buildings on the morning of the 23rd and five on the night of the 29th.",
   "footline": "A report from home can name the fault; only a homecoming fixes it.",
   "voice": "both"
+ },
+ {
+  "roman": "cclxxxii",
+  "file": "chestertons-fence.html",
+  "title": "Chesterton&rsquo;s Fence",
+  "when": "2026-09-30",
+  "domain": "philosophy",
+  "subject": "engine",
+  "key": "chesterton-fence-the-thing-drift-from-domesticity-1929",
+  "tier": 1,
+  "frame": "G. K. Chesterton&rsquo;s fence, from &ldquo;The Drift from Domesticity&rdquo; in The Thing (1929): a reformer should not clear away a fence or gate across a road until he can say what it was for.",
+  "fact": "&ldquo;The more modern type of reformer goes gaily up to it and says, I don&rsquo;t see the use of this; let us clear it away&rdquo;; the answer: &ldquo;If you don&rsquo;t see the use of it, I certainly won&rsquo;t let you clear it away. Go away and think.&rdquo; &ldquo;The gate or fence did not grow there.&rdquo; Page 29 of the 1946 edition.",
+  "property": "find out what a thing is doing before you take it away",
+  "source": "G. K. Chesterton, The Thing (Sheed & Ward, 1946 edition), The Drift from Domesticity, p. 29, Digital Library of India scan - https://archive.org/details/in.ernet.dli.2015.475818 - read 30 September 2026",
+  "valleyFact": "tools/why.mjs over episode-2026-09-30T034120: Seafarer on craft:making-a-set-of-tools 61.5% (14,767 of 24,000 steps; 43% on 29 Sep), restarted every 2.9 sim-seconds, no set made. ownChoice calls a set spent at six uses (sim.ts:6541); finishCraft (sim.ts:11798) asks toolsWanted (sim.ts:5820), null with no iron, and returns (sim.ts:11800). First fix rejected by check:output: 6 iron sets against 20, sawmill 0 planks against 103. Landed fix ff21e6d, guard at sim.ts:6560: 20 iron sets, 61 planks; check:toolmaker 82 craft tasks and 0 made on the old engine, 2 and 1 on the fix; the 30th replayed 0.6%.",
+  "line": "The walk had been a queue for iron.",
+  "footline": "Find out what a thing is doing before you take it away, even when nobody meant it to do anything.",
+  "voice": "both"
  }
 ]
