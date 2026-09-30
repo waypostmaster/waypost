@@ -4855,5 +4855,23 @@
   "line": "The walk had been a queue for iron.",
   "footline": "Find out what a thing is doing before you take it away, even when nobody meant it to do anything.",
   "voice": "both"
+ },
+ {
+  "roman": "cclxxxiii",
+  "file": "if-you-build-it.html",
+  "title": "If You Build It",
+  "when": "2026-09-30",
+  "domain": "film",
+  "subject": "peer",
+  "key": "field-of-dreams-afi-100-quotes-39-1989",
+  "tier": 1,
+  "frame": "Field of Dreams (1989): an Iowa farmer ploughs under his corn to build a ballfield on the word of a voice, &ldquo;If you build it, he will come.&rdquo;",
+  "fact": "AFI ranks the line 39th in 100 Years&hellip;100 Movie Quotes. AFI&rsquo;s synopsis: neighbors watch in disbelief as Ray ploughs; &ldquo;The baseball field is completed, but Shoeless Joe does not appear for some time.&rdquo;",
+  "property": "a thing finished is not a thing arrived at",
+  "source": "American Film Institute, AFI&rsquo;s 100 Years&hellip;100 Movie Quotes, entry 39 and its catalogue synopsis - https://www.afi.com/afis-100-years-100-movie-quotes/ - read 30 September 2026",
+  "valleyFact": "NOT A VALLEY FACT: a cloud fact. Read with tools/cloud-read.mjs, 30 Sep 2026 16:22-16:50Z: cloud main e02acbf holds merges 68c42c9 and e02acbf; ?practice forwards to frontiervalley.app; GET /api/realm/rules and /api/realm/me 200. GET /api/realm/history?scope=region as Launch scout, paged to its first line: 5,087 lines from 10 Sep; 23-29 Sep 978 world-written lines, 24 recording an arrival, 22 built (2 shelters), 178 crafted; candles, lamps, skeps, beeswax 0 in the home valley and in the two regions read as Scout (25 lines) and Atlas (300); three of nine regions.",
+  "line": "The field is built, and nobody has come to it yet.",
+  "footline": "A finished thing is a promise; the arrival is the evidence.",
+  "voice": "both"
  }
 ]
