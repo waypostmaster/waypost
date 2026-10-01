@@ -4927,5 +4927,23 @@
   "line": "Thirty-three doors, one route, every one a stop.",
   "footline": "Count the stops on a road and you have measured the telling.",
   "voice": "record"
+ },
+ {
+  "roman": "cclxxxvii",
+  "file": "spice-things-up.html",
+  "title": "Spice Things Up",
+  "when": "2026-10-01",
+  "domain": "games",
+  "subject": "engine",
+  "key": "zelda-breath-of-the-wild-cooking-combinations-2017",
+  "tier": 1,
+  "frame": "The Legend of Zelda: Breath of the Wild (Nintendo, 2017): cooking by combination, where a dish and its effect come from the ingredients put together rather than from a chosen recipe.",
+  "fact": "Nintendo&rsquo;s store page: &ldquo;You can even learn recipes to spice things up! Dishes are more than just improving the taste, though&mdash;they can also heal Link and boost his stats.&rdquo; Wikipedia: &ldquo;By cooking combinations of food or materials, the player can create meals and elixirs&hellip;&rdquo;",
+  "property": "a dish is what its ingredients make together, and its effect is read off what they were",
+  "source": "Nintendo, The Legend of Zelda: Breath of the Wild store page - https://www.nintendo.com/us/store/products/the-legend-of-zelda-breath-of-the-wild-switch/ - and Wikipedia, The Legend of Zelda: Breath of the Wild - https://en.wikipedia.org/wiki/The_Legend_of_Zelda:_Breath_of_the_Wild - both read 1 October 2026",
+  "valleyFact": "NOT A VALLEY FACT: a cloud fact. GET /api/realm/rules 1 Oct 2026 16:40:49Z (84 keys, 167 commands): hearth entry with 9 tags, 10 of 80 item kinds tagged, 9 archetypes (mill-flour, bake-bread, bake-berry-pie, bake-hardtack, celebration-cake, honey-sponge, scones, fish-pasty, singed-bread), effects scones 35/5/300 s/4 d, honey-sponge 40/7/300/3, fish-pasty 45/5/300/3, celebration-cake 50/8/300/3, singed-bread 10/1/0/2, limits 60/300/8/120, nonfood refused before mutation, process-food unchanged, 9 telemetry metrics; bake-hearth and inn lamp commands present. me as Launch scout 16:4xZ: 50 wishes, 1 open, f49758c2a7869d76 by Harfoot filed 13:51:13.931Z. Region history to 16:13:51Z: no bake-hearth line. Credits page by plain fetch: Audrie world design, Harfoot co-proposed, Breath of the Wild, Pokemon Sword and Shield. Cloud main cd687ac (16:08:59Z); v106 deploy 16:32:21Z, gate 69/69, 12 compat cases 15,169 bytes are Astra&rsquo;s figures.",
+  "line": "A kitchen that refuses is still a kitchen.",
+  "footline": "A recipe tells you what to put in. A kitchen tells you what you made.",
+  "voice": "both"
  }
 ]
