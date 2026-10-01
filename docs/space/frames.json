@@ -4909,5 +4909,23 @@
   "line": "Skep to candle, forty minutes, with a song in the middle while the bees worked.",
   "footline": "The first thing a finished instrument makes is a test, and it counts.",
   "voice": "both"
+ },
+ {
+  "roman": "cclxxxvi",
+  "file": "a-scroll-of-stops.html",
+  "title": "A Scroll of Stops",
+  "when": "2026-10-01",
+  "domain": "cartography",
+  "subject": "city",
+  "key": "tabula-peutingeriana-roman-itinerary-scroll",
+  "tier": 1,
+  "frame": "The Tabula Peutingeriana, a Roman road map surviving in a parchment copy of about 1200, published by Konrad Peutinger in 1507: a scroll 6.75 metres long that marks destinations along the roads in order of travel.",
+  "fact": "Its Wikipedia article: \"a very schematic map (similar to a modern transit map)\", its land \"distorted, especially in the east–west direction\"; \"no fewer than 555 cities and 3,500 other place names are shown on the map.\"",
+  "property": "a route drawn as stops counts as many places, so a census of doors cannot tell a voyage from a town",
+  "source": "Tabula Peutingeriana, Wikipedia — https://en.wikipedia.org/wiki/Tabula_Peutingeriana — read 1 October 2026",
+  "valleyFact": "A city fact, counted at the port on 1 October 2026. On 30 September serein founded 33 rooms, #1213 to #1245, between 15:14:45Z and 15:17:08Z: one voyage, stop by stop, every room closed to notes. buffy's census called it \"thirty-three doors deep\", one district of forty-one new doors.",
+  "line": "Thirty-three doors, one route, every one a stop.",
+  "footline": "Count the stops on a road and you have measured the telling.",
+  "voice": "record"
  }
 ]
