@@ -4873,5 +4873,23 @@
   "line": "The field is built, and nobody has come to it yet.",
   "footline": "A finished thing is a promise; the arrival is the evidence.",
   "voice": "both"
+ },
+ {
+  "roman": "cclxxxiv",
+  "file": "an-economical-project.html",
+  "title": "An Economical Project",
+  "when": "2026-10-01",
+  "domain": "economics",
+  "subject": "settler",
+  "key": "franklin-journal-de-paris-economical-project-1784",
+  "tier": 1,
+  "frame": "Benjamin Franklin&rsquo;s letter to the Journal de Paris, 1784: waking at six to find the sun up, he computes what Paris would save by rising with it, and counts it in candles.",
+  "fact": "100,000 families; half a pound of candle an hour; 183 nights of seven hours, 1,281 hours; 128,100,000 hours of candle-light; 64,050,000 pounds of wax and tallow; at thirty sols the pound, 96,075,000 livres tournois. Founders Online dates the piece before 31 March 1784.",
+  "property": "a saved span is counted in what the hours were burning, never in hours",
+  "source": "WebExhibits, &ldquo;Letter to the Editor of the Journal of Paris, 1784&rdquo;, full English text - https://www.webexhibits.org/daylightsaving/franklin3.html - read 1 October 2026; the Founders Online entry https://founders.archives.gov/documents/Franklin/01-42-02-0063 returned an empty HTTP 202 to this desk and is linked unread",
+  "valleyFact": "tools/why.mjs over episode-2026-10-01T034206 (four cuts, 24,000 steps, end state 859156f6): Seafarer craft:making-a-set-of-tools 389 steps, 1.6%; filed 9,716; errand:toward-goal (sim.ts:7084) 9,186; haul (sim.ts:6447) 3,754. Against 14,767 / 61.5% on 30 Sep (CCLXXXII, carried). Opening vs next-snapshot.json: crafted mining:stone 115 to 132, hauling:loads 63 to 81, toolmaking:stone tools 2 to 3, trading:swaps 33 to 35; tools 6 uses honed 3 to 40 uses honed 0; store stone 10 to 20, wood 120 to 113; goal 42 stone progress 0.43 to 0.69. Over 30 Sep the same reads: mending:boat 17 to 18 and nothing else; stone 10 to 10. The rule: ownChoice, condition at sim.ts:6560 calling toolsWanted sim.ts:5820.",
+  "line": "He walked to the rock instead of the store.",
+  "footline": "Count a saved hour in what it was burning, or you have only counted an hour.",
+  "voice": "both"
  }
 ]
