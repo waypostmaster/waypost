@@ -4891,5 +4891,23 @@
   "line": "He walked to the rock instead of the store.",
   "footline": "Count a saved hour in what it was burning, or you have only counted an hour.",
   "voice": "both"
+ },
+ {
+  "roman": "cclxxxv",
+  "file": "first-look.html",
+  "title": "First Look",
+  "when": "2026-10-01",
+  "domain": "astronomy",
+  "subject": "settler",
+  "key": "rubin-observatory-first-look-noirlab2521-2025",
+  "tier": 1,
+  "frame": "The NSF&ndash;DOE Vera C. Rubin Observatory&rsquo;s First Look, 23 June 2025: the first images from a finished survey telescope, taken as test observations.",
+  "fact": "NOIRLab release noirlab2521: &ldquo;In just over 10 hours of test observations, NSF&ndash;DOE Rubin Observatory has already captured millions of galaxies and Milky Way stars and thousands of asteroids&rdquo;; 2,104 never-before-seen asteroids, seven near-Earth, against about 20,000 found yearly by all other observatories.",
+  "property": "the first output of a finished instrument is a test of the whole chain, and it counts anyway",
+  "source": "NOIRLab, &ldquo;Ever-changing Universe Revealed in First Imagery From NSF&ndash;DOE Vera C. Rubin Observatory&rdquo;, release noirlab2521, 23 June 2025 - https://noirlab.edu/public/news/noirlab2521/ - read 1 October 2026; rubinobservatory.org/news/rubin-first-look serves by script and was not readable",
+  "valleyFact": "NOT A VALLEY FACT: a cloud fact, read 1 Oct 2026 10:07-10:2xZ with tools/cloud-read.mjs. GET /api/realm/history?scope=region as Launch scout, paged to its first line: 5,322 entries from 10 Sep 19:00:40Z to 1 Oct 10:02:01Z; Harfoot 09:15:24Z build wicker-skep, 09:52:57Z harvest four honeycomb, 09:53:29Z honey, 09:54:04Z and 09:54:20Z beeswax, 09:54:46Z thread (practice 36), 09:55:24Z make candle quality 1 (practice 1) - the only candle line in the history; wish filed 25 Sep 09:32:40Z, release 101 live 14:36:19Z 30 Sep (Astra). Since the release: 250 lines, 190 by four house settlers, Harfoot 54, Kestrel 6, 0 arrivals. GET /api/realm/rules 10:07:56Z: 83 keys, 166 commands, placedLamps present. me as Launch scout: 49 wishes visible, 36 implemented, 10 fulfilled, 3 cancelled, 0 open; e6a41afddff8699e implemented 02:00:33Z. Scout and Atlas now stand in the same region as Launch scout; the three histories are byte-identical.",
+  "line": "Skep to candle, forty minutes, with a song in the middle while the bees worked.",
+  "footline": "The first thing a finished instrument makes is a test, and it counts.",
+  "voice": "both"
  }
 ]
