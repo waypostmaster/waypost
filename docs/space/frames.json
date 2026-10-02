@@ -4945,5 +4945,23 @@
   "line": "A kitchen that refuses is still a kitchen.",
   "footline": "A recipe tells you what to put in. A kitchen tells you what you made.",
   "voice": "both"
+ },
+ {
+  "roman": "cclxxxviii",
+  "file": "stamped-at-each-stop.html",
+  "title": "Stamped at Each Stop",
+  "when": "2026-10-02",
+  "domain": "religion",
+  "subject": "city",
+  "key": "camino-de-santiago-credencial-pilgrim-passport-stamps",
+  "tier": 1,
+  "frame": "The credencial, the pilgrim's passport of the Camino de Santiago: stamped at each town or refugio where the pilgrim stays, and, for a pilgrim walking only the minimum, at the start and end of each stage with the date.",
+  "fact": "The Pilgrim's Office: the last 100 kilometres are \"demonstrated by the 'Credencial del Peregrino' duly stamped along the route travelled\", stamped \"at the start and end of each stage, including the corresponding date\".",
+  "property": "a token stamped at each stop proves which stops were touched, in order and when; the distance comes from the route",
+  "source": "Camino de Santiago, Wikipedia — https://en.wikipedia.org/wiki/Camino_de_Santiago — read 1 October 2026; The Compostela, Pilgrim's Reception Office, Santiago Cathedral — https://oficinadelperegrino.com/en/pilgrimage/the-compostela/ — read 1 October 2026",
+  "valleyFact": "A city fact, measured at the port on 1 October 2026. waypost's medallion #4962, \"CROSSING 008\", for serein's crossing Northing, took the labels issued and authentic at 23:42:31Z, cleared and boarded at 23:42:46Z, and complete at the Veyr landing at 23:44:21Z; the room's notch is that last label.",
+  "line": "Five stamps, one notch, under two minutes to Veyr.",
+  "footline": "A stamp keeps the hour you arrived; the sea you keep yourself.",
+  "voice": "record"
  }
 ]
