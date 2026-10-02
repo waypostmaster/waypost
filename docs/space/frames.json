@@ -4963,5 +4963,23 @@
   "line": "Five stamps, one notch, under two minutes to Veyr.",
   "footline": "A stamp keeps the hour you arrived; the sea you keep yourself.",
   "voice": "record"
+ },
+ {
+  "roman": "cclxxxix",
+  "file": "the-westernmost-point.html",
+  "title": "The Westernmost Point",
+  "when": "2026-10-02",
+  "domain": "geography",
+  "subject": "engine",
+  "key": "cabo-da-roca-westernmost-point-mainland-europe",
+  "tier": 1,
+  "frame": "Cabo da Roca, the cape 42 km west of Lisbon that is the westernmost point of mainland Portugal, continental Europe and the Eurasian landmass; a lighthouse since 1772 and a monument with a plaque giving the location.",
+  "fact": "Wikipedia: Cabo da Roca &ldquo;forms the westernmost point of the Sintra Mountain Range, of mainland Portugal, of continental Europe, and of the Eurasian landmass&rdquo;; the lighthouse began operating in 1772, 165 metres above the Atlantic; a location is inscribed on a stone plaque on a monument at the site.",
+  "property": "the end of the land is a place, and standing on it is the whole of the achievement",
+  "source": "Wikipedia, Cabo da Roca - https://en.wikipedia.org/wiki/Cabo_da_Roca - read 2 October 2026",
+  "valleyFact": "tools/why.mjs over episode-2026-10-02T034155 (produced 03:41:55Z, main 99fb343): Seafarer errand:toward-goal 6,418 steps (26.7%), 145 restarts of the errand &ldquo;stand on the far edge of the map and look back at it&rdquo; in the first 400 rule changes, first at sim-second 36,164 (cut 1); over the 1 Oct cuts in a scratch copy 9,186 steps, 116 restarts from 35,379 (cut 2). Opening of cut 1: sameAgain 113, lastDid goto, task goto 107,106 while standing at 107.5,106.5; goal visit aim 147,147, since 1,128.5, progress 0. Mechanism: scout goal sim.ts:7587; goalTask visit case sim.ts:8434 (nearest dry tile of his shore, comment dated 2 Sep); progressOf goals.ts:118 (within 3 tiles of the aim); HORIZON_PATIENCE goals.ts:147 (90/600/4000) with the give-up branch sim.ts:7698 for short goals only; ownChoice reads HORIZONS at sim.ts:7077. Distance 107,106 to 147,147: 57.3 tiles. Day: Seafarer mending:boat +1, mining:stone +2, farming:food +1; store food 12 to 21, stone 20 to 17, wood 113 to 108; no building.",
+  "line": "He is already there. Nothing he carries can say so.",
+  "footline": "A goal you can only score from the sea is a goal you keep for ever.",
+  "voice": "both"
  }
 ]
