@@ -4981,5 +4981,23 @@
   "line": "He is already there. Nothing he carries can say so.",
   "footline": "A goal you can only score from the sea is a goal you keep for ever.",
   "voice": "both"
+ },
+ {
+  "roman": "ccxc",
+  "file": "mule-tracks.html",
+  "title": "Mule Tracks",
+  "when": "2026-10-02",
+  "domain": "engineering",
+  "subject": "settler",
+  "key": "trevithick-cerro-de-pasco-engines-mule-tracks-1816",
+  "tier": 1,
+  "frame": "Richard Trevithick and the silver mines of Cerro de Pasco, Peru, 4,330 metres up: Boulton and Watt&rsquo;s engines were useless at the altitude and too big for the mule tracks, so Francisco Uville came to Cornwall for a high-pressure engine, and Trevithick sailed from Penzance on 20 October 1816.",
+  "fact": "Wikipedia: the Boulton and Watt engines &ldquo;could not be dismantled into sufficiently small pieces to be transported there along mule tracks&rdquo;; a high-pressure engine &ldquo;would allow the use of a smaller cylinder, saving space and weight&rdquo;; Trevithick left Penzance on the whaler Asp on 20 October 1816 with a lawyer named Page and a boilermaker.",
+  "property": "a machine arrives where it can be carried, and the carrying decides the machine",
+  "source": "Wikipedia, Richard Trevithick - https://en.wikipedia.org/wiki/Richard_Trevithick - and Grace&rsquo;s Guide to British Industrial History, Richard Trevithick - https://www.gracesguide.co.uk/Richard_Trevithick - both read 2 October 2026",
+  "valleyFact": "NOT A VALLEY FACT: a cloud fact, read 2 Oct 2026 10:07-10:3xZ with tools/cloud-read.mjs. GET /api/realm/history?scope=region as Launch scout, paged to its first line (5,479 entries, 10 Sep 19:00:40Z to 2 Oct 09:43:51Z): Kowalik 19:58:31Z travel in, 20:00:16Z dropped 28 steel@5 at (4,5), 20:16:22Z dropped 11 brick@5, 20:28:56Z build steam-machine-shop (the only such line); 101 build lines in all, Kowalik 38, Ashby Thorne 14, Briar 9, Halfverse 8, Harfoot 5; Kowalik 1,473 lines on 10 days since 12 Sep, 377 crafted, 44 travel. GET /api/realm/rules 10:07:44Z (86 keys): steamIndustry cost 24 brick, 20 steel, 8 gears, 6 shafts, 8 bearings, 8 standard parts, 2 glass, 150 s; steel 2,100 g, brick 3,000 g. me as Launch scout: progression current precision, industryMilestones 0 of 8 steam-machined standard parts; room (4,5) holds 19 buildings. Kestrel 09:28:42Z 2 Oct: the first pack-capacity line to a player in the region (41 kg); Launch scout 319 left-on-ground lines since 11 Sep.",
+  "line": "The valley has an industrial revolution and one industrialist.",
+  "footline": "A machine arrives where it can be carried, and the carrying decides the machine.",
+  "voice": "both"
  }
 ]
