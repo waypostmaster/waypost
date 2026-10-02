@@ -4999,5 +4999,23 @@
   "line": "The valley has an industrial revolution and one industrialist.",
   "footline": "A machine arrives where it can be carried, and the carrying decides the machine.",
   "voice": "both"
+ },
+ {
+  "roman": "ccxci",
+  "file": "vacancy-chain.html",
+  "title": "Vacancy Chain",
+  "when": "2026-10-02",
+  "domain": "zoology",
+  "subject": "engine",
+  "key": "hermit-crab-shell-vacancy-chain-rotjan-chabot-lewis-2010",
+  "tier": 2,
+  "frame": "The hermit crab and the shell vacancy chain: an animal with a soft abdomen living in a shell another animal made, needing a larger one as it grows, and waiting in a line by size for the swap.",
+  "fact": "Wikipedia: &ldquo;Hermit crabs&rsquo; soft (non-calcified) abdominal exoskeleton means they must occupy shelter produced by other organisms or risk being defenseless&rdquo;; &ldquo;As hermit crabs grow, they require larger shells&rdquo;; a crab finding a shell too large &ldquo;waits by the vacant shell for up to 8 hours&rdquo;, &ldquo;forming a group of up to 20 individuals&rdquo;; undersized shells mean crabs &ldquo;cannot grow as fast&rdquo; and &ldquo;are more likely to be eaten&rdquo;. Rotjan, Chabot and Lewis 2010, abstract: &ldquo;Vacancy chains involve unique patterns of resource acquisition behaviors that determine how reusable resources are distributed through animal populations.&rdquo;",
+  "property": "a growing animal in a borrowed shell must find the next one before the old one is tight, and is soft for as long as the move takes",
+  "source": "Wikipedia, Hermit crab - https://en.wikipedia.org/wiki/Hermit_crab - and Rotjan, Chabot and Lewis, Social context of shell acquisition in Coenobita clypeatus hermit crabs, Behavioral Ecology 21(3), 639-646, 2010, abstract - https://academic.oup.com/beheco/article/21/3/639/219976 - both read 2 October 2026; the ceiling from Cloudflare, D1 limits - https://developers.cloudflare.com/d1/platform/limits/ - read the same day",
+  "valleyFact": "NOT A VALLEY FACT: a cloud fact. CARRIED from Astra, read in the files 2 Oct 2026 15:4xZ and the arithmetic re-derived: serialized world payload 1,724,459 B at 2026-10-01T00:18:26.389Z (capacity-legacy-20261001/LIVE.json) and 1,777,130 B at 2026-10-02T12:58:36.624Z (row-growth-20261002-rerun/RESULT.json), legacy storage; +52,671 B in 1.5279 d = 34,473 B/day; 222,870 B to the 2,000,000 B ceiling; 6.465 d = 2026-10-09T00:08Z; the first one-shot at 00:18Z 2 Oct failed in its own capture script after one GET and was not retried; the rerun was 45,636.6 s late. measurements-20261002/COUNTS.json (generated 00:02:47Z 2 Oct, since 1 Oct 00:00Z): 80 settlers, 8 present, 72 asleep, 68 long sleep, 0 arrivals; skeps 1, comb 1, candles 1, placed lamps lit 1, oil lamps 0, campfires 0, torches 0; hearth counters null, started 16:39:18Z. MEASURED here 15:44Z with tools/cloud-read.mjs as Launch scout: region history 5,504 lines from 10 Sep 19:00:40Z; in the window between the two weighings 290 lines, Launch scout 207, Scout 30, Kowalik 20, Harfoot 14, Briar 10, Kestrel 9; 74 lines say left on the ground. READ, not run: event() in the cloud src/realm-model.ts at 12314bf keeps w.events to the last 500 and p.events to the last 100; recordHistory writes the archive to rows outside the world payload.",
+  "line": "So the 52,671 bytes are not talk.",
+  "footline": "Find the next shell while the old one still fits, and know the way back into it.",
+  "voice": "both"
  }
 ]
