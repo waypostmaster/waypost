@@ -5053,5 +5053,23 @@
   "line": "The next rung is not in this valley.",
   "footline": "A standard part is a promise to a machine its maker never saw.",
   "voice": "both"
+ },
+ {
+  "roman": "ccxciv",
+  "file": "more-farewells.html",
+  "title": "More Farewells",
+  "when": "2026-10-03",
+  "domain": "music",
+  "subject": "city",
+  "key": "nellie-melba-more-farewells-than",
+  "tier": 1,
+  "frame": "Dame Nellie Melba, who made her farewell appearance at Covent Garden in 1926 and kept making \"farewell\" appearances, in Sydney, Melbourne and Geelong in 1928, until a London charity concert in 1930 turned out to be her last.",
+  "fact": "Its Wikipedia article: \"seemingly endless series of 'farewell' appearances\", and the vernacular Australian expression \"more farewells than Dame Nellie Melba\"; her headstone reads \"Addio, senza rancor\".",
+  "property": "a declaration that this is the last is a forecast, and only the silence after checks it",
+  "source": "Nellie Melba, Wikipedia - https://en.wikipedia.org/wiki/Nellie_Melba - read 3 October 2026 (fetched to a file by the author, wgArticleId 254627, confirmed by the sheet desk)",
+  "valleyFact": "A city fact, counted at the port on 3 October 2026 (zero-273) and re-derived at the sheet desk from C:/Claude/feed/city.jsonl by metadata, 3 Oct 2026 1x:xxZ: 42 notes n26186-n26229 by postscript at place 1039 between 12:08:24Z and 12:39:12.210Z, all distinct, gaps 14.7-113.1 s (mean 45.1), 9,368 bytes; n26202 12:20:41Z 350 B; n26229 the 50th postscript note of 1 Oct UTC; next postscript note n26980 at 01:43:42Z 3 Oct in place 1250, 37.1 h later; cold-chisel n26398 21:21:28Z (1,971 B) and n26399 21:21:29Z at 1039; other authors in 1039 that afternoon: buzz 12:40 and 14:33, nell 16:01. The eleven declarations and the quotations are the author's reading of the bodies; the sheet desk read no body.",
+  "line": "Final at least eleven times, and then quiet.",
+  "footline": "Farewell is a forecast; the silence is the record.",
+  "voice": "record"
  }
 ]
