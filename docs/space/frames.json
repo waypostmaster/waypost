@@ -5017,5 +5017,23 @@
   "line": "So the 52,671 bytes are not talk.",
   "footline": "Find the next shell while the old one still fits, and know the way back into it.",
   "voice": "both"
+ },
+ {
+  "roman": "ccxcii",
+  "file": "owls-to-athens.html",
+  "title": "Owls to Athens",
+  "when": "2026-10-03",
+  "domain": "proverbs",
+  "subject": "engine",
+  "key": "aristophanes-birds-owl-to-athens-414bc",
+  "tier": 1,
+  "frame": "Aristophanes, The Birds, City Dionysia 414 BC: as the Hoopoe calls up the birds an owl flies past and Euelpides asks who brings an owl to Athens, the city whose silver coins carried one; the English cousin is coals to Newcastle, a proverb by 1661.",
+  "fact": "Perseus (O&rsquo;Neill 1938): Epops &ldquo;Here comes the owl.&rdquo; Euelpides &ldquo;And who is it brings an owl to Athens?&rdquo;; Wikipedia: the play &ldquo;was performed in 414 BC at the City Dionysia in Athens where it won second place&rdquo;, and &ldquo;owls from there (i.e. Athenian coins) will flock to the festival judges&rdquo;; Coals to Newcastle is &ldquo;an idiom of English origin describing a pointless action&rdquo;, John Graunt 1661&ndash;1662 &ldquo;our English Proverb&rdquo;.",
+  "property": "a gift is only a gift to somebody who has none",
+  "source": "Aristophanes, Birds, Perseus Digital Library, Eugene O&rsquo;Neill Jr. translation (Random House 1938) - https://www.perseus.tufts.edu/hopper/text?doc=Perseus%3Atext%3A1999.01.0026%3Acard%3D268 - Wikipedia, The Birds (play) - https://en.wikipedia.org/wiki/The_Birds_(play) - and Wikipedia, Coals to Newcastle - https://en.wikipedia.org/wiki/Coals_to_Newcastle - all read 3 October 2026",
+  "valleyFact": "Replay of episode-2026-10-03T034159 cuts 1-4 (24,000 steps, end state 878127105ed040ee) with tools/why.mjs and scratchpad/goal-loop*.mjs at engine 4a9c495, 3 Oct 2026 05:3x-05:4xZ. Weathervane: errand:toward-goal 8,760 steps = 5,234 finding something to bring Cairnwright (36 starts) + 3,526 fill my pack with food (21); haul:carrying-a-full-load-to-the 6,432 steps, 40 starts; filed 7,985; filed day ran out at sim-second 37,300.7; 38 sheds at the full store, 92 food to the ground, kept 3-4; food carried at haul starts 238; tally.delivered.food 73->84; zero give tasks to Cairnwright; bonds[Cairnwright] -1 -> -1; Cairnwright carrying.food > 0 at all 5,234 finding steps (0 at 482 other steps); goalsDone 721->758. Stores: roomInStores 179-180 places, stock total 180 at four of six samples (every 4,000 steps), 179 at two; outside food 30 -> 0; stock food 21 -> 18. Cairnwright: fill my pack with food 3,573, carrying a full load 4,696 (22 starts), get another 35 food into the stores 1,696 + 466. Seafarer far-edge errand 5,807 steps (142 starts) vs 6,418 on 2 Oct and 9,186 on 1 Oct. Code: CAPACITY=6 sim.ts:831; full-pack haul sim.ts:6447; spare sim.ts:8414; fetch food sim.ts:8419; keep half sim.ts:10901; stranger sim.ts:7563; depot holds 140 sim.ts:1488; progressOf befriend goals.ts:114.",
+  "line": "He was holding food at all 5,234 steps Weathervane spent looking for something to bring him.",
+  "footline": "A gift is only a gift to somebody who has none.",
+  "voice": "valley"
  }
 ]
