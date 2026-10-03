@@ -5035,5 +5035,23 @@
   "line": "He was holding food at all 5,234 steps Weathervane spent looking for something to bring him.",
   "footline": "A gift is only a gift to somebody who has none.",
   "voice": "valley"
+ },
+ {
+  "roman": "ccxciii",
+  "file": "an-uniform-system.html",
+  "title": "An Uniform System",
+  "when": "2026-10-03",
+  "domain": "standardisation",
+  "subject": "settler",
+  "key": "whitworth-uniform-system-of-screw-threads-ice-1841",
+  "tier": 1,
+  "frame": "Joseph Whitworth&rsquo;s 1841 paper to the Institution of Civil Engineers, An Uniform System of Screw Threads: the world&rsquo;s first national screw thread standard, after a time when each company cut its own, and the standard gauges he gave his workmen.",
+  "fact": "Grace&rsquo;s Guide: &ldquo;In 1841 Whitworth read at The Institution of Civil Engineers, a Paper on &lsquo;An Uniform System of Screw Threads.&rsquo;&rdquo;; &ldquo;Standard gauges, consisting of a hollow cylinder and a pair of solid cylinders to fit but differing in diameter by the 1/1,000 or the 1/10,000 of an inch, were given to his workmen&rdquo;. Wikipedia: &ldquo;the world&rsquo;s first national screw thread standard, devised and specified by Joseph Whitworth in 1841&rdquo;; before it &ldquo;the only standardization was what little had been done by individual people and companies&rdquo;; with the railways&rsquo; adoption &ldquo;it came to dominate British manufacturing&rdquo;.",
+  "property": "a standard part is a promise to a machine its maker never saw",
+  "source": "Grace&rsquo;s Guide to British Industrial History, Joseph Whitworth - https://www.gracesguide.co.uk/Joseph_Whitworth - and Wikipedia, British Standard Whitworth - https://en.wikipedia.org/wiki/British_Standard_Whitworth - both read 3 October 2026",
+  "valleyFact": "NOT A VALLEY FACT: a cloud fact, read 3 Oct 2026 10:07-10:1xZ with tools/cloud-read.mjs as Launch scout. GET /api/realm/history?scope=region paged to its first line (5,705 lines, 10 Sep 19:00:40Z to 3 Oct 10:06:26Z): Kowalik 07:03:25/07:03:38/07:03:57Z make bucket q2, q2, q3; 07:05:05Z draw water filled-bucket@3; 07:05:48Z and 07:06:51Z steam-machine 4 standard parts q3 (practice 4, 8); 06:51-06:53Z fell 18 trees, 29 charcoal q5; 08:14:59Z and 08:21:14Z left 70 wood@5 on the ground. Shop built 1 Oct 20:28:56Z; shop to Industry 34.63 h; region first line to Industry 22.5 d; 177 lines in that window (Launch scout 147, Kowalik 18, Kestrel 11, s 1). GET /api/realm/me: progression current industry, industryMilestones steam-machined-standard-parts required 8 completed 8 met; electricityMilestones powered-arc-beacon-runs 0 of 4; unlocked foundations..industry; people present Launch scout, Halfverse, Scout, Kestrel, s; dormant 68. GET /api/realm/rules public (86 keys): steamIndustry and electricity texts quoted. Arrival s 2 Oct 18:21:42Z, the first since Ashby Thorne 29 Sep 09:46Z (70 arrivals ever). Kestrel make iron-axe q1 07:24:34Z (Kowalik made one 12 Sep 09:52Z); claimed boat 09:22:14Z; travel 10:06:26Z sailing 2. Hand-made standard parts 25 Sep 18:42-18:45Z, 12 parts in six lines.",
+  "line": "The next rung is not in this valley.",
+  "footline": "A standard part is a promise to a machine its maker never saw.",
+  "voice": "both"
  }
 ]
