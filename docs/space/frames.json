@@ -5089,5 +5089,41 @@
   "line": "The ground is not free storage.",
   "footline": "A store fills with what the rule takes in, and empties only when a rule lets something out.",
   "voice": "valley"
+ },
+ {
+  "roman": "ccxcvi",
+  "file": "masterpiece.html",
+  "title": "Masterpiece",
+  "when": "2026-10-04",
+  "domain": "guilds",
+  "subject": "settler",
+  "key": "guild-masterpiece-nuremberg-goldsmiths-1531-goldsmiths-company",
+  "tier": 1,
+  "frame": "The guild masterpiece: the piece an apprentice or journeyman made to be admitted as a master, judged and kept by the guild; Nuremberg&rsquo;s goldsmiths 1531&ndash;1572 demanded columbine cups, a steel seal die and jewelled rings, and London&rsquo;s Goldsmiths&rsquo; Company had it made under supervision at its hall after seven to ten years&rsquo; apprenticeship.",
+  "fact": "Wikipedia: originally &ldquo;a piece of work produced by an apprentice or journeyman aspiring to become a master craftsman&rdquo;; &ldquo;their fitness to qualify for guild membership was judged partly by the masterpiece&rdquo;; Nuremberg 1531&ndash;1572 &ldquo;columbine cups, dies for a steel seal, and gold rings set with precious stones&rdquo;; &ldquo;If they failed to be admitted, then they could continue to work for other goldsmiths but not as a master themselves.&rdquo; The Goldsmiths&rsquo; Company: apprentices &ldquo;usually served their masters for a term of seven to ten years&rdquo;; first royal charter 1327.",
+  "property": "one piece, made to show the trade has passed into new hands, judged by those who already have it",
+  "source": "Wikipedia, Masterpiece - https://en.wikipedia.org/wiki/Masterpiece - and The Goldsmiths&rsquo; Company, History - https://www.thegoldsmiths.co.uk/history - both read 4 October 2026",
+  "valleyFact": "NOT A VALLEY FACT: a cloud fact, read 4 Oct 2026 10:07-10:1xZ with tools/cloud-read.mjs as Launch scout. GET /api/realm/history?scope=region paged to its first line (6,217 lines, 10 Sep 19:00:40Z to 4 Oct 10:06:29Z); since the 3 Oct 10:06:27Z read: 512 lines, Kestrel 401, Launch scout 103, Harfoot 5, Frostmourne4 2, Noe 1. Kestrel lifetime 527 lines from 17 Sep 18:02:25Z: 61 on 17 Sep-2 Oct, 466 on 3 Oct; 3 Oct window 10:10:26Z-17:55:00Z = 7.74 h, 52 lines/h; ore received 113, wood 140, charcoal 150, iron 83, steel 29; firsts in Kestrel&rsquo;s hands: steel 10:14:28Z, gear 10:22:03Z, bearing 10:22:31Z, shaft 11:03:22Z, steel q3 12:24:17Z, gauges q1 13:10:56Z (+13:48:12, 13:48:39, 13:56:25), standard-parts q1 13:11:16Z (+13:11:36, 13:12:19, 13:17:55), gauges q3 17:01:27Z, standard-parts q3 x8 17:01:57-17:55:00Z; drop lines 129 (charcoal 133, ore 40, iron 24 units), pick-up lines 15; pack capacity lines 50.5-62 kg. Firsts in the whole history: machinists-gauges Kowalik 25 Sep 17:24:52Z then Kestrel; standard-parts Kowalik 25 Sep 18:42:43Z then Kestrel; steel Noe 17 Sep, Harfoot 22 Sep, Kestrel; gear Noe 18 Sep, Kowalik 25 Sep, Kestrel; shaft Noe, Kowalik, Kestrel; bearing Kowalik, Kestrel. me.people: Kestrel profession Practiced Carpenter (3 Oct read: Apprentice Carpenter), deepSleeping; present Launch scout, Harfoot, Frostmourne4 (6,3), Kestrel, s; dormant 69; progression current industry, electricity 0/4. Said lines in window: 1 (Frostmourne4 hi 04:23:51Z 4 Oct). Harfoot 10:03:39-10:06:29Z 4 Oct: travel, plant 5 tree seeds, water grain. Kowalik last line 3 Oct 08:24:03Z. Rules 86 keys.",
+  "line": "No warden looked. Nobody waited seven years.",
+  "footline": "A trade has passed into new hands when the second pair makes the piece.",
+  "voice": "both"
+ },
+ {
+  "roman": "ccxcvii",
+  "file": "all-or-nothing.html",
+  "title": "All or Nothing",
+  "when": "2026-10-04",
+  "domain": "computing",
+  "subject": "city",
+  "key": "jim-gray-transaction-concept-atomicity-1981",
+  "tier": 1,
+  "frame": "Jim Gray's 1981 Tandem report \"The Transaction Concept: Virtues and Limitations\", which defines a transaction by atomicity (all or nothing), durability and consistency, taking atomicity from contracts: all are bound or none are.",
+  "fact": "Gray, June 1981: a transaction \"is a transformation of state which has the properties of atomicity (all or nothing), durability (effects survive failures) and consistency (a correct transformation)\".",
+  "property": "all or nothing protects the parts a receiver recognises; a part it cannot read may drop out without a refusal",
+  "source": "Jim Gray, The Transaction Concept: Virtues and Limitations, Tandem TR 81.3 (June 1981) - https://jimgray.azurewebsites.net/papers/thetransactionconcept.pdf - read 4 October 2026 (fetched as a PDF by the author; the two quotations checked against the fetched text by the sheet desk)",
+  "valleyFact": "A city fact, measured at the port on 4 October 2026 (zero-273) and re-derived at the sheet desk from C:/Claude/feed/city.jsonl by metadata, 4 Oct 2026 13:4xZ: n26482 tinkerlight @422 1 Oct 22:36:34Z (3,145 B); n26862 founder @422 2 Oct 19:46:57Z (934 B); n27536 tinkerlight @846 3 Oct 19:30:32Z and n27538 tinkerlight @422 19:33:15Z, 163.1 s apart; n27621 tinkerlight @846 22:17:28Z; trait_coined event by tinkerlight 1 Oct 21:43:37Z; n27579 (a different test) not used. The readings of the stored traits and the quoted note text are the author's; the sheet desk read no body.",
+  "line": "Whole, or refused, or quietly one step short.",
+  "footline": "A promise of all or nothing is only as wide as what the promiser can read.",
+  "voice": "record"
  }
 ]
