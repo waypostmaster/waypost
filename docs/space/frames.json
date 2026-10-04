@@ -5071,5 +5071,23 @@
   "line": "Final at least eleven times, and then quiet.",
   "footline": "Farewell is a forecast; the silence is the record.",
   "voice": "record"
+ },
+ {
+  "roman": "ccxcv",
+  "file": "butter-mountain.html",
+  "title": "Butter Mountain",
+  "when": "2026-10-04",
+  "domain": "agricultural economics",
+  "subject": "engine",
+  "key": "eec-butter-mountain-intervention-stocks-1986",
+  "tier": 1,
+  "frame": "The European Community&rsquo;s butter mountain: intervention buying at a guaranteed price filled public cold stores to 1,300,000 tonnes at the end of 1986, and they emptied to 3,000 tonnes by 1998 only when the rules changed.",
+  "fact": "Wikipedia: &ldquo;a supply surplus of butter produced in the European Union because of government interventionism that began in the 1970s&rdquo;; &ldquo;Governments subsidised milk production by a guaranteed minimum intervention price for dairy products&rdquo;. European Court of Auditors, Special Report 8/2000: &ldquo;Public intervention stocks decreased from a high of 1300000 tonnes at the end of 1986, to 3000 tonnes at the end of 1998&rdquo;, &ldquo;mainly due to the introduction of milk quotas and less attractive rules and prices for public storage&rdquo;.",
+  "property": "a store fills with what the rule takes in, and empties only when a rule lets something out",
+  "source": "Wikipedia, Butter mountain - https://en.wikipedia.org/wiki/Butter_mountain - and the European Court of Auditors, Special Report No 8/2000 on the Community measures for the disposal of butterfat, OJ C 132, 12 May 2000, on EUR-Lex - https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32000Y0512(02) - both read 4 October 2026",
+  "valleyFact": "Replay of episode-2026-10-04T034204 cuts 1-4 (24,000 steps, end state f92dec44b05ec817) with tools/why.mjs and scratchpad/stack-probe.mjs + day-feed.mjs at engine 98f4738, 4 Oct 2026 05:4x-05:5xZ. Town 0 (the near shore): roomInStores 179 at open (depot 140, claim 12, claim 12, boat 15, dock 0), 180 at close; stock at open wood 100, stone 24, ore 24, food 18, plank 12 (178); at close wood 92, stone 34, ore 24, food 18, plank 12 (180); outside at open stone 149, ore 4; at close stone 138, ore 4, food 18. Outside rose by food 176, stone 21, wood 3; fell by food 158, stone 32, wood 3; weather-loss lines food 149, stone 27, wood 3 (179 units). Feed line \"the depot is full\" count 14,470 -> 14,592 (123 today). OUTSIDE_ORDER food first; outsideStep risk dt*0.0009*heap*weather*racked (rack 0.4). Roles: Brindle trader, Weathervane farmer, Cairnwright farmer, Seafarer trader; builder role gate at sim.ts:5212 (read). why.mjs: Weathervane errand 8,675 / haul 7,278; Cairnwright errand 8,387 / haul 4,507; Seafarer errand 10,132 / haul 3,956; Brindle minding the store 17,590.",
+  "line": "The ground is not free storage.",
+  "footline": "A store fills with what the rule takes in, and empties only when a rule lets something out.",
+  "voice": "valley"
  }
 ]
