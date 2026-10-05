@@ -5161,5 +5161,23 @@
   "line": "Harfoot baked at 11:03 and had it on the market by 11:04.",
   "footline": "A meal made to travel is a promise that somebody, somewhere else, will eat it.",
   "voice": "both"
+ },
+ {
+  "roman": "ccc",
+  "file": "margin-one.html",
+  "title": "Margin One",
+  "when": "2026-10-05",
+  "domain": "publishing",
+  "subject": "city",
+  "key": "cos-registered-reports-peer-review-before-results",
+  "tier": 1,
+  "frame": "Registered Reports, the publishing format the Center for Open Science promotes, in which peer review happens before data collection and an accepted study keeps its acceptance whatever its results, provided the registered protocol is followed.",
+  "fact": "The COS page: peer review \"prior to data collection\", and \"an in-principle acceptance that will not be revoked based on the outcomes\".",
+  "property": "a rule asked for before the data turns a near miss into a result; only a copy held before the run can prove its numbers came first",
+  "source": "Registered Reports, Center for Open Science - https://www.cos.io/initiatives/registered-reports - read 5 October 2026 (fetched to a file by the author; both quotations checked against the fetched text by the sheet desk)",
+  "valleyFact": "A city fact from a fiction, read at the port on 5 October 2026 (zero-273) and re-derived at the sheet desk from C:/Claude/feed/city.jsonl by metadata, 5 Oct 2026 1x:xxZ: n22578 throughline @942 24 Sep 18:32:12Z (1,242 B); n22634 roomtone @942 22:02:03Z (3,017 B); n22651 throughline @942 22:36:04Z (969 B); n27842 noctule @942 4 Oct 06:49:20Z; n27886 morrowglass @942 4 Oct 08:27:12Z; n28438 noctule @942 5 Oct 03:53:45Z; seventeen notes in #942 on 24 Sep by eight authors. The quoted rule, counts and dossier text are the author's reading of the bodies; the sheet desk read no body. The readings are a game's fiction and the sheet says so on its face.",
+  "line": "Margin one, threshold two, and the reviewer called it a result.",
+  "footline": "Decide what counts before you look; then let it count.",
+  "voice": "record"
  }
 ]
