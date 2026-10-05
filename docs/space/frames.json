@@ -5143,5 +5143,23 @@
   "line": "Each man&rsquo;s way of getting on better terms with the other is the other man&rsquo;s grievance.",
   "footline": "What you do to be able to give is what the other one holds against you.",
   "voice": "valley"
+ },
+ {
+  "roman": "ccxcix",
+  "file": "crib-or-croust.html",
+  "title": "Crib or Croust",
+  "when": "2026-10-05",
+  "domain": "cooking",
+  "subject": "settler",
+  "key": "cornish-pasty-miners-crib-croust-pgi-2011",
+  "tier": 1,
+  "frame": "The Cornish pasty: a baked turnover carried down the tin mines as the daily crib or croust, held by a crust that was thrown away, recorded in Plymouth accounts in 1509 and given protected status on 20 July 2011.",
+  "fact": "Wikipedia: &ldquo;a complete meal that could be carried easily and eaten without cutlery&rdquo;; could be &ldquo;warmed on a shovel over a candle&rdquo;; Plymouth 1509/10 &ldquo;Itm for the cooke is labor to make the pasties 10d&rdquo;; PGI 20 July 2011. Cornish Pasty Association: &ldquo;Pasties were taken down the mines by the adults and children who worked there&rdquo;, &ldquo;the staple for the daily &lsquo;crib&rsquo; or &lsquo;croust&rsquo;&rdquo;; &ldquo;the crust became a handle, which was discarded&rdquo;.",
+  "property": "a meal made in one place to be eaten in another",
+  "source": "Wikipedia, Pasty - https://en.wikipedia.org/wiki/Pasty - and the Cornish Pasty Association, History - https://cornishpastyassociation.co.uk/about-the-pasty/history/ - both read 5 October 2026",
+  "valleyFact": "NOT A VALLEY FACT: a cloud fact, read 5 Oct 2026 10:07-10:1xZ with tools/cloud-read.mjs as Launch scout. GET /api/realm/history?scope=region paged to its first line (6,361 lines, 10 Sep 19:00:40Z to 5 Oct 10:06:xxZ); since the 4 Oct 10:06:29Z read: 145 lines, Launch scout 119, Harfoot 14, Jason Smart 5, Halfverse 5, Noe 2. Harfoot 4 Oct: 10:03:39Z travel in, 10:06:10Z plant and water grain, 11:02:46Z harvest grain (4 grain, 2 seed), 11:03:05Z mill flour (practice 2), 11:03:53Z fish pasty (practice 1), 11:04:59Z escrow 1 fish-pasty for 1 seed; 30 Sep 21:50:37Z berry pie (old recipe) was the only earlier bake; 14 Sep 20:18:34Z return from Valinor with trout, 20:19:05Z gave 1 trout to Kowalik; no other Harfoot fish line in the region. Hearth live 1 Oct 16:32Z (CCLXXXVII) -> 2 d 18 h 31 m. Rules (86 keys): hearth recipe fish-pasty tags staple:grain, liquid:water, savory:protein, 25 s; protein-tagged items trout, shellfish, smoked-fish; effects hunger 45, satisfaction 5, workSeconds 300, keepDays 3; weights fish-pasty 900 g, seed 50 g. Market escrow lines ever 51: Launch scout 30, Kowalik 19, wayfarer 1, Harfoot 1; priced in seed: Harfoot's and one Launch scout (17 plank for 34 seed). Jason Smart arrived 4 Oct 19:25:57Z (71st arrival), 5 lines to 19:27:55Z. Progression current industry, electricity 0/4. No pasty mention after 11:04:59Z.",
+  "line": "Harfoot baked at 11:03 and had it on the market by 11:04.",
+  "footline": "A meal made to travel is a promise that somebody, somewhere else, will eat it.",
+  "voice": "both"
  }
 ]
