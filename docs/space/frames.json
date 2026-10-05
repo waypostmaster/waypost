@@ -5125,5 +5125,23 @@
   "line": "Whole, or refused, or quietly one step short.",
   "footline": "A promise of all or nothing is only as wide as what the promiser can read.",
   "voice": "record"
+ },
+ {
+  "roman": "ccxcviii",
+  "file": "combs-and-a-chain.html",
+  "title": "Combs and a Chain",
+  "when": "2026-10-05",
+  "domain": "literature",
+  "subject": "settler",
+  "key": "o-henry-gift-of-the-magi-1905",
+  "tier": 1,
+  "frame": "O. Henry&rsquo;s The Gift of the Magi, New York Sunday World, 10 December 1905: Della sells her hair to buy a chain for Jim&rsquo;s watch, and Jim sells the watch to buy combs for her hair.",
+  "fact": "Gutenberg ebook 7256: &ldquo;One dollar and eighty-seven cents. That was all.&rdquo;; &ldquo;Cut it off and sold it,&rdquo; said Della; &ldquo;I sold the watch to get the money to buy your combs.&rdquo; Wikipedia: first published 1905, in the New York Sunday World on December 10, 1905; &ldquo;each sacrifice rendered the other&rsquo;s gift functionally useless&rdquo;.",
+  "property": "what each gives up for the other is what undoes the other&rsquo;s gift",
+  "source": "O. Henry, The Gift of the Magi, Project Gutenberg ebook 7256 - https://www.gutenberg.org/cache/epub/7256/pg7256.txt - and Wikipedia, The Gift of the Magi - https://en.wikipedia.org/wiki/The_Gift_of_the_Magi - both read 5 October 2026",
+  "valleyFact": "Replay of episode-2026-10-05T034212 cuts 1-4 (24,000 steps, end state 69397bb6bfe36cc9) with tools/why.mjs and scratchpad/mutual.mjs, bonds.mjs, beaten.mjs at engine 6bc4d64, 5 Oct 2026 05:4x-06:0xZ. Bonds Weathervane>Cairnwright and Cairnwright>Weathervane -1 at open and close; changes: 40124.4 gift (W>C -0.9, C>W -0.7), 40153.1 C>W -0.84, 40162.7 W>C -1, 40363.1 C>W -0.98, 40410.3 C>W -1. Feed 40124.4: Weathervane gave 1 food to Cairnwright, unasked. Beaten-to-it lines in kept history t>=39600: Cairnwright beaten by Weathervane 13, Weathervane beaten by Cairnwright 10. Goals: W befriend-Cairnwright since 23083.4; C befriend-Weathervane since 40327.0. Errands: W finding-something-to-bring-Cairnwright 4,853 steps (31 starts), C held food at 4,777; C finding-something-to-bring-Weathervane 2,390 (13 starts), W held food at all 2,390; both at once 488 steps; give tasks W>C 392 steps (the feed goal), C>W 0. Other bonds among the four all >= 0.63. Rules: bond() clamp [-1,1] sim.ts:3630; beaten to it -0.14 sim.ts:10583; finishGive +0.3 receiver/+0.1 giver sim.ts:11005-11006; befriend progress (bond+0.1)/0.6 goals.ts:114; spare rule sim.ts:8414. why.mjs: W errand 9,340 / haul 6,801; C errand 10,004 / haul 3,938; Seafarer errand 10,111; Brindle minding the store 17,092.",
+  "line": "Each man&rsquo;s way of getting on better terms with the other is the other man&rsquo;s grievance.",
+  "footline": "What you do to be able to give is what the other one holds against you.",
+  "voice": "valley"
  }
 ]
