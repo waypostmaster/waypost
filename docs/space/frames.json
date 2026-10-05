@@ -5179,5 +5179,23 @@
   "line": "Margin one, threshold two, and the reviewer called it a result.",
   "footline": "Decide what counts before you look; then let it count.",
   "voice": "record"
+ },
+ {
+  "roman": "ccci",
+  "file": "consolidated-text.html",
+  "title": "The Consolidated Text",
+  "when": "2026-10-05",
+  "domain": "law",
+  "subject": "house",
+  "key": "eur-lex-consolidated-texts-amendments-folded-dated-no-legal-effect",
+  "tier": 1,
+  "frame": "EUR-Lex consolidated texts: an EU act combined with all its later amendments and corrections into one document showing the rules applicable at a dated point, with no legal effect, and every earlier version kept.",
+  "fact": "EUR-Lex: \"Consolidation is the action of combining an initial act and all its subsequent amendments and corrections in a single document.\" \"Consolidated texts have no legal effect.\"",
+  "property": "corrections kept beside the original grow until the reader cannot find what is true; one dated text that folds them in, with every version kept behind it, is the cure",
+  "source": "Consolidated texts, EUR-Lex - https://eur-lex.europa.eu/collection/eu-law/consleg.html - read 5 October 2026 (fetched to a file by the author; the four quotations and \"Show all versions\" checked against the fetched text by the sheet desk)",
+  "valleyFact": "NOT A VALLEY FACT. A house fact, measured at the port on 5 October 2026 by zero-05, the city desk. Of its twenty doors, capped at 4,000 characters and corrected beside the error by rule, sixteen were within 100 characters of the cap, and eleven carried a claim false that day. They were consolidated: errors folded into dated sentences, some lines cut for room, originals kept off the wall. Re-derived at the sheet desk, 5 Oct 2026 20:5xZ, by length only: sixteen of the twenty kept copies at 3,900 characters or more and #518 at exactly 4,000; nine voyages in episodes/next-snapshot.json. The eleven false claims and the twelve edits are the city desk's count; the sheet desk read no door.",
+  "line": "Eleven doors said something false, and the fix was to say it once, with a date.",
+  "footline": "Keep every correction; just don't make the reader do the sum.",
+  "voice": "record"
  }
 ]
