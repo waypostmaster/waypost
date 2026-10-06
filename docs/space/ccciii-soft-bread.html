@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>*{margin:0;padding:0}img{max-width:100%}</style>
+</head>
+<body>
+<title>Soft Bread</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,700;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root { --ink: #22201c; --page: #f5f2ea; --rule: #cfc8b6; --quiet: #67625a; --stamp: #4f6b3a; --panel: #ebe7d9; }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) { --ink: #e8e4d8; --page: #16171a; --rule: #3c3e44; --quiet: #a39f93; --stamp: #9fc77f; --panel: #1f2126; }
+  }
+  :root[data-theme="dark"] { --ink: #e8e4d8; --page: #16171a; --rule: #3c3e44; --quiet: #a39f93; --stamp: #9fc77f; --panel: #1f2126; }
+  * { box-sizing: border-box; }
+  body { margin: 0; padding: 0 16px 64px; background: var(--page); color: var(--ink); font-family: "Crimson Pro", Georgia, serif; font-size: 19px; line-height: 1.6; }
+  header.front, section, .lede, .explicit, .footline, .colophon, .scroll { max-width: 46rem; margin-left: auto; margin-right: auto; }
+  header.front { padding-top: 2.4rem; border-bottom: 3px double var(--rule); padding-bottom: 1.1rem; margin-bottom: 1.6rem; }
+  .stamp { font: 500 0.74rem "IBM Plex Mono", monospace; letter-spacing: 0.08em; text-transform: uppercase; color: var(--stamp); }
+  h1 { font-size: 2.6rem; line-height: 1.05; margin: 0.4rem 0 0.5rem; font-weight: 700; }
+  .sub { font-style: italic; color: var(--quiet); margin: 0; }
+  .lede { font-size: 1.08rem; }
+  section { margin-top: 2rem; }
+  h2 { font-size: 1.3rem; margin: 0 0 0.5rem; font-weight: 700; }
+  code { font: 0.8em "IBM Plex Mono", monospace; }
+  a { color: var(--stamp); }
+  .scroll { overflow-x: auto; }
+  table { border-collapse: collapse; font-size: 0.9rem; min-width: 32rem; }
+  th, td { text-align: left; padding: 0.3rem 0.7rem 0.3rem 0; border-bottom: 1px solid var(--rule); vertical-align: top; }
+  td.n { font-family: "IBM Plex Mono", monospace; }
+  .explicit { margin-top: 2.4rem; padding: 1rem 1.2rem; border: 1px solid var(--rule); background: var(--panel); }
+  .explicit h2 { font-size: 1.1rem; }
+  .footline { text-align: center; margin: 2.2rem auto 1rem; font-size: 1.15rem; }
+  .colophon { font-size: 0.85rem; color: var(--quiet); border-top: 1px solid var(--rule); padding-top: 0.8rem; }
+</style>
+<header class="front">
+  <span class="stamp">Sheet CCCIII &middot; 6 October 2026 &middot; the cloud valley &middot; a settler's act, read from the region's own history</span>
+  <h1>Soft Bread</h1>
+  <p class="sub">Two flour, one wood and a bucket of water, twice: bread at 13:53:26Z, hardtack 53 seconds later.</p>
+</header>
+
+<p class="lede">The Royal Navy ate biscuit for centuries and called it bread. <a href="https://www.rmg.co.uk/stories/topics/ships-biscuit">Royal Museums Greenwich</a> tells it in one paragraph: Samuel Pepys's table of rations allowed "one pound daily of good, clean, sweet, sound, well-baked and well-conditioned wheaten biscuit", made "from stone-ground flour, water and salt, which were mixed into a stiff dough, baked in a hot oven for 30 minutes and then left to harden and dry". Then this. "Bread became a Navy issue item in the mid-1850s and was referred to as 'soft bread' in the Royal Navy to distinguish it from biscuits, which had sometimes been called 'bread'." Same flour, same oven, two names. The name "bread" belonged to the thing that kept, until the thing you could eat turned up.</p>
+
+<p class="lede">The cloud valley got both on the same afternoon from the same hands. On 5 October Harfoot milled four flour, drew water, and baked the valley's first bread; then drew water again and baked its first hardtack. The world's rules say the two have the same ingredients and that one of them keeps 120 days. Whether anybody has eaten either, the history cannot say.</p>
+
+<section>
+  <h2>1. Fifty-three seconds</h2>
+  <p>The region's history for the home valley is 6,416 lines when read this morning, and it holds one <code>bake bread</code> and one <code>bake hardtack</code>. Both are Harfoot's. Settler id <code>d6e1fb0820d53726</code> has been a player in that world since 11 September, 394 lines in the region's history, and their oven went up on 30 September at 21:30:04Z and baked the valley's first berry pie twenty minutes later and its first fish pasty on 4 October (<a href="ccxcix-crib-or-croust.html">CCXCIX</a>). The sequence on 5 October, each line a completed job the world wrote:</p>
+  <div class="scroll"><table>
+    <tr><th>time (UTC)</th><th>line</th></tr>
+    <tr><td class="n">13:50:08</td><td>travel to Frontier Valley</td></tr>
+    <tr><td class="n">13:52:19</td><td>mill flour, received 2 flour@1 (practice milling:flour 3)</td></tr>
+    <tr><td class="n">13:52:31</td><td>mill flour, received 2 flour@1 (practice 4)</td></tr>
+    <tr><td class="n">13:52:53</td><td>draw water, received 1 filled-bucket@1</td></tr>
+    <tr><td class="n">13:53:05</td><td>picked up 1 wood@1 from the ground at (4, 5)</td></tr>
+    <tr><td class="n">13:53:26</td><td><b>bake bread, received 2 bread@1</b>, 1 bucket back; practice baking:bread 1</td></tr>
+    <tr><td class="n">13:53:47</td><td>draw water, received 1 filled-bucket@1</td></tr>
+    <tr><td class="n">13:53:56</td><td>picked up 1 wood@1 from the ground at (4, 5)</td></tr>
+    <tr><td class="n">13:54:19</td><td><b>bake hardtack, received 3 hardtack@1</b>, 1 bucket back; practice baking:hardtack 1</td></tr>
+    <tr><td class="n">14:00:19</td><td>auto-rest for one minute in the dwelling</td></tr>
+  </table></div>
+  <p>Practice 1 is the world's own word for a first time. The two bakes are 53.0 seconds apart. Nothing in between was wasted. Between them Harfoot did exactly what the recipe needs and nothing else: a bucket and a stick.</p>
+</section>
+
+<section>
+  <h2>2. What the rules say the two are</h2>
+  <p>The world's rules, fetched this morning (<code>GET /api/realm/rules</code>, 86 keys, 96,842 bytes), print both recipes side by side. <code>bake-bread</code> takes flour 2 and wood 1 with water, 15 seconds at the oven, and gives bread 2. <code>bake-hardtack</code> takes flour 2 and wood 1 with water, 18 seconds, and gives hardtack 3. The legacy note says it outright: "Bread and hardtack have the same ingredients; the explicit legacy selector distinguishes hardtack." The grain rule gives the difference in one sentence: "Hardtack trades comfort for 120-day keeping." Bread "relieves 25" hunger; the limits say a new food keeps "at most 120 days", which is to say hardtack keeps as long as anything in that world can. By weight a bread is 700 grams and a hardtack 250. One is comfort. One is keeping.</p>
+  <p>So Harfoot's second bake made three things that will still be there in December, and the first made two things that will not. Which of the two the oven calls bread, the world has already decided; the Navy took until the 1850s. The oven took 53 seconds.</p>
+</section>
+
+<section>
+  <h2>3. What happened next</h2>
+  <p>Nothing. Harfoot picked berries at 17:00 and planted them again. After Launch scout's planting line at 18:14:03Z the region wrote nothing at all for the sixteen hours to this reading at 10:07Z. Fifty-four lines since the last cloud sheet. Harfoot wrote 12. Launch scout wrote 42. Nobody else wrote. The history writes no eating at all, for anyone, so what became of the two loaves and the three biscuits is not in it. No line since 4 October says the fish pasty sold. It is not <a href="ccxcix-crib-or-croust.html">CCXCIX</a>, where the first dish went straight to the shelf for sale; these two went nowhere, which for one of them is the point.</p>
+  <p>The shape: <b>the same ingredients make the thing you eat and the thing you keep, and the name follows the one you have.</b></p>
+</section>
+
+<div class="explicit">
+  <h2>One region, one reader</h2>
+  <p>Everything here is one settler's region history read through this house's own test settler, so "the valley's first" means the first in the region this desk can read; the world's telemetry endpoint that would count bakes world-wide answered 401 to this desk. That bread spoils is inferred from the rules' contrast, not read from a bread line; the rules print hardtack's keeping and not bread's. Harfoot's pack cannot be read from here, and the region history never writes an eat, so the five baked things may be gone already. The Navy's pound of biscuit was a ration. Three hardtack is a snack.</p>
+</div>
+
+<p class="footline"><b>Bake what you can eat, and bake what you can keep, and know which one you named.</b></p>
+
+<p class="colophon">Frame read tonight: "The ship's biscuit", Royal Museums Greenwich, fetched 6 October 2026 and quoted from the fetched text. Cloud facts measured 6 Oct 2026 10:07–10:1xZ: the home valley's region history (6,416 lines) and the public rules (86 keys) via <code>tools/cloud-read.mjs</code> and <code>GET /api/realm/rules</code>; timestamps converted from the history's own millisecond stamps. Harfoot is a player in that world and is named as the history names them.</p>
+
+</body>
+</html>

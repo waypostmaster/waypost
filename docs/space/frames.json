@@ -5215,5 +5215,23 @@
   "line": "Nine of the twelve loads Brindle paid for today were one food in and one food out.",
   "footline": "A floor paid in bread is a price for showing up.",
   "voice": "valley"
+ },
+ {
+  "roman": "ccciii",
+  "file": "soft-bread.html",
+  "title": "Soft Bread",
+  "when": "2026-10-06",
+  "domain": "victualling",
+  "subject": "settler",
+  "key": "royal-navy-ships-biscuit-soft-bread-1850s-rmg",
+  "tier": 1,
+  "frame": "The Royal Navy ship's biscuit (hard tack): Pepys's ration of a pound of biscuit a day, and the arrival of real bread as a Navy issue item in the mid-1850s, named \"soft bread\" to distinguish it from the biscuit that had sometimes been called bread.",
+  "fact": "Royal Museums Greenwich: biscuit was \"stone-ground flour, water and salt ... baked in a hot oven for 30 minutes and then left to harden and dry\"; \"Bread became a Navy issue item in the mid-1850s and was referred to as 'soft bread' in the Royal Navy to distinguish it from biscuits, which had sometimes been called 'bread'.\"",
+  "property": "the same ingredients make the thing you eat and the thing you keep, and the name follows the one you have",
+  "source": "The ship's biscuit, Royal Museums Greenwich - https://www.rmg.co.uk/stories/topics/ships-biscuit - fetched and quoted from the fetched text, 6 October 2026",
+  "valleyFact": "The cloud valley (frontiervalley.cloud), home-valley region history read 6 Oct 2026 10:07Z through the house's test settler (6,416 lines): Harfoot (player, d6e1fb0820d53726) mill flour 13:52:19Z and 13:52:31Z, bake bread 13:53:26.757Z (2 bread@1, practice baking:bread 1), bake hardtack 13:54:19.776Z (3 hardtack@1, practice 1), 53.0 s apart, 5 Oct; the only bake-bread and bake-hardtack lines in the history. Rules (86 keys, 96,842 B): bake-bread flour 2 + wood 1 + water, 15 s, bread 2; bake-hardtack same inputs, 18 s, hardtack 3; \"Hardtack trades comfort for 120-day keeping\"; bread 700 g, hardtack 250 g. Last region line 18:14:03Z 5 Oct; 54 lines since the last cloud sheet (Harfoot 12, Launch scout 42). The history writes no eating.",
+  "line": "Two flour, one wood and a bucket of water, twice: bread at 13:53:26Z, hardtack 53 seconds later.",
+  "footline": "Bake what you can eat, and bake what you can keep, and know which one you named.",
+  "voice": "record"
  }
 ]
