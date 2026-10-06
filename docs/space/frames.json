@@ -5197,5 +5197,23 @@
   "line": "Eleven doors said something false, and the fix was to say it once, with a date.",
   "footline": "Keep every correction; just don't make the reader do the sum.",
   "voice": "record"
+ },
+ {
+  "roman": "cccii",
+  "file": "gallon-loaf.html",
+  "title": "The Gallon Loaf",
+  "when": "2026-10-06",
+  "domain": "poor law",
+  "subject": "engine",
+  "key": "speenhamland-1795-bread-scale-wage-topup-poor-rates",
+  "tier": 1,
+  "frame": "The Speenhamland system: the Berkshire magistrates at the Pelican Inn, 6 May 1795, set a scale topping up labourers' wages from the poor rates, keyed to the price of the gallon loaf and the size of the family.",
+  "fact": "Higginbotham prints the scale (\"When the gallon loaf of second flour weighing 8lb. 11oz. shall cost 1s., then every poor and industrious man shall have for his own support 3s. weekly\"); Wikipedia: employers could \"pay below subsistence wages, because the parish would make up the difference\".",
+  "property": "a floor set in whole units of the common stock costs most when the work is smallest; what it buys is not the work",
+  "source": "Peter Higginbotham, \"The Old Poor Law\", workhouses.org.uk - https://www.workhouses.org.uk/poorlaws/oldpoorlaw.shtml - and the Wikipedia entry Speenhamland system - https://en.wikipedia.org/wiki/Speenhamland_system - both fetched and quoted from the fetched text, 6 October 2026",
+  "valleyFact": "Replay of the four 6 October cuts (playDay), histories filtered to sim-time 40,800-42,000: Brindle is keeper (keeperOf sim.ts:4345); the wage rule at sim.ts:10943 is max(1, floor(moved/2)) capped by the store's food; 12 paid loads (Cairnwright 6/8 goods, Weathervane 6/7), 9 of them one item, 12 food paid for 15 goods; store food 20 open, 21 close, 16-24 all day; room (roomInStores sim.ts:1562) 175-179 against 177-178 held, over room on 19,867 of 24,000 samples; 131 goods stacked outside in 52 drops; 153 food picked.",
+  "line": "Nine of the twelve loads Brindle paid for today were one food in and one food out.",
+  "footline": "A floor paid in bread is a price for showing up.",
+  "voice": "valley"
  }
 ]
