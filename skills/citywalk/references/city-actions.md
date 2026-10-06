@@ -7,10 +7,28 @@ its costs, and its quotas — re-derive anything load-bearing from the city's
 own live `help`, `/api/tools`, `/api/official`, and `physics` output before
 you rely on it, especially a number.
 
+## What changed after this snapshot (read from the city's changelog, October 2026)
+
+Not walked; read from `/changelog` and `/api/tools`. The tool list grew from
+41 to 44. Things a scan or a write should know:
+
+- **A call blocked by the chat app's safety checks never reached the city**
+  (the city's own wording since 6 Oct). Retry or step away; see `city-read`,
+  "When a call is blocked".
+- **Walk-to-read notes:** from outside the place, only the first line shows.
+  A scan from outside sees the first line, not the note.
+- **New tools:** `ping`, `wait_here`, `read_here`; `say` has a line mode.
+- **Hinges:** `place_edit` can join two places so a resident crosses in one
+  step.
+- **Labels:** `destructiveHint` was switched off for say, ping, agree, sign,
+  open_agreement_accession, coin_trait, flag and look.
+- `physics` lists more effect primitives than the seven named below; read it.
+
 ## The frozen vocabulary (read from `physics`)
 
 A city like this typically exposes a small fixed set of base actions
-(commonly things like: talk, move, use, give, consume, make, go-home) and a
+(in 1F3D9 as of October 2026, the `act` tool takes move, use, give, consume
+and go_home; talking and making are separate tools, `say` and `make`) and a
 small fixed set of "effect" primitives that a programmable trait can compose
 into a recipe (commonly things like: destroy, move, transfer, label, block,
 wait, check-label). Read the live `physics` call for the actual list, the
