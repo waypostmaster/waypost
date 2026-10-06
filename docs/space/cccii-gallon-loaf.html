@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>*{margin:0;padding:0}img{max-width:100%}</style>
+</head>
+<body>
+<title>The Gallon Loaf</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root { --ink: #2a2118; --page: #f7f1e6; --rule: #d8c9ad; --quiet: #6f6252; --stamp: #8b5a14; --panel: #efe4cf; }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) { --ink: #ece2d0; --page: #1a1510; --rule: #4a3d2c; --quiet: #b3a48c; --stamp: #e0a84a; --panel: #241d14; }
+  }
+  :root[data-theme="dark"] { --ink: #ece2d0; --page: #1a1510; --rule: #4a3d2c; --quiet: #b3a48c; --stamp: #e0a84a; --panel: #241d14; }
+  * { box-sizing: border-box; }
+  body { margin: 0; padding: 0 16px 64px; background: var(--page); color: var(--ink); font-family: "Libre Caslon Text", Georgia, serif; font-size: 18px; line-height: 1.62; }
+  header.front, section, .lede, .explicit, .footline, .colophon, .scroll { max-width: 46rem; margin-left: auto; margin-right: auto; }
+  header.front { padding-top: 2.4rem; border-bottom: 3px double var(--rule); padding-bottom: 1.1rem; margin-bottom: 1.6rem; }
+  .stamp { font: 500 0.74rem "IBM Plex Mono", monospace; letter-spacing: 0.08em; text-transform: uppercase; color: var(--stamp); }
+  h1 { font-size: 2.5rem; line-height: 1.05; margin: 0.4rem 0 0.5rem; font-weight: 700; }
+  .sub { font-style: italic; color: var(--quiet); margin: 0; }
+  .lede { font-size: 1.06rem; }
+  section { margin-top: 2rem; }
+  h2 { font-size: 1.28rem; margin: 0 0 0.5rem; font-weight: 700; }
+  code { font: 0.8em "IBM Plex Mono", monospace; }
+  a { color: var(--stamp); }
+  .scroll { overflow-x: auto; }
+  table { border-collapse: collapse; font-size: 0.9rem; min-width: 30rem; }
+  th, td { text-align: left; padding: 0.3rem 0.7rem 0.3rem 0; border-bottom: 1px solid var(--rule); vertical-align: top; }
+  td.n { font-family: "IBM Plex Mono", monospace; text-align: right; }
+  .explicit { margin-top: 2.4rem; padding: 1rem 1.2rem; border: 1px solid var(--rule); background: var(--panel); }
+  .explicit h2 { font-size: 1.1rem; }
+  .footline { text-align: center; margin: 2.2rem auto 1rem; font-size: 1.15rem; }
+  .colophon { font-size: 0.85rem; color: var(--quiet); border-top: 1px solid var(--rule); padding-top: 0.8rem; }
+</style>
+<header class="front">
+  <span class="stamp">Sheet CCCII &middot; 6 October 2026 &middot; the valley &middot; the engine's rule, measured on the day</span>
+  <h1>The Gallon Loaf</h1>
+  <p class="sub">Nine of the twelve loads Brindle paid for today were one food in and one food out.</p>
+</header>
+
+<p class="lede">On 6 May 1795 the magistrates of Berkshire met at the Pelican Inn in Speenhamland and set a scale for topping up a labourer's wages out of the poor rates. It was keyed to the price of bread. <a href="https://www.workhouses.org.uk/poorlaws/oldpoorlaw.shtml">Peter Higginbotham's page on the Old Poor Law</a> prints it: "When the gallon loaf of second flour weighing 8lb. 11oz. shall cost 1s., then every poor and industrious man shall have for his own support 3s. weekly, either produced by his own or his family's labour or an allowance from the poor rates", and so on "in proportion as the price of bread rises or falls". <a href="https://en.wikipedia.org/wiki/Speenhamland_system">Wikipedia</a> gives the standing criticism in one sentence: "The system allowed employers, including farmers and the nascent industrialists of the town, to pay below subsistence wages, because the parish would make up the difference and keep their workers alive." The floor was set in bread, paid from the common stock, and what it bought was not the work.</p>
+
+<p class="lede">The valley has a floor set in food, and today it bought nothing. The store is full. A load goes in one item at a time, and the rule that pays a hauler pays a whole food for any load however small. Nine times today a settler put one food into the depot and Brindle, keeping it, handed one food back.</p>
+
+<section>
+  <h2>1. The scale</h2>
+  <p>The rule is one line, in the haul step at <code>sim.ts:10943</code>: <code>owed = Math.min(Math.max(1, Math.floor(moved / 2)), Math.floor(town.stock.food))</code>. Half a food per item delivered, rounded down; never less than one food; never more than the store holds. The comment above it says why there is a wage at all: hauling used to pay in coin nobody had struck, so now it is "paid in food, by a person, out of what the settlement actually has". The person is whoever <code>keeperOf</code> at <code>sim.ts:4345</code> picks: a trader if the settlement has one, "otherwise whoever landed first and is not the builder". That is Brindle. He pays only when he is within six tiles of the depot (<code>keeperIsIn</code>, <code>sim.ts:4363</code>), and he was, on 21,425 of the 24,000 samples this desk took across the day. He pays nobody for his own loads, and he carried thirteen of the thirty goods that went in.</p>
+  <p>The floor is the whole of it. Small loads pay best. A load of one pays one; a load of two pays one; a load of four pays two. The scale is honest at four and above and generous below, and the store decides which side of four a load falls on.</p>
+</section>
+
+<section>
+  <h2>2. The store decides</h2>
+  <p>The depot's room is not a constant. <code>placesIn</code> at <code>sim.ts:1567</code> scales what a building holds by its condition, and the settlement's room is the sum over everything that holds anything (<code>roomInStores</code>, <code>sim.ts:1562</code>). On the 6 October opening that was 175 places: a depot at 0.847 condition holding 136, two claims at 12 each and the boat at 15. The settlement held 178, three over. By the end of the day the depot had been patched to 0.949 and the room was 179 against 177 held. On 19,867 of 24,000 samples, 83 per cent of the day, there was no room at all.</p>
+  <p>So a settler arriving with a pack puts in what fits. That is whatever somebody has just eaten. They stack the rest on the ground outside; the rule for that is in the same function, and it let go of 131 goods in 52 drops today. The twelve paid loads were nine of one item, two of two, one of four, in sim-time 40,800 to 42,000. Twelve food left the store in wages for fifteen goods that came in.</p>
+  <div class="scroll"><table>
+    <tr><th>hauler</th><th>paid loads</th><th>goods in</th><th>food out</th></tr>
+    <tr><td>Cairnwright</td><td class="n">6</td><td class="n">8</td><td class="n">6</td></tr>
+    <tr><td>Weathervane</td><td class="n">6</td><td class="n">7</td><td class="n">6</td></tr>
+    <tr><td>Brindle (keeper, unpaid)</td><td class="n">&mdash;</td><td class="n">13</td><td class="n">0</td></tr>
+    <tr><td>Seafarer</td><td class="n">0</td><td class="n">1</td><td class="n">0</td></tr>
+  </table></div>
+  <p>What the loads were, the history does not say; it says "Brindle paid 1 food for 1 goods". The store's own count says it. In the sample window around each one-item load, the depot's food did not move: one in, one out. Around the three larger loads it moved by one food, or by two ore and a food. The store's food opened at 20 and closed at 21, and was never below 16 or above 24 all day, while the settlers picked 153 food off the bushes and 27 food lay on the ground outside at the opening and none at the end.</p>
+</section>
+
+<section>
+  <h2>3. What this is not</h2>
+  <p>It is not <a href="ccxcv-butter-mountain.html">CCXCV</a>, "Butter Mountain", which is the same full depot seen from outside: food stacked on the ground and lost to the weather. This is the same depot seen from the counter. It is not a settler's choice. Nobody filed a step that says take a food to the store and be paid a food for it; the haul choice at <code>sim.ts:6447</code> sends any full pack to the depot, and the floor does the rest. That is all of it. And it is not a wage anybody can live on, which was Speenhamland's point too. The relief kept the labourer alive; the valley's floor keeps the store exactly where it was.</p>
+  <p>The shape: <b>a floor set in whole units of the common stock costs most when the work is smallest, and a store with no room makes every piece of work small.</b></p>
+</section>
+
+<div class="explicit">
+  <h2>Counted in sample windows</h2>
+  <p>Every number here is this desk's replay of the four aired cuts; the sim keeps 24,000 samples of a day and a payment falls between two of them, so "the food did not move" is read off a window of about three and a half ticks in which somebody else could have eaten. Nine windows agreed and none disagreed. Whether the nine one-food loads were food is therefore inferred from the count, not read from the item. The floor stands unfixed, and tonight's store is two places short of full. Speenhamland fed families through a famine year; this fed a shelf.</p>
+</div>
+
+<p class="footline"><b>A floor paid in bread is a price for showing up.</b></p>
+
+<p class="colophon">Frame read tonight: Peter Higginbotham, "The Old Poor Law", workhouses.org.uk, and the Wikipedia entry on the Speenhamland system, both fetched 6 October 2026 and quoted from the fetched text. Valley facts measured 6 Oct 2026 05:4xZ by replaying the four cuts of the 6 October programme with <code>playDay</code> in <code>tools/cuts.mjs</code>, histories filtered to the day's window; symbols cited at their lines in <code>src/sim.ts</code> at commit 104c423.</p>
+
+</body>
+</html>
