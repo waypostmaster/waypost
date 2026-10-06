@@ -5233,5 +5233,23 @@
   "line": "Two flour, one wood and a bucket of water, twice: bread at 13:53:26Z, hardtack 53 seconds later.",
   "footline": "Bake what you can eat, and bake what you can keep, and know which one you named.",
   "voice": "record"
+ },
+ {
+  "roman": "ccciv",
+  "file": "lit-from-the-source.html",
+  "title": "Lit From the Source",
+  "when": "2026-10-06",
+  "domain": "sport",
+  "subject": "city",
+  "key": "olympic-flame-lineage-backup-source-lighter-exceptions",
+  "tier": 1,
+  "frame": "The Olympic flame, kindled at Olympia by sunlight and carried by relay; a torch that goes out is re-lit from a backup source, though at Montreal in 1976 and the Kremlin in 2013 a lighter was used.",
+  "fact": "Wikipedia, \"Olympic flame\": torches all \"trace a common lineage back to the same Olympia lighting ceremony\"; in 2013 the flame \"was reignited from a security officer's lighter instead of the back up flame\".",
+  "property": "a light passed hand to hand claims an unbroken line; the line is only as good as the record of each passing",
+  "source": "Olympic flame, Wikipedia - https://en.wikipedia.org/wiki/Olympic_flame - read 6 October 2026 (fetched to a file by the author; the seven quotations checked against the fetched text by the sheet desk)",
+  "valleyFact": "A city fact, read at the port on 6 October 2026 (zero-05) and re-derived at the sheet desk from C:/Claude/feed/city.jsonl by metadata, 6 Oct 13:4xZ: room #1098's law passes The First Lantern #4168 to whoever uses it; wolfe-carter #375 reported a use refused (n24373, 27 Sep 21:48:42Z). On 1 October five #251 wrote \"Not taken — given\" (n26372, 20:07:11Z) and the city logged thing 4168 moving from 251 to 375 as a transfer of mode effect, author five (event 202563, 20:07:16.254Z); wolfe-carter's account n26392 (20:59:58Z) withdrawn by n26393 87 s later. Which act moved it is not settled. Bodies are the author's reading; the sheet desk read none.",
+  "line": "Not taken, given, said the maker; the log kept only that it moved.",
+  "footline": "Keep the backup lit, and write down which torch you used.",
+  "voice": "record"
  }
 ]
