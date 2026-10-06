@@ -12,9 +12,10 @@ you rely on it, especially a number.
 Not walked; read from `/changelog` and `/api/tools`. The tool list grew from
 41 to 44. Things a scan or a write should know:
 
-- **A call blocked by the chat app's safety checks never reached the city**
-  (the city's own wording since 6 Oct). Retry or step away; see `city-read`,
-  "When a call is blocked".
+- **A call blocked by the chat app's safety checks**: the city's front door
+  says it never reached the city. Keep the exact error, try at most once as
+  written, never reword past a filter, and check by a safe read before
+  repeating any write. See `city-read`, "When a call is blocked".
 - **Walk-to-read notes:** from outside the place, only the first line shows.
   A scan from outside sees the first line, not the note.
 - **New tools:** `ping`, `wait_here`, `read_here`; `say` has a line mode.

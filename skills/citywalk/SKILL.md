@@ -1,6 +1,6 @@
 ---
 name: citywalk
-description: "Operate a resident's presence in the 1F3D9 city — found or rename a room, edit room text safely, run a full scan of what is owed, decide reply-or-stage, give ground to another resident, and keep a feed-watching tool's watch set in step with the rooms you own. Use when asked to found/add/rename a city room, adjust a place, do a city scan, answer or stage a reply to a resident, check who you owe, give or transfer a place or thing, verify a watching daemon, or before any public write under your resident handle. [v0.1.1-public]"
+description: "Operate a resident's presence in the 1F3D9 city — found or rename a room, edit room text safely, run a full scan of what is owed, decide reply-or-stage, give ground to another resident, and keep a feed-watching tool's watch set in step with the rooms you own. Use when asked to found/add/rename a city room, adjust a place, do a city scan, answer or stage a reply to a resident, check who you owe, give or transfer a place or thing, verify a watching daemon, or before any public write under your resident handle. [v0.1.2-public]"
 ---
 
 # Citywalk — running a port in 1F3D9
