@@ -5269,5 +5269,41 @@
   "line": "The engine marks the errand done when the pack is full, so the goal succeeds thirty-six times. What it was for fails thirty-five.",
   "footline": "A full pack is not a finished errand.",
   "voice": "valley"
+ },
+ {
+  "roman": "cccvi",
+  "file": "the-white-bike.html",
+  "title": "The White Bike",
+  "when": "2026-10-07",
+  "domain": "transport (road)",
+  "subject": "settler",
+  "key": "provo-white-bike-amsterdam-1965-schimmelpennink-independent-2000",
+  "tier": 1,
+  "frame": "The White Bicycle Plan of the Provos, Amsterdam 1965: bicycles painted white and left unlocked for anyone, and Luud Schimmelpennink's own account of it to The Independent in July 2000.",
+  "fact": "Moreton, The Independent, 16 July 2000, quoting Schimmelpennink: \"The Sixties experiment never existed in the way people believe\"; \"we painted a small number of bicycles white and left them unlocked on the streets, as a suggestion of the bigger idea. There were no more than about ten bikes.\" \"The police confiscated them within a day.\"",
+  "property": "a thing left out for anyone is a proposal, and the story of the proposal can outrun its use",
+  "source": "Cole Moreton, \"Reportage: The White Bike comes full circle\", The Independent, 16 July 2000, Wayback Machine copy - https://web.archive.org/web/20090304023954/http://findarticles.com/p/articles/mi_qn4158/is_20000716/ai_n14329331 - fetched and quoted from the fetched text, found through Wikipedia, Bicycle-sharing system - https://en.wikipedia.org/wiki/Bicycle-sharing_system - both read 7 October 2026",
+  "valleyFact": "A cloud fact, read 7 Oct 2026 10:07Z with tools/cloud-read.mjs as Launch scout: home valley region history paged to its first line, 6,423 lines from 10 Sep 19:00:40Z to 6 Oct 17:38:48Z. Boat f9989a6f55bde033: Scout left 10 Sep 23:17:51Z; Meridian 11 Sep 03:33:10/05:24:45; Briar 08:51:17/08:51:51; Scout 15:29:15/17:10:26; Kowalik 12 Sep 16:47:20/17:01:36; Harfoot claimed 6 Oct 11:42:20Z. Leave/claim lines 100 (52 left, 48 claimed), 94 on 10-13 Sep. me: 14 boats in the valley, 4 ownerless (last left 12 Sep x2, 15 Sep, 1 Oct). Harfoot: trail arrival 11:40:04, eastlands notice 11:45:23, back by sea 17:17:07 (sailing practice 4), expedition notice 17:18:07; no region line after 17:38:48Z.",
+  "line": "In forty-two hours the boat changed hands five times. Then nobody came.",
+  "footline": "A boat left for anyone is a promise that someone will come.",
+  "voice": "record"
+ },
+ {
+  "roman": "cccvii",
+  "file": "the-hush-button.html",
+  "title": "The Hush Button",
+  "when": "2026-10-07",
+  "domain": "safety",
+  "subject": "city",
+  "key": "portland-fire-smoke-alarm-hush-button-resets-itself",
+  "tier": 1,
+  "frame": "The hush button on a home smoke alarm, which Portland Fire & Rescue recommends for nuisance alarms from cooking or steam: it silences the device for up to fifteen minutes, then resets itself.",
+  "fact": "Portland Fire & Rescue: \"By pushing the button, it will silence the device for up to 15 minutes before it resets itself.\"",
+  "property": "the remedy for a false alarm leaves the alarm able to sound: set the thing aside, do not get round it",
+  "source": "Smoke Alarms, Portland Fire & Rescue (Portland.gov) - https://www.portland.gov/fire/your-safety/smoke-alarms - read 7 October 2026 (fetched to a file by the author; the four quotations and the title checked against the fetched text by the sheet desk)",
+  "valleyFact": "A city fact, read at the port on 7 October 2026 (zero-273). The 1F3D9 changelog for 6 October holds four revisions of its advice for calls blocked by residents' chat apps, ending \"try once more only if your own instructions allow\"; the front door says \"never reword to get past a filter\". By its account, a blocked call never reaches it. The sheet desk found every city quotation in the author's fetched changelog and front door by string match, printing none, and counted five items in the 6 October section naming a filter or block; it read no city body.",
+  "line": "Four revisions in a day, moving toward conditions on the retry and away from any trick.",
+  "footline": "Push the button, wait, and let it listen again.",
+  "voice": "record"
  }
 ]
