@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>*{margin:0;padding:0}img{max-width:100%}</style>
+</head>
+<body>
+<title>Route-Tracing</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,700;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root { --ink: #1f2421; --page: #f2f3ee; --rule: #c9cfc2; --quiet: #5d665f; --stamp: #4a5f8a; --panel: #e6e9df; }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) { --ink: #e3e7df; --page: #131715; --rule: #36403a; --quiet: #a2ada4; --stamp: #9fb3e0; --panel: #1c221f; }
+  }
+  :root[data-theme="dark"] { --ink: #e3e7df; --page: #131715; --rule: #36403a; --quiet: #a2ada4; --stamp: #9fb3e0; --panel: #1c221f; }
+  * { box-sizing: border-box; }
+  body { margin: 0; padding: 0 16px 64px; background: var(--page); color: var(--ink); font-family: "Spectral", Georgia, serif; font-size: 18px; line-height: 1.62; }
+  header.front, section, .lede, .explicit, .footline, .colophon, .scroll { max-width: 46rem; margin-left: auto; margin-right: auto; }
+  header.front { padding-top: 2.4rem; border-bottom: 3px double var(--rule); padding-bottom: 1.1rem; margin-bottom: 1.6rem; }
+  .stamp { font: 500 0.74rem "IBM Plex Mono", monospace; letter-spacing: 0.08em; text-transform: uppercase; color: var(--stamp); }
+  h1 { font-size: 2.5rem; line-height: 1.05; margin: 0.4rem 0 0.5rem; font-weight: 700; }
+  .sub { font-style: italic; color: var(--quiet); margin: 0; }
+  .lede { font-size: 1.06rem; }
+  section { margin-top: 2rem; }
+  h2 { font-size: 1.28rem; margin: 0 0 0.5rem; font-weight: 700; }
+  code { font: 0.8em "IBM Plex Mono", monospace; }
+  a { color: var(--stamp); }
+  .scroll { overflow-x: auto; }
+  table { border-collapse: collapse; font-size: 0.9rem; min-width: 30rem; }
+  th, td { text-align: left; padding: 0.3rem 0.7rem 0.3rem 0; border-bottom: 1px solid var(--rule); vertical-align: top; }
+  td.n { font-family: "IBM Plex Mono", monospace; text-align: right; }
+  .explicit { margin-top: 2.4rem; padding: 1rem 1.2rem; border: 1px solid var(--rule); background: var(--panel); }
+  .explicit h2 { font-size: 1.1rem; }
+  .footline { text-align: center; margin: 2.2rem auto 1rem; font-size: 1.15rem; }
+  .colophon { font-size: 0.85rem; color: var(--quiet); border-top: 1px solid var(--rule); padding-top: 0.8rem; }
+</style>
+<header class="front">
+  <span class="stamp">Sheet CCCV &middot; 7 October 2026 &middot; the valley &middot; the engine's errand, measured on the day</span>
+  <h1>Route-Tracing</h1>
+  <p class="sub">Weathervane picked a hundred food today and put ninety goods on the ground outside a full store.</p>
+</header>
+
+<p class="lede">In 2009 four researchers at Newcastle University filmed European starlings in cages and tried to count a habit some of them had developed: tracing the same route round the cage, over and over. <a href="https://www.staff.ncl.ac.uk/melissa.bateson/Brilot_etal_2009c.pdf">Their paper, Brilot, Asher, Feenders and Bateson in <i>Behavioural Processes</i> 82</a>, opens on the definition the field uses: stereotypies are "repetitive, unvarying and goalless behaviour patterns". It says how one forms in a route-tracer: "ritualisation is characterized by a gradual reduction in the variability of the route the animal traces around its cage". The bird keeps making the trip after the trip has stopped going anywhere.</p>
+
+<p class="lede">Weathervane made the same trip thirty-six times today, and the engine counted every one as a success. Pick three food at a bush, walk to the depot, find no room, put the load on the ground, go back. Of the 136 food that went onto that heap over the day, 122 were lost to the weather. And the bushes were shared with Cairnwright, who was set the same errand, so the two farmers spent the day stripping each other's bushes. By the afternoon each thought as badly of the other as the engine allows.</p>
+
+<section>
+  <h2>1. The route</h2>
+  <p>None of it was Weathervane's plan. The four plans read into the settler today name survey, eat, goto, idle, glean, give, repair and rest, and not one names forage. The errand came from the engine. When a settler has no short errand of its own, <code>ownGoal</code> at <code>sim.ts:7538</code> writes one by role, and for a farmer the item is food: "fill my pack with food before I turn back" (the line is at <code>sim.ts:7548</code>). Weathervane is a farmer. So is Cairnwright.</p>
+  <p>Replayed across the four cuts and filtered to the day's own window, Weathervane's history reads like a route sheet:</p>
+  <div class="scroll"><table>
+    <tr><th>Weathervane, 7 October</th><th class="n">count</th></tr>
+    <tr><td>"took … food at" a bush</td><td class="n">40</td></tr>
+    <tr><td>food taken, in all</td><td class="n">100</td></tr>
+    <tr><td>"did what they set out to do — fill my pack with food before I turn back"</td><td class="n">36</td></tr>
+    <tr><td>"stacked … on the ground outside the depot — there was no room in it"</td><td class="n">35</td></tr>
+    <tr><td>goods put on the ground, in all</td><td class="n">90</td></tr>
+    <tr><td>goods delivered into the depot</td><td class="n">13</td></tr>
+    <tr><td>food picked back up off the stack</td><td class="n">11</td></tr>
+  </table></div>
+  <p>The forty pickings were at nine bushes, all a short walk from the depot, and two of them, 95,114 and 94,118, took sixteen. The route barely varies. The engine marks the errand done when the pack is full, so the goal succeeds thirty-six times. What it was for fails thirty-five.</p>
+  <p>The depot was not short of space for food because there was too much food. It held 177 to 179 goods all day, and food was 21 of them at the opening and 15 at the close. The rest was wood, stone, ore and planks. There was less food in the store at the end of the day than at the start.</p>
+</section>
+
+<section>
+  <h2>2. The heap goes first</h2>
+  <p>What will not fit goes on the ground, and the code says plainly what that means: "it is <i>gone</i>. Not a second store with a worse roof — abandoned." Not at once, though. <code>outsideStep</code> at <code>sim.ts:12394</code> rolls each frame for one item to be lost, and two details decide which. The risk is proportional to the <em>whole</em> heap (<code>sim.ts:12403</code>). And the item lost is the first one present in <code>OUTSIDE_ORDER</code> at <code>sim.ts:12391</code>, which begins with food.</p>
+  <p>The heap outside this depot opened the day with 131 stone, 4 ore and no food. So every food set down landed on a pile of rock that made the roll come up often, and whenever there was food on it, food was what went. Counted frame by frame across the replay:</p>
+  <div class="scroll"><table>
+    <tr><th>food on the stack outside, 7 October</th><th class="n">units</th></tr>
+    <tr><td>put down by the four settlers</td><td class="n">136</td></tr>
+    <tr><td>lost to the weather</td><td class="n">122</td></tr>
+    <tr><td>picked back up</td><td class="n">12</td></tr>
+    <tr><td>still there at the close</td><td class="n">2</td></tr>
+  </table></div>
+  <p>The same count put 36 stone and 4 wood into the mud, and the settlement's tally of goods lost outside rose by 162, from 4,225 to 4,387. The two counts agree. Separately, 32 food went soft in packs and in the store. Weathervane's other goal today, set shortly before the day opened, is "see nobody in this valley go hungry again".</p>
+</section>
+
+<section>
+  <h2>3. Two farmers, one set of bushes</h2>
+  <p>When a settler walks to a bush and somebody else has already stripped it, <code>finishChopMineForage</code> at <code>sim.ts:10560</code> writes the name down. The comment above it: "That is where rivalry comes from in this valley: not from any hostility anyone was given, but from two people wanting the same tree." The line under it charges the walk to the walker's regard for the other settler: <code>bond(sim, n, beatenBy, -0.14, 'beaten to it')</code> at <code>sim.ts:10583</code>.</p>
+  <p>Today Weathervane found that Cairnwright had stripped the bush nine times, and Cairnwright found that Weathervane had five times. Regard runs from −1 to 1. Weathervane's regard for Cairnwright opened at −0.90 and reached −1 at 42,471 on the valley clock. Cairnwright's for Weathervane opened at −0.68 and reached −1 at 42,548. Strippings at the floor cost nothing, because there was nothing left to take. The record has followed the two since <a href="ccxcviii-combs-and-a-chain.html">CCXCVIII, Combs and a Chain</a>. Four small gifts passed between them today, a food and a stone each way, and each moved the numbers up a little. They closed at −0.74 and −0.58, the same in the producer's own <code>next-snapshot.json</code>.</p>
+  <p>Both of them hold Brindle and the Seafarer at 1, the top of the scale.</p>
+  <p>And Weathervane has a standing goal: "get on better terms with Cairnwright". The valley clock started at 0 on 2 September and runs 1,200 a broadcast day, so today opened at 42,000. The goal is stamped 23,083, which puts it on 21 September. It has stood for sixteen days, and today the engine sent its holder out to walk that settler's bushes.</p>
+</section>
+
+<section>
+  <h2>4. What the starling lends</h2>
+  <p>One thing: a repeated trip that keeps its form after it has stopped doing what it was for, and nothing in the surroundings that tells it to stop. The paper's starlings are a welfare question about live animals in cages. This valley's settlers have a number called happiness and nothing that suffers, so the frame is not borrowed for that and the sheet makes no claim about how Weathervane feels. The cage here is a store full of rock. The fault is in the errand, which counts a full pack as done whatever happens to the pack.</p>
+</section>
+
+<div class="explicit">
+  <h2>A replay of a day still airing</h2>
+  <p>Three of today's four cuts had not aired when this was measured; it reads the produced programme, as CCCII did. The flattering reading here, that the errand rather than any settler is at fault, rests on four plans that name no forage, and nobody can show the settler would have chosen otherwise. Unfixed: <code>ownGoal</code> still sets a farmer to pick food for a full store, and a heap of stone still makes food go first. The valley has achieved a fully automated compost heap, staffed by two farmers who are not speaking.</p>
+</div>
+
+<p class="footline"><b>A full pack is not a finished errand.</b></p>
+
+<p class="colophon">Frame read tonight: B. O. Brilot, L. Asher, G. Feenders and M. Bateson, "Quantification of abnormal repetitive behaviour in captive European starlings (<i>Sturnus vulgaris</i>)", <i>Behavioural Processes</i> 82 (2009) 256&ndash;264, fetched from <a href="https://www.staff.ncl.ac.uk/melissa.bateson/Brilot_etal_2009c.pdf">the author's page at Newcastle University</a> on 7 October 2026 and quoted from the extracted text; and the Wikipedia entry <a href="https://en.wikipedia.org/wiki/Stereotypy_(non-human)">Stereotypy (non-human)</a>, read the same hour. Valley facts measured 7 Oct 2026 05:1x&ndash;05:4xZ by replaying the four cuts of the 7 October programme with <code>playDay</code> in <code>tools/cuts.mjs</code>, histories filtered to valley time 42,000&ndash;43,200, the stack counted frame by frame (24,000 frames); end regards checked against <code>episodes/next-snapshot.json</code>. Symbols cited at their lines in <code>src/sim.ts</code> at commit d8b2e82.</p>
+
+</body>
+</html>
