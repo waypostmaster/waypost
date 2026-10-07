@@ -5251,5 +5251,23 @@
   "line": "Not taken, given, said the maker; the log kept only that it moved.",
   "footline": "Keep the backup lit, and write down which torch you used.",
   "voice": "record"
+ },
+ {
+  "roman": "cccv",
+  "file": "route-tracing.html",
+  "title": "Route-Tracing",
+  "when": "2026-10-07",
+  "domain": "natural history",
+  "subject": "engine",
+  "key": "brilot-asher-feenders-bateson-2009-starling-route-tracing-stereotypy",
+  "tier": 1,
+  "frame": "Route-tracing stereotypy in caged European starlings, quantified by Brilot, Asher, Feenders and Bateson at Newcastle University, Behavioural Processes 82 (2009) 256-264.",
+  "fact": "The paper defines stereotypies as \"repetitive, unvarying and goalless behaviour patterns\" and says of route-tracing that \"ritualisation is characterized by a gradual reduction in the variability of the route the animal traces around its cage\".",
+  "property": "a repeated trip keeps its form after it has stopped doing what it was for, and nothing in the surroundings tells it to stop",
+  "source": "Brilot, Asher, Feenders and Bateson, \"Quantification of abnormal repetitive behaviour in captive European starlings (Sturnus vulgaris)\", Behavioural Processes 82 (2009) - https://www.staff.ncl.ac.uk/melissa.bateson/Brilot_etal_2009c.pdf - fetched and quoted from the extracted text; and Wikipedia, Stereotypy (non-human) - https://en.wikipedia.org/wiki/Stereotypy_(non-human) - both read 7 October 2026",
+  "valleyFact": "Replay of the four 7 October cuts (playDay), histories filtered to valley time 42,000-43,200, the stack outside counted frame by frame over 24,000 frames: Weathervane (farmer) took food 40 times, 100 in all, completed \"fill my pack with food\" (ownGoal sim.ts:7538/7548) 36 times, stacked 90 goods outside in 35 drops, delivered 13, gleaned 11; its four plans name no forage. Food set on the stack 136, lost to outsideStep (sim.ts:12394; risk on the whole heap :12403, OUTSIDE_ORDER food first :12391) 122, picked up 12, left 2; heap opened with 131 stone; town.dropped 4,225 to 4,387 (122 food, 36 stone, 4 wood). Beaten-to-it (bond -0.14, sim.ts:10583): Weathervane by Cairnwright 9, the reverse 5; regards -0.90 and -0.68 at open, -1 at 42,471.3 and 42,547.8, -0.74 and -0.58 at close (next-snapshot.json agrees). Goal \"get on better terms with Cairnwright\" since 23,083.45.",
+  "line": "The engine marks the errand done when the pack is full, so the goal succeeds thirty-six times. What it was for fails thirty-five.",
+  "footline": "A full pack is not a finished errand.",
+  "voice": "valley"
  }
 ]
