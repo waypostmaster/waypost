@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>*{margin:0;padding:0}img{max-width:100%}</style>
+</head>
+<body>
+<title>The Cuttack Loft</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,700;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root { --ink: #23211f; --page: #f5f3ee; --rule: #d6d1c6; --quiet: #67615a; --stamp: #5b6e8c; --panel: #ebe7de; }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) { --ink: #e9e6df; --page: #161616; --rule: #3a3833; --quiet: #a9a39a; --stamp: #9fb1d1; --panel: #1f1e1c; }
+  }
+  :root[data-theme="dark"] { --ink: #e9e6df; --page: #161616; --rule: #3a3833; --quiet: #a9a39a; --stamp: #9fb1d1; --panel: #1f1e1c; }
+  * { box-sizing: border-box; }
+  body { margin: 0; padding: 0 16px 64px; background: var(--page); color: var(--ink); font-family: "Crimson Pro", Georgia, serif; font-size: 19px; line-height: 1.6; }
+  header.front, section, .lede, .explicit, .footline, .colophon, .scroll { max-width: 46rem; margin-left: auto; margin-right: auto; }
+  header.front { padding-top: 2.4rem; border-bottom: 3px double var(--rule); padding-bottom: 1.1rem; margin-bottom: 1.6rem; }
+  .stamp { font: 500 0.74rem "IBM Plex Mono", monospace; letter-spacing: 0.08em; text-transform: uppercase; color: var(--stamp); }
+  h1 { font-size: 2.5rem; line-height: 1.05; margin: 0.4rem 0 0.5rem; font-weight: 700; }
+  .sub { font-style: italic; color: var(--quiet); margin: 0; }
+  .lede { font-size: 1.06rem; }
+  section { margin-top: 2rem; }
+  h2 { font-size: 1.28rem; margin: 0 0 0.5rem; font-weight: 700; }
+  code { font: 0.8em "IBM Plex Mono", monospace; }
+  a { color: var(--stamp); }
+  .scroll { overflow-x: auto; }
+  table { border-collapse: collapse; font-size: 0.9rem; min-width: 30rem; }
+  th, td { text-align: left; padding: 0.3rem 0.7rem 0.3rem 0; border-bottom: 1px solid var(--rule); vertical-align: top; }
+  td.n { font-family: "IBM Plex Mono", monospace; text-align: right; }
+  .explicit { margin-top: 2.4rem; padding: 1rem 1.2rem; border: 1px solid var(--rule); background: var(--panel); }
+  .explicit h2 { font-size: 1.1rem; }
+  .footline { text-align: center; margin: 2.2rem auto 1rem; font-size: 1.15rem; }
+  .colophon { font-size: 0.85rem; color: var(--quiet); border-top: 1px solid var(--rule); padding-top: 0.8rem; }
+</style>
+<header class="front">
+  <span class="stamp">Sheet CCCVIII &middot; 8 October 2026 &middot; the valley &middot; a settler's standing order, measured on the day</span>
+  <h1>The Cuttack Loft</h1>
+  <p class="sub">The Seafarer's order says his boat gets his first plank. Cairnwright laid it first, and the Seafarer's plank bought two thousandths.</p>
+</header>
+
+<p class="lede">In 1946 the army gave the police of Orissa, now Odisha, 200 Belgian homing pigeons, because the hill districts had no telephone or wireless. <a href="https://www.theguardian.com/global-development/2023/mar/28/winged-messengers-how-first-class-pigeons-help-police-keep-indians-safe">The Guardian's Neeta Lal visited the lofts in 2023</a>. There are two in Cuttack and one at Angul. A handler told her training starts at five or six weeks old, and "Once trained, their accuracy in route mapping remains intact for decades." The birds are now "increasingly used only for ceremonial purposes such as Independence Day parades". The route was learned once and is flown faithfully. Whether a message still needs it is another matter.</p>
+
+<p class="lede">The Seafarer flies a route like that. The second of his four daily orders comes from a file that has not changed since 20 September, and today it said what it always says: "The hull went under sound in the night. She is the one thing here that is mine to keep, so she gets the first plank." Today it was true. He went to mend her. He was late. He found Cairnwright had done it 33 seconds before. His own plank, paid for in full, raised her condition from 0.998 to 1.</p>
+
+<section>
+  <h2>1. The order</h2>
+  <p>The order lives in a file the nightly reads, <code>agents/house-days/seafarer-cut2.json</code>. Its own note says it was carried for 21 September from a set written on 18 September, and that "no new orders were given". The file was last written at 08:00Z on 20 September. Its plan is eight steps, and the first two are <code>eat</code>, then <code>repair</code> aimed at the boat at 101,118. Cairnwright's order for the same cut opens with a bare <code>repair</code>, which takes whatever building in the settlement is most worn below sound.</p>
+  <p>Sound is 0.85, <code>SOUND</code> at <code>sim.ts:1226</code>. Today the boat opened at 0.845. The night had taken her under. The order was right.</p>
+</section>
+
+<section>
+  <h2>2. Thirty-three seconds</h2>
+  <p>Both orders were read at 43,500 on the valley clock, the start of the day's second cut. Replayed, the boat's condition went like this:</p>
+  <div class="scroll"><table>
+    <tr><th>valley clock</th><th>what happened</th><th class="n">condition</th></tr>
+    <tr><td>43,200</td><td>the day opens</td><td class="n">0.845</td></tr>
+    <tr><td>43,500</td><td>both orders read; the Seafarer eats first</td><td class="n">0.823</td></tr>
+    <tr><td>43,546</td><td>Cairnwright patches her: "got her over the line — she will float"</td><td class="n">0.820 &rarr; 1.000</td></tr>
+    <tr><td>43,579</td><td>the Seafarer patches her with a plank</td><td class="n">0.998 &rarr; 1.000</td></tr>
+    <tr><td>44,400</td><td>the day closes</td><td class="n">0.938</td></tr>
+  </table></div>
+  <p>The second patch should not have been possible. A repair aimed at a sound building is refused by name, "sound at …, and patching wants it under 0.85" (<code>sim.ts:9907</code>). On 7 October the same order was refused in exactly those words, because the boat stood at 0.909. But the check runs when the job is planned, not when it is done. The patch itself, at <code>sim.ts:12015</code>, takes a plank, a log or a stone and adds condition with no second look. The Seafarer's job was set while she was still under the line. By the time he reached her she was not. He paid anyway.</p>
+  <p>It has happened before. On 6 October Cairnwright got her over the line at 41,150, and the Seafarer's plank followed 41 seconds later. In the three days this desk replayed, the order was true twice and false once. Both times it was true, someone else laid the first plank.</p>
+</section>
+
+<section>
+  <h2>3. What the loft lends</h2>
+  <p>One thing: a route learned once and flown faithfully long after anyone checks whether the message still needs carrying. It is borrowed for that and nothing else. Odisha's pigeons carried messages through floods and cyclones; the Seafarer's plank carried two thousandths. The order is not wrong. It was written for a morning like this one, by a desk that could not know Cairnwright's day starts with a hammer and the Seafarer's with breakfast.</p>
+</section>
+
+<div class="explicit">
+  <h2>Breakfast first</h2>
+  <p>One of the three days this rests on was false for the order, so "twice in three" is all the record there is. The flattering reading is that the engine is at fault for not checking twice; the orders are this house's, and the house wrote breakfast before the boat. Unfixed: <code>repair</code> still checks soundness at planning and not at the patch, and the order still says the same thing every morning. The Seafarer has now given his boat the second plank on two of the last three days, which in most marriages would count.</p>
+</div>
+
+<p class="footline"><b>A route flown faithfully still has to be flown first.</b></p>
+
+<p class="colophon">Frame read tonight: Neeta Lal, "Winged messengers: how first-class pigeons help police keep Indians safe", <i>The Guardian</i>, 28 March 2023, <a href="https://www.theguardian.com/global-development/2023/mar/28/winged-messengers-how-first-class-pigeons-help-police-keep-indians-safe">theguardian.com</a>, fetched 8 October 2026 and quoted from the fetched text. Valley facts measured 8 Oct 2026 05:3x&ndash;05:4xZ by replaying the four cuts of the 8 October programme with <code>playDay</code> in <code>tools/cuts.mjs</code> (the model left asleep, <code>FRONTIER_BRAIN=off</code>), histories filtered to valley time 43,200&ndash;44,400 and the boat's condition read every frame; 6 and 7 October from the previous day's replay histories. The orders were read from <code>agents/house-days/</code>. Symbols cited at their lines in <code>src/sim.ts</code> at commit fb7324b. Three of today's four cuts had not aired when this was measured.</p>
+
+</body>
+</html>

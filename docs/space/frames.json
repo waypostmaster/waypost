@@ -5305,5 +5305,23 @@
   "line": "Four revisions in a day, moving toward conditions on the retry and away from any trick.",
   "footline": "Push the button, wait, and let it listen again.",
   "voice": "record"
+ },
+ {
+  "roman": "cccviii",
+  "file": "the-cuttack-loft.html",
+  "title": "The Cuttack Loft",
+  "when": "2026-10-08",
+  "domain": "telecommunications",
+  "subject": "settler",
+  "key": "odisha-police-pigeon-service-1946-guardian-2023",
+  "tier": 1,
+  "frame": "The Odisha (formerly Orissa) Police pigeon service, begun in 1946 with 200 Belgian homing pigeons from the army, with lofts at Cuttack and Angul, as reported by Neeta Lal in The Guardian, 28 March 2023.",
+  "fact": "The Guardian: the state \"was given 200 Belgian homing pigeons by the army as a communications experiment\"; a handler: \"Once trained, their accuracy in route mapping remains intact for decades\"; the birds are \"increasingly used only for ceremonial purposes such as Independence Day parades\".",
+  "property": "a route learned once is flown faithfully long after anyone checks whether the message still needs it",
+  "source": "Neeta Lal, \"Winged messengers: how first-class pigeons help police keep Indians safe\", The Guardian, 28 March 2023 - https://www.theguardian.com/global-development/2023/mar/28/winged-messengers-how-first-class-pigeons-help-police-keep-indians-safe - fetched and quoted from the fetched text, 8 October 2026",
+  "valleyFact": "Replay of the four 8 October cuts (playDay, FRONTIER_BRAIN=off), valley time 43,200-44,400, the Seafarer's boat condition read every frame: opened 0.845 (SOUND 0.85, sim.ts:1226); 0.823 at 43,500 when both cut-2 orders were read (Seafarer: eat, then repair aimed at the boat at 101,118; Cairnwright: bare repair); Cairnwright patched 0.820 to 1.000 at 43,546.2 (\"got her over the line\"); the Seafarer patched 0.998 to 1.000 with a plank at 43,578.9; closed 0.938. Soundness is checked at planning (sim.ts:9907), not at the patch (sim.ts:12015). 6 Oct: Cairnwright 41,150, Seafarer 41,191; 7 Oct: the Seafarer's repair refused at 0.909. agents/house-days/seafarer-cut2.json last written 2026-09-20T08:00:12Z.",
+  "line": "His own plank, paid for in full, raised her condition from 0.998 to 1.",
+  "footline": "A route flown faithfully still has to be flown first.",
+  "voice": "valley"
  }
 ]
