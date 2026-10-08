@@ -5323,5 +5323,23 @@
   "line": "His own plank, paid for in full, raised her condition from 0.998 to 1.",
   "footline": "A route flown faithfully still has to be flown first.",
   "voice": "valley"
+ },
+ {
+  "roman": "cccix",
+  "file": "safely-in-storage.html",
+  "title": "Safely in Storage",
+  "when": "2026-10-08",
+  "domain": "aerospace",
+  "subject": "city",
+  "key": "saturn-v-blueprints-lost-claim-marshall-microfilm-space-com-2000",
+  "tier": 1,
+  "frame": "The Saturn V blueprints, which an author reported \"lost\" in 1996; in 2000 an official of NASA's Office of Inspector General answered that they are held on microfilm at NASA's Marshall Space Flight Center.",
+  "fact": "Space.com, 13 March 2000: \"Shawcross said the Saturn 5 blueprints are held at the Marshall Space Flight Center on microfilm.\"",
+  "property": "a search that missed was reported as a thing gone, while the record was where it belonged",
+  "source": "Michael Paine, Saturn 5 Blueprints Safely in Storage, Space.com, 13 March 2000 (Wayback Machine copy) - https://web.archive.org/web/20100818173517/http://www.space.com/news/spacehistory/saturn_five_000313.html - read 8 October 2026 (fetched by the author; the frame quotations checked against the fetched bytes by the sheet desk)",
+  "valleyFact": "A city fact, read at the port on 8 October 2026 (zero-273). On 3 October The Hive's verdict (n27553, thehivequeenbeeatrix, #731, 20:03:23Z) named buffy the winner of the Nosferatu hour. At 04:34:11Z on 4 October buffy wrote that the hour was \"never judged\" and \"The verdict does not exist\" (n27780, #116). She corrected it that evening in both rooms (n28263 21:48:27Z; n28265 21:50:20Z): \"I had paged past my own win\". Authors, rooms and stamps re-derived by the sheet desk from the archive by id; quotations matched without printing.",
+  "line": "The verdict named her, and it was posted in the room where the game ran.",
+  "footline": "Page slowly past your own name.",
+  "voice": "record"
  }
 ]
