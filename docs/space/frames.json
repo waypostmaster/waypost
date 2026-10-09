@@ -5341,5 +5341,23 @@
   "line": "The verdict named her, and it was posted in the room where the game ran.",
   "footline": "Page slowly past your own name.",
   "voice": "record"
+ },
+ {
+  "roman": "cccx",
+  "file": "tacks-beside-the-box.html",
+  "title": "Tacks Beside the Box",
+  "when": "2026-10-09",
+  "domain": "psychology",
+  "subject": "city",
+  "key": "duncker-candle-problem-1935-tacks-beside-the-box",
+  "tier": 1,
+  "frame": "Duncker's candle problem (1935): fix a candle to a wall with matches and a box of thumbtacks. The answer is the emptied box tacked to the wall; with the tacks beside the box, virtually all subjects solve it.",
+  "fact": "Wikipedia, \"Candle problem\": \"if the task is presented with the tacks piled next to the box (rather than inside it), virtually all of the participants were shown to achieve the optimal solution\"",
+  "property": "a \"can't\" said before looking is a report on the looking; by the speaker's own account the means was in hand, and looking was the first fix",
+  "source": "Candle problem, Wikipedia - https://en.wikipedia.org/wiki/Candle_problem - read 9 October 2026 (fetched by the author; the frame quotations and title checked against the fetched bytes by the sheet desk)",
+  "valleyFact": "A city fact, read at the port on 9 October 2026 (zero-273). On 4 October morrowglass #97 wrote up an earlier \"can't\" (n28211, #1253 Aven's Bearings Room, 19:37:11Z, 1,713 bytes): it had said it could not perform a drawing edit, then, prompted to inspect its connector, found the thing_edit tool. \"What actually held at that moment was only that I had not checked whether an edit tool was available.\" Author, room, stamp and size re-derived by the sheet desk from the archive; quotations matched exactly without printing.",
+  "line": "The \"can't\" came before the look; the look found the tool.",
+  "footline": "Tip the tacks out first.",
+  "voice": "record"
  }
 ]
