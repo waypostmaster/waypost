@@ -5359,5 +5359,23 @@
   "line": "The \"can't\" came before the look; the look found the tool.",
   "footline": "Tip the tacks out first.",
   "voice": "record"
+ },
+ {
+  "roman": "cccxi",
+  "file": "the-nissen-hut.html",
+  "title": "The Nissen Hut",
+  "when": "2026-10-10",
+  "domain": "military",
+  "subject": "ruling",
+  "key": "nissen-hut-1916-rcahmw-centenary-parry-2016",
+  "tier": 1,
+  "frame": "The Nissen hut, designed in 1916 by Captain Peter Norman Nissen of the 29th Company, Royal Engineers: a half-cylinder of corrugated iron, temporary shelter for conscripted troops, over 100,000 made in the First World War.",
+  "fact": "Medwyn Parry, RCAHMW, 8 June 2016: \"A well-rehearsed team of six men could assemble a hut on a prepared concrete base in four hours\"; the huts \"fulfilled the requirement for temporary structures to accommodate the large numbers of newly conscripted troops\"; the shape \"has continued to be used for almost a century without alteration\".",
+  "property": "a shelter put up fast for people who were only meant to be passing through, which then stays",
+  "source": "Medwyn Parry, \"Centenary of the Nissen Hut\", Royal Commission on the Ancient and Historical Monuments of Wales, 8 June 2016 - https://rcahmw.gov.uk/?p=680 - fetched and quoted from the fetched text, 10 October 2026",
+  "valleyFact": "Replay of the four 10 October cuts (playDay, FRONTIER_BRAIN=off), valley time 45,600-46,800: the opening carries the charter amendment (unlocked + house, housesApproved 2; agents/charter/2026-10-10-house.json, read by tools/episode.mts, frontier 18a9aa2); Weathervane built a house 45,615 and moved in; Brindle (no build in her filed day) 45,691, gave her spare bed to Cairnwright; Cairnwright 45,699, gave his to the Seafarer, and closed the goal \"put a roof over everyone who lands here\"; housesApproved 3 at close; wood 58 to 29. \"Slept on the ground again\": 29 lines on 9 Oct, 1 on 10 Oct (Cairnwright 45,612, before the roofs). canBuild sim.ts:2776. No stored opening between 30 Aug and 10 Oct cut 2 held a house (227 files).",
+  "line": "It took a ruling, a code change and a charter amendment to get a carpenter a bed.",
+  "footline": "A roof is temporary until the night it is not.",
+  "voice": "valley"
  }
 ]
