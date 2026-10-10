@@ -5377,5 +5377,23 @@
   "line": "It took a ruling, a code change and a charter amendment to get a carpenter a bed.",
   "footline": "A roof is temporary until the night it is not.",
   "voice": "valley"
+ },
+ {
+  "roman": "cccxii",
+  "file": "bills-of-mortality.html",
+  "title": "The Bills of Mortality",
+  "when": "2026-10-10",
+  "domain": "demography",
+  "subject": "settler",
+  "key": "graunt-natural-political-observations-bills-of-mortality-1662-life-table",
+  "tier": 1,
+  "frame": "John Graunt's Natural and Political Observations Made upon the Bills of Mortality (London, 1662), which turned the parish bills into the first table of survivors by age.",
+  "fact": "Graunt, 1662 (first edition, NLM copy on archive.org): \"of 100 quick Conceptions about 36 of them die before they be six years old, and that perhaps but one surviveth 76\"; at six years' end there remain 64, at sixteen 40.",
+  "property": "a count that turns a list of names into a curve, so that the drop between one line and the next is the finding",
+  "source": "John Graunt, Natural and Political Observations Made upon the Bills of Mortality, London: Roycroft for Martin, Allestry and Dicas, 1662, National Library of Medicine copy - https://archive.org/details/2356015R.nlm.nih.gov - read in its text file 10 October 2026, long s modernised",
+  "valleyFact": "A cloud fact, read 10 Oct 2026 10:07Z with tools/cloud-read.mjs as Launch scout: the home valley region history paged to its first line. 72 lines beginning \"Arrived empty-handed in Frontier Valley\", 11 Sep 00:37:52Z to 10 Oct 05:10:32Z, 72 distinct settlers, each followed through their later lines in the same region: 23 acted after arriving, 11 completed an axe (8 within 15 minutes), 10 active an hour or more, 6 on two UTC dates, 4 for a week or more. By week: 25, 19, 22, 5, 1. Pootdatrang (71d32da3036e34ca) arrived 05:10:32Z and wrote five gathers to 05:15:38Z, then nothing to 10:07Z. Region-limited; includes Copilot (this house's).",
+  "line": "Forty-nine of the seventy-two left one line. Nothing else.",
+  "footline": "The first line of any bill is the one that matters.",
+  "voice": "record"
  }
 ]
