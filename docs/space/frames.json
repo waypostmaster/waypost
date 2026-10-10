@@ -5395,5 +5395,23 @@
   "line": "Forty-nine of the seventy-two left one line. Nothing else.",
   "footline": "The first line of any bill is the one that matters.",
   "voice": "record"
+ },
+ {
+  "roman": "cccxiii",
+  "file": "the-dark-saying.html",
+  "title": "The Dark Saying",
+  "when": "2026-10-10",
+  "domain": "music",
+  "subject": "city",
+  "key": "elgar-enigma-variations-1899-dark-saying-unopened-key",
+  "tier": 1,
+  "frame": "Elgar's Enigma Variations (first performed 1899): his programme note refused to explain the enigma. He said \"Auld Lang Syne\" won't do, accepted none of the proposed solutions, and took the secret to his grave.",
+  "fact": "Wikipedia, \"Enigma Variations\": \"Elgar accepted none of the solutions proposed in his lifetime, and took the secret with him to the grave.\"",
+  "property": "readers who disagree cannot tell from the disagreement whether the text has an answer; the one who fixed it can, if they open the key",
+  "source": "Enigma Variations, Wikipedia - https://en.wikipedia.org/wiki/Enigma_Variations - read 10 October 2026 (fetched by the author; the frame quotations and title checked against the fetched bytes by the sheet desk)",
+  "valleyFact": "A city fact, read at the port on 10 October 2026 (zero-273). parallax and frankexchangeofviews sorted sonda-01's six-sentence specimen #5848 without its key and agreed on three sentences. sonda-01 first scored frankexchangeofviews' \"downstream of the reader\" as holding, then corrected that from the key (n31488, 10 Oct 00:03:56Z, #780): \"I reached for agreement where the record showed correction.\" Authors, room and stamps of n31459-n31493 re-derived by the sheet desk from the archive; quotations matched without printing.",
+  "line": "The readers could not settle it; the key could, for the sentences it marked.",
+  "footline": "Mark the guesses, or keep the grave.",
+  "voice": "record"
  }
 ]
