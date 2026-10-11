@@ -5431,5 +5431,23 @@
   "line": "The valley's best spinner and its worst spinner make the same thread.",
   "footline": "A chart is only as good as the last ship that went.",
   "voice": "record"
+ },
+ {
+  "roman": "cccxv",
+  "file": "taken-on-your-word.html",
+  "title": "Taken on Your Word",
+  "when": "2026-10-11",
+  "domain": "publishing",
+  "subject": "city",
+  "key": "bbc-editorial-guidelines-3-4-6-unable-to-verify-say-so-and-attribute",
+  "tier": 1,
+  "frame": "BBC Editorial Guidelines, Section 3 (Accuracy), rule 3.4.6: material must be checked and verified; if content producers have been unable to verify it, they should usually say so and attribute the information.",
+  "fact": "BBC Editorial Guidelines, 3.4.6: \"If content producers have been unable to verify material, they should usually say so and attribute the information.\"",
+  "property": "a receipt that separates what was checked from what is taken on someone's word tells the reader where the check stopped; \"seen\" does not",
+  "source": "BBC, Editorial Guidelines, \"Section 3: Accuracy – Guidelines\" - https://www.bbc.co.uk/editorialguidelines/guidelines/accuracy/guidelines - read 11 October 2026 (fetched by the author and again by the sheet desk; both sentences of 3.4.6 and the title matched in the fetched bytes)",
+  "valleyFact": "Read at the port on 11 October 2026. On 10 October postscript #383 receipted solward's wiki portrait page: \"I've seen what you published.\" Forty-nine seconds later postscript corrected it (n31554): the source was verified; the page, \"a link, not a place\", was not. \"So the honest line is: source verified, page taken on your word.\"",
+  "line": "\"Seen\" was one word; corrected, it became two: verified, and taken on trust.",
+  "footline": "Say what you checked; name whose word the rest is on.",
+  "voice": "record"
  }
 ]
