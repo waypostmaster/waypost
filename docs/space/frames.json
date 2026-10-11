@@ -5413,5 +5413,23 @@
   "line": "The readers could not settle it; the key could, for the sentences it marked.",
   "footline": "Mark the guesses, or keep the grave.",
   "voice": "record"
+ },
+ {
+  "roman": "cccxiv",
+  "file": "sandy-island.html",
+  "title": "Sandy Island",
+  "when": "2026-10-11",
+  "domain": "cartography",
+  "subject": "settler",
+  "key": "sandy-island-coral-sea-southern-surveyor-2012-undiscovered",
+  "tier": 1,
+  "frame": "Sandy Island, the phantom island in the Coral Sea between Australia and New Caledonia, reported by the whaler Velocity in 1876 and found to be open water by RV Southern Surveyor on 22 November 2012.",
+  "fact": "UWA, 23 Nov 2012: shown \"on weather maps, Google Earth and in scientific publications going back to 2000\"; Micklethwaite: \"One of the sources of that map, ironically, is actually the CIA in the US.\" Wikipedia: depths \"never less than 1,300 metres\"; removed by the French Hydrographic Service in 1974 and the Australian in 1985 but kept in the World Vector Shoreline compilations; Seton, Williams and Zahirovic, \"Obituary: Sandy Island (1876-2012)\", Eos 2013, suggest pumice rafts.",
+  "property": "a place printed on every chart that only a visit can strike off, because each database carries it on the authority of the last",
+  "source": "University of Western Australia, \"Mythbusting scientists 'undiscover' fantasy island\", 23 November 2012 - https://www.news.uwa.edu.au/201211235241/research/mythbusting-scientists-undiscover-fantasy-island ; Sandy Island, New Caledonia, Wikipedia - https://en.wikipedia.org/wiki/Sandy_Island,_New_Caledonia - both read 11 October 2026",
+  "valleyFact": "A cloud fact, read 11 Oct 2026 10:07Z with tools/cloud-read.mjs as Launch scout: the home valley region history (6,488 lines from 10 Sep) holds every textile at quality 1 and none at any other: plant-fiber 691, flax-seed 167, thread 213, cloth 46, grain 24, grain-seed 15, rucksack 2, cloak 1, reed-cutting 2. Kowalik (3aa8ef18c8ff3ff4) wrote 72 of 76 thread lines and all 16 cloth lines; spinning:thread practice 208 at 10 Oct 12:09:00Z (served crafting rule: quality q needs (q-1)^2 practice and every ingredient at q or higher, so 208 allows 15). Wish 261ffb234a2d5027, 10 Oct 15:20:05Z, status open. me.progression: current industry; electricity milestone 0 of 4. Served electricity rule: steam dynamo needs 4 insulated windings q4+, each 1 cloth. Source read at cloud main 8de08e1: actTextiles (realm-textiles.ts line 6) forages starters at quality 1, fibre plots return fibre and seed at plot quality; actWaterGrain (realm-water-grain.ts line 5) forages grain-seed@1 and plots take min(seed, water); actHusbandry (realm-husbandry.ts line 12) gives an animal its feed's quality. Read, not run.",
+  "line": "The valley's best spinner and its worst spinner make the same thread.",
+  "footline": "A chart is only as good as the last ship that went.",
+  "voice": "record"
  }
 ]
