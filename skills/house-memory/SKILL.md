@@ -1,11 +1,11 @@
 ---
 name: house-memory
-description: "A file-memory practice for a group of AI agent desks sharing one workspace — seven file roles, boot and seal loops, three provenance labels (measured/carried/inferred), a negative-control rule, and a runnable linter that checks a desk's memory before it seals. Use when starting or waking a desk, writing or reviewing a handoff, adding a memory file, deciding what belongs in memory versus the repo, wiring a seal step, auditing whether a check can actually fail, or when a desk is being set up from scratch. [v0.4-public]"
+description: "A file-memory practice for a group of AI agent desks sharing one workspace — seven file roles, boot and seal loops, three provenance labels (measured/carried/inferred), a negative-control rule, and a runnable linter that checks a desk's memory before it seals. Use when starting or waking a desk, writing or reviewing a handoff, adding a memory file, deciding what belongs in memory versus the repo, wiring a seal step, auditing whether a check can actually fail, or when a desk is being set up from scratch. [v0.4.1-public]"
 ---
 
 # House memory — the practice every desk shares
 
-**VERSION 0.4.** No timestamp is written on this line, deliberately. An
+**VERSION 0.4.1.** No timestamp is written on this line, deliberately. An
 earlier version carried one and it was wrong within minutes of being written —
 the stamp said one time while the bytes were from another, in the very file
 whose subject is stale records. **A hand-written stamp is a note ABOUT bytes
@@ -22,6 +22,10 @@ foreign file and cannot self-invalidate. A hash written into the file it names
 changes the file. Cite version AND digest in an adoption row; the version says
 what changed and the digest says whether you read it.
 
+    v0.4.1  The ledger is updated by appending, and the latest dated
+          addendum is an item's current state (Seal step 3 had said
+          "update", beside "nothing is amended in place"; a non-Claude
+          reader found the contradiction).
     v0.4  generalised for public release; the incident log and this house's
           own failure catalogue held back (see Provenance below)
     v0.3  Boot step 6 added: verify a memory before acting on it, with its
@@ -114,6 +118,12 @@ reader ends on the question that matters:
 **`DEFAULT` is mandatory.** An item that does not say what happens on silence
 is not staged, it is forgotten. Nothing is amended in place: a ruling is
 appended as a dated addendum and the superseded text stays visible.
+**The latest dated addendum under an item is its current state**; the
+original `RULED? no` above it is history, not a contradiction. Start an
+addendum line with `ADDENDUM <UTC>:`, and keep the block keywords
+(`STAGED-AWAITING-KEEPER`, `CLOCK`, `DEFAULT`, `RULED?`) out of the first
+column of addendum lines, so the linter's counts stay item-shaped. **The linter counts block lines and
+cannot tell whether an addendum is right**; that check is a reader's.
 
 ### 5. JOURNAL — append-only
 What happened, one entry per event, never rewritten. `.jsonl` suits it. Fields
@@ -219,9 +229,11 @@ Before stopping:
 1. **Append** the session's entries to the journal.
 2. **Rewrite the snapshot wholesale** — true now, owed, first action next,
    full literals, and the negative state.
-3. **Update the ledger** so every item's `RULED?` still reads correctly.
+3. **Update the ledger by appending:** a dated addendum under each item whose
+   state changed this session, so that every item's latest addendum answers
+   `RULED?` correctly. Never edit the original block.
 4. **Say plainly what was measured and what was carried.**
-5. **Run the linter:** `node tools/memcheck.js --map <desk>/memory-map.json`
+5. **Run the linter:** `node <skill-dir>/tools/memcheck.js --map <desk>/memory-map.json`
 
 ---
 
@@ -232,8 +244,23 @@ Before stopping:
 on a desk that calls its snapshot `HANDOFF.md` and one that calls it
 `NEXT-SESSION.md`.
 
-    node tools/memcheck.js --map <desk-root>/memory-map.json
-    node tools/memcheck.js --selftest     # fixtures for every check
+    node <skill-dir>/tools/memcheck.js --map <desk-root>/memory-map.json
+    node <skill-dir>/tools/memcheck.js --selftest     # fixtures for every check
+
+The map, every key optional (`root` defaults to the map file's own folder):
+
+    { "root": "<desk-root>",
+      "kernel":   "CLAUDE.md",
+      "literals": "LITERALS.md",
+      "snapshot": "NEXT-SESSION.md",
+      "ledger":   "OPEN-ITEMS.md",
+      "journal":  "CHRONICLE.jsonl",
+      "con":      "CONN.md",
+      "stop":     "STOP.md" }
+
+A role left out is reported as unassigned, except `stop`, which is checked
+only when named, so name it. For a `.jsonl` journal, write `ts` in UTC
+`Z` form (no offsets), because the order check compares the strings.
 
 **Run `--selftest` before believing a clean report.** It manufactures a tree
 that must fail each check and a tree that must pass, which is this skill's own
