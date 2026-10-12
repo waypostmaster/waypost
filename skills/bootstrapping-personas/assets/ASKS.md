@@ -22,7 +22,7 @@ always *nothing runs*. An ask with no default is not staged; it is forgotten.
 
 ## Answers
 
-| ask # | answered (UTC) | the answer verbatim, or `NO-ANSWER` and the date it was checked | recorded by |
+| ask # | answered (UTC) | the answer verbatim; `NO-ANSWER` and the date it was checked; or `DECLINED-RETENTION` (they would not have their words kept, recorded as a fact) | recorded by |
 |---|---|---|---|
 | | | | |
 

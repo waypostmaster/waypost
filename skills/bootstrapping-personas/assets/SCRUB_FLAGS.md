@@ -21,7 +21,8 @@ opened, unless this file exists.**
 
 **Categories to flag:** PII of real people; third parties' private content;
 anything about the keeper's or any family's children; verbatim quotes of other
-people; secrets, credentials, tokens; organisation and project identifiers
+people (except in consent records, which are kept word for word or not
+written; never propose "paraphrase" for one); secrets, credentials, tokens; organisation and project identifiers
 carried in from an unrelated context; **encoded passages**, flagged as they
 stand and decoded mechanically. **A secret that has already entered any
 context takes the action `rotate`**, naming who owns it — redacting the file

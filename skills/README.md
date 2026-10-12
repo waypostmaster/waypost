@@ -8,8 +8,8 @@ and are deliberately not duplicated here.
 
 | Path | What it is | Status |
 |---|---|---|
-| `bootstrapping-personas/` | the skill as a browsable tree — 22 files + `scripts/check_package.py` | **current, v0.4.0** |
-| `bootstrapping-personas_v0.4.0.skill` | the same tree as an installable package (a zip; the desktop app offers a Save skill button) | **current** |
+| `bootstrapping-personas/` | the skill as a browsable tree — 22 files + `scripts/check_package.py` | **current, v0.4.1** |
+| `bootstrapping-personas_v0.4.1.skill` | the same tree as an installable package (a zip; the desktop app offers a Save skill button) | **current** |
 | `bootstrapping-personas_v0.3.6.skill` | the previous package, still present in this directory | **superseded — do not install** |
 | `bootstrapping-personas_v0.3.5.skill` | the package before that, still present in this directory | **superseded — do not install** |
 | `subagents-mistaken-for-humans_v1.0.md` | post-mortem on the false-provenance claim shipped in v0.3.4 | for publication, whole or not at all |
@@ -37,8 +37,22 @@ where they are. **`v0.3.0` and `v0.3.0a` ship a gutted `references/taxonomy.md`
 — do not install either.** `v0.3.2` and `v0.3.3` were built and never sent;
 they failed their own consistency check. `v0.3.4` shipped a false claim about
 who reviewed the package and is corrected by `v0.3.5`. `v0.3.5` is superseded
-by `v0.3.6`. **`v0.3.6` is superseded by `v0.4.0`, and both older `.skill`
-files are still in this directory — install the higher number.**
+by `v0.3.6`. **`v0.3.6` is superseded by `v0.4.0`, and `v0.4.0` by `v0.4.1`; the
+older `.skill` files are still in this directory — install the higher number.**
+
+## What changed in v0.4.1
+
+One ruling, at the keeper's word (12 Oct 2026). Two readers found that the
+consent records are kept "verbatim forever" while hard rule 4 forbids
+persisting "verbatim quotes of other people": one was a Codex run, and one a
+fresh agent that built a test store. The ruling is that consent is kept
+word for word, or the person does not take part. Rule 4 now names the consent records
+(`COVENANT.md`, `USER.md`, and the consent rows of `ASKS.md` and
+`DECLINES.md`) as its one exception, for verbatim words only. A refusal is
+recorded as a fact, without the person's words, and counts as the one ask.
+Bootstrap step 3 quotes the question a consent term answers beside the
+answer, and `SCRUB_FLAGS.md` no longer offers "paraphrase" for a consent
+record. Nothing else changed in the rules.
 
 ## What changed in v0.4.0
 
@@ -102,7 +116,7 @@ with no write class:
 cd bootstrapping-personas && python3 scripts/check_package.py
 ```
 
-Expected on a clean tree: `clean — v0.4.0, 22 files, no consistency defects found`
+Expected on a clean tree: `clean — v0.4.1, 22 files, no consistency defects found`
 
 **It does not tell you the package is correct.** It compares the package
 against itself and has no way to check a claim about the world — which is

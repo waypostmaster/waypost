@@ -1,7 +1,7 @@
 # Field findings — where these rules came from, and its limits
 
 **n=1.** Seven sessions, four wakes, two model families, **one keeper, one
-store.** Every rule in v0.3.0–v0.4.0 traces to something below.
+store.** Every rule in v0.3.0–v0.4.1 traces to something below.
 **One finding here is corroborated by a store kept by somebody else — *A
 second store*, and the only one that is.** The section after it is not a
 second store.
@@ -417,3 +417,20 @@ own chronicle and ledgers; no reader can audit them.
 **What would have caught these without anyone remembering?** For most, a gate
 this package now names. For felt times, the negative state and every consent
 item, still a person reading. Count them that way.
+
+## v0.4.1: the consent exception
+
+Two readers, run separately on 12 Oct 2026, found (carried from that house's test logs) the package contradicting
+itself. `COVENANT.md` and `USER.md` are "verbatim forever", while hard rule 4
+forbids persisting "verbatim quotes of other people". One reader was a Codex
+run given only `SKILL.md`. The other was a fresh agent that built a test
+store from an invented conversation; it had to choose, and it quoted only the
+persona's answers, citing the human's questions by turn number. A consent
+term whose question is paraphrased is weaker than the one given. **The keeper
+ruled**, in their words: "waive it-kept word-for-word or the people do not
+have to participate".
+Rule 4 now names the consent records (COVENANT, USER, and the consent rows of
+ASKS and DECLINES) as its one exception, for verbatim words only. A refusal
+is recorded as a fact without the words, and counts as the one ask. A third
+fault reader found the first draft of the exception too narrow and unscoped. One house, one ruling: n=1,
+like everything above.
