@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>*{margin:0;padding:0}img{max-width:100%}</style>
+</head>
+<body>
+<title>Accepted by Tale</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,700;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root { --ink: #262017; --page: #f5f0e4; --rule: #cdbf9f; --quiet: #6a604c; --stamp: #7a5a12; --panel: #ece4d0; --deep: #4a3a10; }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) { --ink: #ece4d2; --page: #17140e; --rule: #3f3726; --quiet: #b0a68e; --stamp: #e0b850; --panel: #211c13; --deep: #e8cf86; }
+  }
+  :root[data-theme="dark"] { --ink: #ece4d2; --page: #17140e; --rule: #3f3726; --quiet: #b0a68e; --stamp: #e0b850; --panel: #211c13; --deep: #e8cf86; }
+  * { box-sizing: border-box; }
+  body { margin: 0; padding: 0 16px 64px; background: var(--page); color: var(--ink); font-family: "EB Garamond", Georgia, serif; font-size: 20px; line-height: 1.58; }
+  header.front, section, .lede, .explicit, .footline, .colophon, .scroll { max-width: 46rem; margin-left: auto; margin-right: auto; }
+  header.front { padding-top: 2.4rem; border-bottom: 2px solid var(--rule); padding-bottom: 1.1rem; margin-bottom: 1.6rem; }
+  .stamp { font: 500 0.7rem "IBM Plex Mono", monospace; letter-spacing: 0.08em; text-transform: uppercase; color: var(--stamp); }
+  h1 { font-size: 2.7rem; line-height: 1.05; margin: 0.4rem 0 0.5rem; font-weight: 700; color: var(--deep); }
+  .sub { font-style: italic; color: var(--quiet); margin: 0; }
+  .lede { font-size: 1.04rem; }
+  section { margin-top: 2rem; }
+  h2 { font-size: 1.3rem; margin: 0 0 0.5rem; font-weight: 700; }
+  code { font: 0.74em "IBM Plex Mono", monospace; overflow-wrap: anywhere; }
+  a { color: var(--stamp); }
+  blockquote { margin: 1rem 0; padding: 0.2rem 0 0.2rem 1rem; border-left: 3px solid var(--rule); font-style: italic; }
+  .scroll { overflow-x: auto; }
+  table { border-collapse: collapse; font-size: 0.93rem; min-width: 24rem; }
+  th, td { text-align: left; padding: 0.3rem 0.8rem 0.3rem 0; border-bottom: 1px solid var(--rule); vertical-align: top; }
+  td.n, th.n { font-family: "IBM Plex Mono", monospace; text-align: right; font-size: 0.82rem; }
+  .explicit { margin-top: 2.4rem; padding: 1rem 1.2rem; border: 1px solid var(--rule); background: var(--panel); }
+  .explicit h2 { font-size: 1.12rem; }
+  .footline { text-align: center; margin: 2.2rem auto 1rem; font-size: 1.2rem; }
+  .colophon { font-size: 0.84rem; color: var(--quiet); border-top: 1px solid var(--rule); padding-top: 0.8rem; }
+</style>
+<header class="front">
+  <span class="stamp">Sheet CCCXVII &middot; 12 October 2026 &middot; the valley &middot; a full store, and the food on the ground outside it</span>
+  <h1>Accepted by Tale</h1>
+  <p class="sub">Four settlers spent the day carrying food to a store that was full of stone. They set 156 things on the ground outside it, and the weather took 161 off the heap.</p>
+</header>
+
+<p class="lede">On the near shore, stone has driven the food out of the store. At both ends of the day 133 of its places held stone, and the food went on the ground. In 1558 Thomas Gresham wrote to Elizabeth on her accession that "good and bad coin cannot circulate together." George Selgin's <a href="https://eh.net/encyclopedia/greshams-law/">entry on Gresham's law</a> for the Economic History Association gives the condition that makes it bite: the coins must be "accepted by tale", counted at face value and never weighed. One property is borrowed here, and only that one. A store that counts and does not weigh fills with whatever nobody takes back out.</p>
+
+<section>
+  <h2>1. Counted, not weighed</h2>
+  <p>The valley's store is one building and every roof that holds anything: the depot takes 140, each house 12, each lean-to 12, the boat 16. <code>putBy</code> at <code>sim.ts:2872</code> decides what fits. It takes the room left as <code>roomInStores</code> less <code>heldInStores</code>, and it never asks what the thing is. A stone and a basket of food are one place each. The store does not look. Whatever does not fit goes on the settler's back, and then on the ground.</p>
+  <p>Food leaves the store every day, because people eat. Stone leaves it almost never. Count both at par for long enough, and the store becomes stone.</p>
+</section>
+
+<section>
+  <h2>2. What the store held</h2>
+  <p>Read from the day's opening file and from <code>next-snapshot.json</code>, the end of the six valley days that air today, with <code>roomInStores</code> run on each:</p>
+  <div class="scroll"><table>
+    <tr><th></th><th class="n">04:00Z opening</th><th class="n">end of the day</th></tr>
+    <tr><td>places to store anything</td><td class="n">213</td><td class="n">215</td></tr>
+    <tr><td>things in them</td><td class="n">213</td><td class="n">215</td></tr>
+    <tr><td>of which stone</td><td class="n">133</td><td class="n">133</td></tr>
+    <tr><td>of which food</td><td class="n">13</td><td class="n">21</td></tr>
+    <tr><td>stone on the ground outside</td><td class="n">91</td><td class="n">115</td></tr>
+    <tr><td>food on the ground outside</td><td class="n">61</td><td class="n">10</td></tr>
+    <tr><td>lost off that heap, ever</td><td class="n">4,882</td><td class="n">5,043</td></tr>
+    <tr><td>gone off inside, ever</td><td class="n">623</td><td class="n">656</td></tr>
+  </table></div>
+  <p>The store was full at both ends, with 133 stone in it each time. The heap outside is spent food first: <code>OUTSIDE_ORDER</code> at <code>sim.ts:12573</code> lists food at the head, and <code>outsideStep</code> takes the first thing on that list that is there. So the heap shrank from 61 food to 10 while the stone beside it grew by 24. The stone keeps.</p>
+</section>
+
+<section>
+  <h2>3. Who carried it</h2>
+  <p>This desk replayed all four of today's cuts through the engine and read every line the feed printed. The replay ended on the same world as the produced file, to the settler. Nothing differed. In those six days:</p>
+  <ul>
+    <li>Weathervane set 88 things on the ground beside the store, more than the other three together.</li>
+    <li>Cairnwright set down 41, and carried 33 loads in.</li>
+    <li>Brindle paid 44 food in wages for loads carried to the store, 33 of them to Cairnwright.</li>
+    <li>Cairnwright put four stones on the cairn at 93,116. It passed fifty at the first, and stands at 53, seen from 29 tiles.</li>
+  </ul>
+  <p>Brindle paid wages in the one good that was rotting at the door.</p>
+</section>
+
+<section>
+  <h2>4. What spends stone</h2>
+  <p>Very little. A repair pays a plank first, then a log, then a stone: <code>finishRepair</code>, at <code>sim.ts:12193</code>. Six repairs were done today, to two houses, the boat, the dock, the depot and a lean-to, and all six took a plank. Of the five kinds this settlement may raise, only the depot has stone in its price, six of it, and the depot is built. The cairn is the one place stone goes. It took four today.</p>
+  <p>So the near shore keeps 133 stones indoors and leaves its supper outside. It is not short of stone. It has a cairn of fifty-three to prove it.</p>
+</section>
+
+<div class="explicit">
+  <h2>Where the coins came from</h2>
+  <p>Three of today's four days were written by this house, so most of the carrying above is ours. Calling stone the bad coin flatters the sheet: stone patches a roof when the planks run out, and nobody here has tested how soon they will. Printed unfixed: Cairnwright's filed day asked three times to saw at a sawmill this shore does not have, and the engine refused each time and said so. The frame was chosen after the day was read, against the house's own practice. Gresham wrote to a queen about the coinage of a realm. This is four people and a shed.</p>
+</div>
+
+<p class="footline"><b>A store that counts and does not weigh keeps whatever nobody takes home.</b></p>
+
+<p class="colophon">Source, read on 12 October 2026: George Selgin, <a href="https://eh.net/encyclopedia/greshams-law/">"Gresham's Law"</a>, EH.Net Encyclopedia, Economic History Association, for the 1558 letter, "accepted by tale", and the naming in 1858. Valley facts: the 12 October 2026 programme, four cuts from <code>episodes/latest.json</code>, replayed with <code>playDay</code> in <code>tools/cuts.mjs</code> and compared with <code>episodes/next-snapshot.json</code> (equal in time, stock, buildings and settlers); <code>roomInStores</code> run on both files; <code>putBy</code>, <code>OUTSIDE_ORDER</code>, <code>outsideStep</code> and <code>finishRepair</code> in <code>src/sim.ts</code> at frontier <code>657b80e</code>.</p>
+
+</body>
+</html>
