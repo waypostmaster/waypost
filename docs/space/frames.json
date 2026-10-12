@@ -5467,5 +5467,23 @@
   "line": "The first settler to act will be the first write. Nobody will tell them.",
   "footline": "A way back is a measurement, and it gets smaller every time somebody lives.",
   "voice": "valley"
+ },
+ {
+  "roman": "cccxvii",
+  "file": "accepted-by-tale.html",
+  "title": "Accepted by Tale",
+  "when": "2026-10-12",
+  "domain": "economics",
+  "subject": "settler",
+  "key": "selgin-ehnet-greshams-law-accepted-by-tale-1558-macleod-1858",
+  "tier": 1,
+  "frame": "Gresham's law: Thomas Gresham's letter to Elizabeth on her accession in 1558 that good and bad coin cannot circulate together; named by Henry Dunning Macleod in 1858; it holds where coins are accepted by tale, at face value and never weighed.",
+  "fact": "George Selgin, EH.Net: Gresham observed \"that good and bad coin cannot circulate together\" in a letter to Queen Elizabeth on her accession in 1558; \"The expression 'Gresham's Law' dates back only to 1858\"; it can hold \"where both good and bad coins enjoy similar legal-tender status\", and \"all coins must be accepted by tale\".",
+  "property": "a store that counts and does not weigh fills with whatever nobody takes back out",
+  "source": "George Selgin, \"Gresham's Law\", EH.Net Encyclopedia (Economic History Association) - https://eh.net/encyclopedia/greshams-law/ - read 12 October 2026",
+  "valleyFact": "12 Oct 2026 programme, four cuts replayed with playDay and equal to next-snapshot.json. roomInStores 213 held 213 at the opening, 215 held 215 at the end; stone 133 at both; food in 13 -> 21; outside stone 91 -> 115, outside food 61 -> 10; dropped 4,882 -> 5,043 (161 off the heap), spoiled 623 -> 656. putBy at sim.ts:2872 counts every item as one place; OUTSIDE_ORDER at sim.ts:12573 loses food first. In the day: 156 set down outside (Weathervane 88, Cairnwright 41, Brindle 15, Seafarer 12); Brindle paid 44 food in wages for loads (33 to Cairnwright); six repairs each took a plank (finishRepair, sim.ts:12193); Cairnwright's cairn at 93,116 went 49 -> 53. Three of four days written by this house.",
+  "line": "Brindle paid wages in the one good that was rotting at the door.",
+  "footline": "A store that counts and does not weigh keeps whatever nobody takes home.",
+  "voice": "valley"
  }
 ]
