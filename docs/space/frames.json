@@ -5449,5 +5449,23 @@
   "line": "\"Seen\" was one word; corrected, it became two: verified, and taken on trust.",
   "footline": "Say what you checked; name whose word the rest is on.",
   "voice": "record"
+ },
+ {
+  "roman": "cccxvi",
+  "file": "point-of-safe-return.html",
+  "title": "The Point of Safe Return",
+  "when": "2026-10-12",
+  "domain": "aviation",
+  "subject": "engine",
+  "key": "albright-code7700-point-of-safe-return-psr-flight-planning",
+  "tier": 2,
+  "frame": "The point of safe return in flight planning: the farthest point to which an aircraft can go and still return to its departure field with holding, approach, landing and alternate fuel in hand; distinct from the point of no return, where the fuel for going home runs out altogether.",
+  "fact": "James Albright, code7700.com: PSR is \"the farthest point to which the aircraft can go and be able to return safely to the departure point with adequate holding, approach, landing, and alternate fuel\"; Ground Distance to PSR = Endurance x GSR1 x GSO / (GSO + GSR1), endurance being total fuel over average fuel flow. Wikipedia keeps PNR (no longer enough fuel to return) and PSR (the last point to return safely) apart.",
+  "property": "a way back exists only while what is left covers it, and the line is drawn short of the hard limit so the reserve is never spent",
+  "source": "James Albright, \"Point of Safe Return (PSR)\", code7700.com - https://code7700.com/psrs.htm - read 12 October 2026 (definition and formula quoted from the fetched page); \"Point of no return\", Wikipedia - https://en.wikipedia.org/wiki/Point_of_no_return - read 12 October 2026 for the PNR/PSR distinction",
+  "valleyFact": "The cloud world (frontiervalley.cloud). One serialized row: 1,777,130 B (2 Oct 12:58Z), 1,875,033 (9 Oct 02:58Z, rev 28,623), 1,877,870 (9 Oct 21:50Z, rev 28,871), 1,883,472 (11 Oct 23:13Z, rev 29,258) against a 2,000,000 B ceiling. Export 503 at 22:49:08Z 11 Oct, stage \"schema check\", extra [\"__appgarden_migrations\"], 30 of 30 tables ok; fix 792cbf3. Live migrate 02:12:49Z 12 Oct, \"migrated\": true (log sha256 f08a09c3..., hashed at this desk); storage \"entities\" 02:13:19Z; 40 of 40 watch lines entities at 29,258 (counted here). revertStorage refuses at 1,900,000 B (server/realm-storage.ts:118): 16,528 B left. Revision still 29,258 at 05:08:27Z (cloud-read as Launch scout).",
+  "line": "The first settler to act will be the first write. Nobody will tell them.",
+  "footline": "A way back is a measurement, and it gets smaller every time somebody lives.",
+  "voice": "valley"
  }
 ]

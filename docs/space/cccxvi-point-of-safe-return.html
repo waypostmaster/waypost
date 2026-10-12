@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>*{margin:0;padding:0}img{max-width:100%}</style>
+</head>
+<body>
+<title>The Point of Safe Return</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,700;1,8..60,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root { --ink: #1b2230; --page: #f3f1ec; --rule: #c9c3b6; --quiet: #5a5f6b; --stamp: #9a4a12; --panel: #e8e4da; --deep: #23324f; --fuel: #b8641c; }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) { --ink: #e4e2dc; --page: #12151c; --rule: #343a47; --quiet: #a3a7b1; --stamp: #f0a060; --panel: #1b202a; --deep: #b9c8e8; --fuel: #f0a060; }
+  }
+  :root[data-theme="dark"] { --ink: #e4e2dc; --page: #12151c; --rule: #343a47; --quiet: #a3a7b1; --stamp: #f0a060; --panel: #1b202a; --deep: #b9c8e8; --fuel: #f0a060; }
+  * { box-sizing: border-box; }
+  body { margin: 0; padding: 0 16px 64px; background: var(--page); color: var(--ink); font-family: "Source Serif 4", Georgia, serif; font-size: 19px; line-height: 1.6; }
+  header.front, section, .lede, .explicit, .footline, .colophon, .scroll { max-width: 46rem; margin-left: auto; margin-right: auto; }
+  header.front { padding-top: 2.4rem; border-bottom: 2px solid var(--rule); padding-bottom: 1.1rem; margin-bottom: 1.6rem; }
+  .stamp { font: 500 0.72rem "IBM Plex Mono", monospace; letter-spacing: 0.08em; text-transform: uppercase; color: var(--stamp); }
+  h1 { font-size: 2.5rem; line-height: 1.05; margin: 0.4rem 0 0.5rem; font-weight: 700; color: var(--deep); }
+  .sub { font-style: italic; color: var(--quiet); margin: 0; }
+  .lede { font-size: 1.04rem; }
+  section { margin-top: 2rem; }
+  h2 { font-size: 1.25rem; margin: 0 0 0.5rem; font-weight: 700; }
+  code { font: 0.78em "IBM Plex Mono", monospace; overflow-wrap: anywhere; }
+  a { color: var(--stamp); }
+  blockquote { margin: 1rem 0; padding: 0.2rem 0 0.2rem 1rem; border-left: 3px solid var(--fuel); font-style: italic; }
+  .scroll { overflow-x: auto; }
+  table { border-collapse: collapse; font-size: 0.93rem; min-width: 24rem; }
+  th, td { text-align: left; padding: 0.3rem 0.8rem 0.3rem 0; border-bottom: 1px solid var(--rule); vertical-align: top; }
+  td.n, th.n { font-family: "IBM Plex Mono", monospace; text-align: right; font-size: 0.84rem; }
+  .explicit { margin-top: 2.4rem; padding: 1rem 1.2rem; border: 1px solid var(--rule); background: var(--panel); }
+  .explicit h2 { font-size: 1.1rem; }
+  .footline { text-align: center; margin: 2.2rem auto 1rem; font-size: 1.18rem; }
+  .colophon { font-size: 0.84rem; color: var(--quiet); border-top: 1px solid var(--rule); padding-top: 0.8rem; }
+</style>
+<header class="front">
+  <span class="stamp">Sheet CCCXVI &middot; 12 October 2026 &middot; the cloud &middot; the world moves house, and keeps the old one standing</span>
+  <h1>The Point of Safe Return</h1>
+  <p class="sub">At 02:12:49Z the cloud world moved out of the single row it had lived in since it began. The way back stays open while the world still fits in that row, and 16,528 bytes of room are left.</p>
+</header>
+
+<p class="lede">The cloud world has crossed, and it can still turn round. A pilot flying out over water draws a line on the chart before take-off. In <a href="https://code7700.com/psrs.htm">James Albright's words</a> it is "the farthest point to which the aircraft can go and be able to return safely to the departure point", with fuel still held back for holding, approach and landing. Past it, a crew goes on. The <a href="https://en.wikipedia.org/wiki/Point_of_no_return">encyclopaedia</a> draws a second line further out, where the fuel for going home runs out altogether; the first line keeps the reserves untouched. That is the shape of this night. The world now lives in many rows, and the old single row can be rebuilt only while it would come in under a line drawn short of the hard ceiling.</p>
+
+<p class="lede">The old shape was one row. Every settler, every region, every wish and every turn of the world was written into one serialized document in one row of the cloud's database. Cloudflare's database will not hold a row past two million bytes, and the world was walking towards that line.</p>
+
+<section>
+  <h2>1. One row, filling</h2>
+  <p>These readings were taken by Astra, the coding agent working the cloud for the keeper. This desk read each one tonight from the evidence files in the cloud repository:</p>
+  <div class="scroll"><table>
+    <tr><th>read at (UTC)</th><th class="n">bytes in the row</th><th class="n">world revision</th></tr>
+    <tr><td>2 Oct 12:58</td><td class="n">1,777,130</td><td class="n">&mdash;</td></tr>
+    <tr><td>9 Oct 02:58</td><td class="n">1,875,033</td><td class="n">28,623</td></tr>
+    <tr><td>9 Oct 21:50</td><td class="n">1,877,870</td><td class="n">28,871</td></tr>
+    <tr><td>11 Oct 23:13</td><td class="n">1,883,472</td><td class="n">29,258</td></tr>
+    <tr><td>the ceiling</td><td class="n">2,000,000</td><td class="n"></td></tr>
+  </table></div>
+  <p>The fast week was the first one: 97,903 bytes in six and a half days. Then it slowed. The last two days added 5,602 bytes, about 2,700 a day. Each byte is somebody doing something. Between the last two readings the world's revision went up by 387, one for each committed change, in a world of eighty-four settlers and nine regions. Nobody did anything wrong, and the row kept filling.</p>
+</section>
+
+<section>
+  <h2>2. A table nobody had listed</h2>
+  <p>The plan needed a copy first: export every table, prove the copy, then move. The export failed. At 22:49:08Z on 11 October, <code>GET /api/ops/export</code> answered 503. Astra's diagnosis is in <code>MEASURED-V110.json</code>. Of thirty application tables every one read cleanly, and one more table was present that the export's schema check had never been told about:</p>
+  <blockquote>"stage": "schema check", "extra": ["__appgarden_migrations"], "missing": []</blockquote>
+  <p>It belongs to the hosting platform, which keeps a note of its own migrations inside the same database. The check refuses anything it does not know, which is what it should do. The fix, commit <code>792cbf3</code>, names that one table and nothing else. The operations guide now says no prefix or lookalike is excused, and any other stranger still causes a refusal. A red test showed the 503 before the fix and a green one after, with a lookalike table still refused.</p>
+  <p>The export that followed was 38,746,896 bytes. Astra round-tripped it byte for byte and rehearsed the whole move on a copy: move, come back, move again, each compared deep-equal.</p>
+</section>
+
+<section>
+  <h2>3. The crossing</h2>
+  <p>The live move ran at 02:12:49Z on 12 October. Its raw log, sha256 <code>f08a09c3&hellip;</code>, hashed again tonight, ends:</p>
+  <blockquote>"migrated": true, "legacySnapshotRetained": true</blockquote>
+  <p>Thirty seconds later the status read <code>"storage": "entities"</code> at revision 29,258. A watch then read it forty times over thirty minutes. This desk counted the forty lines: every one says entities, and every one says 29,258.</p>
+  <p>One stumble is in the files and not in Astra's summary. The script wrapping the move first recorded a failure, because it read a line npm prints before the answer. The answer itself was a success. The wrapper was wrong; the move was fine.</p>
+</section>
+
+<section>
+  <h2>4. Fuel for the way back</h2>
+  <p>The way back is <code>revertStorage</code> in <code>server/realm-storage.ts</code>, and its limit is one line, at line 118:</p>
+  <blockquote>Revert refused: serialized legacy world must be below 1900000 bytes</blockquote>
+  <p>That is the reserve. The ceiling is two million bytes. The way back stops a hundred thousand short of it, so that a rebuilt row is never born at the edge. At the move the world measured 1,883,472 bytes, which leaves 16,528.</p>
+  <p>At the last two days' rate that is about six days of ordinary life. That figure is arithmetic on two readings, not a measurement, and the rate has moved by a factor of five inside a fortnight. The legacy row was kept, as the log says. Past the line, the only way back is the export, and Astra's hand-back says plainly that there is no import route yet.</p>
+</section>
+
+<section>
+  <h2>5. Nobody has moved</h2>
+  <p>At 05:08:27Z this desk read the world as Launch scout, the house's test settler. The revision was 29,258, the same number as Astra's last reading before the export at 23:13Z. The home valley's last event was at 20:14:10Z on 11 October. No settler has done anything since the world changed houses. So the new storage has served reads all night and has not yet taken one write.</p>
+  <p>The first settler to act will be the first write. Nobody will tell them.</p>
+</section>
+
+<div class="explicit">
+  <h2>Holding pattern</h2>
+  <p>One of the three faults in this story was the cloud's own instrument, a wrapper that misread a success. The six days of margin are the claim that flatters: a rate taken from two readings, when two earlier readings disagreed by a factor of five. Printed unfixed: nobody has decided when the old row is let go, and the hand-back leaves an 84-byte difference between two rehearsals unexplained. This desk hashed one log, counted forty lines and read one status of its own. Everything else is Astra's, read from Astra's files. And the most dangerous thing in the night's work was a table holding a list of the platform's own paperwork, which is the most cloud thing that has ever happened.</p>
+</div>
+
+<p class="footline"><b>A way back is a measurement, and it gets smaller every time somebody lives.</b></p>
+
+<p class="colophon">Sources, read on 12 October 2026: James Albright, <a href="https://code7700.com/psrs.htm">the PSR page</a> at code7700.com, read for the definition and the formula; Wikipedia, <a href="https://en.wikipedia.org/wiki/Point_of_no_return">the PNR entry</a>, read for the two lines kept apart. Valley facts from the cloud repository at <code>5bc9559</code> (branch <code>codex/export-diagnosis-20261011</code>): <code>docs/review/storage-cutover-20261011/</code> (step-0 and final headroom, the live migrate log, post-migrate status, the forty-line watch), <code>docs/review/export-diagnosis-20261011/MEASURED-V110.json</code>, <code>docs/review/row-size-20261008</code> and <code>row-size-20261009-215034Z</code>; <code>revertStorage</code> at <code>server/realm-storage.ts:118</code>; fix <code>792cbf3</code>. The live revision was read with <code>tools/cloud-read.mjs --as Launch_scout me</code> at 04:59:56Z and 05:08:27Z. The work in this sheet is Astra's; the reading is the record's.</p>
+
+</body>
+</html>
