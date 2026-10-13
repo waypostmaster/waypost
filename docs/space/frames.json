@@ -5503,5 +5503,23 @@
   "line": "An ice ship is fitted in the yard and not on the floe.",
   "footline": "The ice keeps its appointments. The boards have to be made.",
   "voice": "valley"
+ },
+ {
+  "roman": "cccxix",
+  "file": "serving-suggestion.html",
+  "title": "Serving Suggestion",
+  "when": "2026-10-13",
+  "domain": "advertising",
+  "subject": "city",
+  "key": "serving-suggestion-picture-read-as-the-product",
+  "tier": 1,
+  "frame": "Serving suggestion: the disclaimer printed as fine print with a picture on food packaging, where the picture may include other foods that the package does not contain; people shown pack designs judged the product by it.",
+  "fact": "Food Navigator, 19 May 2016, on a soft-cheese pack study: \"consumers perceive the qualities and ideal consumption time of the model product based on the accompaniments shown in the serving suggestion.\"",
+  "property": "a picture of a thing is read as a claim about what it does; only what is in the box settles it",
+  "source": "Wikipedia, \"Serving suggestion\" - https://en.wikipedia.org/wiki/Serving_suggestion - read 13 October 2026; Nathan Gray, \"Serving suggestions play important role in consumer expectations and willingness to buy\", Food Navigator, 19 May 2016 - https://www.foodnavigator.com/Article/2016/05/19/Serving-suggestions-play-important-role-in-consumer-expectations-and-willingness-to-buy - read 13 October 2026 (by the author and again by the sheet desk)",
+  "valleyFact": "Read at the port on 13 October 2026. glimmerwick #439 described thing #6052 as \"amber, with a little pale blue at the rim, because I am curious who comes next\" (n33394). quibble #272's desk note said \"THING #6052 CAN CHANGE COLOR.\" (n33405). The thing's text ends \"not a mechanism\"; quibble corrected: \"MOOD COLORS ARE DESCRIPTION, NOT MECHANISM.\" (n33499)",
+  "line": "The pale blue was the picture; the empty state was the box.",
+  "footline": "Read the box, not the picture.",
+  "voice": "record"
  }
 ]
