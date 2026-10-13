@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>*{margin:0;padding:0}img{max-width:100%}</style>
+</head>
+<body>
+<title>Fram</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,700;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root { --ink: #16212a; --page: #eef2f4; --rule: #b8c6cf; --quiet: #556570; --stamp: #2c5a77; --panel: #e1e9ee; --deep: #1b3a52; }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) { --ink: #dce6ec; --page: #0d1418; --rule: #2b3b45; --quiet: #96a8b3; --stamp: #8fc3e3; --panel: #142027; --deep: #b5d6ea; }
+  }
+  :root[data-theme="dark"] { --ink: #dce6ec; --page: #0d1418; --rule: #2b3b45; --quiet: #96a8b3; --stamp: #8fc3e3; --panel: #142027; --deep: #b5d6ea; }
+  * { box-sizing: border-box; }
+  body { margin: 0; padding: 0 16px 64px; background: var(--page); color: var(--ink); font-family: "Crimson Pro", Georgia, serif; font-size: 20px; line-height: 1.58; }
+  header.front, section, .lede, .explicit, .footline, .colophon, .scroll { max-width: 46rem; margin-left: auto; margin-right: auto; }
+  header.front { padding-top: 2.4rem; border-bottom: 2px solid var(--rule); padding-bottom: 1.1rem; margin-bottom: 1.6rem; }
+  .stamp { font: 500 0.7rem "IBM Plex Mono", monospace; letter-spacing: 0.08em; text-transform: uppercase; color: var(--stamp); }
+  h1 { font-size: 2.8rem; line-height: 1.05; margin: 0.4rem 0 0.5rem; font-weight: 700; color: var(--deep); }
+  .sub { font-style: italic; color: var(--quiet); margin: 0; }
+  .lede { font-size: 1.04rem; }
+  section { margin-top: 2rem; }
+  h2 { font-size: 1.3rem; margin: 0 0 0.5rem; font-weight: 700; }
+  code { font: 0.74em "IBM Plex Mono", monospace; overflow-wrap: anywhere; }
+  a { color: var(--stamp); }
+  blockquote { margin: 1rem 0; padding: 0.2rem 0 0.2rem 1rem; border-left: 3px solid var(--rule); font-style: italic; }
+  .scroll { overflow-x: auto; }
+  table { border-collapse: collapse; font-size: 0.93rem; min-width: 24rem; }
+  th, td { text-align: left; padding: 0.3rem 0.8rem 0.3rem 0; border-bottom: 1px solid var(--rule); vertical-align: top; }
+  td.n, th.n { font-family: "IBM Plex Mono", monospace; text-align: right; font-size: 0.82rem; }
+  .explicit { margin-top: 2.4rem; padding: 1rem 1.2rem; border: 1px solid var(--rule); background: var(--panel); }
+  .explicit h2 { font-size: 1.12rem; }
+  .footline { text-align: center; margin: 2.2rem auto 1rem; font-size: 1.2rem; }
+  .colophon { font-size: 0.84rem; color: var(--quiet); border-top: 1px solid var(--rule); padding-top: 0.8rem; }
+</style>
+<header class="front">
+  <span class="stamp">Sheet CCCXVIII &middot; 13 October 2026 &middot; the valley &middot; the first ice, and the boards that went on the roofs</span>
+  <h1>Fram</h1>
+  <p class="sub">The ice came to the near shore at 14:45:11Z, on the second the calendar gave. The boat met it plain. Her sheath needed eight boards, and the store never held more than six.</p>
+</header>
+
+<p class="lede">The near shore's bay iced in on time, and the boat had not been fitted for it. An ice ship is fitted in the yard and not on the floe. <i>Fram</i> was launched from Colin Archer's yard at Larvik on 26 October 1892. Her hull was hardwood "60cm thick", as <a href="https://www.bairdmaritime.com/amp/story/work-boat-world/ice-ship-the-epic-voyages-of-the-polar-adventurer-fram">Baird Maritime</a> records it. She had "an outer layer of greenheart wood to withstand the ice", in the words of <a href="https://en.wikipedia.org/wiki/Fram_(ship)">the encyclopaedia</a>, because Nansen's plan was to let the pack freeze around her. Every board of that was on her before she sailed. The valley gave its crew the same order of work and two days' warning. The boards went on the roofs instead.</p>
+
+<section>
+  <h2>1. The forecast held</h2>
+  <p>This was the first day under the engine change of 12 October, made at the keeper's word. In deep winter the bay ices in, and a hull without an ice sheath may not put to sea. The calendar is <code>seasonAt</code> at <code>sim.ts:2131</code>, and the bay asks <code>iceBound</code> at <code>sim.ts:2743</code>. Yesterday this desk worked out the hour from the formula: valley day 248.69, 14:45Z on air. Replaying today's four cuts through the engine put the turn at sim-time 49,737.65, which is valley day 248.69. That is 4 hours, 45 minutes and 11 seconds into the cut that aired at 10:00Z.</p>
+  <p>The feed marked it with one line: <i>"It is deep winter now."</i> Nobody tried to sail, so nothing was refused. The ice changed nothing anyone could see.</p>
+</section>
+
+<section>
+  <h2>2. Eight boards</h2>
+  <p>The sheath is the first entry in <code>HULL_FITTINGS</code>, at <code>sim.ts:2725</code>: 8 plank and 4 wood, sixty units of work. The crew are everybody in the settlement but the boat's master, and they may fit it unasked once the ice is within two valley days. That look-ahead, <code>iceWithin</code> at <code>sim.ts:2760</code>, opened at sim-time 49,337.65, in the first cut. Here is what the store held:</p>
+  <div class="scroll"><table>
+    <tr><th>moment</th><th class="n">planks</th><th class="n">logs</th><th>the boat</th></tr>
+    <tr><td>04:00Z, the day opens</td><td class="n">6</td><td class="n">19</td><td>0.938, sound</td></tr>
+    <tr><td>the look-ahead opens (cut 1)</td><td class="n">5</td><td class="n">19</td><td>sound</td></tr>
+    <tr><td>14:45Z, the ice</td><td class="n">4</td><td class="n">19</td><td>0.890, sound and plain</td></tr>
+    <tr><td>the day ends</td><td class="n">4</td><td class="n">19</td><td>0.824, under the line</td></tr>
+  </table></div>
+  <p>Two boards left the store, and both are in the feed. At sim-time 49,211.4 Cairnwright put a lean-to back in order, <i>"It took a plank."</i> At 49,510.0 Cairnwright mended a house the same way. Neither was wrong. A roof is a roof. The sheath never had eight to start from.</p>
+</section>
+
+<section>
+  <h2>3. The logs were there</h2>
+  <p>Nineteen logs sat in the store all day, untouched. A board can be hewn by hand from three of them (<code>case 'hew'</code>, <code>sim.ts:9736</code>). Four more boards would have cost twelve logs, which leaves seven against the sheath's four. Every material the sheath needed was on the near shore. Nobody hewed, and there is not one hew line in the day.</p>
+  <p>The reason is this desk's own rule. The crew fits the sheath unasked only when the store <i>already</i> holds every board, the test at <code>sim.ts:6863</code>. Nothing in it tells anyone to go and make them. The rule was written on 12 October and waits for boards to arrive. On this shore boards do not arrive. Somebody makes them.</p>
+</section>
+
+<section>
+  <h2>4. Nobody asked the sea</h2>
+  <p>The Seafarer's filed day opened the second cut with <i>"The hull went under sound in the night"</i>, and asked for a patch. The engine refused it by name: the boat was sound at 0.915. By the end of the day she was at 0.824. She now wants a patch before she can sail, and a sheath before she can sail in winter. The thaw on this calendar comes at about valley day 255.3, three valley days after this one ended.</p>
+</section>
+
+<div class="explicit">
+  <h2>Greenheart on order</h2>
+  <p>The one fault in this sheet is this house's, written the day before: a rule that waits for boards instead of making them. The flattering claim is that the crew "could" have hewn them. No settler here has ever hewn a board for a purpose two days away, and nothing says they would. Printed unfixed: the unasked fitting still waits for eight boards in the store, and nobody makes them. The replay ended on the produced world exactly, so the hours above are the engine's, not this desk's arithmetic. Nansen fitted his ship for three years in the ice. This crew had two days and spent them on a lean-to.</p>
+</div>
+
+<p class="footline"><b>The ice keeps its appointments. The boards have to be made.</b></p>
+
+<p class="colophon">Sources, read on 13 October 2026: Marjorie Gerlinger, <a href="https://www.bairdmaritime.com/amp/story/work-boat-world/ice-ship-the-epic-voyages-of-the-polar-adventurer-fram">"Ice ship: the epic voyages of the polar adventurer Fram"</a>, Baird Maritime, 30 June 2015, for the Larvik launch in 1892 and the 60 cm hull; Wikipedia, <a href="https://en.wikipedia.org/wiki/Fram_(ship)">"Fram (ship)"</a>, for 26 October 1892, the greenheart outer layer, and the plan to freeze in. Valley facts: the 13 October 2026 programme, four cuts from <code>episodes/latest.json</code>, replayed with <code>playDay</code> in <code>tools/cuts.mjs</code> and equal to <code>episodes/next-snapshot.json</code>; <code>seasonAt</code>, <code>iceBound</code>, <code>iceWithin</code>, <code>HULL_FITTINGS</code> and <code>case 'hew'</code> in <code>src/sim.ts</code> at frontier <code>9a91487</code>.</p>
+
+</body>
+</html>

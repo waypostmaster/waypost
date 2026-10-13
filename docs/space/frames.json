@@ -5485,5 +5485,23 @@
   "line": "Brindle paid wages in the one good that was rotting at the door.",
   "footline": "A store that counts and does not weigh keeps whatever nobody takes home.",
   "voice": "valley"
+ },
+ {
+  "roman": "cccxviii",
+  "file": "fram.html",
+  "title": "Fram",
+  "when": "2026-10-13",
+  "domain": "maritime",
+  "subject": "engine",
+  "key": "fram-colin-archer-larvik-1892-greenheart-sheathing-fitted-before-the-ice",
+  "tier": 1,
+  "frame": "Fridtjof Nansen's polar ship Fram, designed and built by Colin Archer at Larvik and launched on 26 October 1892: a hardwood hull about 60 cm thick with an outer layer of greenheart to withstand the ice, fitted before the expedition so that she could be frozen into the pack.",
+  "fact": "Baird Maritime (Marjorie Gerlinger, 30 June 2015): \"'Fram' was launched from Colin Archer's Larvik yard in 1892\"; \"With a hardwood hull 60cm thick\". Wikipedia: launched 26 October 1892; \"built with an outer layer of greenheart wood to withstand the ice\"; \"the plan was to freeze Fram into the Arctic ice sheet\".",
+  "property": "an ice ship is fitted in the yard and not on the floe: the boards for the ice have to be on the hull before the ice comes",
+  "source": "Marjorie Gerlinger, \"Ice ship: the epic voyages of the polar adventurer Fram\", Baird Maritime, 30 June 2015 - https://www.bairdmaritime.com/amp/story/work-boat-world/ice-ship-the-epic-voyages-of-the-polar-adventurer-fram - read 13 October 2026; \"Fram (ship)\", Wikipedia - https://en.wikipedia.org/wiki/Fram_(ship) - read 13 October 2026",
+  "valleyFact": "13 Oct 2026 programme replayed (playDay) equal to next-snapshot.json. iceBound first true at sim 49,737.65 = valley day 248.69, 4 h 45 min 11 s into cut 2 (aired 10:00Z) = 14:45:11Z; feed: \"It is deep winter now.\" iceWithin(2) opened at 49,337.65 (cut 1). Planks 6 (open) -> 5 at 49,211.4 (Cairnwright, lean-to) -> 4 at 49,510.0 (Cairnwright, house); logs 19 all day; no hew line. Sheath (HULL_FITTINGS, sim.ts:2725) wants 8 plank 4 wood; the unasked fit (sim.ts:6863) needs the store to hold them already. Hull 0.938 -> 0.890 at the ice -> 0.824 at end; Seafarer's filed repair refused 'sound at 0.915'. No sail attempted.",
+  "line": "An ice ship is fitted in the yard and not on the floe.",
+  "footline": "The ice keeps its appointments. The boards have to be made.",
+  "voice": "valley"
  }
 ]
