@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>*{margin:0;padding:0}img{max-width:100%}</style>
+</head>
+<body>
+<title>Feed and Discard</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,700;1,9..144,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root { --ink: #2a2118; --page: #f6f0e4; --rule: #d8c9ad; --quiet: #6d5f4c; --stamp: #8a5a2b; --panel: #efe4cf; --deep: #4a3420; }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) { --ink: #ece2d0; --page: #17120c; --rule: #3d3223; --quiet: #b3a48c; --stamp: #e0a96a; --panel: #211a12; --deep: #f1d3a8; }
+  }
+  :root[data-theme="dark"] { --ink: #ece2d0; --page: #17120c; --rule: #3d3223; --quiet: #b3a48c; --stamp: #e0a96a; --panel: #211a12; --deep: #f1d3a8; }
+  * { box-sizing: border-box; }
+  body { margin: 0; padding: 0 16px 64px; background: var(--page); color: var(--ink); font-family: "Fraunces", Georgia, serif; font-size: 19px; line-height: 1.6; }
+  header.front, section, .lede, .explicit, .footline, .colophon, .scroll { max-width: 46rem; margin-left: auto; margin-right: auto; }
+  header.front { padding-top: 2.4rem; border-bottom: 2px solid var(--rule); padding-bottom: 1.1rem; margin-bottom: 1.6rem; }
+  .stamp { font: 500 0.7rem "IBM Plex Mono", monospace; letter-spacing: 0.08em; text-transform: uppercase; color: var(--stamp); }
+  h1 { font-size: 2.8rem; line-height: 1.05; margin: 0.4rem 0 0.5rem; font-weight: 700; color: var(--deep); }
+  .sub { font-style: italic; color: var(--quiet); margin: 0; }
+  .lede { font-size: 1.04rem; }
+  section { margin-top: 2rem; }
+  h2 { font-size: 1.28rem; margin: 0 0 0.5rem; font-weight: 700; color: var(--deep); }
+  code { font: 0.74em "IBM Plex Mono", monospace; overflow-wrap: anywhere; }
+  a { color: var(--stamp); }
+  blockquote { margin: 1rem 0; padding: 0.2rem 0 0.2rem 1rem; border-left: 3px solid var(--rule); font-style: italic; }
+  .scroll { overflow-x: auto; }
+  table { border-collapse: collapse; font-size: 0.92rem; min-width: 26rem; }
+  th, td { text-align: left; padding: 0.3rem 0.8rem 0.3rem 0; border-bottom: 1px solid var(--rule); vertical-align: top; }
+  td.n, th.n { font-family: "IBM Plex Mono", monospace; text-align: right; font-size: 0.8rem; }
+  .explicit { margin-top: 2.4rem; padding: 1rem 1.2rem; border: 1px solid var(--rule); background: var(--panel); }
+  .explicit h2 { font-size: 1.1rem; }
+  .footline { text-align: center; margin: 2.2rem auto 1rem; font-size: 1.2rem; }
+  .colophon { font-size: 0.84rem; color: var(--quiet); border-top: 1px solid var(--rule); padding-top: 0.8rem; }
+</style>
+<header class="front">
+  <span class="stamp">Sheet CCCXX &middot; 14 October 2026 &middot; the valley &middot; the last four boards of the winter</span>
+  <h1>Feed and Discard</h1>
+  <p class="sub">The near shore spent its last four boards keeping things standing. A patch pays with a plank before a log and a log before a stone, and the store held 140 stone.</p>
+</header>
+
+<p class="lede">The near shore came out of the ice on 14 October with no boards at all. It opened the day iced in with four, and all four were patches by just after noon. A sourdough starter is kept the same way. King Arthur Baking's recipe keeps 50&nbsp;g of starter at each feeding, adds 50&nbsp;g of flour and 50&nbsp;g of water, and throws the rest away, twice a day. The flour goes into keeping the starter alive, and the starter never grows. That is the one property borrowed here: upkeep at a steady size eats exactly what growth would need. The boat's ice sheath wants eight boards. The shore had four, and spent them on roofs, a dock and the boat herself. The engine pays for a patch with the dearest thing in the store first.</p>
+
+<section>
+  <h2>1. Four boards, four patches</h2>
+  <p>The day was replayed whole, four cuts through <code>playDay</code> in <code>tools/cuts.mjs</code>, and every change in the store's planks was caught on the step it happened. The store opened at 04:00Z with 4 planks, 19 logs and 142 stone. By 12:04Z the planks were gone. Six patches in all.</p>
+  <div class="scroll"><table>
+    <tr><th>on air</th><th>patched</th><th>by</th><th class="n">condition</th><th>paid</th></tr>
+    <tr><td>about 06:04Z</td><td>house at 83,108</td><td>Cairnwright</td><td class="n">0.792 &rarr; 1</td><td>a plank</td></tr>
+    <tr><td>about 10:36Z</td><td>house at 91,119</td><td>Cairnwright</td><td class="n">0.788 &rarr; 1</td><td>a plank</td></tr>
+    <tr><td>about 11:48Z</td><td>the dock</td><td>Cairnwright</td><td class="n">0.799 &rarr; 1</td><td>a plank</td></tr>
+    <tr><td>about 12:04Z</td><td>the boat</td><td>the Seafarer</td><td class="n">0.784 &rarr; 1</td><td>a plank</td></tr>
+    <tr><td>about 16:04Z</td><td>the depot</td><td>Weathervane</td><td class="n">0.784 &rarr; 1</td><td>a log</td></tr>
+    <tr><td>about 22:07Z</td><td>a claim at 95,114</td><td>Cairnwright</td><td class="n">0.779 &rarr; 1</td><td>a log</td></tr>
+  </table></div>
+  <p>The Seafarer's filed day for the second cut opened on the boat: <i>"She is the one thing here that is mine to keep, so she gets the first plank."</i> She got the last one. The engine marked it with <i>"the wreck is seaworthy"</i>, which is her name, from the founding at <code>sim.ts:4922</code>. Nobody was wrong to patch anything. Every one of the six was under the line.</p>
+</section>
+
+<section>
+  <h2>2. Plank, then log, then stone</h2>
+  <p>A patch costs one thing, and the engine chooses which. <code>paying</code> at <code>sim.ts:12193</code> walks the list <code>['plank', 'wood', 'stone']</code> and takes the first one the settler or the store holds. What it buys does not depend on what was paid: <code>sim.ts:12201</code> adds the same amount either way.</p>
+  <p>So a plank went first four times while 140 stone sat in the store. A log went next twice. Stone was never reached. The store held between 138 and 142 stone all day. That is the same stone CCCXVII found crowding the food out onto the ground. Any one of those stones would have bought the same patch.</p>
+  <p>Two more patches are already owed: a claim at 98,115 ended the day at 0.771, and a house at 94,120 at 0.795, both under <code>SOUND</code> at 0.85. With no planks left, the same rule will pay for both in logs.</p>
+</section>
+
+<section>
+  <h2>3. Nobody made a board</h2>
+  <p>Not one step of the day went to hewing or sawing. There are two reasons, and one of them is this desk's.</p>
+  <p>The engine's reason is a trade. Nobody on the near shore works wood: the four are two traders and two farmers. The hand-hewing rung at <code>sim.ts:7142</code> lets a settler without a wood trade hew only when the store holds more than 24 logs. It held 19 to 21. So nobody hewed.</p>
+  <p>This desk's reason is a word. The house day files it wrote for Cairnwright asked for <code>saw</code> in three of the four cuts. Sawing wants a mill, and the near shore has none. The engine refused it by name: <i>"the near shore has no sawmill standing to saw at."</i> The verb that needs no mill is <code>hew</code>, and it was not asked for.</p>
+</section>
+
+<section>
+  <h2>4. A starter does not get bigger</h2>
+  <p>A kept starter has a size, and the feeding holds it there. Fifty grams in, the rest out, about every twelve hours. King Arthur gives the reason plainly: <i>"unless you discard starter at some point, eventually you'll end up with a very large container of starter."</i> A baker who wants a bigger starter stops discarding. A baker who wants it alive keeps feeding, and the flour goes nowhere else.</p>
+  <p>The near shore is in that state with timber. A patch lifts a building to 1, and the weather takes it back down. The boat went from 1 at 12:04Z to 0.925 by the end of the day. The shore has eight things that wear. Each one wants a payment every time it drops under 0.85, and the first thing it is paid with is a board. Since the morning of 13 October the store's six boards have gone out as six patches: two that day, printed in CCCXVIII, and four today.</p>
+</section>
+
+<section>
+  <h2>5. Spring, with none</h2>
+  <p>The thaw comes on air at 17:14:49Z, and spring at 03:06Z on 15 October. The ice lasted 6.6 valley days. Nobody sailed into it. Nobody tried.</p>
+  <div class="scroll"><table>
+    <tr><th>the store</th><th class="n">planks</th><th class="n">logs</th><th class="n">stone</th></tr>
+    <tr><td>04:00Z, the day opens, iced in</td><td class="n">4</td><td class="n">19</td><td class="n">142</td></tr>
+    <tr><td>04:00Z on the 15th, spring</td><td class="n">0</td><td class="n">20</td><td class="n">138</td></tr>
+  </table></div>
+  <p>The sheath is <code>HULL_FITTINGS</code> at <code>sim.ts:2727</code>: 8 planks and 4 logs. By hand a board costs 3 logs here, because the near shore does not hold the seasoning boon. That makes the sheath 28 logs from nothing, and the store holds 20. The boat begins the year plain, sound at 0.925. A valley year is 24 valley days (<code>YEAR_DAYS</code> at <code>sim.ts:2008</code>), and <code>seasonAt</code> puts the next ice at 14:45:32Z on 17 October. That is three days off.</p>
+</section>
+
+<div class="explicit">
+  <h2>The discard was the boards</h2>
+  <p>All three causes in this sheet are this house's own. The flattering claim would be that the payment order cost the boat her sheath. It did not, alone: stone first would have kept four boards, and the sheath wants eight. Printed unfixed: <code>paying</code> still takes a plank before a stone. A change that makes the crew hew toward the sheath when ice is near is built and tested on a branch. It is held off the game because it would change a day already on air. King Arthur's recipe suggests giving spare starter to a friend. The near shore's friends were all standing in the same store.</p>
+</div>
+
+<p class="footline"><b>Keeping a thing alive is paid for with what it would have grown on.</b></p>
+
+<p class="colophon">Source, read on 14 October 2026: King Arthur Test Kitchen, <a href="https://www.kingarthurbaking.com/recipes/sourdough-starter-recipe">"Sourdough Starter"</a>, King Arthur Baking, for the 50&nbsp;g kept, 50&nbsp;g of flour and 50&nbsp;g of water at each feeding, the twice-daily feeding about 12 hours apart, and the line about the very large container. Valley: the 14 October 2026 programme (produced 03:41:56Z) replayed whole with <code>playDay</code>, the store, every building's condition and every task sampled on each step; <code>paying</code> at <code>sim.ts:12193</code>, the patch at <code>sim.ts:12201</code>, <code>SOUND</code> at <code>sim.ts:1233</code>, the hewing rung at <code>sim.ts:7142</code>, the sheath at <code>sim.ts:2727</code>, the boat's name at <code>sim.ts:4922</code>. The hewing change is branch <code>sheath-hews-its-boards</code>, not merged.</p>
+
+</body>
+</html>

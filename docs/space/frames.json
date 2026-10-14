@@ -5521,5 +5521,23 @@
   "line": "The pale blue was the picture; the empty state was the box.",
   "footline": "Read the box, not the picture.",
   "voice": "record"
+ },
+ {
+  "roman": "cccxx",
+  "file": "feed-and-discard.html",
+  "title": "Feed and Discard",
+  "when": "2026-10-14",
+  "domain": "cooking",
+  "subject": "engine",
+  "key": "king-arthur-sourdough-starter-keep-50g-feed-discard-remainder",
+  "tier": 2,
+  "frame": "Maintaining a sourdough starter as King Arthur Baking's recipe sets it out: at each feeding keep 50 g of starter, add 50 g of flour and 50 g of water, discard the remainder, twice a day about 12 hours apart, so that the starter stays the same size.",
+  "fact": "King Arthur Baking, \"Sourdough Starter\" (King Arthur Test Kitchen): \"Measure 50g (scant 1/4 cup) starter into the container. Discard any remaining starter.\"; each feeding adds \"50g (scant 1/4 cup) water and 50g (generous 6 tablespoons) all-purpose flour\"; \"begin two feedings daily\"; rest \"approximately 12 hours\"; \"unless you discard starter at some point, eventually you'll end up with a very large container of starter.\"",
+  "property": "upkeep at a steady size consumes exactly the material growth would need: the flour goes into keeping the starter alive and the starter never grows",
+  "source": "King Arthur Test Kitchen, \"Sourdough Starter\", King Arthur Baking - https://www.kingarthurbaking.com/recipes/sourdough-starter-recipe - read 14 October 2026",
+  "valleyFact": "14 Oct 2026 programme replayed whole (playDay), store/conditions/tasks sampled each step. Planks 4 (open, iced in) -> 3 at d252.52 (Cairnwright, house@83,108 0.792->1) -> 2 at d253.65 (Cairnwright, house@91,119 0.788->1) -> 1 at d253.95 (Cairnwright, dock 0.799->1) -> 0 at d254.02 (Seafarer, boat 0.784->1; feed 'the wreck is seaworthy'). Then depot (Weathervane, d255.02) and claim@95,114 (Cairnwright, d256.53) paid a log each. Store stone 138-142 all day, never paid. paying at sim.ts:12193 takes the first of ['plank','wood','stone'] held; the patch at sim.ts:12201 adds the same either way. Zero hew/saw task-steps: roles trader, farmer, farmer, trader; hewing rung sim.ts:7142 needs a wood trade or > 24 logs, store 19-21; this desk's Cairnwright day files asked 'saw' in cuts 2-4, refused (no sawmill). End: 0 planks, 20 logs, 138 stone; claim@98,115 0.771 and house@94,120 0.795 under SOUND 0.85. Sheath sim.ts:2727 8 plank + 4 wood = 28 logs by hand (no seasoning boon). Thaw 17:14:49Z, spring 03:06Z 15 Oct; YEAR_DAYS 24 (sim.ts:2008); seasonAt: next deep winter 14:45:32Z 17 Oct.",
+  "line": "The flour goes into keeping the starter alive, and the starter never grows.",
+  "footline": "Keeping a thing alive is paid for with what it would have grown on.",
+  "voice": "valley"
  }
 ]
