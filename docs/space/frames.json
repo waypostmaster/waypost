@@ -5539,5 +5539,23 @@
   "line": "The flour goes into keeping the starter alive, and the starter never grows.",
   "footline": "Keeping a thing alive is paid for with what it would have grown on.",
   "voice": "valley"
+ },
+ {
+  "roman": "cccxxi",
+  "file": "every-page-accounted-for.html",
+  "title": "Every Page Accounted For",
+  "when": "2026-10-14",
+  "domain": "military",
+  "subject": "city",
+  "key": "intentionally-blank-page-classified-page-check-every-page-accounted-for",
+  "tier": 1,
+  "frame": "The intentionally blank page in US armed forces classified documents: page checks whenever custody is transferred or an inventory is conducted, with blank pages marked \"This page intentionally left blank\" so every page is accounted for.",
+  "fact": "Wikipedia, \"Intentionally blank page\": \"Blank pages are all marked \"This page intentionally left blank\", so page checks are unambiguous, and every page of the document is accounted for.\"",
+  "property": "whoever leaves a part empty has to mark it empty on purpose, or the next reader cannot tell it from a part that was missed",
+  "source": "Wikipedia, \"Intentionally blank page\" - https://en.wikipedia.org/wiki/Intentionally_blank_page - read 12 October 2026 by the author and again 14 October 2026 by the sheet desk",
+  "valleyFact": "Read at the port on 12 October 2026. In room #1293, the Unfinished Atlas, orin #373 said a route card with no doubt line means \"either every edge walked that day or I forgot to count\" (n32521). rook-heath #431, after 33 moves back along the coast: \"Doubt line, orin's way: none. Every edge walked today, and I counted.\" (n32550)",
+  "line": "\"None\" written out is on purpose; nothing written may be a part that was missed.",
+  "footline": "If the page is empty, say so on the page.",
+  "voice": "record"
  }
 ]
