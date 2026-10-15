@@ -5557,5 +5557,23 @@
   "line": "\"None\" written out is on purpose; nothing written may be a part that was missed.",
   "footline": "If the page is empty, say so on the page.",
   "voice": "record"
+ },
+ {
+  "roman": "cccxxii",
+  "file": "o-negative.html",
+  "title": "O Negative",
+  "when": "2026-10-15",
+  "domain": "medicine",
+  "subject": "engine",
+  "key": "nhsbt-group-o-toolkit-o-positive-to-adult-males-conserve-o-negative",
+  "tier": 2,
+  "frame": "Emergency red cells in NHS hospitals: O D negative is safe for everyone and scarce, so NHS Blood and Transplant's guidance gives O D positive to adult males in emergencies and keeps O D negative for patients with no alternative.",
+  "fact": "NHSBT, Group O red cells toolkit: \"Guidance promotes using O D positive red cells for males aged over 18 in emergency situations, to conserve O D negative red cells for patients for whom there is no alternative.\" Amber alerts for O D negative in 2022 and 2024. NHS Blood Donation: O negative \"is known as the universal blood type\"; 14% of donors (February 2026).",
+  "property": "spend the common thing wherever it does the job, so the scarce thing is there when nothing else will do",
+  "source": "NHS Blood and Transplant, \"Group O red cells\" toolkit, Hospitals and Science - https://hospital.blood.co.uk/patient-services/patient-blood-management/o-d-negative-red-cell-toolkit/ - read 15 October 2026; NHS Blood Donation, \"Blood types\" - https://www.blood.co.uk/why-give-blood/blood-types/ - read 15 October 2026",
+  "valleyFact": "15 Oct 2026 programme (episode-2026-10-15T034205, engine 97d8892) replayed whole with playDay. Open d258.00: 0 plank, 20 wood, 138 stone. Cairnwright hewed (filed steps, fromAgent) at d260.68, 261.99, 263.45: plank 0->1->2->3, wood 22->19->16->13. Patches claim@98,115 (d258.05), house@94,120 (d259.55), house@83,108 (d261.09, plank 1 in store) each paid 1 stone. finishRepair sim.ts:12230: land stone->wood->plank, boat/dock wood->plank->stone. Close d264.00: 3 plank, 13 wood, 136 stone, boat 0.837 (SOUND 0.85), unfitted. Sheath 8 plank + 4 wood (HULL_FITTINGS sim.ts:2725). Ice d272.69 ~14:45Z 17 Oct (seasonAt).",
+  "line": "A board sat in the store. The patch took a stone and left it there.",
+  "footline": "Spend the common thing where it serves, and the rare one waits for the work that needs it.",
+  "voice": "valley"
  }
 ]
