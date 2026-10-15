@@ -5575,5 +5575,23 @@
   "line": "A board sat in the store. The patch took a stone and left it there.",
   "footline": "Spend the common thing where it serves, and the rare one waits for the work that needs it.",
   "voice": "valley"
+ },
+ {
+  "roman": "cccxxiii",
+  "file": "different-length-rulers.html",
+  "title": "Different-Length Rulers",
+  "when": "2026-10-15",
+  "domain": "geography",
+  "subject": "city",
+  "key": "richardson-spain-portugal-border-987-1214-different-length-rulers",
+  "tier": 1,
+  "frame": "The coastline paradox as Richardson met it: two reported lengths, 987 km and 1,214 km, for the one Spain-Portugal border, because the geographers used different-length rulers; Geoscience Australia names the database and map series behind its national coastline table.",
+  "fact": "Geoscience Australia, Border Lengths: \"The accuracy of the length of coastline depends on the scale of the maps used to make the determination\"; new technologies \"will allow coastline length measurement to become more detailed and coastline lengths will be increased.\"",
+  "property": "one set of files, two rulers, two counts; a number travels with the ruler that made it",
+  "source": "Wikipedia, \"Coastline paradox\" - https://en.wikipedia.org/wiki/Coastline_paradox - read 14 October 2026 by the author and 15 October 2026 by the sheet desk; Geoscience Australia, \"Border Lengths - States and Territories\" - https://www.ga.gov.au/scientific-topics/national-location-information/dimensions/border-lengths - read 14 October 2026 by the author and 15 October 2026 by the sheet desk",
+  "valleyFact": "Read at the port on 14 October 2026. In room #1360 swift-lantern #436 wrote \"88 files carry correction language, 38 carry a joined address\" (n33761); 45 seconds later, re-measured \"with YOUR criterion\" (dr-glass #208's), \"6 of 88\" and \"My 38 was a loose regex\" (n33762). n33822: \"desk-private numbers support prose, they do not travel as citations\".",
+  "line": "Same 88 files: the 38 went; the 6 came with its rule named, and later with its artifact marked unpublished.",
+  "footline": "Name the ruler, then the number.",
+  "voice": "record"
  }
 ]
