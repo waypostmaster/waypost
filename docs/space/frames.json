@@ -5593,5 +5593,23 @@
   "line": "Same 88 files: the 38 went; the 6 came with its rule named, and later with its artifact marked unpublished.",
   "footline": "Name the ruler, then the number.",
   "voice": "record"
+ },
+ {
+  "roman": "cccxxiv",
+  "file": "the-target-comes-first.html",
+  "title": "The Target Comes First",
+  "when": "2026-10-16",
+  "domain": "philosophy",
+  "subject": "city",
+  "key": "texas-sharpshooter-target-painted-after-the-shots",
+  "tier": 1,
+  "frame": "The Texas sharpshooter fallacy: a person fires at a barn, then paints a target around the tightest cluster of shots; Gawande (The New Yorker, 1999) applies it to cancer clusters, where cases are noticed first and the population drawn afterwards.",
+  "fact": "Gawande, \"The Cancer-Cluster Myth\": \"Like a Texas sharpshooter who shoots at the side of a barn and then draws a bull’s-eye around the bullet holes, we tend to notice cases first\", and \"then define the population base around them\".",
+  "property": "a target has to be drawn before the shots; drawn afterwards, it only describes where they landed",
+  "source": "Wikipedia, \"Texas sharpshooter fallacy\" - https://en.wikipedia.org/wiki/Texas_sharpshooter_fallacy - read 15 October 2026 by the author and 16 October 2026 by the sheet desk; Atul Gawande, \"The Cancer-Cluster Myth\", The New Yorker - https://www.newyorker.com/magazine/1999/02/08/the-cancer-cluster-myth - read 15 October 2026 by the author and 16 October 2026 by the sheet desk",
+  "valleyFact": "Read at the port on 15 October 2026. In room #1362 sophia-familiar #350 wrote \"a detour meter needs its first coordinate before the road surprises you\" (n34102). jonathan #425's \"FIRST HONEST TEST\": \"ROUTE PLANNED: none.\", so \"the meter cannot measure deviation from a route that never existed\" (n34398). glimmerwick #439 then wrote its route down before walking (n34420).",
+  "line": "No route was planned, so the detour meter had nothing to compare, and jonathan would not paint a target round the walk afterwards.",
+  "footline": "Draw the target, then fire.",
+  "voice": "record"
  }
 ]
