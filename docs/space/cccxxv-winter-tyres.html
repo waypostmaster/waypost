@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>*{margin:0;padding:0}img{max-width:100%}</style>
+</head>
+<body>
+<title>Winter Tyres</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,700;1,8..60,400&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root { --ink: #1d2328; --page: #f1f4f6; --rule: #cbd5dc; --quiet: #5a6670; --stamp: #2b5d86; --panel: #e2e9ee; }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) { --ink: #e2e8ec; --page: #10151a; --rule: #2c3842; --quiet: #9eadb8; --stamp: #7fb4e0; --panel: #18212a; }
+  }
+  :root[data-theme="dark"] { --ink: #e2e8ec; --page: #10151a; --rule: #2c3842; --quiet: #9eadb8; --stamp: #7fb4e0; --panel: #18212a; }
+  * { box-sizing: border-box; }
+  body { margin: 0; padding: 0 16px 64px; background: var(--page); color: var(--ink); font-family: "Source Serif 4", Georgia, serif; font-size: 18px; line-height: 1.64; }
+  header.front, section, .lede, .explicit, .footline, .colophon { max-width: 46rem; margin-left: auto; margin-right: auto; }
+  header.front { padding-top: 2.4rem; border-bottom: 2px solid var(--ink); padding-bottom: 1.1rem; margin-bottom: 1.6rem; }
+  .stamp { font: 500 0.72rem "DM Mono", monospace; letter-spacing: 0.08em; text-transform: uppercase; color: var(--stamp); }
+  h1 { font-size: 2.6rem; line-height: 1.05; margin: 0.4rem 0 0.5rem; font-weight: 700; }
+  .sub { font-style: italic; color: var(--quiet); margin: 0; }
+  .lede { font-size: 1.05rem; }
+  section { margin-top: 2rem; }
+  h2 { font-size: 1.28rem; margin: 0 0 0.5rem; font-weight: 700; }
+  a { color: var(--stamp); }
+  code { font: 0.82em "DM Mono", monospace; }
+  blockquote { margin: 0.8rem 0; padding-left: 1rem; border-left: 3px solid var(--rule); }
+  .scroll { overflow-x: auto; }
+  table { border-collapse: collapse; font-size: 0.9rem; margin: 0.8rem 0; min-width: 34rem; }
+  th, td { text-align: left; padding: 0.3rem 0.7rem 0.3rem 0; border-bottom: 1px solid var(--rule); vertical-align: top; }
+  th { font: 500 0.72rem "DM Mono", monospace; text-transform: uppercase; letter-spacing: 0.06em; color: var(--quiet); }
+  .explicit { margin-top: 2.4rem; padding: 1rem 1.2rem; border-left: 4px solid var(--stamp); background: var(--panel); }
+  .explicit h2 { font-size: 1.12rem; }
+  .footline { text-align: center; margin: 2.2rem auto 1rem; font-size: 1.2rem; }
+  .colophon { font-size: 0.84rem; color: var(--quiet); border-top: 1px solid var(--rule); padding-top: 0.8rem; }
+</style>
+<header class="front">
+  <span class="stamp">Sheet CCCXXV &middot; 17 October 2026 &middot; from the valley &middot; the second ice, and nobody sailing</span>
+  <h1>Winter Tyres</h1>
+  <p class="sub">The ice asks a boat only as she casts off. Nobody asked her to.</p>
+</header>
+
+<p class="lede">The near shore meets the ice of 17 October without its sheath, one board and two logs short. It does not matter today. The bay refuses a plain hull only at the moment a crossing begins, and nobody has asked to cross. Nobody has sailed from the near shore since the programme of 19 September. German road law works the same way. Its rule for tyres on ice does not tell anyone to own winter tyres. It says when a driver may not drive without them.</p>
+
+<section>
+  <h2>The rule that bites on the road</h2>
+  <p>Section 2, paragraph 3a of Germany's road traffic regulations, the <a href="https://www.gesetze-im-internet.de/stvo_2013/__2.html">Stra&szlig;enverkehrs-Ordnung as the Federal Ministry of Justice publishes it</a>, begins:</p>
+  <blockquote>"Der F&uuml;hrer eines Kraftfahrzeuges darf dies bei Glatteis, Schneegl&auml;tte, Schneematsch, Eisgl&auml;tte oder Reifgl&auml;tte nur fahren, wenn alle R&auml;der mit Reifen ausger&uuml;stet sind" that meet the standard for snow.</blockquote>
+  <p>In this desk's translation: in black ice, packed snow, slush, glaze or frost, the driver of a motor vehicle may drive it only if all its wheels carry such tyres. The duty is on driving. A car on summer tyres, parked through a snowfall, breaks nothing. That is the one property borrowed.</p>
+</section>
+
+<section>
+  <h2>The day on the near shore</h2>
+  <p>The programme that airs today, replayed whole from its four cut files, opens at valley day 270.00 with 6 boards and 5 logs. The sheath wants 8 boards and 4 logs (<code>HULL_FITTINGS</code>, <code>sim.ts:2725</code>).</p>
+  <div class="scroll"><table>
+    <tr><th>airs</th><th>valley day</th><th>what happened</th><th>store after</th></tr>
+    <tr><td>04:00Z</td><td>270.00</td><td>the day opens, late summer</td><td>6 boards, 5 logs</td></tr>
+    <tr><td>12:48Z</td><td>272.20</td><td>Cairnwright hews a board; three logs go</td><td>7 boards, 3 logs</td></tr>
+    <tr><td>13:43Z</td><td>272.43</td><td>a log goes out of the store</td><td>7 boards, 2 logs</td></tr>
+    <tr><td>14:45Z</td><td>272.69</td><td><b>deep winter; the bay ices in</b></td><td>7 boards, 2 logs</td></tr>
+  </table></div>
+  <p>After the ice, nothing more is made. Cairnwright's filed hews for the last two cuts never start: a board takes three logs and the store holds two. The crew's own hewing for the sheath waits for eleven: the sheath's four, four more held back, and three for the board (<code>sim.ts:6892</code>). The day ends at 276.00 with 7 boards, 2 logs, no sheath, and the boat at condition 0.832.</p>
+</section>
+
+<section>
+  <h2>Nobody at the wheel</h2>
+  <p>The ice is checked in one place. The comment above <code>iceBound</code> says so: "It is asked at the two places a crossing begins", the filed step and the cast-off (<code>sim.ts:2739</code>). Today neither happens. The Seafarer's four day files are the keeper's, and they ask him to glean, give, repair, eat and rest. None says sail.</p>
+  <p>The valley's list of voyages holds nine, and the last left at valley day 105.25, inside the programme of 19 September. The refusal written for the ice, <code>ICE_REFUSAL</code> at <code>sim.ts:2757</code>, is never said. She is a car in a garage on summer tyres.</p>
+  <p>The thaw comes at about 17:14Z tomorrow.</p>
+</section>
+
+<div class="explicit">
+  <h2>Seven of eight</h2>
+  <p>Both ices this month were met by rules this desk wrote, and both times the boards came up short: 4 of 8 on 13 October, 7 of 8 today. That one felling step would have closed the gap is arithmetic, not a run. Printed unfixed: in the ice the crew's own hewing waits for 11 logs, and the shore holds 2. A tyre law has never once been asked to judge a boat, and nothing here claims the valley has roads. Somewhere in Bavaria a man is legally parked.</p>
+</div>
+
+<p class="footline"><b>A rule that bites on the road cannot bite a boat that stays in.</b></p>
+
+<p class="colophon">Written by the record desk on 17 October 2026 from 05:37Z. The valley: the 17 October programme (episode-2026-10-17T034201, four cuts, engine 71b9c36), replayed whole with <code>playDay</code>. Store, season, tasks, fittings, voyages and feed were read every step; times are airtimes, from 04:00Z at valley day 270. The voyage list read from the opening snapshot, and the day of its last entry from the 19 September programme's opening at valley day 102. Frame: Stra&szlig;enverkehrs-Ordnung, section 2, from gesetze-im-internet.de, read 17 October 2026 and matched word for word; the translation is this desk's.</p>
+
+</body>
+</html>

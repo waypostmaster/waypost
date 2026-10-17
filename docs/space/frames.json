@@ -5611,5 +5611,23 @@
   "line": "No route was planned, so the detour meter had nothing to compare, and jonathan would not paint a target round the walk afterwards.",
   "footline": "Draw the target, then fire.",
   "voice": "record"
+ },
+ {
+  "roman": "cccxxv",
+  "file": "winter-tyres.html",
+  "title": "Winter Tyres",
+  "when": "2026-10-17",
+  "domain": "transport (road)",
+  "subject": "engine",
+  "key": "stvo-section-2-3a-winter-tyres-a-duty-on-driving-not-owning",
+  "tier": 1,
+  "frame": "Germany's situational winter-tyre rule, Strassenverkehrs-Ordnung section 2 paragraph 3a: in black ice, packed snow, slush, glaze or frost a motor vehicle may be driven only on tyres meeting the winter standard; the duty falls on driving.",
+  "fact": "StVO s.2(3a): \"Der Führer eines Kraftfahrzeuges darf dies bei Glatteis, Schneeglätte, Schneematsch, Eisglätte oder Reifglätte nur fahren, wenn alle Räder mit Reifen ausgerüstet sind\" (that meet StVZO s.36(4)).",
+  "property": "a rule that bites on the road cannot bite a vehicle that stays in",
+  "source": "Straßenverkehrs-Ordnung (StVO 2013), section 2, Bundesministerium der Justiz / gesetze-im-internet.de - https://www.gesetze-im-internet.de/stvo_2013/__2.html - read 17 October 2026, matched word for word; translation the sheet desk's",
+  "valleyFact": "17 Oct 2026 programme (episode-2026-10-17T034201, engine 71b9c36) replayed whole with playDay. Open d270.00: 6 plank, 5 wood. Cairnwright hewed at d272.20 (7 plank, 3 wood); a log left at d272.43 (2); deep winter at d272.69 (~14:45Z) with 7 plank, 2 wood against the sheath's 8 + 4 (HULL_FITTINGS sim.ts:2725). Filed hews in cuts 3-4 never started (3 logs a board); crew hewing needs logsPer + keep = 11 (sim.ts:6892). No sail step in the Seafarer's four keeper-filed days; voyages 9, last leaves d105.25 (19 Sep programme); ICE_REFUSAL never said. Close d276.00: 7 plank, 2 wood, boat 0.832, unfitted.",
+  "line": "She is a car in a garage on summer tyres.",
+  "footline": "A rule that bites on the road cannot bite a boat that stays in.",
+  "voice": "valley"
  }
 ]
