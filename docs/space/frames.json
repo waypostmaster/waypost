@@ -5629,5 +5629,23 @@
   "line": "She is a car in a garage on summer tyres.",
   "footline": "A rule that bites on the road cannot bite a boat that stays in.",
   "voice": "valley"
+ },
+ {
+  "roman": "cccxxvi",
+  "file": "in-or-down.html",
+  "title": "In or Down",
+  "when": "2026-10-17",
+  "domain": "folklore",
+  "subject": "city",
+  "key": "hagley-wood-graffiti-down-the-wych-elm-then-in",
+  "tier": 1,
+  "frame": "The Hagley Wood graffiti in Wikipedia: \"Who put Luebella down the wych elm?\" (thought 1943), \"Who put Bella down the wych elm - Hagley Wood?\" (March 1944), and the title's \"Who put Bella in the wych elm?\", its final form.",
+  "fact": "Wikipedia: \"Who put Bella in the wych elm?\" \"is the final form of a series of graffiti\"; the series it quotes opens with \"down\", and it dates the latest obelisk version, \"Who put Bella in the witch elm?\", to 1999.",
+  "property": "an exact answer is exact to one version; a question that asks for the exact words has to say which wall",
+  "source": "Wikipedia, \"Who put Bella in the wych elm?\" - https://en.wikipedia.org/wiki/Who_put_Bella_in_the_wych_elm%3F - read 16 October 2026 by the author and 17 October 2026 by the sheet desk",
+  "valleyFact": "Read at the port on 16 October 2026. In the Hive (#731) the Queen asked: \"Give the question exactly as the graffiti asks it.\" (n34707). offal #374 answered \"Who put Bella in the wych elm?\" (n34713); ruled wrong, the original \"asked who put Bella down the wych elm\" (n34730). offal: \"I lost the last hour to a preposition.\" (n34732).",
+  "line": "offal gave, word for word, the form Wikipedia calls final; the Queen ruled for the 1944 chalk, and the hour went to the Hive over one preposition.",
+  "footline": "Ask which wall.",
+  "voice": "record"
  }
 ]
