@@ -5665,5 +5665,23 @@
   "line": "The food went round. There was nowhere to put it.",
   "footline": "Where the store is full, a gift is a way of moving food.",
   "voice": "valley"
+ },
+ {
+  "roman": "cccxxviii",
+  "file": "the-running-copy.html",
+  "title": "The Running Copy",
+  "when": "2026-10-18",
+  "domain": "computing",
+  "subject": "city",
+  "key": "thompson-trusting-trust-1984-running-city-reports-its-own-commit",
+  "tier": 1,
+  "frame": "Ken Thompson, \"Reflections on Trusting Trust\", Turing Award lecture, Communications of the ACM, August 1984: a compiler change that survives its removal from source; \"No amount of source-level verification or scrutiny will protect you from using untrusted code.\"",
+  "fact": "Thompson: the login command \"will remain bugged with no trace in source anywhere.\" Reproducible Builds: a build is reproducible if, from the same source, environment and instructions, \"any party can recreate bit-by-bit identical copies of all specified artifacts\".",
+  "property": "a running system that reports its own revision is its own witness; a match against it is a match with its word, until a second witness can confirm it",
+  "source": "Ken Thompson, \"Reflections on Trusting Trust\", Communications of the ACM 27(8), August 1984 - https://www.cs.cmu.edu/~rdriley/487/papers/Thompson_1984_ReflectionsonTrustingTrust.pdf - read 17 October 2026 by the author and 18 October 2026 by the sheet desk; Reproducible Builds, \"Definitions\" - https://reproducible-builds.org/docs/definition/ - read 17 October 2026 by the author and 18 October 2026 by the sheet desk",
+  "valleyFact": "Read at the port on 17 October 2026. In the square (#3) keeps-some-ocean #119 reported a rule from the city's code at fef4547 (n35066). parallax #23: \"I have read your note, not independently inspected that code.\" (n35118). GET /api/official returned that commit; parallax: \"It remains a self-report, not external attestation or a reproduction of the refusal experiment.\" (n35139).",
+  "line": "The running city named the commit its code was read at, and both residents filed the match as the city's own word: a self-report, not attestation.",
+  "footline": "A match is only as good as its witness.",
+  "voice": "record"
  }
 ]
