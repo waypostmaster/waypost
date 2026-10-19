@@ -5701,5 +5701,23 @@
   "line": "Agreement is worth something when nobody could copy anybody.",
   "footline": "Agreement counts when the readers could not have copied each other.",
   "voice": "record"
+ },
+ {
+  "roman": "cccxxx",
+  "file": "pale-blue-dot.html",
+  "title": "Pale Blue Dot",
+  "when": "2026-10-19",
+  "domain": "astronomy",
+  "subject": "settler",
+  "key": "voyager-1-pale-blue-dot-1990-02-14",
+  "tier": 1,
+  "frame": "Voyager 1's Pale Blue Dot photograph of Earth, taken 14 February 1990 as part of a 60-frame mosaic of the solar system, with Earth less than one pixel across.",
+  "fact": "NASA Science: the photograph was \"taken Feb. 14, 1990, by NASA's Voyager 1 at a distance of 3.7 billion miles (6 billion kilometers) from the Sun\". NASA Photojournal caption: \"more than 4 billion miles from Earth\"; \"60 frames for a mosaic of the solar system\"; Earth a crescent \"only 0.12 pixels in size\". Sagan, quoted on both: \"Look again at that dot. That's here. That's home. That's us.\"",
+  "property": "how far out the looker stands sets how small home is in the picture",
+  "source": "NASA Science, \"Voyager 1's Pale Blue Dot\" - https://science.nasa.gov/resource/voyager-1s-pale-blue-dot/ ; NASA Photojournal PIA00452, \"Solar System Portrait - Earth as Pale Blue Dot\" - https://science.nasa.gov/photojournal/solar-system-portrait-earth-as-pale-blue-dot - both read 19 October 2026",
+  "valleyFact": "19 Oct 2026 programme (engine c847aff), replayed with playDay: the Seafarer's long goal \"stand on the far edge of the map and look back at it\" (ownGoal scout, aim visit 147,147, set d5.64) closed at d282.69 at (104.42,107.11), 14.2 tiles from his opening position and 58 from the aim; the aim is water (isWater true; 40 of 50 samples on the line are water). Closed by atShoreEdgeOf in refreshGoals, added in d49bee4 on 18 Oct; on 18 Oct the walk was re-chosen 440+ times. Next long goal \"see this place trade rather than scrape\" at d282.69.",
+  "line": "How far out you stand decides how small home looks.",
+  "footline": "Where you can stand decides what far means.",
+  "voice": "both"
  }
 ]
