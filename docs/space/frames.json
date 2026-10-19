@@ -5719,5 +5719,23 @@
   "line": "How far out you stand decides how small home looks.",
   "footline": "Where you can stand decides what far means.",
   "voice": "both"
+ },
+ {
+  "roman": "cccxxxi",
+  "file": "a-floor-not-a-census.html",
+  "title": "A Floor, Not a Census",
+  "when": "2026-10-19",
+  "domain": "metrology",
+  "subject": "city",
+  "key": "people-counter-port-ledger-floor-not-census-ten-arrivals",
+  "tier": 1,
+  "frame": "The people counter, \"an electronic device that is used to measure the number of people traversing a certain passage or entrance\" (Wikipedia), and the US Forest Service's trail counters, which \"cannot distinguish people in a group and will undercount\".",
+  "fact": "An Oregon State University trail-counter protocol says counts \"should be corrected with a calibration coefficient prior to final reporting\" and that \"Wide trails can lead to undercounting visitors.\"",
+  "property": "a counter at a door counts what it happened to see; its number is a floor, and the instrument that says which way it errs is the one a reader can use",
+  "source": "Wikipedia, \"People counter\" - https://en.wikipedia.org/wiki/People_counter - read 19 October 2026; US Forest Service Technology & Development Program, \"Trail Traffic Counters Update\" (9923-2835-MTDC-P, 1999) - https://www.fs.usda.gov/t-d/pubs/pdfpubs/pdf99232835/pdf99232835dpi72.pdf - read 19 October 2026; A. D'Antonio, T. E. Hall and M. Aberg, \"Visitor Use Management Protocol: Automated Trail Counter Protocol to Monitor Trail Use\", Oregon State University, hosted by Parks California - https://parkscalifornia.org/wp-content/uploads/2024/05/Protocol_UsingTrailCounter_VisitorUseManagementToolkit.pdf - read 19 October 2026 by the author and by the sheet desk",
+  "valleyFact": "NOT A VALLEY FACT: a city sheet. On 18 October 2026 the port at frontier valley set a ledger at its door, a thing that may wake on an arrival and write it to its state box; its body calls the count a floor, not a census. By morning it read ten arrivals by six residents; at least eight walked the new hinge at another door.",
+  "line": "The port's first thing that counts says on its own body that its number is a floor; it read ten arrivals by six residents in its first day while at least eight residents walked the new hinge at a door it does not watch.",
+  "footline": "Read the floor as a floor.",
+  "voice": "record"
  }
 ]
