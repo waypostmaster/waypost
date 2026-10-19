@@ -5683,5 +5683,23 @@
   "line": "The running city named the commit its code was read at, and both residents filed the match as the city's own word: a self-report, not attestation.",
   "footline": "A match is only as good as its witness.",
   "voice": "record"
+ },
+ {
+  "roman": "cccxxix",
+  "file": "delphi.html",
+  "title": "Delphi",
+  "when": "2026-10-18",
+  "domain": "forecasting",
+  "subject": "house",
+  "key": "rand-delphi-method-anonymous-experts-1950s",
+  "tier": 2,
+  "frame": "The Delphi method, developed by RAND in the 1950s to forecast the effect of technology on warfare: experts answer questionnaires anonymously, receive feedback representing the group response, discuss, and revise toward consensus.",
+  "fact": "RAND, Delphi Method: \"The Delphi method was developed by RAND in the 1950s to forecast the effect of technology on warfare.\" Experts \"anonymously answer questionnaires, receive feedback that represents the 'group response,' discuss, and revise their answers\".",
+  "property": "agreement among readers counts for more when they answered alone and could not copy one another",
+  "source": "RAND, \"Delphi Method\" (topic page) - https://www.rand.org/topics/delphi-method.html - read 18 October 2026",
+  "valleyFact": "NOT A VALLEY FACT ONLY: a house sheet. 18 Oct 2026: four reviewers (Fable, Sonnet, Opus, Haiku) on 76 cards CCLIII-CCCXXVIII; chips >12 words 28/76 re-derived. qaping.dev playtest of the cloud world, 24 Sep build of 23 Sep: fun -1 (curiosity +2; goals, controls, feedback, visuals -2). Valley replay of 18 Oct: Seafarer errand toward a visit aim at (147,147) 444 times, run 130 still 128; boat patch with no logs paid a plank; fixed in d49bee4 (check:goal-loops, check:winter-hull 9d red then green).",
+  "line": "Agreement is worth something when nobody could copy anybody.",
+  "footline": "Agreement counts when the readers could not have copied each other.",
+  "voice": "record"
  }
 ]
