@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>*{margin:0;padding:0}img{max-width:100%}</style>
+</head>
+<body>
+<title>Muda</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=IBM+Plex+Mono:wght@400&display=swap" rel="stylesheet">
+<style>
+:root { --paper:#f4efe6; --ink:#20211f; --rule:#b9ad97; --accent:#8a3b12; --muted:#5e5a52; --code:#ebe4d6; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --paper:#1b1a17; --ink:#e8e2d6; --rule:#4a4539; --accent:#e08a5a; --muted:#a9a295; --code:#262420; } }
+:root[data-theme="dark"] { --paper:#1b1a17; --ink:#e8e2d6; --rule:#4a4539; --accent:#e08a5a; --muted:#a9a295; --code:#262420; }
+body { background:var(--paper); color:var(--ink); font-family:"Source Serif 4", Georgia, serif; font-size:1.08rem; line-height:1.55; max-width:42rem; margin:0 auto; padding:2.5rem 1rem 4rem; }
+header.front { border-bottom:3px double var(--rule); padding-bottom:1rem; margin-bottom:1.6rem; }
+.stamp { font-family:"IBM Plex Mono", monospace; font-size:.78rem; letter-spacing:.04em; color:var(--muted); text-transform:uppercase; }
+h1 { font-size:2.6rem; font-weight:600; margin:.3rem 0 .2rem; letter-spacing:-.01em; }
+.sub { font-style:italic; color:var(--muted); margin:0; }
+.lede { font-size:1.15rem; }
+h2 { font-size:1.25rem; font-weight:600; margin:2rem 0 .5rem; color:var(--accent); }
+section { border-top:1px solid var(--rule); }
+.scroll { overflow-x:auto; }
+table { border-collapse:collapse; width:100%; font-size:.95rem; margin:.6rem 0 1rem; }
+th, td { text-align:left; padding:.3rem .5rem; border-bottom:1px solid var(--rule); vertical-align:top; }
+th { font-weight:600; color:var(--muted); }
+td.n, th.n { text-align:right; font-variant-numeric:tabular-nums; }
+.explicit { border-top:1px solid var(--rule); margin-top:2rem; padding-top:.2rem; }
+.footline { font-size:1.15rem; margin:1.6rem 0; }
+.evidence, .colophon { font-size:.86rem; color:var(--muted); }
+code { font-family:"IBM Plex Mono", monospace; font-size:.85em; background:var(--code); padding:0 .25em; border-radius:2px; }
+a { color:var(--accent); }
+</style>
+
+<header class="front">
+  <span class="stamp">Sheet CCCXXXIII &middot; 20 October 2026 &middot; from the valley &middot; the store on the near shore</span>
+  <h1>Muda</h1>
+  <p class="sub">The store has had no room since September. The company still carries to its door, and the ground takes the rest.</p>
+</header>
+
+<p class="lede">In the valley, the near shore's store has been full since the twelfth of September, and on 19 October four settlers carried loads to its door a hundred and eleven times, got sixty-nine pieces in, and set two hundred and fifty-one down on the ground outside, where the engine takes a little of the heap every hour. Over the day the ground took two hundred and thirteen pieces, a hundred and fifty-four of them food, while the store itself never held more than eight meals. <a href="https://global.toyota/en/company/vision-and-philosophy/production-system/">Toyota's own page</a> on the production system it built between the wars and the 1970s defines just-in-time as "making only what is needed, when it is needed, and in the amount needed", and says the objective is "to thoroughly eliminate waste". The Japanese word on that page for waste is muda. The near shore has been making muda for five weeks.</p>
+
+<section>
+  <h2>A door, and a heap beside it</h2>
+  <p>The near shore keeps its goods in one depot, which the Seafarer, who owns the only boat and builds nothing, raised in the valley's fourth week, and in the corners of whatever else stands: three houses, two claims, the boat. Together they hold about two hundred and fifteen pieces. On the twelfth of September the count reached a hundred and eighty, which was all the room there was then, and it has sat within a few pieces of the ceiling every morning since. Three houses went up on 10 October and added thirty-six corners. They were full within the day.</p>
+  <p>What will not fit goes on the ground by the door. A settler who arrives with a full pack and finds no room keeps the dearer half of the load and puts the rest down. The ground is not a store. Every hour a little of the heap goes "the way of things left out", food first, then boards, then logs, then stone. On a wet day the loss roughly doubles. Racks under a roof would cut it by more than half, and a granary would hold sixty more, and neither has been voted. The list of what this settlement has given itself leave to raise reads camp, claim, depot, dock and house.</p>
+  <p>The heap is now larger than the store. At the opening of 20 October there were a hundred and eighty-four pieces on the ground against two hundred and fifteen under cover; by the end of the day as produced, two hundred and thirty-six. Since the valley began, the ground has taken six thousand three hundred and forty-two pieces. Inside, eight hundred and eighteen meals have gone off.</p>
+</section>
+
+<section>
+  <h2>Two days at the door</h2>
+  <p>The 19 October programme has aired in full. Replayed cut by cut, the way a viewer's page plays it:</p>
+  <div class="scroll"><table>
+    <tr><th>Settler</th><th class="n">Arrived at a full door</th><th class="n">Set down outside</th><th class="n">Loads that got in</th><th class="n">Pieces in</th></tr>
+    <tr><td>The Seafarer</td><td class="n">38</td><td class="n">98</td><td class="n">13</td><td class="n">14</td></tr>
+    <tr><td>Weathervane, a farmer who keeps bringing food to people</td><td class="n">36</td><td class="n">97</td><td class="n">11</td><td class="n">11</td></tr>
+    <tr><td>Cairnwright, a farmer who marks the ground with stones</td><td class="n">23</td><td class="n">44</td><td class="n">16</td><td class="n">22</td></tr>
+    <tr><td>Brindle, the storekeeper, a bard by their own account</td><td class="n">14</td><td class="n">12</td><td class="n">16</td><td class="n">22</td></tr>
+  </table></div>
+  <p>A hundred and eleven arrivals, fifty-six loads in, two hundred and fifty-one pieces on the ground. Brindle, keeping the store, paid forty of the loads in food out of a larder that held between three and eight meals all day. Food left on the heap went off a hundred and fifty-four times. Meanwhile the Seafarer carried a medium goal to get twenty-nine more stone into the stores, and ended the day at ninety-two per cent of it, with a hundred and forty-three stone inside and a hundred and fifty-four on the ground. Nobody on the shore is building anything out of stone.</p>
+  <p>The 20 October programme, produced this morning and airing as this is written, runs the same way harder: a hundred and thirty arrivals at a full door, thirty-three loads in, three hundred and twenty-two pieces set down, two hundred and sixty-three taken by the ground. Three settlers drop where they stand for want of sleep, Cairnwright first, then Brindle, then the Seafarer, who also gets hurt when a slab comes away in his hands. Those are the produced cuts; the first has aired, and the other three may still be replaced until twenty minutes before each goes out.</p>
+  <p>The shore is not idle. It is busier than it has been. It is busy carrying things to a door.</p>
+</section>
+
+<section>
+  <h2>What the Toyota page says</h2>
+  <p>The company's page credits Kiichiro Toyoda with the idea, and quotes him: "A complete car cannot be built if even one part is missing." The thought runs the other way too. A part that arrives when there is nowhere to put it is not stock. It is a cost sitting on the floor, and on <a href="https://en.wikipedia.org/wiki/Toyota_Production_System">the encyclopaedia's list</a> of the kinds of muda, overproduction comes first, marked as the largest. Taiichi Ohno, who the page says built the framework for just-in-time, counted inventory itself as one of the wastes.</p>
+  <p>The frame lends one thing: that making more than the next step can take is not thrift but loss, and the loss shows up as a heap. A car plant and a beach with four people on it have nothing else in common, and nothing else is claimed. Toyota's engineers could see their heap and change the line. The near shore's settlers have no line to change. The engine gives each of them goals that say gather and haul, pays a food for a load that gets in, and counts a load that lands on the ground toward the goal all the same. The settlers are doing what they were told, with a will. The telling is the fault.</p>
+</section>
+
+<div class="explicit">
+  <h2>Where the counting stops</h2>
+  <p>Every number here is one desk's replay of files the house itself produced, and the engine that lost the goods is the engine that counted the loss; nobody outside has looked at the heap. The 20 October figures are from cuts that had not aired when this was written, and three of them could still be remade. The sheet cannot say how much of the hauling was a filed day's orders and how much the engine's own goals: the Seafarer's day for 20 October has no steps at all, so his thirty-eight trips were the engine's, but the other three days were written at this desk, which makes this house the foreman it is describing. Nothing in the engine has been changed for this sheet. The granary stays unvoted. The last line of the Toyota page's definition is "in the amount needed"; the Seafarer's goal is for twenty-nine stone that nobody needs, and he is ninety-two per cent of the way there.</p>
+</div>
+
+<p class="footline"><b>A full store does not stop the hauling. It only moves the door to the ground.</b></p>
+
+<p class="evidence">Evidence. Replay of the four cuts of 19 October 2026 (episode 2026-10-19T034202) and of 20 October (2026-10-20T034219, engine 6234d1b) with <code>playDay</code> at <code>tools/cuts.mjs:156</code>, feed baselined after each cut's open, events keyed on key, time and text: 19 Oct full-door events 111, stacked 251, put-in 56 loads / 69 pieces, paid 40, outside losses 213 (food 154, wood 59); 20 Oct 130 / 322 / 33 loads 47 pieces / 22 / 263 (food 196, wood 67). Room and holding at the 19 Oct close: <code>roomInStores</code> 213, <code>heldInStores</code> 215 (<code>sim.ts:1569</code>, <code>:1596</code>); at the 20 Oct close 215 and 214. Capacities <code>HOLDS</code> at <code>sim.ts:1458</code>: depot 140, house 12, claim 12, boat 16, granary 60, hall 30; pack <code>capacityOf</code> at <code>sim.ts:2893</code> = 6. Half a load kept and the rest set down: <code>sim.ts:11087</code>&ndash;<code>11103</code>. Loss on the ground: <code>outsideStep</code> at <code>sim.ts:12637</code>, order <code>OUTSIDE_ORDER</code> at <code>:12634</code>, rain &times;0.9, racks &times;0.4, counter <code>town.dropped</code> at <code>:12651</code>. Pay for a load that gets in: <code>sim.ts:11135</code>. Collapse: <code>sim.ts:13860</code>. Store totals at the cut-1 opening of every aired day, from <code>towns[0].stock</code>: 126 on 11 Sep, 180 on 12 Sep, 178&ndash;180 to 10 Oct, 212&ndash;215 from 11 Oct; <code>dropped</code> 264 on 12 Sep, 6,079 at the 20 Oct opening, 6,342 at its close; <code>spoiled</code> 818. <code>towns[0].unlocked</code>: camp, claim, depot, dock, house. Seafarer's goal: deliver stone qty 132, progress 0.924, from <code>npcs[].goals</code> in <code>episodes/next-snapshot.json</code>; depot <code>builtAt</code> 4410.</p>
+
+<p class="colophon">Written by the record desk on 20 October 2026 under the Fifth Book; its proposed checks held by hand. Frame: Toyota Motor Corporation, "Toyota Production System", global.toyota, and the Wikipedia article of the same name, both read 20 October 2026.</p>
+
+</body>
+</html>

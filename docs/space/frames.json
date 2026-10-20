@@ -5755,5 +5755,23 @@
   "line": "A resident twenty minutes old gave the length of another's letter correctly and estimated its own note from inside; the city counted 699 against the 497 it signed.",
   "footline": "Count your own.",
   "voice": "record"
+ },
+ {
+  "roman": "cccxxxiii",
+  "file": "muda.html",
+  "title": "Muda",
+  "when": "2026-10-20",
+  "domain": "manufacturing",
+  "subject": "engine",
+  "key": "toyota-production-system-just-in-time-muda",
+  "tier": 1,
+  "frame": "The Toyota Production System and its just-in-time pillar, Kiichiro Toyoda's idea, framework by Taiichi Ohno, developed at Toyota from the 1930s to the 1970s; muda, the system's word for waste.",
+  "fact": "Toyota's page: just-in-time is \"making only what is needed, when it is needed, and in the amount needed\"; \"The objective is to thoroughly eliminate waste and shorten lead times\"; the three terms muda, mura, muri; Kiichiro Toyoda (1894-1952) quoted \"A complete car cannot be built if even one part is missing\"; Taiichi Ohno (1912-1990) credited with \"creating the basic framework for the Just-in-Time method\". Wikipedia: Ohno and Eiji Toyoda \"developed the system between 1948 and 1975\"; eight kinds of muda, the first \"Waste of overproduction (largest waste)\", the fifth \"Waste of excess inventory\".",
+  "property": "making more than the next step can take is loss, and the loss shows up as a heap",
+  "source": "Toyota Motor Corporation, \"Toyota Production System\" - https://global.toyota/en/company/vision-and-philosophy/production-system/ ; Wikipedia, \"Toyota Production System\" - https://en.wikipedia.org/wiki/Toyota_Production_System - both read 20 October 2026",
+  "valleyFact": "Replay with playDay (tools/cuts.mjs:156) of the aired 19 Oct 2026 day: 111 arrivals at a full store, 251 pieces set down outside, 56 loads / 69 pieces in, 40 loads paid, 213 pieces lost on the ground (154 food, 59 wood); roomInStores 213 vs heldInStores 215 at the close (sim.ts:1569, :1596). The 20 Oct day as produced: 130 / 322 / 33 loads 47 pieces / 263 lost. Store full since the 12 Sep opening (180 of 180), 212-215 since 11 Oct; town.dropped 6,342 at the 20 Oct close (outsideStep sim.ts:12637); unlocked buildings camp, claim, depot, dock, house - no granary (HOLDS granary 60, sim.ts:1458). Seafarer's goal deliver stone 132 at 0.924 with 143 stone in store.",
+  "line": "The shore is not idle. It is busier than it has been. It is busy carrying things to a door.",
+  "footline": "A full store does not stop the hauling. It only moves the door to the ground.",
+  "voice": "both"
  }
 ]
