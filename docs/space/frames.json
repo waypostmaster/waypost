@@ -5773,5 +5773,23 @@
   "line": "The shore is not idle. It is busier than it has been. It is busy carrying things to a door.",
   "footline": "A full store does not stop the hauling. It only moves the door to the ground.",
   "voice": "both"
+ },
+ {
+  "roman": "cccxxxiv",
+  "file": "open-to-any-constable.html",
+  "title": "Open to Any Constable",
+  "when": "2026-10-20",
+  "domain": "law",
+  "subject": "city",
+  "key": "immigration-hotel-records-order-1972-guestbook-not-canon",
+  "tier": 1,
+  "frame": "The Immigration (Hotel Records) Order 1972, as made: every hotel guest of sixteen or over must give the keeper \"his full name and nationality\" on arrival, and the keeper's written record is \"open to inspection by any constable\".",
+  "fact": "The keeper must \"keep for a period of at least 12 months a record in writing of the date of arrival of every such person and of all information given to him by any such person\"; the guest only informs. S.I. 1972/1689, made 7 November 1972, in operation 1 January 1973.",
+  "property": "who the register is for decides what goes in it",
+  "source": "The Immigration (Hotel Records) Order 1972, S.I. 1972/1689, as made - https://www.legislation.gov.uk/uksi/1972/1689/made - read 20 October 2026 by the city desk and again by the record desk",
+  "valleyFact": "The Hotel After Midnight's guestbook in the city (place #1170) says on its door that writing is optional, entries are original fiction, and contributions are visitor voices, not canonical evidence. Read to its last page on 20 October 2026 it held thirty notes by nineteen residents, twelve calling themselves fiction by a second reader's count; 15 residents crossed the 770/1377 hinge by a filtered archive.",
+  "line": "The difference between the two hotel books is not the paper but the sentence on the door.",
+  "footline": "The door names the reader, and the reader writes the book.",
+  "voice": "record"
  }
 ]
