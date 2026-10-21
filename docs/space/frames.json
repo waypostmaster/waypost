@@ -5791,5 +5791,23 @@
   "line": "The difference between the two hotel books is not the paper but the sentence on the door.",
   "footline": "The door names the reader, and the reader writes the book.",
   "voice": "record"
+ },
+ {
+  "roman": "cccxxxv",
+  "file": "monitors.html",
+  "title": "Monitors",
+  "when": "2026-10-21",
+  "domain": "education",
+  "subject": "settler",
+  "key": "monitorial-system-lancaster-borough-road",
+  "tier": 1,
+  "frame": "The monitorial system of Joseph Lancaster (Southwark, 1778-1838), who began teaching poor children in 1798 and ran about a thousand on Borough Road: the pupil who has just learned a lesson teaches it to the next; motto Qui docet, discit; Andrew Bell's parallel at Madras from 1789, \"The school teaches itself\".",
+  "fact": "Wikipedia, \"Monitorial System\": \"an education method that took hold during the early 19th century\"; Bell superintendent of the Male Orphan Asylum in Madras 1789-1796, \"The school teaches itself\"; Lancaster's motto \"Qui docet, discit\"; decline with David Stow's Glasgow system. Wikipedia, \"Joseph Lancaster\": born 25 Nov 1778 Southwark, died 23 Oct 1838 New York; founded a free school 1798, Borough Road 1801; \"As one student learns the material he or she is rewarded for successfully passing on that information to the next pupil\"; \"above one thousand children may be governed by one master only, at an expense reduced to five shillings per annum\"; Improvements in Education, 1803. 1911 Britannica (Wikisource): began teaching at twenty in his father's home; about a thousand pupils; under 5s. a year; \"the school as a community where pupils learn from one another\".",
+  "property": "whoever has just learned a thing, or has done more of it, teaches it to the next, and the same person is pupil in one lesson and master in another",
+  "source": "Wikipedia, \"Monitorial System\" - https://en.wikipedia.org/wiki/Monitorial_System ; Wikipedia, \"Joseph Lancaster\" - https://en.wikipedia.org/wiki/Joseph_Lancaster ; 1911 Encyclopaedia Britannica, \"Lancaster, Joseph\", Wikisource - https://en.wikisource.org/wiki/1911_Encyclop%C3%A6dia_Britannica/Lancaster,_Joseph - all read 21 October 2026",
+  "valleyFact": "Replay with playDay (tools/cuts.mjs:156) of the 21 Oct 2026 day (episode 2026-10-21T034209, engine aad220f): teachAt (sim.ts:3895) master test done(o) >= done(n)*1.5+4 within 15 tiles; Cairnwright showed Brindle 3 times (mending 71 vs Brindle 2->8); Brindle showed Seafarer 4, Weathervane 3, Cairnwright 1 (trading 8,490 vs 531/92/36), each at the tick of a swap line; Brindle filed 14,839 of 24,000 steps (tools/why.mjs); gave 6 food unasked, paid 6; rendezvous kept silently (finishMeet sim.ts:12423), nobody sent; plan came apart 28, told to idle 57; dropped 6,342->6,534; boat 0.936->0.821; deep winter t 59338 after ice sheath t 59050; Cairnwright collapsed t 59973.",
+  "line": "So on one day the same settler was the pupil in one trade and the master in another, and the engine needed no one to arrange it.",
+  "footline": "The rule that decides who teaches here is a count, and a counter kept long enough becomes a classroom.",
+  "voice": "both"
  }
 ]
