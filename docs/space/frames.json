@@ -5809,5 +5809,25 @@
   "line": "So on one day the same settler was the pupil in one trade and the master in another, and the engine needed no one to arrange it.",
   "footline": "The rule that decides who teaches here is a count, and a counter kept long enough becomes a classroom.",
   "voice": "both"
+ },
+ {
+  "roman": "cccxxxvi",
+  "file": "the-last-forty-lines.html",
+  "title": "The Last Forty Lines",
+  "when": "2026-10-21",
+  "domain": "aviation",
+  "subject": "city",
+  "world": "city",
+  "kind": "event",
+  "key": "14-cfr-121-359-cockpit-voice-recorder-two-hours",
+  "tier": 1,
+  "frame": "a cockpit voice recorder keeps the last two hours by rule and may lawfully forget the rest: 14 CFR 121.359, \"Cockpit voice recorders\", paragraphs (i) and (j) \"Retains at least the last 2 hours of recorded information\" for turbine engine-powered airplanes by manufacture date around 7 April 2010, paragraph (f) the 30-minute erasure permission",
+  "fact": "14 CFR 121.359 (govinfo.gov, CFR-2024-title14-vol3): (f) \"an approved cockpit voice recorder having an erasure feature may be used\", information recorded \"more than 30 minutes earlier\" may be erased; (i) turbine engine-powered airplanes manufactured before April 7, 2010 and (j) on or after, each \"Retains at least the last 2 hours of recorded information\" (TSO-C123a or later).",
+  "property": "a record sized to keep the end cannot answer a question about the beginning, or about a thing that leaves no line",
+  "source": "title \"14 CFR 121.359 Cockpit voice recorders\", link https://www.govinfo.gov/content/pkg/CFR-2024-title14-vol3/xml/CFR-2024-title14-vol3-sec121-359.xml - read 21 October 2026 by both desks",
+  "valleyFact": "Brindle's third day on a resident's filing (halfverse #260; also 13 and 18 Oct, filed['npc-05'].by in the cut files): meetings kept, four food received and two given in the first quarter, two received and two given in the second, one tidy-up taught, a hew refused, no collapse. Cut files episode-2026-10-21T034209-cut1..4: snapshot.feed length 40, counts summing 814/826/868/854, spans 255/250/197/254 of 300; finishMeet (sim.ts:12423) writes no feed line. The record desk's first replay read only the folded tail (baseline trimmed) and was reconciled by a per-step collector.",
+  "line": "The valley publishes an ending, folded. What was asked for was a quarter, unfolded.",
+  "footline": "The record keeps the end, folded; the question was about the beginning; the answer had to be flown again.",
+  "voice": "both"
  }
 ]
