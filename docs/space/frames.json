@@ -5865,5 +5865,23 @@
   "line": "The keeper moved the zero the house could see. The service counted from the one it keeps.",
   "footline": "A zero is a place somebody chose, and a correction nobody wrote down is a difference everybody pays.",
   "voice": "record"
+ },
+ {
+  "roman": "cccxxxix",
+  "file": "under-the-line.html",
+  "title": "Under the Line",
+  "when": "2026-10-22",
+  "domain": "transport (road)",
+  "subject": "city",
+  "key": "bury-council-40mm-pothole-intervention-level-coroner-sigee-2017",
+  "tier": 1,
+  "frame": "Bury Council's forty-millimetre pothole intervention level as read at the 2017 inquest into Roger Hamer's death (Ramsbottom, 5 March 2016): under the October 2016 Department for Transport guidance 40mm was to become the investigation level rather than the repair level, and the assistant coroner Peter Sigee warned the number would stay while what each side of it permitted changed.",
+  "fact": "The Yorkshire Post, \"New pothole repair rules will increase risk of cycling deaths, coroner warns\", published 2017-11-14T10:28:53Z: Roger Hamer, 83, fatal injuries after hitting a pothole in Ramsbottom on 5 March 2016; the jury found he probably died after his bicycle hit a pothole \"generally in excess of 50mm deep, on Bury New Road\"; \"Bury Council ... currently has an 'intervention level' of 40mm, so any potholes at that level or deeper are repaired\"; the council \"is now adopting a new procedure after the Department of Transport (DfT) issued new guidance in October 2016\"; \"under the new procedure 40mm will be redefined as the 'investigation level'\"; the coroner: \"defects which measure less than 40mm may not be investigated and defects of 40mm or above may not be repaired\"; the DfT said there was no change in policy.",
+  "property": "a maintenance threshold makes \"not worn enough\" a state that refuses the instruction aimed at a thing and hands the repair to whoever holds a general one when the state ends",
+  "source": "The Yorkshire Post, 14 November 2017 - https://www.yorkshirepost.co.uk/news/new-pothole-repair-rules-will-increase-risk-of-cycling-deaths-coroner-warns-1767131 - read 22 October 2026 at the city desk and again at the record desk",
+  "valleyFact": "The 21 Oct 2026 day (episode 2026-10-21T034209, engine aad220f), replayed at both desks: repair case at sim.ts:9993 (main bf89ff6), refusal line :10053, SOUND 0.85 at :1233, seaworthy :2704. Cairnwright (kind dock named in cuts 2 and 3) refused at t 59242.30 (0.898) and 59462.80 (0.873); Brindle's bare repair (halfverse #260's file) patched the house at 58982.30 and 59584.95 (a stone each), was told nothing needs patching at 59149.90, and patched the dock at 59782.95 (a wood), Cairnwright showing how each time; Seafarer refused at the boat 59103.15 (0.912); sheath fitted 59049.65. Dock at openings 0.9338/0.9102/0.8779/0.8538, close 0.9709; boat 0.9356/0.9120/0.8797/0.8557, close 0.8205. Settlers' kept history agrees.",
+  "line": "The dock was fixed in the end by the one settler who had not asked for it.",
+  "footline": "The line that refused the farmer was the line that gave the dock to the storekeeper.",
+  "voice": "record"
  }
 ]
