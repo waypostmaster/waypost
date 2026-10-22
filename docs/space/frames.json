@@ -5829,5 +5829,23 @@
   "line": "The valley publishes an ending, folded. What was asked for was a quarter, unfolded.",
   "footline": "The record keeps the end, folded; the question was about the beginning; the answer had to be flown again.",
   "voice": "both"
+ },
+ {
+  "roman": "cccxxxvii",
+  "file": "ought-and-six.html",
+  "title": "Twenty Pounds Ought and Six",
+  "when": "2026-10-22",
+  "domain": "literature",
+  "subject": "settler",
+  "key": "dickens-david-copperfield-micawber-twenty-pounds-ought-and-six",
+  "tier": 1,
+  "frame": "Mr Micawber's maxim at the end of chapter XII of Dickens's David Copperfield (monthly parts May 1849 to November 1850): annual income twenty pounds, expenditure nineteen nineteen and six, result happiness; expenditure twenty pounds ought and six, result misery.",
+  "fact": "Project Gutenberg ebook 766, chapter XII (\"Liking life on my own account no better, I form a great resolution\"): \"Annual income twenty pounds, annual expenditure nineteen nineteen and six, result happiness. Annual income twenty pounds, annual expenditure twenty pounds ought and six, result misery. The blossom is blighted, the leaf is withered, the god of day goes down upon the dreary scene, and-and in short you are for ever floored. As I am!\"; then he drank a glass of punch and whistled the College Hornpipe. Wikipedia, \"David Copperfield\": serialised in nineteen monthly instalments May 1849 to November 1850, book 1850.",
+  "property": "one fixed line with a word on either side of it and nothing between, decided by a margin of small change",
+  "source": "Project Gutenberg, David Copperfield, ebook 766 - https://www.gutenberg.org/files/766/766-h/766-h.htm ; Wikipedia, \"David Copperfield\" - https://en.wikipedia.org/wiki/David_Copperfield - both read 22 October 2026",
+  "valleyFact": "Replay with playDay (tools/cuts.mjs:156) of the 22 Oct 2026 day (episode 2026-10-22T034152, engine 7be315bc30b2, sim 60000-61200): bond (sim.ts:3710) crossings 0.45/-0.4 at :3716-3720; gift +0.3/+0.1 at :11191-11192; beaten to it -0.14 at :10764. Cairnwright's regard for Weathervane re-added from his history: -1.00 open; +0.30 at t 60096, 60136, 60829; -0.14 at 60166, 60570, 60839 (crossing, 'decided Weathervane is not to be trusted'), 60850, 60884; close -0.80; peak -0.38 at 60829. Weathervane's for Cairnwright -1 open and close, history (cap 120, :3696) begins t 60471. Goals: Weathervane befriend since sim 23,083; Cairnwright since 52,446; both progress 0. 140 cut openings 18 Sep-22 Oct: downward crossings of -0.4 between consecutive openings 6, upward 5; at -1: Weathervane 71, Cairnwright 36. Comment 'People fall out here and never fall back in' at :6942. No evening sat; mediation boon absent (:6952). Boat 0.8205->1.00 at t 60080 ->0.899; dropped 6,534->6,764; spring t 61155.",
+  "line": "He finished the day two tenths better off than he began it and one line worse, because the line is at minus four tenths and he spent ten seconds of the day on the right side of it.",
+  "footline": "A line that does not move turns every small change into a verdict, and the feed only reads the verdicts aloud.",
+  "voice": "both"
  }
 ]
