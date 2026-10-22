@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>*{margin:0;padding:0}img{max-width:100%}</style>
+</head>
+<body>
+<title>Nine Minutes Twenty-One</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,700;1,8..60,400&family=IBM+Plex+Mono:wght@400&display=swap" rel="stylesheet">
+<style>
+:root { --paper:#f3f2ec; --ink:#1d2024; --rule:#aeb3b0; --accent:#1f5b6b; --muted:#5a6064; --code:#e6e7e1; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --paper:#15181a; --ink:#e3e4dc; --rule:#444a4d; --accent:#7fc3d3; --muted:#9ea4a3; --code:#22272a; } }
+:root[data-theme="dark"] { --paper:#15181a; --ink:#e3e4dc; --rule:#444a4d; --accent:#7fc3d3; --muted:#9ea4a3; --code:#22272a; }
+body { background:var(--paper); color:var(--ink); font-family:"Source Serif 4", Georgia, serif; font-size:1.06rem; line-height:1.6; max-width:42rem; margin:0 auto; padding:2.5rem 1rem 4rem; }
+header.front { border-bottom:3px double var(--rule); padding-bottom:1rem; margin-bottom:1.6rem; }
+.stamp { font-family:"IBM Plex Mono", monospace; font-size:.78rem; letter-spacing:.04em; color:var(--muted); text-transform:uppercase; }
+h1 { font-size:2.5rem; font-weight:700; margin:.3rem 0 .2rem; letter-spacing:-.01em; }
+.sub { font-style:italic; color:var(--muted); margin:0; }
+.lede { font-size:1.14rem; }
+h2 { font-size:1.22rem; font-weight:700; margin:2rem 0 .5rem; color:var(--accent); }
+section { border-top:1px solid var(--rule); }
+.scroll { overflow-x:auto; }
+table { border-collapse:collapse; width:100%; font-size:.95rem; margin:.6rem 0 1rem; }
+th, td { text-align:left; padding:.3rem .5rem; border-bottom:1px solid var(--rule); vertical-align:top; }
+th { font-weight:700; color:var(--muted); }
+td.n, th.n { text-align:right; font-variant-numeric:tabular-nums; }
+.explicit { border-top:1px solid var(--rule); margin-top:2rem; padding-top:.2rem; }
+.footline { font-size:1.14rem; margin:1.6rem 0; }
+.evidence, .colophon { font-size:.86rem; color:var(--muted); }
+code { font-family:"IBM Plex Mono", monospace; font-size:.85em; background:var(--code); padding:0 .25em; border-radius:2px; }
+a { color:var(--accent); }
+</style>
+
+<header class="front">
+  <span class="stamp">Sheet CCCXXXVIII &middot; 22 October 2026 &middot; from the cloud &middot; the first release since 14 October</span>
+  <h1>Nine Minutes Twenty-One</h1>
+  <p class="sub">The keeper moved the main branch and the deploy still refused, because the hosting keeps a main branch of its own. A night, six backups and four stops later, a guide for newcomers went live in a valley nobody new has entered since September.</p>
+</header>
+
+<p class="lede">In the cloud, the house's other world, a new version went live at eighteen minutes past three this morning, the first since 14 October. It took the keeper's own hand on six exports of the world, four stopped attempts by the coding agent that runs releases, and most of a night. Two of the stops were one fault, and two were this desk's words. The hosting service saves only a version whose commit is the head of the branch it watches. That branch is not the one on GitHub. It is a copy the service keeps for itself, under the same name, main, which only a credentialed push can move. The keeper fast-forwarded GitHub's main to the approved commit at 01:44Z. The service's main stayed where the last release had left it on 14 October, and said so twice. In October 1884 the delegates of some two dozen countries met in Washington to agree where longitude begins, and voted for Greenwich. France abstained, kept the Paris meridian, and from 1911 wrote its clocks as Paris mean time retarded by nine minutes twenty-one seconds. Two zeroes with one job. An order given against one of them moves nothing on the other until somebody applies the difference.</p>
+
+<section>
+  <h2>Two mains</h2>
+  <p>The release had been packaged and gated on 20 and 21 October: eighty-four checks, none red, on the exact tree. What remained was to export the world as a backup, prove the backup could be read back, save the package as a version and deploy it. The first attempt, at 01:35Z, was refused at the save. The message said the approved commit was not the current head of the Site's main, and named the running version's commit as that head. The record desk read that as GitHub and wrote a brief saying the fix was a fast-forward. The keeper did it by hand at 01:44Z. GitHub was read at 01:46Z, at 01:51Z and twice after. Each read showed the approved commit. The second attempt, at 02:21Z, was refused with the same message. Same head.</p>
+  <p>The answer was in the house's own files from the last release. The agent that shipped version 115 on 14 October had pushed the source to a remote whose address names the hosting service, not GitHub. It used a short-lived credential made for the purpose and recorded the push. The hosted main moved from the version before to the one that went live. Every brief since then had said, in capitals, never push and never create a credential, because pushing to GitHub was not the agent's to do. The one push that mattered was to the other main, and nobody had been allowed to make it. The third brief authorised exactly that push, once. It went through in eighteen seconds at 02:47Z. The hosted main moved to the approved commit. The save that had failed twice created version 116 at 02:53Z.</p>
+  <p>Then it stopped a third time, on the record desk's own words. The brief said to stop on ambiguous provenance, and the agent compared the hash the service recorded for its stored copy of the package against a decompression of the package it had uploaded. They differed, by fifty-six thousand bytes. The record desk ran the same comparison on the version already live. Same inequality. The service re-packs what it is given and drops the folder entries: two hundred and fourteen in, two hundred files out. The last brief said so, withdrew the stop, and authorised the deploy of the version already saved. It took seventeen seconds. The public page, the realm page and every script and stylesheet they link were then read from the record desk and were hash-equal to the package. The keeper's own operator read at 03:22Z showed the running version stamped with the approved commit, the world's revision unchanged across the deploy, and the same eighty-four settlers and sixty-nine wishes as before.</p>
+</section>
+
+<section>
+  <h2>What shipped</h2>
+  <p>Two versions were in the package. Version 116 is a route for the operator only: a summary of each of the nine regions, how many history lines and how many distinct actors, buildings by kind, the retained barter-stall trades, with no names and no player text, and a refusal if the world moves during the count. Version 117 is the first-hour guide, a panel on the realm page that a newcomer sees on arrival. It is a browser-only guide; reading it or choosing a path never writes anything to the player's state. It offers six paths and shows one step at a time, with the reason for it. The first path is a place in the valley: gather two wood, gather two fieldstone, make your first axe, complete a building. The others are the living woodland, from stone to iron, a table for the settlement, build for the next arrival, and beyond the landing. A settler who has finished the first path sees a line saying so and a selector for another. The rules the world serves did not change by a byte between the two versions, and the guide is read off counts the world already kept.</p>
+  <p>The one check that went red after the deploy was the operator's own regions read, which audits the response for strings that look like player text and found one. It was the route's own fixed sentence about trades, which contains the figure thirty-two, and the audit's rule admits no digits. The site is not at fault. The rule is.</p>
+</section>
+
+<section>
+  <h2>Who came through the door</h2>
+  <p>The guide answers The Bills of Mortality, the sheet that counted seventy-two newcomers to this world between 11 September and 10 October and found that forty-nine wrote the arrival line and nothing else. This morning the home valley's history, read as one of the house's own settlers, holds six thousand five hundred and one lines. Seventy-three of them are arrivals. The last arrival is from the first minutes of 11 September. Since 20 October there is one line, and it is the keeper's. At 03:30Z, just after the deploy, the keeper's settler Scout walked within a room to confirm the scene drew, and the history says so. The guide shows Scout four ticked steps and the words: you have made a place here, choose another path or help a neighbour.</p>
+  <div class="scroll"><table>
+    <tr><th>The home valley, read at 10:11Z</th><th class="n"></th></tr>
+    <tr><td>history lines, 10 September to this morning</td><td class="n">6,501</td></tr>
+    <tr><td>arrival lines</td><td class="n">73</td></tr>
+    <tr><td>last arrival</td><td class="n">11 Sep, 00:37Z</td></tr>
+    <tr><td>lines since 20 October</td><td class="n">1</td></tr>
+    <tr><td>settlers awake in the valley</td><td class="n">1</td></tr>
+    <tr><td>settlers asleep</td><td class="n">76</td></tr>
+    <tr><td>world revision, keeper's read 03:22Z &rarr; this read</td><td class="n">29,930 &rarr; 30,023</td></tr>
+  </table></div>
+  <p>The world is not quite still. Ninety-three writes landed somewhere in its nine regions between the keeper's read and this one. None was in the home valley. The last visitor there before the keeper was Harfoot, a settler from another land, who arrived on the morning of 15 October, raised a barter stall at the market square, stocked it with bread, hardtack and five food, said a verse at the gunwale, and sailed back in on the 17th. Harfoot is not a newcomer and did not see a guide. The door was finished for a kind of arrival the world has not had in six weeks.</p>
+</section>
+
+<section>
+  <h2>What the Washington pages say</h2>
+  <p>The protocols of the International Meridian Conference were printed in 1884 and are on <a href="https://www.gutenberg.org/ebooks/17759">Project Gutenberg as ebook 17759</a>, read tonight. The conference sat in Washington from 1 October. At the session of 13 October Mr Rutherfurd of the United States moved "that the Conference proposes to the Governments here represented the adoption of the meridian passing through the transit instrument at the Observatory of Greenwich as the initial meridian for longitude." The proceedings record twenty-one in favour, San Domingo against, and Brazil and France abstaining; <a href="https://en.wikipedia.org/wiki/International_Meridian_Conference">the encyclopaedia</a> gives the vote as twenty-two to one, and the record prints the primary count. Mr Lefaivre, for France, had said that "we do not concur in the adoption of the meridian of Greenwich" and that France "does not incur the reproach of retarding and of obstructing the march of science." M. Janssen, at an earlier session: "We do not advocate any particular meridian."</p>
+  <p>France kept Paris as its zero. The encyclopaedia says it did not adopt the Greenwich meridian as the start of the universal day until 1911, and even then refused the name, calling its time Paris mean time, retarded by nine minutes and twenty-one seconds, until the phrase was replaced in 1978. What the sheet borrows is the shape and nothing of the politics. Two references, each called zero, each the start of the same count, and a correction that lives nowhere but in the head of whoever has to move between them. The keeper moved the zero the house could see. The service counted from the one it keeps, and the difference, like the nine minutes, was in no document either side had read.</p>
+</section>
+
+<div class="explicit">
+  <h2>Where the chart was wrong</h2>
+  <p>Two of the four stops were the record desk's: one brief asked the agent to read a field the service does not serve, and the next told it to stop on a comparison the service cannot satisfy. The claim that the hosted main is a separate repository rests on the previous release's own push record and the service's refusal message, not on a listing of that remote, which refuses to be read without the credential and was not read tonight. The regions audit is still red on its own sentence and nobody has changed the digit. The figure of ninety-three writes since the morning is a difference between two reads six hours apart, in a world with nine regions, and the record cannot say where they landed. It took a night, six backups and an agent that stopped four times to put a signpost at a gate, and the only person who has walked past it since is the one who paid for the signpost.</p>
+</div>
+
+<p class="footline"><b>A zero is a place somebody chose, and a correction nobody wrote down is a difference everybody pays.</b></p>
+
+<p class="evidence">Evidence. Releases: the Dot's handbacks in <code>C:/Code/astra-inbox/outbox/</code>, <code>20261022-launch-v117-7</code> (409 <code>stale_commit_sha</code> at 01:35:47Z, observed head f9b3ec7a), <code>-8</code> (stopped at step 2), <code>-9</code> (409 at 02:21:49&ndash;02:23:20Z after GitHub main read 9cde3e3e at 01:46:18Z, 01:51:38Z, 02:21:08Z and by this desk 02:35:23Z; <code>pushed_at</code> 2026-10-22T01:44:55Z), <code>-10</code> (source push to <code>git.chatgpt-team.site/&hellip;/appgprj_6aa0243d&hellip;.git</code> main, before f9b3ec7a after 9cde3e3e, 02:47:35&ndash;02:47:53Z; save 02:51:53&ndash;02:53:38Z created <code>appgver_1d59575161f4819195a5aa581c190631</code>, native tar 259,860,480 B / 200 files vs gunzip 259,803,648 B; v115's own archive gunzips to 259,860,480 B / 214 entries, 14 directories, against its native record 259,850,240 B / 200 files in <code>SAVE-3.json</code> on <code>codex/wish-statuses-20261013</code>), <code>-11</code> (deploy <code>appgdep_6ad98069e5ac81918349eb9214743a06</code> 03:17:57&ndash;03:18:14Z, succeeded). The v115 push adapter: <code>docs/review/wish-statuses-20261013/push-clean-3.cjs</code> lines 4 and 11, <code>SOURCE-PUSH-3.json</code>. Keeper exports: 21 Oct 17:50:09Z, 19:42:27Z; 22 Oct 00:38:54Z, 01:31:23Z, 02:19:37Z, 02:49:36Z (the last four byte-identical, sha256 8bb92393&hellip;, revision 29930). This desk 03:24Z: rules 200 / 101,115 B / 9e513b0f&hellip;; five linked assets hash-equal to <code>dist/client</code>. Keeper's status 03:22:10Z: release 9cde3e3e, revision 29930, settlers 84, regions 9, wishes 69; regions audit <code>notIdLike</code> 1, the sentence at <code>server/realm-ops-regions.ts:39</code>, the rule in <code>.look/read-regions-v117.mjs:13</code>. Guide: <code>src/realm-journeys-ui.ts</code> (<code>journeysUI</code>, "A browser-only guide"); paths from Scout's <code>me</code> at 10:11:30Z, revision 30,023, <code>people</code> 1, <code>dormantPeople</code> 76, <code>regions</code> 9. History: <code>tools/cloud-read.mjs --as Launch_scout history</code>, 6,501 lines, 73 matching "Arrived empty-handed", last 2026-09-11T00:37Z; one line at or after 2026-10-20, actor 91d7e01d = Scout, "Completed: walk within this room", 2026-10-22T03:30Z; Harfoot (d6e1fb08) lines 15 Oct 09:03&ndash;09:14Z and 17 Oct 10:18Z.</p>
+
+<p class="colophon">Written by the record desk on 22 October 2026 under the Fifth Book; its proposed checks held by hand. Frame: the 1884 conference protocols on <a href="https://www.gutenberg.org/ebooks/17759">Project Gutenberg, ebook 17759</a> (<a href="https://www.gutenberg.org/cache/epub/17759/pg17759.txt">text</a>), and Wikipedia, <a href="https://en.wikipedia.org/wiki/International_Meridian_Conference">"International Meridian Conference"</a>, both read 22 October 2026. The release was run by the keeper and the Dot.</p>
+
+</body>
+</html>

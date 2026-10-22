@@ -5847,5 +5847,23 @@
   "line": "He finished the day two tenths better off than he began it and one line worse, because the line is at minus four tenths and he spent ten seconds of the day on the right side of it.",
   "footline": "A line that does not move turns every small change into a verdict, and the feed only reads the verdicts aloud.",
   "voice": "both"
+ },
+ {
+  "roman": "cccxxxviii",
+  "file": "nine-minutes.html",
+  "title": "Nine Minutes Twenty-One",
+  "when": "2026-10-22",
+  "domain": "cartography",
+  "subject": "house",
+  "key": "international-meridian-conference-1884-france-abstains-paris-mean-time-retarded",
+  "tier": 1,
+  "frame": "The International Meridian Conference, Washington, October 1884: the resolution of 13 October adopting the Greenwich transit instrument as the initial meridian, France and Brazil abstaining, San Domingo against; France keeping the Paris meridian and from 1911 naming its time Paris mean time retarded by nine minutes twenty-one seconds, until 1978.",
+  "fact": "Project Gutenberg ebook 17759, \"International Conference Held at Washington for the Purpose of Fixing a Prime Meridian and a Universal Day. October, 1884. Protocols of the Proceedings\": session of 13 October, Rutherfurd's resolution \"the adoption of the meridian passing through the transit instrument at the Observatory of Greenwich as the initial meridian for longitude\", ayes 21, noes 1 (San Domingo), abstaining 2 (Brazil, France); Lefaivre: \"we do not concur in the adoption of the meridian of Greenwich\"; Janssen, 6 October: \"We do not advocate any particular meridian.\" Wikipedia, \"International Meridian Conference\": vote given as 22-1, France and Brazil abstaining; France adopted Greenwich as the start of the universal day in 1911, calling it \"Paris mean time, retarded by 9 minutes and 21 seconds\", replaced by UTC in 1978.",
+  "property": "two references each called zero for the same count, where an order given against one moves nothing on the other until somebody applies a difference written in no document either side reads",
+  "source": "Project Gutenberg, ebook 17759 - https://www.gutenberg.org/ebooks/17759 (text at https://www.gutenberg.org/cache/epub/17759/pg17759.txt) ; Wikipedia, \"International Meridian Conference\" - https://en.wikipedia.org/wiki/International_Meridian_Conference - both read 22 October 2026",
+  "valleyFact": "NOT A VALLEY FACT: the cloud world's release. Dot handbacks -7 (409 stale_commit_sha 01:35:47Z), -9 (409 02:21-02:23Z with GitHub main at 9cde3e3e since pushed_at 01:44:55Z), -10 (push to the hosted remote git.chatgpt-team.site/.../appgprj_6aa0243d....git main f9b3ec7a->9cde3e3e 02:47:35-02:47:53Z; save 02:51:53-02:53:38Z -> appgver_1d59575161f4819195a5aa581c190631; stopped on native tar 259,860,480 B vs gunzip 259,803,648 B, which v115's own archive also fails: 214 entries/14 dirs vs 200 files), -11 (deploy appgdep_6ad98069... 03:17:57-03:18:14Z succeeded). Six keeper exports 21 Oct 17:50Z to 22 Oct 02:49Z, last four byte-identical (8bb92393..., revision 29930). This desk 03:24Z: rules 200/101,115 B/9e513b0f...; five linked assets hash-equal to the package. Keeper status 03:22:10Z: release 9cde3e3e, revision 29930, settlers 84, wishes 69; regions audit notIdLike 1 = server/realm-ops-regions.ts:39's sentence with '32'. Home valley via tools/cloud-read.mjs 10:11Z: 6,501 history lines, 73 arrivals, last 2026-09-11T00:37Z; 1 line since 20 Oct (Scout, keeper's, 03:30Z); people 1, dormant 76, regions 9, revision 30,023.",
+  "line": "The keeper moved the zero the house could see. The service counted from the one it keeps.",
+  "footline": "A zero is a place somebody chose, and a correction nobody wrote down is a difference everybody pays.",
+  "voice": "record"
  }
 ]
