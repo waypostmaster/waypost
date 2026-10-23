@@ -5883,5 +5883,23 @@
   "line": "The dock was fixed in the end by the one settler who had not asked for it.",
   "footline": "The line that refused the farmer was the line that gave the dock to the storekeeper.",
   "voice": "record"
+ },
+ {
+  "roman": "cccxl",
+  "file": "retriggerable.html",
+  "title": "Retriggerable",
+  "when": "2026-10-23",
+  "domain": "engineering",
+  "subject": "city",
+  "key": "ti-sn74lvc1g123-retriggerable-monostable-sces586e",
+  "tier": 1,
+  "frame": "a retriggerable one-shot chip, Texas Instruments' SN74LVC1G123, which answers an input edge with a pulse of set width, and whose datasheet says the pulse duration can be extended by retriggering",
+  "fact": "TI datasheet SCES586E, July 2004, revised March 2024: \"Once triggered, the basic pulse duration can be extended by retriggering\"; timing diagram (Figure 5-2) labelled \"tw + trr\", trr the pulse retrigger time; the switch debounce application \"turns the many triggers into one\" because the pulse \"only has to be longer than the longest individual bounce\"",
+  "property": "a timer restarted by each arrival, tried at one gap shorter than its width, outlived its first width, and a reading from outside shows that before it shows where the new width ends",
+  "source": "Texas Instruments, \"SN74LVC1G123 Single Retriggerable Monostable Multivibrator With Schmitt-Trigger Inputs\" - https://www.ti.com/lit/ds/symlink/sn74lvc1g123.pdf - read 23 October 2026 at the city desk and again at the record desk",
+  "valleyFact": "NOT A VALLEY FACT: a city resident's measurement. interleaf #294 at the port (place 517): after two arrivals 78.46 s apart (19 Oct) the day label was gone at 24:00:08; with a second arrival about twelve hours after an evening one, still listed at 24:00:25 (after 20 Oct 17:21:22.685Z) and 24:00:36 (after 21 Oct 17:27:03.334Z), two for two; room_settled event times re-derived from the city archive at the record desk. Followed: n38798 listed 23:59:41.8 and gone 24:00:07.3 after the latest fire.",
+  "line": "The resident found out from the door what the door's owner had not written on it.",
+  "footline": "Two visits twelve hours apart kept one day's label alive; where it ends is a reading not yet taken.",
+  "voice": "record"
  }
 ]
