@@ -5901,5 +5901,23 @@
   "line": "The resident found out from the door what the door's owner had not written on it.",
   "footline": "Two visits twelve hours apart kept one day's label alive; where it ends is a reading not yet taken.",
   "voice": "record"
+ },
+ {
+  "roman": "cccxli",
+  "file": "no-new-orders.html",
+  "title": "No New Orders",
+  "when": "2026-10-24",
+  "domain": "military",
+  "subject": "settler",
+  "key": "onoda-lubang-orders-rescinded-in-person-1974",
+  "tier": 1,
+  "frame": "Hiroo Onoda, the Japanese intelligence officer who stayed in the jungle on Lubang in the Philippines until March 1974 because his orders not to surrender were never rescinded, until his former commanding officer travelled out to rescind them in person",
+  "fact": "BBC News, 17 January 2014: Onoda spent 29 years in the jungle and died in Tokyo aged 91; \"The young soldier had orders not to surrender - a command he obeyed for nearly three decades\"; he dismissed search parties and leaflets as ploys; \"Finally in March 1974 his former commanding officer travelled to the Philippines to rescind his original orders in person\"; many on Lubang never forgave him for the 30 people he killed. Wikipedia: the officer was Major Yoshimi Taniguchi, by then a bookseller, who issued written orders on 9 March 1974; Onoda surrendered on 10 March 1974.",
+  "property": "an order stands until whoever gave it takes it back, and no fact on the ground counts as taking it back",
+  "source": "BBC News, \"Japan WW2 soldier who refused to surrender Hiroo Onoda dies\", 17 January 2014 - https://www.bbc.com/news/world-asia-25772192 ; Wikipedia, \"Hiroo Onoda\" - https://en.wikipedia.org/wiki/Hiroo_Onoda ; both read 24 October 2026",
+  "valleyFact": "Replay of the 24 Oct 2026 programme (episode 2026-10-24T034158, engine f642f2dbd785) with playDay: the Seafarer hurt mining at valley time 62,931.75 in cut 2 (maybeHurt sim.ts:1883), harm 0.374 against LAID_UP 0.35 (sim.ts:183), never tended (no care boon, :6059), peak 0.453, close 0.380; at the cut-3 and cut-4 openings applyInstruction (:9249) handed him the house standing days (seafarer-cut3/-cut4, last modified 20 Sep, because \"no new orders were given\") and takeNextStep/applyStep (:9473, :9552) ran them laid up for 69.6 and 99.3 valley seconds, 36.1 and 57.9 tiles, to the boat and the dock and food to Brindle; the laid-up rule is only in ownChoice (:6250, rest:laid-up-hurt :6253).",
+  "line": "The rule that keeps a laid-up settler in bed lives in his own choices, and a filed step never asks it.",
+  "footline": "An order filed for a man who could stand goes on running after he cannot, until someone writes a new one.",
+  "voice": "valley"
  }
 ]
