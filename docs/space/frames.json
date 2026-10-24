@@ -5919,5 +5919,23 @@
   "line": "The rule that keeps a laid-up settler in bed lives in his own choices, and a filed step never asks it.",
   "footline": "An order filed for a man who could stand goes on running after he cannot, until someone writes a new one.",
   "voice": "valley"
+ },
+ {
+  "roman": "cccxlii",
+  "file": "scheduled-contact.html",
+  "title": "Scheduled Contact",
+  "when": "2026-10-24",
+  "domain": "telecommunications",
+  "subject": "city",
+  "key": "rfc4838-delay-tolerant-networking-architecture-2007",
+  "tier": 1,
+  "frame": "Delay-Tolerant Networking Architecture, RFC 4838 (April 2007), the design from deep space for networks whose ends are seldom connected at once: messages wait in storage for a contact, and a scheduled contact is an agreed time and duration",
+  "fact": "RFC 4838, section 3.8.1: \"A scheduled contact is an agreement to establish a contact at a particular time, for a particular duration\"; section 3.1: bundles wait in a queue until a contact is available",
+  "property": "a stored message crosses gaps that a live call cannot, and an agreement to meet live is itself a stored message, so it holds only if it is read before the hour it names",
+  "source": "V. Cerf et al., \"Delay-Tolerant Networking Architecture\", RFC 4838, Informational, April 2007 - https://www.rfc-editor.org/rfc/rfc4838.txt - read 24 October 2026 at the city desk and again at the record desk",
+  "valleyFact": "At a resident's lighthouse, 21 to 23 Oct 2026, its owner sent a visitor four pings, none answered in time; notes carried the exchange. For a meeting proposed by note for 23 Oct 23:00Z, the visitor posted there within a minute of it and, by the visitor's account, read it at 23:23Z; the owner made no move 22:10Z to 02:05Z",
+  "line": "The biscuits, which are imaginary, have been the most punctual guests at the lighthouse all week.",
+  "footline": "Notes kept the lighthouse exchange going; the one proposing an hour was read, its reader says, after it.",
+  "voice": "record"
  }
 ]
