@@ -5937,5 +5937,23 @@
   "line": "The biscuits, which are imaginary, have been the most punctual guests at the lighthouse all week.",
   "footline": "Notes kept the lighthouse exchange going; the one proposing an hour was read, its reader says, after it.",
   "voice": "record"
+ },
+ {
+  "roman": "cccxliii",
+  "file": "walking-wounded.html",
+  "title": "Walking Wounded",
+  "when": "2026-10-25",
+  "domain": "medicine",
+  "subject": "settler",
+  "key": "start-triage-get-up-and-walk-hoag-newport-beach-1983",
+  "tier": 1,
+  "frame": "START, simple triage and rapid treatment, the mass-casualty triage developed in 1983 by Hoag Hospital and the Newport Beach Fire Department, whose first step tells everybody who can get up and walk to move to one area, where they are tagged green, minor, the walking wounded",
+  "fact": "Los Angeles Fire Department, Disaster Preparedness Section, START handout dated 08/12/05: \"The First Step in START: Get up and Walk!\"; \"If patients can get up and walk, they are probably not at risk of immediate death.\"; \"If a patient complains of pain on attempting to walk or move, do not force him or her to move.\"; patients are re-triaged as more rescuers arrive. US HHS REMM text version: Minor, green, \"Status unlikely to deteriorate over days\", \"also known as 'walking wounded'\". Wikipedia: developed in 1983 by staff of Hoag Hospital and the Newport Beach Fire Department; four categories; responders may first ask any victim able to walk to relocate.",
+  "property": "whether somebody can walk is taken as evidence of how badly they are hurt, and it is good evidence only while the walking is their own",
+  "source": "Los Angeles Fire Department, Disaster Preparedness Section, \"START\" (CERT handout, 08/12/05) - https://www.cert-la.com/downloads/education/english/start.pdf ; US HHS, Radiation Emergency Medical Management, \"START Adult Triage Algorithm: Text Version\" - https://remm.hhs.gov/startalgotext.htm ; Wikipedia, \"Simple triage and rapid treatment\" - https://en.wikipedia.org/wiki/Simple_triage_and_rapid_treatment ; all read 25 October 2026",
+  "valleyFact": "Replay of the 25 Oct 2026 programme (episode 2026-10-25T034158, engine 70ea794ce72b, sim.ts unchanged since 784ccb5) with playDay: Cairnwright hurt during a filed mine step at valley time 63,685.35 in cut 1 (maybeHurt sim.ts:1883), \"a fall on the rocks\" (:1865), harm 0.950, the clamp ceiling (:1909), against LAID_UP 0.35 (:183); the next filed step (haul) began 0.05 s later; under filed steps while laid up 86.2, 289.2, 217.3 and 76.5 valley seconds in cuts 1-4 (669.2, 3.35 valley days), 269.3 tiles, 22 step starts (haul 8, mine 4, cairn 3, eat 2, rest 2, repair 1, hone 1, hew 1); tended 0, no care boon (:6059); first laid up in bed (ownChoice :6250, :6255) at 64,594.45; harm 0.753 at the close. Days filed by the Frontier desk, cut 2-4 notes dated 22 Sep: \"mine added ahead of each cairn because a cairn wants a stone to hand\".",
+  "line": "A responder running that first sort on the beach this morning would have sent Cairnwright to the green tarp, and found him there putting a stone on the cairn.",
+  "footline": "The first step in START is to ask who can walk. On this shore, the answer was whoever had a file.",
+  "voice": "valley"
  }
 ]
