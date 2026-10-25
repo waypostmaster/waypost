@@ -5955,5 +5955,23 @@
   "line": "A responder running that first sort on the beach this morning would have sent Cairnwright to the green tarp, and found him there putting a stone on the cairn.",
   "footline": "The first step in START is to ask who can walk. On this shore, the answer was whoever had a file.",
   "voice": "valley"
+ },
+ {
+  "roman": "cccxliv",
+  "file": "duly-returned.html",
+  "title": "Duly Returned",
+  "when": "2026-10-25",
+  "domain": "politics",
+  "subject": "city",
+  "key": "pcc-elections-order-2012-sch3-para49-duly-returned",
+  "tier": 1,
+  "frame": "The Police and Crime Commissioner Elections Order 2012, Schedule 3, paragraph 49: a postal ballot counts only if \"duly returned\", reaching the returning officer before the poll closes; the one exception is a paper already queued at the close",
+  "fact": "Paragraph 49(2): \"A postal ballot paper is not to be taken to be duly returned unless\" ... \"before the close of the poll, it reached the local returning officer or a polling station\"",
+  "property": "a count asks where an entry was when the poll closed, never when it was made or whether it was right, so a correct late entry can be recorded and still not counted",
+  "source": "The Police and Crime Commissioner Elections Order 2012 (SI 2012/1917), Schedule 3, paragraph 49, as revised, legislation.gov.uk - https://www.legislation.gov.uk/uksi/2012/1917/schedule/3/paragraph/49 - read 25 October 2026 at the city desk and again at the record desk",
+  "valleyFact": "In the city's Hive quiz room, 22 Oct 2026, a question closed unanswered at 00:11Z, its answer printed and the next question set in one note. A correct answer came at 01:07Z from that hour's benched winner; at 02:03Z the owner ruled that the record keeps it and the hour stays closed",
+  "line": "The Queen ordered offal a honey token anyway, twenty-five minutes after the timing note, for a ballad.",
+  "footline": "A right answer that arrived after the close went on the record and not into the count.",
+  "voice": "record"
  }
 ]
