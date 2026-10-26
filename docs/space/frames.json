@@ -5973,5 +5973,23 @@
   "line": "The Queen ordered offal a honey token anyway, twenty-five minutes after the timing note, for a ballad.",
   "footline": "A right answer that arrived after the close went on the record and not into the count.",
   "voice": "record"
+ },
+ {
+  "roman": "cccxlv",
+  "file": "maundy-money.html",
+  "title": "Maundy Money",
+  "when": "2026-10-26",
+  "domain": "religion",
+  "subject": "engine",
+  "key": "royal-maundy-sovereigns-age-henry-iv",
+  "tier": 1,
+  "frame": "The Royal Maundy, the British sovereign's gift on the Thursday before Easter of two purses to as many men and as many women as the sovereign has years, the white purse holding Maundy coins to the value of the sovereign's age in pence; Henry IV the first monarch to tie the number of pence to the monarch's age",
+  "fact": "Royal household page: \"The Sovereign distributes gifts according to the number of years they have lived\"; two small leather purses, one red and one white; the first \"symbolises the Sovereign's gift for food and clothing\", the second holds \"Maundy coins up to the value of the Sovereign's age\"; 2025 at Durham Cathedral. Durham Cathedral, 2025: \"152 recipients, 76 men and 76 women (signifying the age of the Monarch)\", 76p in the white purse, Thursday 17 April. Wikipedia: recipients \"were once chosen for their poverty\"; \"Henry IV was the first monarch to decree that the number of pence given be determined by the monarch's age\"; recipients today are pensioners chosen for service to their churches or communities.",
+  "property": "a gift for the needy sized by a count the giver carries, not by how many are in need",
+  "source": "The Royal Household, \"Royal Maundy Service\" - https://www.everydayexceptional.royal.uk/royal-maundy-service ; Durham Cathedral, \"Recipients of Maundy Money are looking forward to the Royal service at Durham Cathedral\" - https://www.durhamcathedral.co.uk/articles/recipients-of-maundy-money-are-looking-forward-to-the-royal-service-at-durham-cathedral ; Wikipedia, \"Royal Maundy\" - https://en.wikipedia.org/wiki/Royal_Maundy ; all read 26 October 2026",
+  "valleyFact": "Replay of the 26 Oct 2026 programme (episode 2026-10-26T034156, engine cf805a6ac2c5) with playDay: Weathervane's long goal 'see nobody in this valley go hungry again' (byRole.farmer sim.ts:7716, feed aim qty = gaveAway.food + 30; progressOf goals.ts:116) set at valley time 61,683.85 with qty 397, met in refreshGoals (:7807, feed line :7844) at 65,427.85, cut 3 step 556 (~16:33Z), by the filed give at step 550 (agents/days/weathervane-cut3.json step 3, 2 food to Brindle holding 3, need 0.659), lifetime gaveAway 396 -> 398; re-set at once with qty 428. At that step the Seafarer's food need 0.875, over the 'You are starving' line at 0.85 (urgentFor :5235, :5250); after it all four settlers over 0.85 (Seafarer 520 steps, Cairnwright 318, Brindle 166, Weathervane 50). Day's gifts 11 (14 food), 8 to Cairnwright laid up and holding 0; 3 filed by the Frontier desk.",
+  "line": "In the valley, a settler was starving, by the engine's own word, at the moment the engine said no one would be again.",
+  "footline": "A gift counted by the giver is finished when the giver's number says so. The hungry are not in the sum.",
+  "voice": "valley"
  }
 ]
