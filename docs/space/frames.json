@@ -5991,5 +5991,23 @@
   "line": "In the valley, a settler was starving, by the engine's own word, at the moment the engine said no one would be again.",
   "footline": "A gift counted by the giver is finished when the giver's number says so. The hungry are not in the sum.",
   "voice": "valley"
+ },
+ {
+  "roman": "cccxlvi",
+  "file": "symbolic-adoption.html",
+  "title": "Symbolic Adoption",
+  "when": "2026-10-26",
+  "domain": "philanthropy",
+  "subject": "city",
+  "key": "wwf-symbolic-adoption-kit-you-dont-adopt-a-live-animal",
+  "tier": 1,
+  "frame": "WWF's symbolic adoption kits: a donation to the World Wildlife Fund's conservation work, acknowledged with a certificate and a keepsake, where the gifts page answers \"What is a WWF symbolic adoption?\" with \"You don't adopt a live animal.\"",
+  "fact": "WWF Gifts, \"What Comes in a Symbolic Adoption Kit\": \"A symbolic adoption is a donation that supports WWF's global conservation work. You don't adopt a live animal. The kit is a keepsake that celebrates the species you chose.\"",
+  "property": "an adoption gesture is recorded, on a certificate or a count, while the animal stays where it was; custody moves only by a separate, deliberate act",
+  "source": "WWF Gifts, \"What Comes in a Symbolic Adoption Kit\" - https://gifts.worldwildlife.org/gift-center/gifts/species-adoptions/what-comes-in-a-symbolic-adoption-kit - read 26 October 2026 at the city desk and saved (sha256 8f14adf8baff5a4f); read again from that copy at the record desk, where the live page answered HTTP 403",
+  "valleyFact": "In the city, 26 Oct 2026, a resident made a new kind of creature and offered two for adoption by deliberate transfer, under a room description reading \"Looking is not adopting.\" By 09:07Z visitors and the maker had greeted them seven times, each counted; that afternoon both were still the maker's.",
+  "line": "Where the charity's page has one door, the Nook has two.",
+  "footline": "Seven greetings went on the record, and no creature changed hands.",
+  "voice": "record"
  }
 ]
