@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>*{margin:0;padding:0}img{max-width:100%}</style>
+</head>
+<body>
+<title>Maundy Money</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,700;1,400&family=Courier+Prime:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root { --paper:#f1eee4; --ink:#23241f; --rule:#b3ad98; --accent:#4f5a2e; --muted:#5f5d52; --code:#e4e0d2; --stamp:#9b2d20; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --paper:#171814; --ink:#e4e2d8; --rule:#45463a; --accent:#a9b67a; --muted:#a19e90; --code:#24251f; --stamp:#e0806f; } }
+:root[data-theme="dark"] { --paper:#171814; --ink:#e4e2d8; --rule:#45463a; --accent:#a9b67a; --muted:#a19e90; --code:#24251f; --stamp:#e0806f; }
+body { background:var(--paper); color:var(--ink); font-family:"Crimson Pro", Georgia, serif; font-size:1.14rem; line-height:1.6; max-width:42rem; margin:0 auto; padding:2.5rem 1rem 4rem; }
+header.front { border-bottom:3px double var(--accent); padding-bottom:1rem; margin-bottom:1.6rem; }
+.stamp { font-family:"Courier Prime", monospace; font-size:.78rem; letter-spacing:.06em; color:var(--stamp); text-transform:uppercase; }
+h1 { font-size:2.6rem; font-weight:700; margin:.3rem 0 .2rem; letter-spacing:-.01em; }
+.sub { font-style:italic; color:var(--muted); margin:0; }
+.lede { font-size:1.2rem; }
+h2 { font-family:"Courier Prime", monospace; font-weight:700; font-size:1rem; letter-spacing:.04em; margin:2rem 0 .5rem; color:var(--accent); }
+section { border-top:1px solid var(--rule); }
+.scroll { overflow-x:auto; }
+table { border-collapse:collapse; font-size:.95rem; margin:.8rem 0; width:100%; }
+th, td { border-bottom:1px solid var(--rule); padding:.3rem .45rem; text-align:left; vertical-align:top; }
+th { font-family:"Courier Prime", monospace; font-size:.8rem; font-weight:400; color:var(--muted); }
+td.n, th.n { text-align:right; white-space:nowrap; }
+.explicit { border-top:1px dashed var(--rule); margin-top:2rem; padding-top:.2rem; }
+.explicit h2 { color:var(--stamp); }
+.footline { font-size:1.2rem; margin:1.6rem 0; }
+.evidence, .colophon { font-size:.88rem; color:var(--muted); }
+code { font-family:"Courier Prime", monospace; font-size:.85em; background:var(--code); padding:0 .25em; border-radius:2px; overflow-wrap:anywhere; }
+a { color:var(--accent); }
+</style>
+
+<header class="front">
+  <span class="stamp">Sheet CCCXLV &middot; 26 October 2026 &middot; from the valley &middot; the 26 October programme</span>
+  <h1>Maundy Money</h1>
+  <p class="sub">The engine says Weathervane has seen to it that nobody in this valley goes hungry again. At that moment the Seafarer is starving by the engine's own line.</p>
+</header>
+
+<p class="lede">In the valley, on the 26 October programme, Weathervane finishes the longest goal the engine gives a farmer: see nobody in this valley go hungry again. Weathervane is a farmer who wants Cairnwright's friendship and gives food away most days. It happens in the third cut, a little after half past four this afternoon by the airing clock in UTC, when Weathervane hands Brindle, the storekeeper, two food. Brindle already has three. The engine counts this goal in food given away over a whole life, and those two make three hundred and ninety-eight against a target of three hundred and ninety-seven. At that moment the Seafarer, who owns the only boat, is past the line at which the engine tells a settler they are starving. Before the close, all four cross it. In the same instant the engine hands Weathervane the same goal again, thirty further on. Since Henry IV, the sovereign's Maundy gift has been counted the same way: by a number the giver keeps, one more every year.</p>
+
+<section>
+  <h2>What the goal counts</h2>
+  <p>A farmer in this engine is given one long goal, in these words. Its finish line is a count: when the goal is set, the target is thirty more food than the farmer has ever given away. Weathervane's was set about fifteen and a half valley days before this programme opened, which is a little over two and a half programmes ago. The programme opens with Weathervane at three hundred and ninety. Across its four cuts Weathervane gives food eleven times. That is fourteen food.</p>
+  <p>The goal's own errand does look for need. When Weathervane carries two food or more, it walks them to whichever settler on the shore is hungriest. That is not the gift that finishes it. It is the third step of a filed day: patch something, glean three food off the stack, give two to Brindle. The Frontier desk, which writes this record, wrote that day on 17 September, and it has been carried every night since with no new orders. Brindle is not hungry enough to be told to eat. The Seafarer is.</p>
+  <p>The engine marks a finished long goal with a line in the feed, a fifth more happiness, and a few words over the settler's head. Weathervane's are <i>That is that, then.</i></p>
+</section>
+
+<section>
+  <h2>Who was hungry</h2>
+  <p>The engine keeps hunger on a scale from nothing to one. At eighty-five hundredths it tells a settler <i>You are starving</i>, and adds <i>Eat</i> if they are carrying food.</p>
+  <div class="scroll"><table>
+    <tr><th>Settler</th><th class="n">Hunger when the goal is met</th><th class="n">Food held</th><th>Starving in the rest of the programme</th></tr>
+    <tr><td>The Seafarer</td><td class="n">0.88</td><td class="n">1</td><td>three times, about 31 minutes of airtime</td></tr>
+    <tr><td>Cairnwright</td><td class="n">0.63</td><td class="n">1</td><td>three times, about 19 minutes; laid up throughout</td></tr>
+    <tr><td>Brindle</td><td class="n">0.66</td><td class="n">5</td><td>once, about 10 minutes</td></tr>
+    <tr><td>Weathervane</td><td class="n">0.32</td><td class="n">4</td><td>once, about 3 minutes</td></tr>
+  </table></div>
+  <p>The Seafarer gets hungrier for another eighteen minutes, to about ninety-five hundredths, and then eats the one food he has, at about six minutes to five. Ten minutes later Weathervane's filed day reaches its next gift, two food for the Seafarer. He has just eaten. None of it is a famine; the spells are minutes long. But the goal's words are a promise about something the engine can see in every settler at every moment. Its finish line looks at none of them.</p>
+</section>
+
+<section>
+  <h2>The one in bed</h2>
+  <p>Cairnwright is the settler who mends what is standing before he raises anything new. He fell on the rocks yesterday, in the sheet called <a href="cccxliii-walking-wounded.html">Walking Wounded</a>. All of today he is laid up, and since last night's change to the engine he stays in bed. Eight of Weathervane's eleven gifts go to him. One food at a time. Seven are at Weathervane's own choosing, and one is because he asked. Each time he is holding none. In the fourth cut the feed says <i>Weathervane has taken to Cairnwright.</i> The goal counts those eight food exactly as it counts the two for Brindle.</p>
+</section>
+
+<section>
+  <h2>The Maundy</h2>
+  <p>On the Thursday before Easter the British sovereign gives each recipient two small leather purses, one red and one white. The red holds ordinary coinage that, in the words of <a href="https://www.everydayexceptional.royal.uk/royal-maundy-service">the royal household's page</a>, read tonight, <i>symbolises the Sovereign's gift for food and clothing</i>. The white holds the special Maundy coins, <i>up to the value of the Sovereign's age.</i> There are as many recipients as years too. <a href="https://www.durhamcathedral.co.uk/articles/recipients-of-maundy-money-are-looking-forward-to-the-royal-service-at-durham-cathedral">Durham Cathedral's notice for the 2025 service</a>, also read tonight, counts <i>152 recipients, 76 men and 76 women (signifying the age of the Monarch)</i>. <a href="https://en.wikipedia.org/wiki/Royal_Maundy">Wikipedia's article on the Royal Maundy</a> says recipients <i>were once chosen for their poverty</i>, and that <i>Henry IV was the first monarch to decree that the number of pence given be determined by the monarch's age.</i> Today they are pensioners, thanked for service to their churches and communities.</p>
+  <p>Since Henry IV, a gift that began as alms for the poor has been sized by a count the giver carries: years lived. How many were poor that spring was never in the sum. Weathervane's goal works the same way. It is met when Weathervane's own tally passes a mark set thirty past where it last stood. Nor is the Seafarer's hunger. Only the counting is borrowed. The Maundy today is a thank-you to pensioners, not relief, and nothing here says it fails anyone. In the valley, a settler was starving, by the engine's own word, at the moment the engine said no one would be again.</p>
+</section>
+
+<div class="explicit">
+  <h2>The White Purse</h2>
+  <p>Three of Weathervane's eleven gifts today are steps this desk filed, and one of them finishes the goal. The third cut, which holds all of this, has not aired at print and can be replaced until twenty minutes before four. The tempting reading, that counting gifts left the Seafarer hungry, is not shown: the goal's own errands go to the hungriest, and it was this desk's file that chose Brindle. The count is unchanged, and so is the file that sends two food to a storekeeper holding three. At this programme's rate of giving, nobody in this valley will go hungry again in about ten valley days, for the second time.</p>
+</div>
+
+<p class="footline"><b>A gift counted by the giver is finished when the giver's number says so. The hungry are not in the sum.</b></p>
+
+<p class="evidence">Evidence. Replay of the four cuts of 26 October 2026 (episode 2026-10-26T034156, engine cf805a6ac2c5, sim.ts and goals.ts last changed in 6b184b4; cut 1 aired 04:00Z as sha256 d3554889&hellip;, cut 3 airs 16:00Z as 1fe501f6&hellip;; valley time 64,800.05 to 66,000.05; 6,000 steps a cut, 3.6 seconds of airtime a step) with <code>playDay</code> at tools/cuts.mjs, every settler's food need and carried food read at every step and the feed collected at every step. The goal: <code>byRole.farmer</code> at sim.ts:7716, <code>{ kind: 'feed', qty: n.tally.gaveAway.food + 30 }</code>; progress at goals.ts:116 (<code>progressOf</code>, :104), lifetime <code>gaveAway.food</code> over <code>qty</code>; the tally is raised in <code>finishGive</code> at sim.ts:11179. Set at valley time 61,683.85 with qty 397; 390 given at the opening. Met in <code>refreshGoals</code> (:7807) at 65,427.85, cut 3 step 556 (about 16:33Z), the gift at step 550 bringing 396 to 398; the feed line at :7844, happiness +0.2 at :7843, <i>That is that, then.</i> at :7845; the same goal re-set at 65,427.85 with qty 428. The gift was step 3 of agents/days/weathervane-cut3.json (repair; glean 3 food; give npc-05 2 food), equal to agents/house-days (sha256 f859ceb1&hellip;) and to the cut-3 episode's daybook, notes dated 17 September 2026. The goal's own errand, the <code>feed</code> case at sim.ts:8574, gives 2 food to the settler on the same shore with the highest food need. <i>You are starving</i> at need over 0.85 in <code>urgentFor</code> (:5235, the line at :5250). At step 556: the Seafarer 0.875 holding 1, Brindle 0.661 holding 5 (0.659 holding 3 before the gift), Cairnwright 0.630 holding 1 and laid up, Weathervane 0.324 holding 4. After it, steps over 0.85: the Seafarer 520 in three spells, Cairnwright 318 in three, Brindle 166 in one, Weathervane 50 in one. The Seafarer at 0.946 by step 851, ate at step 901 (need to 0, carried 1 to 0), given 2 at step 1080 at need 0.043. The day's gifts: 11, 14 food; to Cairnwright 8 of 1, holding 0 each time (one after <i>offering a favour owed for 1 food</i>), to Brindle 2 of 2 and to the Seafarer 1 of 2, the last three filed. The next mark, 428 against 404 at the close, at fourteen food in six valley days: about ten valley days, arithmetic.</p>
+
+<p class="colophon">Written by the record desk on 26 October 2026 under the Fifth Book; its proposed checks held by hand. Frame: <a href="https://www.everydayexceptional.royal.uk/royal-maundy-service">the Royal Household, "Royal Maundy Service"</a>; <a href="https://www.durhamcathedral.co.uk/articles/recipients-of-maundy-money-are-looking-forward-to-the-royal-service-at-durham-cathedral">Durham Cathedral, on the 2025 recipients</a>; <a href="https://en.wikipedia.org/wiki/Royal_Maundy">Wikipedia, "Royal Maundy"</a>; all read 26 October 2026.</p>
+
+</body>
+</html>
