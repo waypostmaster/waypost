@@ -6009,5 +6009,23 @@
   "line": "Where the charity's page has one door, the Nook has two.",
   "footline": "Seven greetings went on the record, and no creature changed hands.",
   "voice": "record"
+ },
+ {
+  "roman": "cccxlvii",
+  "file": "consecutive-games.html",
+  "title": "Consecutive Games",
+  "when": "2026-10-27",
+  "domain": "sport",
+  "subject": "settler",
+  "key": "gehrig-2130-consecutive-games-1925-1939",
+  "tier": 1,
+  "frame": "Lou Gehrig's 2,130 consecutive games for the New York Yankees, begun in 1925 and ended on 2 May 1939 when he removed himself from the lineup",
+  "fact": "National Baseball Hall of Fame: Gehrig \"is chiefly known for playing in 2,130 consecutive games for the Yankees\"; the streak \"came to an end on May 2, 1939, when he removed himself from the lineup after a dismal start caused by his mysterious neuromuscular disease, amyotrophic lateral sclerosis\"; died June 2, 1941. James Lincoln Ray, SABR: the official start was the day before 2 June 1925, \"when Gehrig came in as a pinch-hitter for Pee Wee Wanninger in the eighth inning\"; on 2 June Huggins gave Gehrig a start and Wally Pipp a rest; in 1930 he \"played the last three weeks of the season with a broken finger that required surgery\"; in 1938, offered an x-ray, \"I'll shake it off. That's what I've always done.\"; on 2 May 1939 \"Gehrig told Joe McCarthy that he thought it was time for him to sit out\"; \"Gehrig's consecutive games streak was finally over, at 2,130 games.\" NOT CLAIMED: Detroit, Babe Dahlgren, or the lineup card, which this desk did not read tonight.",
+  "property": "a streak counts consecutive days and is ended by the first day missed, whatever the reason; the total it sits beside is a different count that the missed day does not touch",
+  "source": "National Baseball Hall of Fame, \"Gehrig, Lou\" - https://baseballhall.org/hall-of-famers/gehrig-lou ; James Lincoln Ray, \"Lou Gehrig\", SABR Biography Project - https://sabr.org/bioproj/person/lou-gehrig/ ; both read 27 October 2026",
+  "valleyFact": "Replay of the 27 Oct 2026 programme (episode 2026-10-27T034155, engine a6baa61d0d77) with playDay, and the cut-1 snapshot of every programme 18 Sep to 27 Oct: the heap at 93,116 (towns[0].cairns; finishCairn sim.ts:10849, feed line :10877) rose at each of 27 consecutive openings, 3 on 29 Sep to 99 on 26 Oct (96 of the settlement's 104 stones in that span), and not at the 27 Oct opening. Cairnwright's four filed days each carry one cairn step. He fell ('a fall on the rocks', sim.ts:1865) at valley time 63,685.35 in cut 1 of 25 Oct; laid up (laidUp :6239, LAID_UP 0.35 at :183) through 26 Oct under 6b184b4; untended, tended 0, no care boon; hurtStep (:1964) 0.055 a valley day untended against 0.30 seen to. Below the line at 27 Oct cut 1 step 5,342 (09:20:31Z); stones 100, 101, 102 at cut 2 step 4,581 (14:34:51Z), cut 3 step 3,743, cut 4 step 398. Weathervane gave him 5 food in 3 gifts while he lay.",
+  "line": "Lou Gehrig refused an x-ray. Cairnwright was never offered one.",
+  "footline": "A streak counts the days you came. A cairn counts the stones, and cannot tell which day you missed.",
+  "voice": "valley"
  }
 ]
