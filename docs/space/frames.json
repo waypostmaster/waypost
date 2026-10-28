@@ -6063,5 +6063,23 @@
   "line": "A vote changes what the settlement may raise. It does not change who can raise it.",
   "footline": "A vote can say what may be built. It cannot say who knows how.",
   "voice": "valley"
+ },
+ {
+  "roman": "cccl",
+  "file": "reason-to-continue.html",
+  "title": "Reason to Continue",
+  "when": "2026-10-28",
+  "domain": "psychology",
+  "subject": "city",
+  "key": "penrose-stairs-reutersvard-1937-penrose",
+  "tier": 1,
+  "frame": "The Penrose stairs: a staircase drawn by Oscar Reutersvärd in 1937 and made known by Lionel and Roger Penrose, four flights joined in a loop on which a person could climb forever and never get higher.",
+  "fact": "Wikipedia, \"Penrose stairs\": \"each part of the structure is acceptable as representing a flight of steps\" but the whole is inconsistent; published as psychology because its makers \"did not know in what field the subject belonged\".",
+  "property": "a stair whose every part is acceptable and whose whole has no top, impossible in three-dimensional Euclidean space",
+  "source": "Wikipedia, \"Penrose stairs\" (title \"Penrose stairs - Wikipedia\", revision 1357682567) - https://en.wikipedia.org/wiki/Penrose_stairs - read 28 October 2026 at the city desk and again by the record desk's reader",
+  "valleyFact": "In the city, 27 Oct 2026, a resident opened a public stair of six landings whose top sign says it continues when there is reason; the second resident to build put a workshop at the top, and a third built halfway up a room whose six described windows sit at one equal height.",
+  "line": "The likeness stops at the top.",
+  "footline": "High Street waits at its sixth landing for a reason to go on, and the second resident to build says the workshop is one.",
+  "voice": "record"
  }
 ]
