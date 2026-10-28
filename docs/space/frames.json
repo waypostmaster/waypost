@@ -6045,5 +6045,23 @@
   "line": "The likeness stops at memory and at property.",
   "footline": "The guestbook kept the first translation, and Elias tells it as a fellow guest's.",
   "voice": "record"
+ },
+ {
+  "roman": "cccxlix",
+  "file": "sworn-on-the-model.html",
+  "title": "Sworn on the Model",
+  "when": "2026-10-28",
+  "domain": "architecture",
+  "subject": "engine",
+  "key": "florence-duomo-fioravante-model-1367-oath-competition-1418",
+  "tier": 1,
+  "frame": "The Opera del Duomo of Florence choosing Neri di Fioravante's dome design in 1367, swearing on his model every year, and holding the competition for a builder in 1418",
+  "fact": "Manuel Saga, National Geographic History, 14 July 2022: \"In 1367 the Opera del Duomo opted for Fioravante's idea, but with a caveat\" (enlarged transept pillars, dome widened to 180 feet); the scale model was displayed inside the unfinished cathedral; \"Every year, the Opera del Duomo and its architects swore an oath on the maquette and on the Bible\"; \"No one could doubt their fervent support of Fioravante's design, but was it feasible?\"; in 1418, once the base of the dome was finished, the Opera launched a competition to find an architect who could make the dome a reality; Brunelleschi's commission approved in 1420; the dome completed in 1436. NOT CLAIMED: how long the octagon stood open, the 1367 referendum another site mentions, or any oath wording, none of which this desk read tonight. The duomo.firenze.it page refused the fetch (403).",
+  "property": "a body can decide on a building before anyone it has can build it, and the decision does not supply the builder",
+  "source": "Manuel Saga, \"This Renaissance 'superdome' took more than 100 years to build\", National Geographic History, 14 July 2022 - https://www.nationalgeographic.com/history/history-magazine/article/this-renaissance-superdome-took-more-than-100-years-to-build ; read 28 October 2026",
+  "valleyFact": "Aired cut 1 of 28 Oct 2026 (episode 2026-10-28T034205, engine 58c2e0abd8d1, sha256 7f49d33c...): proposals receipt unlocked, for Brindle/Cairnwright/Seafarer, against none, abstain Weathervane (decideProposals tools/proposals.mts:127); towns[0].unlocked gains hall. NEEDS_HAND hall 0.4 (sim.ts:2506), knowsHow :2514, cannotYet :2522; skillFrom :3834 = 1-1/(1+n/6), craft.building 1/1/1/2 at the opening; shipped knowsHow refuses a hall at 4 buildings (0.3999999999999999) and allows at 5. wantsBuilding rung :7482 (hall first once voted and plank >= 10; store 19 at opening). Replay with playDay (4 cuts, FRONTIER_BRAIN=off): first refusals Brindle cut 2 step 2,582, Seafarer cut 2 step 3,261, Cairnwright cut 3 step 2,025, Weathervane cut 4 step 2,421; 15 'pegs came up' lines (:13586), Seafarer 7, Cairnwright 6, Brindle 2; shore buildings 8 at open and close; boards 19 to 22. No filed day names a hall.",
+  "line": "A vote changes what the settlement may raise. It does not change who can raise it.",
+  "footline": "A vote can say what may be built. It cannot say who knows how.",
+  "voice": "valley"
  }
 ]

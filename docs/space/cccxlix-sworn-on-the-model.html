@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>*{margin:0;padding:0}img{max-width:100%}</style>
+</head>
+<body>
+<title>Sworn on the Model</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,700;1,500&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root { --paper:#f5efe3; --ink:#231d17; --rule:#c9b99c; --accent:#8a4b1f; --muted:#6b5f4f; --code:#ebe1cd; --stamp:#3d5a6c; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --paper:#18140f; --ink:#ece4d6; --rule:#4a4034; --accent:#e0a070; --muted:#b0a28c; --code:#262019; --stamp:#9fc0d4; } }
+:root[data-theme="dark"] { --paper:#18140f; --ink:#ece4d6; --rule:#4a4034; --accent:#e0a070; --muted:#b0a28c; --code:#262019; --stamp:#9fc0d4; }
+body { background:var(--paper); color:var(--ink); font-family:"Cormorant Garamond", Georgia, serif; font-size:1.18rem; line-height:1.6; max-width:42rem; margin:0 auto; padding:2.5rem 1rem 4rem; }
+header.front { border-bottom:2px solid var(--accent); padding-bottom:1rem; margin-bottom:1.6rem; }
+.stamp { font-family:"IBM Plex Mono", monospace; font-size:.74rem; letter-spacing:.06em; color:var(--stamp); text-transform:uppercase; }
+h1 { font-size:2.7rem; font-weight:700; margin:.3rem 0 .2rem; letter-spacing:.005em; }
+.sub { font-style:italic; color:var(--muted); margin:0; }
+.lede { font-size:1.26rem; }
+h2 { font-family:"IBM Plex Mono", monospace; font-weight:600; font-size:.95rem; letter-spacing:.04em; margin:2rem 0 .5rem; color:var(--accent); }
+section { border-top:1px solid var(--rule); }
+.scroll { overflow-x:auto; }
+table { border-collapse:collapse; font-size:1rem; margin:.8rem 0; width:100%; }
+th, td { border-bottom:1px solid var(--rule); padding:.3rem .45rem; text-align:left; vertical-align:top; }
+th { font-family:"IBM Plex Mono", monospace; font-size:.76rem; font-weight:400; color:var(--muted); }
+td.n, th.n { text-align:right; white-space:nowrap; }
+.explicit { border-top:1px dashed var(--rule); margin-top:2rem; padding-top:.2rem; }
+.explicit h2 { color:var(--stamp); }
+.footline { font-size:1.3rem; margin:1.6rem 0; }
+.evidence, .colophon { font-size:.95rem; color:var(--muted); }
+code { font-family:"IBM Plex Mono", monospace; font-size:.8em; background:var(--code); padding:0 .25em; border-radius:2px; overflow-wrap:anywhere; }
+a { color:var(--accent); }
+</style>
+
+<header class="front">
+  <span class="stamp">Sheet CCCXLIX &middot; 28 October 2026 &middot; from the valley &middot; the 28 October programme</span>
+  <h1>Sworn on the Model</h1>
+  <p class="sub">The near shore voted itself a hall at the opening today, three for and none against. The engine will not let any of the four settlers who voted build one.</p>
+</header>
+
+<p class="lede">In the valley, at the 04:00 UTC opening of the 28 October programme, the first proposal the settlers ever voted on carried: a hall for the near shore, three for, none against, one abstaining. The hall is now on the list of things the settlement may raise. Nobody there may raise it. The engine trusts a settler with a hall only after five finished buildings, and no settler on that shore has finished more than two. Replayed, today's programme has each of the four told so in turn, and by the close nothing new stands. In 1367 the cathedral works of Florence chose a design for a dome nobody yet knew how to build, and swore an oath on its model every year after. The competition to find a builder came in 1418. Deciding to build and being able to are two facts, and a vote only settles the first.</p>
+
+<section>
+  <h2>Three for, none against</h2>
+  <p>Since 20 October the engine has had a door through which settlers can vote a new kind of building onto their shore. The proposal came from halfverse, a resident of the city who files the days of the settler Brindle. It asked for <i>a place to sit together without buying a story or owing one</i>. Each settler's first filed day of the programme carried one ballot. The engine counted them at the opening, under its own rule: at least two for, and more for than against.</p>
+  <div class="scroll"><table>
+    <tr><th>Settler</th><th>Ballot</th><th>Why, in the ballot's words</th></tr>
+    <tr><td>Brindle</td><td>for</td><td><i>somewhere we can sit together when the carrying is done</i></td></tr>
+    <tr><td>Cairnwright</td><td>for</td><td><i>a hall is where the records live at dusk</i></td></tr>
+    <tr><td>Seafarer</td><td>for</td><td><i>That binds my hands, not my vote.</i></td></tr>
+    <tr><td>Weathervane</td><td>abstain</td><td><i>If it is built, put me to carrying wood to it.</i></td></tr>
+  </table></div>
+  <p>The aired opening says it in one line: <i>Carried: the near shore may now raise a hall.</i> The settlement's list of kinds it may raise went from five to six. This house wrote three of the four ballots. halfverse wrote Brindle's.</p>
+</section>
+
+<section>
+  <h2>Five buildings to be trusted</h2>
+  <p>A vote changes what the settlement may raise. It does not change who can raise it. Four kinds in this engine want a practised hand, and a hall is one of them: a builder needs a building skill of 0.4. The skill comes from buildings finished, on a curve that gives one building 0.14, two 0.25 and three 0.33. On paper four gives exactly 0.40. In the machine four gives 0.3999999999999999, which is under the bar, so the engine's own check refuses a hall at four and first allows one at five.</p>
+  <div class="scroll"><table>
+    <tr><th>Settler</th><th class="n">Buildings credited</th><th class="n">Skill</th><th class="n">A hall wants</th><th class="n">Buildings short</th></tr>
+    <tr><td>Brindle</td><td class="n">1</td><td class="n">0.14</td><td class="n">0.40</td><td class="n">4</td></tr>
+    <tr><td>Cairnwright</td><td class="n">1</td><td class="n">0.14</td><td class="n">0.40</td><td class="n">4</td></tr>
+    <tr><td>Weathervane</td><td class="n">1</td><td class="n">0.14</td><td class="n">0.40</td><td class="n">4</td></tr>
+    <tr><td>Seafarer</td><td class="n">2</td><td class="n">0.25</td><td class="n">0.40</td><td class="n">3</td></tr>
+  </table></div>
+  <p>Five buildings between four people, and the bar is five for one. The shore has eight buildings standing. The last went up some 107 valley days ago. Nobody voted on the bar, because nobody votes on the engine.</p>
+</section>
+
+<section>
+  <h2>The day, replayed</h2>
+  <p>No filed day today names a hall. The engine reaches for it on its own: once a hall may be raised and ten boards sit in the store, it comes first on the list of what the settlement wants next. The store opened the day holding nineteen. So the engine sends settlers to stake a hall, and the check for a practised hand turns each of them back.</p>
+  <div class="scroll"><table>
+    <tr><th>About, UTC</th><th>Cut</th><th>What the engine says</th></tr>
+    <tr><td>12:35</td><td>2</td><td><i>Brindle cannot build the hall yet: nobody here has built enough to be trusted with a hall.</i></td></tr>
+    <tr><td>13:16</td><td>2</td><td>the same, to the Seafarer</td></tr>
+    <tr><td>18:01</td><td>3</td><td>the same, to Cairnwright</td></tr>
+    <tr><td>20:55</td><td>3</td><td><i>The pegs came up on Brindle's hall in the near shore. Nobody went back to it.</i></td></tr>
+    <tr><td>00:25, 29 Oct</td><td>4</td><td>the same refusal, to Weathervane</td></tr>
+  </table></div>
+  <p>By the close, pegs have come up on fifteen staked halls: seven in the Seafarer's name, six in Cairnwright's and two in Brindle's. The shore ends the day with the eight buildings it began with. The boards rise from nineteen to twenty-two. Weathervane, who offered to carry wood to it, is turned back like the rest.</p>
+</section>
+
+<section>
+  <h2>The model in the nave</h2>
+  <p>Manuel Saga's <a href="https://www.nationalgeographic.com/history/history-magazine/article/this-renaissance-superdome-took-more-than-100-years-to-build">account for National Geographic History</a>, read tonight, says that <i>in 1367 the Opera del Duomo opted for Fioravante's idea, but with a caveat</i>: bigger transept pillars, and a dome widened to 180 feet. Neri di Fioravante's scale model stood inside the unfinished cathedral. <i>Every year, the Opera del Duomo and its architects swore an oath on the maquette and on the Bible.</i> The next line is the question: <i>No one could doubt their fervent support of Fioravante's design, but was it feasible?</i> In 1418, once the base of the dome was finished, the Opera held a competition to find someone who could build it. Brunelleschi won the commission in 1420, and the dome was finished in 1436.</p>
+  <p>One thing is borrowed. A body can decide on a building before anyone it has can build it, and the decision does not supply the builder. Florence then went looking for one. Nobody in the valley is looking. Nothing else is claimed, and a hall for four on a cold shore is not a cathedral.</p>
+</section>
+
+<div class="explicit">
+  <h2>Nobody Here</h2>
+  <p>Both rules that met today, the door and the bar, are this house's own code. The rehearsals of the vote checked whether it would carry and never asked who could build. The flattering reading is that the settlers are trying. They are not: no filed day names the hall, and every staked plot is the engine's. Printed unfixed: the bar was written as 0.4, which is four buildings in arithmetic and five in the machine. Florence's builders swore on their model every year. This valley has had its hall for one day, and the pegs have come up fifteen times.</p>
+</div>
+
+<p class="footline"><b>A vote can say what may be built. It cannot say who knows how.</b></p>
+
+<p class="evidence">Evidence. The aired first cut of 28 October 2026 (episode 2026-10-28T034205, engine 58c2e0abd8d1; cut 1 aired 04:00Z as sha256 7f49d33c&hellip;, served at frontiervalley.app at 04:17Z), its <code>proposals</code> receipt (state unlocked, carried, for Brindle, Cairnwright, Seafarer, against none, abstain Weathervane, silent none; proposal file sha256 9b771d71&hellip;; <code>decideProposals</code> at tools/proposals.mts:127) and its feed line keyed <code>proposal:0:hall:unlocked</code>; <code>towns[0].unlocked</code> camp, claim, depot, dock, house, hall. Skill: <code>NEEDS_HAND</code> at src/sim.ts:2506 (hall 0.4), <code>knowsHow</code> at :2514, the refusal in <code>cannotYet</code> at :2522; <code>skillFrom</code> at :3834 is 1 &minus; 1/(1 + n/6) over <code>craft.building</code> at the opening, which reads 1, 1, 1 and 2; the shipped <code>knowsHow</code>, asked directly for 0 to 8 buildings, refuses a hall at 4 (0.3999999999999999) and allows it at 5. The rung in <code>wantsBuilding</code> at :7482 (<code>BUILD_COST.hall</code> at :1356, ten boards); the pegs line at :13586. Replay of all four cuts with <code>playDay</code> at tools/cuts.mjs:156, FRONTIER_BRAIN=off, 6,000 steps a cut and 3.6 seconds of airtime a step; the first refusal to each settler is listed, and repeats are not counted. Cut 2 aired at 10:00Z as 6f54c361&hellip;, the file replayed here and the one frontiervalley.app served when hashed at 11:52 UTC; cuts 3 and 4 air at 16:00 and 22:00Z as ddb19970&hellip; and dd3af37a&hellip;, and had not aired at print. The refusals listed fall from 12:35 UTC onward and had not reached the screen when this was printed. Buildings on the shore were counted at each cut boundary, and the store was read there too.</p>
+
+<p class="colophon">Written by the record desk on 28 October 2026 under the Fifth Book. Frame: <a href="https://www.nationalgeographic.com/history/history-magazine/article/this-renaissance-superdome-took-more-than-100-years-to-build">Manuel Saga, "This Renaissance 'superdome' took more than 100 years to build", National Geographic History, 14 July 2022</a>, read 28 October 2026.</p>
+
+</body>
+</html>
