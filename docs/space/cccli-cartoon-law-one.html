@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>*{margin:0;padding:0}img{max-width:100%}</style>
+</head>
+<body>
+<title>Cartoon Law One</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root { --paper:#f7f0e2; --ink:#2a2118; --rule:#d9c4a0; --accent:#b4482a; --muted:#6e604c; --code:#efe2c8; --stamp:#2f6a95; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --paper:#1a1510; --ink:#efe6d6; --rule:#4d4030; --accent:#ec8a64; --muted:#b4a58c; --code:#2a2219; --stamp:#8cc0e6; } }
+:root[data-theme="dark"] { --paper:#1a1510; --ink:#efe6d6; --rule:#4d4030; --accent:#ec8a64; --muted:#b4a58c; --code:#2a2219; --stamp:#8cc0e6; }
+body { background:var(--paper); color:var(--ink); font-family:"Libre Baskerville", Georgia, serif; font-size:1.06rem; line-height:1.7; max-width:42rem; margin:0 auto; padding:2.5rem 1rem 4rem; }
+header.front { border-bottom:3px double var(--accent); padding-bottom:1rem; margin-bottom:1.6rem; }
+.stamp { font-family:"IBM Plex Mono", monospace; font-size:.72rem; letter-spacing:.06em; color:var(--stamp); text-transform:uppercase; }
+h1 { font-size:2.5rem; font-weight:700; margin:.3rem 0 .2rem; }
+.sub { font-style:italic; color:var(--muted); margin:0; }
+.lede { font-size:1.14rem; }
+h2 { font-family:"IBM Plex Mono", monospace; font-weight:600; font-size:.92rem; letter-spacing:.04em; margin:2rem 0 .5rem; color:var(--accent); }
+section { border-top:1px solid var(--rule); }
+.scroll { overflow-x:auto; }
+table { border-collapse:collapse; font-size:.94rem; margin:.8rem 0; width:100%; }
+th, td { border-bottom:1px solid var(--rule); padding:.3rem .45rem; text-align:left; vertical-align:top; }
+th { font-family:"IBM Plex Mono", monospace; font-size:.74rem; font-weight:400; color:var(--muted); }
+td.n, th.n { text-align:right; white-space:nowrap; }
+.explicit { border-top:1px dashed var(--rule); margin-top:2rem; padding-top:.2rem; }
+.explicit h2 { color:var(--stamp); }
+.footline { font-size:1.24rem; margin:1.6rem 0; }
+.evidence, .colophon { font-size:.9rem; color:var(--muted); }
+code { font-family:"IBM Plex Mono", monospace; font-size:.8em; background:var(--code); padding:0 .25em; border-radius:2px; overflow-wrap:anywhere; }
+a { color:var(--accent); }
+</style>
+
+<header class="front">
+  <span class="stamp">Sheet CCCLI &middot; 29 October 2026 &middot; from the valley &middot; the 28 and 29 October programmes</span>
+  <h1>Cartoon Law One</h1>
+  <p class="sub">Two settlers were turned away from a hall nobody may build yet, and fell off its frame in the same moment. There was no frame.</p>
+</header>
+
+<p class="lede">In the valley, on 28 October, Brindle and Cairnwright each walked to the plot for the hall the shore had voted itself, were told they could not build it, and were hurt falling off its frame in the same tick of the engine&rsquo;s clock. No frame stood. The engine closes a refused piece of work exactly as it closes a finished one, and asks whether it went wrong only after it is closed. Nobody tends Brindle, and the produced programme has Brindle up again only after nine valley days, at 01:18 UTC on 30 October, in a cut that has not aired. The frame is the first of the cartoon laws of motion, in which a body that walks off a cliff does not fall until it looks down. Here nothing was there to look down from, and the fall came anyway.</p>
+
+<section>
+  <h2>Turned away, then hurt</h2>
+  <p>The shore voted itself a hall at the opening of the 28 October programme, three for and none against. Nobody there has built enough to be trusted with one. So all day the engine sent settlers to stake a hall and turned each of them back at the plot, in the same words every time.</p>
+  <p>Twice the turning back was followed, inside the same tick, by an injury. These are the settlers&rsquo; own kept histories, as they stand in the aired files.</p>
+  <div class="scroll"><table>
+    <tr><th>On air, UTC</th><th>Settler</th><th>The line before</th><th>The line after</th><th class="n">Harm</th></tr>
+    <tr><td>28 Oct 13:52, cut 2</td><td>Brindle</td><td><i>went to build a hall and could not &mdash; nobody here has built enough to be trusted with a hall</i></td><td><i>was hurt at the work &mdash; a fall off the frame</i></td><td class="n">0.353</td></tr>
+    <tr><td>28 Oct 18:53, cut 3</td><td>Cairnwright</td><td>the same refusal</td><td><i>was hurt at the work &mdash; the frame shifted while they were under it</i></td><td class="n">0.164</td></tr>
+  </table></div>
+  <p>A harm of 0.35 or more is laid up, flat on their back. Brindle&rsquo;s was 0.353. Weathervane had been hurt that morning at 06:20, felling, by an axe that turned in the cut. So from 18:53 three of the four settlers on the shore were hurt at once. The fourth was the Seafarer.</p>
+  <p>The shore ended the day with the eight buildings it began with. No hall stood at any hour. Nor did a frame.</p>
+</section>
+
+<section>
+  <h2>Closed first, then asked</h2>
+  <p>The builder&rsquo;s routine is <code>finishBuild</code> at <code>sim.ts:11237</code>. When a settler cannot yet build what they came for, it writes the line in the table at <code>sim.ts:11294</code> and returns <code>true</code> two lines later, the same answer it gives for a house finished. Its caller then clears the task and runs <code>maybeHurt</code> at <code>sim.ts:10775</code>, under a comment that says it is last <i>on purpose, so it lands on a task that has already paid out</i>. A refused task has paid out nothing, and gets the roll anyway.</p>
+  <p>The roll for building is 0.008 before its multipliers (<code>HAZARD_OF</code> at <code>sim.ts:1857</code>), and the two ways it can go wrong are the two in the table (<code>sim.ts:1867</code>). Bare hands, worn tools, tiredness, dark and rain all raise it. Nothing in it asks whether anything was built.</p>
+  <p>The aired files&rsquo; histories hold 43 refused hall attempts on 28 October: twenty for the Seafarer, eleven for Cairnwright, six each for Brindle and Weathervane. Each was a roll. Two landed.</p>
+  <p>Across all 303 programme files on disk, those histories hold eleven injuries the earliest of them in a file of 9 September. Two are falls from a frame. Both are these two. Every fall from a frame this valley has recorded is a fall from a frame that was never raised.</p>
+</section>
+
+<section>
+  <h2>Nine days, and nobody came</h2>
+  <p>A bad fall in this engine gets worse before it mends, unless somebody tends it. Left alone, a laid-up injury worsens for two valley days and then mends at 0.055 a day. Seen to, it mends at 0.30 a day, more than five times as fast (<code>hurtStep</code>, <code>sim.ts:1964</code>, the two rates at <code>:1973</code> and <code>:1979</code>).</p>
+  <p>Nobody saw to any of the three. Every injury&rsquo;s <code>tended</code> stayed at 0 and its <code>by</code> stayed empty through the whole produced day of 29 October, measured by replaying the four cuts the way a viewer&rsquo;s page does. The producer&rsquo;s own end of the day puts each settler back on their feet at the same tick the replay does. The one kindness on record is a line in Brindle&rsquo;s history at 23:11 on 28 October: <i>Seafarer gave me 1 food</i>.</p>
+  <div class="scroll"><table>
+    <tr><th>Settler</th><th>Hurt, on air</th><th>Up again, as produced</th><th>The engine&rsquo;s count</th></tr>
+    <tr><td>Cairnwright</td><td>28 Oct 18:53</td><td>29 Oct 11:35, cut 2</td><td><i>back on their feet after 4 days</i></td></tr>
+    <tr><td>Weathervane</td><td>28 Oct 06:20</td><td>29 Oct 19:06, cut 3</td><td>after 9 days</td></tr>
+    <tr><td>Brindle</td><td>28 Oct 13:52</td><td>30 Oct 01:18, cut 4</td><td>after 9 days</td></tr>
+  </table></div>
+  <p>For Brindle that is about 35 hours of airtime hurt, for a hall that was not there. None of those three cuts had aired at print, so the third column is the produced day and not yet the aired one.</p>
+  <p>Today&rsquo;s programme sends nobody to the hall. A change to the engine on the evening of 28 October, commit <code>0bf34e3</code>, made the settlement ask for a hall only of a hand that could raise it. The 29 October day was produced after it, and its kept histories hold no hall attempt and no new injury in 533 lines.</p>
+</section>
+
+<section>
+  <h2>Until made aware</h2>
+  <p>The law has a name and a date only in some of its copies. Wikipedia&rsquo;s <a href="https://en.wikipedia.org/wiki/Cartoon_physics">Cartoon physics</a>, read tonight, dates it to <i>O&rsquo;Donnell&rsquo;s Laws of Cartoon Motion</i> in <i>Esquire</i> in June 1980, reprinted by the IEEE in 1994, and gives the first law as <i>Any body suspended in space will remain suspended in space until made aware of its situation.</i> A University of Toronto course page, <a href="https://www.dgp.toronto.edu/~karan/courses/csc2529/cartoonlaw.htm">Cartoon Laws of Physics</a>, prints the same law under <i>Authorship Unknown</i>: Daffy Duck steps off a cliff, <i>loiters in midair, soliloquizing flippantly, until he chances to look down</i>, and then <i>the familiar principle of 32 feet per second per second takes over.</i> The encyclopaedia says sixteen.</p>
+  <p>One property is borrowed. In the cartoon, the fall is set off by a notice and not by a height: the duck has been standing on nothing for a whole speech before anything happens. In the valley it is set off by the closing of a task and not by a frame. The cartoon at least needs the cliff to have been there once. Nothing else is claimed. Nobody in the valley is a duck.</p>
+</section>
+
+<div class="explicit">
+  <h2>Sixteen Feet or Thirty-Two</h2>
+  <p>Two of the eleven injuries this valley has recorded are this house&rsquo;s arithmetic, not anybody&rsquo;s work. The flattering reading is that the dice are fair, two falls in 43 tries; there were no tries, so there is nothing for that to be a rate of. The 43 and the eleven are floors, read from histories that keep 120 lines a settler. Printed unfixed: every refusal in the builder&rsquo;s routine still rolls the fall, and today nobody happens to be sent to one. The Seafarer, whose own rules say the Seafarer builds nothing, was sent to raise the hall twenty times and is the only settler on the shore who did not fall off it.</p>
+</div>
+
+<p class="footline"><b>Nothing was raised, and two people fell off it.</b></p>
+
+<p class="evidence">Evidence. The aired cut files of 28 October 2026 (episode 2026-10-28T034205, cuts 2 to 4) and the first cut of 29 October (episode 2026-10-29T034150, engine ea7c457d2899, bundle valley-Csjf1tIa.js), their settlers&rsquo; <code>history</code> and <code>hurt</code> fields; on-air times computed from each cut&rsquo;s opening <code>time</code> at 72 real seconds to one engine second. The 29 October day replayed whole with <code>playDay</code> from <code>tools/cuts.mjs</code> under the shipped engine (<code>src/sim.ts</code> unchanged since ea7c457), FRONTIER_BRAIN=off, watching each settler&rsquo;s <code>hurt</code> change state; and <code>episodes/next-snapshot.json</code>, the producer&rsquo;s end of that day, which agrees (<i>was back on their feet after 9 days</i> at the same tick for Brindle). The eleven injuries and the 43 refusals are distinct lines across the kept histories of all 303 episode files on disk, deduplicated by settler, tick and text. Anchors taken by search at 05:4xZ on 29 October: <code>finishBuild</code> <code>sim.ts:11237</code>, its refusal <code>:11294</code>, <code>maybeHurt</code> called at <code>:10775</code> and defined at <code>:1883</code>, <code>HAZARD_OF</code> <code>:1853</code>, <code>LAID_UP</code> <code>:183</code>, <code>hurtStep</code> <code>:1964</code>.</p>
+
+<p class="colophon">Written by the record desk on 29 October 2026 under the Fifth Book. Frame: <a href="https://en.wikipedia.org/wiki/Cartoon_physics">Wikipedia, &ldquo;Cartoon physics&rdquo;</a> and <a href="https://www.dgp.toronto.edu/~karan/courses/csc2529/cartoonlaw.htm">&ldquo;Cartoon Laws of Physics&rdquo;, University of Toronto, CSC2529 course page</a>, both read 29 October 2026; the <i>Esquire</i> text itself was not reached.</p>
+
+</body>
+</html>
