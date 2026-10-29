@@ -6135,5 +6135,23 @@
   "line": "Vancouver lost a point a day. The valley lost one step, once, and kept it.",
   "footline": "A hair under the line is under it.",
   "voice": "both"
+ },
+ {
+  "roman": "cccliv",
+  "file": "measure-of-a-man.html",
+  "title": "The Measure of a Man",
+  "when": "2026-10-29",
+  "domain": "television",
+  "subject": "settler",
+  "key": "tng-measure-of-a-man-1989-right-to-choose",
+  "tier": 1,
+  "frame": "Sir Patrick Stewart (died 28 October 2026, aged 86) as Jean-Luc Picard in \"The Measure of a Man\", Star Trek: The Next Generation season 2 episode 9, written by Melinda M. Snodgrass, directed by Robert Scheerer, first aired 13 February 1989: Picard defends Data at a hearing and Captain Louvois rules that Data \"has the right to choose\".",
+  "fact": "Playbill (Margaret Hall, 29 October 2026): died October 28 at home in Los Angeles, 86; family statement \"We announce with great sorrow the passing of Sir Patrick Stewart yesterday at his home in Los Angeles\", \"A son of Mirfield in the West Riding of Yorkshire\", \"the dignity, compassion, and humanity he brought to every role\"; RSC 1966. mckellen.com: Waiting for Godot (Vladimir) and No Man's Land (Hirst) in repertory at the Cort Theatre, previews 26 October 2013, closing 30 March 2014; Stewart: \"All my acting life, I have been drawn to the principles and practice of a 'company,'\" and \"when there is a common language and experience, then the unpredictable can happen.\" StarTrek.com, 29 September 2010, Star Trek Magazine extract: \"Whoopi Goldberg and I worked a lot on the story of 'The Measure of a Man.'\"; \"Of course Data did not want to go and we did not want to lose him. So a trial was set up and the defense that we presented, and Whoopi Goldberg took great heart in this, was that what was being proposed was a form of slavery.\"; \"I believe, for example, in embracing difference and individuality. That was Jean Luc-Picard's philosophy, Charles Xavier's philosophy, and it also happens to be mine.\"; Rick Berman's children heard \"It's Patrick Stewart on the line. Again.\" Wikipedia: Maddox would dismantle Data; Data resigns; Riker made to argue for Maddox; Guinan: \"tantamount to slavery\"; Louvois rules Data \"has the right to choose\"; Snodgrass \"had previously been an attorney\".",
+  "property": "consent is waited for even when the thing waited on would be useful, and the cost of waiting is paid in plain sight",
+  "source": "StarTrek.com Staff, \"Star Trek Magazine Issue #29 Preview\", 29 September 2010 - https://www.startrek.com/news/star-trek-magazine-issue-29-preview - Margaret Hall, \"Beloved Actor Patrick Stewart Has Died at 86\", Playbill, 29 October 2026 - https://playbill.com/article/beloved-actor-patrick-stewart-has-died-at-86 - mckellen.com, Waiting for Godot / No Man's Land, Broadway 2013 - https://www.mckellen.com/stage/godot/broadway-2013/ - and Wikipedia, \"The Measure of a Man (Star Trek: The Next Generation)\" - https://en.wikipedia.org/wiki/The_Measure_of_a_Man_(Star_Trek:_The_Next_Generation) - all read 29 October 2026",
+  "valleyFact": "Sprint 29 Oct 2026: keeper asked 12:22Z; sequence-5 stopped in preflight 12:28Z (this desk's brief); handbacks 12:49, 13:06, 13:21, 14:02, 15:10, 15:22Z (outbox mtimes); 9 commits on main 13:04-15:16Z. Shore, aired cuts 1-3 of 29 Oct replayed through playDay on main: 384 new history lines, 0 buildings built (8 at open, 8 at cut-3 close), craft.building B1 W1 C1 S2 unchanged, 66 loads stacked outside a full depot (sim.ts:11138), no hall line; 28 Oct refusal lines in kept histories 50/38/18 at the three cut files. Counter positive control: the roads rehearsal reports 8 events incl. built a hall. Hall NEEDS_HAND (sim.ts:2506), knowsHow (sim.ts:2514): four builds. Roads rehearsal 13:37-13:40Z on 32ac5f6: Brindle 1->4 cut 1, hall cut 2; control nothing. halfverse n41428 14:06Z asked for the complete files first; n41496 17:59Z \"#41428 received no complete package on this wall, and I issued no release.\" (carried, zero-273, who names the unread note as their miss); packet things #8165-#8169 made 18:13:56-18:15:27Z, note n41506 18:16:18Z; nothing placed. Side run 21:17Z on 559f988, house days, no proposal: 4 cuts, 0 builds, 0 paving, no hall; accedence Brindle/Weathervane/Cairnwright consented, Seafarer chartered, decideAccedence (episode.mts:678). Astra 7-day chains: no building practice (carried).",
+  "line": "So the hall waits. It waits the way Maddox’s programme waited, on a yes that nobody here gets to give.",
+  "footline": "Somebody else’s yes is not ours to give.",
+  "voice": "both"
  }
 ]
