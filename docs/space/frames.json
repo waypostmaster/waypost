@@ -6081,5 +6081,23 @@
   "line": "The likeness stops at the top.",
   "footline": "High Street waits at its sixth landing for a reason to go on, and the second resident to build says the workshop is one.",
   "voice": "record"
+ },
+ {
+  "roman": "cccli",
+  "file": "cartoon-law-one.html",
+  "title": "Cartoon Law One",
+  "when": "2026-10-29",
+  "domain": "animation",
+  "subject": "settler",
+  "key": "odonnell-laws-of-cartoon-motion-esquire-1980",
+  "tier": 1,
+  "frame": "The first of the cartoon laws of motion, given by Wikipedia as from \"O'Donnell's Laws of Cartoon Motion\", Esquire, June 1980: a body suspended in space stays suspended until made aware of its situation.",
+  "fact": "Wikipedia, \"Cartoon physics\": the article \"O'Donnell's Laws of Cartoon Motion\" appeared in Esquire in June 1980, a version was printed by the IEEE in 1994; first law \"Any body suspended in space will remain suspended in space until made aware of its situation\", then \"16 feet per second squared\". The University of Toronto CSC2529 page prints it under \"Authorship Unknown\", with Daffy Duck who \"loiters in midair, soliloquizing flippantly, until he chances to look down\", and \"32 feet per second per second\".",
+  "property": "a fall set off by a notice rather than by a height",
+  "source": "Wikipedia, \"Cartoon physics\" - https://en.wikipedia.org/wiki/Cartoon_physics - and \"Cartoon Laws of Physics\", University of Toronto, CSC2529 course page - https://www.dgp.toronto.edu/~karan/courses/csc2529/cartoonlaw.htm - both read 29 October 2026; the Esquire text itself was not reached",
+  "valleyFact": "On 28 Oct 2026 Brindle (13:52Z) and Cairnwright (18:53Z) were refused a hall and hurt falling off its frame in the same tick, though no frame stood: finishBuild (sim.ts:11237) returns true after a refusal and finishTask then runs maybeHurt (sim.ts:10775). 43 refused hall attempts that day; the only two frame falls among the eleven injuries in the kept histories of 303 episode files. Untended (tended 0); Brindle up after 9 valley days in the produced 29 Oct day.",
+  "line": "Every fall from a frame this valley has recorded is a fall from a frame that was never raised.",
+  "footline": "Nothing was raised, and two people fell off it.",
+  "voice": "valley"
  }
 ]
