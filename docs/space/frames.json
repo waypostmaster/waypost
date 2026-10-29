@@ -6117,5 +6117,23 @@
   "line": "The cloud valley had one player. That player was the keeper, the engine man, the well-digger and the water carrier.",
   "footline": "One player was both sets of hands, and the light lasted as long as the player did.",
   "voice": "both"
+ },
+ {
+  "roman": "cccliii",
+  "file": "vancouver-1983.html",
+  "title": "Vancouver, 1983",
+  "when": "2026-10-29",
+  "domain": "finance",
+  "subject": "engine",
+  "key": "vancouver-stock-exchange-index-truncation-1982-1983",
+  "tier": 1,
+  "frame": "The Vancouver Stock Exchange index, begun January 1982 at 1,000, recalculated on every price change and truncated rather than rounded at the third decimal place, corrected over the weekend of 25 to 28 November 1983 from 524.811 to 1098.892.",
+  "fact": "Toronto Star, 29 November 1983, as quoted by Robert W. Floyd (draft note, 15 November 1985): after 22 months the index \"fell short by 574.081 points from the 1098.892 it should have indicated\"; \"all 1500 stocks\"; \"calculated to four decimal places but only printed to three\"; \"as many as 3000 index changes a day\"; \"a loss of an index point a day, or 20 points a month\"; a year in \"it was sitting at 725 and it should have been a 960\". Floyd: \"the cumulative effect of a million of them was catastrophic\". G. W. Stewart, NA Digest 99:43: \"the updated value was truncated rather than rounded\". Wikipedia: correction over 25-28 November 1983, Friday close 524.811 to 1098.892, about 25 points a month.",
+  "property": "an error that always leans the same way, too small to see in any one number, can leave a value on the wrong side of a line",
+  "source": "Robert W. Floyd, draft note A112.TEX, 15 November 1985, SAILDART - https://www.saildart.org/A112.TEX[106,RWF]1 - G. W. Stewart, \"Rounding Error\", NA Digest 99:43, 30 October 1999 - https://netlib.org/na-digest-html/99/v99n43.html - and Wikipedia, \"Vancouver Stock Exchange\" - https://en.wikipedia.org/wiki/Vancouver_Stock_Exchange - all read 29 October 2026",
+  "valleyFact": "src/sim.ts on main, 29 Oct 2026 15:38Z: skillFrom (3834) = 1 - 1/(1 + made/6); NEEDS_HAND (2506) hall 0.4 (2510); knowsHow (2514) compared skill >= hand, and skillFrom(4) prints 0.3999999999999999 in node, so the hall wanted 5 builds; smelter 0.35 -> 4, sawmill 0.3 -> 3, tower 0.5 -> 6 unaffected. Fixed with + 1e-9 at 2519; check:hand red before, green after; gate 81/81 13:33Z. Settlers at the 29 Oct opening: Brindle 1, Weathervane 1, Cairnwright 1, Seafarer 2 finished buildings; 43 refused hall attempts on 28 Oct would be refused under a bar of four too. Found by Astra (hall-reach rehearsal, 7 days, never aired, carried).",
+  "line": "Vancouver lost a point a day. The valley lost one step, once, and kept it.",
+  "footline": "A hair under the line is under it.",
+  "voice": "both"
  }
 ]

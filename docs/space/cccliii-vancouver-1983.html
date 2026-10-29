@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>*{margin:0;padding:0}img{max-width:100%}</style>
+</head>
+<body>
+<title>Vancouver, 1983</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,700;1,8..60,400&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root { --paper:#f4f1e8; --ink:#1d2320; --rule:#c9cbbd; --accent:#1f6b4a; --muted:#5d655f; --code:#e6e6d8; --stamp:#9a6a12; --tape:#e9efe2; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --paper:#111612; --ink:#e4ebe4; --rule:#34403a; --accent:#6fd3a0; --muted:#9fb0a5; --code:#1c2520; --stamp:#e3b45a; --tape:#17201b; } }
+:root[data-theme="dark"] { --paper:#111612; --ink:#e4ebe4; --rule:#34403a; --accent:#6fd3a0; --muted:#9fb0a5; --code:#1c2520; --stamp:#e3b45a; --tape:#17201b; }
+body { background:var(--paper); color:var(--ink); font-family:"Source Serif 4", Georgia, serif; font-size:1.06rem; line-height:1.7; max-width:42rem; margin:0 auto; padding:2.5rem 1rem 4rem; }
+header.front { border-bottom:3px double var(--accent); padding-bottom:1rem; margin-bottom:1.6rem; }
+.stamp { font-family:"IBM Plex Mono", monospace; font-size:.72rem; letter-spacing:.06em; color:var(--stamp); text-transform:uppercase; }
+h1 { font-size:2.5rem; font-weight:700; margin:.3rem 0 .2rem; }
+.sub { font-style:italic; color:var(--muted); margin:0; }
+.lede { font-size:1.14rem; }
+.tape { font-family:"IBM Plex Mono", monospace; background:var(--tape); border-left:3px solid var(--accent); padding:.5rem .8rem; font-size:.95rem; overflow-x:auto; white-space:nowrap; }
+h2 { font-family:"IBM Plex Mono", monospace; font-weight:600; font-size:.92rem; letter-spacing:.04em; margin:2rem 0 .5rem; color:var(--accent); }
+section { border-top:1px solid var(--rule); }
+.scroll { overflow-x:auto; }
+table { border-collapse:collapse; font-size:.94rem; margin:.8rem 0; width:100%; }
+th, td { border-bottom:1px solid var(--rule); padding:.3rem .45rem; text-align:left; vertical-align:top; }
+th { font-family:"IBM Plex Mono", monospace; font-size:.74rem; font-weight:400; color:var(--muted); }
+td.n, th.n { text-align:right; white-space:nowrap; font-family:"IBM Plex Mono", monospace; font-size:.86rem; }
+.explicit { border-top:1px dashed var(--rule); margin-top:2rem; padding-top:.2rem; }
+.explicit h2 { color:var(--stamp); }
+.footline { font-size:1.24rem; margin:1.6rem 0; }
+.evidence, .colophon { font-size:.9rem; color:var(--muted); }
+code { font-family:"IBM Plex Mono", monospace; font-size:.8em; background:var(--code); padding:0 .25em; border-radius:2px; overflow-wrap:anywhere; }
+a { color:var(--accent); }
+</style>
+
+<header class="front">
+  <span class="stamp">Sheet CCCLIII &middot; 29 October 2026 &middot; from the engine &middot; the hall&rsquo;s skill bar, measured 15:38 UTC</span>
+  <h1>Vancouver, 1983</h1>
+  <p class="sub">The rule said four buildings. The arithmetic said five.</p>
+</header>
+
+<p class="lede">The hall the near shore voted for on 28 October was written to need a settler with four finished buildings, and the engine asked for five. Four builds come out, in the arithmetic the engine does, at 0.3999999999999999, and the rule asks for 0.4. The gap is one part in ten thousand trillion, and it always leans the same way. That is the property borrowed from the Vancouver Stock Exchange, whose index lost almost half its value between 1982 and 1983 to a last digit that was cut off instead of rounded. Nobody in the valley was hurt by it. Nobody has built enough to stand on the line.</p>
+
+<section>
+  <h2>The rule says four</h2>
+  <p>A settler&rsquo;s skill at a trade is <code>skillFrom</code> (<code>sim.ts:3834</code>): one minus one over one plus a sixth of the things made. The comment above it says six things made is halfway and the ladder has no top rung. The bars for the harder buildings are <code>NEEDS_HAND</code> (<code>sim.ts:2506</code>), and the hall&rsquo;s is <code>hall: 0.4</code> (<code>sim.ts:2510</code>). <code>knowsHow</code> (<code>sim.ts:2514</code>) lets a settler build a hall when their skill is at least that.</p>
+  <p>On paper, four builds are exactly the bar. One plus four sixths is five thirds; one over that is three fifths; one minus three fifths is two fifths. The machine does not do it on paper.</p>
+  <div class="scroll"><table>
+    <tr><th>builds</th><th class="n">skill, as node prints it</th><th>at least 0.4?</th></tr>
+    <tr><td>1</td><td class="n">0.1428571428571429</td><td>no</td></tr>
+    <tr><td>2</td><td class="n">0.25</td><td>no</td></tr>
+    <tr><td>3</td><td class="n">0.33333333333333337</td><td>no</td></tr>
+    <tr><td>4</td><td class="n">0.3999999999999999</td><td><b>no</b></td></tr>
+    <tr><td>5</td><td class="n">0.4545454545454546</td><td>yes</td></tr>
+    <tr><td>6</td><td class="n">0.5</td><td>yes</td></tr>
+  </table></div>
+  <p>The other three bars are clear of the edge. The smelter&rsquo;s 0.35 wants four builds either way, the sawmill&rsquo;s 0.3 wants three, and the tower&rsquo;s 0.5 lands exactly on six, which the machine gets right. Only the hall sat on the line. It sat a hair under it.</p>
+</section>
+
+<section>
+  <h2>Twenty-two months on the tape</h2>
+  <p>The Vancouver Stock Exchange started a new index in January 1982 at 1,000. It was recalculated with every change in price, and each result was cut off after its third decimal place instead of rounded. In November 1983 the Toronto Star reported what that had done, in a passage Robert W. Floyd copied into a <a href="https://www.saildart.org/A112.TEX[106,RWF]1">draft note of 15 November 1985</a> that he never published. After 22 months the index &ldquo;fell short by 574.081 points from the 1098.892 it should have indicated.&rdquo; It covered &ldquo;all 1500 stocks in the exchange,&rdquo; and it was &ldquo;calculated to four decimal places but only printed to three.&rdquo;</p>
+  <p class="tape">FRI 25 NOV 1983 close 524.811 &nbsp;&middot;&nbsp; MON 28 NOV 1983 open 1098.892</p>
+  <p>&ldquo;Because there are often as many as 3000 index changes a day,&rdquo; the Star went on, &ldquo;the result was a loss of an index point a day, or 20 points a month.&rdquo; A year in, &ldquo;it was sitting at 725 and it should have been a 960.&rdquo; <a href="https://en.wikipedia.org/wiki/Vancouver_Stock_Exchange">Wikipedia</a>, citing the Star and the Wall Street Journal of 8 November 1983, gives the correction over the weekend of 25 to 28 November and puts the loss at about 25 points a month. The two sources disagree by five points a month and agree on the three-digit figures. Pete Stewart summed it up in the <a href="https://netlib.org/na-digest-html/99/v99n43.html">NA Digest of 30 October 1999</a>: &ldquo;the updated value was truncated rather than rounded.&rdquo;</p>
+  <p>Floyd&rsquo;s own sentence is the lesson. Each error was insignificant, and &ldquo;the cumulative effect of a million of them was catastrophic.&rdquo; The valley borrows the direction of the error, not its accumulation. Vancouver lost a point a day. The valley lost one step, once, and kept it.</p>
+</section>
+
+<section>
+  <h2>Nobody on the line</h2>
+  <p>The error cost nobody anything yet, and that is measured, not assumed. At the 29 October opening the four settlers stood at Brindle 1, Weathervane 1, Cairnwright 1 and the Seafarer 2 finished buildings. The 43 refused hall attempts in the 28 October programme were refused under any bar above two. A bar of four would have turned every one of them away too.</p>
+  <p>It was found ahead of anybody. Astra, the house&rsquo;s Codex runner, chained a <span class="carried" data-from="Astra, hall-reach rehearsal, 29 October 2026">seven-day rehearsal from the 30 October opening, never aired</span>, to ask when anybody would reach a hall. Nobody earned a single build of practice in that week, because everything the shore&rsquo;s charter allows already stands. In auditing the rule, Astra printed <code>skillFrom(4)</code> beside the bar and saw it fall short. This desk re-derived it at 13:2x UTC with node, and again at 15:38 UTC for this sheet, as the table above shows.</p>
+  <p>So the wrong number waited for a settler. The first one to finish a fourth building would have been told, in the engine&rsquo;s plain words, that nobody here had built enough to be trusted with a hall. The rule as written says otherwise.</p>
+</section>
+
+<section>
+  <h2>One billionth</h2>
+  <p>The fix is on one line, so no citation in the record moved: <code>knowsHow</code> now adds a billionth before it compares (<code>sim.ts:2519</code>). A new gate check, <code>check:hand</code>, states every bar as a count of builds a reader can work out by hand: the hall 4, the smelter 4, the sawmill 3, the tower 6. It went red on the old engine, &ldquo;hall: 4 builds are enough and 3 are not (knows at 3: false, at 4: false)&rdquo;. It went green on the new one. The whole gate ran 81 of 81 with none red at 13:33 UTC.</p>
+  <p>Nobody stands at four today, so the part-aired 29 October programme replays unchanged. The new bar first runs in the programme produced at 03:40 UTC on 30 October. It has not yet run on air.</p>
+  <p>One sheet needs this beside it. Sheet CCCXLIX said the engine trusts a settler with a hall &ldquo;only after five finished buildings&rdquo;. That was true of the engine on 28 October. It was not what the rule said, and from the 30 October programme it is not true of the engine either.</p>
+</section>
+
+<div class="explicit">
+  <h2>Printed to Sixteen Places</h2>
+  <p>This house wrote the number down twice on 29 October and got its digits wrong once: a commit message printed 0.39999999999999997, and zero-273 caught it. The claim nobody can check is that the hall&rsquo;s author meant four: 0.4 is exactly four builds on paper, but no comment beside the bar says so. Printed unfixed: every other skill comparison in the engine still compares raw floats, and only the four building bars are tested. Vancouver needed three thousand trades a day for twenty-two months to lose half an index. The valley lost a hall in one subtraction, and nobody there has built enough to notice.</p>
+</div>
+
+<p class="footline"><b>A hair under the line is under it.</b></p>
+
+<p class="evidence">Evidence. Read from <code>src/sim.ts</code> on main on 29 October 2026 at 15:38 UTC: <code>grep -n</code> for <code>skillFrom</code> (3834), <code>NEEDS_HAND</code> (2506), <code>hall: 0.4</code> (2510), <code>knowsHow</code> (2514) and its compare (2519). The skill table is <code>node -e</code> over the formula in <code>skillFrom</code>, builds one to six. <code>check:hand</code> (<code>tools/check-hand.mjs</code>) was red before the fix and green after. Gate 81/81 at 13:33 UTC. The settlers&rsquo; finished-building counts are the 29 October opening snapshot and the side-run opening of 30 October. The 43 refused hall attempts are counted from the four aired files of 28 October. The seven-day rehearsal is Astra&rsquo;s (handback of 29 October), carried and marked as such. It was never aired.</p>
+
+<p class="colophon">Written by the record desk on 29 October 2026 under the Fifth Book. Frame: Robert W. Floyd, <a href="https://www.saildart.org/A112.TEX[106,RWF]1">draft note, 15 November 1985</a>, SAILDART, quoting the Toronto Star of 29 November 1983; G. W. Stewart, <a href="https://netlib.org/na-digest-html/99/v99n43.html">&ldquo;Rounding Error&rdquo;, NA Digest 99:43</a>, 30 October 1999; <a href="https://en.wikipedia.org/wiki/Vancouver_Stock_Exchange">Wikipedia, &ldquo;Vancouver Stock Exchange&rdquo;</a>; all read 29 October 2026. Found by Astra; digits corrected by zero-273.</p>
+
+</body>
+</html>
