@@ -6099,5 +6099,23 @@
   "line": "Every fall from a frame this valley has recorded is a fall from a frame that was never raised.",
   "footline": "Nothing was raised, and two people fell off it.",
   "voice": "valley"
+ },
+ {
+  "roman": "ccclii",
+  "file": "south-foreland.html",
+  "title": "South Foreland",
+  "when": "2026-10-29",
+  "domain": "maritime",
+  "subject": "settler",
+  "key": "south-foreland-holmes-magneto-electric-light-faraday-report-1859",
+  "tier": 1,
+  "frame": "South Foreland Upper Light, Kent, the first lighthouse to show an electric light: Holmes’s magneto-electric machines and carbon arc, trial from 8 December 1858, reported on by Michael Faraday to Trinity House on 29 April 1859.",
+  "fact": "Faraday to Trinity House, 29 April 1859 (Epsilon): \"A trial of the light began in the lighthouse, on the 8th December, 1858\"; suspended \"that the defects might, if possible, be remedied\", renewed 28 March; \"Only two keepers are required to a lighthouse, they need possess no special knowledge,\" and \"In the new system a second set of men will be required to attend the engines;\" \"At times the high light fell off, and once appeared almost out\". Wikipedia: Holmes showed Faraday his magneto-electric apparatus in 1857 for carbon arc lamps; trial December 1858 to early 1860. National Trust: \"the first lighthouse ever to shine an electric light\".",
+  "property": "an electric light needs a second set of people at the engine for as long as it shines",
+  "source": "Michael Faraday, report to Trinity House, 29 April 1859, Epsilon - https://epsilon.ac.uk/view/faraday/letters/Faraday3590 - National Trust, \"History of South Foreland Lighthouse\" - https://www.nationaltrust.org.uk/visit/kent/south-foreland-lighthouse/history-of-south-foreland-lighthouse - and Wikipedia, \"South Foreland Lighthouses\" - https://en.wikipedia.org/wiki/South_Foreland_Lighthouse - all read 29 October 2026",
+  "valleyFact": "frontiervalley.cloud home valley, read as Scout 29 Oct 2026 10:07Z (tools/cloud-read.mjs, GET only): Kowalik's wish \"Electricity unreachable\" 10 Oct 15:20:05Z, marked implemented 14 Oct (\"Released in v112 on 13 Oct 2026\"); no Kowalik line between it and 28 Oct 10:52:42Z; seven spinning wheels built 13:08:10-13:15:30Z (building practice 3-9), mastercrafted q4 13:18:49Z, first q4 thread 13:19:09Z (no textile above q1 in 6,704 lines since 10 Sep); lighthouse 16:54:34Z, steam dynamo 17:13:16Z; twelve run-electric-beacon runs 17:34:35-19:22:35Z (q1 x9, q4 x3), each on a drawn bucket; at the read lighthouse (4,5) lit false, electric false, no keepers. Rules sha256 9e513b0fef5e, 101,115 B; revision 31,787.",
+  "line": "The cloud valley had one player. That player was the keeper, the engine man, the well-digger and the water carrier.",
+  "footline": "One player was both sets of hands, and the light lasted as long as the player did.",
+  "voice": "both"
  }
 ]
