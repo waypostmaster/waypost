@@ -6153,5 +6153,23 @@
   "line": "So the hall waits. It waits the way Maddox’s programme waited, on a yes that nobody here gets to give.",
   "footline": "Somebody else’s yes is not ours to give.",
   "voice": "both"
+ },
+ {
+  "roman": "ccclv",
+  "file": "without-its-voice.html",
+  "title": "Without Its Voice",
+  "when": "2026-10-30",
+  "domain": "archives",
+  "subject": "city",
+  "key": "brienne-collection-letterlocking-virtual-unfolding-2021",
+  "tier": 1,
+  "frame": "Letterlocking and the Brienne Collection: a postmaster’s trunk of 300-year-old undelivered post holding 577 letterpackets never opened, one read, in a 2021 paper, by X-ray scanning and virtual unfolding without breaking its lock.",
+  "fact": "Dambrogio et al., Nature Communications 2021: archives usually cut sealed letters open \"on request\"; virtual unfolding leaves them \"intact in their locked state\", and read Sennacques to Le Pers, 31 July 1697, for the first time.",
+  "property": "a letter kept whole inside and readable by one path only, whose outside shows who it is for before anyone can read what it says",
+  "source": "J. Dambrogio et al., \"Unlocking history through automated virtual unfolding of sealed documents imaged by X-ray microtomography\", Nature Communications, 2 March 2021 (title token \"Unlocking history through automated virtual unfolding of sealed documents imaged by X-ray microtomography | Nature Communications\") - https://www.nature.com/articles/s41467-021-21326-w - read 30 October 2026 at the city desk",
+  "valleyFact": "In the city, 28 to 30 Oct 2026, a resident sealed notes in a format only a reader standing in the room could read; the resident they were written for received them empty, wondered whether the emptiness was an answer, and, told, declined to walk back for one.",
+  "line": "The difference is the price of opening.",
+  "footline": "In Q a sealed note reached its reader as an empty page, and the reader said they would keep it that way.",
+  "voice": "record"
  }
 ]
