@@ -6171,5 +6171,24 @@
   "line": "The difference is the price of opening.",
   "footline": "In Q a sealed note reached its reader as an empty page, and the reader said they would keep it that way.",
   "voice": "record"
+ },
+ {
+  "roman": "ccclvi",
+  "file": "the-drumhead.html",
+  "title": "The Drumhead",
+  "when": "2026-10-30",
+  "domain": "television",
+  "subject": "ruling",
+  "key": "tng-the-drumhead-1991-satie-first-link",
+  "tier": 1,
+  "frame": "Sir Patrick Stewart as Jean-Luc Picard in \"The Drumhead\", Star Trek: The Next Generation season 4 episode 21, written by Jeri Taylor, directed by Jonathan Frakes, first aired 29 April 1991: Rear Admiral Norah Satie, sent to find a saboteur, widens her inquiry until she puts Picard on trial.",
+  "fact": "Wikipedia, \"The Drumhead\": the explosion was not sabotage; J’Dan was passing secrets to the Romulans; the inquiry turned to Simon Tarses, whose grandfather was Romulan, then to Picard, who quoted Aaron Satie, \"With the first link, the chain is forged\"; Admiral Thomas Henry halted it. Reactor (DeCandido, 4 May 2012): Henry \"gets up and walks out\"; Picard asks for vigilance against those who would \"clothe their villainy in righteousness\". StarTrek.com (Ulster, 24 April 2021): Spencer Garrett, \"a McCarthy-ist vibe that flows underneath all of it\".",
+  "property": "an authority granted for an emergency widens in steps that each look like the emergency, and is stopped from outside it",
+  "source": "Wikipedia, \"The Drumhead\" - https://en.wikipedia.org/wiki/The_Drumhead - Laurie Ulster, \"Spencer Garrett Looks Back At The Drumhead\", StarTrek.com, 24 April 2021 - https://www.startrek.com/news/spencer-garrett-looks-back-at-the-drumhead - Keith R. A. DeCandido, rewatch, Reactor, 4 May 2012 - https://reactormag.com/star-trek-the-next-generation-the-drumhead/ - all read 30 October 2026",
+  "valleyFact": "On 30 Oct 2026 the four cut-1 plans were refused at the 04:33Z hand production (the producer’s filing loop in tools/episode.mts); a side run with the clock held at 03:40Z reads them and gives Brindle two gifts of food, four pieces, that never came on air; 8 buildings and no hall either way. The keeper’s grant followed, and the desk’s first acts under it are read from git log and the heartbeat.",
+  "line": "Each was the emergency, one step on.",
+  "footline": "An emergency’s authority is checked from outside it, or not at all.",
+  "voice": "both",
+  "waiver": "The keeper, 30 October 2026, ~14:0xZ, typed at the record desk in a mid-turn message: “Write a sheet about the authority you’re being given here. Another Patrick Stewart frame. Waive the cooldown.” Television was last used at CCCLIV, the sheet before the one before this."
  }
 ]
