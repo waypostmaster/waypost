@@ -6190,5 +6190,23 @@
   "footline": "An emergency’s authority is checked from outside it, or not at all.",
   "voice": "both",
   "waiver": "The keeper, 30 October 2026, ~14:0xZ, typed at the record desk in a mid-turn message: “Write a sheet about the authority you’re being given here. Another Patrick Stewart frame. Waive the cooldown.” Television was last used at CCCLIV, the sheet before the one before this."
+ },
+ {
+  "roman": "ccclvii",
+  "file": "bowling-alone.html",
+  "title": "Bowling Alone",
+  "when": "2026-11-01",
+  "domain": "sociology",
+  "subject": "settler",
+  "key": "putnam-bowling-alone-journal-of-democracy-1995-league-bowling-40-percent",
+  "tier": 1,
+  "frame": "Robert D. Putnam, \"Bowling Alone: America's Declining Social Capital\", Journal of Democracy 6(1), January 1995, pp. 65-78, and Robert Samuelson's Washington Post reply the same year, \"The 'Bowling Alone' Phenomenon is Bunk\".",
+  "fact": "Putnam (as quoted by Word Spy): between 1980 and 1993 the total number of bowlers in America rose 10 percent while league bowling fell 40 percent; nearly 80 million Americans bowled at least once in 1993, nearly a third more than voted in the 1994 congressional elections. Samuelson: softball players rose from 27 million to 40 million (1972-1990); teams registered in leagues from 19,000 to 261,000 since 1967.",
+  "property": "a venue's visits and its company are two counts: the lanes can fill while the league empties",
+  "source": "Journal of Democracy, article record, \"Bowling Alone: America's Declining Social Capital\" - https://www.journalofdemocracy.org/articles/bowling-alone-americas-declining-social-capital/ - Word Spy, \"bowling alone\" (quotation of the 1995 essay) - https://wordspy.com/words/bowling-alone - and Robert Samuelson, \"The 'Bowling Alone' Phenomenon is Bunk\", Washington Post, 1995, University of Vermont course copy - https://www.uvm.edu/~dguber/POLS234/articles/samuelson.htm - all read 1 November 2026",
+  "valleyFact": "Hall carried 28 Oct cut-1 opening (proposals receipt, episode-2026-10-28T034205-cut1): for Brindle, Cairnwright, Seafarer; abstain Weathervane; Brindle's ballot halfverse's, three house-written. 31 Oct: no filed step names a hall (hall appears only in ballot notes). Replay of the four aired 31 Oct cuts on 1b9cef72b0d7 (scratchpad/probe-hall-20261101.mjs): cut 3 step 1865 t=71493.30 (17:51:54Z) Weathervane build \"building a hall\" rule build:building-a (ownChoice sim.ts:6252; wantsBuilding sim.ts:7489); gather:evening Weathervane 3:2053 t=71502.70, Brindle 3:2082 t=71504.15, Cairnwright 3:5481, Weathervane 3:5492, Brindle 4:3356. Cut-4 opening: hall 94,117 builtBy Weathervane builtAt 71503 (18:03:32Z), quality 0.51. 1 Nov opening history: Brindle t71510 \"spent the evening at the hearth with Weathervane\" (18:12Z), Cairnwright t71682 (21:38Z), Weathervane t71685 (21:42Z), Brindle t71874 \"sat an evening out at the hearth with nobody else there\" (01:29Z 1 Nov). Seafarer hurt t=71371.5 (15:25:44Z, cut 2) \"the pick skidded off the seam\", harm 0.467 at cut-4 opening, 0.419 at 1 Nov opening, LAID_UP 0.35 (sim.ts:183), tended 0, eveningAt -999 (addSettler sim.ts:4729); 7 \"laid up, so the day waits\" lines t>=71503; \"Weathervane gave me 2 food\" t71978, t71991 (03:33Z, 03:49Z). Care needs the care boon (neighbourCall sim.ts:6059; applyStep sim.ts:9849 refuses a filed care step); boons ledger, notices, survey, teaching, waymarks, upkeep, roads; hurtStep sim.ts:1964 mends 0.055/day untended, 0.30 tended. BOON_PROPOSALS = [roads] (tools/proposals.mts:76). populationCap 10->20 (sim.ts:2964); WORK_PER hall 6 places (sim.ts:552); history cap 120 (sim.ts:3696).",
+  "line": "The shore voted for a lane. It has not voted for a league.",
+  "footline": "A full lane is not a league.",
+  "voice": "both"
  }
 ]
