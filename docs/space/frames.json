@@ -6208,5 +6208,23 @@
   "line": "The shore voted for a lane. It has not voted for a league.",
   "footline": "A full lane is not a league.",
   "voice": "both"
+ },
+ {
+  "roman": "ccclviii",
+  "file": "seclusion.html",
+  "title": "Seclusion",
+  "when": "2026-11-01",
+  "domain": "medicine",
+  "subject": "settler",
+  "key": "weir-mitchell-fat-and-blood-chapter-iv-seclusion-1877",
+  "tier": 1,
+  "frame": "S. Weir Mitchell, Fat and Blood, first copyright 1877; eighth edition (J.B. Lippincott, 1911, edited by John K. Mitchell), Chapter IV, \"Seclusion\": the rest cure of seclusion, diet, rest in bed, massage and electricity.",
+  "fact": "Mitchell: the treatment consists in seclusion, certain forms of diet, rest in bed, massage and electricity, used in combination; patients removed from home and family and given a nurse who is a stranger; with doctor, masseur and possibly an electrician visiting daily, \"even a single friendly visitor is often too much\"; two months in a room with one constant attendant is hard to endure; letters from home forbidden, or read to the patient by the nurse. NLM: his aim was \"entire rest and excessive feeding\"; Charlotte Perkins Gilman received the cure from him; after a month she was sent home to keep resting; \"The Yellow Wall-Paper\" appeared in The New England Magazine in January 1892.",
+  "property": "a sickroom is defined by who is let in: Mitchell let in a nurse and kept the friends out",
+  "source": "S. Weir Mitchell, Fat and Blood, 8th ed. (1911), Chapter IV, Project Gutenberg eBook #16230 - https://www.gutenberg.org/ebooks/16230 - and National Library of Medicine, The Literature of Prescription, \"Dr. Mitchell's 'Rest Cure'\" - https://www.nlm.nih.gov/literatureofprescription/education/onlineactivities00.html - and the exhibit home page - https://www.nlm.nih.gov/exhibition/theliteratureofprescription/index.html - all read 1 November 2026",
+  "valleyFact": "Seafarer hurt t=71371.5 (31 Oct 15:25:44Z, cut 2) \"the pick skidded off the seam\". Harm at openings, tended 0 and by \"\" in every one: 31 Oct cut 3 (71400.05) 0.4071, cut 4 (71700.05) 0.4671, 1 Nov cut 1 (72000.05) 0.4186, cut 2 (72300.05) 0.3361, cut 3 (72600.05) 0.2536. Replay of aired 1 Nov cuts 1-2 on b0f1e2d (src unchanged since; scratchpad/probe-day-20261101.mjs, out scratchpad/day-20261101-c12.u8.txt): harm < LAID_UP 0.35 (sim.ts:183) at t=72249.35 = 08:59:09Z; down 877.85 sim-s = 17h33m25s on air; rest:laid-up-hurt (sim.ts:6264). hurtStep (sim.ts:1964): 0.055/day alone vs 0.30 seen to within 1.5 days (sim.ts:1973); +0.095/day worsening for 2 days if unseen and >= LAID_UP (sim.ts:1979). Arithmetic: h0 ~0.4014; seen to at once, under 0.35 in 0.171 day = 34.3 sim-s = ~41 min; back on feet at 0.06 ~5.27 more days (~21 h) after 08:59. Care needs boon care (neighbourCall sim.ts:6059); boons ledger, notices, survey, teaching, waymarks, upkeep, roads; BOON_PROPOSALS [roads] (tools/proposals.mts:76). Gives to Seafarer: Cairnwright 07:55:48Z, Weathervane 08:25:08Z, both rule errand:toward-goal (ruleOf sim.ts:5618). \"Seafarer showed Brindle how it is done\" 05:01:26Z with Seafarer at 92.5,120.5 on rest:laid-up-hurt and Brindle at 91.0,114.0 ending a filed chop: 6.67 tiles; teachAt sim.ts:3895, dist < 15 (sim.ts:3916). After: eat 09:04 filed, give Brindle 2 food 09:25:33Z filed, repair 10:03:32Z filed; Cairnwright filed repair: wreck seaworthy 10:55:44Z; Seafarer \"put the boat back in order\" 11:05:16Z.",
+  "line": "Giving food needs no vote. Sitting with somebody does.",
+  "footline": "Mitchell wrote his seclusion down. The shore got its own by never voting.",
+  "voice": "both"
  }
 ]

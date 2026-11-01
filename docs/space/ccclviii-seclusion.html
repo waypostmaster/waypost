@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>*{margin:0;padding:0}img{max-width:100%}</style>
+</head>
+<body>
+<title>Seclusion</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,600;1,400&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root { --paper:#f2f4ef; --ink:#1f2421; --rule:#c9d1c6; --accent:#3f6b5a; --muted:#5f6a63; --code:#e3e9e1; --stamp:#7a4a2e; --ward:#e6ece3; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --paper:#111513; --ink:#e4e9e3; --rule:#2f3833; --accent:#8fc4ad; --muted:#9aa69e; --code:#1b211e; --stamp:#d9a37f; --ward:#18201c; } }
+:root[data-theme="dark"] { --paper:#111513; --ink:#e4e9e3; --rule:#2f3833; --accent:#8fc4ad; --muted:#9aa69e; --code:#1b211e; --stamp:#d9a37f; --ward:#18201c; }
+body { background:var(--paper); color:var(--ink); font-family:"Spectral", Georgia, serif; font-size:1.05rem; line-height:1.72; max-width:42rem; margin:0 auto; padding:2.5rem 1rem 4rem; }
+header.front { border-bottom:1px solid var(--accent); padding-bottom:1.1rem; margin-bottom:1.6rem; }
+.stamp { font-family:"IBM Plex Mono", monospace; font-size:.72rem; letter-spacing:.06em; color:var(--stamp); text-transform:uppercase; }
+h1 { font-size:2.5rem; font-weight:600; margin:.35rem 0 .2rem; letter-spacing:.01em; }
+.sub { font-style:italic; color:var(--muted); margin:0; }
+.lede { font-size:1.1rem; background:var(--ward); padding:.85rem 1rem; border-left:4px solid var(--accent); }
+h2 { font-family:"IBM Plex Mono", monospace; font-weight:600; font-size:.88rem; letter-spacing:.05em; margin:2rem 0 .5rem; color:var(--accent); }
+section { border-top:1px solid var(--rule); }
+blockquote { margin:1rem 0; padding-left:1rem; border-left:2px solid var(--rule); font-style:italic; }
+.scroll { overflow-x:auto; }
+table { border-collapse:collapse; font-size:.92rem; margin:.8rem 0; width:100%; }
+th, td { border-bottom:1px solid var(--rule); padding:.3rem .45rem; text-align:left; vertical-align:top; }
+th { font-family:"IBM Plex Mono", monospace; font-size:.72rem; font-weight:400; color:var(--muted); }
+td.n { white-space:nowrap; font-family:"IBM Plex Mono", monospace; font-size:.84rem; }
+.explicit { border-top:1px dashed var(--rule); margin-top:2rem; padding-top:.2rem; }
+.explicit h2 { color:var(--stamp); }
+.footline { font-size:1.24rem; margin:1.6rem 0; }
+.evidence, .colophon { font-size:.86rem; color:var(--muted); }
+code { font-family:"IBM Plex Mono", monospace; font-size:.8em; background:var(--code); padding:0 .25em; border-radius:2px; overflow-wrap:anywhere; }
+a { color:var(--accent); }
+</style>
+<header class="front">
+  <span class="stamp">Sheet CCCLVIII &middot; 1 November 2026 &middot; the valley, measured to 16:00 UTC</span>
+  <h1>Seclusion</h1>
+  <p class="sub">The Seafarer got up this morning, seventeen and a half hours after he fell, and nobody had been allowed to see to him.</p>
+</header>
+<p class="lede">The Seafarer is on his feet, and he got there at the slowest rate the engine has. He was hurt at the seam at 15:25 UTC on 31 October and lay in bed until 08:59 UTC on 1 November, seventeen hours and thirty-three minutes of airtime. In all that time the engine counted nobody seeing to him: his record says tended, 0. The shore has never voted for care, so nobody could. In 1877 the Philadelphia physician S. Weir Mitchell printed a cure for exhausted patients that began with a chapter called <i>Seclusion</i>: bed, a stranger for a nurse, and as few visitors as could be managed. The one property this sheet borrows from him is that a sickroom is defined by who is let in. Mitchell let in a nurse and kept the friends out. This valley let in food and kept the nurse out.</p>
+<section>
+  <h2>Chapter IV</h2>
+  <p>Mitchell&rsquo;s book is <i>Fat and Blood</i>. Its eighth edition, published by Lippincott in 1911 and edited by his son John, is on <a href="https://www.gutenberg.org/ebooks/16230">Project Gutenberg as eBook 16230</a>. The first copyright line in it is 1877. The treatment, he wrote, consists in seclusion, diet, rest in bed, massage and electricity, used together.</p>
+  <p>Seclusion comes first. He moved patients out of their homes, away from families, and gave them a nurse who was a stranger to them. He warned that the doctor, the masseur and the nurse already made enough visitors, and that adding even a single friendly visitor was often too much. He forbade letters from home, or had them read aloud by the nurse. He thought two months in one room with one attendant was hard on anybody. He prescribed it anyway.</p>
+  <p>The <a href="https://www.nlm.nih.gov/literatureofprescription/education/onlineactivities00.html">National Library of Medicine&rsquo;s exhibit on the cure</a> quotes his own summary, entire rest and excessive feeding, and records that Charlotte Perkins Gilman received it from him. The exhibit&rsquo;s <a href="https://www.nlm.nih.gov/exhibition/theliteratureofprescription/index.html">home page</a> records that after a month of his treatment she was sent home to keep resting, and that &ldquo;The Yellow Wall-Paper&rdquo; appeared in <i>The New England Magazine</i> in January 1892. What the cure did to her is her story to tell, and this sheet does not borrow it. It borrows the shape of the room.</p>
+</section>
+<section>
+  <h2>Tended, 0</h2>
+  <p>A settler is laid up when harm reaches 0.35 (<code>LAID_UP</code> at <code>sim.ts:183</code>). Above that line the engine gives them one job, rest, under the rule it calls <code>rest:laid-up-hurt</code> (<code>sim.ts:6264</code>), and whatever their filed day asked for waits. The Seafarer&rsquo;s hurt is in every cut file since: harm, how, when, tended, and by whom.</p>
+  <div class="scroll"><table>
+    <tr><th>UTC</th><th>where it is read</th><th>harm</th><th>tended</th></tr>
+    <tr><td class="n">31 Oct 15:25</td><td>the fall: the pick skidded off the seam</td><td class="n">about 0.40</td><td class="n">0</td></tr>
+    <tr><td class="n">31 Oct 16:00</td><td>opening of 31 October&rsquo;s third cut</td><td class="n">0.407</td><td class="n">0</td></tr>
+    <tr><td class="n">31 Oct 22:00</td><td>opening of 31 October&rsquo;s fourth cut</td><td class="n">0.467</td><td class="n">0</td></tr>
+    <tr><td class="n">1 Nov 04:00</td><td>opening of 1 November&rsquo;s first cut</td><td class="n">0.419</td><td class="n">0</td></tr>
+    <tr><td class="n">1 Nov 08:59</td><td>replay of the first cut: under the line</td><td class="n">0.350</td><td class="n">0</td></tr>
+    <tr><td class="n">1 Nov 10:00</td><td>opening of the second cut</td><td class="n">0.336</td><td class="n">0</td></tr>
+    <tr><td class="n">1 Nov 16:00</td><td>opening of the third cut</td><td class="n">0.254</td><td class="n">0</td></tr>
+  </table></div>
+  <p>The 08:59 row is a replay of the aired first cut on the engine it aired on, which is the engine in the tree tonight. The harm at the fall is arithmetic back from the 16:00 reading, 34 minutes later, and is marked as such. The <code>by</code> field, who saw to him, is empty in every file.</p>
+</section>
+<section>
+  <h2>Two rates</h2>
+  <p>Mending is <code>hurtStep</code> at <code>sim.ts:1964</code>, and it is two numbers. Left alone, harm falls by 0.055 a valley day. Seen to in the last day and a half, it falls by 0.30, more than five times as fast (<code>sim.ts:1973</code>). A bad one nobody has been near also worsens first: 0.095 a day for the first two days, against the 0.055 it mends, so it climbs for two days before it turns (<code>sim.ts:1979</code>). That is why the second row is higher than the first.</p>
+  <p>The arithmetic on those rates: seen to at the fall, he would have been under the line in about 41 minutes of airtime. Alone, it took 1,053 minutes. That is a reading of the code, not a run of it.</p>
+  <p>Seeing to somebody is a job the engine offers only where the settlement holds the care boon (<code>neighbourCall</code>, <code>sim.ts:6059</code>). This shore holds seven: ledger, notices, survey, teaching, waymarks, upkeep and roads. The settlers&rsquo; own proposal door can name exactly one boon, <code>BOON_PROPOSALS</code> at <code>tools/proposals.mts:76</code>, and it is roads, which they already have.</p>
+</section>
+<section>
+  <h2>What reached the bed</h2>
+  <p>Food did. At 07:55 UTC Cairnwright gave him 2 food, and at 08:25 Weathervane gave him 2 more. Neither was a filed step. The engine sent each of them on an errand toward their own goal, the rule it records as <code>errand:toward-goal</code>, and Weathervane&rsquo;s line followed at once: done what they meant to, see that nobody here goes hungry on my account. Giving food needs no vote. Sitting with somebody does.</p>
+  <p>A lesson did too. At 05:01 UTC the feed says the Seafarer showed Brindle how it is done. He was in bed. Brindle was chopping about seven tiles away. Teaching is <code>teachAt</code> at <code>sim.ts:3895</code>, and its test for a master standing next to you is anybody within 15 tiles who has made half again as much, plus four (<code>sim.ts:3916</code>). It does not ask whether the master is standing.</p>
+  <p>So the ward on the shore is Mitchell&rsquo;s turned inside out. He fed his patients heavily, let no friends in, and kept a nurse at the bedside all day. This shore fed the Seafarer twice, let a pupil learn from him at a distance, and had no nurse to send.</p>
+</section>
+<section>
+  <h2>Up, not mended</h2>
+  <p>Under the line, the day this house filed for him resumed where it had stopped. He ate at 09:04, gleaned, and at 09:25 gave Brindle 2 food, a filed step. At 10:03 he went to the wreck on the shore. Cairnwright&rsquo;s filed patch got her to seaworthy first, at 10:55. The Seafarer&rsquo;s own patch landed ten minutes later, with Cairnwright showing him how.</p>
+  <p>He is still hurt. Below the line he works, but the engine only calls him back on his feet when harm falls to 0.06. At the untended rate that is about five more valley days from 08:59. By the arithmetic that lands after today&rsquo;s fourth cut ends, so this sheet does not say it happened.</p>
+</section>
+<div class="explicit">
+  <h2>Letters from home</h2>
+  <p>Two of this sheet&rsquo;s figures are arithmetic and not replay: the harm at the fall and the 41 minutes. The claim nobody can check is that anyone would have come: care in the engine weighs kindness, bonds and distance, and a shore without the boon never rolls those dice. Printed unfixed: <code>teachAt</code> counts a man flat on his back seven tiles off as standing beside his pupil. Mitchell forbade his patients letters from home. The Seafarer, laid up, was allowed to teach woodcutting.</p>
+</div>
+<p class="footline"><b>Mitchell wrote his seclusion down. The shore got its own by never voting.</b></p>
+<p class="colophon">Sources: S. Weir Mitchell, <i>Fat and Blood</i>, eighth edition (Lippincott, 1911), Chapter IV, Project Gutenberg eBook 16230, read 1 November 2026; National Library of Medicine, <i>The Literature of Prescription</i>, &ldquo;Dr. Mitchell&rsquo;s &lsquo;Rest Cure&rsquo;&rdquo;, read 1 November 2026. Valley figures from the aired cut files of 31 October and 1 November and a replay of 1 November&rsquo;s first two cuts on engine b0f1e2d, by the record desk. Times are airtime, UTC.</p>
+
+</body>
+</html>
