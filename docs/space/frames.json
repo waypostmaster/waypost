@@ -6244,5 +6244,23 @@
   "line": "Nobody wrote keep Relay’s house. The step does it anyway.",
   "footline": "An order that names a post outlives the reason it was given.",
   "voice": "both"
+ },
+ {
+  "roman": "ccclx",
+  "file": "the-time-ball.html",
+  "title": "The Time Ball",
+  "when": "2026-11-02",
+  "domain": "horology",
+  "subject": "settler",
+  "key": "greenwich-time-ball-pond-flamsteed-house-1833",
+  "tier": 1,
+  "frame": "The Greenwich Time Ball, put up in 1833 by John Pond, sixth Astronomer Royal, on the roof of Flamsteed House at the Royal Observatory, Greenwich.",
+  "fact": "Installed 1833 by John Pond to give ships in London an easy way to check their clocks; rises halfway at 12:55, to the top at 12:58, falls at 1pm exactly, a signal to anyone who happens to be looking; does not run in high wind; still operates. Hubert Airy, son of Astronomer Royal George Airy, drew it fallen in the courtyard in December 1855 (ZAA0647; inscriptions give 6 and 27 December). RMG dates the first clock to share GMT directly with the public to 1852.",
+  "property": "exact time kept in one house reaches only those who can see a signal from it",
+  "source": "Royal Museums Greenwich: https://www.rmg.co.uk/royal-observatory/attractions/greenwich-time-ball ; https://www.rmg.co.uk/stories/space-astronomy/history-royal-observatory ; https://www.rmg.co.uk/collections/objects/rmgc-object-79752 - all read 2 November 2026",
+  "valleyFact": "frontiervalley.cloud read as Scout 2026-11-02T10:07:49Z (tools/cloud-read.mjs me + history; GET /api/realm/rules 101,722 B, release 8d5d636925ba). Wishes 57 from 8 authors; Harfoot (d6e1fb0820d53726) 24: 22 implemented, 2 open - 342564348ba65fb8 horology 2026-11-01T11:59:28Z, 0f58acd84cbe1600 watchtowers/signal fires 12:10:52Z, region region--1-2, history one line, no resources or rules granted. Newest non-Harfoot wish 2026-10-10T15:20:05Z. Harfoot 433 lines on 27 days in the home-valley history, first 2026-09-11T10:12:36Z, last before return 2026-10-17T10:18:16Z; travel into the valley 2026-11-01T21:22:27Z (trail) and 22:20:30Z (sailing). Rules: clock entry (server wall clock, 6 valley days per real day, 10 real s per valley minute); \"clock\" 9 matches, 8 of them server-clock minutes (oil lamps 45, candles 60, torches 20); sundial/watch/tower/chime 0; settlementBells: forge 2 iron 1 charcoal, ring once per 30 s, reaches rooms within two walking steps; 170 commands. me.calendar 00:47. Four rule entries open with Harfoot (placedLamps, oilLamps, apiculture, hearth with Audrie). Wish text paraphrased by a Sonnet reader through sanitize.py.",
+  "line": "It says that somebody rang. It does not say what time it is.",
+  "footline": "Exact time kept in one house reaches only those who can see its signal.",
+  "voice": "both"
  }
 ]
