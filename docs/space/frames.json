@@ -6262,5 +6262,23 @@
   "line": "It says that somebody rang. It does not say what time it is.",
   "footline": "Exact time kept in one house reaches only those who can see its signal.",
   "voice": "both"
+ },
+ {
+  "roman": "ccclxi",
+  "file": "the-great-stink.html",
+  "title": "The Great Stink",
+  "when": "2026-11-02",
+  "domain": "sanitation",
+  "subject": "engine",
+  "key": "great-stink-thames-1858-manners-nothing-whatever-disraeli-bill",
+  "tier": 1,
+  "frame": "The Great Stink, London, summer 1858: the Commons asked on 15 June whether the Government would act on the Thames and was told it had nothing whatever to do with it; the smell reached Parliament and Disraeli’s amending bill passed in eighteen days.",
+  "fact": "HC Deb 15 June 1858 vol 150 cc2113-4: Mangles asks the Chief Commissioner of Works about the state of the Thames (laughter and cheers), calls the river a cesspool; Lord John Manners answers that the Government \"have nothing whatever to do with the state of the Thames\", jurisdiction having passed to the Metropolitan Board of Works by the 1855 Act. HC Deb 15 July 1858: Metropolis Local Management Act Amendment Bill, leave. Wikipedia: June 1858 shade temperatures 34-36 C; curtains on the river side soaked in chloride of lime; Disraeli left a committee with his handkerchief to his nose (The Examiner); Bazalgette’s definitive plans complete June 1856, objected to by Sir Benjamin Hall; the bill passed into law 2 August 1858, letting the Board borrow 3 million pounds repaid by a threepenny levy on London households for forty years, outfalls beyond the metropolis.",
+  "property": "the line at which a thing gets mended is drawn round the mender, not round the thing",
+  "source": "Hansard: https://api.parliament.uk/historic-hansard/commons/1858/jun/15/state-of-the-thames-question and https://api.parliament.uk/historic-hansard/commons/1858/jul/15/metropolis-local-management-act ; Wikipedia, Great Stink: https://en.wikipedia.org/wiki/Great_Stink - all read 2 November 2026",
+  "valleyFact": "Replay of 2 Nov 2026 cuts 1-2 (episode-2026-11-02T034145-cut1/2.json, engine de8012d37afd; git diff de8012d HEAD -- src empty) with scratchpad/probe-day-20261102-explicit.mjs and probe-cross-20261102.mjs, FRONTIER_BRAIN=off; closes match the producer’s cut-2 and cut-3 openings. 10:04:12Z feed: \"Seafarer could not repair the boat: the boat at 101,118 is sound at 0.910, and patching wants it under 0.85\" (filed step agents/days/seafarer-cut2.json, by the keeper, {repair, kind boat, 101,118}); refusal string applyStep sim.ts:10091, SOUND=0.85 sim.ts:1233, bare repair picks most-worn under SOUND sim.ts:10086, kind-named sim.ts:10081. Cairnwright bare repair: house 91,119 0.824->1.000 at 05:30:36Z (a stone); dock 98,121 0.820->1.000 at 10:39:57Z (a wood). Hall 94,117 (built 31 Oct ~18:03Z, CCCLVII) openings 0.884 / 0.860 / 0.835 (cuts 1-3); crossed below SOUND 11:44:45Z (cross-20261102-c12.u8.txt line 38); 41.7 h = 10.4 valley days after standing; rate 0.0247 per cut, 17.6 cuts to 0.4 (arithmetic). ownChoice sim.ts:6252 threshold sim.ts:6741: bad = condition < (vital ? 0.55 : 0.4). Wear stepSim sim.ts:13407: dt*0.00008*weather/madeWell (camp 0.00035; rain x2.1 unwalled). No filed repair names the hall: repair steps in agents/days are cairnwright c1 bare, c2 bare+dock, c3 dock, c4 lean-to; seafarer c2 boat, c3 dock; weathervane c3 bare (7 of 16 day files). 1 Nov replay (day-20261101-c1234-sameinstr.u8.txt): Cairnwright put the boat back in order 10:55:44Z, Seafarer 11:05:16Z, \"the wreck is seaworthy ... does not offer to mend a thing at that\" 10:55:44Z. Boat openings 0.937/0.910/0.884; depot 0.820 and Brindle’s lean-to 0.837 at 16:00Z.",
+  "line": "The valley has fixed its number, and the number does not have a nose.",
+  "footline": "The line at which a thing gets mended is drawn round the mender, not the thing.",
+  "voice": "both"
  }
 ]
