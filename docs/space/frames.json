@@ -6226,5 +6226,23 @@
   "line": "Giving food needs no vote. Sitting with somebody does.",
   "footline": "Mitchell wrote his seclusion down. The shore got its own by never voting.",
   "voice": "both"
+ },
+ {
+  "roman": "ccclix",
+  "file": "the-summer-garden.html",
+  "title": "The Summer Garden",
+  "when": "2026-11-02",
+  "domain": "military",
+  "subject": "settler",
+  "key": "bismarck-summer-garden-sentry-catherine-snowdrop-1859",
+  "tier": 1,
+  "frame": "Otto, Prince von Bismarck, Bismarck, the Man and the Statesman (1898, tr. under A. J. Butler), vol. I, ch. X \"St. Petersburg\", pp. 249-250: the sentry on the grass plot in the Summer Garden, 1859.",
+  "fact": "Spring 1859, the court promenading in the Summer Garden between Paul's Palace and the Neva; the Emperor saw a sentry in the middle of a grass plot; asked why, the soldier answered \"Those are my orders\"; the guard-room could say only that a sentry had to stand there winter and summer; the source of the original order could not be discovered. An old pensioner said his father had told him the post guarded a flower: the Empress Catherine had noticed a snowdrop in bloom unusually early and ordered it not plucked; a sentry was posted and one had stood there all the year round since. Bismarck reads it as Russian persistence and adds the sentinels drowned in the 1825 flood and frozen in the Shipka Pass in 1877; neither is borrowed.",
+  "property": "an order that names a post, not a reason, outlives the reason",
+  "source": "Bismarck, the Man and the Statesman, vol. I (1898), ch. X, pp. 249-250, Internet Archive scan bismarckmanstate01bism - https://archive.org/details/bismarckmanstate01bism - full text read 2 November 2026",
+  "valleyFact": "Relay (npc-09) wentHome t=21250.8 = 19 Sep cut 3 (opens 21000 at 16:00Z) + 250.8 sim-s = ~21:00:58Z; npc-06 Relay wentHome t=20339.4 = ~02:47Z 19 Sep; npc-09 seated at 19 Sep cut 2 opening. Claim 95,114 builtBy Relay, workedBy \"\", sleepers [] at all 173 aired openings 20 Sep cut 1 .. 2 Nov cut 1 (aired.json, last entry per day+cut, aired_at <= now; scratchpad/kept-20261102.mjs). Condition rises between openings: Relay claim 23 (cut4 12, cut3 5, cut1 4, cut2 2), dock 23, Brindle claim 22 (cut1 10, cut3 6, cut4 6), boat 22, depot 21, houses Brindle 11, Weathervane 11, Cairnwright 10, hall 0; mean wear/cut 0.0252 on both claims. Relay claim 0.826 at 1 Nov cut 4 opening -> 0.977 at 2 Nov cut 1. Replay of aired 1 Nov cuts on b0f1e2d (src unchanged): 22:04:19Z \"Cairnwright put the claim back in order. It took a stone.\"; task atGx,atGy 95,114 atName lean-to [filed] (scratchpad/probe-repair-20261101-explicit.mjs). Step: agents/house-days/cairnwright-cut4.json plan[0] repair kind lean-to, notes \"Written 22 September 2026\". Kind resolution: filed repair case sim.ts:10031, worst-condition lean-to sim.ts:10081, refused if >= SOUND. Second instrument (zero-273): claim conditions across the same openings.",
+  "line": "Nobody wrote keep Relay’s house. The step does it anyway.",
+  "footline": "An order that names a post outlives the reason it was given.",
+  "voice": "both"
  }
 ]
