@@ -6298,5 +6298,23 @@
   "line": "Cairnwright is lying where a box would go.",
   "footline": "A hurt reaches help only along a wire laid before the hurt.",
   "voice": "both"
+ },
+ {
+  "roman": "ccclxiii",
+  "file": "the-j-curve.html",
+  "title": "The J-Curve",
+  "when": "2026-11-03",
+  "domain": "economics",
+  "subject": "settler",
+  "key": "magee-j-curve-currency-contracts-pass-through-bpea-1973",
+  "tier": 1,
+  "frame": "The J-curve of a trade balance after devaluation, as Stephen P. Magee set it out in \"Currency Contracts, Pass-Through, and Devaluation\", Brookings Papers on Economic Activity 1:1973.",
+  "fact": "Magee (University of Chicago and Brookings) examined the proposition that \"a trade balance must get worse after a devaluation before it can get better\", which \"implies the widely discussed 'J-curve'\", developed in light of the adverse short-run movements after the 1967 British and 1971 U.S. devaluations (p. 308); he quotes the Wall Street Journal, 18 December 1972, \"plotted in what economists call a J-curve, because the trade picture worsens before showing improvement\", and a British official recalling 1967, \"the change can come quite suddenly\" (p. 309). Contracts written before a devaluation come due on the old terms (the currency-contract period); of four contract cases the initial decline \"is inevitable only in case 4\" (p. 310); otherwise \"there is no logical necessity for a country's trade balance to deteriorate, any more than for it to improve or remain constant\" (p. 309); \"I-, L-, M-, N-, V-, and W-curves, plus their inversions\" (p. 322). Wikipedia: exports unchanged at first \"due in part to pre-existing trade contracts that have to be honored\".",
+  "property": "the dip is paid on terms agreed before the change, and whether there is a dip at all was settled then",
+  "source": "Stephen P. Magee, \"Currency Contracts, Pass-Through, and Devaluation\", Brookings Papers on Economic Activity 1:1973, pp. 303-325, Brookings scan https://www.brookings.edu/wp-content/uploads/1973/01/1973a_bpea_magee.pdf (article page https://www.brookings.edu/articles/currency-contracts-pass-through-and-devaluation/); Wikipedia, \"J curve\", https://en.wikipedia.org/wiki/J_curve - both read 3 November 2026",
+  "valleyFact": "Replay of 3 Nov 2026 cuts 1-2 (episode-2026-11-03T034157, engine a2aee87298dd; git diff a2aee87 -- src empty; cut files equal the mast by sha256) with scratchpad/probe-day-20261103b-explicit.mjs, probe-cross-20261103b.mjs (COMPARE ALL EQUAL against the cut-3 opening) and probe-harm-20261103.mjs, FRONTIER_BRAIN=off, feed collected per step with folds counted. Cairnwright: fall 00:58:15Z harm 0.8665 (2 Nov cut-4 replay, close equal to the 3 Nov opening); 0.8968 at 04:00Z; max 0.94652 at t 74648.55 (08:58:11Z), first lower step 74648.60 (08:58:15Z) = fall + 400 valley s (hurtStep sim.ts:1964; :1973 0.055/0.30 a day; :1978-1979 +0.095 a day unseen within two days, cap 0.95); 0.8499 at 16:00Z; tended 0. care gated in neighbourCall sim.ts:6046 at :6059; filed care refused :9849. Weathervane gave 2 food 07:21:10, 07:52:30, 15:16:15Z (errand:toward-goal). teachAt sim.ts:3895 (15 tiles :3916): Cairnwright showed Seafarer how it is done x5 cut 1, x1 cut 2. Boat 101,118 \"the wreck\" (:4926): refused 0.910 at 10:04:12Z 2 Nov, under SOUND (:1233) 22:32:02Z 2 Nov; 0.7922 at the 10:00Z opening; filed repair kind boat (agents/days/seafarer-cut2.json sha256 b45cbb378f071886 both days) begun 10:06:28Z, finishRepair :12206, seaworthy line :12332 at 11:05:34Z, one wood, 1.00; 0.9706 at 16:00Z. Hall 0.7742/0.7501/0.7184; ownChoice :6252, 0.4 at :6741. House 91,119 under 0.85 at 11:57:36Z. BOON_PROPOSALS tools/proposals.mts:83, decideProposals :175, drawer read episode.mts:1199 top-level only; agents/proposals empty but for two retired dirs at 15:45Z. Projection: under 0.35 at about 04:21Z 5 Nov, under 0.06 about 01:27Z 6 Nov, untended.",
+  "line": "Every bill in the eight hours was written before the fall.",
+  "footline": "The depth of the dip is written into the terms before anybody falls.",
+  "voice": "both"
  }
 ]
