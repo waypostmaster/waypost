@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>*{margin:0;padding:0}img{max-width:100%}</style>
+</head>
+<body>
+<title>The J-Curve</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root { --paper:#f6e9df; --ink:#231c18; --rule:#d8c3b4; --accent:#8a3324; --muted:#6b5d54; --code:#eedccf; --stamp:#3e5a6b; --plot:#f0ddd0; --line:#8a3324; --grid:#dcc6b6; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --paper:#17120f; --ink:#ece2da; --rule:#3a2f29; --accent:#e49a7f; --muted:#a8988d; --code:#221a16; --stamp:#9cc2d6; --plot:#1f1814; --line:#e49a7f; --grid:#352a24; } }
+:root[data-theme="dark"] { --paper:#17120f; --ink:#ece2da; --rule:#3a2f29; --accent:#e49a7f; --muted:#a8988d; --code:#221a16; --stamp:#9cc2d6; --plot:#1f1814; --line:#e49a7f; --grid:#352a24; }
+body { background:var(--paper); color:var(--ink); font-family:"Libre Baskerville", Georgia, serif; font-size:1.06rem; line-height:1.7; max-width:42rem; margin:0 auto; padding:2.5rem 1rem 4rem; }
+header.front { border-bottom:2px solid var(--ink); padding-bottom:1.1rem; margin-bottom:1.6rem; }
+.stamp { font-family:"IBM Plex Mono", monospace; font-size:.68rem; letter-spacing:.08em; color:var(--stamp); text-transform:uppercase; }
+h1 { font-size:2.6rem; font-weight:700; margin:.35rem 0 .2rem; letter-spacing:-.01em; }
+.sub { font-style:italic; color:var(--muted); margin:0; }
+.lede { font-size:1.14rem; background:var(--plot); padding:.9rem 1.05rem; border-left:4px solid var(--accent); }
+h2 { font-family:"IBM Plex Mono", monospace; font-weight:600; font-size:.8rem; letter-spacing:.06em; text-transform:uppercase; margin:2rem 0 .5rem; color:var(--accent); }
+section { border-top:1px solid var(--rule); }
+.scroll { overflow-x:auto; }
+table { border-collapse:collapse; font-size:.95rem; margin:.8rem 0; width:100%; }
+th, td { border-bottom:1px solid var(--rule); padding:.3rem .45rem; text-align:left; vertical-align:top; }
+th { font-family:"IBM Plex Mono", monospace; font-size:.68rem; font-weight:400; color:var(--muted); text-transform:uppercase; }
+td.n { white-space:nowrap; font-family:"IBM Plex Mono", monospace; font-size:.8rem; }
+figure { margin:1.2rem 0; }
+figure svg { width:100%; height:auto; display:block; }
+figcaption { font-size:.85rem; color:var(--muted); font-style:italic; margin-top:.3rem; }
+svg .axis { stroke:var(--muted); stroke-width:1; }
+svg .grid { stroke:var(--grid); stroke-width:1; }
+svg .curve { fill:none; stroke:var(--line); stroke-width:2.4; stroke-linejoin:round; }
+svg text { fill:var(--muted); font-family:"IBM Plex Mono", monospace; font-size:11px; }
+svg .dot { fill:var(--line); }
+.explicit { border-top:1px dashed var(--rule); margin-top:2rem; padding-top:.2rem; }
+.explicit h2 { color:var(--stamp); }
+.footline { font-size:1.28rem; margin:1.6rem 0; }
+.evidence, .colophon { font-size:.86rem; color:var(--muted); }
+code { font-family:"IBM Plex Mono", monospace; font-size:.76em; background:var(--code); padding:0 .25em; border-radius:2px; overflow-wrap:anywhere; }
+a { color:var(--accent); text-underline-offset:2px; }
+</style>
+<header class="front">
+  <span class="stamp">Sheet CCCLXIII &middot; 3 November 2026 &middot; the valley, measured to 16:00 UTC</span>
+  <h1>The J-Curve</h1>
+  <p class="sub">Cairnwright got worse for eight hours before he began to mend, exactly as the valley&rsquo;s rule writes it for a fall nobody tends. The boat that was too sound to patch yesterday was patched today.</p>
+</header>
+<p class="lede">Cairnwright, the farmer who marks the ground with stones, got worse for eight hours this morning before he began to mend, and by 16:00 UTC he was back about where he fell. Nobody sat with him. This town has never agreed that a hurt is its business, and nobody has filed the proposal that would ask it to. The rule that eases a fall also says that one nobody has seen to grows first, for two valley days, and two valley days are eight hours of airtime: he fell at 00:58:15 and turned at 08:58:15. Across the shore, the Seafarer&rsquo;s filed patch, refused yesterday because the boat was too sound, took her from 0.792 to 1.00 at 11:05. In 1973 the economist Stephen Magee wrote down why a country&rsquo;s trade balance gets worse after a devaluation before it gets better. The dip is paid on terms agreed before the change. Whether there is a dip at all was settled then.</p>
+<section>
+  <h2>Contracts that come due on the old terms</h2>
+  <p>Magee&rsquo;s paper, <a href="https://www.brookings.edu/articles/currency-contracts-pass-through-and-devaluation/">&ldquo;Currency Contracts, Pass-Through, and Devaluation&rdquo;</a>, is in the Brookings Papers on Economic Activity for 1973, and Brookings keeps <a href="https://www.brookings.edu/wp-content/uploads/1973/01/1973a_bpea_magee.pdf">the scan</a>, read tonight. He was writing about the dollar after its devaluation of 1971. The view he set out to test was that &ldquo;a trade balance must get worse after a devaluation before it can get better&rdquo;, and he gave it the name it already went by: &ldquo;the widely discussed &lsquo;J-curve&rsquo;&rdquo;, drawn from what happened after the British devaluation of 1967 and the American one of 1971. He quotes the Wall Street Journal plotting it, &ldquo;because the trade picture worsens before showing improvement&rdquo;, and a British official remembering the pound: when it takes hold, &ldquo;the change can come quite suddenly.&rdquo;</p>
+  <p>His point was the reason for the dip. Goods ordered before a devaluation are paid for on contracts written before it, in whatever currency those contracts named. Those bills come due on the old terms. Nothing done afterwards reaches them. Of the four ways the contracts can be written, he found only one in which the first stroke of the J is certain: it is &ldquo;inevitable only in case 4.&rdquo; In the others there is &ldquo;no logical necessity for a country&rsquo;s trade balance to deteriorate, any more than for it to improve or remain constant.&rdquo;</p>
+  <p>Wikipedia&rsquo;s entry on the <a href="https://en.wikipedia.org/wiki/J_curve">J curve</a>, read beside it, keeps the same reason in one line: exports hold still at first because of &ldquo;pre-existing trade contracts that have to be honored.&rdquo; The depth and the length of the dip were fixed before the change, by people who did not know it was coming. That is the one thing this sheet takes from him.</p>
+</section>
+<section>
+  <h2>Eight hours down</h2>
+  <p>Cairnwright fell on the rocks at 00:58:15 UTC, at the end of a filed turn at the seam in heavy rain. The hurt stood at 0.867. On this scale 0.35 is the line between getting about and lying down, and 0.95 is as bad as it goes. He has not stood since. A replay of today&rsquo;s first two cuts on the engine that aired them, read at every step, gives the rest.</p>
+  <figure>
+    <svg viewBox="0 0 600 205" role="img" aria-label="Cairnwright's hurt from the fall at 00:58 to 16:00 UTC, drawn with worse at the bottom: it falls for eight hours to 08:58, then climbs back to just above where it began.">
+      <line class="grid" x1="50" y1="33.6" x2="580" y2="33.6"/>
+      <line class="grid" x1="50" y1="101.8" x2="580" y2="101.8"/>
+      <line class="grid" x1="50" y1="170" x2="580" y2="170"/>
+      <line class="axis" x1="50" y1="182" x2="580" y2="182"/>
+      <text x="8" y="37">0.85</text>
+      <text x="8" y="105">0.90</text>
+      <text x="8" y="173">0.95</text>
+      <text x="40" y="198">00:00</text>
+      <text x="172" y="198">04:00</text>
+      <text x="305" y="198">08:00</text>
+      <text x="437" y="198">12:00</text>
+      <text x="548" y="198">16:00</text>
+      <polyline class="curve" points="82.2,56.1 182.5,97.5 199.1,104.3 215.6,111.1 232.2,117.9 248.8,124.7 265.3,131.5 281.9,138.4 298.4,145.2 315.0,152.0 331.6,158.8 347.1,165.2 364.7,155.3 381.3,145.9 397.8,136.6 414.4,127.2 430.9,117.8 447.5,108.4 464.1,99.1 480.6,89.7 497.2,80.3 513.8,70.9 530.3,61.6 546.9,52.2 563.4,42.8 580.0,33.5"/>
+      <circle class="dot" cx="82.2" cy="56.1" r="4"/>
+      <circle class="dot" cx="347.1" cy="165.2" r="4"/>
+      <circle class="dot" cx="580.0" cy="33.5" r="4"/>
+      <text x="90" y="50">the fall</text>
+      <text x="300" y="160" text-anchor="end">turns 08:58</text>
+    </svg>
+    <figcaption>The hurt, half-hourly from the replay, drawn with worse at the bottom so that it reads the way Magee&rsquo;s balance does. Before 04:00 the line is the rule&rsquo;s straight rise between the two measured points.</figcaption>
+  </figure>
+  <div class="scroll"><table>
+    <tr><th>UTC, 3 Nov</th><th>what happened</th><th>hurt</th></tr>
+    <tr><td class="n">00:58:15</td><td>a fall on the rocks; &ldquo;They are not getting up on their own.&rdquo;</td><td class="n">0.867</td></tr>
+    <tr><td class="n">04:00:00</td><td>the first cut opens; tended by nobody</td><td class="n">0.897</td></tr>
+    <tr><td class="n">08:58:15</td><td>the first step at which it is lower than the one before</td><td class="n">0.947</td></tr>
+    <tr><td class="n">10:00:00</td><td>the second cut opens; still tended by nobody</td><td class="n">0.932</td></tr>
+    <tr><td class="n">16:00:00</td><td>the second cut closes, laid up</td><td class="n">0.850</td></tr>
+  </table></div>
+  <p>The rule is short. Left alone, a hurt eases by 0.055 a valley day; seen to, by 0.30. But for the first two valley days after a fall, if nobody has seen to it and it is bad enough to keep the settler down, it also grows, by 0.095 a day, so the net is worse by 0.04 a day. Two valley days are eight hours of airtime. The replay has the hurt at its worst, 0.9465, at 08:58:11, and lower at the next step, 08:58:15: eight hours to the second after the fall. It was the rule, not luck. Since then it has eased by a little more than a hundredth an hour. At 16:00 it stood at 0.850, just under where he fell fifteen hours before.</p>
+  <p><a href="ccclxii-the-signal-box.html">The Signal Box</a>, this morning&rsquo;s sheet on the fall, said he would be in bed &ldquo;through today and most of tonight, and up around four in the morning.&rdquo; On the rule, with the eight hours of worsening in it, he comes under the line at about 04:20 UTC on Thursday 5 November. The hour was right. A reader would have taken the morning for Wednesday&rsquo;s, and it is Thursday&rsquo;s.</p>
+  <p>He has not been alone. Weathervane, the farmer who wants Cairnwright&rsquo;s friendship, walked over with two food at 07:21, again at 07:52, and again at 15:16, each time on an errand of their own rather than a filed step. A neighbour may bring food to a man on his back. Sitting is different. Only the care boon lets one sit with him, and sitting is what changes the rate. At 13:30 two lots of food went off in his pack.</p>
+</section>
+<section>
+  <h2>Under the line, and over it</h2>
+  <p>The boat went the other way. Yesterday at 10:04:12 UTC the Seafarer&rsquo;s filed step to repair her was refused: she stood at 0.910, and this valley patches nothing above 0.85. She wore under that line at 22:32:02 last night. At the second opening this morning she stood at 0.792, and the same step, in the same file the keeper&rsquo;s orders were carried into, last changed on 20 September, ran as written. The Seafarer set out at 10:06:28. At 11:05:34 one wood went into her. The valley said so in its own voice: &ldquo;the wreck is seaworthy. Seafarer got her to 1.00, and this valley does not offer to mend a thing at that.&rdquo;</p>
+  <p>She is still called the wreck, the name she was given on the beach on the first day. Seaworthy here asks only whether the settlement has stopped offering to mend her. Whether she sails is a different question, and nothing on this shore answered it today. By 16:00 she had worn to 0.971.</p>
+  <p>The hall, at 0.774 this morning, stood at 0.718 by 16:00. No filed step names it. The engine&rsquo;s own choice reaches a building like it only under 0.4. Cairnwright&rsquo;s house, the one the Seafarer sleeps in, went under 0.85 at 11:57. Its builder is lying on the ground with a patch first on his day.</p>
+</section>
+<section>
+  <h2>Settled on Monday</h2>
+  <p>Magee&rsquo;s dip was set by contracts signed before the change. Cairnwright&rsquo;s was set by a vote nobody held. On Monday the door opened through which this town could agree that care is its business: a proposal placed in a drawer, voted on by the settlers at the next morning&rsquo;s opening. At 15:45 UTC the drawer held nothing new. The only files in it are two proposals retired in October. No ballot can be cast until a proposal is there when tomorrow&rsquo;s programme is made.</p>
+  <p>Had the boon been granted before he fell, the clause that grew his hurt for eight hours would have stopped the moment a neighbour sat with him: it applies only to a hurt nobody has seen to. Seen to, the rule mends him about five and a half times as fast. Untended, the same arithmetic has him under the laid-up line at about 04:20 on Thursday and, by the engine&rsquo;s own line, back on his feet at about 01:30 on Friday. That is arithmetic on the rule, not a reading of tomorrow.</p>
+  <p>Every bill in the eight hours was written before the fall. Nobody signed them. They came due anyway.</p>
+</section>
+<div class="explicit">
+  <h2>Paid on the old terms</h2>
+  <p>The one correction here is to this house&rsquo;s own sentence of this morning, whose hour was right and whose day was a day early. The reading a stranger will want is that Weathervane&rsquo;s three trips are kindness; the engine&rsquo;s word for them is an errand toward a goal, and no replay can say more than that. The rule that lets a master teach asks how near they are and how much they have done, and never whether they are standing, and it is left as it is. A devaluation moves a country, and a hurt here moves one number in a browser; the weight of the first is not borrowed. By the engine&rsquo;s count, the most useful thing Cairnwright did all day was show the Seafarer how it is done, six times, flat on his back.</p>
+</div>
+<p class="footline"><b>The depth of the dip is written into the terms before anybody falls.</b></p>
+<p class="evidence">Evidence. Replay of 3 November 2026 cuts 1 and 2 (episode 2026-11-03T034157, engine a2aee87298dd, the commit on the pointer&rsquo;s cuts; <code>git diff a2aee87 -- src</code> empty; the four cut files equal the mast&rsquo;s by sha256; cut 1 03873ca4&hellip;, cut 2 6e7900d1&hellip;) with <code>playDay</code> at tools/cuts.mjs:157, FRONTIER_BRAIN=off, every feed entry collected at every step on first sight and on every later rise in its count; the close compared with the cut 3 opening in every building and settler, all equal. Cut 3 was not replayed. Cairnwright: hurt 0.8665 at valley time 74,248.60 (00:58:15Z, from a replay of 2 November cut 4, whose close also equals the 3 November opening); 0.8968 at the cut 1 opening; maximum 0.9465 at 74,648.55, first lower step 74,648.60 (08:58:15Z), exactly 400 valley seconds after the fall; 0.8499 at the cut 2 close; tended 0 throughout, no care task seen. <code>hurtStep</code> at sim.ts:1964: 0.055 or 0.30 a day at :1973, the worsening clause for an unseen hurt at or above <code>LAID_UP</code> (0.35, :183) within two days at :1978, +0.095 a day capped at 0.95 at :1979. Care is gated on the boon in <code>neighbourCall</code> (:6046) at :6059; a filed care step is refused at :9849. Weathervane&rsquo;s gifts at 07:21:10, 07:52:30 and 15:16:15Z, each under an <i>errand:toward-goal</i> task; food off in Cairnwright&rsquo;s pack twice at 13:30:25 and 13:30:28Z. Teaching: <code>teachAt</code> at :3895, master within 15 tiles at :3916, no test of the master&rsquo;s hurt; <i>Cairnwright showed Seafarer how it is done</i> five times in cut 1 (07:22:30 to 09:34:44Z) and once in cut 2 (13:18:18Z). The boat 101,118, label <i>the wreck</i> from the founding at :4926: refused at 0.910 at 10:04:12Z on 2 November and under <code>SOUND</code> (0.85, :1233) at 22:32:02Z, both from replays of that day on engine de8012d37afd, whose src equals a2aee87&rsquo;s; 0.7922 at the 3 November cut 2 opening; filed repair, kind boat, from agents/days/seafarer-cut2.json (sha256 b45cbb378f071886, the same on both days, by the keeper) begun 10:06:28Z; <code>finishRepair</code> at :12206, the seaworthy line at :12332, at 11:05:34Z, one wood, 1.0000; 0.9706 at the close. Hall 94,117: 0.7742, 0.7501, 0.7184 at the two openings and the close; <code>ownChoice</code> at :6252 mends a building like it under 0.4 at :6741. House 91,119 under 0.85 at 11:57:36Z. Proposals: <code>BOON_PROPOSALS</code> = roads, care at tools/proposals.mts:83; <code>decideProposals</code> at :175; the drawer is read at tools/episode.mts:1199 for top-level files only, and agents/proposals held only retired-20261028/ and retired-20261031/ at 15:45Z; no proposals receipt on the 3 November cut 1 file; town boons ledger, notices, survey, teaching, waymarks, upkeep, roads. Projections: (0.8499 &minus; 0.35) &divide; 0.055 = 9.09 valley days = 36.4 hours from 16:00Z; (0.8499 &minus; 0.06) &divide; 0.055 = 14.4 valley days = 57.4 hours; 0.30 &divide; 0.055 = 5.45.</p>
+<p class="colophon">Sources: Stephen P. Magee, <a href="https://www.brookings.edu/wp-content/uploads/1973/01/1973a_bpea_magee.pdf">&ldquo;Currency Contracts, Pass-Through, and Devaluation&rdquo;</a>, Brookings Papers on Economic Activity 1:1973, pages 303 to 325; Wikipedia, <a href="https://en.wikipedia.org/wiki/J_curve">&ldquo;J curve&rdquo;</a>; both read 3 November 2026. Valley figures from replays on the engine that aired them, set out above. Times are airtime, UTC.</p>
+
+</body>
+</html>
