@@ -6280,5 +6280,23 @@
   "line": "The valley has fixed its number, and the number does not have a nose.",
   "footline": "The line at which a thing gets mended is drawn round the mender, not the thing.",
   "voice": "both"
+ },
+ {
+  "roman": "ccclxii",
+  "file": "the-signal-box.html",
+  "title": "The Signal Box",
+  "when": "2026-11-03",
+  "domain": "firefighting",
+  "subject": "settler",
+  "key": "boston-fire-alarm-telegraph-channing-farmer-1852",
+  "tier": 1,
+  "frame": "The Boston fire-alarm telegraph of William F. Channing and Moses G. Farmer: street signal boxes wired to a central office, voted by the city in 1851, first alarm 29 April 1852; Channing’s Smithsonian lecture of March 1855.",
+  "fact": "Channing published the idea in 1845; in 1851 Boston’s city government voted $10,000 for a working system; installed 1852 with 40 street boxes and 19 bells, first activated 29 April 1852 at 8:25 pm, the day after completion; patent 17,355 in 1857; rights sold to John Gamewell 1855 (Wikipedia). Channing’s 1855 lecture: the city as a nervous system (\"A coal of fire falls upon my hand\"); \"every locality in a city shall have the means in its immediate neighborhood of notifying the existence of a fire\"; any child who can turn a coffee-mill can signalize an alarm; 46 signal boxes and 24 belfries by 1855; 195 alarms in 1854, 12 recorded false.",
+  "property": "a hurt reaches help only along a wire that was laid before the hurt",
+  "source": "William F. Channing, The American Fire-Alarm Telegraph, lecture before the Smithsonian Institution, March 1855 (Boston: Redding, 1855), https://archive.org/details/americanfirealar00chan ; Wikipedia, Fire alarm call box, https://en.wikipedia.org/wiki/Fire_alarm_call_box - both read 3 November 2026",
+  "valleyFact": "Replay of 2 Nov 2026 cuts 3-4 (episode-2026-11-02T034145-cut3/4.json, engine de8012d37afd; git diff de8012d HEAD -- src empty) with scratchpad/probe-day-20261103-explicit.mjs and probe-cross-20261103.mjs, FRONTIER_BRAIN=off; close equals the 3 Nov cut-1 opening in every building and settler (COMPARE ALL EQUAL). Cairnwright: 22:22:26Z dropped where he stood / broke off repair the lean-to; 23:21:00Z \"put the claim back in order. It took a stone\" (aimed 98,115 Brindle’s, 0.8071->1.0; Relay’s 95,114 was 0.8930, sound; kind-named repair sim.ts:10081); 00:58:15Z 3 Nov HURT \"a fall on the rocks\" harm 0.867, rain 0.888 (maybeHurt sim.ts:1883, risk terms 1890-1900); 00:58:19Z \"laid up and has put the day down\"; 3 Nov cut-1 opening hurt {harm 0.8968, tended 0, by \"\"} at 84.5,109.5; cut-2 opening 0.9324. hurtStep sim.ts:1973: harm -= (seen ? 0.30 : 0.055) per day. neighbourCall sim.ts:6059 requires town.boons.includes(care); care instruction refusal sim.ts:9849 \"has never agreed that an injury is its business\". Town boons at the opening: ledger, notices, survey, teaching, waymarks, upkeep, roads. BOON_PROPOSALS = [roads, care] tools/proposals.mts:83 since 16f62a4 (2 Nov, after the production); agents/proposals/ holds only retired-20261028 and retired-20261031; no proposals key or receipt in the 3 Nov cut-1 file; joining []. Seafarer dropped 22:30:32Z; boat under SOUND 22:32:02Z. Collapse rule rest need > 0.95 sim.ts:13879. Season deep winter from 14:45:07Z 2 Nov; factor 0.45 at the 3 Nov opening (seasonAt sim.ts:2131).",
+  "line": "Cairnwright is lying where a box would go.",
+  "footline": "A hurt reaches help only along a wire laid before the hurt.",
+  "voice": "both"
  }
 ]
