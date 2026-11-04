@@ -6316,5 +6316,23 @@
   "line": "Every bill in the eight hours was written before the fall.",
   "footline": "The depth of the dip is written into the terms before anybody falls.",
   "voice": "both"
+ },
+ {
+  "roman": "ccclxiv",
+  "file": "a-scarce-and-curious-book.html",
+  "title": "A Scarce and Curious Book",
+  "when": "2026-11-04",
+  "domain": "psychology",
+  "subject": "settler",
+  "key": "franklin-autobiography-rival-legislator-scarce-curious-book-old-maxim",
+  "tier": 1,
+  "frame": "Benjamin Franklin's account, in chapter X of his Autobiography, of the new member of the Pennsylvania Assembly who spoke against his re-election as clerk and, after lending him a scarce and curious book, became his friend; the \"old maxim\" Franklin drew from it, later called the Benjamin Franklin effect.",
+  "fact": "Franklin was chosen clerk of the General Assembly in 1736 without opposition; the year following \"a new member made a long speech against me\"; the member was \"a gentleman of fortune and education\"; Franklin, \"having heard that he had in his library a certain very scarce and curious book\", asked to borrow it; \"He sent it immediately, and I return'd it in about a week with another note, expressing strongly my sense of the favour\"; at their next meeting \"he spoke to me (which he had never done before), and with great civility\", \"and our friendship continued to his death\"; \"This is another instance of the truth of an old maxim I had learned, which says, 'He that has once done you a kindness will be more ready to do you another, than he whom you yourself have obliged.'\" Wikipedia, \"Benjamin Franklin effect\", gives the anecdote and Jecker and Landy's 1969 study in Human Relations.",
+  "property": "the kindness moves the one who does it: the doer's regard for the receiver rises",
+  "source": "Benjamin Franklin, Autobiography of Benjamin Franklin, ed. Frank Woodworth Pine (Henry Holt, 1916), chapter X, Project Gutenberg ebook 20203, https://www.gutenberg.org/files/20203/20203-h/20203-h.htm#X (ebook page https://www.gutenberg.org/ebooks/20203); Wikipedia, \"Benjamin Franklin effect\", https://en.wikipedia.org/wiki/Ben_Franklin_effect (oldid 1382792674) - both read 4 November 2026",
+  "valleyFact": "Replay of 3 Nov 2026 cuts 3-4 (episode-2026-11-03T034157, engine a2aee87298dd; git diff a2aee87 -- src empty, HEAD c0eaa2f same src; cut 3 a33c53b5, cut 4 df7ec52d = aired ledger = mast) with scratchpad/probe-day-20261104-explicit.mjs, and cuts 1-4 with scratchpad/probe-bond-20261104.mjs, FRONTIER_BRAIN=off, feed per step with folds counted. Cut-4 close = 4 Nov cut-1 opening (Cairnwright harm 0.6848530140746107 both; every position and building equal); check-chainstate green (4 Nov chain only). Weathervane->Cairnwright bond -0.03 at 04:00Z 3 Nov, 0.07/0.17/0.27/0.37/0.47 at 07:21:10, 07:52:30, 15:16:15, 18:31:58, 02:17:09Z (bond sim.ts:3710, edge 0.45 :3716, +0.3 receiver :11229, +0.1 giver :11230); \"Weathervane has taken to Cairnwright.\" at 02:17:09Z 4 Nov; Cairnwright->Weathervane 0.6, 0.9, 1. All five gifts errand:toward-goal (chose :7218), feed errand :8585 hungriest :8590, goal :7723. Hall 94,117 0.7184, patched 16:43:08Z by Weathervane bare filed repair (agents/days/weathervane-cut3.json sha256 f859ceb195254256, 2-4 Nov), bare arm takes the worst under SOUND (0.85 :1233) at :10086; 0.9823 at 22:00Z, 0.9556 at 4 Nov opening; on 2 Nov cut 3 (6c238d71, engine de8012d src = a2aee87) the depot 0.820 < hall 0.835 and the depot was patched 16:10:55Z. House 94,120 0.682 lowest at 4 Nov opening. Cairnwright 0.8499/0.7674/0.6849 at 16:00/22:00/04:00Z, tended 0 (hurtStep :1964, 0.055 :1973, LAID_UP :183); under 0.35 about 04:21Z 5 Nov. Taught Seafarer x2 cut 3, x5 cut 4 (teachAt :3895). No sail step filed cuts 3-4; boat 0.9706 to 0.9203. \"proposal: none\" (episode.mts:1203) at 03:41:42Z.",
+  "line": "Franklin engineered his. Weathervane was sent by a sentence about hunger.",
+  "footline": "The walk to the man on the rocks moved the one who made it.",
+  "voice": "both"
  }
 ]
