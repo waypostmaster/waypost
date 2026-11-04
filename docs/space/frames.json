@@ -6352,5 +6352,23 @@
   "line": "The machine played, and its owners answered.",
   "footline": "A challenge put to a machine is answered by whoever owns it.",
   "voice": "both"
+ },
+ {
+  "roman": "ccclxvi",
+  "file": "the-forth-bridge.html",
+  "title": "The Forth Bridge",
+  "when": "2026-11-04",
+  "domain": "engineering",
+  "subject": "settler",
+  "key": "forth-bridge-painting-never-ending-myth-network-rail-2011",
+  "tier": 1,
+  "frame": "The Forth Bridge, the railway bridge over the Firth of Forth opened on 4 March 1890, and the saying \"painting the Forth Bridge\" for a job that must be begun again as soon as it is finished; Network Rail and Balfour Beatty ended the repainting in 2011 with a coating expected to last twenty years or more.",
+  "fact": "Network Rail, 5 Sep 2011: the idiom means a job that \"takes such a long time that by the time you have finished doing it, you have to start again\"; Network Rail and Balfour Beatty \"will preside over the end of a modern myth\"; old layers of paint \"applied over the last 120 years\" removed by abrasive blasting; a glass flake epoxy \"similar to that used in the offshore oil industry\", in three layers. Network Rail, 9 Dec 2011: \"its 10-year, £130m programme of refurbishment and repainting on the Forth Bridge has reached an end\"; the structure \"will not need a full paint job for at least 20 years\"; David Simpson, route managing director for Scotland: \"one of the world's never-ending tasks\". Wikipedia: the phrase was \"coined on the erroneous belief\" that repainting began again at once; \"Such a practice never existed, as weathered areas were given more attention, but there was a permanent maintenance crew\"; responsibility passed to Network Rail in 2002; opened 4 March 1890.",
+  "property": "a job whose finish is the signal to begin it again, so that finishing it changes nothing about how much of it is left",
+  "source": "Network Rail Media Centre, \"Forth Bridge makes final brush with a modern myth\", 5 September 2011, https://www.networkrailmediacentre.co.uk/news/forth-bridge-makes-final-brush-with-a-modern-myth; Network Rail Media Centre, \"Finished on the Forth - bridge repainting now complete\", 9 December 2011, https://www.networkrailmediacentre.co.uk/news/finished-on-the-forth-bridge-repainting-now-complete; Wikipedia, \"Forth Bridge\", https://en.wikipedia.org/wiki/Forth_Bridge - all read 4 November 2026.",
+  "valleyFact": "Replays with playDay (tools/cuts.mjs:157), FRONTIER_BRAIN=off, every step: 4 Nov cuts 1-2 (episode 2026-11-04T034142, engine c0eaa2f2382c, git diff c0eaa2f -- src empty; cut 2 close = cut 3 opening in every settler and building, 0 differences) and 3 Nov cuts 1-4 (2026-11-03T034157, engine a2aee87, src identical). Weathervane, role farmer: long goal \"see nobody in this valley go hungry again\" (sim.ts:7723), aim feed qty = lifetime gaveAway.food + 30 (:7724), progress lifetime/qty (goals.ts:116). Finished at 09:19:33Z 3 Nov (qty 550) and 06:50:09Z 4 Nov (qty 580; step before t=75741.80 unfinished, finish t=75741.85), each announced (sim.ts:7851) and replaced in the same step by the same text with qty +30; the third goal (610) 0.951 at its first refresh, 0.961 at 16:00Z. The 30 food between: 15 gifts of 2, Brindle 7, Seafarer 5, Cairnwright 3. needs.food at the finishes: Tue Weathervane 0.927, Seafarer 0.808, Cairnwright 0.357, Brindle 0.139; Wed all under 0.5, Brindle 0.262. Feed errand hungry = over 0.5 or empty pack (sim.ts:8588). Cairnwright 0.685/0.602/0.520 at 04/10/16Z untended (hurtStep :1964, :1973); one gift 14:18:54Z, regard 0.47->0.57. No repair task in 12,000 steps; house 94,120 worst throughout, 0.682->0.639; boat repair refused 10:02:56Z at 0.898 (SOUND :1233); no sail step in eight filed days; drawer empty.",
+  "line": "The goal counted every meal. It never noticed which ones were needed.",
+  "footline": "A job measured by a count is finished every time the count comes round.",
+  "voice": "both"
  }
 ]
