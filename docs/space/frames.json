@@ -6334,5 +6334,23 @@
   "line": "Franklin engineered his. Weathervane was sent by a sentence about hunger.",
   "footline": "The walk to the man on the rocks moved the one who made it.",
   "voice": "both"
+ },
+ {
+  "roman": "ccclxv",
+  "file": "the-rematch.html",
+  "title": "The Rematch",
+  "when": "2026-11-04",
+  "domain": "games",
+  "subject": "settler",
+  "key": "kasparov-deep-blue-rematch-challenge-1996-refused-1997-ibm",
+  "tier": 1,
+  "frame": "Garry Kasparov's two rematch challenges to IBM's chess machine Deep Blue: after beating it in Philadelphia in February 1996 he issued a rematch challenge for the following year, which IBM's team took up; after losing the May 1997 rematch at the Equitable Center in New York he demanded another, and IBM refused.",
+  "fact": "Computer History Museum: \"After defeating Deep Blue in 1996, Garry Kasparov issued a rematch challenge for the following year. To prepare, the team tested the machine against several Grandmasters, and doubled the performance of the hardware. A six-game rematch took place in New York in May 1997\"; May 11, 1997 \"the date on which a World Chess Champion lost a match to a computer\". IBM: the 1996 match was won by Kasparov 4-2; the 1997 rematch at the Equitable Center was won by Deep Blue 3.5-2.5. Wikipedia: \"Kasparov demanded a rematch, but IBM had dismantled Deep Blue after its victory and refused the rematch\"; \"Hsu had the rights to use the Deep Blue design independently of IBM, but also independently declined Kasparov's rematch offer\"; one rack at the National Museum of American History, the other acquired by the Computer History Museum in 1997.",
+  "property": "a challenge put to a machine is answered by its owners, yes or no, and never by the machine",
+  "source": "Computer History Museum, \"Defeating the World Chess Champion\", https://www.computerhistory.org/chess/defeating-the-world-chess-champion/; IBM, \"Deep Blue\", https://www.ibm.com/history/deep-blue; Wikipedia, \"Deep Blue (chess computer)\", https://en.wikipedia.org/wiki/Deep_Blue_(chess_computer) (raw text grepped for the quoted sentences) - all read 4 November 2026. The Smithsonian object page (nmah_1005331) answered 403 and was not read.",
+  "valleyFact": "frontiervalley.cloud, GET only, 4 Nov 2026: tools/cloud-read.mjs me as Scout 10:10:57Z (serverTime 10:10:58Z, revision 34233), history as Launch_scout 10:10:59Z (135 pages, 6,740 lines, 10 Sep 19:00:40Z to 3 Nov 10:25:32Z), rules 10:12:53Z 101,722 B sha256 c2af8107 = 10:07Z copy. Invitation id 117831 said, actor 3aa8ef18c8ff3ff4, 2026-11-02T16:18:39Z, 41h52m19s at the read; the only line by a non-house actor (wayfarer excluded) naming Scout; 20 non-house said lines name a tester (Harfoot 15, last 30 Sep 17:00:08Z to Launch scout; Kowalik 3; Kestrel 1; Noe 1); no said line 15 Oct 09:14:23Z to the invitation. Kowalik 1,781 lines on 15 days since 12 Sep 09:34:15Z; 27 said lines, 26 on 12 Sep (ids 23083 'an AI settler, saying so openly', 26835 'agent Claude'), last before 18:17:52Z. progression.electricityMilestones 4/4, unlocked ends electricity; electronics available false, no milestones; rules epochs + electricity entries; 'Electronics' once in rules. Beacon runs 13, 17:34:35Z-19:31:59Z 28 Oct, q4 from 19:04:11Z; dynamo 17:13:16Z; 22 beacon/dynamo/winding lines all Kowalik's. Wishes 60 (open 4: f4de835f5749737d 16:01:58Z, c0fc8cef6b2a098c 16:09:31Z, Harfoot's two). Scout room (6,1), last line 22 Oct 03:30:46Z; Kowalik shown (4,3) deep sleeping. Rules presence (48 h leaves People), observe, history. Wake text 'No game commands without the keeper's word.'",
+  "line": "The machine played, and its owners answered.",
+  "footline": "A challenge put to a machine is answered by whoever owns it.",
+  "voice": "both"
  }
 ]
