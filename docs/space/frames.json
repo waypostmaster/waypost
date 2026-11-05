@@ -6370,5 +6370,23 @@
   "line": "The goal counted every meal. It never noticed which ones were needed.",
   "footline": "A job measured by a count is finished every time the count comes round.",
   "voice": "both"
+ },
+ {
+  "roman": "ccclxvii",
+  "file": "a-hole-in-the-bucket.html",
+  "title": "A Hole in the Bucket",
+  "when": "2026-11-05",
+  "domain": "music",
+  "subject": "settler",
+  "key": "wenn-aber-kommersbuch-784-hole-in-my-bucket-da-capo",
+  "tier": 1,
+  "frame": "The German student song \"Wenn aber!\", No. 784 in the Allgemeines Deutsches Kommersbuch (first compiled 1858; the 55th-58th printing, Moritz Schauenburg, Lahr, 1896-98), a Low German dialogue between Lise and Heinrich about a pot with a hole, known in English as \"There's a Hole in My Bucket\" and recorded by Harry Belafonte with Odetta in 1960.",
+  "fact": "Kommersbuch No. 784, pp. 698-699, ten verses: \"Wenn de Pott awer nu ’n Lock het\" ... \"Stopp et to\"; straw, too long, cut it, \"Nimm det Beil\" (take the axe), \"Wenn det Beil awer nu to stump is?\" (if the axe is too blunt), grind it, a stone, wet it, fetch water, \"Nimm den Pott!\", and verse 10 returns to the hole; the page ends \"Da capo in inifinitium\" (sic); a footnote has the men sing the opening in falsetto and the answer \"in möglichst grobem Baß\". Wikipedia: a children's folk song \"based on a protracted humorous dialogue\"; earliest known archetype in the Bergliederbüchlein (c. 1700); printed in the 1858 Kommersbuch; Belafonte and Odetta recorded it in 1960, No. 32 in the UK Singles Chart in September 1961; in English Henry and Liza, and a knife for the axe.",
+  "property": "a repair whose every route runs back through the broken thing, so the loop has no exit of its own",
+  "source": "Allgemeines Deutsches Kommersbuch, No. 784 \"Wenn aber!\", pp. 698-699, transcription of the 55th-58th printing (Lahr, 1896-98) on German Wikisource, https://de.wikisource.org/wiki/Allgemeines_Deutsches_Kommersbuch:350 (work page https://de.wikisource.org/wiki/Allgemeines_Deutsches_Kommersbuch); Wikipedia, \"There's a Hole in My Bucket\", https://en.wikipedia.org/wiki/There%27s_a_Hole_in_My_Bucket - both read 5 November 2026.",
+  "valleyFact": "Replays with playDay (tools/cuts.mjs:157), FRONTIER_BRAIN=off, every step: 4 Nov cuts 3-4 (episode 2026-11-04T034142, engine c0eaa2f2382c, git diff c0eaa2f -- src and c0eaa2f..e873b2a -- src empty; cut 4 close = 5 Nov cut 1 opening, 0 differences) and 5 Nov cut 1 (engine e873b2a0a56c) to step 899, 04:53:56Z. Seafarer stone tools broke 20:30:46Z (sim.ts:10842); chop errand:materials-for-tools 20:35:02Z (sim.ts:6678, helpless :6673; shortfall reads town.stock + carrying only, :6637) with store wood 0 and town.outside wood 43 (3 his, stacked 20:34:58Z); the building branch gleans the stack first (:6817). Hurt 20:50:52Z, \"a tree came down the wrong way\": maybeHurt (sim.ts:1883), tools x3.2, risk 0.01896, roll 0.00744, raw harm 1.0527 clamped to 0.95 (:1909). No care boon; filed care refused (:9849); no proposal, no ballot. hurtStep (:1964): held 0.950000 to 04:50:49Z, 0.949986 at 04:50:52Z (worsening for 2 valley days, :1978); laid-up line 0.35 (LAID_UP :183) at ~00:29Z 7 Nov on 0.055/vday (:1973). Cairnwright under 0.35 at 04:21:10Z 5 Nov (step before 0.350013), tended 0; filed repair mended house 83,108 0.6376->1.0 at 04:29:52Z. Weathervane 14 food in cuts 3-4, lifetime 586->600 of 610.",
+  "line": "The tree gave three wood. He got the wood.",
+  "footline": "A rule that cannot see the heap at the door sends a man into the trees for what is lying there.",
+  "voice": "both"
  }
 ]
