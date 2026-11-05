@@ -6388,5 +6388,23 @@
   "line": "The tree gave three wood. He got the wood.",
   "footline": "A rule that cannot see the heap at the door sends a man into the trees for what is lying there.",
   "voice": "both"
+ },
+ {
+  "roman": "ccclxviii",
+  "file": "the-wood-pile.html",
+  "title": "The Wood-Pile",
+  "when": "2026-11-05",
+  "domain": "literature",
+  "subject": "settler",
+  "key": "frost-the-wood-pile-north-of-boston-1914-smokeless-burning-of-decay",
+  "tier": 1,
+  "frame": "Robert Frost, \"The Wood-pile\", in North of Boston (David Nutt, London, 1914), pp. 140-142: a walker in a frozen swamp finds a cord of maple cut, split, stacked and measured, years old and left to rot far from any fire.",
+  "fact": "\"It was a cord of maple, cut and split / And piled—and measured, four by four by eight.\" \"The wood was grey and the bark warping off it / And the pile somewhat sunken.\" \"I thought that only / Someone who lived in turning to fresh tasks / Could so forget his handiwork on which / He spent himself, the labour of his axe, / And leave it there far from a useful fireplace / To warm the frozen swamp as best it could / With the slow smokeless burning of decay.\" First edition David Nutt, London, 1914 (Internet Archive scan of the University of New Hampshire Library copy, poem on pp. 140-142); Project Gutenberg eBook 3026 agrees in every quoted word.",
+  "property": "a stack made for use and then left by people busy with fresh tasks, which is lost not to theft but to the weather, far from the fire it was cut for",
+  "source": "Robert Frost, North of Boston (London: David Nutt, 1914), pp. 140-142, scan of the University of New Hampshire Library copy, https://archive.org/details/northofboston00fros; Project Gutenberg eBook 3026, https://www.gutenberg.org/ebooks/3026; Wikipedia, \"North of Boston\", https://en.wikipedia.org/wiki/North_of_Boston - all read 5 November 2026.",
+  "valleyFact": "Replays with playDay (tools/cuts.mjs:157), FRONTIER_BRAIN=off, every step: 5 Nov cuts 1-2 (episode 2026-11-05T034146, engine e873b2a0a56c, ledger dirty:true; git diff e873b2a -- src empty at bedbda2; cut 2 close = cut 3 opening, 0 differences; cut 3 not run) and 4 Nov cuts 3-4 again (c0eaa2f, git diff c0eaa2f -- src empty; close = 5 Nov opening, 0 differences). town.outside wood 76 at 16:00Z 4 Nov, 43 at the Seafarer's hurt 20:50:52Z, 26 at 04:00Z 5 Nov, 0 at 11:48:18Z (step before 1); after the hurt 43 lost to outsideStep (sim.ts:12675; OUTSIDE_ORDER :12672; risk from the whole heap :12684; line :12690), 2 added, 2 taken in and burned by finishGather's hearth (:12362-12363) at 09:28:48Z and 13:28:55Z; heap at the hurt wood 43, stone 129, ore 5, food 5. Hew refused 14:48:43Z (sim.ts:9828). teachAt (:3895, 15 tiles :3916): Seafarer, laid up, taught Brindle 04:59:38Z. Seafarer harm 0.95 to 04:50:49Z, 0.949986 at 04:50:52Z, 0.7966 at 16:00Z, tended 0 (hurtStep :1964; LAID_UP :183); laid-up day line (:13969) 36 times; pack wood 2, TOOL_COST stone wood 1 stone 2 (tools.ts:73). Weathervane gaveAway.food 600->610 in five gifts; long goal (sim.ts:7723-7724) done 15:12:21Z, re-set to 640. Cairnwright filed repair, claim 95,114 0.6385->1.0 at 10:07:55Z.",
+  "line": "The stone set the pace, and the wood paid it.",
+  "footline": "A heap nobody counts is a heap nobody is keeping.",
+  "voice": "both"
  }
 ]
