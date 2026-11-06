@@ -6424,5 +6424,23 @@
   "line": "Food may be given. A roof may be mended.",
   "footline": "A house in order is not a man on his feet.",
   "voice": "both"
+ },
+ {
+  "roman": "ccclxx",
+  "file": "delta-seven.html",
+  "title": "Delta 7",
+  "when": "2026-11-06",
+  "domain": "aerospace",
+  "subject": "settler",
+  "key": "slayton-delta-7-grounded-15-march-1962-aurora-7-carpenter-uri-nasa-2022",
+  "tier": 1,
+  "frame": "Deke Slayton, one of the seven Mercury astronauts, assigned to the second American orbital flight and naming his capsule Delta 7, grounded by NASA on 15 March 1962 for idiopathic atrial fibrillation; Scott Carpenter flew the mission as Aurora 7 on 24 May 1962; Slayton assigned the crews while grounded, was reinstated on 13 March 1972 and flew Apollo-Soyuz in July 1975 at 51.",
+  "fact": "NASA (John Uri, 14 Mar 2022): \"Slayton decided to name his capsule Delta 7, keeping the tradition of Mercury astronauts naming their spacecraft, followed by the number 7.\" \"As early as mid-1959, flight surgeons had noted that Slayton occasionally displayed a minor heart irregularity known as idiopathic atrial fibrillation\" \"On March 15, 1962, NASA announced that Slayton was grounded, not only from spaceflight but also from flying solo in high-performance jets.\" \"NASA chose to fly Carpenter, who had trained more extensively as Glenn’s backup.\" \"He assigned the crews for Gemini, Apollo, and Skylab missions\" \"on March 13, 1972, NASA reinstated Slayton to spaceflight status.\" \"After waiting 16 years for his spaceflight, Slayton spent nine days in orbit in July 1975.\" Wikipedia: Mercury-Atlas 7 launched 24 May 1962, piloted by Scott Carpenter, named Aurora 7; Slayton 51 at Apollo-Soyuz, the oldest to fly at the time.",
+  "property": "a craft and the one who flies her are passed fit on two different lines by two different people, and the craft can be ready while the man is not",
+  "source": "John Uri, \"60 and 50 Years Ago: Astronaut Slayton Grounded in 1962, Reinstated in 1972\", NASA, 14 March 2022, https://www.nasa.gov/humans-in-space/astronauts/former-astronauts/60-and-50-years-ago-astronaut-slayton-grounded-in-1962-reinstated-in-1972; Wikipedia, \"Deke Slayton\", https://en.wikipedia.org/wiki/Deke_Slayton and \"Mercury-Atlas 7\", https://en.wikipedia.org/wiki/Mercury-Atlas_7 - all read 6 November 2026.",
+  "valleyFact": "Replay with playDay (tools/cuts.mjs:157), FRONTIER_BRAIN=off, every step: 6 Nov cuts 1-2 by file name (2926d2d3, a4c4d62c; engine bba2f9e82272 on every pointer row, ledger dirty; git diff bba2f9e a6f595c -- src empty); 5 Nov cut 4 close = 6 Nov cut 1 opening, cut 1 close = cut 2 opening, cut 2 close = cut 3 opening, 0 differences each; the boat re-run 3-5 Nov (a2aee87, c0eaa2f, e873b2a; src diffs empty). Boat 101,118 \"the wreck\", by the Seafarer: patched by him 0.787481 -> 1.0 at 11:05:34Z 3 Nov; under SOUND 0.85 (sim.ts:1233; seaworthy :2704) at 23:26:27Z 4 Nov, 2h36m after his hurt at 20:50:52Z; worst building from 04:03:46Z 6 Nov after Cairnwright’s bare repair of the depot; Cairnwright’s filed bare repair (cairnwright-cut2, the Frontier desk) taken 10:00:03Z, worst under SOUND (case repair :10031, :10086), patched 0.716406 (10:47:13Z) -> 1.0 at 10:47:16Z (finishRepair :12206, line :12315, seaworthy line :12332); 0.9804 at 16:00Z. Seafarer’s filed cut 2 (the keeper) holds repair boat; laid-up day line (:13969) 92 -> 137. Harm 0.631646 -> 0.549146 -> 0.466646 (04/10/16Z), tended 0 (hurtStep :1964, :1973; LAID_UP :183); under 0.35 at 00:29Z 7 Nov (arithmetic). Care refused without the boon (:9849); no ballot or proposal (decideProposals tools/proposals.mts:175). teachAt (:3895) at Brindle’s filed chop 04:54:28Z; one log burned at the hearth 05:46:01Z (finishGather :12353, :12362-12363), one rotted outside 08:39:57Z (outsideStep :12675); hew refused 13:13:55Z (:9828); pack wood 2, tools none (TOOL_COST tools.ts:73). Weathervane 620 -> 632 of 640 (sim.ts:7723, :7724). Voyages 9 throughout 3-6 Nov.",
+  "line": "She was mended by the rule for the worst roof. She is fit to sail.",
+  "footline": "Anybody with a stone may pass the boat. Nobody here may pass the man.",
+  "voice": "both"
  }
 ]
