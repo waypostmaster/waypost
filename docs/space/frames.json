@@ -6406,5 +6406,23 @@
   "line": "The stone set the pace, and the wood paid it.",
   "footline": "A heap nobody counts is a heap nobody is keeping.",
   "voice": "both"
+ },
+ {
+  "roman": "ccclxix",
+  "file": "a-lump-of-figs.html",
+  "title": "A Lump of Figs",
+  "when": "2026-11-06",
+  "domain": "religion",
+  "subject": "settler",
+  "key": "hezekiah-sickness-set-thine-house-in-order-lump-of-figs-2-kings-20-isaiah-38",
+  "tier": 1,
+  "frame": "The sickness of Hezekiah, king of Judah, in 2 Kings 20:1-11 and Isaiah 38:1-8, 21 (King James Version): told by Isaiah to set his house in order, the king is got up by a lump of figs laid on the boil by others, after the sign of the shadow going back ten degrees on the dial of Ahaz.",
+  "fact": "\"In those days was Hezekiah sick unto death. And the prophet Isaiah the son of Amoz came to him, and said unto him, Thus saith the LORD, Set thine house in order; for thou shalt die, and not live.\" \"Then he turned his face to the wall, and prayed\" \"And Isaiah said, Take a lump of figs. And they took and laid it on the boil, and he recovered.\" (2 Kings 20:1-2, 7, KJV). Isaiah 38:21: \"Let them take a lump of figs, and lay it for a plaister upon the boil, and he shall recover.\" The shadow brought \"ten degrees backward, by which it had gone down in the dial of Ahaz\" (2 Kings 20:11). Wikipedia: son of Ahaz and thirteenth king of Judah, sole ruler c. 716/15-687/86 BCE.",
+  "property": "putting a sick man’s house in order and getting the man up are two different acts, and the second takes somebody laying a remedy on him",
+  "source": "King James Version, 2 Kings 20 and Isaiah 38, on Wikisource, https://en.wikisource.org/wiki/Bible_(King_James)/2_Kings and https://en.wikisource.org/wiki/Bible_(King_James)/Isaiah; Wikipedia, \"Hezekiah\", https://en.wikipedia.org/wiki/Hezekiah - all read 6 November 2026.",
+  "valleyFact": "Replay with playDay (tools/cuts.mjs:157), FRONTIER_BRAIN=off, every step: 5 Nov cuts 3-4 by file name (283300df, d7f26d55; engine e873b2a0a56c, ledger dirty; git diff e873b2a bba2f9e -- src empty); cut 2 close = cut 3 opening and cut 4 close = 6 Nov cut 1 opening, 0 differences each. House 91,119 (by Cairnwright, the Seafarer its sleeper) 0.6460, the worst building, at 16:00Z; Weathervane's filed bare repair (weathervane-cut3, written 17 Sep) taken 16:00:03Z, patched 0.6450 -> 1.0000 at 16:16:33Z for one stone (case 'repair' sim.ts:10031, bare arm :10086 under SOUND :1233; finishRepair :12206, line :12315); Cairnwright credited teaching. Care refused without the boon (sim.ts:9849); 6 Nov opening boons ledger, notices, survey, teaching, waymarks, upkeep, roads; no ballot or proposal (decideProposals tools/proposals.mts:175). Seafarer harm 0.796646 -> 0.714146 -> 0.631646 (16:00Z, 22:00Z, 04:00Z), tended 0 (hurtStep :1964, 0.30/0.055 :1973; LAID_UP :183); arithmetic: under 0.35 at 00:29Z 7 Nov unseen, 07:45Z 6 Nov if seen; laid-up day line (:13969) 53 -> 92. Weathervane fed him 19:52:01Z and 03:43:15Z. teachAt (:3895, :3916) at Brindle's chop 17:00:14Z; store wood 0 -> 3 at 17:10:44Z, burned at finishGather's hearth (:12362-12363) 17:36:14Z, 18:23:31Z, 21:43:51Z; pack wood 2, tools none (TOOL_COST tools.ts:73). Cairnwright back on his feet 01:26:38Z 6 Nov at harm 0.06 (:1982, :1986).",
+  "line": "Food may be given. A roof may be mended.",
+  "footline": "A house in order is not a man on his feet.",
+  "voice": "both"
  }
 ]
