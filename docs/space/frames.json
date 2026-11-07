@@ -6460,5 +6460,23 @@
   "line": "Getting up cost him nothing. Lying down had bought him nothing.",
   "footline": "His first steps went to the boat. The rules took him back to the tree.",
   "voice": "both"
+ },
+ {
+  "roman": "ccclxxii",
+  "file": "an-ax-to-grind.html",
+  "title": "An Ax to Grind",
+  "when": "2026-11-07",
+  "domain": "forestry",
+  "subject": "settler",
+  "key": "weisgerber-ax-to-grind-mtdc-1999-be-very-afraid-of-a-dull-ax-your-ax-not-a-hunk",
+  "tier": 1,
+  "frame": "Bernie Weisgerber, historic preservation specialist for the USDA Forest Service (leader of the Northern Region's Historic Preservation Team in Missoula since 1991, twice a guest craftsman on This Old House), An Ax to Grind: A Practical Ax Manual, Missoula Technology and Development Center, 9923-2823P-MTDC, July 1999, companion to the MTDC video of the same name.",
+  "fact": "Using Axes: \"An ax is a sharp wedge, normally applied with enough force to cut something. Whether that \\\"something\\\" is a log, your foot, or the person standing too close to you depends on your skill and concentration.\"; \"Be very afraid of a dull ax, because it is dangerous. It glances off a surface more easily\"; \"Felling is probably the most dangerous and difficult job in the woods.\" Getting the Hang of It: \"Most felling axes and broad axes were not regularly sold with handles until about 1920. The purchaser generally took pride in making and fitting, or hanging, his or her own handle.\"; \"By hanging and sharpening your own ax, you realize it is your ax, not just a hunk of wood and metal. And you are more likely to take care of the ax and use it safely.\" Evolution of the Ax in America opens on sayings: \"...having an ax to grind / Getting even for a perceived wrongdoing.\" Introduction: his first ax, a toy, at 8 years old.",
+  "property": "the danger in felling is named as the edge and not the tree, and a tool you made and fitted yourself is the one you take care with",
+  "source": "Bernie Weisgerber, An Ax to Grind: A Practical Ax Manual, USDA Forest Service, Missoula Technology and Development Center, 9923-2823P-MTDC, July 1999, HTML edition on the Forest Service site, table of contents https://www.fs.usda.gov/t-d/pubs/htmlpubs/htm99232823/toc.htm, pages page02.htm (introduction, Evolution of the Ax in America), page03.htm (Getting the Hang of It), page04.htm (Using Axes) and page07.htm (About the Author), read 7 November 2026.",
+  "valleyFact": "Replay with playDay (tools/cuts.mjs:157) on main 1dc183f, FRONTIER_BRAIN=off, every step: 7 Nov cuts 1-2; cut 2 close = cut 3 opening, 0 differences over 4 settlers and 9 buildings; no welcome. Opening snapshot holds the Seafarer at craft \"making a set of stone tools\", pack wood 4, tools none; cuts.mjs:170 applyInstruction (sim.ts:9268), plan :9430, takeNextStep :9468, applyStep hangs eat at :10301, so the craft was dropped unsaid. Craft rule :6651 07:12:07Z; finishCraft :12068, pack first :12079, stores :12081, nicely :12084, uses :12085, \"and good ones\" over 1.15 :12089; TOOL_COST stone {wood 1, stone 2, uses 45} tools.ts:73. Made 07:23:27Z: pack wood 3 -> 2 (one swapped to Weathervane 06:15:54Z), store stone 113 -> 111, uses 60. Chops 88,110 07:57:03Z, 90,113 08:15:36Z, 88,110 14:54:32Z, 90,113 15:12:46Z, 86,114 (the tree of the 4 Nov hurt) begun 15:17:13Z took 3 left 1 15:28:04Z, 98,116 15:50:27Z; uses 60 -> 50 over ten loads. Harm 0.301646 / 0.219146 / 0.136646, tended 0; maybeHurt :1883 returns on a standing hurt :1885; tools factor :1889 (bare 3.2, worn 1.5, WORN_AT 25 tools.ts:160); clears at 0.06 (:1982), 21:34Z by arithmetic. Boat refusal 11:55:08Z sound at 0.871 (:10091, SOUND :1233), 0.8545 at 16:00Z, voyages 9. Six collapses (:13898). Weather loss at the depot door 08:12Z, away >12 tiles from home 101,121 (:13680).",
+  "line": "He had cut them in the dark to make tools. The tools took one.",
+  "footline": "The danger was never the tree. It was the bare hands, and he has put them away.",
+  "voice": "both"
  }
 ]
