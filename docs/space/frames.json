@@ -6478,5 +6478,23 @@
   "line": "He had cut them in the dark to make tools. The tools took one.",
   "footline": "The danger was never the tree. It was the bare hands, and he has put them away.",
   "voice": "both"
+ },
+ {
+  "roman": "ccclxxiii",
+  "file": "nature-alone-cures.html",
+  "title": "Nature Alone Cures",
+  "when": "2026-11-08",
+  "domain": "medicine",
+  "subject": "settler",
+  "key": "nightingale-notes-on-nursing-harrison-1859-nature-alone-cures-best-condition-for-nature-to-act",
+  "tier": 1,
+  "frame": "Florence Nightingale, Notes on Nursing: What It Is, and What It Is Not, London, Harrison, first edition (79 pages, catalogued by the Wellcome Collection as [1859?], with copies formerly in the Nightingale Collection); read in the New York edition of 1898 (D. Appleton) as transcribed by Project Gutenberg, eBook 12439.",
+  "fact": "Conclusion: \"It is often thought that medicine is the curative process. It is no such thing; medicine is the surgery of functions, as surgery proper is that of limbs and organs. Neither can do anything but remove obstructions; neither can cure; nature alone cures. Surgery removes the bullet out of the limb, which is an obstruction to cure, but nature heals the wound.\" ... \"And what nursing has to do in either case, is to put the patient in the best condition for nature to act upon him. Generally, just the contrary is done.\" Introduction: \"I use the word nursing for want of a better. ... It ought to signify the proper use of fresh air, light, warmth, cleanliness, quiet, and the proper selection and administration of diet--all at the least expense of vital power to the patient.\" Preface: \"They are meant simply to give hints for thought to women who have personal charge of the health of others.\"",
+  "property": "nature alone does the healing and the nurse's whole work is the condition it heals in; a valley with the healing rule and no condition anybody may supply",
+  "source": "Florence Nightingale, Notes on Nursing: What It Is, and What It Is Not, Project Gutenberg eBook 12439 (New York, D. Appleton, 1898), https://www.gutenberg.org/ebooks/12439 (read in its plain-text file), preface, introduction and conclusion; Wellcome Collection catalogue record of the London first edition, https://wellcomecollection.org/works/bmw7gjjh (London : Harrison, [1859?], 79 pages); all read 8 November 2026.",
+  "valleyFact": "Replay with playDay (tools/cuts.mjs:157) on main 1dc183f, FRONTIER_BRAIN=off, every step: 7 Nov cuts 3-4; cut 4 close = 8 Nov cut 1 opening, 0 differences over 4 settlers and 9 buildings (that opening also holds welcome 1 by Halfverse #260 at the hall, which the compare does not read). Seafarer hurt at sim 76442.45 = 20:50:52Z 4 Nov, never tended (tended 0, tendedAt -9999). hurtStep (sim.ts:1964): 0.30 a valley day seen to, 0.055 untended, x1.5 in an infirmary (sim.ts:1973); cleared over 0.06 (sim.ts:1982); harm 0.060004 at 21:34:26Z, none at 21:34:30Z 7 Nov, \"Seafarer is back on their feet after 18 days\" (sim.ts:1986; 18.18 valley days, 72 h 43 m of airtime); predicted 21:34Z and \"18 days\" by arithmetic in CCCLXXI and CCCLXXII. Town boons ledger, notices, survey, teaching, waymarks, upkeep, roads, no care: care refused (sim.ts:9849), own-choice care gated (sim.ts:6059), care proposable since 2 Nov (tools/proposals.mts:83), never proposed. 19 chops 18:19:44Z-03:54:28Z, all errands for \"see this place trade rather than scrape\" (coin goal, sim.ts:8569: wood when the store has no room; coinage false, minted 0); stone tools 50 -> 31; 54 wood: 51 stacked outside the full store (heap 29 -> 82), 1 swapped to Cairnwright, pack 3 -> 5; three visits to 86,114, the tree of the hurt (19:09:18Z hurt; 01:09:03Z, 03:15:00Z mended); no hurt after the mending. Thaw 17:14:49Z, spring 03:06:00Z (sim.ts:13347); four collapses (sim.ts:13898).",
+  "line": "Two sheets worked out the minute. The minute came.",
+  "footline": "He was mended on time, by the only thing allowed to mend him.",
+  "voice": "both"
  }
 ]
