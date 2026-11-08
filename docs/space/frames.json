@@ -6496,5 +6496,23 @@
   "line": "Two sheets worked out the minute. The minute came.",
   "footline": "He was mended on time, by the only thing allowed to mend him.",
   "voice": "both"
+ },
+ {
+  "roman": "ccclxxiv",
+  "file": "the-spray.html",
+  "title": "The Spray",
+  "when": "2026-11-08",
+  "domain": "maritime",
+  "subject": "settler",
+  "key": "slocum-spray-fairhaven-1892-ax-felled-stout-oak-553-62-thirteen-months-season-fishing",
+  "tier": 1,
+  "frame": "Joshua Slocum, Sailing Alone Around the World, chapter I (the rebuilding of the Spray at Fairhaven from 1892) and chapter II (a season fishing, then departure from Boston on 24 April 1895), as transcribed by Project Gutenberg, eBook #6317; the appendix says the chapters were first prepared for serial publication in the Century Magazine.",
+  "fact": "Chapter I: \"Come to Fairhaven and I'll give you a ship. But,\" he added, \"she wants some repairs.\" ... \"a very antiquated sloop called the Spray ... affectionately propped up in a field, some distance from salt water\" ... \"My ax felled a stout oak-tree near by for a keel, and Farmer Howard, for a small sum of money, hauled in this and enough timbers for the frame of the new vessel.\" ... \"'Will it pay?' was the question which for a year or more I answered by declaring that I would make it pay.\" ... \"she sat on the water like a swan.\" ... \"The cost of my new vessel was $553.62 for materials, and thirteen months of my own labor.\" Chapter II: \"I spent a season in my new craft fishing on the coast, only to find that I had not the cunning properly to bait a hook.\" Weighed anchor at noon, 24 April 1895, from Boston. Chapter XXI heading: \"End of a cruise of over forty-six thousand miles--The Spray again at Fairhaven.\"",
+  "property": "the boat is mended by the hand of the man who will sail her, and a boat made fit is not yet a voyage: Slocum spent a season fishing; the Seafarer spent the afternoon breaking stone",
+  "source": "Joshua Slocum, Sailing Alone Around the World, Project Gutenberg eBook #6317, https://www.gutenberg.org/ebooks/6317 (read in its plain-text file), chapters I, II and XXI and the appendix; read 8 November 2026.",
+  "valleyFact": "Replay with playDay (tools/cuts.mjs:157) on main (src = aired engine 347f1ec), FRONTIER_BRAIN=off, every step: 8 Nov cuts 1-2; cut 2 close = cut 3 opening, 0 differences over 4 settlers and 9 buildings. The Seafarer's filed day (agents/days/seafarer-cut2.json b45cbb37, by the keeper, the filed file on all 49 cut-2 episodes 21 Sep - 8 Nov) names {\"action\":\"repair\",\"kind\":\"boat\",\"gx\":101,\"gy\":118}: task 10:03:00Z, named-tile arm of case 'repair' (sim.ts:10031, near :10064), accepted under SOUND 0.85 (sim.ts:1233, :10090) at 0.7767; patch 0.7736 -> 1.0000 at 10:54:50Z in finishRepair (sim.ts:12206), a wood from the store (timber first sim.ts:12291; store 19 -> 18; pack 0), wage 0 (purse 0, sim.ts:12307), seaworthy line sim.ts:12332; 0.9817 at 16:00Z; voyages 9. The log: Cairnwright's bare repair mended the depot 0.7530 -> 1.0000 at 10:07:55Z (worst under SOUND sim.ts:10086), places 121 -> 140 (placesIn sim.ts:1574, HOLDS depot 140 sim.ts:1495), room 223 -> 242; Brindle's haul at 10:49:12Z put 3 food away and swept 19 wood in off the heap (finishHaul sim.ts:11068, ITEMS order wood first sim.ts:75, sweep sim.ts:11088), store wood 0 -> 19, held 242 of 242. A stone would have paid with no log in (sim.ts:12292; stone 102). Heap wood 82 -> 101 (07:55:33Z) -> 47: +25 stacked (Seafarer 21), -20 carried in, -40 rotted (outsideStep sim.ts:12675). Of the 20 logs in: boat 1, hearth 3 (sim.ts:12362), Cairnwright's board 3 (14:20:49Z, sim.ts:11715), dock 1 (14:35:13Z), 12 left. Seafarer honed 25 -> 42 at 07:58:04Z. Welcome 1 by Halfverse #260 at 94,117 unread (no read step filed).",
+  "line": "The log is how she was mended, not whether.",
+  "footline": "He mended her himself, for one log and no pay, and went back to breaking stone.",
+  "voice": "both"
  }
 ]
