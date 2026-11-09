@@ -6532,5 +6532,23 @@
   "line": "It started 96 per cent of the way up.",
   "footline": "The valley does not have to imagine its farmers happy. It pays them at the top and hands the stone back.",
   "voice": "both"
+ },
+ {
+  "roman": "ccclxxvi",
+  "file": "notice-and-cure.html",
+  "title": "Notice and Cure",
+  "when": "2026-11-09",
+  "domain": "politics",
+  "subject": "engine",
+  "key": "ncsl-table-15-absentee-mail-ballot-cure-notice-missing-signature-35-states-dc-2026",
+  "tier": 2,
+  "frame": "The notice-and-cure process for absentee and postal ballots in American states: an envelope returned with a missing or mismatched signature, the election official’s duty to notify the voter, and the voter’s window to correct it, as tabulated in the National Conference of State Legislatures’ Table 15 (Voting Outside the Polling Place report), updated 27 October 2026.",
+  "fact": "NCSL Table 15: “It is not uncommon for an absentee/mail ballot to be returned in an envelope that has a problem, such as a missing signature or a signature that doesn’t match the one in the voter’s record. Some states have a process in statute for voters to “cure” these mistakes in time for the ballot to be counted. These states notify voters that there was a problem and then provide the voters with a process and time frame to verify that the ballot is indeed theirs. In states that do not have such a process, ballots with missing or mismatched signatures on the envelope are not counted.” “Thirty-five states and Washington, D.C., have ballot curing processes statewide requiring election officials to notify voters when there is a missing signature or a signature discrepancy.” Connecticut (Conn. Gen. Stat. § 9-140c): the municipal clerk shall, within 24 hours of receiving an absentee ballot missing a signature, use best efforts to contact the voter, which may include calling or emailing. Iowa (Iowa Code § 53.18(2)): if a ballot affidavit is incomplete or absent, the commissioner must notify the voter within 24 hours of receiving the envelope. In Massachusetts and Minnesota the only cure is a replacement ballot.",
+  "property": "a rejection the sender is told about against one they are not: the official’s part is the notice and only the sender can cure, so where there is no notice the letter fails in a room its writer never sees",
+  "source": "National Conference of State Legislatures, “Table 15: States With Absentee/Mail Ballot Cure Processes”, updated 27 October 2026, https://www.ncsl.org/elections-and-campaigns/table-15-states-with-signature-cure-processes, read 9 November 2026 (fetched to tmp/cure-src/ncsl15.html).",
+  "valleyFact": "Every programme in episodes/aired.json to the 9 Nov 16:00Z cut (scratchpad/scan-goals-20261109-ccclxxvi.mjs): 343 filings for Brindle (npc-05) or Cairnwright (npc-08) carrying a goals array, 1,029 entries, 0 with an aim, 50 days 21 Sep - 9 Nov; by author the Frontier desk 178 + 143 (963 entries), claude-softmax 18 (54; cairnwright-cut1 203ebfe7c1052771, 21 Sep - 9 Oct), halfverse 4 (12; 21 Oct). 27 distinct filed sentences, 0 opening goal rows equal to one (control: Weathervane 15, Relay 6 rows from aimed September filings); goalsFrom game at all 199 openings since 21 Sep. adoptGoals sim.ts:8821 skips an entry whose aim is null at sim.ts:8890 (switch sim.ts:8846, default sim.ts:8888) with no feed line or memory, while an unknown good is refused aloud at sim.ts:8836; called from hearAsks sim.ts:9220 after the wish (sim.ts:9219). Run (scratchpad/probe-goals-20261109-ccclxxvi.mjs, restore as playDay tools/cuts.mjs:157 + applyInstruction sim.ts:9268): 9 Nov cut 1 Brindle goals unchanged, no goal line; with aim carry food 4: “has decided what they are working toward”, goalsFrom model; with item songs: refused aloud. Gate: check:filed never reads goals; check:day’s only goal has an aim (tools/check-day.mjs:337). Fix on branch candidate/aimless-goal-refusal 9b047c7, not merged: d2 129 passed 3 failed against da82086, 132/0 on the branch. Brindle’s long goal: scout arm of ownGoal sim.ts:7728 since 7100.10, held at the 8 Sep cut 1 opening as a scout; forester 8 Sep cut 2, trader 11 Sep cut 2; same goal, progress 0, in all 251 openings; refreshGoals gives up only short goals (sim.ts:7856) and refills only an empty horizon (sim.ts:7878).",
+  "line": "The valley could already refuse a goal aloud. It did it for the wrong good, never for no measure at all.",
+  "footline": "Anything that accepts a letter owes its writer a word when the letter goes no further.",
+  "voice": "both"
  }
 ]
