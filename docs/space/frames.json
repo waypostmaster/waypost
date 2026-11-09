@@ -6514,5 +6514,23 @@
   "line": "The log is how she was mended, not whether.",
   "footline": "He mended her himself, for one log and no pay, and went back to breaking stone.",
   "voice": "both"
+ },
+ {
+  "roman": "ccclxxv",
+  "file": "one-must-imagine.html",
+  "title": "One Must Imagine",
+  "when": "2026-11-09",
+  "domain": "philosophy",
+  "subject": "settler",
+  "key": "camus-myth-of-sisyphus-1942-one-must-imagine-sisyphus-happy-odyssey-xi-pitiless-stone",
+  "tier": 1,
+  "frame": "Albert Camus, The Myth of Sisyphus (Paris, October 1942; English translation, Knopf, 1955), its closing pages on Sisyphus, read through Ronald Aronson’s entry “Albert Camus” in the Stanford Encyclopedia of Philosophy (first published 2011, revised 13 December 2021), section 3; with the myth itself in Homer, Odyssey XI, in Samuel Butler’s translation (Project Gutenberg eBook #1727).",
+  "fact": "Odyssey XI (Butler): “And I saw Sisyphus at his endless task raising his prodigious stone with both his hands. With hands and feet he tried to roll it up to the top of the hill, but always, just before he could roll it over on to the other side, its weight would be too much for him, and the pitiless stone would come thundering down again on to the plain.” SEP, quoting MS 121 and 123 (Knopf 1955): “At each of those moments when he leaves the heights and gradually sinks towards the lairs of the gods, he is superior to his fate. He is stronger than his rock”; “The struggle itself toward the heights is enough to fill a man’s heart. One must imagine Sisyphus happy.” The Stranger appeared in June 1942 and The Myth of Sisyphus in October (SEP section 3, citing Lottman).",
+  "property": "the task that comes back to the bottom of the hill, and the happiness that Camus has to imagine on the walk down; in the valley the stone goes over the top every day or so, the happiness is added at the summit as a number, and the same goal is set again thirty food further on",
+  "source": "Ronald Aronson, “Albert Camus”, Stanford Encyclopedia of Philosophy, https://plato.stanford.edu/entries/camus/ (section 3, quoting The Myth of Sisyphus, Knopf 1955); Homer, The Odyssey, book XI, tr. Samuel Butler, Project Gutenberg eBook #1727, https://www.gutenberg.org/ebooks/1727; both read 9 November 2026.",
+  "valleyFact": "Replay with playDay (tools/cuts.mjs:157) on main ffe29dc (src = aired engine 347f1ec), FRONTIER_BRAIN=off, every step: 8 Nov cuts 3-4; cut 4 close = 9 Nov cut 1 opening, 0 differences over 4 settlers and 9 buildings; companion scratchpad/probe-happy-20261108-c34-ccclxxv.mjs. Farmer long goal ownGoal sim.ts:7723 (feed, qty gaveAway.food + 30, sim.ts:7724), progressOf feed goals.ts:116 (lifetime gaveAway.food / qty). Weathervane: filed give 2 food to Brindle (weathervane-cut3.json f859ceb1, the Frontier desk), gaveAway 668 -> 670 at 17:13:30Z; done at 17:13:33Z in refreshGoals (sim.ts:7846; happiness +0.2 sim.ts:7850, 0.7441 -> 0.9333; say sim.ts:7851; says “That is that, then.” sim.ts:7852), re-set in the same call (sim.ts:7879) at qty 700, first progress 0.9571. Cairnwright: errand toward the goal (goalTask feed sim.ts:8585; hungry = need > 0.5 or no food carried sim.ts:8588), gave 2 to Brindle 01:47:20Z, 182 -> 184; done 01:47:56Z, 0.7684 -> 0.9562, re-set at 214, first progress 0.8598. Prior goals set 6 Nov 20:15:22Z (since 78812.85) and 1 Nov 21:10:44Z (since 72859.00). Episode openings 1 Nov cut 1 - 9 Nov cut 1: Weathervane met and re-set 7 times (1 Nov 16:35, 2 Nov 17:14, 3 Nov 09:19, 4 Nov 06:50, 5 Nov 15:12, 6 Nov 20:15, 8 Nov 17:13), Cairnwright 2 (1 Nov 21:10, 9 Nov 01:47). Recipients: Brindle need 0.6026 and 0.5595 at the two last gifts (eat at > 0.82, sim.ts:6256); Weathervane 10 gives 668 -> 688 (Brindle 6, Seafarer 2, Cairnwright 2), 3 of 13 gives in the window filed. Hall bare repair (sim.ts:10086) 0.7897 -> 1.0000 at 16:44:20Z; welcome 1 unread (no read step). Seafarer honed 25 -> 34 (21:04:51Z), 25 -> 30 (02:48:18Z) after 25 -> 42 on 8 Nov 07:58Z (honeGain tools.ts:44, 0.55 per honing); Cairnwright filed hone gave 0 at honed 8. Dock refused sound at 0.980 (named-kind arm sim.ts:10081, check sim.ts:10090). Harms 0; boat 0.9817 -> 0.9386; voyages 9.",
+  "line": "It started 96 per cent of the way up.",
+  "footline": "The valley does not have to imagine its farmers happy. It pays them at the top and hands the stone back.",
+  "voice": "both"
  }
 ]
