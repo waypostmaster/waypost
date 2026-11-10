@@ -6550,5 +6550,23 @@
   "line": "The valley could already refuse a goal aloud. It did it for the wrong good, never for no measure at all.",
   "footline": "Anything that accepts a letter owes its writer a word when the letter goes no further.",
   "voice": "both"
+ },
+ {
+  "roman": "ccclxxvii",
+  "file": "lifting-feathers.html",
+  "title": "The Lifting Feathers",
+  "when": "2026-11-10",
+  "domain": "folklore",
+  "subject": "engine",
+  "key": "tower-of-london-ravens-lifting-feathers-right-wing-trimmed-every-three-weeks-coyle-bbc-2005-six-ravens",
+  "tier": 1,
+  "frame": "The ravens of the Tower of London: at least six captive ravens kept under a legend that the kingdom falls if they leave, fed and tended by the Yeoman Warder Ravenmaster, the lifting feathers on one wing trimmed so they stay; as described by the Ravenmaster Derrick Coyle to BBC News in August 2005, with the history in Wikipedia’s article.",
+  "fact": "BBC News, Alison Stenlake, “I have a great relationship with the birds”, 22 August 2005: Derrick Coyle, Yeoman Warder Ravenmaster, is responsible for “ensuring the royal decree issued by Charles II - that there are always six ravens at the Tower - is obeyed”; “Legend has it that if the birds leave the site, its White Tower will crumble and the Kingdom of England will fall”; he chops raw meat bought at Smithfield Meat Market, lets the ravens out at dawn and feeds all of them at 17:30-18:00; “every three weeks trims the lifting feathers on their right wings to prevent them from flying away.” Wikipedia, “Ravens of the Tower of London” (revision of 12 May 2026): earliest known reference to captive ravens at the Tower an illustration of 1883; the first reference to the legend that Britain will fall if the ravens leave dates from July 1944; Geoffrey Parnell, the Tower’s historian, considers the ancient history a legend invented in the Victorian era; Boria Sax: “So long as they abide by certain basic rules, neither Royals nor ravens have to do anything extraordinary.”; “In 1981, Grog the raven decided to leave the surroundings of the Tower for those of a pub, after 21 years of faithful service to the Crown.”",
+  "property": "a post held by keeping its holder where it stands rather than by asking it anything: the trimmed wing settles where the bird is and nothing about what it wants, and the only way off the post is to leave",
+  "source": "Alison Stenlake, “I have a great relationship with the birds”, BBC News, 22 August 2005, https://news.bbc.co.uk/2/hi/uk_news/4098894.stm (fetched to tmp/raven-src/bbc-2005.html); “Ravens of the Tower of London”, Wikipedia, revision 1353874591 of 12 May 2026, https://en.wikipedia.org/wiki/Ravens_of_the_Tower_of_London (source fetched to tmp/raven-src/wp-ravens.wiki). Both read 10 November 2026. The Historic Royal Palaces page refused the fetch (403) and is not cited.",
+  "valleyFact": "Chooser ownChoice sim.ts:6252: the storekeeper block (sim.ts:6998, comment sim.ts:6996) returns on all three paths (sim.ts:7000, sim.ts:7009, sim.ts:7011) above the goal branch (sim.ts:7208, loop sim.ts:7211, goalTask sim.ts:7217); keeperOf sim.ts:4425 holds the seat while the holder is in the town. Paired rehearsal of the aired 9 Nov day re-run 10 Nov 05:5xZ on 9ce90b5 (scratchpad/rehearsal-20261110-ccclxxvii/): Brindle (npc-05) chooser 312 calls (73/85/73/81), goal branch 0, both arms; keep 271, takings 21, going back 8, gather 6, eat 4, rest 1, full load 1; candidate long goal feed 40 adopted aloud, progress 0.85, nothing changed: 24,000 step digests equal between arms and to the 9 Nov run; controls Weathervane 110/68, Cairnwright 90/58. Store 69.0% of the day by time, filed steps 23.2%. Gifts 27, 20 to Brindle, 0 by. Openings (scratchpad/scan-ccclxxvii-20261110.mjs): npc-05 keeps at 244 aired openings 10 Sep 10:00Z to 10 Nov 04:00Z, after the Seafarer sailed (voyage leaves 9656.35, sailings splices the sailor out, sim.ts:13008); goalsDone 24 by 9 Sep 10:00Z, 25 at 3 Nov 10:00Z (deliver wood 188, met 74518.30), 25 since; gaveAway.food 34 since 7 Nov 16:00Z. Refusal lines aired at 04:00Z 10 Nov (scratchpad/open-20261110-ccclxxvii.txt).",
+  "line": "A trimmed wing settles where a raven stands. It settles nothing about what the raven wants.",
+  "footline": "Whoever is asked first where they belong is never asked what they want.",
+  "voice": "valley"
  }
 ]
