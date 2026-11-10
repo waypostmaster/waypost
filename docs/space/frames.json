@@ -6586,5 +6586,23 @@
   "line": "The only way to the new land crosses this house's ground. The house learned of it from a list.",
   "footline": "A far instrument can say that something happened, and nothing of what it was.",
   "voice": "both"
+ },
+ {
+  "roman": "ccclxxix",
+  "file": "three-men-on-third.html",
+  "title": "Three Men on Third",
+  "when": "2026-11-10",
+  "domain": "sport",
+  "subject": "settler",
+  "key": "babe-herman-three-men-on-third-15-august-1926-doubled-into-a-double-play-davids-brj-1977-erion-sabr",
+  "tier": 1,
+  "frame": "Babe Herman of Brooklyn, 15 August 1926, first game of a doubleheader against the Boston Braves, seventh inning, bases loaded: his hit off the right-field wall left three Brooklyn runners at third base, where Dazzy Vance kept the base and Chick Fewster and Herman were tagged out; the hit still stood as a double and, in SABR's account, the game-winning hit.",
+  "fact": "Davids (Baseball Research Journal, 1977): \"The date was August 15, 1926, first game of twos, Boston Braves at Brooklyn\"; Herman hits the ball off the rightfield wall; catcher Hank DeBerry scores from third; Vance on second holds up \"thinking the ball would be caught\", rounds third and heads back on the throw home; met at third by Fewster (from first) and Herman \"who was right on his heels\"; \"They decide to let Vance have possession of third and head back toward second, but both are tagged out\"; \"What it came down to for Herman was doubling into a double play.\" Erion (SABR BioProject): 15,000 in attendance \"and about as many accounts of the play\"; one out, bases loaded, tied 1-1 in the bottom of the seventh; DeBerry scored the go-ahead run; Herman slid into second and took off for third on the throw home; \"With Vance already at third, Fewster and Herman were tagged out\"; \"Lost in customary accounts of the play is the fact that Herman's double was the game-winning hit\"; Ring Lardner: \"Babe Herman did not triple into a triple play, but he doubled into a double play, which is the next best thing.\"",
+  "property": "a place can be held by only one, and the one already on it keeps it; the late arrival is still scored for what got them there",
+  "source": "L. Robert Davids, \"Three Men on Third\", Baseball Research Journal 1977, SABR, https://sabr.org/journal/article/three-men-on-third/ (page fetched to tmp/herman-src/brj.html, sha256 cb00c99c8a38...); Greg Erion, \"Babe Herman\", SABR Baseball Biography Project, https://sabr.org/bioproj/person/Babe-Herman/ (tmp/herman-src/bio.html, sha256 b8930d95d20a...). Both read 10 November 2026.",
+  "valleyFact": "10 Nov 2026 cut 2 (episodes/episode-2026-11-10T034150-cut2.json, engine 9ce90b5), replayed with playDay on main e83c597 (src identical), FRONTIER_BRAIN=off. Opening t=83100.05: boat 101,118 0.828184 under SOUND 0.85 (sim.ts:1233), depot 0.830170, dock 0.841390. Cairnwright bare repair from the opening (bare arm sim.ts:10097), arrives t=83113.65, working 30.0121, patches t=83143.70 (10:52:22Z) 0.8250485397 -> 1.0, store stone 100 -> 99. Seafarer named repair taken t=83102.50 (10:02:56Z) at 0.8280076409 (door: applyStep sim.ts:9583, refusal sim.ts:10101), arrives t=83114.05, working 30.8517, patches t=83144.95 (10:53:52Z) 0.9999137079 -> 1.0, wood 2 -> 1, craft.mending 53 -> 55 (practise sim.ts:3929, teachAt sim.ts:3895), skillFrom(54) = 0.9 -> \"a master of it\" (skillWord sim.ts:3869). finishRepair sim.ts:12217: lookup sim.ts:12243, gone sim.ts:12257, reach sim.ts:12263, pay sim.ts:12308, wasUnder sim.ts:12310, patch sim.ts:12311; no soundness test before the patch. Work repairWork sim.ts:1344 (boat 45), discounted by skill sim.ts:10595, hurt sim.ts:10598. Count: 38 aired cuts 1 Nov 04:00Z - 10 Nov 10:00Z replayed alone, each close equal to the next opening; 38 patches, 2 on a building at or over 0.85 (1 Nov and 10 Nov, the Seafarer on the boat after Cairnwright). 10:00Z cut-2 Seafarer step 1-10 Nov: patched 1, 3, 8, 10; refused 2 (0.910), 4 (0.898), 7 (0.871), 9 (0.917); hurt 5, 6.",
+  "line": "Herman and Fewster were at least tagged out. The Seafarer was made a master.",
+  "footline": "The need is checked when the order is given, and the price is paid when the work is done.",
+  "voice": "both"
  }
 ]
