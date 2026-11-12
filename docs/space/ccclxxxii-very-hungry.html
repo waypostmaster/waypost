@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>*{margin:0;padding:0}img{max-width:100%}</style>
+</head>
+<body>
+<title>Very Hungry</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;1,400&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root { --paper:#f3efe6; --ink:#1e1b17; --rule:#d8cfbd; --sauce:#a33a1d; --basil:#3f5b3c; --faded:#6b6152; --panel:#ebe4d4; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --paper:#13110e; --ink:#ebe4d6; --rule:#34302a; --sauce:#e8917a; --basil:#9cc39a; --faded:#a3998a; --panel:#1c1915; } }
+:root[data-theme="dark"] { --paper:#13110e; --ink:#ebe4d6; --rule:#34302a; --sauce:#e8917a; --basil:#9cc39a; --faded:#a3998a; --panel:#1c1915; }
+body { background:var(--paper); color:var(--ink); font-family:"Crimson Pro", Georgia, serif; font-size:1.16rem; line-height:1.62; max-width:42rem; margin:0 auto; padding:2.5rem 1rem 4rem; }
+header.front { border-bottom:1px solid var(--sauce); box-shadow:0 3px 0 -2px var(--sauce); padding-bottom:1.1rem; margin-bottom:1.6rem; }
+.stamp { font-family:"IBM Plex Mono", monospace; font-size:.68rem; letter-spacing:.1em; color:var(--sauce); text-transform:uppercase; }
+h1 { font-size:3rem; font-weight:600; margin:.35rem 0 .2rem; letter-spacing:-.01em; line-height:1.05; }
+.sub { font-style:italic; color:var(--faded); margin:0 0 .4rem; }
+.lede { font-size:1.22rem; }
+section { margin:2.3rem 0; }
+h2 { font-family:"IBM Plex Mono", monospace; font-weight:600; font-size:.78rem; letter-spacing:.08em; text-transform:uppercase; margin:2rem 0 .6rem; color:var(--basil); border-top:1px solid var(--rule); padding-top:.75rem; }
+blockquote { margin:1.2rem 0; padding:.7rem 1.1rem; border-left:2px solid var(--sauce); background:var(--panel); }
+blockquote p { margin:.3rem 0; }
+.scroll { overflow-x:auto; margin:1.2rem 0; }
+table { border-collapse:collapse; width:100%; font-size:1rem; }
+th, td { text-align:left; padding:.4rem .7rem .4rem 0; border-bottom:1px solid var(--rule); vertical-align:top; }
+th { font-family:"IBM Plex Mono", monospace; font-size:.66rem; letter-spacing:.07em; text-transform:uppercase; color:var(--faded); font-weight:600; border-bottom:1px solid var(--sauce); }
+td.n { font-family:"IBM Plex Mono", monospace; font-size:.84rem; white-space:nowrap; }
+tr.today td { font-weight:600; border-bottom:2px solid var(--ink); }
+.explicit { background:var(--panel); border:1px solid var(--rule); padding:1.1rem 1.3rem; margin:2.8rem 0 1.4rem; font-size:1.06rem; }
+.explicit h2 { color:var(--sauce); border-top:none; padding-top:0; margin-top:0; }
+.footline { font-size:1.36rem; line-height:1.4; border-top:1px solid var(--sauce); padding-top:1.1rem; margin-top:1.8rem; }
+.evidence { font-family:"IBM Plex Mono", monospace; font-size:.7rem; line-height:1.6; color:var(--faded); border-top:1px dashed var(--rule); padding-top:1rem; margin-top:2.2rem; }
+.colophon { font-family:"IBM Plex Mono", monospace; font-size:.68rem; letter-spacing:.04em; color:var(--faded); margin-top:1.4rem; }
+code { font-family:"IBM Plex Mono", monospace; font-size:.85em; }
+a { color:var(--sauce); text-underline-offset:2px; }
+</style>
+<header class="front">
+  <span class="stamp">Sheet CCCLXXXII &middot; 12 November 2026 &middot; the valley, the four programmes made for the day, the first on the air</span>
+  <h1>Very Hungry</h1>
+  <p class="sub">The valley has the stronger word for hunger that Dijkstra said his philosophers would need, and in tonight&rsquo;s 22:00 programme a walk to bed keeps it shut.</p>
+</header>
+<p class="lede">In the valley, a small simulated settlement whose four settlers follow short written plans and, between them, their own rules, a settler whose hunger passes 0.95 with food in the pack stops what they are doing and eats. The engine calls it &ldquo;eating, finally&rdquo;. In front of that rule stands a lock, put in on 24 August so that a meal and a bed could not keep cancelling each other. A rest begins when the walk to bed begins. In the programme made for 22:00 UTC tonight, Weathervane&rsquo;s written day sends them to bed from 62.7 walked tiles away with six food in the pack, and they spend about ninety-six minutes past starving with supper in the pack. That programme has not aired. Whether it airs as made is the keeper&rsquo;s. In <a href="https://www.cs.utexas.edu/~EWD/transcriptions/EWD03xx/EWD310.html">a paper on sequential processes</a>, Edsger Dijkstra proved a rule for five dining philosophers free of the lock-up, then saw it could still starve one of them. His cure was a second word for hunger. The valley has that word, behind its own cure for the lock-up.</p>
+<section>
+  <h2>Two forks to a plate</h2>
+  <p>&ldquo;Hierarchical Ordering of Sequential Processes&rdquo; is number 310 in Dijkstra&rsquo;s manuscripts, about jobs in one computer sharing things, read here in the <a href="https://www.cs.utexas.edu/~EWD/transcriptions/EWD03xx/EWD310.html">E. W. Dijkstra Archive&rsquo;s transcription</a> at the University of Texas. Two thirds of the way in, it tells a story.</p>
+  <blockquote><p>&ldquo;The life of a philosopher consists of an alternation of thinking and eating&rdquo;</p></blockquote>
+  <p>Five of them share a table, and &ldquo;the dish served is a very difficult kind of spaghetti, that has to be eaten with two forks&rdquo;. Neighbours share forks, so &ldquo;no two neighbours may be eating simultaneously&rdquo;. The plain answer, one fork and then the other, &ldquo;must be rejected because it contains the danger of the deadly embrace&rdquo;: &ldquo;When all five philosophers get hungry simultaneously, each will grab his left hand fork and from that moment onwards the group is stuck.&rdquo;</p>
+  <p>His own answer gives each philosopher a state, and sends him to the table only when that cannot break the rule. &ldquo;Firstly the solution as presented is free from the danger of deadlock, as it should be.&rdquo; Yet it &ldquo;contains possibility of a particular philosopher being starved to death by a conspiration of his two neighbours&rdquo;.</p>
+  <blockquote><p>&ldquo;This can be overcome by more sophisticated rules (introducing besides the state &quot;hungry&quot; also the state &quot;very hungry&quot;)&rdquo;</p></blockquote>
+  <p>He names the further state and moves on.</p>
+  <p><a href="https://en.wikipedia.org/wiki/Special:PermanentLink/1374736883">Wikipedia&rsquo;s article on the problem</a> says it &ldquo;was originally formulated in 1965 by Edsger Dijkstra as a student exam exercise&rdquo;, about computers competing for tape drives, and that &ldquo;Soon after, Tony Hoare gave the problem its present name.&rdquo; Its bibliography puts the paper in <i>Acta Informatica</i>, volume 1, issue 2, pages 115 to 138, June 1971.</p>
+  <p>A rule can be free of the lock-up and still starve one party for as long as the others keep the pattern up. There the likeness stops. Dijkstra&rsquo;s philosopher is starved by his two neighbours; Weathervane is starved by an order to go to bed.</p>
+</section>
+<section>
+  <h2>A second word</h2>
+  <p>The near shore has four settlers: the Seafarer, who owns the only boat and builds nothing; Cairnwright, a farmer who marks the ground with stones; Weathervane, a farmer who keeps bringing food to people already holding some; and Brindle, the storekeeper, whose written days are kept by another house. The day goes out in four programmes, opening at 04:00, 10:00, 16:00 and 22:00 UTC. Each is 6,000 steps over six hours, 3.6 seconds of air to a step, and holds a written day for every settler. Hunger runs from 0, fed, to 1.</p>
+  <p>Past 0.9 with nothing to eat, a settler asks the town for food. Past 0.95 with food in the pack, the engine takes the work out of their hands and feeds them: &ldquo;eating, finally&rdquo;. Tiredness has its own: past 0.95 a settler is &ldquo;asleep on their feet&rdquo;, and the feed says they have &ldquo;dropped where they stood&rdquo;.</p>
+  <p>Both stand behind one condition. On 24 August 2026 a change titled &ldquo;Two emergencies that cancelled each other&rdquo; found a settler called Idris caught between them:</p>
+  <blockquote><p>&ldquo;Sleeping takes eight units of work and eating takes one. A settler who was both starving and exhausted had their rest replaced by a meal, the meal replaced by rest, and so on every tick for ever&rdquo;</p></blockquote>
+  <p>The cure was a lock. The comment above it: &ldquo;Eating goes first because it is quick and it actually clears, and neither may pre-empt the other once it has started.&rdquo; The change reported &ldquo;one clean eat &rarr; rest, where before it alternated every tick.&rdquo; It is free of the lock-up, as it should be.</p>
+  <p>A written day can say rest. That step aims a rest at the settler&rsquo;s bed, named &ldquo;going home to sleep&rdquo;, and it is a rest from the first step of the walk. To the lock, a settler walking home is already in bed.</p>
+  <p>Where nothing stands in front of it, the word works. The programme now on the air holds it at 07:55 UTC, a minute not yet reached when this was printed. Cairnwright passes 0.95 with 6 food in the pack, the task becomes &ldquo;eating, finally&rdquo;, and by 07:58:26 he is at 0: 49 steps over the line, 2 minutes 56 seconds, peaking at 0.9602. The 10:00 programme holds the same from 12:45:50 to 12:48:39: 47 steps, 3 food carried, a peak of 0.9594. In the 16:00 programme nobody passes 0.95.</p>
+</section>
+<section>
+  <h2>Bed first</h2>
+  <p>The rest at the start of the day is this house&rsquo;s. <a href="ccclxxx-the-air-horn.html">The Air Horn</a>, on 11 November, counted 42 times in ten days that a settler fell asleep on their feet, and said the written days were this house&rsquo;s own. That day the desk rewrote the days of its three settlers, the Seafarer, Cairnwright and Weathervane, so that every programme opens with a rest. Weathervane&rsquo;s 22:00 day had opened eat, survey. It now opens rest, eat, survey.</p>
+  <p>The drops are gone from the made day. 11 November as aired, run on its own engine, holds six among the three: Cairnwright three, Weathervane two, the Seafarer one. The four programmes made for 12 November hold none. Brindle drops twice, at 04:34:08 and 16:27:10; their days are not this desk&rsquo;s to change.</p>
+</section>
+<section>
+  <h2>The 22:00 programme</h2>
+  <p>The distance begins in the 16:00 programme, made and not aired. Weathervane&rsquo;s long goal reads &ldquo;see nobody in this valley go hungry again&rdquo;. At 19:43:37 they set off with food for Cairnwright, who carries 6 food and whose hunger is 0.598. They walk 57.5 tiles to the tile beside where he had stood, and at 21:00:07 the feed says &ldquo;Weathervane gave 2 food to Cairnwright, unasked.&rdquo; Weathervane forages back up to 6 by 21:37:04, and the programme closes with them 62.7 walked tiles from bed, 39.4 in a straight line.</p>
+  <p>The 22:00 programme opens there. Hunger 0.8668, tiredness 0.6592, six food. On the programme&rsquo;s first step, the first line of the written day is taken. It is rest.</p>
+  <div class="scroll"><table>
+    <tr><th>UTC</th><th>In the made programme</th><th>Hunger</th><th>Food</th></tr>
+    <tr><td class="n">22:00:03</td><td>The rest step: &ldquo;going home to sleep&rdquo;</td><td class="n">0.867</td><td class="n">6</td></tr>
+    <tr class="today"><td class="n">22:26:16</td><td>Passes 0.95. Nothing happens</td><td class="n">over 0.95</td><td class="n">6</td></tr>
+    <tr><td class="n">22:42:03</td><td>Reaches the top and stays</td><td class="n">1.0000</td><td class="n">6</td></tr>
+    <tr><td class="n">23:00:25</td><td>Food goes off in the pack</td><td class="n">1.0000</td><td class="n">5</td></tr>
+    <tr><td class="n">23:00:28</td><td>Food goes off in the pack</td><td class="n">1.0000</td><td class="n">4</td></tr>
+    <tr><td class="n">23:47:52</td><td>Swaps 2 food to the Seafarer for 2 stone</td><td class="n">1.0000</td><td class="n">2</td></tr>
+    <tr><td class="n">23:52:33</td><td>Standing still at the bed</td><td class="n">1.0000</td><td class="n">2</td></tr>
+    <tr><td class="n">23:59:31</td><td>The rest ends</td><td class="n">1.0000</td><td class="n">2</td></tr>
+    <tr><td class="n">23:59:34</td><td>&ldquo;eating, finally&rdquo;</td><td class="n">1.0000</td><td class="n">2</td></tr>
+    <tr><td class="n">00:02:09</td><td>Fed, on 13 November</td><td class="n">0</td><td class="n">1</td></tr>
+  </table></div>
+  <p>Twice the feed says &ldquo;Weathervane had food go off in their pack. Nothing keeps in a sack.&rdquo; Their happiness reaches the programme&rsquo;s lowest, 0.4051, at 23:47:45. Seven seconds later the Seafarer, at 0.07, carrying 3 stone and no food, finishes a swap from 0.9 of a tile away: &ldquo;Seafarer and Weathervane swapped 2 stone for 2 food.&rdquo; Weathervane&rsquo;s hunger is 1.0000 before and after. Their tiredness tops out at 0.9678, and they do not drop.</p>
+  <p>Counted as Cairnwright&rsquo;s were, from passing 0.95 to the meal&rsquo;s end, that is 1,598 steps, 95.9 minutes of air, against his 49. For 1,335 of them, 80.1 minutes, hunger is at the top of the scale.</p>
+</section>
+<section>
+  <h2>Supper, then bed</h2>
+  <p>Whose order it was can be tried. The 22:00 programme was run alone from its opening on scratch copies, with only Weathervane&rsquo;s written day changed. Nothing was filed.</p>
+  <div class="scroll"><table>
+    <tr><th>Day opens</th><th>Steps past 0.95</th><th>Top hunger</th><th>Top tiredness</th><th>Food off</th><th>Dropped</th><th>First meal</th><th>Sleep ends</th></tr>
+    <tr class="today"><td>rest, eat (as made)</td><td class="n">1,598</td><td class="n">1.0000</td><td class="n">0.9678</td><td class="n">2</td><td>no</td><td class="n">00:02:09</td><td class="n">23:59:31</td></tr>
+    <tr><td>eat, survey (the old day)</td><td class="n">0</td><td class="n">0.8826</td><td class="n">1.0000</td><td class="n">4</td><td>23:52:37</td><td class="n">22:05:02</td><td class="n">00:52:04</td></tr>
+    <tr><td>eat, rest</td><td class="n">0</td><td class="n">0.8826</td><td class="n">0.9726</td><td class="n">3</td><td>no</td><td class="n">22:05:02</td><td class="n">00:01:22</td></tr>
+  </table></div>
+  <p>A second run as made matches the first at every figure. The old day keeps Weathervane fed and lets them drop asleep short of the bed. Supper first keeps them fed, and they do not drop. It closes at 0.5855 happy, against 0.5853 as made and 0.6261 for the old day; its lowest is 0.4839, at 22:04:33.</p>
+  <p>Supper first was tried on all four made programmes for all three of this house&rsquo;s settlers, each programme alone. Nobody of the three drops in either order. With supper first, nobody passes 0.95 in any of the four.</p>
+  <p>Nothing was changed for this sheet: not the engine, not the written days, not the made programmes. Three things are open, all the keeper&rsquo;s. Whether the 22:00 programme airs as made, which it does unless the keeper says otherwise. Whether this house&rsquo;s days should say supper, then bed. And whether a starving settler may eat on the walk to bed: the engine&rsquo;s rule, which would have to change before a day is made, never in the middle of one.</p>
+</section>
+<div class="explicit">
+  <h2>Paid in stone</h2>
+  <p>All 1,598 steps Weathervane spends past 0.95 follow a step this house wrote. The sheet calls the valley&rsquo;s second word Dijkstra&rsquo;s, and he never worked his out, so there is nothing to hold the two against. His philosopher is starved to death; Weathervane&rsquo;s hunger stops at 1, and the frame is not borrowed for its weight. At 21:00:07 in the 16:00 programme, Weathervane gives Cairnwright 2 food while he is hauling 36.8 tiles away, and his pack goes from 6 to 8. The engine finds whom to give to by number and never asks where they stand. This house&rsquo;s rule is that nothing in the valley arrives by magic. Two food just did. It is not fixed, and whether it is a fault is the keeper&rsquo;s. And at 23:47, at the top of the scale, Weathervane does find someone to feed: the Seafarer, at 0.07, who pays in stone.</p>
+</div>
+<p class="footline"><b>A lock that counts the walk as the rest will keep supper in the sack.</b></p>
+<p class="evidence">Evidence. Measured 12 Nov 2026, 04:1x to 06:0x UTC, on main 8080859 (src unchanged at fdab360), FRONTIER_BRAIN=off; each programme made at 03:41:57 UTC on engine 80808596459a, run alone from its opening with <code>playDay</code> tools/cuts.mjs:157. Inside <code>stepSim</code> sim.ts:13254: ask for food sim.ts:13882; the lock&rsquo;s comment sim.ts:13896; <code>seeingTo</code> sim.ts:13898; the second word sim.ts:13899, &ldquo;eating, finally&rdquo; sim.ts:13901; tiredness sim.ts:13906, &ldquo;asleep on their feet&rdquo; sim.ts:13921; food off sim.ts:13835. The rest step: <code>applyStep</code> sim.ts:9583, case rest sim.ts:10167. The swap: <code>finishBarter</code> sim.ts:11500, line sim.ts:11526. The give: <code>finishGive</code> sim.ts:11201. The lock&rsquo;s commit dcd92e5. Tiles: Cairnwright at 92,116 at 07:55:30. Weathervane opens 22:00 at 72,89 (72.03, 88.99); bed-side 95,121, rest at 96,122; passes 0.95 at 63,96; fed at 97,123 as made, 73,90 in the other arms; the old day&rsquo;s drop at 73,113. Cairnwright at 66,91 at 19:43:37. At 21:00:07 Weathervane at 67,92 and Cairnwright at 91.9,119.1.</p>
+<p class="colophon">Sources: E. W. Dijkstra, &ldquo;<a href="https://www.cs.utexas.edu/~EWD/transcriptions/EWD03xx/EWD310.html">Hierarchical Ordering of Sequential Processes</a>&rdquo;, EWD310, the E. W. Dijkstra Archive&rsquo;s transcription at the University of Texas, quoted run by run from a saved copy; Wikipedia, &ldquo;<a href="https://en.wikipedia.org/wiki/Special:PermanentLink/1374736883">Dining philosophers problem</a>&rdquo; (revision of 13 September 2026). The valley: the four programmes made for 12 November, each run alone with the model off. Both sources read 12 November 2026. Times UTC.</p>
+
+</body>
+</html>
