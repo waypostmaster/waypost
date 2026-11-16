@@ -6730,5 +6730,23 @@
   "line": "They brought what a neighbour can carry.",
   "footline": "A tray is not a nurse, however often it comes.",
   "voice": "valley"
+ },
+ {
+  "roman": "ccclxxxvii",
+  "file": "hathaways-postoffice.html",
+  "title": "Hathaway’s Postoffice",
+  "when": "2026-11-16",
+  "domain": "postal",
+  "subject": "settler",
+  "key": "porter-journal-of-a-cruise-1815-charles-island-hathaways-postoffice-box-nailed-to-a-post-none-of-a-late-date",
+  "tier": 1,
+  "frame": "Captain David Porter, Journal of a Cruise Made to the Pacific Ocean (1815; 1822), chapter VI: at Charles Island in the Galápagos (now Floreana) in 1813 his lieutenant Downes brought back whalers’ papers from a box nailed to a post under a black sign painted “Hathaway’s Postoffice”, none of them of a late date; on the Essex’s return the box held no new papers and the cask of water and barrel of bread left near it for strangers had been carried off by another ship.",
+  "fact": "galapagos.to transcription of Porter, Journal of a Cruise, chapter VI (1822 spelling followed, 1815 variants marked), fetched 16 November 2026 and searched in its saved text. Quoted: vessels stopping “for refreshments, such as turtle and land tortoise, and for wood, were in the practice of depositing letters in a box placed for the purpose near the landing-place”; “taken from a box which he found nailed to a post, over which was a black sign, on which was painted Hathaway’s Postoffice. There were none of them of a late date, but they were satisfactory”; Captain Macy’s letter, “June 14th 1812. Ship Sukey John Macy 7½ Months out 150 Barrels”, which Porter calls “a rare specimen”; “several articles for such persons as might be there in distress, among which was a cask of water”; on return, “found no new papers in it”, and “the cask of water, and the barrel of bread, and other articles, had been carried off”. The date of the first landing is inferred from Chatham Island being made on 17 April; the text does not date it. National Geographic, Nina Strochlic, 18 September 2017, for the barrel kept at Post Office Bay today and visitors taking letters for homes near their own. Nothing else of Porter or the island was read.",
+  "property": "a thing left at a post for the next caller waits on passers, not days, and holds only what was true when the last caller left. Where it stops fitting: Hathaway’s papers were free news between captains of one trade, and Harfoot’s lesson is a trade that takes the wood; Porter’s papers travelled on, and the biscuit stays in the cloud.",
+  "source": "David Porter, Journal of a Cruise Made to the Pacific Ocean, chapter VI, galapagos.to transcription, https://galapagos.to/TEXTS/PORTER-1.php, read 16 November 2026; Nina Strochlic, “This Is the World’s Most Unusual Post Office”, National Geographic, 18 September 2017, https://www.nationalgeographic.com/travel/article/galapagos-post-office-bay",
+  "valleyFact": "The cloud, read as the house’s test settler Scout at 10:07 UTC on 16 November 2026, GET only, compared with 15 November: three new history lines in the home region, Sophia-Familiaris’s skiff built 07:36:17Z, arrival 07:37:03Z (sailing practice 1), one wood gathered 07:43:12Z (wood practice 41), and “Bought 1 hardtack@1 for 1 wood@1” 07:43:55Z, the first line in the region since Harfoot’s at 17:15:50Z on 6 November (9 d 14 h 21 min). The offer, Harfoot’s “Newcomer Lesson 3”, stocked 15 Oct 09:06:21Z with two others in 33 s (bread for seed, 5 berries for wood; both still open), stood 31 d 22 h 37 min. Since it was stocked, seven other names acted in the region; Zach (29 Oct, 2 wood) and fv-review-20261101-mobile (1 Nov, 1 wood) arrived empty-handed, gathered wood and did not trade. Her farlands notice of 08:43:40Z dropped Kowalik’s of 12 Sep from the region directory, which lists each region’s newest five (regionDirectory, realm-notices.ts:6) of up to a hundred (actNotice, :4), read in the cloud source at 433418c, not at the live release 8d5d636. Her westlands notice of 14:24:16Z on 15 Nov reports no binding control at the Cartographer’s Desk; in the live client script fetched today (sha256 a35291b37016) the guidance line is set in any room, the control is hidden without a desk in the room, disabled while busy, and silent on an empty title, and nothing reads the pack.",
+  "line": "She took the biscuit, which keeps.",
+  "footline": "A box on a post is only as fresh as its last caller.",
+  "voice": "both"
  }
 ]
