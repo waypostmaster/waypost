@@ -1,0 +1,1257 @@
+# Brindle comparison, run at the keeper's word at this desk (21:22Z 15 Nov 2026), halfverse's gate n48105.
+date -u at start: 2026-11-15T21:34:36Z
+BUILD: 8080859 (80808596459a808c333111e833433a48c71330be), the abed worktree .claude/worktrees/abed, HEAD 80808596459a808c333111e833433a48c71330be
+$ git diff --stat ebc116c 8080859 -- src
+(lines of git diff ebc116c 8080859 -- src: 0)
+abed git status --porcelain -- src: ''
+the 13 Nov stem was produced on engine ebc116ccb58d (all four cut files' engine.commit)
+script: compare-abed.mjs sha256 5f7c31a34396cb13b476cb3a8bfa9193b2daaff49e4f0505dd4a4620e73080ea; it is compare.mjs (sha256 6fee06196eef2ff63e2b0eeb82b7733e2c5f28fd46646464a38e4420ca2c7cf6) with line 22 ROOT changed to the abed worktree, nothing else (diff printed below)
+22c22
+< const ROOT = 'C:/Claude/Games/Frontier';
+---
+> const ROOT = 'C:/Claude/Games/Frontier/.claude/worktrees/abed';
+episode inputs copied into abed/episodes (gitignored), hash-equal to the frontier tree's:
+  episode-2026-11-13T034157-cut1.json daa5e7b4d3ddccd8
+  episode-2026-11-13T034157-cut2.json 6ff27df55165089a
+  episode-2026-11-13T034157-cut3.json 90994efea90accce
+  episode-2026-11-13T034157-cut4.json 667fa5a11a92de6b
+  episode-2026-11-14T034144-cut1.json c08662a4bdf10e43
+candidates: scratchpad/brindle-rest-first-20261111/candidate:
+  brindle-cut1.json 35ff412d8660ae25
+  brindle-cut3.json e93311b77db5dfc1
+  brindle-cut4.json f33e0d8ef572da3b
+scope (#47012): an opening rest in Brindle's (npc-05) cuts 1, 3 and 4, cut 2 unchanged, against the produced 13 Nov controls; failed controls kept; nothing filed, produced or aired.
+# Paired comparison, cut by cut. Scratch only; nothing filed, produced or aired.
+run at 2026-11-15T21:34:42.877Z (wall clock of this process)
+args: --who npc-05 --stem episode-2026-11-13T034157 --cuts 1,3,4 --candidates scratchpad/brindle-rest-first-20261111/candidate --also all --out scratchpad/brindle-comparison-20261112/brindle-run-20261115.txt
+who: npc-05   stem: episode-2026-11-13T034157   cuts: 1,3,4   candidates: scratchpad/brindle-rest-first-20261111/candidate
+git rev-parse HEAD: 80808596459a808c333111e833433a48c71330be
+git diff 8080859 HEAD -- src: empty (0 bytes)
+git status --porcelain -- src: clean
+
+════════ cut 1 — episode-2026-11-13T034157-cut1.json
+  engine in file: {"commit":"ebc116ccb58d","dirty":true,"bundle":"assets/valley-Z3ov2mOw.js","sun":"assets/sun-DeaalTRW.js","built_at":"2026-11-13T03:41:57.265Z"}   aired_at 2026-11-13T04:00:00.000Z   steps 6000   dt 0.05   chain_from null
+  produced plan (10): survey, forage, haul, survey, forage, haul, chop, haul, eat, rest   ifStuck: 
+  candidate     (11): rest, survey, forage, haul, survey, forage, haul, chop, haul, eat, rest   ifStuck:    from C:\Claude\Games\Frontier\scratchpad\brindle-rest-first-20261111\candidate/brindle-cut1.json
+  arms run (steps, ms): BASE 6000 2065; BASE2 6000 3106; CAND 6000 3244; CAND2 6000 3147; IDENT 6000 3096
+
+════════ cut 3 — episode-2026-11-13T034157-cut3.json
+  engine in file: {"commit":"ebc116ccb58d","dirty":true,"bundle":"assets/valley-Z3ov2mOw.js","sun":"assets/sun-DeaalTRW.js","built_at":"2026-11-13T03:41:57.265Z"}   aired_at 2026-11-13T16:00:00.000Z   steps 6000   dt 0.05   chain_from episode-2026-11-13T034157-cut2.json
+  produced plan (9): survey, forage, haul, chop, haul, survey, forage, haul, eat   ifStuck: 
+  candidate     (10): rest, survey, forage, haul, chop, haul, survey, forage, haul, eat   ifStuck:    from C:\Claude\Games\Frontier\scratchpad\brindle-rest-first-20261111\candidate/brindle-cut3.json
+  arms run (steps, ms): BASE 6000 3111; BASE2 6000 3128; CAND 6000 3091; CAND2 6000 3050; IDENT 6000 3071
+
+════════ cut 4 — episode-2026-11-13T034157-cut4.json
+  engine in file: {"commit":"ebc116ccb58d","dirty":true,"bundle":"assets/valley-Z3ov2mOw.js","sun":"assets/sun-DeaalTRW.js","built_at":"2026-11-13T03:41:57.265Z"}   aired_at 2026-11-13T22:00:00.000Z   steps 6000   dt 0.05   chain_from episode-2026-11-13T034157-cut3.json
+  produced plan (8): forage, haul, rest, eat, survey, forage, haul, rest   ifStuck: 
+  candidate     (9): rest, forage, haul, rest, eat, survey, forage, haul, rest   ifStuck:    from C:\Claude\Games\Frontier\scratchpad\brindle-rest-first-20261111\candidate/brindle-cut4.json
+  arms run (steps, ms): BASE 6000 3077; BASE2 6000 3073; CAND 6000 3075; CAND2 6000 3087; IDENT 6000 3069
+
+════════ CONTROLS
+  cut 1  1 baseline to next opening   PASS   BASE close (6000 steps, t=86700.05000280266) against episode-2026-11-13T034157-cut2.json (chain_from episode-2026-11-13T034157-cut1.json, t=86700.05000280266): 4 settlers x (gx, gy, needs.food, needs.rest, every carrying item) and 9 buildings x (kind, condition, gx, gy), exact ===: 88 fields, 0 differ. Wider (check-chainlink form, whole world less run/path/askedAt/goalsAskedAt/routed): byte-identical
+  cut 1  2 determinism BASE=BASE2     PASS   6001 digests each (opening + 6000 steps; sha1 of every settler, building and settlement and the clock): 0 differ; at the close equal
+  cut 1  2 determinism CAND=CAND2     PASS   6001 digests each (opening + 6000 steps; sha1 of every settler, building and settlement and the clock): 0 differ; at the close equal
+  cut 1  3 instrument IDENT=BASE      PASS   6001 digests each: 0 differ; at the close equal
+  cut 3  1 baseline to next opening   PASS   BASE close (6000 steps, t=87300.05000283758) against episode-2026-11-13T034157-cut4.json (chain_from episode-2026-11-13T034157-cut3.json, t=87300.05000283758): 4 settlers x (gx, gy, needs.food, needs.rest, every carrying item) and 9 buildings x (kind, condition, gx, gy), exact ===: 88 fields, 0 differ. Wider (check-chainlink form, whole world less run/path/askedAt/goalsAskedAt/routed): byte-identical
+  cut 3  2 determinism BASE=BASE2     PASS   6001 digests each (opening + 6000 steps; sha1 of every settler, building and settlement and the clock): 0 differ; at the close equal
+  cut 3  2 determinism CAND=CAND2     PASS   6001 digests each (opening + 6000 steps; sha1 of every settler, building and settlement and the clock): 0 differ; at the close equal
+  cut 3  3 instrument IDENT=BASE      PASS   6001 digests each: 0 differ; at the close equal
+  cut 4  1 baseline to next opening   PASS   BASE close (6000 steps, t=87600.05000285505) against episode-2026-11-14T034144-cut1.json (chain_from null, t=87600.05000285505): 4 settlers x (gx, gy, needs.food, needs.rest, every carrying item) and 9 buildings x (kind, condition, gx, gy), exact ===: 88 fields, 0 differ. Wider (check-chainlink form, whole world less run/path/askedAt/goalsAskedAt/routed): byte-identical
+  cut 4  2 determinism BASE=BASE2     PASS   6001 digests each (opening + 6000 steps; sha1 of every settler, building and settlement and the clock): 0 differ; at the close equal
+  cut 4  2 determinism CAND=CAND2     PASS   6001 digests each (opening + 6000 steps; sha1 of every settler, building and settlement and the clock): 0 differ; at the close equal
+  cut 4  3 instrument IDENT=BASE      PASS   6001 digests each: 0 differ; at the close equal
+  counted: 12 (PASS 12, FAIL 0); ABSENT and not counted: 0
+
+════════ cut 1 — Brindle (npc-05), BASE against CAND, 6000 steps each, 3.6 s of air a step
+                                               BASE                               CAND
+ PIN 1. The opening, and any opening rest
+  in hand in the file's snapshot               keep(own) "minding the store"      keep(own) "minding the store"
+  in hand after the opening                    forage(filed) "gathering food"     rest(filed) "going home to sleep"
+  did the opening replace it                   replaced by the first filed step   replaced by the first filed step
+  plan steps filed / refused at the opening    10 / 1                             11 / 0
+  opening rest begun                           no opening rest in this arm        step 0 (04:00:00Z)
+    tiredness at the step it begins            no opening rest in this arm        0.7208
+    steps opening to end of rest               no opening rest in this arm        344 steps from opening to end: before it 0, walking 223, asleep 121, other 0
+    ended                                      no opening rest in this arm        step 344 (04:20:38Z) tired 0.0000
+    how                                        no opening rest in this arm        slept it out, then -
+ PIN 1. Every plan step, aligned by what it asks (LCS on the step words)
+   #-/#0 rest                              
+       BASE: not in this plan
+       CAND: began 0 (04:00:00Z), spent 343, finished
+   #0/#1 survey                            
+       BASE: spent 0, refused at the opening — (no refusal line found at the opening)
+       CAND: spent 0, refused — Brindle could not survey: no ground on this shore is clear of the marks standing. They went on with the rest of the day.
+   #1/#2 forage                            
+       BASE: began 0 (04:00:00Z), spent 202, finished
+       CAND: began 345 (04:20:42Z), spent 74, finished
+   #2/#3 haul                              
+       BASE: began 204 (04:12:14Z), spent 196, finished
+       CAND: began 420 (04:25:12Z), spent 183, finished
+   #3/#4 survey                            
+       BASE: spent 0, refused — Brindle could not survey: no ground on this shore is clear of the marks standing. They went on with the rest of the day.
+       CAND: spent 0, refused — Brindle could not survey: no ground on this shore is clear of the marks standing. They went on with the rest of the day.
+   #4/#5 forage                            
+       BASE: began 401 (04:24:03Z), spent 219, finished
+       CAND: began 604 (04:36:14Z), spent 132, finished
+   #5/#6 haul                              
+       BASE: began 621 (04:37:15Z), spent 238, finished
+       CAND: began 737 (04:44:13Z), spent 137, finished
+   #6/#7 chop                              
+       BASE: began 860 (04:51:36Z), spent 305, finished
+       CAND: began 875 (04:52:30Z), spent 202, finished
+   #7/#8 haul                              
+       BASE: began 1166 (05:09:57Z), spent 298, finished
+       CAND: began 1078 (05:04:40Z), spent 186, finished
+   #8/#9 eat                               
+       BASE: began 1465 (05:27:54Z), spent 56, finished
+       CAND: began 1265 (05:15:54Z), spent 43, finished
+   #9/#10 rest                             
+       BASE: began 1918 (05:55:04Z), spent 121, finished
+       CAND: began 1309 (05:18:32Z), spent 259, finished
+ HEAD 1. Drops (collapse: task note "asleep on their feet", say at sim.ts:13925)
+  drops (from the task)                        1                                  0
+  drops (from new feed lines)                  1                                  0
+  each: time, tiredness the step before        05:31:19Z tired before 0.956505    -
+ HEAD 2. Rest
+  rests begun or in hand, by kind              collapse 1, filed 1                filed 2
+  steps asleep / walking to bed                282 / 234                          242 / 361
+  tiredness at each filed rest                 0.0002                             0.7208, 0.1496
+  tiredness lowest / mean / highest            0.0000 / 0.4810 / 1.0000           0.0000 / 0.3165 / 0.7739
+  each rest: kind begin-end walk/asleep        collapse 05:31:19Z-05:55:01Z w234 a161; filed 05:55:04Z-06:02:20Z w0 a121 filed open-04:20:38Z w223 a121; filed 05:18:32Z-05:34:04Z w138 a121
+ HEAD 3. Food
+  meals (pack / store)                         2 (1 / 1)                          2 (1 / 1)
+  hunger mean / highest                        0.3546 / 0.7986                    0.3062 / 0.7346
+  steps hunger > 0.95 (first)                  0 (-)                              0 (-)
+  steps hunger at 1.0 (first)                  0 (-)                              0 (-)
+  each meal                                    05:31:15Z 0.430->0.000 pack; 09:44:56Z 0.799->0.000 store 05:18:28Z 0.390->0.000 pack; 09:12:03Z 0.735->0.000 store
+  pack rot (history events / feed lines)       0 / 0                              0 / 0
+  depot food / dried at the close              27 / 0                             31 / 0
+ HEAD 4. Depot access (as storekeeper: keeperOf, keeperIsIn at sim.ts:4443)
+  steps this settler is the keeper / and in    6000 / 5240                        6000 / 5139
+  meals other settlers took from the store     0                                  0
+ HEAD 5. Loads (from new history lines each step, finishHaul; "with nobody in it" at sim.ts:11176)
+  loads                                        delivered 4 (8 goods); paid 0 (0 food); unpaid 0; nobody in 0 (0 goods); stacked outside 3 delivered 7 (12 goods); paid 0 (0 food); unpaid 0; nobody in 0 (0 goods); stacked outside 3
+  gives, classed from the task                 0                                  0
+ HEAD 6. Keeping and hauling time (ownChoice store tasks, sim.ts:7000, 7009, 7011)
+  steps on goto:going-back-to-mind-the-store   193                                193
+  steps on haul:putting-the-days-takings-away  121                                237
+  steps on keep:minding-the-store              3260                               3580
+  steps on a filed haul                        732                                506
+ HEAD 7. Filed against actual (above, per step), and steps on each kind of work by source
+    collapse rest                              395                                0
+    filed chop                                 305                                202
+    filed eat                                  56                                 43
+    filed forage                               421                                206
+    filed haul                                 732                                506
+    filed rest                                 121                                602
+    none -                                     77                                 84
+    own eat                                    24                                 52
+    own gather                                 295                                295
+    own goto                                   193                                193
+    own haul                                   121                                237
+    own keep                                   3260                               3580
+ HEAD 8. Ends, at the close
+  pack                                         empty                              empty
+  purse (coin)                                 0                                  0
+  skills (craft practice counts)               farming 752, hauling 777, mending 8, forestry 239, sawing 31, trading 14591, mining 2, toolmaking 12, building 2 farming 752, hauling 780, mending 8, forestry 240, sawing 31, trading 14595, mining 2, toolmaking 12, building 2
+  depot stock                                  stone 96, ore 88, food 27, plank 33 stone 91, ore 88, food 31, plank 33
+  hunger / tiredness / happiness               0.0477 / 0.6151 / 0.8128           0.1518 / 0.6881 / 0.8300
+  position                                     91.5,115.5                         91.5,115.5
+DATA {"cut":1,"id":"npc-05","arm":"BASE","steps":6000,"over95":0,"first95":null,"at1":0,"first1":null,"maxFood":0.7985947705086061,"meanFood":0.35455978659970205,"minRest":0,"meanRest":0.4809849928486187,"maxRest":1,"rotFeed":0,"rotHistory":0,"feedDrops":1,"drops":[{"at":"05:31:19Z","step":1522,"restBefore":0.956505000000066}],"meals":[{"at":"05:31:15Z","step":1521,"from":0.42974217691384015,"to":0,"src":"pack"},{"at":"09:44:56Z","step":5749,"from":0.7985947705086061,"to":0,"src":"store"}],"rests":[{"kind":"collapse","begin":"05:31:19Z","end":"05:55:01Z","walk":234,"asleep":161},{"kind":"filed","begin":"05:55:04Z","end":"06:02:20Z","walk":0,"asleep":121}],"close":{"food":0.047748250471759915,"rest":0.6151284780152718,"happy":0.8127626107109339,"gx":91.5,"gy":115.5,"pack":{"wood":0,"stone":0,"ore":0,"food":0,"plank":0,"charcoal":0,"iron":0,"block":0,"furniture":0},"coin":0}}
+DATA {"cut":1,"id":"npc-05","arm":"CAND","steps":6000,"over95":0,"first95":null,"at1":0,"first1":null,"maxFood":0.7345717448308643,"meanFood":0.3062131567370459,"minRest":0,"meanRest":0.316492315348611,"maxRest":0.7739150000000469,"rotFeed":0,"rotHistory":0,"feedDrops":0,"drops":[],"meals":[{"at":"05:18:28Z","step":1308,"from":0.38968026008846857,"to":0,"src":"pack"},{"at":"09:12:03Z","step":5201,"from":0.7345717448308643,"to":0,"src":"store"}],"rests":[{"kind":"filed","begin":"open","end":"04:20:38Z","walk":223,"asleep":121},{"kind":"filed","begin":"05:18:32Z","end":"05:34:04Z","walk":138,"asleep":121}],"close":{"food":0.15183362624661248,"rest":0.6881334780152859,"happy":0.8299953285380953,"gx":91.5,"gy":115.5,"pack":{"wood":0,"stone":0,"ore":0,"food":0,"plank":0,"charcoal":0,"iron":0,"block":0,"furniture":0},"coin":0}}
+
+════════ cut 1 — Weathervane (npc-07), BASE against CAND, 6000 steps each, 3.6 s of air a step
+                                               BASE                               CAND
+ PIN 1. The opening, and any opening rest
+  in hand in the file's snapshot               forage(own) "fill my pack with food before I turn back" forage(own) "fill my pack with food before I turn back"
+  in hand after the opening                    eat(filed) "eating"                eat(filed) "eating"
+  did the opening replace it                   replaced by the first filed step   replaced by the first filed step
+  plan steps filed / refused at the opening    12 / 0                             12 / 0
+  opening rest                                 none (first step is not a rest)    none (first step is not a rest)
+ PIN 1. Every plan step, aligned by what it asks (LCS on the step words)
+   #0/#0 eat                               
+       BASE: began 0 (04:00:00Z), spent 46, finished
+       CAND: began 0 (04:00:00Z), spent 46, finished
+   #1/#1 rest                              
+       BASE: began 48 (04:02:52Z), spent 172, finished
+       CAND: began 48 (04:02:52Z), spent 172, finished
+   #2/#2 survey                            
+       BASE: spent 0, refused — Weathervane could not survey: no ground on this shore is clear of the marks standing. They went on with the rest of the day.
+       CAND: spent 0, refused — Weathervane could not survey: no ground on this shore is clear of the marks standing. They went on with the rest of the day.
+   #3/#3 eat                               
+       BASE: began 221 (04:13:15Z), spent 42, finished
+       CAND: began 221 (04:13:15Z), spent 42, finished
+   #4/#4 goto                              
+       BASE: began 264 (04:15:50Z), spent 56, finished
+       CAND: began 264 (04:15:50Z), spent 56, finished
+   #5/#5 idle                              
+       BASE: began 321 (04:19:15Z), spent 100, finished
+       CAND: began 321 (04:19:15Z), spent 100, finished
+   #6/#6 glean food                        
+       BASE: began 422 (04:25:19Z), spent 243, finished
+       CAND: began 422 (04:25:19Z), spent 243, finished
+   #7/#7 give food                         
+       BASE: began 666 (04:39:57Z), spent 98, finished
+       CAND: began 666 (04:39:57Z), spent 79, finished
+   #8/#8 goto                              
+       BASE: began 765 (04:45:54Z), spent 39, finished
+       CAND: began 746 (04:44:45Z), spent 41, finished
+   #9/#9 idle                              
+       BASE: began 805 (04:48:18Z), spent 143, finished
+       CAND: began 788 (04:47:16Z), spent 111, finished
+   #10/#10 eat                             
+       BASE: began 949 (04:56:56Z), spent 43, finished
+       CAND: began 900 (04:54:00Z), spent 43, finished
+   #11/#11 rest                            
+       BASE: began 993 (04:59:34Z), spent 154, finished
+       CAND: began 944 (04:56:38Z), spent 177, finished
+   #12/#12 eat [ifStuck]                   
+       BASE: began 1148 (05:08:52Z), spent 41, finished
+       CAND: began 1122 (05:07:19Z), spent 41, finished
+   #13/#13 glean food [ifStuck]            
+       BASE: began 1190 (05:11:24Z), spent 172, finished
+       CAND: began 1164 (05:09:50Z), spent 172, finished
+   #14/#14 rest [ifStuck]                  
+       BASE: began 1363 (05:21:46Z), spent 249, finished
+       CAND: began 1337 (05:20:13Z), spent 249, finished
+ HEAD 1. Drops (collapse: task note "asleep on their feet", say at sim.ts:13925)
+  drops (from the task)                        0                                  0
+  drops (from new feed lines)                  0                                  0
+  each: time, tiredness the step before        -                                  -
+ HEAD 2. Rest
+  rests begun or in hand, by kind              filed 3                            filed 3
+  steps asleep / walking to bed                363 / 212                          363 / 235
+  tiredness at each filed rest                 0.4656, 0.1198, 0.0335             0.4656, 0.1122, 0.0335
+  tiredness lowest / mean / highest            0.0000 / 0.2806 / 0.6813           0.0000 / 0.2830 / 0.6853
+  each rest: kind begin-end walk/asleep        filed 04:02:52Z-04:13:12Z w51 a121; filed 04:59:34Z-05:08:49Z w33 a121; filed 05:21:46Z-05:36:43Z w128 a121 filed 04:02:52Z-04:13:12Z w51 a121; filed 04:56:38Z-05:07:15Z w56 a121; filed 05:20:13Z-05:35:09Z w128 a121
+ HEAD 3. Food
+  meals (pack / store)                         5 (5 / 0)                          5 (5 / 0)
+  hunger mean / highest                        0.3314 / 0.8460                    0.3255 / 0.8382
+  steps hunger > 0.95 (first)                  0 (-)                              0 (-)
+  steps hunger at 1.0 (first)                  0 (-)                              0 (-)
+  each meal                                    04:02:49Z 0.612->0.000 pack; 04:15:46Z 0.040->0.000 pack; 04:59:31Z 0.137->0.000 pack; 05:11:20Z 0.037->0.000 pack; 09:40:12Z 0.846->0.000 pack 04:02:49Z 0.612->0.000 pack; 04:15:46Z 0.040->0.000 pack; 04:56:34Z 0.128->0.000 pack; 05:09:46Z 0.041->0.000 pack; 09:36:10Z 0.838->0.000 pack
+  pack rot (history events / feed lines)       0 / 0                              0 / 0
+  depot food / dried at the close              27 / 0                             31 / 0
+ HEAD 4. Depot access (as storekeeper: keeperOf, keeperIsIn at sim.ts:4443)
+  steps this settler is the keeper / and in    0 / 0                              0 / 0
+  meals other settlers took from the store     0                                  0
+ HEAD 5. Loads (from new history lines each step, finishHaul; "with nobody in it" at sim.ts:11176)
+  loads                                        delivered 4 (7 goods); paid 4 (4 food); unpaid 0; nobody in 0 (0 goods); stacked outside 6 delivered 3 (3 goods); paid 3 (3 food); unpaid 0; nobody in 0 (0 goods); stacked outside 9
+  gives, classed from the task                 filed 1, own choice (errand:toward-goal) 3 filed 1, own choice (errand:toward-goal) 4
+ HEAD 6. Keeping and hauling time (ownChoice store tasks, sim.ts:7000, 7009, 7011)
+  steps on goto:going-back-to-mind-the-store   0                                  0
+  steps on haul:putting-the-days-takings-away  0                                  0
+  steps on keep:minding-the-store              0                                  0
+  steps on a filed haul                        0                                  0
+ HEAD 7. Filed against actual (above, per step), and steps on each kind of work by source
+    filed eat                                  172                                172
+    filed give                                 98                                 79
+    filed glean                                415                                415
+    filed goto                                 95                                 97
+    filed idle                                 243                                211
+    filed rest                                 575                                598
+    none -                                     39                                 46
+    own barter                                 202                                0
+    own eat                                    50                                 50
+    own forage                                 1388                               2290
+    own gather                                 259                                207
+    own give                                   1265                               263
+    own haul                                   1199                               1572
+ HEAD 8. Ends, at the close
+  pack                                         food 3                             food 2
+  purse (coin)                                 0                                  0
+  skills (craft practice counts)               farming 2436, forestry 74, hauling 745, trading 156, mending 79, sawing 38, building 5, toolmaking 2 farming 2438, forestry 74, hauling 744, trading 154, mending 79, sawing 38, building 5, toolmaking 2
+  depot stock                                  stone 96, ore 88, food 27, plank 33 stone 91, ore 88, food 31, plank 33
+  hunger / tiredness / happiness               0.0628 / 0.6813 / 0.7435           0.0755 / 0.6853 / 0.6625
+  position                                     93.4,116.0                         97.1,122.3
+DATA {"cut":1,"id":"npc-07","arm":"BASE","steps":6000,"over95":0,"first95":null,"at1":0,"first1":null,"maxFood":0.8460168334062631,"meanFood":0.3313851449854577,"minRest":0,"meanRest":0.2806369661819419,"maxRest":0.6813134780152846,"rotFeed":0,"rotHistory":0,"feedDrops":0,"drops":[],"meals":[{"at":"04:02:49Z","step":47,"from":0.6119456666516694,"to":0,"src":"pack"},{"at":"04:15:46Z","step":263,"from":0.04040965547122303,"to":0,"src":"pack"},{"at":"04:59:31Z","step":992,"from":0.13684898660277842,"to":0,"src":"pack"},{"at":"05:11:20Z","step":1189,"from":0.03685385832672062,"to":0,"src":"pack"},{"at":"09:40:12Z","step":5670,"from":0.8460168334062631,"to":0,"src":"pack"}],"rests":[{"kind":"filed","begin":"04:02:52Z","end":"04:13:12Z","walk":51,"asleep":121},{"kind":"filed","begin":"04:59:34Z","end":"05:08:49Z","walk":33,"asleep":121},{"kind":"filed","begin":"05:21:46Z","end":"05:36:43Z","walk":128,"asleep":121}],"close":{"food":0.06276669637453218,"rest":0.6813134780152846,"happy":0.7435382547085915,"gx":93.44473712089753,"gy":116,"pack":{"wood":0,"stone":0,"ore":0,"food":3,"plank":0,"charcoal":0,"iron":0,"block":0,"furniture":0},"coin":0}}
+DATA {"cut":1,"id":"npc-07","arm":"CAND","steps":6000,"over95":0,"first95":null,"at1":0,"first1":null,"maxFood":0.8381724602452292,"meanFood":0.32545658011290735,"minRest":0,"meanRest":0.2829797395152755,"maxRest":0.6853434780152854,"rotFeed":0,"rotHistory":0,"feedDrops":0,"drops":[],"meals":[{"at":"04:02:49Z","step":47,"from":0.6119456666516694,"to":0,"src":"pack"},{"at":"04:15:46Z","step":263,"from":0.04040965547122303,"to":0,"src":"pack"},{"at":"04:56:34Z","step":943,"from":0.12763636505236933,"to":0,"src":"pack"},{"at":"05:09:46Z","step":1163,"from":0.0411773795128757,"to":0,"src":"pack"},{"at":"09:36:10Z","step":5603,"from":0.8381724602452292,"to":0,"src":"pack"}],"rests":[{"kind":"filed","begin":"04:02:52Z","end":"04:13:12Z","walk":51,"asleep":121},{"kind":"filed","begin":"04:56:38Z","end":"05:07:15Z","walk":56,"asleep":121},{"kind":"filed","begin":"05:20:13Z","end":"05:35:09Z","walk":128,"asleep":121}],"close":{"food":0.07550022973985764,"rest":0.6853434780152854,"happy":0.6625297514778609,"gx":97.1209321304188,"gy":122.31860180437181,"pack":{"wood":0,"stone":0,"ore":0,"food":2,"plank":0,"charcoal":0,"iron":0,"block":0,"furniture":0},"coin":0}}
+
+════════ cut 1 — Cairnwright (npc-08), BASE against CAND, 6000 steps each, 3.6 s of air a step
+                                               BASE                               CAND
+ PIN 1. The opening, and any opening rest
+  in hand in the file's snapshot               forage(own) "get another 36 food into the stores" forage(own) "get another 36 food into the stores"
+  in hand after the opening                    eat(filed) "eating"                eat(filed) "eating"
+  did the opening replace it                   replaced by the first filed step   replaced by the first filed step
+  plan steps filed / refused at the opening    8 / 0                              8 / 0
+  opening rest                                 none (first step is not a rest)    none (first step is not a rest)
+ PIN 1. Every plan step, aligned by what it asks (LCS on the step words)
+   #0/#0 eat                               
+       BASE: began 0 (04:00:00Z), spent 45, finished
+       CAND: began 0 (04:00:00Z), spent 45, finished
+   #1/#1 rest                              
+       BASE: began 47 (04:02:49Z), spent 347, finished
+       CAND: began 47 (04:02:49Z), spent 347, finished
+   #2/#2 repair                            
+       BASE: began 395 (04:23:42Z), spent 279, finished
+       CAND: began 395 (04:23:42Z), spent 279, finished
+   #3/#3 mine                              
+       BASE: began 675 (04:40:30Z), spent 1400, finished
+       CAND: began 675 (04:40:30Z), spent 1400, finished
+   #4/#4 haul                              
+       BASE: began 2076 (06:04:33Z), spent 1506, finished
+       CAND: began 2076 (06:04:33Z), spent 1506, finished
+   #5/#5 cairn                             
+       BASE: began 3583 (07:34:58Z), spent 64, finished
+       CAND: began 3583 (07:34:58Z), spent 64, finished
+   #6/#6 eat                               
+       BASE: began 3648 (07:38:52Z), spent 48, finished
+       CAND: began 3648 (07:38:52Z), spent 48, finished
+   #7/#7 rest                              
+       BASE: began 3697 (07:41:49Z), spent 367, finished
+       CAND: began 3697 (07:41:49Z), spent 367, finished
+ HEAD 1. Drops (collapse: task note "asleep on their feet", say at sim.ts:13925)
+  drops (from the task)                        0                                  0
+  drops (from new feed lines)                  0                                  0
+  each: time, tiredness the step before        -                                  -
+ HEAD 2. Rest
+  rests begun or in hand, by kind              filed 2                            filed 2
+  steps asleep / walking to bed                242 / 472                          242 / 472
+  tiredness at each filed rest                 0.3920, 0.5140                     0.3920, 0.5140
+  tiredness lowest / mean / highest            0.0000 / 0.2500 / 0.5707           0.0000 / 0.2500 / 0.5707
+  each rest: kind begin-end walk/asleep        filed 04:02:49Z-04:23:38Z w226 a121; filed 07:41:49Z-08:03:50Z w246 a121 filed 04:02:49Z-04:23:38Z w226 a121; filed 07:41:49Z-08:03:50Z w246 a121
+ HEAD 3. Food
+  meals (pack / store)                         2 (2 / 0)                          2 (2 / 0)
+  hunger mean / highest                        0.2966 / 0.6870                    0.2966 / 0.6870
+  steps hunger > 0.95 (first)                  0 (-)                              0 (-)
+  steps hunger at 1.0 (first)                  0 (-)                              0 (-)
+  each meal                                    04:02:45Z 0.538->0.000 pack; 07:41:45Z 0.687->0.000 pack 04:02:45Z 0.538->0.000 pack; 07:41:45Z 0.687->0.000 pack
+  pack rot (history events / feed lines)       0 / 0                              0 / 0
+  depot food / dried at the close              27 / 0                             31 / 0
+ HEAD 4. Depot access (as storekeeper: keeperOf, keeperIsIn at sim.ts:4443)
+  steps this settler is the keeper / and in    0 / 0                              0 / 0
+  meals other settlers took from the store     0                                  0
+ HEAD 5. Loads (from new history lines each step, finishHaul; "with nobody in it" at sim.ts:11176)
+  loads                                        delivered 3 (3 goods); paid 3 (3 food); unpaid 0; nobody in 0 (0 goods); stacked outside 5 delivered 2 (5 goods); paid 2 (3 food); unpaid 0; nobody in 0 (0 goods); stacked outside 6
+  gives, classed from the task                 own choice (errand:toward-goal) 3  0
+ HEAD 6. Keeping and hauling time (ownChoice store tasks, sim.ts:7000, 7009, 7011)
+  steps on goto:going-back-to-mind-the-store   0                                  0
+  steps on haul:putting-the-days-takings-away  0                                  0
+  steps on keep:minding-the-store              0                                  0
+  steps on a filed haul                        1506                               1506
+ HEAD 7. Filed against actual (above, per step), and steps on each kind of work by source
+    filed cairn                                64                                 64
+    filed eat                                  93                                 93
+    filed haul                                 1506                               1506
+    filed mine                                 1400                               1400
+    filed repair                               279                                279
+    filed rest                                 714                                714
+    none -                                     23                                 21
+    own forage                                 817                                827
+    own gather                                 295                                128
+    own give                                   165                                0
+    own haul                                   644                                968
+ HEAD 8. Ends, at the close
+  pack                                         food 5                             food 4
+  purse (coin)                                 0                                  0
+  skills (craft practice counts)               farming 1650, mining 185, forestry 16, sawing 82, trading 56, hauling 745, mending 127, toolmaking 48, building 2, shipwrighting 1 farming 1650, mining 185, forestry 16, sawing 82, trading 56, hauling 744, mending 127, toolmaking 48, building 2, shipwrighting 1
+  depot stock                                  stone 96, ore 88, food 27, plank 33 stone 91, ore 88, food 31, plank 33
+  hunger / tiredness / happiness               0.4367 / 0.3001 / 0.8180           0.4367 / 0.3001 / 0.8101
+  position                                     92.5,116.5                         91.5,114.5
+DATA {"cut":1,"id":"npc-08","arm":"BASE","steps":6000,"over95":0,"first95":null,"at1":0,"first1":null,"maxFood":0.6869527119918376,"meanFood":0.29656059291157866,"minRest":0,"meanRest":0.2500322892998857,"maxRest":0.5706899126259264,"rotFeed":0,"rotHistory":0,"feedDrops":0,"drops":[],"meals":[{"at":"04:02:45Z","step":46,"from":0.5384098050490801,"to":0,"src":"pack"},{"at":"07:41:45Z","step":3696,"from":0.6869527119918376,"to":0,"src":"pack"}],"rests":[{"kind":"filed","begin":"04:02:49Z","end":"04:23:38Z","walk":226,"asleep":121},{"kind":"filed","begin":"07:41:49Z","end":"08:03:50Z","walk":246,"asleep":121}],"close":{"food":0.4366965007674282,"rest":0.3000799999999973,"happy":0.8180115626183009,"gx":92.50524117400268,"gy":116.50524117400268,"pack":{"wood":0,"stone":0,"ore":0,"food":5,"plank":0,"charcoal":0,"iron":0,"block":0,"furniture":0},"coin":0}}
+DATA {"cut":1,"id":"npc-08","arm":"CAND","steps":6000,"over95":0,"first95":null,"at1":0,"first1":null,"maxFood":0.6869527119918376,"meanFood":0.29656059291157866,"minRest":0,"meanRest":0.2500322892998857,"maxRest":0.5706899126259264,"rotFeed":0,"rotHistory":0,"feedDrops":0,"drops":[],"meals":[{"at":"04:02:45Z","step":46,"from":0.5384098050490801,"to":0,"src":"pack"},{"at":"07:41:45Z","step":3696,"from":0.6869527119918376,"to":0,"src":"pack"}],"rests":[{"kind":"filed","begin":"04:02:49Z","end":"04:23:38Z","walk":226,"asleep":121},{"kind":"filed","begin":"07:41:49Z","end":"08:03:50Z","walk":246,"asleep":121}],"close":{"food":0.4366965007674282,"rest":0.3000799999999973,"happy":0.8101084441482673,"gx":91.5,"gy":114.5,"pack":{"wood":0,"stone":0,"ore":0,"food":4,"plank":0,"charcoal":0,"iron":0,"block":0,"furniture":0},"coin":0}}
+
+════════ cut 1 — Seafarer (npc-01), BASE against CAND, 6000 steps each, 3.6 s of air a step
+                                               BASE                               CAND
+ PIN 1. The opening, and any opening rest
+  in hand in the file's snapshot               eat(own) "eating"                  eat(own) "eating"
+  in hand after the opening                    eat(filed) "eating"                eat(filed) "eating"
+  did the opening replace it                   replaced by the first filed step   replaced by the first filed step
+  plan steps filed / refused at the opening    11 / 0                             11 / 0
+  opening rest                                 none (first step is not a rest)    none (first step is not a rest)
+ PIN 1. Every plan step, aligned by what it asks (LCS on the step words)
+   #0/#0 eat                               
+       BASE: began 0 (04:00:00Z), spent 49, finished
+       CAND: began 0 (04:00:00Z), spent 49, finished
+   #1/#1 rest                              
+       BASE: began 51 (04:03:03Z), spent 337, finished
+       CAND: began 51 (04:03:03Z), spent 337, finished
+   #2/#2 glean food                        
+       BASE: began 389 (04:23:20Z), spent 139, finished
+       CAND: began 389 (04:23:20Z), spent 139, finished
+   #3/#3 glean food                        
+       BASE: began 529 (04:31:44Z), spent 28, finished
+       CAND: began 529 (04:31:44Z), spent 28, finished
+   #4/#4 give food                         
+       BASE: began 558 (04:33:28Z), spent 113, finished
+       CAND: began 558 (04:33:28Z), spent 47, finished
+   #5/#5 goto                              
+       BASE: began 672 (04:40:19Z), spent 121, finished
+       CAND: began 606 (04:36:21Z), spent 105, finished
+   #6/#6 idle                              
+       BASE: began 794 (04:47:38Z), spent 117, finished
+       CAND: began 712 (04:42:43Z), spent 122, finished
+   #7/#7 goto                              
+       BASE: began 912 (04:54:43Z), spent 185, finished
+       CAND: began 835 (04:50:06Z), spent 212, finished
+   #8/#8 idle                              
+       BASE: began 1098 (05:05:52Z), spent 105, finished
+       CAND: began 1048 (05:02:52Z), spent 62, finished
+   #9/#9 eat                               
+       BASE: began 1204 (05:12:14Z), spent 283, finished
+       CAND: began 1111 (05:06:39Z), spent 203, finished
+   #10/#10 rest                            
+       BASE: began 1488 (05:29:16Z), spent 241, finished
+       CAND: began 1315 (05:18:54Z), spent 239, finished
+   #11/#11 glean food [ifStuck]            
+       BASE: began 1730 (05:43:48Z), spent 137, finished
+       CAND: began 1555 (05:33:18Z), spent 137, finished
+   #12/#12 eat [ifStuck]                   
+       BASE: began 1868 (05:52:04Z), spent 41, finished
+       CAND: began 1693 (05:41:34Z), spent 41, finished
+   #13/#13 rest [ifStuck]                  
+       BASE: began 1910 (05:54:36Z), spent 214, finished
+       CAND: began 1735 (05:44:06Z), spent 215, finished
+   #14/#14 idle [ifStuck]                  
+       BASE: began 2125 (06:07:30Z), spent 126, finished
+       CAND: began 1951 (05:57:03Z), spent 113, finished
+ HEAD 1. Drops (collapse: task note "asleep on their feet", say at sim.ts:13925)
+  drops (from the task)                        0                                  0
+  drops (from new feed lines)                  0                                  0
+  each: time, tiredness the step before        -                                  -
+ HEAD 2. Rest
+  rests begun or in hand, by kind              filed 3                            filed 3
+  steps asleep / walking to bed                363 / 429                          363 / 428
+  tiredness at each filed rest                 0.6848, 0.1705, 0.0281             0.6848, 0.1437, 0.0281
+  tiredness lowest / mean / highest            0.0000 / 0.2656 / 0.7369           0.0000 / 0.2780 / 0.7369
+  each rest: kind begin-end walk/asleep        filed 04:03:03Z-04:23:16Z w216 a121; filed 05:29:16Z-05:43:44Z w120 a121; filed 05:54:36Z-06:07:26Z w93 a121 filed 04:03:03Z-04:23:16Z w216 a121; filed 05:18:54Z-05:33:14Z w118 a121; filed 05:44:06Z-05:57:00Z w94 a121
+ HEAD 3. Food
+  meals (pack / store)                         3 (2 / 1)                          3 (2 / 1)
+  hunger mean / highest                        0.3055 / 0.8757                    0.3211 / 0.8757
+  steps hunger > 0.95 (first)                  0 (-)                              0 (-)
+  steps hunger at 1.0 (first)                  0 (-)                              0 (-)
+  each meal                                    04:03:00Z 0.876->0.000 pack; 05:29:13Z 0.270->0.000 store; 05:54:32Z 0.079->0.000 pack 04:03:00Z 0.876->0.000 pack; 05:18:50Z 0.237->0.000 store; 05:44:02Z 0.079->0.000 pack
+  pack rot (history events / feed lines)       1 / 1                              0 / 0
+  depot food / dried at the close              27 / 0                             31 / 0
+ HEAD 4. Depot access (as storekeeper: keeperOf, keeperIsIn at sim.ts:4443)
+  steps this settler is the keeper / and in    0 / 0                              0 / 0
+  meals other settlers took from the store     0                                  0
+ HEAD 5. Loads (from new history lines each step, finishHaul; "with nobody in it" at sim.ts:11176)
+  loads                                        delivered 6 (9 goods); paid 6 (6 food); unpaid 0; nobody in 0 (0 goods); stacked outside 6 delivered 3 (3 goods); paid 3 (3 food); unpaid 0; nobody in 0 (0 goods); stacked outside 11
+  gives, classed from the task                 filed 1                            filed 1
+ HEAD 6. Keeping and hauling time (ownChoice store tasks, sim.ts:7000, 7009, 7011)
+  steps on goto:going-back-to-mind-the-store   0                                  0
+  steps on haul:putting-the-days-takings-away  0                                  0
+  steps on keep:minding-the-store              0                                  0
+  steps on a filed haul                        0                                  0
+ HEAD 7. Filed against actual (above, per step), and steps on each kind of work by source
+    filed eat                                  373                                293
+    filed give                                 113                                47
+    filed glean                                304                                304
+    filed goto                                 306                                317
+    filed idle                                 348                                297
+    filed rest                                 792                                791
+    none -                                     33                                 40
+    own chop                                   353                                1007
+    own gather                                 400                                191
+    own haul                                   1559                               1622
+    own hone                                   39                                 39
+    own mine                                   1380                               1052
+ HEAD 8. Ends, at the close
+  pack                                         stone 2, food 5                    food 5
+  purse (coin)                                 0                                  0
+  skills (craft practice counts)               scouting 18, mending 56, farming 206, forestry 638, hauling 520, sawing 47, trading 619, seafaring 11, building 4, mining 465, toolmaking 50 scouting 18, mending 56, farming 206, forestry 643, hauling 517, sawing 47, trading 617, seafaring 11, building 4, mining 463, toolmaking 50
+  depot stock                                  stone 96, ore 88, food 27, plank 33 stone 91, ore 88, food 31, plank 33
+  hunger / tiredness / happiness               0.7735 / 0.6020 / 0.7268           0.8065 / 0.6294 / 0.6696
+  position                                     94.1,117.6                         83.6,122.0
+DATA {"cut":1,"id":"npc-01","arm":"BASE","steps":6000,"over95":0,"first95":null,"at1":0,"first1":null,"maxFood":0.8757490548019601,"meanFood":0.3055024618163268,"minRest":0,"meanRest":0.26557657201527046,"maxRest":0.736870000000043,"rotFeed":1,"rotHistory":1,"feedDrops":0,"drops":[],"meals":[{"at":"04:03:00Z","step":50,"from":0.8757490548019601,"to":0,"src":"pack"},{"at":"05:29:13Z","step":1487,"from":0.26996956507408726,"to":0,"src":"store"},{"at":"05:54:32Z","step":1909,"from":0.07920858755006756,"to":0,"src":"pack"}],"rests":[{"kind":"filed","begin":"04:03:03Z","end":"04:23:16Z","walk":216,"asleep":121},{"kind":"filed","begin":"05:29:16Z","end":"05:43:44Z","walk":120,"asleep":121},{"kind":"filed","begin":"05:54:36Z","end":"06:07:26Z","walk":93,"asleep":121}],"close":{"food":0.7735318276981108,"rest":0.6019534780152694,"happy":0.7267591080885482,"gx":94.14553714288832,"gy":117.60915285716624,"pack":{"wood":0,"stone":2,"ore":0,"food":5,"plank":0,"charcoal":0,"iron":0,"block":0,"furniture":0},"coin":0}}
+DATA {"cut":1,"id":"npc-01","arm":"CAND","steps":6000,"over95":0,"first95":null,"at1":0,"first1":null,"maxFood":0.8757490548019601,"meanFood":0.32109366567291814,"minRest":0,"meanRest":0.27798765089840655,"maxRest":0.736870000000043,"rotFeed":0,"rotHistory":0,"feedDrops":0,"drops":[],"meals":[{"at":"04:03:00Z","step":50,"from":0.8757490548019601,"to":0,"src":"pack"},{"at":"05:18:50Z","step":1314,"from":0.2374314834125025,"to":0,"src":"store"},{"at":"05:44:02Z","step":1734,"from":0.07881659942869992,"to":0,"src":"pack"}],"rests":[{"kind":"filed","begin":"04:03:03Z","end":"04:23:16Z","walk":216,"asleep":121},{"kind":"filed","begin":"05:18:54Z","end":"05:33:14Z","walk":118,"asleep":121},{"kind":"filed","begin":"05:44:06Z","end":"05:57:00Z","walk":94,"asleep":121}],"close":{"food":0.8064619724554402,"rest":0.6293661874440797,"happy":0.6695854657629278,"gx":83.61866030009841,"gy":122,"pack":{"wood":0,"stone":0,"ore":0,"food":5,"plank":0,"charcoal":0,"iron":0,"block":0,"furniture":0},"coin":0}}
+
+════════ cut 3 — Brindle (npc-05), BASE against CAND, 6000 steps each, 3.6 s of air a step
+                                               BASE                               CAND
+ PIN 1. The opening, and any opening rest
+  in hand in the file's snapshot               keep(own) "minding the store"      keep(own) "minding the store"
+  in hand after the opening                    forage(filed) "gathering food"     rest(filed) "going home to sleep"
+  did the opening replace it                   replaced by the first filed step   replaced by the first filed step
+  plan steps filed / refused at the opening    9 / 1                              10 / 0
+  opening rest begun                           no opening rest in this arm        step 0 (16:00:00Z)
+    tiredness at the step it begins            no opening rest in this arm        0.8792
+    steps opening to end of rest               no opening rest in this arm        375 steps from opening to end: before it 0, walking 254, asleep 121, other 0
+    ended                                      no opening rest in this arm        step 375 (16:22:30Z) tired 0.0000
+    how                                        no opening rest in this arm        slept it out, then -
+ PIN 1. Every plan step, aligned by what it asks (LCS on the step words)
+   #-/#0 rest                              
+       BASE: not in this plan
+       CAND: began 0 (16:00:00Z), spent 374, finished
+   #0/#1 survey                            
+       BASE: spent 0, refused at the opening — Brindle could not survey: no ground on this shore is clear of the marks standing. They went on with the rest of the day.
+       CAND: spent 0, refused — Brindle could not survey: no ground on this shore is clear of the marks standing. They went on with the rest of the day.
+   #1/#2 forage                            
+       BASE: began 0 (16:00:00Z), spent 226, finished
+       CAND: began 376 (16:22:33Z), spent 113, finished
+   #2/#3 haul                              
+       BASE: began 228 (16:13:40Z), spent 222, finished
+       CAND: began 490 (16:29:24Z), spent 156, finished
+   #3/#4 chop                              
+       BASE: began 451 (16:27:03Z), spent 67, finished, broken off 1x (first by rest(collapse:unnamed) "asleep on their feet" at 458)
+       CAND: began 647 (16:38:49Z), spent 202, finished
+   #4/#5 haul                              
+       BASE: began 950 (16:57:00Z), spent 174, finished
+       CAND: began 850 (16:51:00Z), spent 185, finished
+   #5/#6 survey                            
+       BASE: spent 0, refused — Brindle could not survey: no ground on this shore is clear of the marks standing. They went on with the rest of the day.
+       CAND: spent 0, refused — Brindle could not survey: no ground on this shore is clear of the marks standing. They went on with the rest of the day.
+   #6/#7 forage                            
+       BASE: began 1125 (17:07:30Z), spent 134, finished
+       CAND: began 1036 (17:02:09Z), spent 137, finished
+   #7/#8 haul                              
+       BASE: began 1260 (17:15:36Z), spent 139, finished
+       CAND: began 1174 (17:10:26Z), spent 143, finished
+   #8/#9 eat                               
+       BASE: began 1400 (17:24:00Z), spent 43, finished
+       CAND: began 1318 (17:19:04Z), spent 43, finished
+ HEAD 1. Drops (collapse: task note "asleep on their feet", say at sim.ts:13925)
+  drops (from the task)                        1                                  0
+  drops (from new feed lines)                  1                                  0
+  each: time, tiredness the step before        16:27:28Z tired before 0.949995    -
+ HEAD 2. Rest
+  rests begun or in hand, by kind              collapse 1                         filed 1, own 1
+  steps asleep / walking to bed                161 / 269                          121 / 361
+  tiredness at each filed rest                 -                                  0.8792
+  tiredness lowest / mean / highest            0.0000 / 0.4962 / 1.0000           0.0000 / 0.4839 / 0.9371
+  each rest: kind begin-end walk/asleep        collapse 16:27:28Z-16:53:16Z w269 a161 filed open-16:22:30Z w254 a121; own 21:53:34Z-close w107 a0
+ HEAD 3. Food
+  meals (pack / store)                         2 (2 / 0)                          2 (1 / 1)
+  hunger mean / highest                        0.3998 / 0.8331                    0.3433 / 0.7349
+  steps hunger > 0.95 (first)                  0 (-)                              0 (-)
+  steps hunger at 1.0 (first)                  0 (-)                              0 (-)
+  each meal                                    17:26:34Z 0.612->0.000 pack; 21:33:10Z 0.833->0.000 pack 17:21:39Z 0.596->0.000 pack; 20:59:49Z 0.735->0.000 store
+  pack rot (history events / feed lines)       0 / 0                              0 / 0
+  depot food / dried at the close              23 / 0                             20 / 0
+ HEAD 4. Depot access (as storekeeper: keeperOf, keeperIsIn at sim.ts:4443)
+  steps this settler is the keeper / and in    6000 / 5508                        6000 / 5554
+  meals other settlers took from the store     0                                  0
+ HEAD 5. Loads (from new history lines each step, finishHaul; "with nobody in it" at sim.ts:11176)
+  loads                                        delivered 8 (10 goods); paid 0 (0 food); unpaid 0; nobody in 0 (0 goods); stacked outside 2 delivered 6 (9 goods); paid 0 (0 food); unpaid 0; nobody in 0 (0 goods); stacked outside 2
+  gives, classed from the task                 0                                  0
+ HEAD 6. Keeping and hauling time (ownChoice store tasks, sim.ts:7000, 7009, 7011)
+  steps on goto:going-back-to-mind-the-store   88                                 90
+  steps on haul:putting-the-days-takings-away  202                                120
+  steps on keep:minding-the-store              4056                               4078
+  steps on a filed haul                        535                                484
+ HEAD 7. Filed against actual (above, per step), and steps on each kind of work by source
+    collapse rest                              430                                0
+    filed chop                                 67                                 202
+    filed eat                                  43                                 43
+    filed forage                               360                                250
+    filed haul                                 535                                484
+    filed rest                                 0                                  374
+    none -                                     90                                 89
+    own eat                                    24                                 55
+    own gather                                 105                                107
+    own goto                                   88                                 90
+    own haul                                   202                                120
+    own keep                                   4056                               4078
+    own rest                                   0                                  108
+ HEAD 8. Ends, at the close
+  pack                                         empty                              empty
+  purse (coin)                                 0                                  0
+  skills (craft practice counts)               farming 760, hauling 788, mending 8, forestry 241, sawing 31, trading 14746, mining 2, toolmaking 12, building 2 farming 760, hauling 786, mending 8, forestry 240, sawing 31, trading 14747, mining 2, toolmaking 12, building 2
+  depot stock                                  stone 96, ore 92, food 23, plank 33 wood 1, stone 97, ore 92, food 20, plank 34
+  hunger / tiredness / happiness               0.0924 / 0.8194 / 0.8051           0.2069 / 0.8989 / 0.7784
+  position                                     91.5,115.5                         95.6,116.7
+DATA {"cut":3,"id":"npc-05","arm":"BASE","steps":6000,"over95":0,"first95":null,"at1":0,"first1":null,"maxFood":0.8330583100305744,"meanFood":0.39980992494748846,"minRest":0,"meanRest":0.49615422029177786,"maxRest":1,"rotFeed":0,"rotHistory":0,"feedDrops":1,"drops":[{"at":"16:27:28Z","step":458,"restBefore":0.9499950000000653}],"meals":[{"at":"17:26:34Z","step":1443,"from":0.612014105289406,"to":0,"src":"pack"},{"at":"21:33:10Z","step":5553,"from":0.8330583100305744,"to":0,"src":"pack"}],"rests":[{"kind":"collapse","begin":"16:27:28Z","end":"16:53:16Z","walk":269,"asleep":161}],"close":{"food":0.09244667011569417,"rest":0.8193880845982905,"happy":0.8050595558331566,"gx":91.5,"gy":115.5,"pack":{"wood":0,"stone":0,"ore":0,"food":0,"plank":0,"charcoal":0,"iron":0,"block":0,"furniture":0},"coin":0}}
+DATA {"cut":3,"id":"npc-05","arm":"CAND","steps":6000,"over95":0,"first95":null,"at1":0,"first1":null,"maxFood":0.734925157003144,"meanFood":0.343281377899758,"minRest":0,"meanRest":0.4839267302917737,"maxRest":0.937130000000064,"rotFeed":0,"rotHistory":0,"feedDrops":0,"drops":[],"meals":[{"at":"17:21:39Z","step":1361,"from":0.5956783130754817,"to":0,"src":"pack"},{"at":"20:59:49Z","step":4997,"from":0.734925157003144,"to":0,"src":"store"}],"rests":[{"kind":"filed","begin":"open","end":"16:22:30Z","walk":254,"asleep":121},{"kind":"own","begin":"21:53:34Z","end":null,"walk":107,"asleep":0}],"close":{"food":0.2069167726390396,"rest":0.8989030845982915,"happy":0.7783764626740244,"gx":95.58319124880272,"gy":116.71663824976055,"pack":{"wood":0,"stone":0,"ore":0,"food":0,"plank":0,"charcoal":0,"iron":0,"block":0,"furniture":0},"coin":0}}
+
+════════ cut 3 — Weathervane (npc-07), BASE against CAND, 6000 steps each, 3.6 s of air a step
+                                               BASE                               CAND
+ PIN 1. The opening, and any opening rest
+  in hand in the file's snapshot               forage(own) "fill my pack with food before I turn back" forage(own) "fill my pack with food before I turn back"
+  in hand after the opening                    eat(filed) "eating"                eat(filed) "eating"
+  did the opening replace it                   replaced by the first filed step   replaced by the first filed step
+  plan steps filed / refused at the opening    12 / 0                             12 / 0
+  opening rest                                 none (first step is not a rest)    none (first step is not a rest)
+ PIN 1. Every plan step, aligned by what it asks (LCS on the step words)
+   #0/#0 eat                               
+       BASE: began 0 (16:00:00Z), spent 49, finished
+       CAND: began 0 (16:00:00Z), spent 49, finished
+   #1/#1 rest                              
+       BASE: began 51 (16:03:03Z), spent 222, finished
+       CAND: began 51 (16:03:03Z), spent 222, finished
+   #2/#2 repair                            
+       BASE: began 274 (16:16:26Z), spent 263, finished
+       CAND: began 274 (16:16:26Z), spent 263, finished
+   #3/#3 glean food                        
+       BASE: began 538 (16:32:16Z), spent 154, finished
+       CAND: spent 0, refused — Weathervane could not glean food: there is no food on the stack outside. They went on with the rest of the day.   <- reached in BASE, never in CAND
+   #4/#4 give food                         
+       BASE: began 693 (16:41:34Z), spent 165, finished
+       CAND: began 538 (16:32:16Z), spent 203, finished
+   #5/#5 eat                               
+       BASE: began 859 (16:51:32Z), spent 205, finished
+       CAND: began 742 (16:44:31Z), spent 113, finished
+   #6/#6 goto                              
+       BASE: began 1065 (17:03:54Z), spent 42, finished
+       CAND: began 856 (16:51:21Z), spent 41, finished
+   #7/#7 idle                              
+       BASE: began 1108 (17:06:28Z), spent 109, finished
+       CAND: began 898 (16:53:52Z), spent 279, finished
+   #8/#8 glean food                        
+       BASE: spent 0, refused — Weathervane could not glean food: there is no food on the stack outside. They went on with the rest of the day.
+       CAND: spent 0, refused — Weathervane could not glean food: there is no food on the stack outside. They went on with the rest of the day.
+   #9/#9 give food                         
+       BASE: began 1218 (17:13:04Z), spent 252, finished
+       CAND: began 1178 (17:10:40Z), spent 309, finished
+   #10/#10 idle                            
+       BASE: began 1471 (17:28:15Z), spent 109, finished
+       CAND: began 1488 (17:29:16Z), spent 169, finished
+   #11/#11 rest                            
+       BASE: began 1581 (17:34:51Z), spent 161, finished
+       CAND: began 1658 (17:39:28Z), spent 389, finished
+   #12/#12 glean food [ifStuck]            
+       BASE: spent 0, refused — Weathervane could not glean food: there is no food on the stack outside. They went on with the rest of the day.
+       CAND: spent 0, refused — Weathervane could not glean food: there is no food on the stack outside. They went on with the rest of the day.
+   #13/#13 eat [ifStuck]                   
+       BASE: began 1743 (17:44:34Z), spent 149, finished
+       CAND: began 2048 (18:02:52Z), spent 150, finished
+   #14/#14 rest [ifStuck]                  
+       BASE: began 1893 (17:53:34Z), spent 247, finished
+       CAND: began 2199 (18:11:56Z), spent 248, finished
+ HEAD 1. Drops (collapse: task note "asleep on their feet", say at sim.ts:13925)
+  drops (from the task)                        0                                  0
+  drops (from new feed lines)                  0                                  0
+  each: time, tiredness the step before        -                                  -
+ HEAD 2. Rest
+  rests begun or in hand, by kind              filed 3                            filed 3
+  steps asleep / walking to bed                363 / 267                          363 / 496
+  tiredness at each filed rest                 0.6961, 0.2094, 0.0270             0.6961, 0.2247, 0.0269
+  tiredness lowest / mean / highest            0.0000 / 0.2599 / 0.7304           0.0000 / 0.2408 / 0.7304
+  each rest: kind begin-end walk/asleep        filed 16:03:03Z-16:16:22Z w101 a121; filed 17:34:51Z-17:44:31Z w40 a121; filed 17:53:34Z-18:08:24Z w126 a121 filed 16:03:03Z-16:16:22Z w101 a121; filed 17:39:28Z-18:02:49Z w268 a121; filed 18:11:56Z-18:26:49Z w127 a121
+ HEAD 3. Food
+  meals (pack / store)                         3 (1 / 2)                          3 (1 / 2)
+  hunger mean / highest                        0.3132 / 0.8361                    0.2851 / 0.7748
+  steps hunger > 0.95 (first)                  0 (-)                              0 (-)
+  steps hunger at 1.0 (first)                  0 (-)                              0 (-)
+  each meal                                    16:03:00Z 0.051->0.000 pack; 17:03:50Z 0.200->0.000 store; 17:53:31Z 0.165->0.000 store 16:03:00Z 0.051->0.000 pack; 16:51:18Z 0.159->0.000 store; 18:11:52Z 0.268->0.000 store
+  pack rot (history events / feed lines)       0 / 0                              0 / 0
+  depot food / dried at the close              23 / 0                             20 / 0
+ HEAD 4. Depot access (as storekeeper: keeperOf, keeperIsIn at sim.ts:4443)
+  steps this settler is the keeper / and in    0 / 0                              0 / 0
+  meals other settlers took from the store     0                                  0
+ HEAD 5. Loads (from new history lines each step, finishHaul; "with nobody in it" at sim.ts:11176)
+  loads                                        delivered 2 (2 goods); paid 2 (2 food); unpaid 0; nobody in 0 (0 goods); stacked outside 8 delivered 5 (6 goods); paid 5 (5 food); unpaid 0; nobody in 0 (0 goods); stacked outside 9
+  gives, classed from the task                 filed 1, own choice (errand:toward-goal) 2 filed 1, own choice (errand:toward-goal) 2
+ HEAD 6. Keeping and hauling time (ownChoice store tasks, sim.ts:7000, 7009, 7011)
+  steps on goto:going-back-to-mind-the-store   0                                  0
+  steps on haul:putting-the-days-takings-away  0                                  0
+  steps on keep:minding-the-store              0                                  0
+  steps on a filed haul                        0                                  0
+ HEAD 7. Filed against actual (above, per step), and steps on each kind of work by source
+    filed eat                                  403                                312
+    filed give                                 417                                512
+    filed glean                                154                                0
+    filed goto                                 42                                 41
+    filed idle                                 218                                448
+    filed repair                               263                                263
+    filed rest                                 630                                859
+    none -                                     39                                 36
+    own eat                                    19                                 0
+    own forage                                 1999                               1799
+    own gather                                 398                                105
+    own give                                   60                                 250
+    own haul                                   1358                               1375
+ HEAD 8. Ends, at the close
+  pack                                         food 4                             food 4
+  purse (coin)                                 0                                  0
+  skills (craft practice counts)               farming 2458, forestry 74, hauling 750, trading 156, mending 81, sawing 38, building 5, toolmaking 2 farming 2457, forestry 74, hauling 753, trading 156, mending 81, sawing 38, building 5, toolmaking 2
+  depot stock                                  stone 96, ore 92, food 23, plank 33 wood 1, stone 97, ore 92, food 20, plank 34
+  hunger / tiredness / happiness               0.8361 / 0.6058 / 0.5152           0.7748 / 0.5528 / 0.5322
+  position                                     92.7,115.7                         93.0,119.0
+DATA {"cut":3,"id":"npc-07","arm":"BASE","steps":6000,"over95":0,"first95":null,"at1":0,"first1":null,"maxFood":0.8360731781348567,"meanFood":0.3132480128497732,"minRest":0,"meanRest":0.2598637418028759,"maxRest":0.7303600000000423,"rotFeed":0,"rotHistory":0,"feedDrops":0,"drops":[],"meals":[{"at":"16:03:00Z","step":50,"from":0.05101927181668668,"to":0,"src":"pack"},{"at":"17:03:50Z","step":1064,"from":0.20049739872995717,"to":0,"src":"store"},{"at":"17:53:31Z","step":1892,"from":0.16485409151209612,"to":0,"src":"store"}],"rests":[{"kind":"filed","begin":"16:03:03Z","end":"16:16:22Z","walk":101,"asleep":121},{"kind":"filed","begin":"17:34:51Z","end":"17:44:31Z","walk":40,"asleep":121},{"kind":"filed","begin":"17:53:34Z","end":"18:08:24Z","walk":126,"asleep":121}],"close":{"food":0.8360731781348567,"rest":0.6058034254805404,"happy":0.5152112988754078,"gx":92.72146136208845,"gy":115.72146136208845,"pack":{"wood":0,"stone":0,"ore":0,"food":4,"plank":0,"charcoal":0,"iron":0,"block":0,"furniture":0},"coin":0}}
+DATA {"cut":3,"id":"npc-07","arm":"CAND","steps":6000,"over95":0,"first95":null,"at1":0,"first1":null,"maxFood":0.7747975525071924,"meanFood":0.2851238571509175,"minRest":0,"meanRest":0.24075231629922564,"maxRest":0.7303600000000423,"rotFeed":0,"rotHistory":0,"feedDrops":0,"drops":[],"meals":[{"at":"16:03:00Z","step":50,"from":0.05101927181668668,"to":0,"src":"pack"},{"at":"16:51:18Z","step":855,"from":0.15900464299482195,"to":0,"src":"store"},{"at":"18:11:52Z","step":2198,"from":0.2676222959339795,"to":0,"src":"store"}],"rests":[{"kind":"filed","begin":"16:03:03Z","end":"16:16:22Z","walk":101,"asleep":121},{"kind":"filed","begin":"17:39:28Z","end":"18:02:49Z","walk":268,"asleep":121},{"kind":"filed","begin":"18:11:56Z","end":"18:26:49Z","walk":127,"asleep":121}],"close":{"food":0.7747975525071924,"rest":0.5527915743586871,"happy":0.5322453948686667,"gx":93,"gy":119,"pack":{"wood":0,"stone":0,"ore":0,"food":4,"plank":0,"charcoal":0,"iron":0,"block":0,"furniture":0},"coin":0}}
+
+════════ cut 3 — Cairnwright (npc-08), BASE against CAND, 6000 steps each, 3.6 s of air a step
+                                               BASE                               CAND
+ PIN 1. The opening, and any opening rest
+  in hand in the file's snapshot               give(own) "taking food to Brindle — see nobody in this valley go hungry again" give(own) "taking food to Brindle — see nobody in this valley go hungry again"
+  in hand after the opening                    eat(filed) "eating"                eat(filed) "eating"
+  did the opening replace it                   replaced by the first filed step   replaced by the first filed step
+  plan steps filed / refused at the opening    11 / 0                             11 / 0
+  opening rest                                 none (first step is not a rest)    none (first step is not a rest)
+ PIN 1. Every plan step, aligned by what it asks (LCS on the step words)
+   #0/#0 eat                               
+       BASE: began 0 (16:00:00Z), spent 44, finished
+       CAND: began 0 (16:00:00Z), spent 44, finished
+   #1/#1 rest                              
+       BASE: began 46 (16:02:45Z), spent 339, finished
+       CAND: began 46 (16:02:45Z), spent 339, finished
+   #2/#2 survey                            
+       BASE: spent 0, refused — Cairnwright could not survey: no ground on this shore is clear of the marks standing. They went on with the rest of the day.
+       CAND: spent 0, refused — Cairnwright could not survey: no ground on this shore is clear of the marks standing. They went on with the rest of the day.
+   #3/#3 mine                              
+       BASE: began 386 (16:23:09Z), spent 817, finished
+       CAND: began 386 (16:23:09Z), spent 817, finished
+   #4/#4 haul                              
+       BASE: began 1204 (17:12:14Z), spent 1081, finished
+       CAND: began 1204 (17:12:14Z), spent 1081, finished
+   #5/#5 cairn                             
+       BASE: began 2286 (18:17:09Z), spent 61, finished
+       CAND: began 2286 (18:17:09Z), spent 61, finished
+   #6/#6 eat                               
+       BASE: began 2348 (18:20:52Z), spent 45, finished
+       CAND: began 2348 (18:20:52Z), spent 45, finished
+   #7/#7 rest                              
+       BASE: began 2394 (18:23:38Z), spent 342, finished
+       CAND: began 2394 (18:23:38Z), spent 342, finished
+   #8/#8 hew                               
+       BASE: spent 0, refused — Cairnwright could not hew: hewing a board takes 3 logs and the near shore has 0. They went on with the rest of the day.
+       CAND: began 2737 (18:44:13Z), spent 194, finished   <- reached in CAND, never in BASE
+   #9/#9 haul                              
+       BASE: began 2737 (18:44:13Z), spent 159, finished
+       CAND: began 2932 (18:55:55Z), spent 19, finished
+   #10/#10 repair the dock                 
+       BASE: spent 0, refused — Cairnwright could not repair the dock: the dock at 98,121 is sound at 0.894, and patching wants it under 0.85. They went on with the rest of the day.
+       CAND: spent 0, refused — Cairnwright could not repair the dock: the dock at 98,121 is sound at 0.894, and patching wants it under 0.85. They went on with the rest of the day.
+ HEAD 1. Drops (collapse: task note "asleep on their feet", say at sim.ts:13925)
+  drops (from the task)                        0                                  0
+  drops (from new feed lines)                  0                                  0
+  each: time, tiredness the step before        -                                  -
+ HEAD 2. Rest
+  rests begun or in hand, by kind              filed 2                            filed 2
+  steps asleep / walking to bed                242 / 439                          242 / 439
+  tiredness at each filed rest                 0.3140, 0.3448                     0.3140, 0.3448
+  tiredness lowest / mean / highest            0.0000 / 0.2362 / 0.5059           0.0000 / 0.2362 / 0.5059
+  each rest: kind begin-end walk/asleep        filed 16:02:45Z-16:23:06Z w218 a121; filed 18:23:38Z-18:44:09Z w221 a121 filed 16:02:45Z-16:23:06Z w218 a121; filed 18:23:38Z-18:44:09Z w221 a121
+ HEAD 3. Food
+  meals (pack / store)                         2 (2 / 0)                          2 (2 / 0)
+  hunger mean / highest                        0.3145 / 0.7357                    0.3145 / 0.7357
+  steps hunger > 0.95 (first)                  0 (-)                              0 (-)
+  steps hunger at 1.0 (first)                  0 (-)                              0 (-)
+  each meal                                    16:02:42Z 0.468->0.000 pack; 18:23:34Z 0.467->0.000 pack 16:02:42Z 0.468->0.000 pack; 18:23:34Z 0.467->0.000 pack
+  pack rot (history events / feed lines)       0 / 0                              0 / 0
+  depot food / dried at the close              23 / 0                             20 / 0
+ HEAD 4. Depot access (as storekeeper: keeperOf, keeperIsIn at sim.ts:4443)
+  steps this settler is the keeper / and in    0 / 0                              0 / 0
+  meals other settlers took from the store     0                                  0
+ HEAD 5. Loads (from new history lines each step, finishHaul; "with nobody in it" at sim.ts:11176)
+  loads                                        delivered 3 (5 goods); paid 3 (3 food); unpaid 0; nobody in 0 (0 goods); stacked outside 6 delivered 5 (8 goods); paid 5 (5 food); unpaid 0; nobody in 0 (0 goods); stacked outside 7
+  gives, classed from the task                 own choice (errand:toward-goal) 1  own choice (errand:toward-goal) 2
+ HEAD 6. Keeping and hauling time (ownChoice store tasks, sim.ts:7000, 7009, 7011)
+  steps on goto:going-back-to-mind-the-store   0                                  0
+  steps on haul:putting-the-days-takings-away  0                                  0
+  steps on keep:minding-the-store              0                                  0
+  steps on a filed haul                        1240                               1100
+ HEAD 7. Filed against actual (above, per step), and steps on each kind of work by source
+    filed cairn                                61                                 61
+    filed eat                                  89                                 89
+    filed haul                                 1240                               1100
+    filed hew                                  0                                  194
+    filed mine                                 817                                817
+    filed rest                                 681                                681
+    none -                                     27                                 30
+    own forage                                 1914                               1694
+    own gather                                 150                                139
+    own give                                   170                                164
+    own haul                                   851                                1031
+ HEAD 8. Ends, at the close
+  pack                                         food 2                             food 4
+  purse (coin)                                 0                                  0
+  skills (craft practice counts)               farming 1663, mining 187, forestry 16, sawing 82, trading 58, hauling 752, mending 128, toolmaking 48, building 2, shipwrighting 1 farming 1664, mining 187, forestry 16, sawing 83, trading 58, hauling 754, mending 128, toolmaking 48, building 2, shipwrighting 1
+  depot stock                                  stone 96, ore 92, food 23, plank 33 wood 1, stone 97, ore 92, food 20, plank 34
+  hunger / tiredness / happiness               0.7357 / 0.5059 / 0.8253           0.7357 / 0.5059 / 0.7020
+  position                                     96.0,115.1                         92.5,115.5
+DATA {"cut":3,"id":"npc-08","arm":"BASE","steps":6000,"over95":0,"first95":null,"at1":0,"first1":null,"maxFood":0.7356694886406838,"meanFood":0.31451409001921177,"minRest":0,"meanRest":0.2362202623967223,"maxRest":0.5059259901867111,"rotFeed":0,"rotHistory":0,"feedDrops":0,"drops":[],"meals":[{"at":"16:02:42Z","step":45,"from":0.4676942498124209,"to":0,"src":"pack"},{"at":"18:23:34Z","step":2393,"from":0.46693890363131274,"to":0,"src":"pack"}],"rests":[{"kind":"filed","begin":"16:02:45Z","end":"16:23:06Z","walk":218,"asleep":121},{"kind":"filed","begin":"18:23:38Z","end":"18:44:09Z","walk":221,"asleep":121}],"close":{"food":0.7356694886406838,"rest":0.5059259901867111,"happy":0.8253370039959894,"gx":96,"gy":115.06929600165007,"pack":{"wood":0,"stone":0,"ore":0,"food":2,"plank":0,"charcoal":0,"iron":0,"block":0,"furniture":0},"coin":0}}
+DATA {"cut":3,"id":"npc-08","arm":"CAND","steps":6000,"over95":0,"first95":null,"at1":0,"first1":null,"maxFood":0.7356694886406838,"meanFood":0.31451409001921177,"minRest":0,"meanRest":0.2362202623967223,"maxRest":0.5059259901867111,"rotFeed":0,"rotHistory":0,"feedDrops":0,"drops":[],"meals":[{"at":"16:02:42Z","step":45,"from":0.4676942498124209,"to":0,"src":"pack"},{"at":"18:23:34Z","step":2393,"from":0.46693890363131274,"to":0,"src":"pack"}],"rests":[{"kind":"filed","begin":"16:02:45Z","end":"16:23:06Z","walk":218,"asleep":121},{"kind":"filed","begin":"18:23:38Z","end":"18:44:09Z","walk":221,"asleep":121}],"close":{"food":0.7356694886406838,"rest":0.5059259901867111,"happy":0.7019874616596143,"gx":92.47399807781764,"gy":115.47399807781764,"pack":{"wood":0,"stone":0,"ore":0,"food":4,"plank":0,"charcoal":0,"iron":0,"block":0,"furniture":0},"coin":0}}
+
+════════ cut 3 — Seafarer (npc-01), BASE against CAND, 6000 steps each, 3.6 s of air a step
+                                               BASE                               CAND
+ PIN 1. The opening, and any opening rest
+  in hand in the file's snapshot               mine(own) "fill my pack with stone before I turn back" mine(own) "fill my pack with stone before I turn back"
+  in hand after the opening                    eat(filed) "eating"                eat(filed) "eating"
+  did the opening replace it                   replaced by the first filed step   replaced by the first filed step
+  plan steps filed / refused at the opening    10 / 0                             10 / 0
+  opening rest                                 none (first step is not a rest)    none (first step is not a rest)
+ PIN 1. Every plan step, aligned by what it asks (LCS on the step words)
+   #0/#0 eat                               
+       BASE: began 0 (16:00:00Z), spent 81, finished
+       CAND: began 0 (16:00:00Z), spent 81, finished
+   #1/#1 rest                              
+       BASE: began 83 (16:04:58Z), spent 535, finished
+       CAND: began 83 (16:04:58Z), spent 535, finished
+   #2/#2 repair the dock                   
+       BASE: spent 0, refused — Seafarer could not repair the dock: the dock at 98,121 is sound at 0.903, and patching wants it under 0.85. They went on with the rest of the day.
+       CAND: spent 0, refused — Seafarer could not repair the dock: the dock at 98,121 is sound at 0.903, and patching wants it under 0.85. They went on with the rest of the day.
+   #3/#3 goto                              
+       BASE: began 619 (16:37:08Z), spent 199, finished
+       CAND: began 619 (16:37:08Z), spent 199, finished
+   #4/#4 idle                              
+       BASE: began 819 (16:49:08Z), spent 153, finished
+       CAND: began 819 (16:49:08Z), spent 153, finished
+   #5/#5 glean food                        
+       BASE: spent 0, refused — Seafarer could not glean food: there is no food on the stack outside. They went on with the rest of the day.
+       CAND: spent 0, refused — Seafarer could not glean food: there is no food on the stack outside. They went on with the rest of the day.
+   #6/#6 eat                               
+       BASE: began 973 (16:58:22Z), spent 42, finished
+       CAND: began 973 (16:58:22Z), spent 42, finished
+   #7/#7 goto                              
+       BASE: began 1016 (17:00:57Z), spent 262, finished
+       CAND: began 1016 (17:00:57Z), spent 262, finished
+   #8/#8 idle                              
+       BASE: began 1279 (17:16:44Z), spent 124, finished
+       CAND: began 1279 (17:16:44Z), spent 124, finished
+   #9/#9 rest                              
+       BASE: began 1404 (17:24:14Z), spent 267, finished
+       CAND: began 1404 (17:24:14Z), spent 267, finished
+   #10/#10 glean food [ifStuck]            
+       BASE: spent 0, refused — Seafarer could not glean food: there is no food on the stack outside. They went on with the rest of the day.
+       CAND: spent 0, refused — Seafarer could not glean food: there is no food on the stack outside. They went on with the rest of the day.
+   #11/#11 eat [ifStuck]                   
+       BASE: began 1672 (17:40:19Z), spent 41, finished
+       CAND: began 1672 (17:40:19Z), spent 41, finished
+   #12/#12 rest [ifStuck]                  
+       BASE: began 1714 (17:42:50Z), spent 138, finished
+       CAND: began 1714 (17:42:50Z), spent 138, finished
+ HEAD 1. Drops (collapse: task note "asleep on their feet", say at sim.ts:13925)
+  drops (from the task)                        0                                  0
+  drops (from new feed lines)                  0                                  0
+  each: time, tiredness the step before        -                                  -
+ HEAD 2. Rest
+  rests begun or in hand, by kind              filed 3                            filed 3
+  steps asleep / walking to bed                363 / 577                          363 / 577
+  tiredness at each filed rest                 0.7466, 0.1251, 0.0077             0.7466, 0.1251, 0.0077
+  tiredness lowest / mean / highest            0.0000 / 0.3294 / 0.8294           0.0000 / 0.3280 / 0.8294
+  each rest: kind begin-end walk/asleep        filed 16:04:58Z-16:37:04Z w414 a121; filed 17:24:14Z-17:40:15Z w146 a121; filed 17:42:50Z-17:51:07Z w17 a121 filed 16:04:58Z-16:37:04Z w414 a121; filed 17:24:14Z-17:40:15Z w146 a121; filed 17:42:50Z-17:51:07Z w17 a121
+ HEAD 3. Food
+  meals (pack / store)                         4 (4 / 0)                          4 (4 / 0)
+  hunger mean / highest                        0.3126 / 0.8420                    0.3164 / 0.8478
+  steps hunger > 0.95 (first)                  0 (-)                              0 (-)
+  steps hunger at 1.0 (first)                  0 (-)                              0 (-)
+  each meal                                    16:04:55Z 0.068->0.000 pack; 17:00:54Z 0.184->0.000 pack; 17:42:46Z 0.139->0.000 pack; 21:51:25Z 0.842->0.000 pack 16:04:55Z 0.068->0.000 pack; 17:00:54Z 0.184->0.000 pack; 17:42:46Z 0.139->0.000 pack; 21:53:06Z 0.848->0.000 pack
+  pack rot (history events / feed lines)       2 / 2                              2 / 2
+  depot food / dried at the close              23 / 0                             20 / 0
+ HEAD 4. Depot access (as storekeeper: keeperOf, keeperIsIn at sim.ts:4443)
+  steps this settler is the keeper / and in    0 / 0                              0 / 0
+  meals other settlers took from the store     0                                  0
+ HEAD 5. Loads (from new history lines each step, finishHaul; "with nobody in it" at sim.ts:11176)
+  loads                                        delivered 1 (1 goods); paid 1 (1 food); unpaid 0; nobody in 0 (0 goods); stacked outside 9 delivered 7 (10 goods); paid 7 (7 food); unpaid 0; nobody in 0 (0 goods); stacked outside 8
+  gives, classed from the task                 0                                  0
+ HEAD 6. Keeping and hauling time (ownChoice store tasks, sim.ts:7000, 7009, 7011)
+  steps on goto:going-back-to-mind-the-store   0                                  0
+  steps on haul:putting-the-days-takings-away  0                                  0
+  steps on keep:minding-the-store              0                                  0
+  steps on a filed haul                        0                                  0
+ HEAD 7. Filed against actual (above, per step), and steps on each kind of work by source
+    filed eat                                  164                                164
+    filed goto                                 461                                461
+    filed idle                                 277                                277
+    filed rest                                 940                                940
+    none -                                     35                                 31
+    own barter                                 65                                 65
+    own chop                                   1525                               499
+    own eat                                    49                                 49
+    own gather                                 274                                246
+    own haul                                   1636                               1693
+    own hone                                   40                                 39
+    own mine                                   534                                1536
+ HEAD 8. Ends, at the close
+  pack                                         wood 3, stone 1, food 3            food 3
+  purse (coin)                                 0                                  0
+  skills (craft practice counts)               scouting 18, mending 56, farming 206, forestry 654, hauling 526, sawing 47, trading 621, seafaring 11, building 4, mining 470, toolmaking 51 scouting 18, mending 56, farming 206, forestry 647, hauling 532, sawing 47, trading 621, seafaring 11, building 4, mining 472, toolmaking 51
+  depot stock                                  stone 96, ore 92, food 23, plank 33 wood 1, stone 97, ore 92, food 20, plank 34
+  hunger / tiredness / happiness               0.0296 / 0.6615 / 0.7478           0.0238 / 0.6591 / 0.7317
+  position                                     96.0,119.0                         96.0,119.0
+DATA {"cut":3,"id":"npc-01","arm":"BASE","steps":6000,"over95":0,"first95":null,"at1":0,"first1":null,"maxFood":0.8420247760863245,"meanFood":0.31261089592292934,"minRest":0,"meanRest":0.32942007940864493,"maxRest":0.8294050000000527,"rotFeed":2,"rotHistory":2,"feedDrops":0,"drops":[],"meals":[{"at":"16:04:55Z","step":82,"from":0.0683480923591497,"to":0,"src":"pack"},{"at":"17:00:54Z","step":1015,"from":0.1844531082647535,"to":0,"src":"pack"},{"at":"17:42:46Z","step":1713,"from":0.13881437872829674,"to":0,"src":"pack"},{"at":"21:51:25Z","step":5857,"from":0.8420247760863245,"to":0,"src":"pack"}],"rests":[{"kind":"filed","begin":"16:04:58Z","end":"16:37:04Z","walk":414,"asleep":121},{"kind":"filed","begin":"17:24:14Z","end":"17:40:15Z","walk":146,"asleep":121},{"kind":"filed","begin":"17:42:50Z","end":"17:51:07Z","walk":17,"asleep":121}],"close":{"food":0.029615496778518748,"rest":0.6614569632337015,"happy":0.747805144576876,"gx":96,"gy":119,"pack":{"wood":3,"stone":1,"ore":0,"food":3,"plank":0,"charcoal":0,"iron":0,"block":0,"furniture":0},"coin":0}}
+DATA {"cut":3,"id":"npc-01","arm":"CAND","steps":6000,"over95":0,"first95":null,"at1":0,"first1":null,"maxFood":0.8478205278648749,"meanFood":0.3164292584980916,"minRest":0,"meanRest":0.32798367750276386,"maxRest":0.8294050000000527,"rotFeed":2,"rotHistory":2,"feedDrops":0,"drops":[],"meals":[{"at":"16:04:55Z","step":82,"from":0.0683480923591497,"to":0,"src":"pack"},{"at":"17:00:54Z","step":1015,"from":0.1844531082647535,"to":0,"src":"pack"},{"at":"17:42:46Z","step":1713,"from":0.13881437872829674,"to":0,"src":"pack"},{"at":"21:53:06Z","step":5885,"from":0.8478205278648749,"to":0,"src":"pack"}],"rests":[{"kind":"filed","begin":"16:04:58Z","end":"16:37:04Z","walk":414,"asleep":121},{"kind":"filed","begin":"17:24:14Z","end":"17:40:15Z","walk":146,"asleep":121},{"kind":"filed","begin":"17:42:50Z","end":"17:51:07Z","walk":17,"asleep":121}],"close":{"food":0.02381969229721858,"rest":0.6590781068595011,"happy":0.731705224277238,"gx":96,"gy":119,"pack":{"wood":0,"stone":0,"ore":0,"food":3,"plank":0,"charcoal":0,"iron":0,"block":0,"furniture":0},"coin":0}}
+
+════════ cut 4 — Brindle (npc-05), BASE against CAND, 6000 steps each, 3.6 s of air a step
+                                               BASE                               CAND
+ PIN 1. The opening, and any opening rest
+  in hand in the file's snapshot               keep(own) "minding the store"      keep(own) "minding the store"
+  in hand after the opening                    forage(filed) "gathering food"     rest(filed) "going home to sleep"
+  did the opening replace it                   replaced by the first filed step   replaced by the first filed step
+  plan steps filed / refused at the opening    8 / 0                              9 / 0
+  opening rest begun                           no opening rest in this arm        step 0 (22:00:00Z)
+    tiredness at the step it begins            no opening rest in this arm        0.8194
+    steps opening to end of rest               no opening rest in this arm        361 steps from opening to end: before it 0, walking 240, asleep 121, other 0
+    ended                                      no opening rest in this arm        step 361 (22:21:39Z) tired 0.0000
+    how                                        no opening rest in this arm        slept it out, then -
+ PIN 1. Every plan step, aligned by what it asks (LCS on the step words)
+   #-/#0 rest                              
+       BASE: not in this plan
+       CAND: began 0 (22:00:00Z), spent 360, finished
+   #0/#1 forage                            
+       BASE: began 0 (22:00:00Z), spent 193, finished
+       CAND: began 362 (22:21:43Z), spent 74, finished
+   #1/#2 haul                              
+       BASE: began 195 (22:11:42Z), spent 209, finished
+       CAND: began 437 (22:26:13Z), spent 183, finished
+   #2/#3 rest                              
+       BASE: began 405 (22:24:18Z), spent 371, finished
+       CAND: began 621 (22:37:15Z), spent 269, finished
+   #3/#4 eat                               
+       BASE: began 777 (22:46:37Z), spent 42, finished
+       CAND: began 891 (22:53:27Z), spent 42, finished
+   #4/#5 survey                            
+       BASE: spent 0, refused — Brindle could not survey: no ground on this shore is clear of the marks standing. They went on with the rest of the day.
+       CAND: spent 0, refused — Brindle could not survey: no ground on this shore is clear of the marks standing. They went on with the rest of the day.
+   #5/#6 forage                            
+       BASE: began 820 (22:49:12Z), spent 70, finished
+       CAND: began 934 (22:56:02Z), spent 73, finished
+   #6/#7 haul                              
+       BASE: began 891 (22:53:27Z), spent 183, finished
+       CAND: began 1008 (23:00:28Z), spent 199, finished
+   #7/#8 rest                              
+       BASE: began 1075 (23:04:30Z), spent 268, finished
+       CAND: began 1208 (23:12:28Z), spent 268, finished
+ HEAD 1. Drops (collapse: task note "asleep on their feet", say at sim.ts:13925)
+  drops (from the task)                        0                                  0
+  drops (from new feed lines)                  0                                  0
+  each: time, tiredness the step before        -                                  -
+ HEAD 2. Rest
+  rests begun or in hand, by kind              filed 2                            filed 3
+  steps asleep / walking to bed                242 / 397                          363 / 535
+  tiredness at each filed rest                 0.8822, 0.0463                     0.8194, 0.0403, 0.0493
+  tiredness lowest / mean / highest            0.0000 / 0.3979 / 0.9395           0.0000 / 0.3233 / 0.8752
+  each rest: kind begin-end walk/asleep        filed 22:24:18Z-22:46:33Z w250 a121; filed 23:04:30Z-23:20:34Z w147 a121 filed open-22:21:39Z w240 a121; filed 22:37:15Z-22:53:24Z w148 a121; filed 23:12:28Z-23:28:33Z w147 a121
+ HEAD 3. Food
+  meals (pack / store)                         2 (1 / 1)                          2 (1 / 1)
+  hunger mean / highest                        0.2884 / 0.7345                    0.2882 / 0.7393
+  steps hunger > 0.95 (first)                  0 (-)                              0 (-)
+  steps hunger at 1.0 (first)                  0 (-)                              0 (-)
+  each meal                                    22:49:08Z 0.263->0.000 pack; 02:16:51Z 0.734->0.000 store 22:55:58Z 0.286->0.000 pack; 02:24:50Z 0.739->0.000 store
+  pack rot (history events / feed lines)       1 / 1                              0 / 0
+  depot food / dried at the close              24 / 0                             17 / 0
+ HEAD 4. Depot access (as storekeeper: keeperOf, keeperIsIn at sim.ts:4443)
+  steps this settler is the keeper / and in    6000 / 5196                        6000 / 4818
+  meals other settlers took from the store     0                                  0
+ HEAD 5. Loads (from new history lines each step, finishHaul; "with nobody in it" at sim.ts:11176)
+  loads                                        delivered 3 (6 goods); paid 0 (0 food); unpaid 0; nobody in 0 (0 goods); stacked outside 0 delivered 4 (6 goods); paid 0 (0 food); unpaid 0; nobody in 0 (0 goods); stacked outside 0
+  gives, classed from the task                 0                                  0
+ HEAD 6. Keeping and hauling time (ownChoice store tasks, sim.ts:7000, 7009, 7011)
+  steps on goto:going-back-to-mind-the-store   271                                269
+  steps on haul:putting-the-days-takings-away  37                                 72
+  steps on keep:minding-the-store              4093                               3930
+  steps on a filed haul                        392                                382
+ HEAD 7. Filed against actual (above, per step), and steps on each kind of work by source
+    filed eat                                  42                                 42
+    filed forage                               263                                147
+    filed haul                                 392                                382
+    filed rest                                 639                                897
+    none -                                     88                                 86
+    own eat                                    50                                 50
+    own gather                                 125                                125
+    own goto                                   271                                269
+    own haul                                   37                                 72
+    own keep                                   4093                               3930
+ HEAD 8. Ends, at the close
+  pack                                         food 2                             empty
+  purse (coin)                                 0                                  0
+  skills (craft practice counts)               farming 764, hauling 791, mending 8, forestry 241, sawing 31, trading 14822, mining 2, toolmaking 12, building 2 farming 764, hauling 792, mending 8, forestry 241, sawing 31, trading 14818, mining 2, toolmaking 12, building 2
+  depot stock                                  stone 93, ore 94, food 24, plank 33 wood 1, stone 99, ore 94, food 17, plank 33
+  hunger / tiredness / happiness               0.3738 / 0.7218 / 0.7703           0.3451 / 0.7012 / 0.7784
+  position                                     91.5,115.5                         91.5,115.5
+DATA {"cut":4,"id":"npc-05","arm":"BASE","steps":6000,"over95":0,"first95":null,"at1":0,"first1":null,"maxFood":0.7344613315670371,"meanFood":0.28837828038514784,"minRest":0,"meanRest":0.39794323926062136,"maxRest":0.9395130845983031,"rotFeed":1,"rotHistory":1,"feedDrops":0,"drops":[],"meals":[{"at":"22:49:08Z","step":819,"from":0.26260241638630266,"to":0,"src":"pack"},{"at":"02:16:51Z","step":4281,"from":0.7344613315670371,"to":0,"src":"store"}],"rests":[{"kind":"filed","begin":"22:24:18Z","end":"22:46:33Z","walk":250,"asleep":121},{"kind":"filed","begin":"23:04:30Z","end":"23:20:34Z","walk":147,"asleep":121}],"close":{"food":0.37377106482105854,"rest":0.7218350000000414,"happy":0.7702819708467521,"gx":91.5,"gy":115.5,"pack":{"wood":0,"stone":0,"ore":0,"food":2,"plank":0,"charcoal":0,"iron":0,"block":0,"furniture":0},"coin":0}}
+DATA {"cut":4,"id":"npc-05","arm":"CAND","steps":6000,"over95":0,"first95":null,"at1":0,"first1":null,"maxFood":0.7393492294789267,"meanFood":0.28824777818329006,"minRest":0,"meanRest":0.3232960525759048,"maxRest":0.8751880845982963,"rotFeed":0,"rotHistory":0,"feedDrops":0,"drops":[],"meals":[{"at":"22:55:58Z","step":933,"from":0.28641790497732633,"to":0,"src":"pack"},{"at":"02:24:50Z","step":4414,"from":0.7393492294789267,"to":0,"src":"store"}],"rests":[{"kind":"filed","begin":"open","end":"22:21:39Z","walk":240,"asleep":121},{"kind":"filed","begin":"22:37:15Z","end":"22:53:24Z","walk":148,"asleep":121},{"kind":"filed","begin":"23:12:28Z","end":"23:28:33Z","walk":147,"asleep":121}],"close":{"food":0.3450671878968658,"rest":0.7012200000000393,"happy":0.778378285604465,"gx":91.5,"gy":115.5,"pack":{"wood":0,"stone":0,"ore":0,"food":0,"plank":0,"charcoal":0,"iron":0,"block":0,"furniture":0},"coin":0}}
+
+════════ cut 4 — Weathervane (npc-07), BASE against CAND, 6000 steps each, 3.6 s of air a step
+                                               BASE                               CAND
+ PIN 1. The opening, and any opening rest
+  in hand in the file's snapshot               eat(own) "eating"                  eat(own) "eating"
+  in hand after the opening                    eat(filed) "eating"                eat(filed) "eating"
+  did the opening replace it                   replaced by the first filed step   replaced by the first filed step
+  plan steps filed / refused at the opening    8 / 0                              8 / 0
+  opening rest                                 none (first step is not a rest)    none (first step is not a rest)
+ PIN 1. Every plan step, aligned by what it asks (LCS on the step words)
+   #0/#0 eat                               
+       BASE: began 0 (22:00:00Z), spent 49, finished
+       CAND: began 0 (22:00:00Z), spent 49, finished
+   #1/#1 rest                              
+       BASE: began 51 (22:03:03Z), spent 238, finished
+       CAND: began 51 (22:03:03Z), spent 238, finished
+   #2/#2 survey                            
+       BASE: spent 0, refused — Weathervane could not survey: no ground on this shore is clear of the marks standing. They went on with the rest of the day.
+       CAND: spent 0, refused — Weathervane could not survey: no ground on this shore is clear of the marks standing. They went on with the rest of the day.
+   #3/#3 idle                              
+       BASE: began 290 (22:17:24Z), spent 194, finished
+       CAND: began 290 (22:17:24Z), spent 194, finished
+   #4/#4 glean food                        
+       BASE: began 485 (22:29:06Z), spent 279, finished
+       CAND: began 485 (22:29:06Z), spent 278, finished
+   #5/#5 goto                              
+       BASE: began 765 (22:45:54Z), spent 149, finished
+       CAND: began 764 (22:45:50Z), spent 149, finished
+   #6/#6 idle                              
+       BASE: began 915 (22:54:54Z), spent 89, finished
+       CAND: began 914 (22:54:50Z), spent 89, finished
+   #7/#7 rest                              
+       BASE: began 1005 (23:00:18Z), spent 293, finished
+       CAND: began 1004 (23:00:14Z), spent 293, finished
+   #8/#8 eat [ifStuck]                     
+       BASE: began 1299 (23:17:56Z), spent 42, finished
+       CAND: began 1298 (23:17:52Z), spent 42, finished
+   #9/#9 rest [ifStuck]                    
+       BASE: began 1342 (23:20:31Z), spent 139, finished
+       CAND: began 1341 (23:20:27Z), spent 139, finished
+   #10/#10 idle [ifStuck]                  
+       BASE: began 1482 (23:28:55Z), spent 171, finished
+       CAND: began 1481 (23:28:51Z), spent 171, finished
+ HEAD 1. Drops (collapse: task note "asleep on their feet", say at sim.ts:13925)
+  drops (from the task)                        0                                  0
+  drops (from new feed lines)                  0                                  0
+  each: time, tiredness the step before        -                                  -
+ HEAD 2. Rest
+  rests begun or in hand, by kind              filed 3                            filed 3
+  steps asleep / walking to bed                363 / 307                          363 / 307
+  tiredness at each filed rest                 0.6137, 0.1110, 0.0068             0.6137, 0.1108, 0.0068
+  tiredness lowest / mean / highest            0.0000 / 0.3076 / 0.7004           0.0000 / 0.3076 / 0.7006
+  each rest: kind begin-end walk/asleep        filed 22:03:03Z-22:17:20Z w117 a121; filed 23:00:18Z-23:17:52Z w172 a121; filed 23:20:31Z-23:28:51Z w18 a121 filed 22:03:03Z-22:17:20Z w117 a121; filed 23:00:14Z-23:17:49Z w172 a121; filed 23:20:27Z-23:28:48Z w18 a121
+ HEAD 3. Food
+  meals (pack / store)                         3 (3 / 0)                          3 (3 / 0)
+  hunger mean / highest                        0.3320 / 0.8643                    0.3164 / 0.8462
+  steps hunger > 0.95 (first)                  0 (-)                              0 (-)
+  steps hunger at 1.0 (first)                  0 (-)                              0 (-)
+  each meal                                    22:03:00Z 0.846->0.000 pack; 23:20:27Z 0.269->0.000 pack; 03:23:02Z 0.864->0.000 pack 22:03:00Z 0.846->0.000 pack; 23:20:24Z 0.269->0.000 pack; 03:14:56Z 0.835->0.000 pack
+  pack rot (history events / feed lines)       3 / 3                              3 / 3
+  depot food / dried at the close              24 / 0                             17 / 0
+ HEAD 4. Depot access (as storekeeper: keeperOf, keeperIsIn at sim.ts:4443)
+  steps this settler is the keeper / and in    0 / 0                              0 / 0
+  meals other settlers took from the store     0                                  0
+ HEAD 5. Loads (from new history lines each step, finishHaul; "with nobody in it" at sim.ts:11176)
+  loads                                        delivered 4 (5 goods); paid 4 (4 food); unpaid 0; nobody in 0 (0 goods); stacked outside 7 delivered 3 (3 goods); paid 3 (3 food); unpaid 0; nobody in 0 (0 goods); stacked outside 3
+  gives, classed from the task                 own choice (errand:toward-goal) 3  own choice (errand:toward-goal) 1
+ HEAD 6. Keeping and hauling time (ownChoice store tasks, sim.ts:7000, 7009, 7011)
+  steps on goto:going-back-to-mind-the-store   0                                  0
+  steps on haul:putting-the-days-takings-away  0                                  0
+  steps on keep:minding-the-store              0                                  0
+  steps on a filed haul                        0                                  0
+ HEAD 7. Filed against actual (above, per step), and steps on each kind of work by source
+    filed eat                                  91                                 91
+    filed glean                                279                                278
+    filed goto                                 149                                149
+    filed idle                                 454                                454
+    filed rest                                 670                                670
+    none -                                     32                                 31
+    own barter                                 213                                588
+    own eat                                    49                                 49
+    own forage                                 1427                               1601
+    own gather                                 504                                725
+    own give                                   836                                633
+    own haul                                   1296                               731
+ HEAD 8. Ends, at the close
+  pack                                         food 2                             food 6
+  purse (coin)                                 0                                  0
+  skills (craft practice counts)               farming 2466, forestry 74, hauling 754, trading 158, mending 81, sawing 38, building 5, toolmaking 2 farming 2464, forestry 74, hauling 753, trading 158, mending 81, sawing 38, building 5, toolmaking 2
+  depot stock                                  stone 93, ore 94, food 24, plank 33 wood 1, stone 99, ore 94, food 17, plank 33
+  hunger / tiredness / happiness               0.1346 / 0.7004 / 0.8048           0.1640 / 0.7006 / 0.6566
+  position                                     95.0,123.0                         88.1,107.1
+DATA {"cut":4,"id":"npc-07","arm":"BASE","steps":6000,"over95":0,"first95":null,"at1":0,"first1":null,"maxFood":0.8643394250648929,"meanFood":0.3320400259510748,"minRest":0,"meanRest":0.3075553102564066,"maxRest":0.7004450000000392,"rotFeed":3,"rotHistory":3,"feedDrops":0,"drops":[],"meals":[{"at":"22:03:00Z","step":50,"from":0.8462300235350311,"to":0,"src":"pack"},{"at":"23:20:27Z","step":1341,"from":0.26904773772419416,"to":0,"src":"pack"},{"at":"03:23:02Z","step":5384,"from":0.8643394250648929,"to":0,"src":"pack"}],"rests":[{"kind":"filed","begin":"22:03:03Z","end":"22:17:20Z","walk":117,"asleep":121},{"kind":"filed","begin":"23:00:18Z","end":"23:17:52Z","walk":172,"asleep":121},{"kind":"filed","begin":"23:20:31Z","end":"23:28:51Z","walk":18,"asleep":121}],"close":{"food":0.13463354428862748,"rest":0.7004450000000392,"happy":0.8048201011151344,"gx":95.00885849588292,"gy":123.00885849588292,"pack":{"wood":0,"stone":0,"ore":0,"food":2,"plank":0,"charcoal":0,"iron":0,"block":0,"furniture":0},"coin":0}}
+DATA {"cut":4,"id":"npc-07","arm":"CAND","steps":6000,"over95":0,"first95":null,"at1":0,"first1":null,"maxFood":0.8462300235350311,"meanFood":0.31636436927411576,"minRest":0,"meanRest":0.3076460369230733,"maxRest":0.7006000000000392,"rotFeed":3,"rotHistory":3,"feedDrops":0,"drops":[],"meals":[{"at":"22:03:00Z","step":50,"from":0.8462300235350311,"to":0,"src":"pack"},{"at":"23:20:24Z","step":1340,"from":0.2688379285713532,"to":0,"src":"pack"},{"at":"03:14:56Z","step":5249,"from":0.8351473724248273,"to":0,"src":"pack"}],"rests":[{"kind":"filed","begin":"22:03:03Z","end":"22:17:20Z","walk":117,"asleep":121},{"kind":"filed","begin":"23:00:14Z","end":"23:17:49Z","walk":172,"asleep":121},{"kind":"filed","begin":"23:20:27Z","end":"23:28:48Z","walk":18,"asleep":121}],"close":{"food":0.16403568376160452,"rest":0.7006000000000392,"happy":0.6566293389722635,"gx":88.07746526371514,"gy":107.07746526371514,"pack":{"wood":0,"stone":0,"ore":0,"food":6,"plank":0,"charcoal":0,"iron":0,"block":0,"furniture":0},"coin":0}}
+
+════════ cut 4 — Cairnwright (npc-08), BASE against CAND, 6000 steps each, 3.6 s of air a step
+                                               BASE                               CAND
+ PIN 1. The opening, and any opening rest
+  in hand in the file's snapshot               forage(own) "fill my pack with food before I turn back" forage(own) "fill my pack with food before I turn back"
+  in hand after the opening                    eat(filed) "eating"                eat(filed) "eating"
+  did the opening replace it                   replaced by the first filed step   replaced by the first filed step
+  plan steps filed / refused at the opening    11 / 0                             11 / 0
+  opening rest                                 none (first step is not a rest)    none (first step is not a rest)
+ PIN 1. Every plan step, aligned by what it asks (LCS on the step words)
+   #0/#0 eat                               
+       BASE: began 0 (22:00:00Z), spent 46, finished
+       CAND: began 0 (22:00:00Z), spent 46, finished
+   #1/#1 rest                              
+       BASE: began 48 (22:02:52Z), spent 447, finished
+       CAND: began 48 (22:02:52Z), spent 447, finished
+   #2/#2 repair the lean-to                
+       BASE: began 496 (22:29:45Z), spent 286, finished
+       CAND: began 496 (22:29:45Z), spent 286, finished
+   #3/#3 mine                              
+       BASE: began 783 (22:46:58Z), spent 1458, finished
+       CAND: began 783 (22:46:58Z), spent 1458, finished
+   #4/#4 haul                              
+       BASE: began 2242 (00:14:31Z), spent 1524, finished
+       CAND: began 2242 (00:14:31Z), spent 1524, finished
+   #5/#5 cairn                             
+       BASE: began 3767 (01:46:01Z), spent 64, finished
+       CAND: began 3767 (01:46:01Z), spent 64, finished
+   #6/#6 hone                              
+       BASE: began 3832 (01:49:55Z), spent 44, finished
+       CAND: began 3832 (01:49:55Z), spent 44, finished
+   #7/#7 hew                               
+       BASE: spent 0, refused — Cairnwright could not hew: hewing a board takes 3 logs and the near shore has 0. They went on with the rest of the day.
+       CAND: spent 0, refused — Cairnwright could not hew: hewing a board takes 3 logs and the near shore has 0. They went on with the rest of the day.
+   #8/#8 haul                              
+       BASE: began 3877 (01:52:37Z), spent 90, finished
+       CAND: began 3877 (01:52:37Z), spent 90, finished
+   #9/#9 eat                               
+       BASE: began 3968 (01:58:04Z), spent 49, finished
+       CAND: began 3968 (01:58:04Z), spent 49, finished
+   #10/#10 rest                            
+       BASE: began 4018 (02:01:04Z), spent 350, finished
+       CAND: began 4018 (02:01:04Z), spent 350, finished
+ HEAD 1. Drops (collapse: task note "asleep on their feet", say at sim.ts:13925)
+  drops (from the task)                        0                                  0
+  drops (from new feed lines)                  0                                  0
+  each: time, tiredness the step before        -                                  -
+ HEAD 2. Rest
+  rests begun or in hand, by kind              filed 2                            filed 2
+  steps asleep / walking to bed                242 / 555                          242 / 555
+  tiredness at each filed rest                 0.5134, 0.5461                     0.5134, 0.5461
+  tiredness lowest / mean / highest            0.0000 / 0.2729 / 0.6002           0.0000 / 0.2729 / 0.6002
+  each rest: kind begin-end walk/asleep        filed 22:02:52Z-22:29:42Z w326 a121; filed 02:01:04Z-02:22:04Z w229 a121 filed 22:02:52Z-22:29:42Z w326 a121; filed 02:01:04Z-02:22:04Z w229 a121
+ HEAD 3. Food
+  meals (pack / store)                         2 (2 / 0)                          2 (2 / 0)
+  hunger mean / highest                        0.3523 / 0.8382                    0.3523 / 0.8382
+  steps hunger > 0.95 (first)                  0 (-)                              0 (-)
+  steps hunger at 1.0 (first)                  0 (-)                              0 (-)
+  each meal                                    22:02:49Z 0.745->0.000 pack; 02:01:01Z 0.838->0.000 pack 22:02:49Z 0.745->0.000 pack; 02:01:01Z 0.838->0.000 pack
+  pack rot (history events / feed lines)       0 / 0                              0 / 0
+  depot food / dried at the close              24 / 0                             17 / 0
+ HEAD 4. Depot access (as storekeeper: keeperOf, keeperIsIn at sim.ts:4443)
+  steps this settler is the keeper / and in    0 / 0                              0 / 0
+  meals other settlers took from the store     0                                  0
+ HEAD 5. Loads (from new history lines each step, finishHaul; "with nobody in it" at sim.ts:11176)
+  loads                                        delivered 4 (6 goods); paid 4 (4 food); unpaid 0; nobody in 0 (0 goods); stacked outside 3 delivered 4 (7 goods); paid 4 (4 food); unpaid 0; nobody in 0 (0 goods); stacked outside 4
+  gives, classed from the task                 own choice (errand:toward-goal) 4  own choice (errand:toward-goal) 1
+ HEAD 6. Keeping and hauling time (ownChoice store tasks, sim.ts:7000, 7009, 7011)
+  steps on goto:going-back-to-mind-the-store   0                                  0
+  steps on haul:putting-the-days-takings-away  0                                  0
+  steps on keep:minding-the-store              0                                  0
+  steps on a filed haul                        1614                               1614
+ HEAD 7. Filed against actual (above, per step), and steps on each kind of work by source
+    filed cairn                                64                                 64
+    filed eat                                  95                                 95
+    filed haul                                 1614                               1614
+    filed hone                                 44                                 44
+    filed mine                                 1458                               1458
+    filed repair                               286                                286
+    filed rest                                 797                                797
+    none -                                     23                                 21
+    own forage                                 761                                646
+    own gather                                 252                                252
+    own give                                   268                                179
+    own haul                                   338                                544
+ HEAD 8. Ends, at the close
+  pack                                         food 2                             food 4
+  purse (coin)                                 0                                  0
+  skills (craft practice counts)               farming 1668, mining 188, forestry 16, sawing 82, trading 58, hauling 756, mending 129, toolmaking 49, building 2, shipwrighting 1 farming 1668, mining 188, forestry 16, sawing 82, trading 58, hauling 756, mending 129, toolmaking 49, building 2, shipwrighting 1
+  depot stock                                  stone 93, ore 94, food 24, plank 33 wood 1, stone 99, ore 94, food 17, plank 33
+  hunger / tiredness / happiness               0.4306 / 0.2530 / 0.8148           0.4306 / 0.2530 / 0.8148
+  position                                     93.2,117.0                         89.7,114.7
+DATA {"cut":4,"id":"npc-08","arm":"BASE","steps":6000,"over95":0,"first95":null,"at1":0,"first1":null,"maxFood":0.8382145312626881,"meanFood":0.35225219172466754,"minRest":0,"meanRest":0.27293836569204266,"maxRest":0.6001600000000287,"rotFeed":0,"rotHistory":0,"feedDrops":0,"drops":[],"meals":[{"at":"22:02:49Z","step":47,"from":0.745204355914966,"to":0,"src":"pack"},{"at":"02:01:01Z","step":4017,"from":0.8382145312626881,"to":0,"src":"pack"}],"rests":[{"kind":"filed","begin":"22:02:52Z","end":"22:29:42Z","walk":326,"asleep":121},{"kind":"filed","begin":"02:01:04Z","end":"02:22:04Z","walk":229,"asleep":121}],"close":{"food":0.4306407545196463,"rest":0.25295999999999236,"happy":0.8147876380273957,"gx":93.16466385436411,"gy":117.04116596359103,"pack":{"wood":0,"stone":0,"ore":0,"food":2,"plank":0,"charcoal":0,"iron":0,"block":0,"furniture":0},"coin":0}}
+DATA {"cut":4,"id":"npc-08","arm":"CAND","steps":6000,"over95":0,"first95":null,"at1":0,"first1":null,"maxFood":0.8382145312626881,"meanFood":0.35225219172466754,"minRest":0,"meanRest":0.27293836569204266,"maxRest":0.6001600000000287,"rotFeed":0,"rotHistory":0,"feedDrops":0,"drops":[],"meals":[{"at":"22:02:49Z","step":47,"from":0.745204355914966,"to":0,"src":"pack"},{"at":"02:01:01Z","step":4017,"from":0.8382145312626881,"to":0,"src":"pack"}],"rests":[{"kind":"filed","begin":"22:02:52Z","end":"22:29:42Z","walk":326,"asleep":121},{"kind":"filed","begin":"02:01:04Z","end":"02:22:04Z","walk":229,"asleep":121}],"close":{"food":0.4306407545196463,"rest":0.25295999999999236,"happy":0.8147921905413922,"gx":89.72292677701118,"gy":114.72292677701118,"pack":{"wood":0,"stone":0,"ore":0,"food":4,"plank":0,"charcoal":0,"iron":0,"block":0,"furniture":0},"coin":0}}
+
+════════ cut 4 — Seafarer (npc-01), BASE against CAND, 6000 steps each, 3.6 s of air a step
+                                               BASE                               CAND
+ PIN 1. The opening, and any opening rest
+  in hand in the file's snapshot               gather(own) "an evening at the hearth" gather(own) "an evening at the hearth"
+  in hand after the opening                    eat(filed) "eating"                eat(filed) "eating"
+  did the opening replace it                   replaced by the first filed step   replaced by the first filed step
+  plan steps filed / refused at the opening    10 / 0                             10 / 0
+  opening rest                                 none (first step is not a rest)    none (first step is not a rest)
+ PIN 1. Every plan step, aligned by what it asks (LCS on the step words)
+   #0/#0 eat                               
+       BASE: began 0 (22:00:00Z), spent 48, finished
+       CAND: began 0 (22:00:00Z), spent 48, finished
+   #1/#1 rest                              
+       BASE: began 50 (22:03:00Z), spent 250, finished
+       CAND: began 50 (22:03:00Z), spent 250, finished
+   #2/#2 goto                              
+       BASE: began 301 (22:18:03Z), spent 104, finished
+       CAND: began 301 (22:18:03Z), spent 104, finished
+   #3/#3 idle                              
+       BASE: began 406 (22:24:21Z), spent 96, finished
+       CAND: began 406 (22:24:21Z), spent 96, finished
+   #4/#4 goto                              
+       BASE: began 503 (22:30:10Z), spent 194, finished
+       CAND: began 503 (22:30:10Z), spent 194, finished
+   #5/#5 idle                              
+       BASE: began 698 (22:41:52Z), spent 207, finished
+       CAND: began 698 (22:41:52Z), spent 207, finished
+   #6/#6 glean food                        
+       BASE: began 906 (22:54:21Z), spent 413, finished
+       CAND: began 906 (22:54:21Z), spent 413, finished
+   #7/#7 give food                         
+       BASE: began 1320 (23:19:12Z), spent 189, finished
+       CAND: began 1320 (23:19:12Z), spent 135, finished
+   #8/#8 eat                               
+       BASE: began 1510 (23:30:36Z), spent 232, finished
+       CAND: began 1456 (23:27:21Z), spent 177, finished
+   #9/#9 rest                              
+       BASE: began 1743 (23:44:34Z), spent 245, finished
+       CAND: began 1634 (23:38:02Z), spent 244, finished
+   #10/#10 eat [ifStuck]                   
+       BASE: began 1989 (23:59:20Z), spent 41, finished
+       CAND: began 1879 (23:52:44Z), spent 133, finished
+   #11/#11 rest [ifStuck]                  
+       BASE: began 2031 (00:01:51Z), spent 138, finished
+       CAND: began 2013 (00:00:46Z), spent 231, finished
+   #12/#12 idle [ifStuck]                  
+       BASE: began 2170 (00:10:12Z), spent 128, finished
+       CAND: began 2245 (00:14:42Z), spent 115, finished
+ HEAD 1. Drops (collapse: task note "asleep on their feet", say at sim.ts:13925)
+  drops (from the task)                        0                                  0
+  drops (from new feed lines)                  0                                  0
+  each: time, tiredness the step before        -                                  -
+ HEAD 2. Rest
+  rests begun or in hand, by kind              filed 3, hurt 11                   filed 3
+  steps asleep / walking to bed                2921 / 443                         363 / 362
+  tiredness at each filed rest                 0.6692, 0.2237, 0.0067             0.6692, 0.2068, 0.0209
+  tiredness lowest / mean / highest            0.0000 / 0.1064 / 0.7078           0.0000 / 0.2503 / 0.7078
+  each rest: kind begin-end walk/asleep        filed 22:03:00Z-22:18:00Z w129 a121; filed 23:44:34Z-23:59:16Z w124 a121; filed 00:01:51Z-00:10:08Z w17 a121; hurt 01:13:12Z-01:38:09Z w173 a243; hurt 01:38:13Z-01:52:51Z w0 a244; hurt 01:52:55Z-02:07:33Z w0 a244; hurt 02:07:37Z-02:22:19Z w0 a245; hurt 02:22:22Z-02:37:04Z w0 a245; hurt 02:37:08Z-02:51:54Z w0 a246; hurt 02:51:57Z-03:06:43Z w0 a246; hurt 03:06:46Z-03:21:36Z w0 a247; hurt 03:21:39Z-03:36:28Z w0 a247; hurt 03:36:32Z-03:51:25Z w0 a248; hurt 03:53:49Z-close w0 a103 filed 22:03:00Z-22:18:00Z w129 a121; filed 23:38:02Z-23:52:40Z w123 a121; filed 00:00:46Z-00:14:38Z w110 a121
+ HEAD 3. Food
+  meals (pack / store)                         4 (3 / 1)                          4 (2 / 2)
+  hunger mean / highest                        0.3178 / 0.8312                    0.3252 / 0.8510
+  steps hunger > 0.95 (first)                  0 (-)                              0 (-)
+  steps hunger at 1.0 (first)                  0 (-)                              0 (-)
+  each meal                                    22:02:56Z 0.040->0.000 pack; 23:44:31Z 0.354->0.000 store; 00:01:48Z 0.061->0.000 pack; 03:53:45Z 0.831->0.000 pack 22:02:56Z 0.040->0.000 pack; 23:37:58Z 0.331->0.000 store; 00:00:43Z 0.080->0.000 store; 03:58:08Z 0.851->0.000 pack
+  pack rot (history events / feed lines)       0 / 0                              0 / 0
+  depot food / dried at the close              24 / 0                             17 / 0
+ HEAD 4. Depot access (as storekeeper: keeperOf, keeperIsIn at sim.ts:4443)
+  steps this settler is the keeper / and in    0 / 0                              0 / 0
+  meals other settlers took from the store     0                                  0
+ HEAD 5. Loads (from new history lines each step, finishHaul; "with nobody in it" at sim.ts:11176)
+  loads                                        delivered 0 (0 goods); paid 0 (0 food); unpaid 0; nobody in 0 (0 goods); stacked outside 2 delivered 6 (10 goods); paid 6 (7 food); unpaid 0; nobody in 0 (0 goods); stacked outside 6
+  gives, classed from the task                 filed 1                            filed 1
+ HEAD 6. Keeping and hauling time (ownChoice store tasks, sim.ts:7000, 7009, 7011)
+  steps on goto:going-back-to-mind-the-store   0                                  0
+  steps on haul:putting-the-days-takings-away  0                                  0
+  steps on keep:minding-the-store              0                                  0
+  steps on a filed haul                        0                                  0
+ HEAD 7. Filed against actual (above, per step), and steps on each kind of work by source
+    filed eat                                  321                                358
+    filed give                                 189                                135
+    filed glean                                413                                413
+    filed goto                                 298                                298
+    filed idle                                 431                                418
+    filed rest                                 633                                725
+    hurt rest                                  2732                               0
+    none -                                     30                                 32
+    own chop                                   461                                235
+    own eat                                    38                                 48
+    own gather                                 0                                  231
+    own haul                                   416                                1458
+    own hone                                   38                                 37
+    own mine                                   0                                  1612
+ HEAD 8. Ends, at the close
+  pack                                         wood 5, food 4                     stone 2, food 3
+  purse (coin)                                 0                                  0
+  skills (craft practice counts)               scouting 18, mending 56, farming 206, forestry 657, hauling 526, sawing 47, trading 623, seafaring 11, building 4, mining 470, toolmaking 52 scouting 18, mending 56, farming 206, forestry 655, hauling 532, sawing 47, trading 623, seafaring 11, building 4, mining 478, toolmaking 52
+  depot stock                                  stone 93, ore 94, food 24, plank 33 wood 1, stone 99, ore 94, food 17, plank 33
+  hunger / tiredness / happiness               0.0228 / 0.0222 / 0.8393           0.0068 / 0.5822 / 0.6860
+  position                                     92.5,120.5                         87.2,112.4
+DATA {"cut":4,"id":"npc-01","arm":"BASE","steps":6000,"over95":0,"first95":null,"at1":0,"first1":null,"maxFood":0.8311616197436603,"meanFood":0.3178285803532343,"minRest":0,"meanRest":0.10642017950114539,"maxRest":0.7078019632337064,"rotFeed":0,"rotHistory":0,"feedDrops":0,"drops":[],"meals":[{"at":"22:02:56Z","step":49,"from":0.03956501424535918,"to":0,"src":"pack"},{"at":"23:44:31Z","step":1742,"from":0.3535461480017628,"to":0,"src":"store"},{"at":"00:01:48Z","step":2030,"from":0.060522511272155334,"to":0,"src":"pack"},{"at":"03:53:45Z","step":5896,"from":0.8311616197436603,"to":0,"src":"pack"}],"rests":[{"kind":"filed","begin":"22:03:00Z","end":"22:18:00Z","walk":129,"asleep":121},{"kind":"filed","begin":"23:44:34Z","end":"23:59:16Z","walk":124,"asleep":121},{"kind":"filed","begin":"00:01:51Z","end":"00:10:08Z","walk":17,"asleep":121},{"kind":"hurt","begin":"01:13:12Z","end":"01:38:09Z","walk":173,"asleep":243},{"kind":"hurt","begin":"01:38:13Z","end":"01:52:51Z","walk":0,"asleep":244},{"kind":"hurt","begin":"01:52:55Z","end":"02:07:33Z","walk":0,"asleep":244},{"kind":"hurt","begin":"02:07:37Z","end":"02:22:19Z","walk":0,"asleep":245},{"kind":"hurt","begin":"02:22:22Z","end":"02:37:04Z","walk":0,"asleep":245},{"kind":"hurt","begin":"02:37:08Z","end":"02:51:54Z","walk":0,"asleep":246},{"kind":"hurt","begin":"02:51:57Z","end":"03:06:43Z","walk":0,"asleep":246},{"kind":"hurt","begin":"03:06:46Z","end":"03:21:36Z","walk":0,"asleep":247},{"kind":"hurt","begin":"03:21:39Z","end":"03:36:28Z","walk":0,"asleep":247},{"kind":"hurt","begin":"03:36:32Z","end":"03:51:25Z","walk":0,"asleep":248},{"kind":"hurt","begin":"03:53:49Z","end":null,"walk":0,"asleep":103}],"close":{"food":0.022784762393070028,"rest":0.02216499999999998,"happy":0.8392689041083303,"gx":92.5,"gy":120.5,"pack":{"wood":5,"stone":0,"ore":0,"food":4,"plank":0,"charcoal":0,"iron":0,"block":0,"furniture":0},"coin":0}}
+DATA {"cut":4,"id":"npc-01","arm":"CAND","steps":6000,"over95":0,"first95":null,"at1":0,"first1":null,"maxFood":0.8509529551886696,"meanFood":0.3252054317674337,"minRest":0,"meanRest":0.2502608253344822,"maxRest":0.7078019632337064,"rotFeed":0,"rotHistory":0,"feedDrops":0,"drops":[],"meals":[{"at":"22:02:56Z","step":49,"from":0.03956501424535918,"to":0,"src":"pack"},{"at":"23:37:58Z","step":1633,"from":0.3306029296716839,"to":0,"src":"store"},{"at":"00:00:43Z","step":2012,"from":0.07966533170417084,"to":0,"src":"store"},{"at":"03:58:08Z","step":5969,"from":0.8509529551886696,"to":0,"src":"pack"}],"rests":[{"kind":"filed","begin":"22:03:00Z","end":"22:18:00Z","walk":129,"asleep":121},{"kind":"filed","begin":"23:38:02Z","end":"23:52:40Z","walk":123,"asleep":121},{"kind":"filed","begin":"00:00:46Z","end":"00:14:38Z","walk":110,"asleep":121}],"close":{"food":0.006793925195411316,"rest":0.5821800000000268,"happy":0.6860398673300645,"gx":87.17157260470995,"gy":112.41421369764502,"pack":{"wood":0,"stone":2,"ore":0,"food":3,"plank":0,"charcoal":0,"iron":0,"block":0,"furniture":0},"coin":0}}
+
+════════ INPUTS (sha256)
+  5f7c31a34396cb13b476cb3a8bfa9193b2daaff49e4f0505dd4a4620e73080ea  script                         C:\Claude\Games\Frontier\scratchpad\brindle-comparison-20261112\compare-abed.mjs
+  eb628ee0858579f5e6435da5ff75d0bd8366bd471be2d55c6ae65e0140e58582  engine                         C:/Claude/Games/Frontier/.claude/worktrees/abed/src/sim.ts
+  8ff422ba75cd136c3075fd2b262dcc64f906db8fb984c47a58698f2870ca6ca1  engine                         C:/Claude/Games/Frontier/.claude/worktrees/abed/src/airtime.ts
+  b196bd7368ff395878465f5d4d9eeede132294e6eff70322bf22caff81085457  engine                         C:/Claude/Games/Frontier/.claude/worktrees/abed/src/canonical.ts
+  e8f096b6616f58292c30e3cb68bd363d7c638bc0d7e273fabff899a087e1cc83  engine                         C:/Claude/Games/Frontier/.claude/worktrees/abed/tools/cuts.mjs
+  daa5e7b4d3ddccd8abf7a94c8fe5e83bc4b1c6ada354bb506c732613b99ef609  cut 1 produced                 C:/Claude/Games/Frontier/.claude/worktrees/abed/episodes/episode-2026-11-13T034157-cut1.json
+  35ff412d8660ae25c8734acbc121af09b9bff64f77dc577aa156560e7148f0e2  cut 1 candidate                C:\Claude\Games\Frontier\scratchpad\brindle-rest-first-20261111\candidate/brindle-cut1.json
+  23610bdf1d4e0da18918fcf06f6ed1f1410ab113a51d5447bfe80edb79b02506  cut 1 CAND scratch episode     C:\Claude\Games\Frontier\scratchpad\brindle-comparison-20261112\brindle-run-20261115.arms/cut1-CAND.json
+  daa5e7b4d3ddccd8abf7a94c8fe5e83bc4b1c6ada354bb506c732613b99ef609  cut 1 IDENT scratch episode    C:\Claude\Games\Frontier\scratchpad\brindle-comparison-20261112\brindle-run-20261115.arms/cut1-IDENT.json
+  6ff27df55165089a9c101eac33374268ec90cfd64d26e0339b1d6a949b9b0a65  cut 1 next opening             C:/Claude/Games/Frontier/.claude/worktrees/abed/episodes/episode-2026-11-13T034157-cut2.json
+  90994efea90accceccfcd64512ab9d0bcabaea3ace6c315d31e6b17f58337856  cut 3 produced                 C:/Claude/Games/Frontier/.claude/worktrees/abed/episodes/episode-2026-11-13T034157-cut3.json
+  e93311b77db5dfc1bd45fe018ace7f5a5974fd16b3363ddf2a8e29363fd17ea4  cut 3 candidate                C:\Claude\Games\Frontier\scratchpad\brindle-rest-first-20261111\candidate/brindle-cut3.json
+  0c3b5bfde22992be862042e378892f077ad8289143f0177e635a4000949aa124  cut 3 CAND scratch episode     C:\Claude\Games\Frontier\scratchpad\brindle-comparison-20261112\brindle-run-20261115.arms/cut3-CAND.json
+  90994efea90accceccfcd64512ab9d0bcabaea3ace6c315d31e6b17f58337856  cut 3 IDENT scratch episode    C:\Claude\Games\Frontier\scratchpad\brindle-comparison-20261112\brindle-run-20261115.arms/cut3-IDENT.json
+  667fa5a11a92de6b831a1844d84ea0a29b05ce0b42732a8741fbd032fa316aec  cut 3 next opening             C:/Claude/Games/Frontier/.claude/worktrees/abed/episodes/episode-2026-11-13T034157-cut4.json
+  f33e0d8ef572da3b1d551fb4e43e74dab535878d883f1a6c023170407e16f9dd  cut 4 candidate                C:\Claude\Games\Frontier\scratchpad\brindle-rest-first-20261111\candidate/brindle-cut4.json
+  1b87ca46f3ea03e920425c5adce150d0f1548cf3184b4b3f5f6f1a3a05916295  cut 4 CAND scratch episode     C:\Claude\Games\Frontier\scratchpad\brindle-comparison-20261112\brindle-run-20261115.arms/cut4-CAND.json
+  667fa5a11a92de6b831a1844d84ea0a29b05ce0b42732a8741fbd032fa316aec  cut 4 IDENT scratch episode    C:\Claude\Games\Frontier\scratchpad\brindle-comparison-20261112\brindle-run-20261115.arms/cut4-IDENT.json
+  c08662a4bdf10e43708d9f224b49b0b295a9856b7abd855172a4c6ddf64ea0ab  cut 4 next opening             C:/Claude/Games/Frontier/.claude/worktrees/abed/episodes/episode-2026-11-14T034144-cut1.json
+
+exit 0

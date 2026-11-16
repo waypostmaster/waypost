@@ -1,0 +1,61 @@
+{
+ "for": "Brindle",
+ "cut": 1,
+ "by": "the Frontier desk",
+ "rendered": "the Frontier desk",
+ "because": "Any ollama work that will be needed between now and Sept 29 should be done today. It may simply be easier for you to write the days for the house characters.",
+ "notes": "Written 22 September 2026 ~13:2xZ by the Frontier desk, off episodes/next-snapshot.json at sim 25200.05 (buildings standing: two claims, dock, depot, boat). Purpose is mechanical: the producer asks the model only for a settler with no filed day, and those calls have timed out at 120 s on every cut since 20 September - 0 flight plans by the model on 20 and 21 September, measured from episodes/air.log. Brindle and Cairnwright were the only two still being asked. With these files every settler is filed on every cut and the model is not asked at all. No coordinates are used anywhere in these plans, so nothing depends on where anyone stands at the opening. A day left in place is read again by the next night producer, so these stand until they are replaced. STEP REMOVED after a side run on 22 September: plant, refused by name - \"the near shore has never agreed to put trees back\". Nothing was put in its place except plain work; the agreement is the valley to make, not this desk.",
+ "plan": [
+  {
+   "action": "rest"
+  },
+  {
+   "action": "survey"
+  },
+  {
+   "action": "forage"
+  },
+  {
+   "action": "haul"
+  },
+  {
+   "action": "survey"
+  },
+  {
+   "action": "forage"
+  },
+  {
+   "action": "haul"
+  },
+  {
+   "action": "chop"
+  },
+  {
+   "action": "haul"
+  },
+  {
+   "action": "eat"
+  },
+  {
+   "action": "rest"
+  }
+ ],
+ "say": "A scout earns the song by walking first and singing after.",
+ "ifStuck": [],
+ "wish": "That somebody walks ground nobody has walked yet, and comes back to say what is on it.",
+ "goals": [
+  {
+   "horizon": "short",
+   "text": "Ground covered on foot before anything is said about it."
+  },
+  {
+   "horizon": "medium",
+   "text": "Food and wood in the store that nobody asked twice for."
+  },
+  {
+   "horizon": "long",
+   "text": "A plain account of this coast that does not flatter it."
+  }
+ ],
+ "ifStuckWas": "Keep walking and keep carrying. A gap in what I know is left as a gap, not filled in with a better line. [prose moved out of ifStuck 22 Oct 2026 by the Frontier desk: a fallback is a list of steps, and prose there was read as an empty list; it stays an empty list, named so]"
+}
