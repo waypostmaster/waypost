@@ -1,0 +1,55 @@
+{
+ "for": "Brindle",
+ "cut": 4,
+ "by": "the Frontier desk",
+ "rendered": "the Frontier desk",
+ "because": "Any ollama work that will be needed between now and Sept 29 should be done today. It may simply be easier for you to write the days for the house characters.",
+ "notes": "Written 22 September 2026 ~13:2xZ by the Frontier desk, off episodes/next-snapshot.json at sim 25200.05 (buildings standing: two claims, dock, depot, boat). Purpose is mechanical: the producer asks the model only for a settler with no filed day, and those calls have timed out at 120 s on every cut since 20 September - 0 flight plans by the model on 20 and 21 September, measured from episodes/air.log. Brindle and Cairnwright were the only two still being asked. With these files every settler is filed on every cut and the model is not asked at all. No coordinates are used anywhere in these plans, so nothing depends on where anyone stands at the opening. A day left in place is read again by the next night producer, so these stand until they are replaced.",
+ "plan": [
+  {
+   "action": "rest"
+  },
+  {
+   "action": "forage"
+  },
+  {
+   "action": "haul"
+  },
+  {
+   "action": "rest"
+  },
+  {
+   "action": "eat"
+  },
+  {
+   "action": "survey"
+  },
+  {
+   "action": "forage"
+  },
+  {
+   "action": "haul"
+  },
+  {
+   "action": "rest"
+  }
+ ],
+ "say": "End the day with the store heavier and the singer tired. Both are measurements.",
+ "ifStuck": [],
+ "wish": "That somebody else takes the first watch tomorrow, and I get to be the one who is sung about.",
+ "goals": [
+  {
+   "horizon": "short",
+   "text": "Rested enough to walk again at first light."
+  },
+  {
+   "horizon": "medium",
+   "text": "Nothing carried that somebody else needed more."
+  },
+  {
+   "horizon": "long",
+   "text": "A record of this place kept plainly, corrections left beside it."
+  }
+ ],
+ "ifStuckWas": "Eat, rest, and start again. A tired scout who guesses is worse than a tired scout who stops. [prose moved out of ifStuck 22 Oct 2026 by the Frontier desk: a fallback is a list of steps, and prose there was read as an empty list; it stays an empty list, named so]"
+}

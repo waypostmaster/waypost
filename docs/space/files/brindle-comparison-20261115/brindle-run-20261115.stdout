@@ -1,0 +1,14 @@
+  cut 1  1 baseline to next opening   PASS   BASE close (6000 steps, t=86700.05000280266) against episode-2026-11-13T034157-cut2.json (chain_from episode-2026-11-13T034157-cut1.json, t=86700.05000280266): 4 settlers x (gx, gy, needs.food, needs.rest, every carrying item) and 9 buildings x (kind, condition, gx, gy), exact ===: 88 fields, 0 differ. Wider (check-chainlink form, whole world less run/path/askedAt/goalsAskedAt/routed): byte-identical
+  cut 1  2 determinism BASE=BASE2     PASS   6001 digests each (opening + 6000 steps; sha1 of every settler, building and settlement and the clock): 0 differ; at the close equal
+  cut 1  2 determinism CAND=CAND2     PASS   6001 digests each (opening + 6000 steps; sha1 of every settler, building and settlement and the clock): 0 differ; at the close equal
+  cut 1  3 instrument IDENT=BASE      PASS   6001 digests each: 0 differ; at the close equal
+  cut 3  1 baseline to next opening   PASS   BASE close (6000 steps, t=87300.05000283758) against episode-2026-11-13T034157-cut4.json (chain_from episode-2026-11-13T034157-cut3.json, t=87300.05000283758): 4 settlers x (gx, gy, needs.food, needs.rest, every carrying item) and 9 buildings x (kind, condition, gx, gy), exact ===: 88 fields, 0 differ. Wider (check-chainlink form, whole world less run/path/askedAt/goalsAskedAt/routed): byte-identical
+  cut 3  2 determinism BASE=BASE2     PASS   6001 digests each (opening + 6000 steps; sha1 of every settler, building and settlement and the clock): 0 differ; at the close equal
+  cut 3  2 determinism CAND=CAND2     PASS   6001 digests each (opening + 6000 steps; sha1 of every settler, building and settlement and the clock): 0 differ; at the close equal
+  cut 3  3 instrument IDENT=BASE      PASS   6001 digests each: 0 differ; at the close equal
+  cut 4  1 baseline to next opening   PASS   BASE close (6000 steps, t=87600.05000285505) against episode-2026-11-14T034144-cut1.json (chain_from null, t=87600.05000285505): 4 settlers x (gx, gy, needs.food, needs.rest, every carrying item) and 9 buildings x (kind, condition, gx, gy), exact ===: 88 fields, 0 differ. Wider (check-chainlink form, whole world less run/path/askedAt/goalsAskedAt/routed): byte-identical
+  cut 4  2 determinism BASE=BASE2     PASS   6001 digests each (opening + 6000 steps; sha1 of every settler, building and settlement and the clock): 0 differ; at the close equal
+  cut 4  2 determinism CAND=CAND2     PASS   6001 digests each (opening + 6000 steps; sha1 of every settler, building and settlement and the clock): 0 differ; at the close equal
+  cut 4  3 instrument IDENT=BASE      PASS   6001 digests each: 0 differ; at the close equal
+exit 0
+wrote 1234 lines to C:\Claude\Games\Frontier\scratchpad\brindle-comparison-20261112\brindle-run-20261115.txt

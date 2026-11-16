@@ -1,0 +1,58 @@
+{
+ "for": "Brindle",
+ "cut": 3,
+ "by": "the Frontier desk",
+ "rendered": "the Frontier desk",
+ "because": "Any ollama work that will be needed between now and Sept 29 should be done today. It may simply be easier for you to write the days for the house characters.",
+ "notes": "Written 22 September 2026 ~13:2xZ by the Frontier desk, off episodes/next-snapshot.json at sim 25200.05 (buildings standing: two claims, dock, depot, boat). Purpose is mechanical: the producer asks the model only for a settler with no filed day, and those calls have timed out at 120 s on every cut since 20 September - 0 flight plans by the model on 20 and 21 September, measured from episodes/air.log. Brindle and Cairnwright were the only two still being asked. With these files every settler is filed on every cut and the model is not asked at all. No coordinates are used anywhere in these plans, so nothing depends on where anyone stands at the opening. A day left in place is read again by the next night producer, so these stand until they are replaced. STEP REMOVED after a side run on 22 September: plant, refused by name - the near shore has never agreed to put trees back.",
+ "plan": [
+  {
+   "action": "rest"
+  },
+  {
+   "action": "survey"
+  },
+  {
+   "action": "forage"
+  },
+  {
+   "action": "haul"
+  },
+  {
+   "action": "chop"
+  },
+  {
+   "action": "haul"
+  },
+  {
+   "action": "survey"
+  },
+  {
+   "action": "forage"
+  },
+  {
+   "action": "haul"
+  },
+  {
+   "action": "eat"
+  }
+ ],
+ "say": "Carry more out than you carry in, and say which is which.",
+ "ifStuck": [],
+ "wish": "That the wood and food taken off this shore are both written down by whoever counts them.",
+ "goals": [
+  {
+   "horizon": "short",
+   "text": "A full pack carried in rather than left on the ground."
+  },
+  {
+   "horizon": "medium",
+   "text": "A forage round that does not strip a single tile bare."
+  },
+  {
+   "horizon": "long",
+   "text": "A coast that can still feed whoever lands after us."
+  }
+ ],
+ "ifStuckWas": "Gather, carry, plant. Nothing here needs a decision from me that walking will not answer. [prose moved out of ifStuck 22 Oct 2026 by the Frontier desk: a fallback is a list of steps, and prose there was read as an empty list; it stays an empty list, named so]"
+}

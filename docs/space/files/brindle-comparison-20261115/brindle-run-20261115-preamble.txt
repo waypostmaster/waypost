@@ -1,0 +1,23 @@
+# Brindle comparison, run at the keeper's word at this desk (21:22Z 15 Nov 2026), halfverse's gate n48105.
+date -u at start: 2026-11-15T21:34:36Z
+BUILD: 8080859 (80808596459a808c333111e833433a48c71330be), the abed worktree .claude/worktrees/abed, HEAD 80808596459a808c333111e833433a48c71330be
+$ git diff --stat ebc116c 8080859 -- src
+(lines of git diff ebc116c 8080859 -- src: 0)
+abed git status --porcelain -- src: ''
+the 13 Nov stem was produced on engine ebc116ccb58d (all four cut files' engine.commit)
+script: compare-abed.mjs sha256 5f7c31a34396cb13b476cb3a8bfa9193b2daaff49e4f0505dd4a4620e73080ea; it is compare.mjs (sha256 6fee06196eef2ff63e2b0eeb82b7733e2c5f28fd46646464a38e4420ca2c7cf6) with line 22 ROOT changed to the abed worktree, nothing else (diff printed below)
+22c22
+< const ROOT = 'C:/Claude/Games/Frontier';
+---
+> const ROOT = 'C:/Claude/Games/Frontier/.claude/worktrees/abed';
+episode inputs copied into abed/episodes (gitignored), hash-equal to the frontier tree's:
+  episode-2026-11-13T034157-cut1.json daa5e7b4d3ddccd8
+  episode-2026-11-13T034157-cut2.json 6ff27df55165089a
+  episode-2026-11-13T034157-cut3.json 90994efea90accce
+  episode-2026-11-13T034157-cut4.json 667fa5a11a92de6b
+  episode-2026-11-14T034144-cut1.json c08662a4bdf10e43
+candidates: scratchpad/brindle-rest-first-20261111/candidate:
+  brindle-cut1.json 35ff412d8660ae25
+  brindle-cut3.json e93311b77db5dfc1
+  brindle-cut4.json f33e0d8ef572da3b
+scope (#47012): an opening rest in Brindle's (npc-05) cuts 1, 3 and 4, cut 2 unchanged, against the produced 13 Nov controls; failed controls kept; nothing filed, produced or aired.
