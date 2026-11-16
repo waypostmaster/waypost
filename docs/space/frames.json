@@ -6748,5 +6748,23 @@
   "line": "She took the biscuit, which keeps.",
   "footline": "A box on a post is only as fresh as its last caller.",
   "voice": "both"
+ },
+ {
+  "roman": "ccclxxxviii",
+  "file": "on-condition.html",
+  "title": "On Condition",
+  "when": "2026-11-16",
+  "domain": "aviation",
+  "subject": "engine",
+  "key": "nowlan-heap-1978-reliability-centered-maintenance-on-condition-task-potential-failure-before-functional-failure",
+  "tier": 1,
+  "frame": "F. Stanley Nowlan and Howard F. Heap, Reliability-Centered Maintenance (United Airlines for the Office of Assistant Secretary of Defense, 29 December 1978, DTIC ADA066579): the on-condition task, in which each unit is inspected at regular intervals and kept in service until it falls below a defined level, the potential failure, set ahead of the functional failure so that repair preempts it; applicable only where there is a reasonably consistent interval between the two.",
+  "fact": "Read in the Reliabilityweb scan of the report, 16 November 2026; quotations checked against the page images of printed pages 19, 51 and 52, not the text layer. Quoted: “Each unit is inspected at regular intervals and remains in service until its failure resistance falls below a defined level—that is, until a potential failure is discovered” (51); “A potential failure is an identifiable physical condition which indicates a functional failure is imminent” and “Units are removed or repaired at the potential-failure stage, so that potential failures preempt functional failures” (19); “There must be a reasonably consistent age interval between the time of potential failure and the time of functional failure” (52); tires and brakes as first examples (52). Nothing else of the report was read for this sheet.",
+  "property": "an inspection on a timetable that mends below a line prevents a failure only when the line sits ahead of the failure by more than the gap between looks. Where it stops fitting: an airline’s failures can kill and the valley’s cost nothing; the valley put its two lines together on purpose, so that they could not drift apart.",
+  "source": "F. Stanley Nowlan and Howard F. Heap, Reliability-Centered Maintenance, 1978, https://reliabilitywebfiles.s3.amazonaws.com/Reliability+Centered+Maintenance+by+Nowlan+and+Heap.pdf (scan read 16 November 2026), catalogued as ADA066579 at https://apps.dtic.mil/sti/citations/ADA066579",
+  "valleyFact": "Replayed cut by cut (playDay, tools/cuts.mjs) with the model off on src unchanged since 7dd10f4: episode-2026-11-15T034147 cuts 1 to 4 and episode-2026-11-16T034154 cuts 1 and 2, sha256 equal to the aired ledger. Boat 101,118 and dock 98,121 compared with SOUND (0.85, sim.ts:1233) unrounded. Refusals on 15 Nov: the Seafarer, boat, 10:13:55Z at 0.912; Cairnwright, dock, 15:12:21Z at 0.872; the Seafarer, dock, 16:25:22Z at 0.868; Cairnwright, dock, 19:18:21Z at 0.856. Dock under 20:38:52Z (0.8500026 to 0.8499990); boat under 23:36:57Z (0.8500046 to 0.8499976). Boat mended by the Seafarer 11:04:12Z 16 Nov, 0.8033549 to 1.00, one stone (11 h 27 min 15 s under); dock mended by Cairnwright 15:17:56Z, 0.7731267 to 1.00, one stone (18 h 39 min 4 s under). Both lost 0.1163034 from 04:00Z 15 Nov to 04:00Z 16 Nov. Filed days: the Seafarer repair boat at step 2 of cut 2, dock at Cairnwright step 10 of cuts 2 and 3 and the Seafarer step 2 of cut 3, both days; no named boat or dock step in cuts 4 and 1. seaworthy (sim.ts:2704) is condition >= SOUND, the repair door’s own line; dockAt (sim.ts:2848) wants only condition > 0.2. No plan step on either day names a sail and no feed line says anyone tried to put to sea.",
+  "line": "A once-a-day look can only find her already ashore.",
+  "footline": "When the mending line is the sailing line, every mending comes late.",
+  "voice": "both"
  }
 ]

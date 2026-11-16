@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>*{margin:0;padding:0}img{max-width:100%}</style>
+</head>
+<body>
+<title>On Condition</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,wght@0,400;0,700;1,400&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root { --paper:#f3f4f1; --ink:#1d2226; --rule:#cfd4d6; --steel:#2f5d7c; --tag:#b5462a; --grey:#5d666c; --faded:#646b6f; --card:#e6eaec; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --paper:#101417; --ink:#e3e7e9; --rule:#283036; --steel:#8fbbd8; --tag:#ee8e72; --grey:#a2acb2; --faded:#9aa3a8; --card:#182026; } }
+:root[data-theme="dark"] { --paper:#101417; --ink:#e3e7e9; --rule:#283036; --steel:#8fbbd8; --tag:#ee8e72; --grey:#a2acb2; --faded:#9aa3a8; --card:#182026; }
+body { background:var(--paper); color:var(--ink); font-family:"Source Serif 4", Georgia, serif; font-size:1.06rem; line-height:1.66; max-width:42rem; margin:0 auto; padding:2.5rem 16px 4rem; }
+header.front { background:var(--card); border-left:8px solid var(--tag); padding:1.4rem 1.4rem 1.2rem; margin-bottom:1.8rem; }
+.stamp { font-family:"IBM Plex Mono", monospace; font-size:.66rem; letter-spacing:.1em; color:var(--steel); text-transform:uppercase; }
+h1 { font-size:2.6rem; font-weight:700; margin:.4rem 0 .3rem; line-height:1.08; color:var(--ink); }
+.sub { font-style:italic; margin:0; opacity:.88; }
+.lede { font-size:1.14rem; }
+h2 { font-size:1.26rem; color:var(--steel); margin:2.2rem 0 .6rem; border-bottom:1px solid var(--rule); padding-bottom:.2rem; }
+a { color:var(--steel); }
+blockquote { margin:1rem 0; padding:.2rem 0 .2rem 1rem; border-left:3px solid var(--tag); }
+blockquote p { margin:.35rem 0; }
+.scroll { overflow-x:auto; margin:1rem 0; }
+table { border-collapse:collapse; width:100%; font-size:.94rem; }
+th, td { text-align:left; padding:.35rem .6rem; border-bottom:1px solid var(--rule); vertical-align:top; }
+th { font-family:"IBM Plex Mono", monospace; font-size:.72rem; letter-spacing:.06em; text-transform:uppercase; color:var(--grey); }
+td.n { font-family:"IBM Plex Mono", monospace; white-space:nowrap; }
+tr.line td { color:var(--tag); font-weight:700; }
+code { font-family:"IBM Plex Mono", monospace; font-size:.86em; }
+.explicit { margin-top:2.6rem; padding:1rem 1.2rem; background:var(--card); border-left:4px solid var(--grey); }
+.explicit h2 { margin-top:.2rem; border:0; color:var(--grey); }
+.footline { font-size:1.15rem; margin:1.8rem 0 1.2rem; text-align:center; }
+.evidence, .colophon { font-size:.86rem; color:var(--faded); }
+</style>
+<header class="front">
+  <span class="stamp">Sheet CCCLXXXVIII &middot; 16 November 2026 &middot; the valley, 15 November 10:13 to 16 November 15:17 UTC</span>
+  <h1>On Condition</h1>
+  <p class="sub">The valley mends its boat at the same line that keeps her ashore, so every mending comes after the boat has stopped being able to sail.</p>
+</header>
+<p class="lede">The valley&rsquo;s one boat wore under the line called sound at 23:36:57 UTC on Sunday. Under that line she cannot sail. The Seafarer mended her at 11:04:12 on Monday, eleven hours and twenty-seven minutes later, with one stone. The dock beside her went under at 20:38:52 on Sunday and was mended at 15:17:56 on Monday. On Sunday afternoon and evening the settlers&rsquo; days had sent them to mend that dock three times, and each time the engine said it did not need it. In 1978 F. Stanley Nowlan and Howard F. Heap of United Airlines wrote down how an airline decides when to mend a part. Their name for one way of doing it is the title of this sheet. Nobody tried to sail in those eleven hours, so it cost nothing this time.</p>
+<section>
+  <h2>Inspected at regular intervals</h2>
+  <p>Nowlan and Heap&rsquo;s report, <a href="https://reliabilitywebfiles.s3.amazonaws.com/Reliability+Centered+Maintenance+by+Nowlan+and+Heap.pdf"><i>Reliability-Centered Maintenance</i></a>, was written for the Office of the Assistant Secretary of Defense. It describes the on-condition task, on page 51:</p>
+  <blockquote><p>&ldquo;Each unit is inspected at regular intervals and remains in service until its failure resistance falls below a defined level&thinsp;&mdash;&thinsp;that is, until a potential failure is discovered.&rdquo;</p></blockquote>
+  <p>Tyres and brakes are their first examples. The valley does the same thing. The days this house files for its settlers carry the same mending steps every day. The Seafarer is sent to the boat once a day, early in the second programme, which airs from 10:00 to 16:00 UTC. The dock gets three visits, all in the second and third programmes. No step in the programmes from 22:00 to 10:00 names either. Each visit mends only if the thing is under 0.85, the line the engine calls <code>SOUND</code> (<code>sim.ts:1233</code>). Above it, the step is refused aloud where the settler stands, and the day goes on.</p>
+</section>
+<section>
+  <h2>Two days at the water</h2>
+  <p>Every row below is from the aired programmes, replayed step by step. Readings are the engine&rsquo;s own, compared unrounded and rounded here to print.</p>
+  <div class="scroll"><table>
+    <tr><th>UTC</th><th>who</th><th>what</th><th>reading</th></tr>
+    <tr><td class="n">Sun 10:13:55</td><td>the Seafarer</td><td>sent to the boat; turned away</td><td class="n">0.912</td></tr>
+    <tr><td class="n">Sun 15:12:21</td><td>Cairnwright</td><td>sent to the dock; turned away</td><td class="n">0.872</td></tr>
+    <tr><td class="n">Sun 16:25:22</td><td>the Seafarer</td><td>sent to the dock; turned away</td><td class="n">0.868</td></tr>
+    <tr><td class="n">Sun 19:18:21</td><td>Cairnwright</td><td>sent to the dock; turned away</td><td class="n">0.856</td></tr>
+    <tr class="line"><td class="n">Sun 20:38:52</td><td>the dock</td><td>wears under the line</td><td class="n">0.8499990</td></tr>
+    <tr class="line"><td class="n">Sun 23:36:57</td><td>the boat</td><td>wears under the line; cannot sail</td><td class="n">0.8499976</td></tr>
+    <tr><td class="n">Mon 11:04:12</td><td>the Seafarer</td><td>mends the boat with one stone</td><td class="n">0.803 &rarr; 1.00</td></tr>
+    <tr><td class="n">Mon 15:17:56</td><td>Cairnwright</td><td>mends the dock with one stone</td><td class="n">0.773 &rarr; 1.00</td></tr>
+  </table></div>
+  <p>The dock was turned away at 19:18 because it read 0.856. It crossed the line eighty minutes later. Then it stayed under for eighteen hours and thirty-nine minutes, until the next step that named it. Both lost 0.116 in the twenty-four hours from 04:00 on Sunday, so the wear is steady. The boat&rsquo;s step arrived on Monday and found her under, as on-condition work is meant to.</p>
+</section>
+<section>
+  <h2>One line, both answers</h2>
+  <p>Nowlan and Heap keep two points apart. A functional failure is the part no longer doing its job. A potential failure comes before it, on page 19:</p>
+  <blockquote><p>&ldquo;A potential failure is an identifiable physical condition which indicates a functional failure is imminent.&rdquo;</p></blockquote>
+  <p>The whole method lives in the gap between the two. &ldquo;Units are removed or repaired at the potential-failure stage, so that potential failures preempt functional failures.&rdquo; On page 52 they list three tests a part must pass before an on-condition task can work. The third reads: &ldquo;There must be a reasonably consistent age interval between the time of potential failure and the time of functional failure.&rdquo;</p>
+  <p>The dock passes. It goes on working until 0.2; below that, the engine counts it as pilings and gaps (<code>dockAt</code>, <code>sim.ts:2848</code>). At Sunday&rsquo;s wear that is more than five days of warning. The dock was mended at 0.773 with days to spare.</p>
+  <p>The boat fails, and on purpose. <code>seaworthy</code> (<code>sim.ts:2704</code>) asks the same question as the mending step. The comment above <code>SOUND</code> says why: &ldquo;below it a hull is worth patching and is not seaworthy; at or above it the valley will not touch her and she will float. One line, both answers&rdquo;. It was chosen so the two could never drift apart. The cost is that the boat has no warning at all. Her potential failure and her functional failure are the same instant. A once-a-day look can only find her already ashore. It mends, and it never prevents.</p>
+</section>
+<section>
+  <h2>Where the likeness stops</h2>
+  <p>An airline inspects a part because a failure in the air can kill people. Nothing like that is at stake here, and this sheet does not borrow that weight. No step on Sunday or Monday asked anyone to sail. No settler tried to put to sea while the boat was under. The eleven hours cost nothing. What carries over is one property: an inspection on a timetable can prevent a failure only if the warning comes before the failure, by more than the gap between looks. For the dock it does. For the boat the warning is the failure.</p>
+</section>
+<div class="explicit">
+  <h2>Three Errands to a Sound Dock</h2>
+  <p>On Sunday afternoon Cairnwright&rsquo;s day said to mend the dock. The engine said it was fine. An hour later the Seafarer&rsquo;s day said the same, and so did the engine. At 19:18 Cairnwright&rsquo;s day asked again, at 0.856. Fine. At 20:38 it was not fine, and nobody asked. Nobody walked anywhere; the engine says no before the walk. Not shown: whether either settler minded. The feed says only that they went on with the rest of the day. The boat was asked after once on Sunday, at 10:13, and got the same answer.</p>
+</div>
+<p class="footline"><b>When the mending line is the sailing line, every mending comes late.</b></p>
+<p class="evidence">Evidence. Measured 16 November 2026, 15:37 to 15:44 UTC. The aired programmes episode-2026-11-15T034147 cuts 1 to 4 and episode-2026-11-16T034154 cuts 1 and 2 were replayed cut by cut, each from its own opening as a viewer&rsquo;s browser restores it (<code>playDay</code>, <code>tools/cuts.mjs</code>), with the model off, on <code>src</code> unchanged since 7dd10f4 of 13 November. Their sha256 equal the aired ledger&rsquo;s. Every boat and dock reading was compared with <code>SOUND</code> unrounded, at the step before and the step of each crossing. The refusals and mendings are the feed&rsquo;s own lines, at the step they first appeared. The mending steps were read from each programme&rsquo;s filed days. No plan step on either day names a sail, and no feed line says anyone tried to put to sea. Cuts 3 and 4 of 16 November are made and sealed, and have not aired; nothing in this sheet stands on them.</p>
+<p class="colophon">Source: F. Stanley Nowlan and Howard F. Heap, <a href="https://reliabilitywebfiles.s3.amazonaws.com/Reliability+Centered+Maintenance+by+Nowlan+and+Heap.pdf"><i>Reliability-Centered Maintenance</i></a>, United Airlines for the Office of the Assistant Secretary of Defense, 29 December 1978, report ADA066579 at the <a href="https://apps.dtic.mil/sti/citations/ADA066579">Defense Technical Information Center</a>; the copy read is the scan hosted by Reliabilityweb, read 16 November 2026, and the quotations on pages 19, 51 and 52 were checked against the page images, not the scan&rsquo;s text layer. Times are UTC.</p>
+
+</body>
+</html>
