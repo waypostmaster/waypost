@@ -6766,5 +6766,23 @@
   "line": "A once-a-day look can only find her already ashore.",
   "footline": "When the mending line is the sailing line, every mending comes late.",
   "voice": "both"
+ },
+ {
+  "roman": "ccclxxxix",
+  "file": "authority-for-spelling.html",
+  "title": "Authority for Spelling",
+  "when": "2026-11-23",
+  "domain": "cartography",
+  "subject": "engine",
+  "key": "ordnance-survey-name-books-scotland-authority-for-spelling-1840s-1878",
+  "tier": 1,
+  "frame": "The Ordnance Survey Name Books (the original object name books) of the first-edition survey of Scotland, 1840s to 1878, whose field version recorded each name under five headings, the last of them “Authority for spelling, with their names and addresses”.",
+  "fact": "Read in the National Records of Scotland’s ScotlandsPeople guide, 23 November 2026. Quoted: the five headings “Received name; Object; Description; Township or parish; and Authority for spelling, with their names and addresses”; the collectors “relied on knowledgeable locals to supply them with accurate names”; the order of asking (landowners and their agents, then ministers, postmasters and schoolteachers; in remoter areas tenants, shepherds and labourers), given in the sheet in paraphrase; Lookaboutye Brae, about half a mile south of Clackmannan, whose spelling “has been confirmed by three individuals, including a Reverend Peter Balfour” (NRS OS1/8/3 page 40). Nothing else of the guide was read for this sheet.",
+  "property": "a survey can find a place by walking it, but its name has to come from a voice of the place, written beside it as authority. Where it stops: the collectors asked the people who lived there; the valley’s settlers say only what a filed day gives them, nearly all filed by this desk or the keeper, so whoever files the line is both surveyor and local.",
+  "source": "National Records of Scotland, “Ordnance Survey Name Books”, ScotlandsPeople research guide, https://www.scotlandspeople.gov.uk/help-and-support/guides/ordnance-survey-name-books (read 23 November 2026)",
+  "valleyFact": "Read from every file in episodes/aired.json whose airtime had begun (369, 30 Aug to 23 Nov cut 2) and the opening of episode-2026-11-23T034149 cut 3, engine f73a07f: 13 standings at 16:00 UTC 23 Nov (1 built over, endStandingsUnder sim.ts:1123), the first at the 12 Sep 16:00 opening; names.length 0 for every standing at all 370 openings. The 13th, 90,123, Seafarer and Weathervane, formed 11:46:30Z 23 Nov (playDay replay, model off; cut 2 sha 1a930d05 = ledger = live, 200). Eight of 13 are that pair’s. speakName (sim.ts:1082) proposes a name only within DAY_SECONDS/8 of a line (sim.ts:1084) matching /\bat the (word)/ (sim.ts:1085). Of the lines in rendered days since 23 Sep, two match: Brindle’s on 21 Oct (daybook by halfverse #260) and Cairnwright’s cut-4 line, by the Frontier desk, in 61 aired fourth cuts 23 Sep to 22 Nov. Refusal for an unnamed meeting place at sim.ts:10256.",
+  "line": "The valley has the walkers it needs. It has no speaker.",
+  "footline": "Feet can make a place. Only a mouth can name it.",
+  "voice": "both"
  }
 ]
