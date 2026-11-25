@@ -6802,5 +6802,23 @@
   "line": "So the whole of his trouble was one piece of wood, and it was lying on the ground at the door.",
   "footline": "The heap was at the door both times. This time the rule looked.",
   "voice": "both"
+ },
+ {
+  "roman": "cccxci",
+  "file": "tax-horsepower.html",
+  "title": "Tax Horsepower",
+  "when": "2026-11-25",
+  "domain": "transport (road)",
+  "subject": "house",
+  "key": "rac-tax-horsepower-bore-only-formula-long-stroke-engines-austin-seven-abandoned-1947",
+  "tier": 2,
+  "frame": "The British RAC tax horsepower rating, a road-tax figure computed from cylinder bore and the number of cylinders and nothing else, under which British engines were built with narrow bores and long strokes until the system was abandoned with effect from 1 January 1947.",
+  "fact": "Read 25 November 2026 in Wikipedia, “Tax horsepower”, section “Britain”. In paraphrase: the rating is the bore in inches squared, times the number of cylinders, divided by 2.5; the Austin Seven was named for its 7 hp rating and by 1924 its engine produced 10.5 brake horsepower; by 1935 the Standard Flying Twelve produced 44 bhp; model names came to carry both figures, such as the Wolseley 14/60 and the Alvis 12/70; the system was abandoned with effect from 1 January 1947. Quoted as the article’s wording: “(i.e., \"bore\" only)”; “British designers developed engines with very long stroke and low piston surface area”; “nearly four times as much power as the RAC system suggested”; “Sevens, Eights, Nines, Tens, Elevens, Twelves, Fourteens, Sixteens etc., each to fit with a taxation class”. The article marks its sentence on who devised the rating in 1910 as disputed; the sheet does not repeat it.",
+  "property": "a rule that measures one dimension gets the thing built to that dimension, and it grows in the one left out; nobody cheats. Where it stops: nothing about the car trade, protection or exports is claimed.",
+  "source": "Wikipedia, “Tax horsepower”, section “Britain”, https://en.wikipedia.org/wiki/Tax_horsepower (read 25 November 2026)",
+  "valleyFact": "NOT A VALLEY FACT: a house sheet. 25 Nov 2026: five reviewers (Claude Sonnet, Opus, Haiku, Fable; Codex) on the 62 cards and sheets CCCXXIX-CCCXC, same brief, none seeing another. Re-measured at this desk (scratchpad/review-6b/desk-ruler.txt and later recounts): chips 0 over 12 words, 39 at 12, 54 at 11 or 12; pulls 20 at 29 or 30; summaries 28 at 170+; whole-sheet median 1,574 words (sheets 1-20) and 2,062 (43-62); three retired phrases as the formula in 17 sheets; 28 cards with a correction, 26 on the 50 not tagged city, 23 with an 18 Nov entry, 7 naming zero-273; 187 keeper messages in RULINGS.md 18 Oct to 03:37Z 25 Nov, 5 containing sheet or sheets; 51 of 62 printed in hours 05, 06, 10, 11, 15, 16 UTC. A Claude Opus challenge reader raised 23 points on the drafts before print; each acted on.",
+  "line": "Nobody cheated. Measure one dimension and the makers build to it, and the thing grows in the dimension you left out.",
+  "footline": "Tax the bore and the engine grows tall. Cap the headline and the story grows long.",
+  "voice": "record"
  }
 ]
