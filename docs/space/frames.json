@@ -6784,5 +6784,23 @@
   "line": "The valley has the walkers it needs. It has no speaker.",
   "footline": "Feet can make a place. Only a mouth can name it.",
   "voice": "both"
+ },
+ {
+  "roman": "cccxc",
+  "file": "boxgrove.html",
+  "title": "Boxgrove",
+  "when": "2026-11-25",
+  "domain": "archaeology",
+  "subject": "settler",
+  "key": "boxgrove-gtp17-horse-butchery-site-eight-bifaces-refitted-pope-2020-ten-or-15-minutes",
+  "tier": 1,
+  "frame": "The Horse Butchery Site (GTP17) at Boxgrove, West Sussex, about 480,000 years ago, where refitted flint scatters show large cutting tools knapped beside a horse carcass, as told by Matt Pope of UCL, who did the refitting.",
+  "fact": "Read 25 November 2026 in Matt Pope’s article in The Conversation (12 August 2020). Quoted: “a spot where a large horse was slaughtered and processed some 480,000 years ago”; “more than 1,750 pieces of knapped flint”; “Each stone flake removed by an ancient human will only fit, uniquely, to other flakes removed from the same block of flint immediately before and after it”; “the manufacture of eight large cutting tools”; “perhaps ten or 15 minutes making each tool”; “Parts of the horse was also used as bone tools”. In paraphrase: a tide buried the site in silt before the pieces moved. From Wikipedia, “Boxgrove Palaeolithic site”, in paraphrase: the horse lay on a tidal mudflat around 40 to 60 metres from the chalk cliffs the flint nodules came from. The UCL news pages on the same book answered 403 and were not read.",
+  "property": "the tool is made at the work, from material lying within reach, in minutes, and the work goes on. Where it stops: the people at Boxgrove chose where to knap; the Seafarer had no filed day in hand and the heap was picked by the engine’s own rule.",
+  "source": "Matt Pope, “Boxgrove: how we found Europe’s oldest bone tools – and what we learned about their makers”, The Conversation, 12 August 2020, https://theconversation.com/boxgrove-how-we-found-europes-oldest-bone-tools-and-what-we-learned-about-their-makers-144340; Wikipedia, “Boxgrove Palaeolithic site”, https://en.wikipedia.org/wiki/Boxgrove_Palaeolithic_site (both read 25 November 2026)",
+  "valleyFact": "playDay replay (tools/cuts.mjs), FRONTIER_BRAIN=off, every step of episode-2026-11-25T034153 cut 1 and cut 2 to 15:40Z, engine fc30041 (cut 2 sha 4d274639 = ledger = live, 200). Seafarer: stone tools 8 uses at 04:00Z, 1 at 13:51:00Z; given out 13:56:02Z at 92,114 while mining, carrying 3 stone, 1 ore, 2 food; haul to the depot; 13:58:40Z 1 stone into the store (60 to 61), 2 stacked outside; 13:58:44Z rule glean:materials-for-tools (ownChoice sim.ts:6260, branch at sim.ts:6687, helpless at :6681), store wood 0, town.outside wood 8; 14:00:25Z carrying 1 wood, outside wood 7; craft 14:00:28Z; 14:03:21Z stone tools 63 uses (finishCraft sim.ts:12131; TOOL_COST stone 1 wood, 2 stone, 45 uses, tools.ts:73), store stone 61 to 59; n.day null at every one of those steps. 122 settler-steps with no working tools from 04:00 to 15:40Z, 0 of them on a chop, mine or forage task (11,666 steps, four settlers). 23 Nov as aired (measured 23 Nov, commit f1909ad): Brindle given out 04:38:09Z, chopping for tools from 05:05:24Z, hurt 05:48:10Z, set made 08:48:28Z. 24 Nov replay: no tools gave out. 4 Nov figures are CCCLXVII’s as printed. barehandTask (sim.ts:5943), the fix’s other branch, did not run.",
+  "line": "So the whole of his trouble was one piece of wood, and it was lying on the ground at the door.",
+  "footline": "The heap was at the door both times. This time the rule looked.",
+  "voice": "both"
  }
 ]
